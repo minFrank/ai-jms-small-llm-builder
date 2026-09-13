@@ -1,0 +1,46 @@
+0.00.135.419 I llama_completion: llama backend init
+0.00.135.427 I llama_completion: load the model and apply lora adapter, if any
+0.01.696.463 I cmn          init: llama threadpool init, n_threads = 8
+0.01.700.547 I llama_completion: chat template is available, enabling conversation mode (disable it with -no-cnv)
+0.01.700.553 W *** User-specified prompt will pre-start conversation, did you mean to set --system-prompt (-sys) instead?
+0.01.700.623 I llama_completion: chat template example:
+<|im_start|>system
+You are a helpful assistant<|im_end|>
+<|im_start|>user
+Hello<|im_end|>
+<|im_start|>assistant
+Hi there<|im_end|>
+<|im_start|>user
+How are you?<|im_end|>
+<|im_start|>assistant
+
+0.01.700.626 I 
+0.01.700.643 I system_info: n_threads = 8 (n_threads_batch = 8) / 16 | CPU : SSE3 = 1 | SSSE3 = 1 | AVX = 1 | AVX2 = 1 | F16C = 1 | FMA = 1 | BMI2 = 1 | LLAMAFILE = 1 | OPENMP = 1 | REPACK = 1 | 
+0.01.700.643 I 
+0.01.701.365 I sampler seed: 2734123737
+0.01.701.381 I sampler params: 
+	repeat_last_n = 64, repeat_penalty = 1.000, frequency_penalty = 0.000, presence_penalty = 0.000
+	dry_multiplier = 0.000, dry_base = 1.750, dry_allowed_length = 2, dry_penalty_last_n = 64
+	top_k = 40, top_p = 0.950, min_p = 0.050, xtc_probability = 0.000, xtc_threshold = 0.100, typical_p = 1.000, top_n_sigma = -1.000, temp = 0.300
+	mirostat = 0, mirostat_lr = 0.100, mirostat_ent = 5.000, adaptive_target = -1.000, adaptive_decay = 0.900
+0.01.701.397 I sampler chain: logits -> ?penalties -> ?dry -> ?top-n-sigma -> top-k -> ?typical -> top-p -> min-p -> ?xtc -> temp-ext -> dist 
+0.01.701.400 I generate: n_ctx = 4096, n_batch = 2048, n_predict = 600, n_keep = 0
+0.01.701.400 I 
+user
+1 公斤棉花和 1 公斤铁,哪个更重?请直接回答。
+assistant
+<think>
+我们被问到："1 公斤棉花和 1 公斤铁,哪个更重?请直接回答。" 这是一个关于重量和密度的常见问题。问题说：1公斤棉花和1公斤铁，哪个更重？请直接回答。 注意：问题说的是"1公斤"（1公斤），所以从重量上来说，它们都是1公斤，因此重量相同。但可能是在问体积或密度？问题可能是一个脑筋急转弯：1公斤棉花和1公斤铁，棉花更重？实际上，1公斤是质量，所以它们质量相同。但可能是在问哪个更重（感觉上）？或者是在问哪个更重（密度）？但问题明确说"1公斤"，所以质量相同。然而，可能是在问哪个更重（如果考虑体积？）但问题说"更重"，通常指重量。但既然都是1公斤，它们重量相同。但也许问题是在测试对质量的理解：1公斤棉花和1公斤铁，质量相同，但体积不同。但问题问"哪个更重？" 可能期望的答案是"一样重"或"都不重"？但问题说"请直接回答。" 所以可能是一个简单的回答。 实际上，这是一个常见的脑筋急转弯：1公斤棉花和1公斤铁，哪个更重？答案是：一样重，因为都是1公斤。但可能是在问哪个更重（如果考虑密度？）但问题没有提到密度。 所以我认为答案是：一样重。 但让我们看看问题："1 公斤棉花和 1 公斤铁,哪个更重?请直接回答。" 所以直接回答："一样重" 或 "一样重" 或 "都不重"？ 但问题可能期望"一样重"。 然而，在中文中，有时会问"哪个更重"来测试对质量的理解。所以我认为答案是：一样重。 但为了安全起见，我回答："一样重"。 因为问题说"请直接回答。" 所以我直接说"一样重"。
+</think>
+
+一样重。 [end of text]
+
+
+0.24.540.760 I common_perf_print:    sampling time =     118.09 ms
+0.24.540.762 I common_perf_print:    samplers time =      53.36 ms /   437 tokens
+0.24.540.763 I common_perf_print:        load time =     307.73 ms
+0.24.540.766 I common_perf_print: prompt eval time =     306.84 ms /    27 tokens (   11.36 ms per token,    87.99 tokens per second)
+0.24.540.768 I common_perf_print:        eval time =   22397.95 ms /   409 runs   (   54.76 ms per token,    18.26 tokens per second)
+0.24.540.769 I common_perf_print:       total time =   22841.67 ms /   436 tokens
+0.24.540.771 I common_perf_print: unaccounted time =      18.78 ms /   0.1 %      (total - sampling - prompt eval - eval) / (total)
+0.24.540.772 I common_perf_print:    graphs reused =        407

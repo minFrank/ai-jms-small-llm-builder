@@ -1,0 +1,10 @@
+$ llama-server -m MiniCPM5-2B-Q4_K_M.gguf -c 8192 -t 8 --port 8899
+llama_server: server is listening on http://127.0.0.1:8899
+
+[req 1] 19 tokens  13.9 tok/s  prompt 6 tokens
+[req 2] 22 tokens  13.6 tok/s  prompt 7 tokens
+[req 3] 96 tokens  14.2 tok/s  prompt 8 tokens
+[req 4] 96 tokens  14.2 tok/s  prompt 8 tokens
+
+4 路并发: 墙钟 6.9s / 合计 233 tokens → 33.6 tok/s
+(单路基线对比: 16.4 tok/s)

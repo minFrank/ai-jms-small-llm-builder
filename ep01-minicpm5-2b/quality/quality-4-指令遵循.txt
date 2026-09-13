@@ -1,0 +1,80 @@
+0.00.144.903 I llama_completion: llama backend init
+0.00.144.912 I llama_completion: load the model and apply lora adapter, if any
+0.01.681.435 I cmn          init: llama threadpool init, n_threads = 8
+0.01.688.156 I llama_completion: chat template is available, enabling conversation mode (disable it with -no-cnv)
+0.01.688.165 W *** User-specified prompt will pre-start conversation, did you mean to set --system-prompt (-sys) instead?
+0.01.688.267 I llama_completion: chat template example:
+<|im_start|>system
+You are a helpful assistant<|im_end|>
+<|im_start|>user
+Hello<|im_end|>
+<|im_start|>assistant
+Hi there<|im_end|>
+<|im_start|>user
+How are you?<|im_end|>
+<|im_start|>assistant
+
+0.01.688.271 I 
+0.01.688.304 I system_info: n_threads = 8 (n_threads_batch = 8) / 16 | CPU : SSE3 = 1 | SSSE3 = 1 | AVX = 1 | AVX2 = 1 | F16C = 1 | FMA = 1 | BMI2 = 1 | LLAMAFILE = 1 | OPENMP = 1 | REPACK = 1 | 
+0.01.688.307 I 
+0.01.689.227 I sampler seed: 2817464545
+0.01.689.246 I sampler params: 
+	repeat_last_n = 64, repeat_penalty = 1.000, frequency_penalty = 0.000, presence_penalty = 0.000
+	dry_multiplier = 0.000, dry_base = 1.750, dry_allowed_length = 2, dry_penalty_last_n = 64
+	top_k = 40, top_p = 0.950, min_p = 0.050, xtc_probability = 0.000, xtc_threshold = 0.100, typical_p = 1.000, top_n_sigma = -1.000, temp = 0.300
+	mirostat = 0, mirostat_lr = 0.100, mirostat_ent = 5.000, adaptive_target = -1.000, adaptive_decay = 0.900
+0.01.689.259 I sampler chain: logits -> ?penalties -> ?dry -> ?top-n-sigma -> top-k -> ?typical -> top-p -> min-p -> ?xtc -> temp-ext -> dist 
+0.01.689.261 I generate: n_ctx = 4096, n_batch = 2048, n_predict = 600, n_keep = 0
+0.01.689.261 I 
+user
+把下面这句话改写成三个要点,每点不超过 10 字:端侧小模型的价值在于响应快、隐私好、可以离线使用。
+assistant
+<think>
+1.  **分析请求：**
+    *   **原句：** 端侧小模型的价值在于响应快、隐私好、可以离线使用。（端侧小模型的价值在于快速响应、隐私好、可以离线使用。）
+    *   **任务：** 将原句改写成三个要点。
+    *   **约束条件：** 每点不超过 10 个字。
+
+2.  **分析原句：**
+    *   要点 1：响应快（快速响应）
+    *   要点 2：隐私好（隐私好/安全）
+    *   要点 3：离线使用（离线使用）
+
+3.  **起草要点（迭代以满足约束条件）：**
+    *   *草稿 1：* 快速响应。（5 个字）- 很好。
+    *   *草稿 2：* 隐私安全。（5 个字）- 很好。
+    *   *草稿 3：* 离线运行。（5 个字）- 很好。
+
+4.  **润色并格式化输出：**
+    *   确保格式清晰（项目符号或编号列表）。
+    *   确保严格遵守字数限制。
+
+5.  **最终输出生成：**
+    *   快速响应
+    *   隐私安全
+    *   离线运行
+
+6.  **对照约束条件进行审查：**
+    *   三个要点？是的。
+    *   每点不超过 10 个字？是的（5 个字）。
+    *   准确反映原句？是的。
+
+7.  **最终润色：** 保持简单直接。
+    快速响应
+    隐私安全
+    离线运行
+</think>
+
+快速响应
+隐私安全
+离线运行 [end of text]
+
+
+0.22.544.081 I common_perf_print:    sampling time =      89.63 ms
+0.22.544.082 I common_perf_print:    samplers time =      37.72 ms /   418 tokens
+0.22.544.083 I common_perf_print:        load time =     387.47 ms
+0.22.544.085 I common_perf_print: prompt eval time =     386.31 ms /    40 tokens (    9.66 ms per token,   103.54 tokens per second)
+0.22.544.087 I common_perf_print:        eval time =   20364.14 ms /   377 runs   (   54.02 ms per token,    18.51 tokens per second)
+0.22.544.088 I common_perf_print:       total time =   20857.26 ms /   417 tokens
+0.22.544.089 I common_perf_print: unaccounted time =      17.18 ms /   0.1 %      (total - sampling - prompt eval - eval) / (total)
+0.22.544.090 I common_perf_print:    graphs reused =        375

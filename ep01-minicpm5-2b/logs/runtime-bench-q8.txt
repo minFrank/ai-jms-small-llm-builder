@@ -1,0 +1,8 @@
+load_backend: loaded RPC backend from D:\tools\llama\ggml-rpc.dll
+load_backend: loaded CPU backend from D:\tools\llama\ggml-cpu-haswell.dll
+| model                          |       size |     params | backend    | threads |            test |                  t/s |
+| ------------------------------ | ---------: | ---------: | ---------- | ------: | --------------: | -------------------: |
+| llama ?B Q8_0                  |   2.49 GiB |     2.52 B | CPU        |       8 |           pp512 |         68.16 ± 0.41 |
+| llama ?B Q8_0                  |   2.49 GiB |     2.52 B | CPU        |       8 |           tg128 |         11.67 ± 0.06 |
+
+build: a2878d30d (10909)
