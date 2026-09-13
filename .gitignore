@@ -1,0 +1,18 @@
+# 私人素材:读者自己的录音不要提交(参考文本是模板,要提交)
+我的录音.wav
+我的录音.mp3
+
+# 运行产物
+output/
+**/__pycache__/
+*.pyc
+*.pyo
+
+# 安装时下载的模型与运行环境(7 G,绝不能进仓库)
+tools/CosyVoice/
+
+# 编辑器
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
