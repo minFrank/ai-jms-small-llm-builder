@@ -37,10 +37,32 @@ def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--text-file", required=True, help="要念的文字(story.txt)")
     ap.add_argument("--voice", required=True, help="你的录音(16k 单声道 wav)")
-    ap.add_argument("--voice-text", required=True, help="录音里你实际念的那句话")
+    ap.add_argument("--voice-text", help="录音里你实际念的那句话(直接用 --voice-text-file 更方便)")
+    ap.add_argument("--voice-text-file", help="把上面那句话存成文本文件,传文件路径 —— 推荐,免去命令行转义/编码问题")
     ap.add_argument("--out", required=True, help="输出文件(建议 .mp3)")
     ap.add_argument("--model-dir", default="pretrained_models/Fun-CosyVoice3-0.5B")
     a = ap.parse_args()
+
+    # --voice-text-file 优先:从文件读参考文本。
+    # 为什么不靠 bat 传 --voice-text:实测在 chcp 65001 的 bat 里,
+    # 中文变量展开会把命令行搞坏(python 报 "the following arguments are required: --out"),
+    # 让 python 自己读文件最稳。
+    if a.voice_text_file:
+        vt_path = os.path.abspath(a.voice_text_file)
+        if not os.path.exists(vt_path):
+            print(f"× 找不到录音文本文件:{vt_path}")
+            return 2
+        with open(vt_path, encoding="utf-8-sig") as f:
+            for ln in f:
+                ln = ln.strip()
+                if ln and not ln.startswith("#"):
+                    a.voice_text = ln
+                    break
+        if a.voice_text:
+            print(f"· 录音文本(读自文件):{a.voice_text[:40]}")
+    if not a.voice_text:
+        print("× 缺少录音文本:用 --voice-text-file 指定文本文件,或用 --voice-text 直接给")
+        return 2
 
     root = find_cosy_root()
     if not root:

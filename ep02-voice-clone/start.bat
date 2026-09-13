@@ -4,6 +4,7 @@ setlocal
 cd /d "%~dp0"
 
 echo ============================================
+echo   Local Voice Kit - Generate
 echo   本地声音包 · 一键生成
 echo ============================================
 echo.
@@ -26,14 +27,15 @@ echo [1/3] 检查环境...
 %PY% tools\check.py
 if errorlevel 1 (
   echo.
-  echo 环境还没就绪。若提示缺 CosyVoice,请先双击「一键安装.bat」。
+  echo 环境还没就绪。若提示缺 CosyVoice,请先运行 install.bat（或「一键安装.bat」）。
 if not "%KIT_NOPAUSE%"=="1" pause
   exit /b 1
 )
 
 echo.
 echo [2/3] 读取你的录音与文字...
-rem 录音与录音文本:两种名字都认(英文名优先,防解压乱码)
+
+rem 录音与录音文本:英文名优先,没放英文名就找中文名 —— 两种都认
 set VOICEWAV=
 if exist "my-recording.wav" set VOICEWAV=my-recording.wav
 if not defined VOICEWAV if exist "我的录音.wav" set VOICEWAV=我的录音.wav
@@ -44,11 +46,7 @@ if not defined VOICEWAV (
 if not "%KIT_NOPAUSE%"=="1" pause
   exit /b 2
 )
-if not exist "story.txt" (
-  echo x 找不到 story.txt。把要念的文字存成 story.txt 放在这个文件夹。
-if not "%KIT_NOPAUSE%"=="1" pause
-  exit /b 2
-)
+
 set SAIDTXT=
 if exist "what-i-said.txt" set SAIDTXT=what-i-said.txt
 if not defined SAIDTXT if exist "我的录音说的是什么.txt" set SAIDTXT=我的录音说的是什么.txt
@@ -59,20 +57,27 @@ if not defined SAIDTXT (
 if not "%KIT_NOPAUSE%"=="1" pause
   exit /b 2
 )
+
+if not exist "story.txt" (
+  echo x 找不到 story.txt。把要念的文字存成 story.txt 放在这个文件夹。
+if not "%KIT_NOPAUSE%"=="1" pause
+  exit /b 2
+)
+
 echo · 用录音:%VOICEWAV%
 echo · 用文本:%SAIDTXT%
 
 echo.
-echo [3/3] 开始生成（按 6 倍时长估算,380 字约需 11 分钟）...
+echo [3/3] 开始生成...
 echo.
 
-rem 关键:合成必须用 CosyVoice 自己的 Python(它装了 torch 等依赖),
+rem 关键:合成必须用 CosyVoice 自己的 Python（它装了 torch 等依赖）,
 rem 用系统 Python 会直接报 "No module named 'torch'"。
 set CPY=
 if exist "%~dp0tools\CosyVoice\.venv\Scripts\python.exe" set CPY=%~dp0tools\CosyVoice\.venv\Scripts\python.exe
 if not defined CPY if exist "%USERPROFILE%\AppData\Roaming\OmniVoice\engines\cosyvoice\CosyVoice\.venv\Scripts\python.exe" set CPY=%USERPROFILE%\AppData\Roaming\OmniVoice\engines\cosyvoice\CosyVoice\.venv\Scripts\python.exe
 if not defined CPY (
-  echo x 找不到 CosyVoice 的运行环境,请先双击「一键安装.bat」。
+  echo x 找不到 CosyVoice 的运行环境,请先运行 install.bat（或「一键安装.bat」）。
 if not "%KIT_NOPAUSE%"=="1" pause
   exit /b 2
 )
@@ -86,6 +91,6 @@ if not "%KIT_NOPAUSE%"=="1" pause
 )
 
 echo.
-echo 完成!音频在 output 文件夹里。
+echo 完成!音频在 output 文件夹里(output\story.mp3)。
 start "" "output"
 if not "%KIT_NOPAUSE%"=="1" pause

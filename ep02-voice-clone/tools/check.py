@@ -60,10 +60,18 @@ def main() -> int:
         ok = False
 
     # 输入文件
-    v = os.path.join(KIT, "我的录音.wav")
+    # 录音与录音文本都认两种名字:英文名优先(防网盘/解压工具把中文名搞乱)
+    v = None
+    for n in ("my-recording.wav", "我的录音.wav"):
+        if os.path.exists(os.path.join(KIT, n)):
+            v = os.path.join(KIT, n)
+            break
+    txt_ok = any(os.path.exists(os.path.join(KIT, n))
+                 for n in ("what-i-said.txt", "我的录音说的是什么.txt"))
     t = os.path.join(KIT, "story.txt")
-    print(f"[6] 你的录音:{'找到' if os.path.exists(v) else '× 还没有,把录音放进来并改名「我的录音.wav」'}")
-    print(f"[7] 要念的文字:{'找到' if os.path.exists(t) else '× 还没有 story.txt'}")
+    print(f"[6] 你的录音:{'找到（' + os.path.basename(v) + '）' if v else '× 还没有。放一个 my-recording.wav 或「我的录音.wav」进来'}")
+    print(f"[7] 录音文本:{'找到' if txt_ok else '× 还没有。放一个 what-i-said.txt 或「我的录音说的是什么.txt」'}")
+    print(f"[8] 要念的文字:{'找到' if os.path.exists(t) else '× 还没有 story.txt'}")
 
     print("=" * 46)
     print("  结论:" + ("一切就绪,可以双击「一键生成.bat」了" if ok else "还缺东西,见上面的 ×"))
