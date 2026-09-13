@@ -1,96 +1,99 @@
 @echo off
-chcp 65001 >nul
 setlocal
+rem ÖÐÎÄ Windows Ä¬ÈÏ´úÂëÒ³ÊÇ GBK:ÈÃ python µÄÊä³öÒ²°´ GBK ×ß,±ÜÃâÂÒÂë¡£
+rem (²»ÒªÓÃ chcp 65001:UTF-8 ´úÂëÒ³ÏÂ bat ×ÔÉíµÄÖÐÎÄÐÐ»á±»½âÎö»µ,
+rem  Êµ²â±¨ ". was unexpected at this time." / "'¡­' is not recognized")
+set PYTHONIOENCODING=gbk
 cd /d "%~dp0"
 
 echo ============================================
 echo   Local Voice Kit - Generate
-echo   æœ¬åœ°å£°éŸ³åŒ… Â· ä¸€é”®ç”Ÿæˆ
+echo   ±¾µØÉùÒô°ü ¡¤ Ò»¼üÉú³É
 echo ============================================
 echo.
 
-rem æ‰¾ä¸€ä¸ªèƒ½ç”¨çš„ Python
+rem ÕÒÒ»¸öÄÜÓÃµÄ Python
 set PY=
-where python >nul 2>nul && set PY=python
+py -3.11 -c "import venv" >nul 2>nul && set PY=py -3.11
+if "%PY%"=="" ( py -3.10 -c "import venv" >nul 2>nul && set PY=py -3.10 )
+if "%PY%"=="" ( py -3 -c "import venv" >nul 2>nul && set PY=py -3 )
+if "%PY%"=="" ( where python >nul 2>nul && set PY=python )
 if "%PY%"=="" (
-  py -3 --version >nul 2>nul && set PY=py -3
-)
-if "%PY%"=="" (
-  echo x æ²¡æ‰¾åˆ° Pythonã€‚
-  echo   è¯·å…ˆå®‰è£… Python 3.10 æˆ– 3.11:https://www.python.org/downloads/
-  echo   å®‰è£…æ—¶åŠ¡å¿…å‹¾é€‰ "Add Python to PATH"ã€‚
+  echo x Ã»ÕÒµ½ Python¡£
+  echo   ÇëÏÈ°²×° Python 3.10 »ò 3.11:https://www.python.org/downloads/
+  echo   °²×°Ê±Îñ±Ø¹´Ñ¡ "Add Python to PATH"¡£
 if not "%KIT_NOPAUSE%"=="1" pause
   exit /b 2
 )
 
-echo [1/3] æ£€æŸ¥çŽ¯å¢ƒ...
+echo [1/3] ¼ì²é»·¾³...
 %PY% tools\check.py
 if errorlevel 1 (
   echo.
-  echo çŽ¯å¢ƒè¿˜æ²¡å°±ç»ªã€‚è‹¥æç¤ºç¼º CosyVoice,è¯·å…ˆè¿è¡Œ install.batï¼ˆæˆ–ã€Œä¸€é”®å®‰è£….batã€ï¼‰ã€‚
+  echo »·¾³»¹Ã»¾ÍÐ÷¡£ÈôÌáÊ¾È± CosyVoice,ÇëÏÈÔËÐÐ install.bat£¨»ò¡¸Ò»¼ü°²×°.bat¡¹£©¡£
 if not "%KIT_NOPAUSE%"=="1" pause
   exit /b 1
 )
 
 echo.
-echo [2/3] è¯»å–ä½ çš„å½•éŸ³ä¸Žæ–‡å­—...
+echo [2/3] ¶ÁÈ¡ÄãµÄÂ¼ÒôÓëÎÄ×Ö...
 
-rem å½•éŸ³ä¸Žå½•éŸ³æ–‡æœ¬:è‹±æ–‡åä¼˜å…ˆ,æ²¡æ”¾è‹±æ–‡åå°±æ‰¾ä¸­æ–‡å â€”â€” ä¸¤ç§éƒ½è®¤
+rem Â¼ÒôÓëÂ¼ÒôÎÄ±¾:Ó¢ÎÄÃûÓÅÏÈ,Ã»·ÅÓ¢ÎÄÃû¾ÍÕÒÖÐÎÄÃû ¡ª¡ª Á½ÖÖ¶¼ÈÏ
 set VOICEWAV=
 if exist "my-recording.wav" set VOICEWAV=my-recording.wav
-if not defined VOICEWAV if exist "æˆ‘çš„å½•éŸ³.wav" set VOICEWAV=æˆ‘çš„å½•éŸ³.wav
+if not defined VOICEWAV if exist "ÎÒµÄÂ¼Òô.wav" set VOICEWAV=ÎÒµÄÂ¼Òô.wav
 if not defined VOICEWAV (
-  echo x æ‰¾ä¸åˆ°å½•éŸ³æ–‡ä»¶ã€‚
-  echo   æ”¾ä¸€ä¸ª my-recording.wavï¼ˆæˆ–ã€Œæˆ‘çš„å½•éŸ³.wavã€ï¼‰åˆ°è¿™ä¸ªæ–‡ä»¶å¤¹ã€‚
-  echo   ç”¨æ‰‹æœºå½•éŸ³æœºå½• 20-30 ç§’,åˆ«ç”¨å¾®ä¿¡è¯­éŸ³,é‚£æ˜¯åŽ‹ç¼©è¿‡çš„ã€‚
+  echo x ÕÒ²»µ½Â¼ÒôÎÄ¼þ¡£
+  echo   ·ÅÒ»¸ö my-recording.wav£¨»ò¡¸ÎÒµÄÂ¼Òô.wav¡¹£©µ½Õâ¸öÎÄ¼þ¼Ð¡£
+  echo   ÓÃÊÖ»úÂ¼Òô»úÂ¼ 20-30 Ãë,±ðÓÃÎ¢ÐÅÓïÒô,ÄÇÊÇÑ¹Ëõ¹ýµÄ¡£
 if not "%KIT_NOPAUSE%"=="1" pause
   exit /b 2
 )
 
 set SAIDTXT=
 if exist "what-i-said.txt" set SAIDTXT=what-i-said.txt
-if not defined SAIDTXT if exist "æˆ‘çš„å½•éŸ³è¯´çš„æ˜¯ä»€ä¹ˆ.txt" set SAIDTXT=æˆ‘çš„å½•éŸ³è¯´çš„æ˜¯ä»€ä¹ˆ.txt
+if not defined SAIDTXT if exist "ÎÒµÄÂ¼ÒôËµµÄÊÇÊ²Ã´.txt" set SAIDTXT=ÎÒµÄÂ¼ÒôËµµÄÊÇÊ²Ã´.txt
 if not defined SAIDTXT (
-  echo x æ‰¾ä¸åˆ°å½•éŸ³æ–‡æœ¬ã€‚
-  echo   æ”¾ä¸€ä¸ª what-i-said.txtï¼ˆæˆ–ã€Œæˆ‘çš„å½•éŸ³è¯´çš„æ˜¯ä»€ä¹ˆ.txtã€ï¼‰,
-  echo   æŠŠä½ å½•éŸ³é‡Œå¿µçš„é‚£å¥è¯åŽŸæ ·å†™è¿›åŽ»,å¿…é¡»ä¸€å­—ä¸å·®ã€‚
+  echo x ÕÒ²»µ½Â¼ÒôÎÄ±¾¡£
+  echo   ·ÅÒ»¸ö what-i-said.txt£¨»ò¡¸ÎÒµÄÂ¼ÒôËµµÄÊÇÊ²Ã´.txt¡¹£©,
+  echo   °ÑÄãÂ¼ÒôÀïÄîµÄÄÇ¾ä»°Ô­ÑùÐ´½øÈ¥,±ØÐëÒ»×Ö²»²î¡£
 if not "%KIT_NOPAUSE%"=="1" pause
   exit /b 2
 )
 
 if not exist "story.txt" (
-  echo x æ‰¾ä¸åˆ° story.txtã€‚æŠŠè¦å¿µçš„æ–‡å­—å­˜æˆ story.txt æ”¾åœ¨è¿™ä¸ªæ–‡ä»¶å¤¹ã€‚
+  echo x ÕÒ²»µ½ story.txt¡£°ÑÒªÄîµÄÎÄ×Ö´æ³É story.txt ·ÅÔÚÕâ¸öÎÄ¼þ¼Ð¡£
 if not "%KIT_NOPAUSE%"=="1" pause
   exit /b 2
 )
 
-echo Â· ç”¨å½•éŸ³:%VOICEWAV%
-echo Â· ç”¨æ–‡æœ¬:%SAIDTXT%
+echo ¡¤ ÓÃÂ¼Òô:%VOICEWAV%
+echo ¡¤ ÓÃÎÄ±¾:%SAIDTXT%
 
 echo.
-echo [3/3] å¼€å§‹ç”Ÿæˆ...
+echo [3/3] ¿ªÊ¼Éú³É...
 echo.
 
-rem å…³é”®:åˆæˆå¿…é¡»ç”¨ CosyVoice è‡ªå·±çš„ Pythonï¼ˆå®ƒè£…äº† torch ç­‰ä¾èµ–ï¼‰,
-rem ç”¨ç³»ç»Ÿ Python ä¼šç›´æŽ¥æŠ¥ "No module named 'torch'"ã€‚
+rem ¹Ø¼ü:ºÏ³É±ØÐëÓÃ CosyVoice ×Ô¼ºµÄ Python£¨Ëü×°ÁË torch µÈÒÀÀµ£©,
+rem ÓÃÏµÍ³ Python »áÖ±½Ó±¨ "No module named 'torch'"¡£
 set CPY=
 if exist "%~dp0tools\CosyVoice\.venv\Scripts\python.exe" set CPY=%~dp0tools\CosyVoice\.venv\Scripts\python.exe
 if not defined CPY if exist "%USERPROFILE%\AppData\Roaming\OmniVoice\engines\cosyvoice\CosyVoice\.venv\Scripts\python.exe" set CPY=%USERPROFILE%\AppData\Roaming\OmniVoice\engines\cosyvoice\CosyVoice\.venv\Scripts\python.exe
 if not defined CPY (
-  echo x æ‰¾ä¸åˆ° CosyVoice çš„è¿è¡ŒçŽ¯å¢ƒ,è¯·å…ˆè¿è¡Œ install.batï¼ˆæˆ–ã€Œä¸€é”®å®‰è£….batã€ï¼‰ã€‚
+  echo x ÕÒ²»µ½ CosyVoice µÄÔËÐÐ»·¾³,ÇëÏÈÔËÐÐ install.bat£¨»ò¡¸Ò»¼ü°²×°.bat¡¹£©¡£
 if not "%KIT_NOPAUSE%"=="1" pause
   exit /b 2
 )
-echo Â· ä½¿ç”¨çŽ¯å¢ƒ:%CPY%
+echo ¡¤ Ê¹ÓÃ»·¾³:%CPY%
 %CPY% tools\tts.py --text-file "story.txt" --voice "%VOICEWAV%" --voice-text-file "%SAIDTXT%" --out "output\story.mp3"
 if errorlevel 1 (
   echo.
-  echo x ç”Ÿæˆå¤±è´¥,è¯·æŠŠä¸Šé¢çš„æŠ¥é”™æˆªå›¾å‘ç»™ä½œè€…ã€‚
+  echo x Éú³ÉÊ§°Ü,Çë°ÑÉÏÃæµÄ±¨´í½ØÍ¼·¢¸ø×÷Õß¡£
 if not "%KIT_NOPAUSE%"=="1" pause
   exit /b 3
 )
 
 echo.
-echo å®Œæˆ!éŸ³é¢‘åœ¨ output æ–‡ä»¶å¤¹é‡Œ(output\story.mp3)ã€‚
+echo Íê³É!ÒôÆµÔÚ output ÎÄ¼þ¼ÐÀï(output\story.mp3)¡£
 start "" "output"
 if not "%KIT_NOPAUSE%"=="1" pause

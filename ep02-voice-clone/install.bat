@@ -1,63 +1,101 @@
 @echo off
-chcp 65001 >nul
 setlocal
+rem ÖĞÎÄ Windows Ä¬ÈÏ´úÂëÒ³ÊÇ GBK:ÈÃ python µÄÊä³öÒ²°´ GBK ×ß,±ÜÃâÂÒÂë¡£
+rem (²»ÒªÓÃ chcp 65001:UTF-8 ´úÂëÒ³ÏÂ bat ×ÔÉíµÄÖĞÎÄĞĞ»á±»½âÎö»µ,
+rem  Êµ²â±¨ ". was unexpected at this time." / "'¡­' is not recognized")
+set PYTHONIOENCODING=gbk
 cd /d "%~dp0"
 
 echo ============================================
 echo   Local Voice Kit - Install (run ONCE only)
-echo   æœ¬åœ°å£°éŸ³åŒ… Â· ä¸€é”®å®‰è£…ï¼ˆåªéœ€è·‘ä¸€æ¬¡ï¼‰
+echo   ±¾µØÉùÒô°ü ¡¤ Ò»¼ü°²×°£¨Ö»ĞèÅÜÒ»´Î£©
 echo ============================================
 echo.
-echo   è¦ä¸‹è½½çº¦ 7G æ¨¡å‹æ–‡ä»¶,è¯·ä¿è¯ç£ç›˜ç©ºé—´å’Œç½‘ç»œã€‚
-echo   è£…å¥½åç¦»çº¿ä¹Ÿèƒ½ç”¨,ä»¥åä¸ç”¨å†è·‘è¿™ä¸ªã€‚
+echo   ÒªÏÂÔØÔ¼ 7G Ä£ĞÍÎÄ¼ş,Çë±£Ö¤´ÅÅÌ¿Õ¼äºÍÍøÂç¡£
+echo   ×°ºÃºóÀëÏßÒ²ÄÜÓÃ,ÒÔºó²»ÓÃÔÙÅÜÕâ¸ö¡£
 echo.
 if not "%KIT_NOPAUSE%"=="1" pause
 
+rem ÕÒ Python:ÓÅÏÈ py -3(×î¿É¿¿),Æä´Î python¡£
+rem ±ØĞëĞ£ÑéËüÄÜ½¨ venv ¡ª¡ª Êµ²â²È¹ı:ÓĞµÄ python(±ÈÈçËæ±ğµÄÈí¼ş×°½øÀ´µÄ)
+rem Á¬ pip ¶¼Ã»ÓĞ,½¨ venv »áÊ§°Ü²¢±¨ "No module named pip",¶ÁÕß»á¿´ãÂ¡£
+rem °æ±¾ÓÅÏÈ:3.11 > 3.10 > ÈÎÒâ 3.x¡£
+rem ±ğÖ±½ÓÓÃ py -3 ¡ª¡ª Êµ²âËü»áÌôµ½×îĞÂ°æ(±ÈÈç 3.14),¶ø CosyVoice µÄÒÀÀµ
+rem ÔÚÄÇÃ´ĞÂµÄ°æ±¾ÉÏºÜ¿ÉÄÜ×°²»ÉÏ¡£
 set PY=
-where python >nul 2>nul && set PY=python
-if "%PY%"=="" ( py -3 --version >nul 2>nul && set PY=py -3 )
+py -3.11 -c "import venv, ensurepip" >nul 2>nul && set PY=py -3.11
+if "%PY%"=="" ( py -3.10 -c "import venv, ensurepip" >nul 2>nul && set PY=py -3.10 )
+if "%PY%"=="" ( py -3 -c "import venv, ensurepip" >nul 2>nul && set PY=py -3 )
+if "%PY%"=="" ( python -c "import venv, ensurepip" >nul 2>nul && set PY=python )
 if "%PY%"=="" (
-  echo x æ²¡æ‰¾åˆ° Pythonã€‚è¯·å…ˆè£… Python 3.10/3.11 å¹¶å‹¾é€‰ Add Python to PATHã€‚
+  echo x Ã»ÕÒµ½ÄÜÓÃµÄ Python^(ĞèÒª´ø venv ºÍ pip^)¡£
+  echo   Çëµ½ https://www.python.org/downloads/ ×° Python 3.10 »ò 3.11,
+  echo   °²×°Ê±Îñ±Ø¹´Ñ¡ "Add Python to PATH",È»ºóÖØĞÂÔËĞĞ±¾½Å±¾¡£
+  echo   ×¢Òâ:Windows Ó¦ÓÃÉÌµêÀïµÄÄÇ¸ö "python" ²»ĞĞ,Çë×°¹ÙÍø°æ±¾¡£
 if not "%KIT_NOPAUSE%"=="1" pause
   exit /b 2
 )
+echo ¡¤ Ê¹ÓÃ Python:%PY%
+%PY% --version
 
 where git >nul 2>nul
 if errorlevel 1 (
-  echo x æ²¡æ‰¾åˆ° gitã€‚è¯·å…ˆè£… Git:https://git-scm.com/downloads
+  echo x Ã»ÕÒµ½ git¡£ÇëÏÈ×° Git:https://git-scm.com/downloads
 if not "%KIT_NOPAUSE%"=="1" pause
   exit /b 2
 )
 
 set DEST=%~dp0tools\CosyVoice
 if exist "%DEST%\cosyvoice" (
-  echo Â· å·²ç»è£…è¿‡äº†,è·³è¿‡ä¸‹è½½ã€‚
+  echo ¡¤ ÒÑ¾­×°¹ıÁË,Ìø¹ıÏÂÔØ¡£
 ) else (
-  echo [1/3] ä¸‹è½½ CosyVoice æºç ï¼ˆå«ç¬¬ä¸‰æ–¹ä¾èµ–,å¯èƒ½è¦å‡ åˆ†é’Ÿï¼‰...
+  echo [1/3] ÏÂÔØ CosyVoice Ô´Âë£¨º¬µÚÈı·½ÒÀÀµ,¿ÉÄÜÒª¼¸·ÖÖÓ£©...
   git clone --recursive https://github.com/FunAudioLLM/CosyVoice.git "%DEST%"
-  if errorlevel 1 ( echo x ä¸‹è½½å¤±è´¥,æ£€æŸ¥ç½‘ç»œåé‡è¯•ã€‚ & pause & exit /b 3 )
+  if errorlevel 1 (
+    echo.
+    echo x ´Ó GitHub ÏÂÔØÊ§°Ü ¡ª¡ª ¹úÄÚÍøÂçºÜ³£¼û,²»ÊÇÄãµÄÎÊÌâ¡£
+    echo   ÕıÔÚÓÃ¹úÄÚ¾µÏñµØÖ·ÖØÊÔ...
+    rmdir /s /q "%DEST%" 2>nul
+    git clone --recursive https://gh-proxy.com/https://github.com/FunAudioLLM/CosyVoice.git "%DEST%"
+    if errorlevel 1 (
+      echo.
+      echo x ¾µÏñÒ²Ê§°ÜÁË¡£ÇëÊÖ¶¯´¦Àí:
+      echo   1^) ´ò¿ª https://gh-proxy.com/ »ò https://hf-mirror.com/
+      echo   2^) °Ñ https://github.com/FunAudioLLM/CosyVoice Õ³½øÈ¥ÏÂÔØ
+      echo   3^) ½âÑ¹ºó·Å½ø:%DEST%
+      echo   È»ºóÖØĞÂÔËĞĞ±¾½Å±¾¡£
+      if not "%KIT_NOPAUSE%"=="1" pause
+      exit /b 3
+    )
+    echo ¡¤ ¾µÏñÏÂÔØ³É¹¦¡£
+  )
 )
 
 echo.
-echo [2/3] å®‰è£…è¿è¡Œç¯å¢ƒï¼ˆè¦å‡ åˆ†é’Ÿï¼‰...
+echo [2/3] °²×°ÔËĞĞ»·¾³£¨Òª¼¸·ÖÖÓ£©...
 cd /d "%DEST%"
 %PY% -m venv .venv
 call .venv\Scripts\activate.bat
 python -m pip install --upgrade pip -q
 pip install -r requirements.txt
 pip install huggingface_hub modelscope
-if errorlevel 1 ( echo x ä¾èµ–å®‰è£…å¤±è´¥,æŠŠæŠ¥é”™å‘ç»™ä½œè€…ã€‚ & pause & exit /b 4 )
+if errorlevel 1 ( echo x ÒÀÀµ°²×°Ê§°Ü,°Ñ±¨´í·¢¸ø×÷Õß¡£ & pause & exit /b 4 )
 
 echo.
-echo [3/3] ä¸‹è½½æ¨¡å‹æ–‡ä»¶ï¼ˆçº¦ 5G,æœ€æ…¢çš„ä¸€æ­¥ï¼‰...
+echo [3/3] ÏÂÔØÄ£ĞÍÎÄ¼ş£¨Ô¼ 5G,×îÂıµÄÒ»²½£©...
 python -c "from huggingface_hub import snapshot_download as s; s('FunAudioLLM/Fun-CosyVoice3-0.5B-2512', local_dir='pretrained_models/Fun-CosyVoice3-0.5B')"
 if errorlevel 1 (
-  echo x æ¨¡å‹ä¸‹è½½å¤±è´¥ã€‚å›½å†…ç½‘ç»œå¯å…ˆè®¾é•œåƒåé‡è¯•:
-  echo     set HF_ENDPOINT=https://hf-mirror.com
+  echo x Ä£ĞÍÏÂÔØÊ§°Ü ¡ª¡ª ¹úÄÚÍøÂçºÜ³£¼û¡£
+  echo   ÕıÔÚÓÃ HF ¾µÏñÖØÊÔ...
+  set HF_ENDPOINT=https://hf-mirror.com
+  python -c "from huggingface_hub import snapshot_download as s; s('FunAudioLLM/Fun-CosyVoice3-0.5B-2512', local_dir='pretrained_models/Fun-CosyVoice3-0.5B')"
+  if errorlevel 1 (
+    echo x ¾µÏñÒ²Ê§°Ü¡£¿ÉÊÖ¶¯´Ó https://hf-mirror.com/FunAudioLLM/Fun-CosyVoice3-0.5B-2512 ÏÂÔØ,
+    echo   ·Å½ø %DEST%\pretrained_models\Fun-CosyVoice3-0.5B ºóÖØĞÂÔËĞĞ±¾½Å±¾¡£
 if not "%KIT_NOPAUSE%"=="1" pause
   exit /b 5
 )
 
 echo.
-echo å®‰è£…å®Œæˆ!ä»¥ååŒå‡» start.bat å°±èƒ½ç”¨äº†ã€‚
+echo °²×°Íê³É!ÒÔºóË«»÷ start.bat ¾ÍÄÜÓÃÁË¡£
 if not "%KIT_NOPAUSE%"=="1" pause
