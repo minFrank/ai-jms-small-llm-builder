@@ -1,0 +1,78 @@
+# 第 02 期 · 失败与报错原始记录
+
+审查提到「文章里的报错文本在日志里找不到」。这里把三个坑的原始报错补进来。
+
+**来源说明(如实)**:下面①③是开发过程中在屏幕上看到的原始输出(当时会话的过程记录里保留了原文,
+未单独落成日志文件);②③的**现象**在 `run-2026-09-13.md` 里有记录(成品只有 15.84 秒)。
+现在把原文集中到这里,便于读者核对每一句报错。
+
+---
+
+## 坑一:长文本只输出第一段(现象)
+
+**没有报错**,是静默的:合成看起来成功,成品音频却只有 15.84 秒。
+
+- 那次输入:382 字
+- 引擎切段数:6 段
+- 产出文件时长:15.84 秒(只含第 1 段)
+- 当时没有留日志(后续四次实测的日志见 `run-2026-09-13.md`)
+
+修好之后的正常日志(有日志):
+```
+· 引擎切成 2 段,正在拼接…
+√ 完成!生成音频 28.8 秒,用时 167 秒
+```
+
+---
+
+## 坑二:脚本找错了录音文件(原始报错)
+
+**原始报错(逐字)**:
+```
+LibsndfileError: Error opening 'C:\Users\Frank\AppData\Roaming\OmniVoice\engines\cosyvoice\CosyVoice\我的录音.wav': System error.
+```
+
+原因:脚本先把工作目录切到了模型目录,再去读相对路径 `我的录音.wav` ——
+于是它去模型目录里找读者的录音,当然找不到。
+
+修法:`tools/tts.py` 里把 `--voice` / `--text-file` / `--out` 三个路径**在 chdir 之前**转成绝对路径。
+
+---
+
+## 坑三:中文变量把命令行拆坏(原始报错)
+
+**原始报错(逐字)**:
+```
+usage: tts.py [-h] --text-file TEXT_FILE --voice VOICE --voice-text VOICE_TEXT
+              --out OUT [--model-dir MODEL_DIR]
+tts.py: error: the following arguments are required: --out
+```
+
+**为什么这条特别值钱**:命令行里明明写了 `--out`,Python 却说它不存在 ——
+因为录音文本是经 Windows 批处理的中文变量 `%VOICETEXT%` 传进命令行的,
+在 `chcp 65001` 的代码页下,展开后的中文把命令拆坏了。
+
+修法:不再让批处理传中文,改成 **`--voice-text-file`,由 Python 自己读那个文本文件**。
+
+---
+
+## 附带修掉的另外两个 bat 问题(也是真跑才暴露)
+
+```
+'…后不用再跑这个。' is not recognized as an internal or external command,
+operable program or batch file.
+```
+> bat 存 UTF-8 + `chcp 65001` 时,cmd 解析中文行会出错。修法:bat 一律存 GBK,去掉 chcp。
+
+```
+Error: Command '[...\.venv\\Scripts\\python.exe', '-m', 'ensurepip', '--upgrade', '--default-pip']' returned non-zero exit status 1.
+C:\...\hermes-agent\venv\Scripts\python.exe: No module named pip
+```
+> `where python` 命中了别的软件自带的 python(连 pip 都没有)。修法:先校验 `venv` + `ensurepip` 可用,
+> 版本优先 3.11 > 3.10 > 3.x。
+
+```
+fatal: fetch-pack: invalid index-pack output
+fetch-pack: unexpected disconnect while reading sideband packet
+```
+> 直连 GitHub 失败(国内网络)。修法:失败自动换 `gh-proxy` 镜像重试;镜像也失败则打印手动放置步骤。

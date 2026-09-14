@@ -1,0 +1,56 @@
+# 许可核实记录(2026-09-14)
+
+审查(三审)指出:文章下了「可以商用」的结论,但没做外部核实。这里补上核实过程与证据。
+
+## ① 代码仓库 LICENSE
+
+来源:https://raw.githubusercontent.com/FunAudioLLM/CosyVoice/main/LICENSE
+
+```
+Apache License
+                           Version 2.0, January 2004
+                        http://www.apache.org/licenses/
+   TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION
+   1. Definitions.
+      "License" shall mean the terms and conditions for use, reproduction,
+      and distribution as defined by Sections 1 through 9 of this document.
+```
+
+→ **Apache License 2.0**
+
+## ② 模型权重许可(HuggingFace 模型页元数据)
+
+来源:https://huggingface.co/api/models/FunAudioLLM/Fun-CosyVoice3-0.5B-2512
+
+```json
+{
+  "license": "apache-2.0",
+  "tags": ["license:apache-2.0"],
+  "lastModified": "2026-02-03T07:58:17.000Z"
+}
+```
+
+来源:https://huggingface.co/api/models/FunAudioLLM/Fun-CosyVoice3-0.5B
+
+```json
+{
+  "license": "apache-2.0",
+  "tags": ["license:apache-2.0"]
+}
+```
+
+→ **模型权重也是 apache-2.0**
+
+## 结论
+
+**代码与模型权重均为 Apache-2.0** —— 文章里「免费、可以商用」的结论**成立**,现有外部证据支撑。
+
+Apache-2.0 的要点(白话):
+- 可以免费用、商用、修改、再分发
+- 要保留版权声明与许可声明
+- 不提供担保
+
+## 注意事项(文章里也写了)
+
+许可允许商用,但**声音是谁的**是另一回事:
+克隆他人声音涉及人格权益,需事先取得同意 —— 这是法律层面的要求,与模型许可无关。

@@ -1,0 +1,44 @@
+{
+  "reviewer.localai": {
+    "ok": true,
+    "model": "deepseek-chat",
+    "chars": 5534,
+    "secs": 12,
+    "error": null
+  },
+  "reviewer.localai.L1": {
+    "ok": true,
+    "model": "deepseek-chat",
+    "chars": 6746,
+    "secs": 20,
+    "error": null
+  },
+  "reviewer.localai.L2": {
+    "ok": true,
+    "model": "deepseek-chat",
+    "chars": 2447,
+    "secs": 6,
+    "error": null
+  },
+  "reviewer.localai.L3": {
+    "ok": true,
+    "model": "deepseek-chat",
+    "chars": 1842,
+    "secs": 4,
+    "error": null
+  },
+  "proofreader.localai": {
+    "ok": true,
+    "model": "deepseek-chat",
+    "chars": 5404,
+    "secs": 12,
+    "error": null
+  },
+  "reader.localai": {
+    "ok": true,
+    "model": "deepseek-chat",
+    "chars": 1513,
+    "secs": 5,
+    "error": null
+  }
+}
