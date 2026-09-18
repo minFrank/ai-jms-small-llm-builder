@@ -41,4 +41,4 @@ DOWNLOAD_OK: ...\tools\CosyVoice\pretrained_models\Fun-CosyVoice3-0.5B
 ## 五、对读者的意义
 
 **国内网络下大概率只能走 ModelScope → 实际要下约 12G（模型 9.1G + 环境 3G）。**
-文章里按「8–12G」给区间，就是覆盖这两种情形。
+文章里按「7–12G」给区间，就是覆盖这两种情形。

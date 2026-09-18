@@ -9,7 +9,7 @@
 |---|---|---|
 | `tools/tts.py` | 299 | 主程序：加载模型 → 按句切分 → 逐句合成 → ffmpeg 拼接 → 输出 wav/mp3 |
 | `tools/check.py` | 83 | 环境自检：Python 版本、依赖、模型文件、显存/内存 |
-| `install.bat` / `一键安装.bat` | 191 / 190 | 建 venv、装依赖、下模型（首次 8–12G，看下载源） |
+| `install.bat` / `一键安装.bat` | 191 / 190 | 建 venv、装依赖、下模型（首次 7–12G，看下载源） |
 | `start.bat` / `一键生成.bat` | 99 / 94 | 找 Python → 调 `tts.py` → 报错时给中文提示 |
 | `bench-long/bench_long.py` | 153 | 长文本实测脚本（走同一条 tts.py 路径，采样耗时/内存） |
 
@@ -21,7 +21,7 @@
 | 232 / 245 秒（机器忙时） | `logs/run-2026-09-13.md` | 两次被污染的补测，标注不计入 |
 | 382 字 → 11.5 分钟、5.89 倍实时 | `logs/run-2026-09-13.md` | 长文本（上一期素材）的合成记录 |
 | 内存净 6.0–6.5G、峰值 8G 出头 | `logs/runtime-memory-disk.txt` | 采样方法 + 原始采样点 + 净值换算 |
-| 磁盘 6.94G（HF 源：模型 5.05G + 环境 1.88G）／**对外口径 8–12G（看下载源）** | `logs/runtime-memory-disk.txt` | 目录递归实测；文末有 2026-09-15 的口径更新说明 |
+| 磁盘 6.94G（HF 源：模型 5.05G + 环境 1.88G）／**对外口径 7–12G（看下载源）** | `logs/runtime-memory-disk.txt` | 目录递归实测；文末有 2026-09-15 的口径更新说明 |
 | 坑一/坑二/坑三的报错原文 | `logs/runtime-errors.txt` | Python traceback / cmd 报错逐字 |
 | CosyVoice 3 = Apache-2.0 | `logs/license-check.txt` | GitHub LICENSE + HF 两个模型页 |
 | 15 / 30 分钟两组新数据 | `bench-long/result-15min.md` / `.json` | 长文本实测原始输出（逐块耗时、内存峰值） |
@@ -29,7 +29,7 @@
 ## 三、自己复现
 
 ```
-# 1) 安装（首次 8–12G，需联网；看下载源）
+# 1) 安装（首次 7–12G，需联网；看下载源）
 双击 install.bat
 
 # 2) 放两样东西：我的录音.wav + 我的录音说的是什么.txt
