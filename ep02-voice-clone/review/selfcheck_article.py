@@ -173,5 +173,5 @@ def check(path: Path) -> int:
 
 if __name__ == "__main__":
     target = Path(sys.argv[1]) if len(sys.argv) > 1 else Path(
-        r"C:\Users\Frank\AppData\Local\hermes\workspace\articles\series\local-ai\local-ai-02-bedtime-story.md")
+        r"C:\Users\<用户名>\AppData\Local\hermes\workspace\articles\series\local-ai\local-ai-02-bedtime-story.md")
     sys.exit(check(target))

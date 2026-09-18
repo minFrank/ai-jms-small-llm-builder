@@ -13,7 +13,7 @@ import time
 from pathlib import Path
 
 KIT = Path(r"D:\study\ai-jms\ai-jms-small-llm-builder\ep02-voice-clone")
-CV = Path(r"C:\Users\Frank\AppData\Roaming\OmniVoice\engines\cosyvoice\CosyVoice")
+CV = Path(r"C:\Users\<用户名>\AppData\Roaming\OmniVoice\engines\cosyvoice\CosyVoice")
 PY = CV / ".venv" / "Scripts" / "python.exe"
 TTS = KIT / "tools" / "tts.py"
 BENCH = KIT / "bench-long"
