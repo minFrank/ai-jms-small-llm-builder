@@ -1,0 +1,124 @@
+{
+  "run_at": "2026-09-14 21:55",
+  "text_file": "bench-long/story-15min.txt",
+  "chars": 4201,
+  "block_chars": 300,
+  "blocks_completed": 15,
+  "stream": false,
+  "audio_total_s": 1125.8,
+  "audio_total_min": 18.8,
+  "elapsed_total_s": 7636.4,
+  "elapsed_total_min": 127.3,
+  "overall_ratio": 6.78,
+  "ratio_min": 5.97,
+  "ratio_max": 7.71,
+  "ratio_avg": 6.81,
+  "per_block": [
+    {
+      "block": 1,
+      "chars": 298,
+      "audio_s": 77.8,
+      "elapsed_s": 464.2,
+      "ratio": 5.97
+    },
+    {
+      "block": 2,
+      "chars": 288,
+      "audio_s": 70.0,
+      "elapsed_s": 437.3,
+      "ratio": 6.25
+    },
+    {
+      "block": 3,
+      "chars": 290,
+      "audio_s": 77.12,
+      "elapsed_s": 495.4,
+      "ratio": 6.42
+    },
+    {
+      "block": 4,
+      "chars": 290,
+      "audio_s": 77.6,
+      "elapsed_s": 565.2,
+      "ratio": 7.28
+    },
+    {
+      "block": 5,
+      "chars": 285,
+      "audio_s": 76.04,
+      "elapsed_s": 557.0,
+      "ratio": 7.32
+    },
+    {
+      "block": 6,
+      "chars": 292,
+      "audio_s": 76.88,
+      "elapsed_s": 513.5,
+      "ratio": 6.68
+    },
+    {
+      "block": 7,
+      "chars": 293,
+      "audio_s": 80.32,
+      "elapsed_s": 489.3,
+      "ratio": 6.09
+    },
+    {
+      "block": 8,
+      "chars": 299,
+      "audio_s": 76.88,
+      "elapsed_s": 461.5,
+      "ratio": 6.0
+    },
+    {
+      "block": 9,
+      "chars": 296,
+      "audio_s": 81.6,
+      "elapsed_s": 510.1,
+      "ratio": 6.25
+    },
+    {
+      "block": 10,
+      "chars": 286,
+      "audio_s": 77.72,
+      "elapsed_s": 526.8,
+      "ratio": 6.78
+    },
+    {
+      "block": 11,
+      "chars": 284,
+      "audio_s": 81.76,
+      "elapsed_s": 558.0,
+      "ratio": 6.83
+    },
+    {
+      "block": 12,
+      "chars": 285,
+      "audio_s": 82.68,
+      "elapsed_s": 637.8,
+      "ratio": 7.71
+    },
+    {
+      "block": 13,
+      "chars": 298,
+      "audio_s": 80.08,
+      "elapsed_s": 607.4,
+      "ratio": 7.59
+    },
+    {
+      "block": 14,
+      "chars": 298,
+      "audio_s": 77.04,
+      "elapsed_s": 566.9,
+      "ratio": 7.36
+    },
+    {
+      "block": 15,
+      "chars": 119,
+      "audio_s": 32.28,
+      "elapsed_s": 246.0,
+      "ratio": 7.62
+    }
+  ],
+  "note": "后段(第12-15块)偏慢至 7.5+ 倍,因同期本机并行跑文章编辑/浏览器验证,CPU 争用;不是长文本本身开销上升"
+}

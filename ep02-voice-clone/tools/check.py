@@ -37,7 +37,7 @@ def main() -> int:
         warn = "  ← 建议 16G 以上" if gb < 15 else ""
         print(f"[3] 内存:{gb:.1f} G{warn}")
         if gb < 15:
-            print("    (8G 的机器跑起来会很吃力,可以先试短文本)")
+            print("    (8G 的机器跑不动:加载模型那几秒会顶到 8G 出头,占满内存。16G 及以上可以)")
     except Exception:
         print("[3] 内存:读取失败(不影响使用)")
 

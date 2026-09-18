@@ -106,3 +106,14 @@ python scripts/selfcheck_article.py articles/series/local-ai/<文章>.md
 
 本流程**同样适用于其他栏目**(AI 雷达 / 码上趋势 / 财经周报 / 每日精选),
 只需把提示词的 scope 换成对应栏目 —— 复核模式与删除检查是通用的。
+
+---
+
+## 附：每期必交的两份索引
+
+| 文件 | 作用 | 由谁强制 |
+|---|---|---|
+| `SOURCE-AND-DATA.md` | 文章数字 → 日志文件 的对照表（文章里能核对、GitHub 上能查） | A1 数据有日志 |
+| `review/problems-ledger.md` | 本期问题台账（当作下期的检查清单） | 流程 v2 |
+
+模板在 `templates/SOURCE-AND-DATA.template.md`。

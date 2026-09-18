@@ -1,0 +1,964 @@
+============================================
+  本地声音包 · 一键安装（只需跑一次）
+============================================
+
+  要下载约 7G 模型文件,请保证磁盘空间和网络。
+  装好后离线也能用,以后不用再跑这个。
+
+· 使用 Python:py -V:Astral/CPython3.11.16（本包要求 3.10 / 3.11 / 3.12）
+Python 3.11.16
+· 已经装过了,跳过下载。
+
+[2/3] 安装运行环境（要几分钟）...
+Error: [Errno 13] Permission denied: 'D:\\study\\ai-jms\\ai-jms-small-llm-builder\\ep02-voice-clone\\tools\\CosyVoice\\.venv\\Scripts\\python.exe'
+Looking in indexes: https://pypi.tuna.tsinghua.edu.cn/simple, https://download.pytorch.org/whl/cu121, https://aiinfra.pkgs.visualstudio.com/PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/
+Ignoring deepspeed: markers 'sys_platform == "linux"' don't match your environment
+Ignoring onnxruntime-gpu: markers 'sys_platform == "linux"' don't match your environment
+Ignoring tensorrt-cu12: markers 'sys_platform == "linux"' don't match your environment
+Ignoring tensorrt-cu12-bindings: markers 'sys_platform == "linux"' don't match your environment
+Ignoring tensorrt-cu12-libs: markers 'sys_platform == "linux"' don't match your environment
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /whl/cu121/conformer/
+Could not fetch URL https://download.pytorch.org/whl/cu121/conformer/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/conformer/
+Could not fetch URL https://aiinfra.pkgs.visualstudio.com/PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/conformer/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+Collecting conformer==0.3.2 (from -r requirements.txt (line 3))
+  Using cached conformer-0.3.2-py3-none-any.whl (4.3 kB)
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /whl/cu121/diffusers/
+Could not fetch URL https://download.pytorch.org/whl/cu121/diffusers/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/diffusers/
+Could not fetch URL https://aiinfra.pkgs.visualstudio.com/PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/diffusers/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+Collecting diffusers==0.29.0 (from -r requirements.txt (line 5))
+  Using cached diffusers-0.29.0-py3-none-any.whl (2.2 MB)
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /whl/cu121/fastapi/
+Could not fetch URL https://download.pytorch.org/whl/cu121/fastapi/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/fastapi/
+Could not fetch URL https://aiinfra.pkgs.visualstudio.com/PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/fastapi/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+Collecting fastapi==0.115.6 (from -r requirements.txt (line 6))
+  Using cached fastapi-0.115.6-py3-none-any.whl (94 kB)
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /whl/cu121/fastapi-cli/
+Could not fetch URL https://download.pytorch.org/whl/cu121/fastapi-cli/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/fastapi-cli/
+Could not fetch URL https://aiinfra.pkgs.visualstudio.com/PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/fastapi-cli/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+Collecting fastapi-cli==0.0.4 (from -r requirements.txt (line 7))
+  Using cached fastapi_cli-0.0.4-py3-none-any.whl (9.5 kB)
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /whl/cu121/gdown/
+Could not fetch URL https://download.pytorch.org/whl/cu121/gdown/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/gdown/
+Could not fetch URL https://aiinfra.pkgs.visualstudio.com/PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/gdown/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+Collecting gdown==5.1.0 (from -r requirements.txt (line 8))
+  Using cached gdown-5.1.0-py3-none-any.whl (17 kB)
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /whl/cu121/gradio/
+Could not fetch URL https://download.pytorch.org/whl/cu121/gradio/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/gradio/
+Could not fetch URL https://aiinfra.pkgs.visualstudio.com/PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/gradio/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+Collecting gradio==5.4.0 (from -r requirements.txt (line 9))
+  Using cached gradio-5.4.0-py3-none-any.whl (56.7 MB)
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /whl/cu121/grpcio/
+Could not fetch URL https://download.pytorch.org/whl/cu121/grpcio/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/grpcio/
+Could not fetch URL https://aiinfra.pkgs.visualstudio.com/PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/grpcio/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+Collecting grpcio==1.57.0 (from -r requirements.txt (line 10))
+  Using cached grpcio-1.57.0-cp311-cp311-win_amd64.whl (4.3 MB)
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /whl/cu121/grpcio-tools/
+Could not fetch URL https://download.pytorch.org/whl/cu121/grpcio-tools/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/grpcio-tools/
+Could not fetch URL https://aiinfra.pkgs.visualstudio.com/PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/grpcio-tools/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+Collecting grpcio-tools==1.57.0 (from -r requirements.txt (line 11))
+  Using cached grpcio_tools-1.57.0-cp311-cp311-win_amd64.whl (2.0 MB)
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /whl/cu121/hydra-core/
+Could not fetch URL https://download.pytorch.org/whl/cu121/hydra-core/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/hydra-core/
+Could not fetch URL https://aiinfra.pkgs.visualstudio.com/PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/hydra-core/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+Collecting hydra-core==1.3.2 (from -r requirements.txt (line 12))
+  Using cached hydra_core-1.3.2-py3-none-any.whl (154 kB)
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /whl/cu121/hyperpyyaml/
+Could not fetch URL https://download.pytorch.org/whl/cu121/hyperpyyaml/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/hyperpyyaml/
+Could not fetch URL https://aiinfra.pkgs.visualstudio.com/PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/hyperpyyaml/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+Collecting HyperPyYAML==1.2.3 (from -r requirements.txt (line 13))
+  Using cached hyperpyyaml-1.2.3-py3-none-any.whl (16 kB)
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /whl/cu121/inflect/
+Could not fetch URL https://download.pytorch.org/whl/cu121/inflect/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/inflect/
+Could not fetch URL https://aiinfra.pkgs.visualstudio.com/PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/inflect/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+Collecting inflect==7.3.1 (from -r requirements.txt (line 14))
+  Using cached inflect-7.3.1-py3-none-any.whl (34 kB)
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /whl/cu121/librosa/
+Could not fetch URL https://download.pytorch.org/whl/cu121/librosa/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/librosa/
+Could not fetch URL https://aiinfra.pkgs.visualstudio.com/PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/librosa/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+Collecting librosa==0.10.2 (from -r requirements.txt (line 15))
+  Using cached librosa-0.10.2-py3-none-any.whl (260 kB)
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /whl/cu121/lightning/
+Could not fetch URL https://download.pytorch.org/whl/cu121/lightning/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/lightning/
+Could not fetch URL https://aiinfra.pkgs.visualstudio.com/PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/lightning/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+Collecting lightning==2.2.4 (from -r requirements.txt (line 16))
+  Using cached lightning-2.2.4-py3-none-any.whl (2.0 MB)
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /whl/cu121/matplotlib/
+Could not fetch URL https://download.pytorch.org/whl/cu121/matplotlib/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/matplotlib/
+Could not fetch URL https://aiinfra.pkgs.visualstudio.com/PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/matplotlib/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+Collecting matplotlib==3.7.5 (from -r requirements.txt (line 17))
+  Using cached matplotlib-3.7.5-cp311-cp311-win_amd64.whl (7.5 MB)
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /whl/cu121/modelscope/
+Could not fetch URL https://download.pytorch.org/whl/cu121/modelscope/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/modelscope/
+Could not fetch URL https://aiinfra.pkgs.visualstudio.com/PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/modelscope/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+Collecting modelscope==1.20.0 (from -r requirements.txt (line 18))
+  Using cached modelscope-1.20.0-py3-none-any.whl (5.8 MB)
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /whl/cu121/networkx/
+Could not fetch URL https://download.pytorch.org/whl/cu121/networkx/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/networkx/
+Could not fetch URL https://aiinfra.pkgs.visualstudio.com/PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/networkx/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+Collecting networkx==3.1 (from -r requirements.txt (line 19))
+  Using cached networkx-3.1-py3-none-any.whl (2.1 MB)
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /whl/cu121/numpy/
+Could not fetch URL https://download.pytorch.org/whl/cu121/numpy/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/numpy/
+Could not fetch URL https://aiinfra.pkgs.visualstudio.com/PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/numpy/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+Collecting numpy==1.26.4 (from -r requirements.txt (line 20))
+  Using cached numpy-1.26.4-cp311-cp311-win_amd64.whl (15.8 MB)
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /whl/cu121/omegaconf/
+Could not fetch URL https://download.pytorch.org/whl/cu121/omegaconf/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/omegaconf/
+Could not fetch URL https://aiinfra.pkgs.visualstudio.com/PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/omegaconf/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+Collecting omegaconf==2.3.0 (from -r requirements.txt (line 21))
+  Using cached omegaconf-2.3.0-py3-none-any.whl (79 kB)
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /whl/cu121/onnx/
+Could not fetch URL https://download.pytorch.org/whl/cu121/onnx/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/onnx/
+Could not fetch URL https://aiinfra.pkgs.visualstudio.com/PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/onnx/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+Collecting onnx==1.16.0 (from -r requirements.txt (line 22))
+  Using cached onnx-1.16.0-cp311-cp311-win_amd64.whl (14.4 MB)
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /whl/cu121/onnxruntime/
+Could not fetch URL https://download.pytorch.org/whl/cu121/onnxruntime/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/onnxruntime/
+Could not fetch URL https://aiinfra.pkgs.visualstudio.com/PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/onnxruntime/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+Collecting onnxruntime==1.18.0 (from -r requirements.txt (line 24))
+  Using cached onnxruntime-1.18.0-cp311-cp311-win_amd64.whl (5.6 MB)
+Requirement already satisfied: openai-whisper==20231117 in .\.venv\Lib\site-packages (from -r requirements.txt (line 25)) (20231117)
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /whl/cu121/protobuf/
+Could not fetch URL https://download.pytorch.org/whl/cu121/protobuf/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/protobuf/
+Could not fetch URL https://aiinfra.pkgs.visualstudio.com/PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/protobuf/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+Collecting protobuf==4.25 (from -r requirements.txt (line 26))
+  Using cached protobuf-4.25.0-cp310-abi3-win_amd64.whl (413 kB)
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /whl/cu121/pyarrow/
+Could not fetch URL https://download.pytorch.org/whl/cu121/pyarrow/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/pyarrow/
+Could not fetch URL https://aiinfra.pkgs.visualstudio.com/PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/pyarrow/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+Collecting pyarrow==18.1.0 (from -r requirements.txt (line 27))
+  Using cached pyarrow-18.1.0-cp311-cp311-win_amd64.whl (25.1 MB)
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /whl/cu121/pydantic/
+Could not fetch URL https://download.pytorch.org/whl/cu121/pydantic/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/pydantic/
+Could not fetch URL https://aiinfra.pkgs.visualstudio.com/PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/pydantic/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+Collecting pydantic==2.7.0 (from -r requirements.txt (line 28))
+  Using cached pydantic-2.7.0-py3-none-any.whl (407 kB)
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /whl/cu121/pyworld/
+Could not fetch URL https://download.pytorch.org/whl/cu121/pyworld/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/pyworld/
+Could not fetch URL https://aiinfra.pkgs.visualstudio.com/PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/pyworld/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+Collecting pyworld==0.3.4 (from -r requirements.txt (line 29))
+  Using cached pyworld-0.3.4-cp311-cp311-win_amd64.whl (226 kB)
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /whl/cu121/rich/
+Could not fetch URL https://download.pytorch.org/whl/cu121/rich/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/rich/
+Could not fetch URL https://aiinfra.pkgs.visualstudio.com/PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/rich/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+Collecting rich==13.7.1 (from -r requirements.txt (line 30))
+  Using cached rich-13.7.1-py3-none-any.whl (240 kB)
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /whl/cu121/soundfile/
+Could not fetch URL https://download.pytorch.org/whl/cu121/soundfile/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/soundfile/
+Could not fetch URL https://aiinfra.pkgs.visualstudio.com/PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/soundfile/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+Collecting soundfile==0.12.1 (from -r requirements.txt (line 31))
+  Using cached soundfile-0.12.1-py2.py3-none-win_amd64.whl (1.0 MB)
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /whl/cu121/tensorboard/
+Could not fetch URL https://download.pytorch.org/whl/cu121/tensorboard/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/tensorboard/
+Could not fetch URL https://aiinfra.pkgs.visualstudio.com/PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/tensorboard/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+Collecting tensorboard==2.14.0 (from -r requirements.txt (line 32))
+  Using cached tensorboard-2.14.0-py3-none-any.whl (5.5 MB)
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /whl/cu121/torch/
+Could not fetch URL https://download.pytorch.org/whl/cu121/torch/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/torch/
+Could not fetch URL https://aiinfra.pkgs.visualstudio.com/PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/torch/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+Collecting torch==2.3.1 (from -r requirements.txt (line 36))
+  Using cached torch-2.3.1-cp311-cp311-win_amd64.whl (159.8 MB)
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /whl/cu121/torchaudio/
+Could not fetch URL https://download.pytorch.org/whl/cu121/torchaudio/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/torchaudio/
+Could not fetch URL https://aiinfra.pkgs.visualstudio.com/PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/torchaudio/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+Collecting torchaudio==2.3.1 (from -r requirements.txt (line 37))
+  Using cached torchaudio-2.3.1-cp311-cp311-win_amd64.whl (2.4 MB)
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /whl/cu121/transformers/
+Could not fetch URL https://download.pytorch.org/whl/cu121/transformers/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/transformers/
+Could not fetch URL https://aiinfra.pkgs.visualstudio.com/PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/transformers/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+Collecting transformers==4.51.3 (from -r requirements.txt (line 38))
+  Using cached transformers-4.51.3-py3-none-any.whl (10.4 MB)
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /whl/cu121/x-transformers/
+Could not fetch URL https://download.pytorch.org/whl/cu121/x-transformers/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/x-transformers/
+Could not fetch URL https://aiinfra.pkgs.visualstudio.com/PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/x-transformers/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+Collecting x-transformers==2.11.24 (from -r requirements.txt (line 39))
+  Using cached x_transformers-2.11.24-py3-none-any.whl (100 kB)
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /whl/cu121/uvicorn/
+Could not fetch URL https://download.pytorch.org/whl/cu121/uvicorn/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/uvicorn/
+Could not fetch URL https://aiinfra.pkgs.visualstudio.com/PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/uvicorn/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+Collecting uvicorn==0.30.0 (from -r requirements.txt (line 40))
+  Using cached uvicorn-0.30.0-py3-none-any.whl (62 kB)
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /whl/cu121/wetext/
+Could not fetch URL https://download.pytorch.org/whl/cu121/wetext/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/wetext/
+Could not fetch URL https://aiinfra.pkgs.visualstudio.com/PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/wetext/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+Collecting wetext==0.0.4 (from -r requirements.txt (line 41))
+  Using cached wetext-0.0.4-py3-none-any.whl (10 kB)
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /whl/cu121/wget/
+Could not fetch URL https://download.pytorch.org/whl/cu121/wget/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/wget/
+Could not fetch URL https://aiinfra.pkgs.visualstudio.com/PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/wget/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+Collecting wget==3.2 (from -r requirements.txt (line 42))
+  Using cached wget-3.2.zip (10 kB)
+  Preparing metadata (pyproject.toml): started
+  Preparing metadata (pyproject.toml): finished with status 'done'
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /whl/cu121/einops/
+Could not fetch URL https://download.pytorch.org/whl/cu121/einops/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/einops/
+Could not fetch URL https://aiinfra.pkgs.visualstudio.com/PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/einops/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+Collecting einops>=0.6.1 (from conformer==0.3.2->-r requirements.txt (line 3))
+  Using cached einops-0.8.2-py3-none-any.whl (65 kB)
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /whl/cu121/importlib-metadata/
+Could not fetch URL https://download.pytorch.org/whl/cu121/importlib-metadata/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/importlib-metadata/
+Could not fetch URL https://aiinfra.pkgs.visualstudio.com/PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/importlib-metadata/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+Collecting importlib-metadata (from diffusers==0.29.0->-r requirements.txt (line 5))
+  Using cached importlib_metadata-9.0.1-py3-none-any.whl (27 kB)
+Requirement already satisfied: filelock in .\.venv\Lib\site-packages (from diffusers==0.29.0->-r requirements.txt (line 5)) (3.32.6)
+Requirement already satisfied: huggingface-hub>=0.23.2 in .\.venv\Lib\site-packages (from diffusers==0.29.0->-r requirements.txt (line 5)) (1.31.0)
+Requirement already satisfied: regex!=2019.12.17 in .\.venv\Lib\site-packages (from diffusers==0.29.0->-r requirements.txt (line 5)) (2026.9.10)
+Requirement already satisfied: requests in .\.venv\Lib\site-packages (from diffusers==0.29.0->-r requirements.txt (line 5)) (2.34.2)
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /whl/cu121/safetensors/
+Could not fetch URL https://download.pytorch.org/whl/cu121/safetensors/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/safetensors/
+Could not fetch URL https://aiinfra.pkgs.visualstudio.com/PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/safetensors/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+Collecting safetensors>=0.3.1 (from diffusers==0.29.0->-r requirements.txt (line 5))
+  Using cached safetensors-0.8.0-cp310-abi3-win_amd64.whl (355 kB)
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /whl/cu121/pillow/
+Could not fetch URL https://download.pytorch.org/whl/cu121/pillow/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/pillow/
+Could not fetch URL https://aiinfra.pkgs.visualstudio.com/PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/pillow/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+Collecting Pillow (from diffusers==0.29.0->-r requirements.txt (line 5))
+  Using cached pillow-12.3.0-cp311-cp311-win_amd64.whl (7.2 MB)
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /whl/cu121/starlette/
+Could not fetch URL https://download.pytorch.org/whl/cu121/starlette/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/starlette/
+Could not fetch URL https://aiinfra.pkgs.visualstudio.com/PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/starlette/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+Collecting starlette<0.42.0,>=0.40.0 (from fastapi==0.115.6->-r requirements.txt (line 6))
+  Using cached starlette-0.41.3-py3-none-any.whl (73 kB)
+Requirement already satisfied: typing-extensions>=4.8.0 in .\.venv\Lib\site-packages (from fastapi==0.115.6->-r requirements.txt (line 6)) (4.16.0)
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /whl/cu121/annotated-types/
+Could not fetch URL https://download.pytorch.org/whl/cu121/annotated-types/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/annotated-types/
+Could not fetch URL https://aiinfra.pkgs.visualstudio.com/PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/annotated-types/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+Collecting annotated-types>=0.4.0 (from pydantic==2.7.0->-r requirements.txt (line 28))
+  Using cached annotated_types-0.8.0-py3-none-any.whl (13 kB)
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /whl/cu121/pydantic-core/
+Could not fetch URL https://download.pytorch.org/whl/cu121/pydantic-core/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/pydantic-core/
+Could not fetch URL https://aiinfra.pkgs.visualstudio.com/PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/pydantic-core/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+Collecting pydantic-core==2.18.1 (from pydantic==2.7.0->-r requirements.txt (line 28))
+  Using cached pydantic_core-2.18.1-cp311-none-win_amd64.whl (1.9 MB)
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /whl/cu121/typer/
+Could not fetch URL https://download.pytorch.org/whl/cu121/typer/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/typer/
+Could not fetch URL https://aiinfra.pkgs.visualstudio.com/PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/typer/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+Collecting typer>=0.12.3 (from fastapi-cli==0.0.4->-r requirements.txt (line 7))
+  Using cached typer-0.27.2-py3-none-any.whl (123 kB)
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /whl/cu121/beautifulsoup4/
+Could not fetch URL https://download.pytorch.org/whl/cu121/beautifulsoup4/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/beautifulsoup4/
+Could not fetch URL https://aiinfra.pkgs.visualstudio.com/PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/beautifulsoup4/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+Collecting beautifulsoup4 (from gdown==5.1.0->-r requirements.txt (line 8))
+  Using cached beautifulsoup4-4.15.0-py3-none-any.whl (109 kB)
+Requirement already satisfied: tqdm in .\.venv\Lib\site-packages (from gdown==5.1.0->-r requirements.txt (line 8)) (4.70.1)
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /whl/cu121/aiofiles/
+Could not fetch URL https://download.pytorch.org/whl/cu121/aiofiles/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/aiofiles/
+Could not fetch URL https://aiinfra.pkgs.visualstudio.com/PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/aiofiles/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+Collecting aiofiles<24.0,>=22.0 (from gradio==5.4.0->-r requirements.txt (line 9))
+  Using cached aiofiles-23.2.1-py3-none-any.whl (15 kB)
+Requirement already satisfied: anyio<5.0,>=3.0 in .\.venv\Lib\site-packages (from gradio==5.4.0->-r requirements.txt (line 9)) (4.15.1)
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /whl/cu121/ffmpy/
+Could not fetch URL https://download.pytorch.org/whl/cu121/ffmpy/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/ffmpy/
+Could not fetch URL https://aiinfra.pkgs.visualstudio.com/PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/ffmpy/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+Collecting ffmpy (from gradio==5.4.0->-r requirements.txt (line 9))
+  Using cached ffmpy-1.0.0-py3-none-any.whl (5.6 kB)
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /whl/cu121/gradio-client/
+Could not fetch URL https://download.pytorch.org/whl/cu121/gradio-client/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/gradio-client/
+Could not fetch URL https://aiinfra.pkgs.visualstudio.com/PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/gradio-client/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+Collecting gradio-client==1.4.2 (from gradio==5.4.0->-r requirements.txt (line 9))
+  Using cached gradio_client-1.4.2-py3-none-any.whl (319 kB)
+Requirement already satisfied: httpx>=0.24.1 in .\.venv\Lib\site-packages (from gradio==5.4.0->-r requirements.txt (line 9)) (0.28.1)
+Requirement already satisfied: jinja2<4.0 in .\.venv\Lib\site-packages (from gradio==5.4.0->-r requirements.txt (line 9)) (3.1.6)
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /whl/cu121/markupsafe/
+Could not fetch URL https://download.pytorch.org/whl/cu121/markupsafe/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/markupsafe/
+Could not fetch URL https://aiinfra.pkgs.visualstudio.com/PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/markupsafe/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+Collecting markupsafe~=2.0 (from gradio==5.4.0->-r requirements.txt (line 9))
+  Using cached MarkupSafe-2.1.5-cp311-cp311-win_amd64.whl (17 kB)
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /whl/cu121/orjson/
+Could not fetch URL https://download.pytorch.org/whl/cu121/orjson/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/orjson/
+Could not fetch URL https://aiinfra.pkgs.visualstudio.com/PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/orjson/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+Collecting orjson~=3.0 (from gradio==5.4.0->-r requirements.txt (line 9))
+  Using cached orjson-3.12.0-cp311-cp311-win_amd64.whl (122 kB)
+Requirement already satisfied: packaging in .\.venv\Lib\site-packages (from gradio==5.4.0->-r requirements.txt (line 9)) (26.3)
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /whl/cu121/pandas/
+Could not fetch URL https://download.pytorch.org/whl/cu121/pandas/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/pandas/
+Could not fetch URL https://aiinfra.pkgs.visualstudio.com/PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/pandas/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+Collecting pandas<3.0,>=1.0 (from gradio==5.4.0->-r requirements.txt (line 9))
+  Using cached pandas-2.3.3-cp311-cp311-win_amd64.whl (11.3 MB)
+Collecting Pillow (from diffusers==0.29.0->-r requirements.txt (line 5))
+  Using cached pillow-11.3.0-cp311-cp311-win_amd64.whl (7.0 MB)
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /whl/cu121/pydub/
+Could not fetch URL https://download.pytorch.org/whl/cu121/pydub/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/pydub/
+Could not fetch URL https://aiinfra.pkgs.visualstudio.com/PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/pydub/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+Collecting pydub (from gradio==5.4.0->-r requirements.txt (line 9))
+  Using cached pydub-0.25.1-py2.py3-none-any.whl (32 kB)
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /whl/cu121/python-multipart/
+Could not fetch URL https://download.pytorch.org/whl/cu121/python-multipart/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/python-multipart/
+Could not fetch URL https://aiinfra.pkgs.visualstudio.com/PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/python-multipart/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+Collecting python-multipart==0.0.12 (from gradio==5.4.0->-r requirements.txt (line 9))
+  Downloading python_multipart-0.0.12-py3-none-any.whl (23 kB)
+Requirement already satisfied: pyyaml<7.0,>=5.0 in .\.venv\Lib\site-packages (from gradio==5.4.0->-r requirements.txt (line 9)) (6.0.3)
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /whl/cu121/ruff/
+Could not fetch URL https://download.pytorch.org/whl/cu121/ruff/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/ruff/
+Could not fetch URL https://aiinfra.pkgs.visualstudio.com/PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/ruff/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+Collecting ruff>=0.2.2 (from gradio==5.4.0->-r requirements.txt (line 9))
+  Downloading ruff-0.16.7-py3-none-win_amd64.whl (10.6 MB)
+     ---------------------------------------- 10.6/10.6 MB 10.5 MB/s  0:00:01
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /whl/cu121/safehttpx/
+Could not fetch URL https://download.pytorch.org/whl/cu121/safehttpx/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/safehttpx/
+Could not fetch URL https://aiinfra.pkgs.visualstudio.com/PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/safehttpx/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+Collecting safehttpx<1.0,>=0.1.1 (from gradio==5.4.0->-r requirements.txt (line 9))
+  Downloading safehttpx-0.1.7-py3-none-any.whl (9.0 kB)
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /whl/cu121/semantic-version/
+Could not fetch URL https://download.pytorch.org/whl/cu121/semantic-version/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/semantic-version/
+Could not fetch URL https://aiinfra.pkgs.visualstudio.com/PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/semantic-version/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+Collecting semantic-version~=2.0 (from gradio==5.4.0->-r requirements.txt (line 9))
+  Downloading semantic_version-2.10.0-py2.py3-none-any.whl (15 kB)
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /whl/cu121/tomlkit/
+Could not fetch URL https://download.pytorch.org/whl/cu121/tomlkit/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/tomlkit/
+Could not fetch URL https://aiinfra.pkgs.visualstudio.com/PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/tomlkit/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+Collecting tomlkit==0.12.0 (from gradio==5.4.0->-r requirements.txt (line 9))
+  Downloading tomlkit-0.12.0-py3-none-any.whl (37 kB)
+Requirement already satisfied: setuptools in .\.venv\Lib\site-packages (from grpcio-tools==1.57.0->-r requirements.txt (line 11)) (80.10.2)
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /whl/cu121/antlr4-python3-runtime/
+Could not fetch URL https://download.pytorch.org/whl/cu121/antlr4-python3-runtime/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/antlr4-python3-runtime/
+Could not fetch URL https://aiinfra.pkgs.visualstudio.com/PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/antlr4-python3-runtime/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+Collecting antlr4-python3-runtime==4.9.* (from hydra-core==1.3.2->-r requirements.txt (line 12))
+  Downloading antlr4-python3-runtime-4.9.3.tar.gz (117 kB)
+  Preparing metadata (pyproject.toml): started
+  Preparing metadata (pyproject.toml): finished with status 'done'
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /whl/cu121/ruamel-yaml/
+Could not fetch URL https://download.pytorch.org/whl/cu121/ruamel-yaml/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/ruamel-yaml/
+Could not fetch URL https://aiinfra.pkgs.visualstudio.com/PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/ruamel-yaml/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+Collecting ruamel.yaml<0.19.0,>=0.17.28 (from HyperPyYAML==1.2.3->-r requirements.txt (line 13))
+  Downloading ruamel_yaml-0.18.17-py3-none-any.whl (121 kB)
+Requirement already satisfied: more-itertools>=8.5.0 in .\.venv\Lib\site-packages (from inflect==7.3.1->-r requirements.txt (line 14)) (11.1.0)
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /whl/cu121/typeguard/
+Could not fetch URL https://download.pytorch.org/whl/cu121/typeguard/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/typeguard/
+Could not fetch URL https://aiinfra.pkgs.visualstudio.com/PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/typeguard/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+Collecting typeguard>=4.0.1 (from inflect==7.3.1->-r requirements.txt (line 14))
+  Downloading typeguard-4.6.0-py3-none-any.whl (36 kB)
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /whl/cu121/audioread/
+Could not fetch URL https://download.pytorch.org/whl/cu121/audioread/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/audioread/
+Could not fetch URL https://aiinfra.pkgs.visualstudio.com/PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/audioread/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+Collecting audioread>=2.1.9 (from librosa==0.10.2->-r requirements.txt (line 15))
+  Downloading audioread-3.1.0-py3-none-any.whl (23 kB)
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /whl/cu121/scipy/
+Could not fetch URL https://download.pytorch.org/whl/cu121/scipy/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/scipy/
+Could not fetch URL https://aiinfra.pkgs.visualstudio.com/PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/scipy/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+Collecting scipy>=1.2.0 (from librosa==0.10.2->-r requirements.txt (line 15))
+  Downloading scipy-1.17.1-cp311-cp311-win_amd64.whl (36.6 MB)
+     ---------------------------------------- 36.6/36.6 MB 10.9 MB/s  0:00:03
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /whl/cu121/scikit-learn/
+Could not fetch URL https://download.pytorch.org/whl/cu121/scikit-learn/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/scikit-learn/
+Could not fetch URL https://aiinfra.pkgs.visualstudio.com/PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/scikit-learn/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+Collecting scikit-learn>=0.20.0 (from librosa==0.10.2->-r requirements.txt (line 15))
+  Downloading scikit_learn-1.9.1-cp311-cp311-win_amd64.whl (8.3 MB)
+     ---------------------------------------- 8.3/8.3 MB 11.0 MB/s  0:00:00
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /whl/cu121/joblib/
+Could not fetch URL https://download.pytorch.org/whl/cu121/joblib/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/joblib/
+Could not fetch URL https://aiinfra.pkgs.visualstudio.com/PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/joblib/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+Collecting joblib>=0.14 (from librosa==0.10.2->-r requirements.txt (line 15))
+  Downloading joblib-1.6.0-py3-none-any.whl (306 kB)
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /whl/cu121/decorator/
+Could not fetch URL https://download.pytorch.org/whl/cu121/decorator/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/decorator/
+Could not fetch URL https://aiinfra.pkgs.visualstudio.com/PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/decorator/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+Collecting decorator>=4.3.0 (from librosa==0.10.2->-r requirements.txt (line 15))
+  Downloading decorator-5.3.1-py3-none-any.whl (10 kB)
+Requirement already satisfied: numba>=0.51.0 in .\.venv\Lib\site-packages (from librosa==0.10.2->-r requirements.txt (line 15)) (0.67.0)
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /whl/cu121/pooch/
+Could not fetch URL https://download.pytorch.org/whl/cu121/pooch/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/pooch/
+Could not fetch URL https://aiinfra.pkgs.visualstudio.com/PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/pooch/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+Collecting pooch>=1.1 (from librosa==0.10.2->-r requirements.txt (line 15))
+  Downloading pooch-1.9.0-py3-none-any.whl (67 kB)
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /whl/cu121/soxr/
+Could not fetch URL https://download.pytorch.org/whl/cu121/soxr/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/soxr/
+Could not fetch URL https://aiinfra.pkgs.visualstudio.com/PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/soxr/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+Collecting soxr>=0.3.2 (from librosa==0.10.2->-r requirements.txt (line 15))
+  Downloading soxr-1.1.0-cp311-cp311-win_amd64.whl (176 kB)
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /whl/cu121/lazy-loader/
+Could not fetch URL https://download.pytorch.org/whl/cu121/lazy-loader/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/lazy-loader/
+Could not fetch URL https://aiinfra.pkgs.visualstudio.com/PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/lazy-loader/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+Collecting lazy-loader>=0.1 (from librosa==0.10.2->-r requirements.txt (line 15))
+  Downloading lazy_loader-0.5-py3-none-any.whl (8.0 kB)
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /whl/cu121/msgpack/
+Could not fetch URL https://download.pytorch.org/whl/cu121/msgpack/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/msgpack/
+Could not fetch URL https://aiinfra.pkgs.visualstudio.com/PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/msgpack/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+Collecting msgpack>=1.0 (from librosa==0.10.2->-r requirements.txt (line 15))
+  Downloading msgpack-1.2.2-cp311-cp311-win_amd64.whl (71 kB)
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /whl/cu121/fsspec/
+Could not fetch URL https://download.pytorch.org/whl/cu121/fsspec/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/fsspec/
+Could not fetch URL https://aiinfra.pkgs.visualstudio.com/PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/fsspec/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+Collecting fsspec<2025.0,>=2022.5.0 (from fsspec[http]<2025.0,>=2022.5.0->lightning==2.2.4->-r requirements.txt (line 16))
+  Downloading fsspec-2024.12.0-py3-none-any.whl (183 kB)
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /whl/cu121/lightning-utilities/
+Could not fetch URL https://download.pytorch.org/whl/cu121/lightning-utilities/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/lightning-utilities/
+Could not fetch URL https://aiinfra.pkgs.visualstudio.com/PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/lightning-utilities/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+Collecting lightning-utilities<2.0,>=0.8.0 (from lightning==2.2.4->-r requirements.txt (line 16))
+  Downloading lightning_utilities-0.15.3-py3-none-any.whl (31 kB)
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /whl/cu121/packaging/
+Could not fetch URL https://download.pytorch.org/whl/cu121/packaging/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/packaging/
+Could not fetch URL https://aiinfra.pkgs.visualstudio.com/PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/packaging/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+Collecting packaging (from gradio==5.4.0->-r requirements.txt (line 9))
+  Downloading packaging-24.2-py3-none-any.whl (65 kB)
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /whl/cu121/torchmetrics/
+Could not fetch URL https://download.pytorch.org/whl/cu121/torchmetrics/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/torchmetrics/
+Could not fetch URL https://aiinfra.pkgs.visualstudio.com/PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/torchmetrics/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+Collecting torchmetrics<3.0,>=0.7.0 (from lightning==2.2.4->-r requirements.txt (line 16))
+  Downloading torchmetrics-1.9.0-py3-none-any.whl (983 kB)
+     ---------------------------------------- 983.4/983.4 kB 7.7 MB/s  0:00:00
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /whl/cu121/pytorch-lightning/
+Could not fetch URL https://download.pytorch.org/whl/cu121/pytorch-lightning/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/pytorch-lightning/
+Could not fetch URL https://aiinfra.pkgs.visualstudio.com/PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/pytorch-lightning/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+Collecting pytorch-lightning (from lightning==2.2.4->-r requirements.txt (line 16))
+  Downloading pytorch_lightning-2.6.6-py3-none-any.whl (853 kB)
+     ---------------------------------------- 853.0/853.0 kB 9.4 MB/s  0:00:00
+Requirement already satisfied: sympy in .\.venv\Lib\site-packages (from torch==2.3.1->-r requirements.txt (line 36)) (1.14.0)
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /whl/cu121/mkl/
+Could not fetch URL https://download.pytorch.org/whl/cu121/mkl/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/mkl/
+Could not fetch URL https://aiinfra.pkgs.visualstudio.com/PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/mkl/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+Collecting mkl<=2021.4.0,>=2021.1.1 (from torch==2.3.1->-r requirements.txt (line 36))
+  Downloading mkl-2021.4.0-py2.py3-none-win_amd64.whl (228.5 MB)
+     ---------------------------------------- 228.5/228.5 MB 10.5 MB/s  0:00:21
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /whl/cu121/contourpy/
+Could not fetch URL https://download.pytorch.org/whl/cu121/contourpy/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/contourpy/
+Could not fetch URL https://aiinfra.pkgs.visualstudio.com/PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/contourpy/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+Collecting contourpy>=1.0.1 (from matplotlib==3.7.5->-r requirements.txt (line 17))
+  Downloading contourpy-1.3.3-cp311-cp311-win_amd64.whl (225 kB)
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /whl/cu121/cycler/
+Could not fetch URL https://download.pytorch.org/whl/cu121/cycler/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/cycler/
+Could not fetch URL https://aiinfra.pkgs.visualstudio.com/PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/cycler/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+Collecting cycler>=0.10 (from matplotlib==3.7.5->-r requirements.txt (line 17))
+  Downloading cycler-0.12.1-py3-none-any.whl (8.3 kB)
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /whl/cu121/fonttools/
+Could not fetch URL https://download.pytorch.org/whl/cu121/fonttools/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/fonttools/
+Could not fetch URL https://aiinfra.pkgs.visualstudio.com/PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/fonttools/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+Collecting fonttools>=4.22.0 (from matplotlib==3.7.5->-r requirements.txt (line 17))
+  Downloading fonttools-4.65.0-cp311-cp311-win_amd64.whl (2.5 MB)
+     ---------------------------------------- 2.5/2.5 MB 10.2 MB/s  0:00:00
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /whl/cu121/kiwisolver/
+Could not fetch URL https://download.pytorch.org/whl/cu121/kiwisolver/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/kiwisolver/
+Could not fetch URL https://aiinfra.pkgs.visualstudio.com/PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/kiwisolver/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+Collecting kiwisolver>=1.0.1 (from matplotlib==3.7.5->-r requirements.txt (line 17))
+  Downloading kiwisolver-1.5.1-cp311-cp311-win_amd64.whl (70 kB)
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /whl/cu121/pyparsing/
+Could not fetch URL https://download.pytorch.org/whl/cu121/pyparsing/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/pyparsing/
+Could not fetch URL https://aiinfra.pkgs.visualstudio.com/PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/pyparsing/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+Collecting pyparsing>=2.3.1 (from matplotlib==3.7.5->-r requirements.txt (line 17))
+  Downloading pyparsing-3.3.2-py3-none-any.whl (122 kB)
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /whl/cu121/python-dateutil/
+Could not fetch URL https://download.pytorch.org/whl/cu121/python-dateutil/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/python-dateutil/
+Could not fetch URL https://aiinfra.pkgs.visualstudio.com/PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/python-dateutil/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+Collecting python-dateutil>=2.7 (from matplotlib==3.7.5->-r requirements.txt (line 17))
+  Downloading python_dateutil-2.9.0.post0-py2.py3-none-any.whl (229 kB)
+Requirement already satisfied: urllib3>=1.26 in .\.venv\Lib\site-packages (from modelscope==1.20.0->-r requirements.txt (line 18)) (2.7.0)
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /whl/cu121/coloredlogs/
+Could not fetch URL https://download.pytorch.org/whl/cu121/coloredlogs/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/coloredlogs/
+Could not fetch URL https://aiinfra.pkgs.visualstudio.com/PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/coloredlogs/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+Collecting coloredlogs (from onnxruntime==1.18.0->-r requirements.txt (line 24))
+  Downloading coloredlogs-15.0.1-py2.py3-none-any.whl (46 kB)
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /whl/cu121/flatbuffers/
+Could not fetch URL https://download.pytorch.org/whl/cu121/flatbuffers/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/flatbuffers/
+Could not fetch URL https://aiinfra.pkgs.visualstudio.com/PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/flatbuffers/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+Collecting flatbuffers (from onnxruntime==1.18.0->-r requirements.txt (line 24))
+  Downloading flatbuffers-25.12.19-py2.py3-none-any.whl (26 kB)
+Requirement already satisfied: tiktoken in .\.venv\Lib\site-packages (from openai-whisper==20231117->-r requirements.txt (line 25)) (0.14.0)
+Requirement already satisfied: cython>=0.24 in .\.venv\Lib\site-packages (from pyworld==0.3.4->-r requirements.txt (line 29)) (3.3.0)
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /whl/cu121/markdown-it-py/
+Could not fetch URL https://download.pytorch.org/whl/cu121/markdown-it-py/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/markdown-it-py/
+Could not fetch URL https://aiinfra.pkgs.visualstudio.com/PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/markdown-it-py/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+Collecting markdown-it-py>=2.2.0 (from rich==13.7.1->-r requirements.txt (line 30))
+  Downloading markdown_it_py-4.2.0-py3-none-any.whl (91 kB)
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /whl/cu121/pygments/
+Could not fetch URL https://download.pytorch.org/whl/cu121/pygments/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/pygments/
+Could not fetch URL https://aiinfra.pkgs.visualstudio.com/PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/pygments/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+Collecting pygments<3.0.0,>=2.13.0 (from rich==13.7.1->-r requirements.txt (line 30))
+  Downloading pygments-2.21.0-py3-none-any.whl (1.3 MB)
+     ---------------------------------------- 1.3/1.3 MB 9.1 MB/s  0:00:00
+Requirement already satisfied: cffi>=1.0 in .\.venv\Lib\site-packages (from soundfile==0.12.1->-r requirements.txt (line 31)) (2.1.1)
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /whl/cu121/absl-py/
+Could not fetch URL https://download.pytorch.org/whl/cu121/absl-py/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/absl-py/
+Could not fetch URL https://aiinfra.pkgs.visualstudio.com/PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/absl-py/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+Collecting absl-py>=0.4 (from tensorboard==2.14.0->-r requirements.txt (line 32))
+  Downloading absl_py-2.5.0-py3-none-any.whl (137 kB)
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /whl/cu121/google-auth/
+Could not fetch URL https://download.pytorch.org/whl/cu121/google-auth/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/google-auth/
+Could not fetch URL https://aiinfra.pkgs.visualstudio.com/PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/google-auth/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+Collecting google-auth<3,>=1.6.3 (from tensorboard==2.14.0->-r requirements.txt (line 32))
+  Downloading google_auth-2.58.0-py3-none-any.whl (262 kB)
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /whl/cu121/google-auth-oauthlib/
+Could not fetch URL https://download.pytorch.org/whl/cu121/google-auth-oauthlib/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/google-auth-oauthlib/
+Could not fetch URL https://aiinfra.pkgs.visualstudio.com/PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/google-auth-oauthlib/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+Collecting google-auth-oauthlib<1.1,>=0.5 (from tensorboard==2.14.0->-r requirements.txt (line 32))
+  Downloading google_auth_oauthlib-1.0.0-py2.py3-none-any.whl (18 kB)
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /whl/cu121/markdown/
+Could not fetch URL https://download.pytorch.org/whl/cu121/markdown/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/markdown/
+Could not fetch URL https://aiinfra.pkgs.visualstudio.com/PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/markdown/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+Collecting markdown>=2.6.8 (from tensorboard==2.14.0->-r requirements.txt (line 32))
+  Downloading markdown-3.10.3-py3-none-any.whl (110 kB)
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /whl/cu121/tensorboard-data-server/
+Could not fetch URL https://download.pytorch.org/whl/cu121/tensorboard-data-server/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/tensorboard-data-server/
+Could not fetch URL https://aiinfra.pkgs.visualstudio.com/PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/tensorboard-data-server/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+Collecting tensorboard-data-server<0.8.0,>=0.7.0 (from tensorboard==2.14.0->-r requirements.txt (line 32))
+  Downloading tensorboard_data_server-0.7.2-py3-none-any.whl (2.4 kB)
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /whl/cu121/werkzeug/
+Could not fetch URL https://download.pytorch.org/whl/cu121/werkzeug/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/werkzeug/
+Could not fetch URL https://aiinfra.pkgs.visualstudio.com/PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/werkzeug/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+Collecting werkzeug>=1.0.1 (from tensorboard==2.14.0->-r requirements.txt (line 32))
+  Downloading werkzeug-3.1.8-py3-none-any.whl (226 kB)
+Requirement already satisfied: wheel>=0.26 in .\.venv\Lib\site-packages (from tensorboard==2.14.0->-r requirements.txt (line 32)) (0.48.0)
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /whl/cu121/huggingface-hub/
+Could not fetch URL https://download.pytorch.org/whl/cu121/huggingface-hub/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/huggingface-hub/
+Could not fetch URL https://aiinfra.pkgs.visualstudio.com/PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/huggingface-hub/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+Collecting huggingface-hub>=0.23.2 (from diffusers==0.29.0->-r requirements.txt (line 5))
+  Downloading huggingface_hub-0.36.2-py3-none-any.whl (566 kB)
+     ---------------------------------------- 566.4/566.4 kB 3.9 MB/s  0:00:00
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /whl/cu121/tokenizers/
+Could not fetch URL https://download.pytorch.org/whl/cu121/tokenizers/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/tokenizers/
+Could not fetch URL https://aiinfra.pkgs.visualstudio.com/PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/tokenizers/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+Collecting tokenizers<0.22,>=0.21 (from transformers==4.51.3->-r requirements.txt (line 38))
+  Downloading tokenizers-0.21.4-cp39-abi3-win_amd64.whl (2.5 MB)
+     ---------------------------------------- 2.5/2.5 MB 9.6 MB/s  0:00:00
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /whl/cu121/einx/
+Could not fetch URL https://download.pytorch.org/whl/cu121/einx/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/einx/
+Could not fetch URL https://aiinfra.pkgs.visualstudio.com/PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/einx/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+Collecting einx>=0.3.0 (from x-transformers==2.11.24->-r requirements.txt (line 39))
+  Downloading einx-0.4.3-py3-none-any.whl (163 kB)
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /whl/cu121/loguru/
+Could not fetch URL https://download.pytorch.org/whl/cu121/loguru/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/loguru/
+Could not fetch URL https://aiinfra.pkgs.visualstudio.com/PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/loguru/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+Collecting loguru (from x-transformers==2.11.24->-r requirements.txt (line 39))
+  Downloading loguru-0.7.3-py3-none-any.whl (61 kB)
+Requirement already satisfied: click>=7.0 in .\.venv\Lib\site-packages (from uvicorn==0.30.0->-r requirements.txt (line 40)) (8.5.0)
+Requirement already satisfied: h11>=0.8 in .\.venv\Lib\site-packages (from uvicorn==0.30.0->-r requirements.txt (line 40)) (0.16.0)
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /whl/cu121/kaldifst/
+Could not fetch URL https://download.pytorch.org/whl/cu121/kaldifst/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/kaldifst/
+Could not fetch URL https://aiinfra.pkgs.visualstudio.com/PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/kaldifst/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+Collecting kaldifst (from wetext==0.0.4->-r requirements.txt (line 41))
+  Downloading kaldifst-1.8.0-cp311-cp311-win_amd64.whl (1.1 MB)
+     ---------------------------------------- 1.1/1.1 MB 7.6 MB/s  0:00:00
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /whl/cu121/websockets/
+Could not fetch URL https://download.pytorch.org/whl/cu121/websockets/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/websockets/
+Could not fetch URL https://aiinfra.pkgs.visualstudio.com/PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/websockets/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+Collecting websockets<13.0,>=10.0 (from gradio-client==1.4.2->gradio==5.4.0->-r requirements.txt (line 9))
+  Downloading websockets-12.0-cp311-cp311-win_amd64.whl (124 kB)
+Requirement already satisfied: idna>=2.8 in .\.venv\Lib\site-packages (from anyio<5.0,>=3.0->gradio==5.4.0->-r requirements.txt (line 9)) (3.19)
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /whl/cu121/aiohttp/
+Could not fetch URL https://download.pytorch.org/whl/cu121/aiohttp/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/aiohttp/
+Could not fetch URL https://aiinfra.pkgs.visualstudio.com/PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/aiohttp/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+Collecting aiohttp!=4.0.0a0,!=4.0.0a1 (from fsspec[http]<2025.0,>=2022.5.0->lightning==2.2.4->-r requirements.txt (line 16))
+  Downloading aiohttp-3.14.3-cp311-cp311-win_amd64.whl (481 kB)
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /whl/cu121/pyasn1-modules/
+Could not fetch URL https://download.pytorch.org/whl/cu121/pyasn1-modules/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/pyasn1-modules/
+Could not fetch URL https://aiinfra.pkgs.visualstudio.com/PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/pyasn1-modules/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+Collecting pyasn1-modules>=0.2.1 (from google-auth<3,>=1.6.3->tensorboard==2.14.0->-r requirements.txt (line 32))
+  Downloading pyasn1_modules-0.4.2-py3-none-any.whl (181 kB)
+Requirement already satisfied: cryptography>=38.0.3 in .\.venv\Lib\site-packages (from google-auth<3,>=1.6.3->tensorboard==2.14.0->-r requirements.txt (line 32)) (50.0.1)
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /whl/cu121/requests-oauthlib/
+Could not fetch URL https://download.pytorch.org/whl/cu121/requests-oauthlib/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/requests-oauthlib/
+Could not fetch URL https://aiinfra.pkgs.visualstudio.com/PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/requests-oauthlib/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+Collecting requests-oauthlib>=0.7.0 (from google-auth-oauthlib<1.1,>=0.5->tensorboard==2.14.0->-r requirements.txt (line 32))
+  Downloading requests_oauthlib-2.0.0-py2.py3-none-any.whl (24 kB)
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /whl/cu121/intel-openmp/
+Could not fetch URL https://download.pytorch.org/whl/cu121/intel-openmp/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/intel-openmp/
+Could not fetch URL https://aiinfra.pkgs.visualstudio.com/PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/intel-openmp/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+Collecting intel-openmp==2021.* (from mkl<=2021.4.0,>=2021.1.1->torch==2.3.1->-r requirements.txt (line 36))
+  Downloading intel_openmp-2021.4.0-py2.py3-none-win_amd64.whl (3.5 MB)
+     ---------------------------------------- 3.5/3.5 MB 9.9 MB/s  0:00:00
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /whl/cu121/tbb/
+Could not fetch URL https://download.pytorch.org/whl/cu121/tbb/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/tbb/
+Could not fetch URL https://aiinfra.pkgs.visualstudio.com/PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/tbb/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+Collecting tbb==2021.* (from mkl<=2021.4.0,>=2021.1.1->torch==2.3.1->-r requirements.txt (line 36))
+  Downloading tbb-2021.13.1-py3-none-win_amd64.whl (286 kB)
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /whl/cu121/pytz/
+Could not fetch URL https://download.pytorch.org/whl/cu121/pytz/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/pytz/
+Could not fetch URL https://aiinfra.pkgs.visualstudio.com/PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/pytz/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+Collecting pytz>=2020.1 (from pandas<3.0,>=1.0->gradio==5.4.0->-r requirements.txt (line 9))
+  Downloading pytz-2026.3.post1-py2.py3-none-any.whl (508 kB)
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /whl/cu121/tzdata/
+Could not fetch URL https://download.pytorch.org/whl/cu121/tzdata/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/tzdata/
+Could not fetch URL https://aiinfra.pkgs.visualstudio.com/PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/tzdata/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+Collecting tzdata>=2022.7 (from pandas<3.0,>=1.0->gradio==5.4.0->-r requirements.txt (line 9))
+  Downloading tzdata-2026.4-py2.py3-none-any.whl (347 kB)
+Requirement already satisfied: charset_normalizer<4,>=2 in .\.venv\Lib\site-packages (from requests->diffusers==0.29.0->-r requirements.txt (line 5)) (3.5.1)
+Requirement already satisfied: certifi>=2023.5.7 in .\.venv\Lib\site-packages (from requests->diffusers==0.29.0->-r requirements.txt (line 5)) (2026.7.22)
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /whl/cu121/ruamel-yaml-clib/
+Could not fetch URL https://download.pytorch.org/whl/cu121/ruamel-yaml-clib/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/ruamel-yaml-clib/
+Could not fetch URL https://aiinfra.pkgs.visualstudio.com/PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/ruamel-yaml-clib/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+Collecting ruamel.yaml.clib>=0.2.15 (from ruamel.yaml<0.19.0,>=0.17.28->HyperPyYAML==1.2.3->-r requirements.txt (line 13))
+  Downloading ruamel_yaml_clib-0.2.15-cp311-cp311-win_amd64.whl (121 kB)
+Requirement already satisfied: colorama in .\.venv\Lib\site-packages (from tqdm->gdown==5.1.0->-r requirements.txt (line 8)) (0.4.6)
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /whl/cu121/shellingham/
+Could not fetch URL https://download.pytorch.org/whl/cu121/shellingham/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/shellingham/
+Could not fetch URL https://aiinfra.pkgs.visualstudio.com/PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/shellingham/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+Collecting shellingham>=1.3.0 (from typer>=0.12.3->fastapi-cli==0.0.4->-r requirements.txt (line 7))
+  Downloading shellingham-1.5.4-py2.py3-none-any.whl (9.8 kB)
+INFO: pip is looking at multiple versions of typer to determine which version is compatible with other requirements. This could take a while.
+Collecting typer>=0.12.3 (from fastapi-cli==0.0.4->-r requirements.txt (line 7))
+  Downloading typer-0.27.1-py3-none-any.whl (122 kB)
+  Downloading typer-0.27.0-py3-none-any.whl (122 kB)
+  Downloading typer-0.26.8-py3-none-any.whl (122 kB)
+  Downloading typer-0.26.7-py3-none-any.whl (122 kB)
+  Downloading typer-0.26.6-py3-none-any.whl (122 kB)
+  Downloading typer-0.26.5-py3-none-any.whl (122 kB)
+  Downloading typer-0.26.4-py3-none-any.whl (122 kB)
+INFO: pip is still looking at multiple versions of typer to determine which version is compatible with other requirements. This could take a while.
+  Downloading typer-0.26.3-py3-none-any.whl (122 kB)
+  Downloading typer-0.26.2-py3-none-any.whl (123 kB)
+  Downloading typer-0.26.1-py3-none-any.whl (123 kB)
+  Downloading typer-0.26.0-py3-none-any.whl (123 kB)
+  Downloading typer-0.25.1-py3-none-any.whl (58 kB)
+INFO: This is taking longer than usual. You might need to provide the dependency resolver with stricter constraints to reduce runtime. See https://pip.pypa.io/warnings/backtracking for guidance. If you want to abort this run, press Ctrl + C.
+  Downloading typer-0.25.0-py3-none-any.whl (55 kB)
+  Downloading typer-0.24.2-py3-none-any.whl (55 kB)
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /whl/cu121/annotated-doc/
+Could not fetch URL https://download.pytorch.org/whl/cu121/annotated-doc/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/annotated-doc/
+Could not fetch URL https://aiinfra.pkgs.visualstudio.com/PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/annotated-doc/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+Collecting annotated-doc>=0.0.2 (from typer>=0.12.3->fastapi-cli==0.0.4->-r requirements.txt (line 7))
+  Downloading annotated_doc-0.0.5-py3-none-any.whl (5.3 kB)
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /whl/cu121/aiohappyeyeballs/
+Could not fetch URL https://download.pytorch.org/whl/cu121/aiohappyeyeballs/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/aiohappyeyeballs/
+Could not fetch URL https://aiinfra.pkgs.visualstudio.com/PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/aiohappyeyeballs/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+Collecting aiohappyeyeballs>=2.5.0 (from aiohttp!=4.0.0a0,!=4.0.0a1->fsspec[http]<2025.0,>=2022.5.0->lightning==2.2.4->-r requirements.txt (line 16))
+  Downloading aiohappyeyeballs-2.7.1-py3-none-any.whl (15 kB)
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /whl/cu121/aiosignal/
+Could not fetch URL https://download.pytorch.org/whl/cu121/aiosignal/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/aiosignal/
+Could not fetch URL https://aiinfra.pkgs.visualstudio.com/PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/aiosignal/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+Collecting aiosignal>=1.4.0 (from aiohttp!=4.0.0a0,!=4.0.0a1->fsspec[http]<2025.0,>=2022.5.0->lightning==2.2.4->-r requirements.txt (line 16))
+  Downloading aiosignal-1.4.0-py3-none-any.whl (7.5 kB)
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /whl/cu121/attrs/
+Could not fetch URL https://download.pytorch.org/whl/cu121/attrs/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/attrs/
+Could not fetch URL https://aiinfra.pkgs.visualstudio.com/PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/attrs/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+Collecting attrs>=17.3.0 (from aiohttp!=4.0.0a0,!=4.0.0a1->fsspec[http]<2025.0,>=2022.5.0->lightning==2.2.4->-r requirements.txt (line 16))
+  Downloading attrs-26.1.0-py3-none-any.whl (67 kB)
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /whl/cu121/frozenlist/
+Could not fetch URL https://download.pytorch.org/whl/cu121/frozenlist/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/frozenlist/
+Could not fetch URL https://aiinfra.pkgs.visualstudio.com/PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/frozenlist/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+Collecting frozenlist>=1.1.1 (from aiohttp!=4.0.0a0,!=4.0.0a1->fsspec[http]<2025.0,>=2022.5.0->lightning==2.2.4->-r requirements.txt (line 16))
+  Downloading frozenlist-1.8.0-cp311-cp311-win_amd64.whl (44 kB)
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /whl/cu121/multidict/
+Could not fetch URL https://download.pytorch.org/whl/cu121/multidict/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/multidict/
+Could not fetch URL https://aiinfra.pkgs.visualstudio.com/PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/multidict/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+Collecting multidict<7.0,>=4.5 (from aiohttp!=4.0.0a0,!=4.0.0a1->fsspec[http]<2025.0,>=2022.5.0->lightning==2.2.4->-r requirements.txt (line 16))
+  Downloading multidict-6.8.0-cp311-cp311-win_amd64.whl (51 kB)
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /whl/cu121/propcache/
+Could not fetch URL https://download.pytorch.org/whl/cu121/propcache/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/propcache/
+Could not fetch URL https://aiinfra.pkgs.visualstudio.com/PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/propcache/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+Collecting propcache>=0.2.0 (from aiohttp!=4.0.0a0,!=4.0.0a1->fsspec[http]<2025.0,>=2022.5.0->lightning==2.2.4->-r requirements.txt (line 16))
+  Downloading propcache-0.5.2-cp311-cp311-win_amd64.whl (42 kB)
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /whl/cu121/yarl/
+Could not fetch URL https://download.pytorch.org/whl/cu121/yarl/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/yarl/
+Could not fetch URL https://aiinfra.pkgs.visualstudio.com/PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/yarl/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+Collecting yarl<2.0,>=1.17.0 (from aiohttp!=4.0.0a0,!=4.0.0a1->fsspec[http]<2025.0,>=2022.5.0->lightning==2.2.4->-r requirements.txt (line 16))
+  Downloading yarl-1.24.5-cp311-cp311-win_amd64.whl (97 kB)
+Requirement already satisfied: pycparser in .\.venv\Lib\site-packages (from cffi>=1.0->soundfile==0.12.1->-r requirements.txt (line 31)) (3.0)
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /whl/cu121/frozendict/
+Could not fetch URL https://download.pytorch.org/whl/cu121/frozendict/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/frozendict/
+Could not fetch URL https://aiinfra.pkgs.visualstudio.com/PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/frozendict/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+Collecting frozendict (from einx>=0.3.0->x-transformers==2.11.24->-r requirements.txt (line 39))
+  Downloading frozendict-2.4.7-py3-none-any.whl (16 kB)
+Requirement already satisfied: httpcore==1.* in .\.venv\Lib\site-packages (from httpx>=0.24.1->gradio==5.4.0->-r requirements.txt (line 9)) (1.0.9)
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /whl/cu121/cloudpickle/
+Could not fetch URL https://download.pytorch.org/whl/cu121/cloudpickle/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/cloudpickle/
+Could not fetch URL https://aiinfra.pkgs.visualstudio.com/PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/cloudpickle/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+Collecting cloudpickle>=3.0 (from joblib>=0.14->librosa==0.10.2->-r requirements.txt (line 15))
+  Downloading cloudpickle-3.1.2-py3-none-any.whl (22 kB)
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /whl/cu121/mdurl/
+Could not fetch URL https://download.pytorch.org/whl/cu121/mdurl/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/mdurl/
+Could not fetch URL https://aiinfra.pkgs.visualstudio.com/PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/mdurl/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+Collecting mdurl~=0.1 (from markdown-it-py>=2.2.0->rich==13.7.1->-r requirements.txt (line 30))
+  Downloading mdurl-0.1.2-py3-none-any.whl (10.0 kB)
+Requirement already satisfied: llvmlite<0.50,>=0.49.0dev0 in .\.venv\Lib\site-packages (from numba>=0.51.0->librosa==0.10.2->-r requirements.txt (line 15)) (0.49.0)
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /whl/cu121/platformdirs/
+Could not fetch URL https://download.pytorch.org/whl/cu121/platformdirs/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/platformdirs/
+Could not fetch URL https://aiinfra.pkgs.visualstudio.com/PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/platformdirs/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+Collecting platformdirs>=2.5.0 (from pooch>=1.1->librosa==0.10.2->-r requirements.txt (line 15))
+  Downloading platformdirs-4.11.8-py3-none-any.whl (24 kB)
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /whl/cu121/pyasn1/
+Could not fetch URL https://download.pytorch.org/whl/cu121/pyasn1/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/pyasn1/
+Could not fetch URL https://aiinfra.pkgs.visualstudio.com/PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/pyasn1/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+Collecting pyasn1<0.7.0,>=0.6.1 (from pyasn1-modules>=0.2.1->google-auth<3,>=1.6.3->tensorboard==2.14.0->-r requirements.txt (line 32))
+  Downloading pyasn1-0.6.4-py3-none-any.whl (84 kB)
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /whl/cu121/six/
+Could not fetch URL https://download.pytorch.org/whl/cu121/six/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/six/
+Could not fetch URL https://aiinfra.pkgs.visualstudio.com/PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/six/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+Collecting six>=1.5 (from python-dateutil>=2.7->matplotlib==3.7.5->-r requirements.txt (line 17))
+  Downloading six-1.17.0-py2.py3-none-any.whl (11 kB)
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /whl/cu121/oauthlib/
+Could not fetch URL https://download.pytorch.org/whl/cu121/oauthlib/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/oauthlib/
+Could not fetch URL https://aiinfra.pkgs.visualstudio.com/PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/oauthlib/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+Collecting oauthlib>=3.0.0 (from requests-oauthlib>=0.7.0->google-auth-oauthlib<1.1,>=0.5->tensorboard==2.14.0->-r requirements.txt (line 32))
+  Downloading oauthlib-3.3.1-py3-none-any.whl (160 kB)
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /whl/cu121/narwhals/
+Could not fetch URL https://download.pytorch.org/whl/cu121/narwhals/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/narwhals/
+Could not fetch URL https://aiinfra.pkgs.visualstudio.com/PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/narwhals/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+Collecting narwhals>=2.0.1 (from scikit-learn>=0.20.0->librosa==0.10.2->-r requirements.txt (line 15))
+  Downloading narwhals-2.26.0-py3-none-any.whl (474 kB)
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /whl/cu121/threadpoolctl/
+Could not fetch URL https://download.pytorch.org/whl/cu121/threadpoolctl/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/threadpoolctl/
+Could not fetch URL https://aiinfra.pkgs.visualstudio.com/PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/threadpoolctl/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+Collecting threadpoolctl>=3.5.0 (from scikit-learn>=0.20.0->librosa==0.10.2->-r requirements.txt (line 15))
+  Downloading threadpoolctl-3.6.0-py3-none-any.whl (18 kB)
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /whl/cu121/soupsieve/
+Could not fetch URL https://download.pytorch.org/whl/cu121/soupsieve/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/soupsieve/
+Could not fetch URL https://aiinfra.pkgs.visualstudio.com/PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/soupsieve/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+Collecting soupsieve>=1.6.1 (from beautifulsoup4->gdown==5.1.0->-r requirements.txt (line 8))
+  Downloading soupsieve-2.9.2-py3-none-any.whl (37 kB)
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /whl/cu121/humanfriendly/
+Could not fetch URL https://download.pytorch.org/whl/cu121/humanfriendly/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/humanfriendly/
+Could not fetch URL https://aiinfra.pkgs.visualstudio.com/PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/humanfriendly/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+Collecting humanfriendly>=9.1 (from coloredlogs->onnxruntime==1.18.0->-r requirements.txt (line 24))
+  Downloading humanfriendly-10.0-py2.py3-none-any.whl (86 kB)
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /whl/cu121/pyreadline3/
+Could not fetch URL https://download.pytorch.org/whl/cu121/pyreadline3/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/pyreadline3/
+Could not fetch URL https://aiinfra.pkgs.visualstudio.com/PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/pyreadline3/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+Collecting pyreadline3 (from humanfriendly>=9.1->coloredlogs->onnxruntime==1.18.0->-r requirements.txt (line 24))
+  Downloading pyreadline3-3.5.6-py3-none-any.whl (85 kB)
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /whl/cu121/zipp/
+Could not fetch URL https://download.pytorch.org/whl/cu121/zipp/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/zipp/
+Could not fetch URL https://aiinfra.pkgs.visualstudio.com/PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/zipp/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+Collecting zipp>=3.20 (from importlib-metadata->diffusers==0.29.0->-r requirements.txt (line 5))
+  Downloading zipp-4.1.0-py3-none-any.whl (10 kB)
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /whl/cu121/win32-setctime/
+Could not fetch URL https://download.pytorch.org/whl/cu121/win32-setctime/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/win32-setctime/
+Could not fetch URL https://aiinfra.pkgs.visualstudio.com/PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/win32-setctime/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+Collecting win32-setctime>=1.0.0 (from loguru->x-transformers==2.11.24->-r requirements.txt (line 39))
+  Downloading win32_setctime-1.2.0-py3-none-any.whl (4.1 kB)
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /whl/cu121/pysocks/
+Could not fetch URL https://download.pytorch.org/whl/cu121/pysocks/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')': /PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/pysocks/
+Could not fetch URL https://aiinfra.pkgs.visualstudio.com/PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/pysocks/: There was a problem confirming the ssl certificate: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016) - skipping
+Collecting PySocks!=1.5.7,>=1.5.6 (from requests[socks]->gdown==5.1.0->-r requirements.txt (line 8))
+  Downloading PySocks-1.7.1-py3-none-any.whl (16 kB)
+Requirement already satisfied: mpmath<1.4,>=1.1.0 in .\.venv\Lib\site-packages (from sympy->torch==2.3.1->-r requirements.txt (line 36)) (1.3.0)
+Building wheels for collected packages: wget, antlr4-python3-runtime
+  Building wheel for wget (pyproject.toml): started
+  Building wheel for wget (pyproject.toml): finished with status 'done'
+  Created wheel for wget: filename=wget-3.2-py3-none-any.whl size=9711 sha256=e8cfeb727713fe2bb91ec3b5d9d00fb09b20619b560e98cdb256966259cdfa9e
+  Stored in directory: d:\cache\pip\wheels\c3\11\f9\4ddcfcd200e0f275c97416caacedd203430eaa0a813361c4d7
+  Building wheel for antlr4-python3-runtime (pyproject.toml): started
+  Building wheel for antlr4-python3-runtime (pyproject.toml): finished with status 'done'
+  Created wheel for antlr4-python3-runtime: filename=antlr4_python3_runtime-4.9.3-py3-none-any.whl size=144613 sha256=6718f3b93e70b8efbeb949b03ab1b8eccfff204e33fb76560397cfa4ca4e3a6d
+  Stored in directory: d:\cache\pip\wheels\b7\1a\64\f0dc37c50c3c337e906abf4eb29393c3f72add010ab48881b5
+Successfully built wget antlr4-python3-runtime
+Installing collected packages: wget, tbb, pytz, pydub, intel-openmp, flatbuffers, antlr4-python3-runtime, zipp, win32-setctime, websockets, uvicorn, tzdata, typeguard, tomlkit, threadpoolctl, tensorboard-data-server, soupsieve, six, shellingham, semantic-version, safetensors, ruff, ruamel.yaml.clib, python-multipart, PySocks, pyreadline3, pyparsing, pygments, pydantic-core, pyasn1, pyarrow, protobuf, propcache, platformdirs, Pillow, packaging, orjson, omegaconf, oauthlib, numpy, networkx, narwhals, multidict, msgpack, mkl, mdurl, markupsafe, markdown, kiwisolver, kaldifst, grpcio, fsspec, frozenlist, frozendict, fonttools, ffmpy, einops, decorator, cycler, cloudpickle, audioread, attrs, annotated-types, annotated-doc, aiohappyeyeballs, aiofiles, absl-py, yarl, werkzeug, starlette, soxr, soundfile, scipy, ruamel.yaml, requests-oauthlib, pyworld, python-dateutil, pydantic, pyasn1-modules, pooch, onnx, modelscope, markdown-it-py, loguru, lightning-utilities, lazy-loader, joblib, inflect, importlib-metadata, hydra-core, humanfriendly, huggingface-hub, grpcio-tools, einx, contourpy, beautifulsoup4, aiosignal, wetext, torch, tokenizers, scikit-learn, safehttpx, rich, pandas, matplotlib, HyperPyYAML, gradio-client, google-auth, gdown, fastapi, diffusers, coloredlogs, aiohttp, x-transformers, typer, transformers, torchmetrics, torchaudio, onnxruntime, librosa, google-auth-oauthlib, conformer, tensorboard, pytorch-lightning, gradio, fastapi-cli, lightning
+  Attempting uninstall: packaging
+    Found existing installation: packaging 26.3
+    Uninstalling packaging-26.3:
+      Successfully uninstalled packaging-26.3
+  Attempting uninstall: numpy
+    Found existing installation: numpy 2.4.6
+    Uninstalling numpy-2.4.6:
+      Successfully uninstalled numpy-2.4.6
+  Attempting uninstall: networkx
+    Found existing installation: networkx 3.6.1
+    Uninstalling networkx-3.6.1:
+      Successfully uninstalled networkx-3.6.1
+  Attempting uninstall: markupsafe
+    Found existing installation: MarkupSafe 3.0.3
+    Uninstalling MarkupSafe-3.0.3:
+      Successfully uninstalled MarkupSafe-3.0.3
+  Attempting uninstall: fsspec
+    Found existing installation: fsspec 2026.7.0
+    Uninstalling fsspec-2026.7.0:
+      Successfully uninstalled fsspec-2026.7.0
+  Attempting uninstall: modelscope
+    Found existing installation: modelscope 1.40.0
+    Uninstalling modelscope-1.40.0:
+      Successfully uninstalled modelscope-1.40.0
+  Attempting uninstall: huggingface-hub
+    Found existing installation: huggingface_hub 1.31.0
+    Uninstalling huggingface_hub-1.31.0:
+      Successfully uninstalled huggingface_hub-1.31.0
+  Attempting uninstall: torch
+    Found existing installation: torch 2.14.0
+    Uninstalling torch-2.14.0:
+      Successfully uninstalled torch-2.14.0
+
+Successfully installed HyperPyYAML-1.2.3 Pillow-11.3.0 PySocks-1.7.1 absl-py-2.5.0 aiofiles-23.2.1 aiohappyeyeballs-2.7.1 aiohttp-3.14.3 aiosignal-1.4.0 annotated-doc-0.0.5 annotated-types-0.8.0 antlr4-python3-runtime-4.9.3 attrs-26.1.0 audioread-3.1.0 beautifulsoup4-4.15.0 cloudpickle-3.1.2 coloredlogs-15.0.1 conformer-0.3.2 contourpy-1.3.3 cycler-0.12.1 decorator-5.3.1 diffusers-0.29.0 einops-0.8.2 einx-0.4.3 fastapi-0.115.6 fastapi-cli-0.0.4 ffmpy-1.0.0 flatbuffers-25.12.19 fonttools-4.65.0 frozendict-2.4.7 frozenlist-1.8.0 fsspec-2024.12.0 gdown-5.1.0 google-auth-2.58.0 google-auth-oauthlib-1.0.0 gradio-5.4.0 gradio-client-1.4.2 grpcio-1.57.0 grpcio-tools-1.57.0 huggingface-hub-0.36.2 humanfriendly-10.0 hydra-core-1.3.2 importlib-metadata-9.0.1 inflect-7.3.1 intel-openmp-2021.4.0 joblib-1.6.0 kaldifst-1.8.0 kiwisolver-1.5.1 lazy-loader-0.5 librosa-0.10.2 lightning-2.2.4 lightning-utilities-0.15.3 loguru-0.7.3 markdown-3.10.3 markdown-it-py-4.2.0 markupsafe-2.1.5 matplotlib-3.7.5 mdurl-0.1.2 mkl-2021.4.0 modelscope-1.20.0 msgpack-1.2.2 multidict-6.8.0 narwhals-2.26.0 networkx-3.1 numpy-1.26.4 oauthlib-3.3.1 omegaconf-2.3.0 onnx-1.16.0 onnxruntime-1.18.0 orjson-3.12.0 packaging-24.2 pandas-2.3.3 platformdirs-4.11.8 pooch-1.9.0 propcache-0.5.2 protobuf-4.25.0 pyarrow-18.1.0 pyasn1-0.6.4 pyasn1-modules-0.4.2 pydantic-2.7.0 pydantic-core-2.18.1 pydub-0.25.1 pygments-2.21.0 pyparsing-3.3.2 pyreadline3-3.5.6 python-dateutil-2.9.0.post0 python-multipart-0.0.12 pytorch-lightning-2.6.6 pytz-2026.3.post1 pyworld-0.3.4 requests-oauthlib-2.0.0 rich-13.7.1 ruamel.yaml-0.18.17 ruamel.yaml.clib-0.2.15 ruff-0.16.7 safehttpx-0.1.7 safetensors-0.8.0 scikit-learn-1.9.1 scipy-1.17.1 semantic-version-2.10.0 shellingham-1.5.4 six-1.17.0 soundfile-0.12.1 soupsieve-2.9.2 soxr-1.1.0 starlette-0.41.3 tbb-2021.13.1 tensorboard-2.14.0 tensorboard-data-server-0.7.2 threadpoolctl-3.6.0 tokenizers-0.21.4 tomlkit-0.12.0 torch-2.3.1 torchaudio-2.3.1 torchmetrics-1.9.0 transformers-4.51.3 typeguard-4.6.0 typer-0.24.2 tzdata-2026.4 uvicorn-0.30.0 websockets-12.0 werkzeug-3.1.8 wetext-0.0.4 wget-3.2 win32-setctime-1.2.0 x-transformers-2.11.24 yarl-1.24.5 zipp-4.1.0
+Looking in indexes: https://pypi.tuna.tsinghua.edu.cn/simple
+Requirement already satisfied: huggingface_hub in .\.venv\Lib\site-packages (0.36.2)
+Requirement already satisfied: modelscope in .\.venv\Lib\site-packages (1.20.0)
+Requirement already satisfied: filelock in .\.venv\Lib\site-packages (from huggingface_hub) (3.32.6)
+Requirement already satisfied: fsspec>=2023.5.0 in .\.venv\Lib\site-packages (from huggingface_hub) (2024.12.0)
+Requirement already satisfied: packaging>=20.9 in .\.venv\Lib\site-packages (from huggingface_hub) (24.2)
+Requirement already satisfied: pyyaml>=5.1 in .\.venv\Lib\site-packages (from huggingface_hub) (6.0.3)
+Requirement already satisfied: requests in .\.venv\Lib\site-packages (from huggingface_hub) (2.34.2)
+Requirement already satisfied: tqdm>=4.42.1 in .\.venv\Lib\site-packages (from huggingface_hub) (4.70.1)
+Requirement already satisfied: typing-extensions>=3.7.4.3 in .\.venv\Lib\site-packages (from huggingface_hub) (4.16.0)
+Requirement already satisfied: urllib3>=1.26 in .\.venv\Lib\site-packages (from modelscope) (2.7.0)
+Requirement already satisfied: charset_normalizer<4,>=2 in .\.venv\Lib\site-packages (from requests->huggingface_hub) (3.5.1)
+Requirement already satisfied: idna<4,>=2.5 in .\.venv\Lib\site-packages (from requests->huggingface_hub) (3.19)
+Requirement already satisfied: certifi>=2023.5.7 in .\.venv\Lib\site-packages (from requests->huggingface_hub) (2026.7.22)
+Requirement already satisfied: colorama in .\.venv\Lib\site-packages (from tqdm>=4.42.1->huggingface_hub) (0.4.6)
+
+[3/3] 下载模型文件（约 5G,最慢的一步）...
+urllib3.exceptions.SSLError: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\study\ai-jms\ai-jms-small-llm-builder\ep02-voice-clone\tools\CosyVoice\.venv\Lib\site-packages\requests\adapters.py", line 696, in send
+    resp = conn.urlopen(
+           ^^^^^^^^^^^^^
+  File "D:\study\ai-jms\ai-jms-small-llm-builder\ep02-voice-clone\tools\CosyVoice\.venv\Lib\site-packages\urllib3\connectionpool.py", line 842, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "D:\study\ai-jms\ai-jms-small-llm-builder\ep02-voice-clone\tools\CosyVoice\.venv\Lib\site-packages\urllib3\util\retry.py", line 543, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /api/models/FunAudioLLM/Fun-CosyVoice3-0.5B-2512/revision/main (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "D:\study\ai-jms\ai-jms-small-llm-builder\ep02-voice-clone\tools\CosyVoice\.venv\Lib\site-packages\huggingface_hub\utils\_validators.py", line 114, in _inner_fn
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "D:\study\ai-jms\ai-jms-small-llm-builder\ep02-voice-clone\tools\CosyVoice\.venv\Lib\site-packages\huggingface_hub\_snapshot_download.py", line 165, in snapshot_download
+    repo_info = api.repo_info(repo_id=repo_id, repo_type=repo_type, revision=revision)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\study\ai-jms\ai-jms-small-llm-builder\ep02-voice-clone\tools\CosyVoice\.venv\Lib\site-packages\huggingface_hub\utils\_validators.py", line 114, in _inner_fn
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "D:\study\ai-jms\ai-jms-small-llm-builder\ep02-voice-clone\tools\CosyVoice\.venv\Lib\site-packages\huggingface_hub\hf_api.py", line 2867, in repo_info
+    return method(
+           ^^^^^^^
+  File "D:\study\ai-jms\ai-jms-small-llm-builder\ep02-voice-clone\tools\CosyVoice\.venv\Lib\site-packages\huggingface_hub\utils\_validators.py", line 114, in _inner_fn
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "D:\study\ai-jms\ai-jms-small-llm-builder\ep02-voice-clone\tools\CosyVoice\.venv\Lib\site-packages\huggingface_hub\hf_api.py", line 2660, in model_info
+    r = get_session().get(path, headers=headers, timeout=timeout, params=params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\study\ai-jms\ai-jms-small-llm-builder\ep02-voice-clone\tools\CosyVoice\.venv\Lib\site-packages\requests\sessions.py", line 671, in get
+    return self.request("GET", url, params=params, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\study\ai-jms\ai-jms-small-llm-builder\ep02-voice-clone\tools\CosyVoice\.venv\Lib\site-packages\requests\sessions.py", line 651, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\study\ai-jms\ai-jms-small-llm-builder\ep02-voice-clone\tools\CosyVoice\.venv\Lib\site-packages\requests\sessions.py", line 784, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\study\ai-jms\ai-jms-small-llm-builder\ep02-voice-clone\tools\CosyVoice\.venv\Lib\site-packages\huggingface_hub\utils\_http.py", line 96, in send
+    return super().send(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\study\ai-jms\ai-jms-small-llm-builder\ep02-voice-clone\tools\CosyVoice\.venv\Lib\site-packages\requests\adapters.py", line 727, in send
+    raise SSLError(e, request=request)
+requests.exceptions.SSLError: (MaxRetryError("HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /api/models/FunAudioLLM/Fun-CosyVoice3-0.5B-2512/revision/main (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)')))"), '(Request ID: 4aec205e-8a4e-4998-9fbb-89ed93a2f187)')

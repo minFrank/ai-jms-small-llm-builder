@@ -29,7 +29,7 @@
 
 **原始报错(逐字)**:
 ```
-LibsndfileError: Error opening 'C:\Users\Frank\AppData\Roaming\OmniVoice\engines\cosyvoice\CosyVoice\我的录音.wav': System error.
+LibsndfileError: Error opening 'C:\Users\<用户名>\AppData\Roaming\OmniVoice\engines\cosyvoice\CosyVoice\我的录音.wav': System error.
 ```
 
 原因:脚本先把工作目录切到了模型目录,再去读相对路径 `我的录音.wav` ——

@@ -3,13 +3,20 @@
 
 用法(通常不用手敲,由「一键生成.bat」调用):
     python tools/tts.py --text-file story.txt --voice 我的录音.wav \
-        --voice-text "我录音里念的那句话" --out output/故事.mp3
+        --voice-text-file 我的录音说的是什么.txt --out output/故事.mp3
 
-为什么要有这个文件:CosyVoice 官方的用法对普通人偏难(要自己管模型精度、自己拼多段),
-这里把两个必踩的坑都修好了 —— 详见文件末尾注释。
+设计要点(都是实测踩出来的,别改坏):
+  · 分块 + 逐块落盘:长文本按句切成若干块,每块算完立刻写盘并更新进度文件。
+    原因:官方写法是「全部算完再返回」,一旦中途断电/被杀/关窗口,
+    几小时的算力全部作废,连做到哪都不知道。分块后最坏只损失当前这一块。
+  · 断点续跑:重跑时自动跳过已完成的块(--resume 默认开),接着往下算。
+  · 流式进度:每块打印「第几块/共几块、该块字数、该块耗时、已生成音频秒数」,
+    并写入 logs/tts-progress.json —— 归因用,不留黑箱。
 """
 import argparse
+import json
 import os
+import re
 import subprocess
 import sys
 import time
@@ -33,6 +40,30 @@ def find_cosy_root() -> str:
     return ""
 
 
+def split_blocks(text: str, max_chars: int):
+    """按句号切块,每块不超过 max_chars 字。
+
+    为什么要自己切:引擎内部也会切句,但那是「一次性调用」的内部行为,
+    外面看不到、也存不下来。自己切才能一块一落盘、一块一续跑。
+    """
+    if max_chars <= 0:
+        return [text]
+    sents = re.split(r"(?<=[。！？!?；;])", text)
+    sents = [s.strip() for s in sents if s.strip()]
+    blocks, cur = [], ""
+    for s in sents:
+        if cur and len(cur) + len(s) > max_chars:
+            blocks.append(cur)
+            cur = s
+        else:
+            cur += s
+    if cur:
+        blocks.append(cur)
+    if not blocks:
+        blocks = [text]
+    return blocks
+
+
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--text-file", required=True, help="要念的文字(story.txt)")
@@ -41,6 +72,11 @@ def main() -> int:
     ap.add_argument("--voice-text-file", help="把上面那句话存成文本文件,传文件路径 —— 推荐,免去命令行转义/编码问题")
     ap.add_argument("--out", required=True, help="输出文件(建议 .mp3)")
     ap.add_argument("--model-dir", default="pretrained_models/Fun-CosyVoice3-0.5B")
+    ap.add_argument("--block-chars", type=int, default=300,
+                    help="每块多少字(默认 300;越小越抗中断,但固定开销更多)")
+    ap.add_argument("--no-resume", action="store_true", help="忽略已完成的分块,从头重算")
+    ap.add_argument("--stream", action="store_true",
+                    help="流式取段(逐段 yield)。实测其开销需要对照,故默认关;分块落盘本身已足够抗中断")
     a = ap.parse_args()
 
     # --voice-text-file 优先:从文件读参考文本。
@@ -82,12 +118,53 @@ def main() -> int:
     if not text:
         print(f"× {a.text_file} 是空的,先写点内容。")
         return 2
-    if not os.path.exists(voice_abs):
-        print(f"× 找不到录音文件:{voice_abs}")
-        return 2
+
     print(f"· 使用模型目录:{root}")
     print(f"· 用你的录音:{os.path.basename(voice_abs)}")
     print(f"· 要念 {len(text)} 个字")
+
+    out = out_abs
+    os.makedirs(os.path.dirname(out) or ".", exist_ok=True)
+    wav = os.path.splitext(out)[0] + ".wav"
+
+    # 分块工作目录:进度与已完成块都放这里,被杀也不丢
+    work = os.path.splitext(out)[0] + "_blocks"
+    os.makedirs(work, exist_ok=True)
+    seg_dir = os.path.join(work, "segs")
+    os.makedirs(seg_dir, exist_ok=True)
+    prog_path = os.path.join(work, "progress.json")
+
+    blocks = split_blocks(text, a.block_chars)
+    print(f"· 切成 {len(blocks)} 块(每块约 {a.block_chars} 字);工作目录:{work}")
+
+    done = {}
+    if os.path.exists(prog_path) and not a.no_resume:
+        try:
+            prev = json.loads(open(prog_path, encoding="utf-8").read())
+            if prev.get("block_chars") == a.block_chars and prev.get("chars") == len(text):
+                done = {int(k): v for k, v in (prev.get("done") or {}).items()}
+                if done:
+                    print(f"· 发现上次进度:已完成 {len(done)}/{len(blocks)} 块,接着往下算"
+                          f"(想从头算加 --no-resume)")
+            else:
+                print("· 上次进度与当前文本/分块不一致,忽略,从头算")
+        except Exception as e:
+            print(f"· 进度文件读不了({str(e)[:60]}),从头算")
+
+    def save_prog(state_done, extra=None):
+        """每块落盘后立即写进度 —— 被杀也能看出做到哪。"""
+        d = {"chars": len(text), "block_chars": a.block_chars, "blocks": len(blocks),
+             "stream": bool(a.stream),
+             "done": {str(k): v for k, v in state_done.items()},
+             "updated": time.strftime("%Y-%m-%d %H:%M:%S")}
+        if extra:
+            d.update(extra)
+        tmp = prog_path + ".tmp"
+        with open(tmp, "w", encoding="utf-8") as f:
+            json.dump(d, f, ensure_ascii=False, indent=2)
+        os.replace(tmp, prog_path)
+
+    save_prog(done, {"stage": "starting"})
 
     os.chdir(root)
     sys.path.insert(0, "third_party/Matcha-TTS")
@@ -98,9 +175,10 @@ def main() -> int:
     import torchaudio              # noqa: E402
 
     t0 = time.time()
-    print("· 正在加载模型(第一次会慢,后面就快了)…")
+    print("· 正在加载模型(第一次会慢,后面就快了)…", flush=True)
     m = AutoModel(model_dir=a.model_dir)
-    print(f"· 模型加载完成,用了 {time.time()-t0:.0f} 秒")
+    load_s = time.time() - t0
+    print(f"· 模型加载完成,用了 {load_s:.0f} 秒", flush=True)
 
     # 坑 1:CPU 上必须把权重转成 float32,否则报 dtype 不匹配
     for _n, sub in vars(m.model).items():
@@ -112,42 +190,85 @@ def main() -> int:
     if "<|endofprompt|>" not in vt:
         vt = "You are a helpful assistant.<|endofprompt|>" + vt
 
-    out = out_abs
-    os.makedirs(os.path.dirname(out), exist_ok=True)
-    wav = os.path.splitext(out)[0] + ".wav"
-
     t1 = time.time()
-    segs = list(m.inference_zero_shot(text, vt, voice_abs, stream=False))
-    if not segs:
-        print("× 引擎没有返回音频")
-        return 3
+    parts = []
+    total_audio = 0.0
+    per_block = []
+
+    for i, blk in enumerate(blocks):
+        seg_path = os.path.join(seg_dir, f"block_{i:04d}.wav")
+        cached = i in done and os.path.exists(seg_path)
+
+        if cached:
+            dur = float(done[i].get("audio_s", 0) or 0)
+            per_block.append(done[i])
+            parts.append(seg_path)
+            total_audio += dur
+            print(f"[块 {i+1}/{len(blocks)}] 复用上次结果 {dur:.1f} 秒音频(跳过)", flush=True)
+            continue
+
+        bt = time.time()
+        n_seg = 0
+        sub_parts = []
+        for k, seg in enumerate(m.inference_zero_shot(blk, vt, voice_abs, stream=a.stream)):
+            sp = seg_path if k == 0 else seg_path.replace(".wav", f"_{k}.wav")
+            torchaudio.save(sp, seg["tts_speech"], m.sample_rate)
+            sub_parts.append(sp)
+            n_seg += 1
+        if n_seg == 0:
+            print(f"× 第 {i+1} 块没有返回音频,停止")
+            save_prog(done, {"stage": f"failed_at_block_{i+1}"})
+            return 3
+
+        # 该块内部若又被切成多段,先拼成一个块文件
+        if n_seg > 1:
+            lst = seg_path.replace(".wav", "_lst.txt")
+            with open(lst, "w", encoding="utf-8") as f:
+                for sp in sub_parts:
+                    f.write(f"file '{sp}'\n")
+            merged = seg_path.replace(".wav", "_m.wav")
+            subprocess.run(["ffmpeg", "-y", "-f", "concat", "-safe", "0", "-i", lst,
+                            "-c", "copy", merged], check=True, capture_output=True)
+            for sp in sub_parts:
+                try:
+                    os.remove(sp)
+                except OSError:
+                    pass
+            os.replace(merged, seg_path)
+            os.remove(lst)
+
+        dur = float((subprocess.run(
+            ["ffprobe", "-v", "error", "-show_entries", "format=duration",
+             "-of", "default=nw=1:nk=1", seg_path],
+            capture_output=True, text=True).stdout or "0").strip() or 0)
+        el = time.time() - bt
+        rec = {"block": i + 1, "chars": len(blk), "audio_s": round(dur, 2),
+               "elapsed_s": round(el, 1),
+               "stream": bool(a.stream),
+               # 口径统一：倍率 = 耗时 ÷ 音频时长（与文章「慢约 5.9 倍」一致），
+               # 不要用「音频 ÷ 耗时」——同一件事两套口径会让人以为算错了。
+               "cost_ratio": round(el / dur, 2) if dur else 0}
+        done[i] = rec
+        per_block.append(rec)
+        parts.append(seg_path)
+        total_audio += dur
+        save_prog(done, {"stage": f"block_{i+1}_done", "total_audio_s": round(total_audio, 1)})
+        print(f"[块 {i+1}/{len(blocks)}] {len(blk)} 字 → {dur:.1f} 秒音频,"
+              f"耗时 {el:.0f} 秒(慢 {rec['cost_ratio']} 倍);累计音频 {total_audio/60:.1f} 分钟", flush=True)
+
+    print(f"\n· 全部 {len(parts)} 块完成,正在拼接…", flush=True)
 
     # 坑 3(最容易中招):长文本会被引擎切成多段,必须**全部拼接**。
     # 只取第一段的话,一段 380 字的故事成品只有 15 秒 —— 我就是这么踩的。
-    parts = []
-    for j, seg in enumerate(segs):
-        p = wav if j == 0 else wav.replace(".wav", f"_{j}.wav")
-        torchaudio.save(p, seg["tts_speech"], m.sample_rate)
-        parts.append(p)
-    print(f"· 引擎切成 {len(parts)} 段,正在拼接…")
     if len(parts) > 1:
-        lst = wav.replace(".wav", "_list.txt")
+        lst = os.path.join(work, "concat.txt")
         with open(lst, "w", encoding="utf-8") as f:
             for pp in parts:
                 f.write(f"file '{pp}'\n")
-        merged = wav.replace(".wav", "_merged.wav")
         subprocess.run(["ffmpeg", "-y", "-f", "concat", "-safe", "0", "-i", lst,
-                        "-c", "copy", merged], check=True, capture_output=True)
-        for pp in parts:
-            try:
-                os.remove(pp)
-            except OSError:
-                pass
-        os.replace(merged, wav)
-        try:
-            os.remove(lst)
-        except OSError:
-            pass
+                        "-c", "copy", wav], check=True, capture_output=True)
+    else:
+        os.replace(parts[0], wav)
 
     if out.lower().endswith(".mp3"):
         subprocess.run(["ffmpeg", "-y", "-i", wav, "-c:a", "libmp3lame", "-b:a", "192k", out],
@@ -160,10 +281,17 @@ def main() -> int:
     dur = subprocess.run(["ffprobe", "-v", "error", "-show_entries", "format=duration",
                           "-of", "default=nw=1:nk=1", out], capture_output=True, text=True)
     secs = float((dur.stdout or "0").strip() or 0)
+    el_total = time.time() - t1
+
+    save_prog(done, {"stage": "finished", "total_audio_s": round(secs, 1),
+                     "total_elapsed_s": round(el_total, 1),
+                     "load_s": round(load_s, 1)})
     print("")
-    print(f"√ 完成!生成音频 {secs:.1f} 秒,用时 {time.time()-t1:.0f} 秒")
+    print(f"√ 完成!生成音频 {secs:.1f} 秒({secs/60:.1f} 分钟),用时 {el_total:.0f} 秒")
     print(f"  文件:{out}")
-    print(f"  (生成本身的耗时大约是音频时长的 6 倍,这是纯 CPU 的正常速度)")
+    print(f"  分块明细:{prog_path}")
+    if el_total > 0:
+        print(f"  整体:耗时是音频的 {el_total/secs:.2f} 倍(含模型加载 {load_s:.0f} 秒)")
     return 0
 
 

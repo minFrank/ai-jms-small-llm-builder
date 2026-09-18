@@ -1,0 +1,38 @@
+{
+  "reviewer.localai": {
+    "ok": true,
+    "chars": 10671,
+    "secs": 18,
+    "error": null
+  },
+  "reviewer.localai.L1": {
+    "ok": true,
+    "chars": 10834,
+    "secs": 22,
+    "error": null
+  },
+  "reviewer.localai.L2": {
+    "ok": true,
+    "chars": 2211,
+    "secs": 7,
+    "error": null
+  },
+  "reviewer.localai.L3": {
+    "ok": true,
+    "chars": 2739,
+    "secs": 7,
+    "error": null
+  },
+  "proofreader.localai": {
+    "ok": true,
+    "chars": 5137,
+    "secs": 12,
+    "error": null
+  },
+  "reader.localai": {
+    "ok": true,
+    "chars": 1514,
+    "secs": 5,
+    "error": null
+  }
+}
