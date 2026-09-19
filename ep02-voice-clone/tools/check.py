@@ -62,14 +62,16 @@ def main() -> int:
     # 输入文件
     # 录音与录音文本都认两种名字:英文名优先(防网盘/解压工具把中文名搞乱)
     v = None
-    for n in ("my-recording.wav", "我的录音.wav"):
+    # 格式不限：wav / m4a / mp3 都认，不是 16k 单声道 wav 由 tts.py 用 ffmpeg 自动转
+    AUDIO_EXTS = ("wav", "m4a", "mp3", "WAV", "M4A", "MP3")
+    for n in [f"{stem}.{e}" for stem in ("my-recording", "我的录音") for e in AUDIO_EXTS]:
         if os.path.exists(os.path.join(KIT, n)):
             v = os.path.join(KIT, n)
             break
     txt_ok = any(os.path.exists(os.path.join(KIT, n))
                  for n in ("what-i-said.txt", "我的录音说的是什么.txt"))
     t = os.path.join(KIT, "story.txt")
-    print(f"[6] 你的录音:{'找到（' + os.path.basename(v) + '）' if v else '× 还没有。放一个 my-recording.wav 或「我的录音.wav」进来'}")
+    print(f"[6] 你的录音:{'找到（' + os.path.basename(v) + '）' if v else '× 还没有。放一个 my-recording.wav / .m4a / .mp3（或中文名「我的录音.*」）进来'}")
     print(f"[7] 录音文本:{'找到' if txt_ok else '× 还没有。放一个 what-i-said.txt 或「我的录音说的是什么.txt」'}")
     print(f"[8] 要念的文字:{'找到' if os.path.exists(t) else '× 还没有 story.txt'}")
 

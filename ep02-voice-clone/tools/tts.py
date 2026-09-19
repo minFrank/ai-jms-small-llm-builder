@@ -17,6 +17,7 @@ import argparse
 import json
 import os
 import re
+import shutil
 import subprocess
 import sys
 import time
@@ -38,6 +39,40 @@ def find_cosy_root() -> str:
         if c and os.path.isdir(os.path.join(c, "cosyvoice")):
             return c
     return ""
+
+
+
+def ensure_16k_wav(voice_path: str, work_dir: str) -> str:
+    """把参考录音统一成 16k 单声道 wav，返回可直接喂给模型的文件路径。
+
+    为什么需要（2026-09-19 实测，用包内 venv 跑的）：
+      · 手机自带录音机默认存 .m4a。**.m4a 无论改不改名，libsndfile 都读不了**
+        （报 LibsndfileError: Format not recognised），而 CosyVoice 正是用它加载参考音频。
+      · .mp3 改名成 .wav 反而能读，但采样率是 24000，不是模型要的 16000。
+      · 所以「把文件名改成 .wav 就行」是错的 —— 改名不等于转格式。
+    这一步用 ffmpeg 转一份临时文件，用户不必懂命令行（自己转最容易转错采样率/声道）。
+    """
+    try:
+        import soundfile as sf
+        info = sf.info(voice_path)
+        fmt = (getattr(info, "format", "") or "").upper()
+        if info.samplerate == 16000 and info.channels == 1 and fmt in ("WAV", "WAVEX"):
+            return voice_path
+    except Exception:
+        pass
+
+    ff = shutil.which("ffmpeg")
+    if not ff:
+        print("× 录音需要转成 16k 单声道 wav，但没找到 ffmpeg —— 请先双击「一键安装.bat」")
+        return voice_path
+    conv = os.path.join(work_dir, "_voice-16k.wav")
+    print(f"· 录音不是 16k 单声道 wav，用 ffmpeg 自动转一次：{os.path.basename(voice_path)} → _voice-16k.wav")
+    r = subprocess.run([ff, "-y", "-i", voice_path, "-ar", "16000", "-ac", "1", conv],
+                       capture_output=True)
+    if r.returncode != 0 or not os.path.exists(conv):
+        print("× 转换失败：", (r.stderr or b"").decode("utf-8", "replace")[-300:])
+        return voice_path
+    return conv
 
 
 def split_blocks(text: str, max_chars: int):
@@ -67,7 +102,8 @@ def split_blocks(text: str, max_chars: int):
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--text-file", required=True, help="要念的文字(story.txt)")
-    ap.add_argument("--voice", required=True, help="你的录音(16k 单声道 wav)")
+    ap.add_argument("--voice", required=True,
+                    help="你的录音：wav / m4a / mp3 都行，不是 16k 单声道 wav 会自动转")
     ap.add_argument("--voice-text", help="录音里你实际念的那句话(直接用 --voice-text-file 更方便)")
     ap.add_argument("--voice-text-file", help="把上面那句话存成文本文件,传文件路径 —— 推荐,免去命令行转义/编码问题")
     ap.add_argument("--out", required=True, help="输出文件(建议 .mp3)")
@@ -133,6 +169,8 @@ def main() -> int:
     seg_dir = os.path.join(work, "segs")
     os.makedirs(seg_dir, exist_ok=True)
     prog_path = os.path.join(work, "progress.json")
+
+    voice_use = ensure_16k_wav(voice_abs, work)
 
     blocks = split_blocks(text, a.block_chars)
     print(f"· 切成 {len(blocks)} 块(每块约 {a.block_chars} 字);工作目录:{work}")
@@ -210,7 +248,7 @@ def main() -> int:
         bt = time.time()
         n_seg = 0
         sub_parts = []
-        for k, seg in enumerate(m.inference_zero_shot(blk, vt, voice_abs, stream=a.stream)):
+        for k, seg in enumerate(m.inference_zero_shot(blk, vt, voice_use, stream=a.stream)):
             sp = seg_path if k == 0 else seg_path.replace(".wav", f"_{k}.wav")
             torchaudio.save(sp, seg["tts_speech"], m.sample_rate)
             sub_parts.append(sp)

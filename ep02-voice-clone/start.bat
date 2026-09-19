@@ -40,11 +40,15 @@ echo [2/3] 读取你的录音与文字...
 
 rem 录音与录音文本:英文名优先,没放英文名就找中文名 —— 两种都认
 set VOICEWAV=
-if exist "my-recording.wav" set VOICEWAV=my-recording.wav
-if not defined VOICEWAV if exist "我的录音.wav" set VOICEWAV=我的录音.wav
+rem 格式不限（wav / m4a / mp3）：不是 16k 单声道 wav 时，tts.py 会用 ffmpeg 自动转
+for %%E in (wav m4a mp3 WAV M4A MP3) do (
+  if not defined VOICEWAV if exist "my-recording.%%E" set VOICEWAV=my-recording.%%E
+  if not defined VOICEWAV if exist "我的录音.%%E" set VOICEWAV=我的录音.%%E
+)
 if not defined VOICEWAV (
   echo x 找不到录音文件。
-  echo   放一个 my-recording.wav（或「我的录音.wav」）到这个文件夹。
+  echo   放一个 my-recording.wav / .m4a / .mp3（或中文名「我的录音.*」）到这个文件夹。
+  echo   手机录音机默认存 m4a,直接放进来就行,脚本会自动转格式。
   echo   用手机录音机录 20-30 秒,别用微信语音,那是压缩过的。
 if not "%KIT_NOPAUSE%"=="1" pause
   exit /b 2
