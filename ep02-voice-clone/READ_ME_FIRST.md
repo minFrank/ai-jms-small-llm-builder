@@ -43,3 +43,11 @@
 - 其他报错 → 截图发给作者
 
 详细说明与实测数据见 `README.md`;原始运行日志见 `logs/`。
+
+## Community (WeChat official account)
+
+Usage notes, measured data and updates for this package are posted on the WeChat
+official account "AI 积木师" (search the name inside WeChat to follow).
+
+Questions are welcome there.
+
