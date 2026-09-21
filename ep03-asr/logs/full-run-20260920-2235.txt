@@ -1,0 +1,81 @@
+==============================================================
+ 03 期全量实测 · 2026-09-20 22:35:37
+  4 个模型 × 15 组样本 × (耗时/倍速/内存/CER)
+==============================================================
+
+### ① 等模型就位（最多 60 分钟）###
+  等待中（120s）缺: paraformer whisper
+  等待中（240s）缺: paraformer
+  等待中（360s）缺: paraformer
+  等待中（480s）缺: paraformer
+  全部就位（第 510 秒）
+
+### ② 模型落盘体积（写进文章的「下载体积分级」）###
+  464 MB  faster-whisper-small
+  83 MB  sherpa-onnx-paraformer-zh-2023-09-14
+  1124 MB  sherpa-onnx-sense-voice-zh-en-ja-ko-yue-2024-07-17
+  1283 MB  sherpa-onnx-whisper-small
+
+### ③ 全量跑 ###
+   模型文件: model.int8.onnx
+
+══ sensevoice（部署文件 239 MB / 整包 1178.1 MB）sensevoice
+   A_1_clean.wav                8.0s →    0.36s（22.39×） CER  0.00% 
+   A_2_bgm.wav                  8.0s →    0.20s（39.03×） CER  0.00% 
+   A_3_noise.wav                8.0s →    0.21s（37.54×） CER  9.09% 
+   A_4_fast1.5x.wav             5.3s →    0.13s（40.60×） CER 13.64% 
+   A_5_lowvol_reverb.wav        8.0s →    0.20s（40.49×） CER  4.55% 
+   B_1_clean.wav               17.0s →    0.44s（38.66×） CER  4.92% 
+   B_2_bgm.wav                 17.0s →    0.43s（39.28×） CER  4.92% 
+   B_3_noise.wav               17.0s →    0.44s（38.61×） CER  4.92% 
+   B_4_fast1.5x.wav            11.3s →    0.29s（39.08×） CER  6.56% 
+   B_5_lowvol_reverb.wav       17.0s →    0.45s（38.03×） CER  6.56% 
+   C_1_clean.wav              628.3s →  177.44s（ 3.54×） CER  1.24% 
+   C_2_bgm.wav                628.3s →  184.74s（ 3.40×） CER  2.13% 
+   C_3_noise.wav              628.3s →  175.77s（ 3.57×） CER  3.41% 
+   C_4_fast1.5x.wav           418.9s →   82.34s（ 5.09×） CER  2.88% 
+   C_5_lowvol_reverb.wav      628.3s →  176.37s（ 3.56×） CER  2.84% 
+
+══ paraformer（部署文件 243 MB / 整包 245.1 MB）paraformer
+   A_1_clean.wav                8.0s →    0.20s（39.16×） CER  0.00% 
+   A_2_bgm.wav                  8.0s →    0.20s（39.47×） CER  0.00% 
+   A_3_noise.wav                8.0s →    0.20s（39.28×） CER  0.00% 
+   A_4_fast1.5x.wav             5.3s →    0.15s（35.95×） CER  0.00% 
+   A_5_lowvol_reverb.wav        8.0s →    0.20s（39.94×） CER  0.00% 
+   B_1_clean.wav               17.0s →    0.38s（44.39×） CER  0.00% 
+   B_2_bgm.wav                 17.0s →    0.37s（46.00×） CER  1.64% 
+   B_3_noise.wav               17.0s →    0.38s（44.57×） CER  1.64% 
+   B_4_fast1.5x.wav            11.3s →    0.25s（44.52×） CER  1.64% 
+   B_5_lowvol_reverb.wav       17.0s →    0.38s（45.27×） CER  0.00% 
+   C_1_clean.wav              628.3s →   82.86s（ 7.58×） CER  0.35% 
+   C_2_bgm.wav                628.3s →   80.92s（ 7.76×） CER  1.77% 
+   C_3_noise.wav              628.3s →   80.95s（ 7.76×） CER  1.73% 
+   C_4_fast1.5x.wav           418.9s →   39.28s（10.66×） CER  0.75% 
+   C_5_lowvol_reverb.wav      628.3s →   79.99s（ 7.85×） CER  1.02% 
+   whisper 配对: small-encoder.int8.onnx + small-decoder.int8.onnx
+❌ whisper 初始化失败: cannot access local variable 'm' where it is not associated with a value
+
+══ fw（部署文件 0 MB / 整包 245.1 MB）faster-whisper small (CT2, int8)
+   A_1_clean.wav                8.0s →    2.04s（ 3.92×） CER  9.09% 
+   A_2_bgm.wav                  8.0s →    1.96s（ 4.09×） CER 18.18% 
+   A_3_noise.wav                8.0s →    1.94s（ 4.12×） CER  9.09% 
+   A_4_fast1.5x.wav             5.3s →    1.95s（ 2.73×） CER  9.09% 
+   A_5_lowvol_reverb.wav        8.0s →    1.96s（ 4.10×） CER 13.64% 
+   B_1_clean.wav               17.0s →    2.54s（ 6.68×） CER  8.20% 
+   B_2_bgm.wav                 17.0s →    2.55s（ 6.67×） CER 13.11% 
+   B_3_noise.wav               17.0s →    2.63s（ 6.46×） CER  6.56% 
+   B_4_fast1.5x.wav            11.3s →    2.55s（ 4.44×） CER  9.84% 
+   B_5_lowvol_reverb.wav       17.0s →    2.54s（ 6.70×） CER  9.84% 
+   C_1_clean.wav              628.3s →   91.39s（ 6.87×） CER  4.92% 
+   C_2_bgm.wav                628.3s →   86.84s（ 7.23×） CER  6.56% 
+   C_3_noise.wav              628.3s →   89.89s（ 6.99×） CER  8.20% 
+   C_4_fast1.5x.wav           418.9s →  546.45s（ 0.77×） CER 13.03% 
+   C_5_lowvol_reverb.wav      628.3s →  106.44s（ 5.90×） CER  6.56% 
+
+明细：C:\Users\Frank\AppData\Local\hermes\workspace\articles\series\local-ai\ep03\result.json
+
+### ④ 结果汇总（终端表格的原样输出）###
+  模型           组数     平均倍速    CER 中位    CER 最差
+  fw           15     5.2×     9.09%    18.18%
+  paraformer   15    30.7×     0.35%     1.77%
+  sensevoice   15    26.2×     4.55%    13.64%

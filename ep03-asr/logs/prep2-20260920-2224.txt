@@ -1,0 +1,21 @@
+==============================================================
+ 03 期模型准备 · 2026-09-20 22:24:59
+==============================================================
+
+### ① 探测模型仓是否存在（ModelScope 网页 API）###
+  [HTTP 404] csukuangfj/sherpa-onnx-sense-voice-zh-en-ja-ko-yue-2024-07-17
+  [HTTP 404] csukuangfj/sherpa-onnx-paraformer-zh-2023-09-14
+  [HTTP 404] csukuangfj/sherpa-onnx-whisper-small
+  [HTTP 404] csukuangfj/sherpa-onnx-whisper-tiny
+
+### ② 下载（已存在的跳过）###
+  ↓ sherpa-onnx-sense-voice-zh-en-ja-ko-yue-2024-07-17
+D:\study\ai-jms\ai-radar-trend\.venv\Scripts\python.exe: No module named modelscope.__main__; 'modelscope' is a package and cannot be directly executed
+  ↓ sherpa-onnx-paraformer-zh-2023-09-14
+D:\study\ai-jms\ai-radar-trend\.venv\Scripts\python.exe: No module named modelscope.__main__; 'modelscope' is a package and cannot be directly executed
+  ↓ sherpa-onnx-whisper-small
+D:\study\ai-jms\ai-radar-trend\.venv\Scripts\python.exe: No module named modelscope.__main__; 'modelscope' is a package and cannot be directly executed
+  ↓ sherpa-onnx-whisper-tiny
+D:\study\ai-jms\ai-radar-trend\.venv\Scripts\python.exe: No module named modelscope.__main__; 'modelscope' is a package and cannot be directly executed
+
+### ③ 落盘清点（体积要写进文章）###
