@@ -12,7 +12,8 @@
   whisper     sherpa-onnx Whisper-small（ONNX）
   fw          faster-whisper small（CTranslate2，另一套运行时做对照）
 
-用法：python ep03_asr_bench.py [--models sensevoice,paraformer,whisper,fw] [--limit N]
+用法：python ep03_asr_bench.py [--models a,b] [--samples A_1_clean.wav,B_1_clean.wav] [--cores N] [--out 路径]
+  --cores 用来做「降配复验」：限到 2 核就跑一遍，看低配机器上能不能用。
 输出：result.json（逐条明细）+ 终端表格（可直接抄进文章）
 """
 from __future__ import annotations
@@ -26,6 +27,7 @@ import wave
 from pathlib import Path
 
 ASR_DIR = Path("D:/models/asr")
+NUM_THREADS = 8        # --cores 会覆盖
 SAMPLES = Path(r"C:/Users/Frank/AppData/Local/hermes/workspace/articles/series/local-ai/ep03/samples")
 OUT = Path(r"C:/Users/Frank/AppData/Local/hermes/workspace/articles/series/local-ai/ep03")
 MAN = json.loads((SAMPLES / "manifest.json").read_text(encoding="utf-8"))
@@ -89,12 +91,20 @@ def build(model_key: str):
         m, tok = find(d, "model.int8.onnx", "model.onnx"), find(d, "*tokens.txt")
         print(f"   模型文件: {m.name}")
         rec = sherpa_onnx.OfflineRecognizer.from_sense_voice(
-            model=str(m), tokens=str(tok), use_itn=True, language="zh", num_threads=8)
+            model=str(m), tokens=str(tok), use_itn=True, language="zh", num_threads=NUM_THREADS)
     elif model_key == "paraformer":
         d = ASR_DIR / "sherpa-onnx-paraformer-zh-2023-09-14"
         m, tok = find(d, "model.int8.onnx", "model.onnx"), find(d, "*tokens.txt")
         rec = sherpa_onnx.OfflineRecognizer.from_paraformer(
-            paraformer=str(m), tokens=str(tok), num_threads=8)
+            paraformer=str(m), tokens=str(tok), num_threads=NUM_THREADS)
+    elif model_key in ("zip-sm", "zip-std"):
+        # 离线中文 zipformer CTC（int8）—— 体积最小的一档，正好对上「低门槛」这个定位
+        d = ASR_DIR / ("sherpa-onnx-zipformer-ctc-small-zh-int8-2025-07-16" if model_key == "zip-sm"
+                       else "sherpa-onnx-zipformer-ctc-zh-int8-2025-07-03")
+        m, tok = find(d, "model.int8.onnx", "model*.onnx"), find(d, "*tokens.txt")
+        print(f"   模型文件: {m.name}")
+        rec = sherpa_onnx.OfflineRecognizer.from_zipformer_ctc(
+            model=str(m), tokens=str(tok), num_threads=NUM_THREADS)
     elif model_key == "whisper":
         d = ASR_DIR / "sherpa-onnx-whisper-small"
         # 显式配对：编码器与解码器必须同档（都 int8 或都 fp32），不能混搭
@@ -107,13 +117,13 @@ def build(model_key: str):
         m = enc                     # 体积统计用的是这个（此前漏了这行 → whisper 初始化报未赋值）
         print(f"   whisper 配对: {enc.name} + {dec.name}")
         rec = sherpa_onnx.OfflineRecognizer.from_whisper(
-            encoder=str(enc), decoder=str(dec), tokens=str(tok), language="zh", num_threads=8)
+            encoder=str(enc), decoder=str(dec), tokens=str(tok), language="zh", num_threads=NUM_THREADS)
     elif model_key == "fw":
         from faster_whisper import WhisperModel
         wm = WhisperModel(str(ASR_DIR / "faster-whisper-small"), device="cpu", compute_type="int8",
-                          cpu_threads=8)
+                          cpu_threads=NUM_THREADS)
         size = sum(f.stat().st_size for f in (ASR_DIR / "faster-whisper-small").rglob("*") if f.is_file()) / 1e6
-        return (lambda p: "".join(s.text for s in wm.transcribe(str(p), language="zh", beam_size=1)[0])), size / 1e6, "faster-whisper small (CT2, int8)"
+        return (lambda p: "".join(s.text for s in wm.transcribe(str(p), language="zh", beam_size=1)[0])), size, "faster-whisper small (CT2, int8)"
     else:
         raise SystemExit(f"未知模型 {model_key}")
 
@@ -134,10 +144,28 @@ def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--models", default="sensevoice,paraformer,whisper,fw")
     ap.add_argument("--limit", type=int, default=0, help="只跑前 N 组（快速冒烟）")
+    ap.add_argument("--samples", default="", help="只跑这些样本（逗号分隔文件名）")
+    ap.add_argument("--cores", type=int, default=0, help="限核跑（降配复验用），0 = 不限")
+    ap.add_argument("--out", default="", help="结果写到这个文件（默认 result.json）")
     a = ap.parse_args()
+
+    global NUM_THREADS
+    if a.cores:
+        NUM_THREADS = a.cores
+        import os
+        try:
+            import psutil as _ps
+            _ps.Process().cpu_affinity(list(range(a.cores)))
+            print(f"⚠️ 已限核：CPU 亲和 = 前 {a.cores} 个逻辑核，线程数 = {a.cores}")
+        except Exception as exc:
+            print(f"⚠️ 限核失败（{exc}），继续跑但结果不可当降配结论")
+        print(f"   逻辑核数（未限时可见）: {os.cpu_count()}")
 
     samples = sorted(SAMPLES.glob("*.wav"))
     samples = [s for s in samples if not s.name.startswith("srcC")]
+    if a.samples:
+        want = [x.strip() for x in a.samples.split(",") if x.strip()]
+        samples = [s for s in samples if s.name in want]
     if a.limit:
         samples = samples[:a.limit]
 
@@ -164,7 +192,7 @@ def main() -> int:
             wall = time.time() - t0
             peak = (proc.memory_info().rss / 1e6) if proc else None
             c = cer(TXT[tag], text) if text else None
-            rows.append({"model": key, "size_mb": round(size_mb, 1), "pack_mb": _pack, "sample": sp.name, "audio_s": round(secs, 1),
+            rows.append({"model": key, "size_mb": round(size_mb, 1), "pack_mb": _pack, "sample": sp.name, "cores": NUM_THREADS, "audio_s": round(secs, 1),
                          "wall_s": round(wall, 2), "rtf_x": round(secs / wall, 2) if wall else None,
                          "peak_rss_mb": round(peak, 1) if peak else None,
                          "cer": round(c, 4) if c is not None else None,
@@ -174,16 +202,18 @@ def main() -> int:
 
     # 不要覆盖：按 (model, sample) 合并进 result.json
     # （踩过：补跑单个模型时把整份结果冲掉了，前几个模型的原始文本全丢）
-    dest = OUT / "result.json"
+    dest = Path(a.out) if a.out else OUT / "result.json"
     merged = {}
-    if dest.exists():
+    if dest.exists() and dest.name == "result.json":
         try:
             for r in json.loads(dest.read_text(encoding="utf-8")):
-                merged[(r.get("model"), r.get("sample"))] = r
+                merged[(r.get("model"), r.get("sample"), r.get("cores"))] = r
         except Exception:
             pass
+    if dest.name != "result.json":
+        merged = {}                     # 独立输出文件：只放本次的行，不和主结果混
     for r in rows:
-        merged[(r.get("model"), r.get("sample"))] = r
+        merged[(r.get("model"), r.get("sample"), r.get("cores"))] = r
     dest.write_text(json.dumps(list(merged.values()), ensure_ascii=False, indent=1), encoding="utf-8")
     print(f"\n明细：{dest}（累计 {len(merged)} 条）")
     return 0
