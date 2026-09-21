@@ -16,3 +16,10 @@ tools/CosyVoice/
 .idea/
 .DS_Store
 Thumbs.db
+
+# 运行日志不入库（2026-09-21 用户要求）
+# 理由：日志是本地复现的中间产物，仓库只留成果（result.json/证据图）、脚本与文档；
+# 日志本体继续留在本机 workspace，需要时随复刻包一起看。
+**/logs/
+*.log
+run-bench*-log.md

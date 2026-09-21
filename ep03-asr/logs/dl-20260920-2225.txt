@@ -1,57 +1,0 @@
-==============================================================
- 03 æœŸæ¨¡å‹ä¸‹è½½ Â· 2026-09-20 22:25:46  ï¼ˆå…¨éƒ¨è½ D:/models/asrï¼‰
-==============================================================
-
-### sherpa-onnx-sense-voice-zh-en-ja-ko-yue-2024-07-17 ###
-curl: (23) client returned ERROR on write of 2756 bytes
-  ÏÂÔØ: HTTP 200 ¡¤ 0 ×Ö½Ú ¡¤ 0 B/s
-  âŒ æ²¡ä¸‹åˆ°æ–‡ä»¶
-
-### sherpa-onnx-paraformer-zh-2023-09-14 ###
-curl: (23) client returned ERROR on write of 2756 bytes
-  ÏÂÔØ: HTTP 200 ¡¤ 0 ×Ö½Ú ¡¤ 0 B/s
-  âŒ æ²¡ä¸‹åˆ°æ–‡ä»¶
-
-### sherpa-onnx-whisper-small ###
-curl: (23) client returned ERROR on write of 2756 bytes
-  ÏÂÔØ: HTTP 200 ¡¤ 0 ×Ö½Ú ¡¤ 0 B/s
-  âŒ æ²¡ä¸‹åˆ°æ–‡ä»¶
-
-### faster-whisper smallï¼ˆHFï¼Œèµ°ä»£ç†ï¼‰###
-  % Total    % Received % Xferd  Average Speed  Time    Time    Time   Current
-                                 Dload  Upload  Total   Spent   Left   Speed
-  0      0   0      0   0      0      0      0                              0  0      0   0      0   0      0      0      0                              0100    260 100    260   0      0    777      0                              0100    260 100    260   0      0    777      0                              0
-  0      0   0      0   0      0      0      0                              0Warning: Failed to open the file 
-Warning: /d/models/asr/faster-whisper-small/config.json: ÏµÍ³ÕÒ²»µ½Ö¸¶¨µÄÎÄ¼ş¡£
-
-curl: (23) client returned ERROR on write of 2370 bytes
-  config.json â†’ HTTP 200 0 å­—èŠ‚
-  % Total    % Received % Xferd  Average Speed  Time    Time    Time   Current
-                                 Dload  Upload  Total   Spent   Left   Speed
-  0      0   0      0   0      0      0      0                              0  0      0   0      0   0      0      0      0                              0100   1085 100   1085   0      0   3182      0                              0100   1085 100   1085   0      0   3179      0                              0
-  0      0   0      0   0      0      0      0                              0  0      0   0      0   0      0      0      0                              0Warning: Failed to open the file /d/models/asr/faster-whisper-small/model.bin: 
-Warning: ÏµÍ³ÕÒ²»µ½Ö¸¶¨µÄÎÄ¼ş¡£
-
-curl: (23) client returned ERROR on write of 3446 bytes
-  model.bin â†’ HTTP 200 0 å­—èŠ‚
-  % Total    % Received % Xferd  Average Speed  Time    Time    Time   Current
-                                 Dload  Upload  Total   Spent   Left   Speed
-  0      0   0      0   0      0      0      0                              0  0      0   0      0   0      0      0      0                              0100    266 100    266   0      0    717      0                              0100    266 100    266   0      0    716      0                              0
-  0      0   0      0   0      0      0      0                              0Warning: Failed to open the file 
-Warning: /d/models/asr/faster-whisper-small/tokenizer.json: 
-Warning: ÏµÍ³ÕÒ²»µ½Ö¸¶¨µÄÎÄ¼ş¡£
-
-curl: (23) client returned ERROR on write of 15158 bytes
-  tokenizer.json â†’ HTTP 200 0 å­—èŠ‚
-  % Total    % Received % Xferd  Average Speed  Time    Time    Time   Current
-                                 Dload  Upload  Total   Spent   Left   Speed
-  0      0   0      0   0      0      0      0                              0  0      0   0      0   0      0      0      0                              0100    266 100    266   0      0    772      0                              0100    266 100    266   0      0    771      0                              0
-  0      0   0      0   0      0      0      0                              0Warning: Failed to open the file 
-Warning: /d/models/asr/faster-whisper-small/vocabulary.txt: 
-Warning: ÏµÍ³ÕÒ²»µ½Ö¸¶¨µÄÎÄ¼ş¡£
-
-curl: (23) client returned ERROR on write of 15160 bytes
-  vocabulary.txt â†’ HTTP 200 0 å­—èŠ‚
-
-### æ¸…ç‚¹ï¼ˆä½“ç§¯è¦å†™è¿›æ–‡ç« ï¼‰###
-  0 MB  faster-whisper-small
