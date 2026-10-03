@@ -1,0 +1,165 @@
+{
+ "engine": "funasr",
+ "model": "Fun-ASR-Nano-2512 (800M)",
+ "load_s": 14.95,
+ "rss_after_load_mb": 6769,
+ "peak_rss_mb": 6769,
+ "net_blocked": [],
+ "guard_selftest": "direct=BLOCKED | requests/proxy=BLOCKED",
+ "cer_avg": null,
+ "rtf_avg": null,
+ "rtf_max": null,
+ "rows": [
+  {
+   "sample": "A_1_clean.wav",
+   "text": "",
+   "chars": 0,
+   "dur": 8.0,
+   "infer_s": 0.0,
+   "rtf": 0.0,
+   "cer": null,
+   "err": "TypeError: expected Tensor as element 0 in argument 0, but got numpy.ndarray"
+  },
+  {
+   "sample": "A_2_bgm.wav",
+   "text": "",
+   "chars": 0,
+   "dur": 8.0,
+   "infer_s": 0.0,
+   "rtf": 0.0,
+   "cer": null,
+   "err": "TypeError: expected Tensor as element 0 in argument 0, but got numpy.ndarray"
+  },
+  {
+   "sample": "A_3_noise.wav",
+   "text": "",
+   "chars": 0,
+   "dur": 8.0,
+   "infer_s": 0.0,
+   "rtf": 0.0,
+   "cer": null,
+   "err": "TypeError: expected Tensor as element 0 in argument 0, but got numpy.ndarray"
+  },
+  {
+   "sample": "A_4_fast1.5x.wav",
+   "text": "",
+   "chars": 0,
+   "dur": 5.34,
+   "infer_s": 0.0,
+   "rtf": 0.0,
+   "cer": null,
+   "err": "TypeError: expected Tensor as element 0 in argument 0, but got numpy.ndarray"
+  },
+  {
+   "sample": "A_5_lowvol_reverb.wav",
+   "text": "",
+   "chars": 0,
+   "dur": 8.04,
+   "infer_s": 0.0,
+   "rtf": 0.0,
+   "cer": null,
+   "err": "TypeError: expected Tensor as element 0 in argument 0, but got numpy.ndarray"
+  },
+  {
+   "sample": "B_1_clean.wav",
+   "text": "",
+   "chars": 0,
+   "dur": 16.98,
+   "infer_s": 0.0,
+   "rtf": 0.0,
+   "cer": null,
+   "err": "TypeError: expected Tensor as element 0 in argument 0, but got numpy.ndarray"
+  },
+  {
+   "sample": "B_2_bgm.wav",
+   "text": "",
+   "chars": 0,
+   "dur": 16.98,
+   "infer_s": 0.0,
+   "rtf": 0.0,
+   "cer": null,
+   "err": "TypeError: expected Tensor as element 0 in argument 0, but got numpy.ndarray"
+  },
+  {
+   "sample": "B_3_noise.wav",
+   "text": "",
+   "chars": 0,
+   "dur": 16.98,
+   "infer_s": 0.0,
+   "rtf": 0.0,
+   "cer": null,
+   "err": "TypeError: expected Tensor as element 0 in argument 0, but got numpy.ndarray"
+  },
+  {
+   "sample": "B_4_fast1.5x.wav",
+   "text": "",
+   "chars": 0,
+   "dur": 11.33,
+   "infer_s": 0.0,
+   "rtf": 0.0,
+   "cer": null,
+   "err": "TypeError: expected Tensor as element 0 in argument 0, but got numpy.ndarray"
+  },
+  {
+   "sample": "B_5_lowvol_reverb.wav",
+   "text": "",
+   "chars": 0,
+   "dur": 17.02,
+   "infer_s": 0.0,
+   "rtf": 0.0,
+   "cer": null,
+   "err": "TypeError: expected Tensor as element 0 in argument 0, but got numpy.ndarray"
+  },
+  {
+   "sample": "C_1_clean.wav",
+   "text": "",
+   "chars": 0,
+   "dur": 628.26,
+   "infer_s": 0.0,
+   "rtf": 0.0,
+   "cer": null,
+   "err": "TypeError: expected Tensor as element 0 in argument 0, but got numpy.ndarray"
+  },
+  {
+   "sample": "C_2_bgm.wav",
+   "text": "",
+   "chars": 0,
+   "dur": 628.26,
+   "infer_s": 0.0,
+   "rtf": 0.0,
+   "cer": null,
+   "err": "TypeError: expected Tensor as element 0 in argument 0, but got numpy.ndarray"
+  },
+  {
+   "sample": "C_3_noise.wav",
+   "text": "",
+   "chars": 0,
+   "dur": 628.26,
+   "infer_s": 0.0,
+   "rtf": 0.0,
+   "cer": null,
+   "err": "TypeError: expected Tensor as element 0 in argument 0, but got numpy.ndarray"
+  },
+  {
+   "sample": "C_4_fast1.5x.wav",
+   "text": "",
+   "chars": 0,
+   "dur": 418.86,
+   "infer_s": 0.0,
+   "rtf": 0.0,
+   "cer": null,
+   "err": "TypeError: expected Tensor as element 0 in argument 0, but got numpy.ndarray"
+  },
+  {
+   "sample": "C_5_lowvol_reverb.wav",
+   "text": "",
+   "chars": 0,
+   "dur": 628.3,
+   "infer_s": 0.0,
+   "rtf": 0.0,
+   "cer": null,
+   "err": "TypeError: expected Tensor as element 0 in argument 0, but got numpy.ndarray"
+  }
+ ],
+ "ts": "2026-10-02 23:11:25"
+}

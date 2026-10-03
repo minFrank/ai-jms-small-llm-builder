@@ -1,0 +1,175 @@
+{
+ "engine": "firered",
+ "model": "FireRedASR2-AED (1.15B)",
+ "load_s": 7.88,
+ "rss_after_load_mb": 9383,
+ "peak_rss_mb": 9383,
+ "net_blocked": [],
+ "guard_selftest": "direct=BLOCKED | requests/proxy=BLOCKED",
+ "cer_avg": 0.0572,
+ "rtf_avg": 1.078,
+ "rtf_max": 2.451,
+ "rows": [
+  {
+   "sample": "A_1_clean.wav",
+   "text": "关注 ai积木时带你从 ai的视角解读和理解生活",
+   "chars": 24,
+   "dur": 8.0,
+   "infer_s": 9.46,
+   "rtf": 1.183,
+   "cer": 0.0455,
+   "err": ""
+  },
+  {
+   "sample": "A_2_bgm.wav",
+   "text": "关注 ai积木师带你从 ai的视角解读和理解生活",
+   "chars": 24,
+   "dur": 8.0,
+   "infer_s": 8.71,
+   "rtf": 1.089,
+   "cer": 0.0,
+   "err": ""
+  },
+  {
+   "sample": "A_3_noise.wav",
+   "text": "关注 ai节目时带你从 ai的视角解读和理解生活",
+   "chars": 24,
+   "dur": 8.0,
+   "infer_s": 8.76,
+   "rtf": 1.094,
+   "cer": 0.1364,
+   "err": ""
+  },
+  {
+   "sample": "A_4_fast1.5x.wav",
+   "text": "关注 ai积木师带你从 ai的视角解读和理解生活",
+   "chars": 24,
+   "dur": 5.34,
+   "infer_s": 6.93,
+   "rtf": 1.299,
+   "cer": 0.0,
+   "err": ""
+  },
+  {
+   "sample": "A_5_lowvol_reverb.wav",
+   "text": "关注 ai积木时带你从 ai的视角解读和理解生活",
+   "chars": 24,
+   "dur": 8.04,
+   "infer_s": 9.05,
+   "rtf": 1.125,
+   "cer": 0.0455,
+   "err": ""
+  },
+  {
+   "sample": "B_1_clean.wav",
+   "text": "大家好这里是 ai积木师今天用三分钟把一个 ai工具拆成看得懂用得上装得起的积木块从今天起我每天帮你筛一个真正有价值的东西出来",
+   "chars": 63,
+   "dur": 16.98,
+   "infer_s": 35.78,
+   "rtf": 2.107,
+   "cer": 0.0,
+   "err": ""
+  },
+  {
+   "sample": "B_2_bgm.wav",
+   "text": "大家好这里是 ai积木师今天用三分钟把一个 ai工具拆成看得懂用得上装得起的积木块从今天起我每天帮你筛一个真正有价值的东西出来",
+   "chars": 63,
+   "dur": 16.98,
+   "infer_s": 35.95,
+   "rtf": 2.117,
+   "cer": 0.0,
+   "err": ""
+  },
+  {
+   "sample": "B_3_noise.wav",
+   "text": "大家好这里是特约工作室今天我们将把一个简易的模块拆成用得上的积木块从今天起我每天都帮你筛一个真正有价值的东西出来",
+   "chars": 56,
+   "dur": 16.98,
+   "infer_s": 33.76,
+   "rtf": 1.988,
+   "cer": 0.3443,
+   "err": ""
+  },
+  {
+   "sample": "B_4_fast1.5x.wav",
+   "text": "大家好这里是 ai积木师今天用三分钟把一个 ai工具拆成看得懂用得上装得起的积木块从今天起我每天帮你筛一个真正有价值的东西出来",
+   "chars": 63,
+   "dur": 11.33,
+   "infer_s": 27.78,
+   "rtf": 2.451,
+   "cer": 0.0,
+   "err": ""
+  },
+  {
+   "sample": "B_5_lowvol_reverb.wav",
+   "text": "大家好这里是 ai积木师今天用三分钟把一个 ai工具拆成看得懂用得上装得起的积木块从今天起我每天帮你筛一个真正有价值的东西出来",
+   "chars": 63,
+   "dur": 17.02,
+   "infer_s": 37.02,
+   "rtf": 2.175,
+   "cer": 0.0,
+   "err": ""
+  },
+  {
+   "sample": "C_1_clean.wav",
+   "text": "",
+   "chars": 0,
+   "dur": 628.26,
+   "infer_s": 78.82,
+   "rtf": 0.125,
+   "cer": null,
+   "err": ""
+  },
+  {
+   "sample": "C_2_bgm.wav",
+   "text": "",
+   "chars": 0,
+   "dur": 628.26,
+   "infer_s": 70.01,
+   "rtf": 0.111,
+   "cer": null,
+   "err": ""
+  },
+  {
+   "sample": "C_3_noise.wav",
+   "text": "",
+   "chars": 0,
+   "dur": 628.26,
+   "infer_s": 72.88,
+   "rtf": 0.116,
+   "cer": null,
+   "err": ""
+  },
+  {
+   "sample": "C_4_fast1.5x.wav",
+   "text": "",
+   "chars": 0,
+   "dur": 418.86,
+   "infer_s": 8.8,
+   "rtf": 0.021,
+   "cer": null,
+   "err": ""
+  },
+  {
+   "sample": "C_5_lowvol_reverb.wav",
+   "text": "",
+   "chars": 0,
+   "dur": 628.3,
+   "infer_s": 71.7,
+   "rtf": 0.114,
+   "cer": null,
+   "err": ""
+  },
+  {
+   "sample": "srcC_long.wav",
+   "text": "",
+   "chars": 0,
+   "dur": 628.26,
+   "infer_s": 80.07,
+   "rtf": 0.127,
+   "cer": null,
+   "err": ""
+  }
+ ],
+ "ts": "2026-10-02 20:55:25"
+}
