@@ -1,0 +1,73 @@
+{
+ "engine": "funasr",
+ "model": "Fun-ASR-Nano",
+ "load_s": 65.9,
+ "rows": [
+  {
+   "sample": "N_1.wav",
+   "ref": "特斯拉的车机接入了豆包大模型",
+   "text": "特斯拉的车机接入了豆包大模型。",
+   "cer": 0.0,
+   "dur": 0,
+   "infer_s": 3.29
+  },
+  {
+   "sample": "N_2.wav",
+   "ref": "欢迎关注 AI 积木师的频道",
+   "text": "欢迎关注AI积木师的频道。",
+   "cer": 0.0,
+   "dur": 0,
+   "infer_s": 1.83
+  },
+  {
+   "sample": "N_3.wav",
+   "ref": "李明让王小明把合同发给张总",
+   "text": "李明让王晓明把合同发给张总。",
+   "cer": 0.0769,
+   "dur": 0,
+   "infer_s": 2.31
+  },
+  {
+   "sample": "N_4.wav",
+   "ref": "二氧化碳和二氧化硅的熔点不同",
+   "text": "二氧化碳和二氧化硅的熔点不同。",
+   "cer": 0.0,
+   "dur": 0,
+   "infer_s": 1.89
+  },
+  {
+   "sample": "N_5.wav",
+   "ref": "把 README 转成 Markdown 格式",
+   "text": "把read me转成Markdown格式。",
+   "cer": 0.0,
+   "dur": 0,
+   "infer_s": 1.76
+  },
+  {
+   "sample": "N_6.wav",
+   "ref": "用 Kubernetes 部署 Docker 容器",
+   "text": "用Kubernetes部署Docker容器。",
+   "cer": 0.0,
+   "dur": 0,
+   "infer_s": 1.71
+  },
+  {
+   "sample": "N_7.wav",
+   "ref": "特斯拉车主在蔚来的换电站排队",
+   "text": "特斯拉车主在未来的换电站排队。",
+   "cer": 0.0714,
+   "dur": 0,
+   "infer_s": 1.69
+  },
+  {
+   "sample": "N_8.wav",
+   "ref": "今天天气不错适合出去走走",
+   "text": "今天天气不错，适合出去走走。",
+   "cer": 0.0,
+   "dur": 0,
+   "infer_s": 1.86
+  }
+ ],
+ "net_blocked": [],
+ "ts": "2026-10-04 18:05:06"
+}
