@@ -147,6 +147,8 @@ def main() -> int:
     ap.add_argument("--samples", default="", help="只跑这些样本（逗号分隔文件名）")
     ap.add_argument("--cores", type=int, default=0, help="限核跑（降配复验用），0 = 不限")
     ap.add_argument("--out", default="", help="结果写到这个文件（默认 result.json）")
+    ap.add_argument("--samples-dir", default="", help="样本目录（默认 15 组主样本；口音专项用）")
+    ap.add_argument("--refs", default="", help="参考文本 JSON：{文件名: 原文}（口音专项用）")
     a = ap.parse_args()
 
     global NUM_THREADS
@@ -161,6 +163,12 @@ def main() -> int:
             print(f"⚠️ 限核失败（{exc}），继续跑但结果不可当降配结论")
         print(f"   逻辑核数（未限时可见）: {os.cpu_count()}")
 
+    global SAMPLES
+    if a.samples_dir:
+        SAMPLES = Path(a.samples_dir)
+    refs = {}
+    if a.refs:
+        refs = json.loads(Path(a.refs).read_text(encoding="utf-8"))
     samples = sorted(SAMPLES.glob("*.wav"))
     samples = [s for s in samples if not s.name.startswith("srcC")]
     if a.samples:
@@ -191,7 +199,8 @@ def main() -> int:
                 text, err = "", str(exc)[:160]
             wall = time.time() - t0
             peak = (proc.memory_info().rss / 1e6) if proc else None
-            c = cer(TXT[tag], text) if text else None
+            ref = refs.get(sp.name) or TXT.get(tag, "")
+            c = cer(ref, text) if (text and ref) else None
             rows.append({"model": key, "size_mb": round(size_mb, 1), "pack_mb": _pack, "sample": sp.name, "cores": NUM_THREADS, "audio_s": round(secs, 1),
                          "wall_s": round(wall, 2), "rtf_x": round(secs / wall, 2) if wall else None,
                          "peak_rss_mb": round(peak, 1) if peak else None,

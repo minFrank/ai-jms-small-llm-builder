@@ -1,0 +1,80 @@
+{
+ "Fun-ASR-Nano A/B 平均 CER": 1.98,
+ "Fun-ASR-Nano 峰值内存 MB": 6788,
+ "FireRedASR2-AED A/B 平均 CER": 5.72,
+ "FireRedASR2-AED 峰值内存 MB": 9199,
+ "Fun-ASR-Nano C类输出字数": [
+  1,
+  1,
+  1,
+  3,
+  431
+ ],
+ "Fun-ASR-Nano C类文本": [
+  "。",
+  "。",
+  ".",
+  "the",
+  "，等，等，等，等。等。等。等。等。等。等"
+ ],
+ "FireRedASR2-AED C类输出字数": [
+  0,
+  0,
+  0,
+  0,
+  0
+ ],
+ "FireRedASR2-AED C类文本": [
+  "",
+  "",
+  "",
+  "",
+  ""
+ ],
+ "Fun-ASR-Nano 分段后平均 CER%": 1.27,
+ "Fun-ASR-Nano 分段后 RTF": 0.558,
+ "FireRedASR2-AED 分段后平均 CER%": 3.12,
+ "FireRedASR2-AED 分段后 RTF": 3.837,
+ "专名8句均值CER%": {
+  "paraformer": 4.96,
+  "Fun-ASR-Nano": 1.85,
+  "sensevoice": 4.83,
+  "FireRedASR2-AED": 3.87,
+  "whisper": 28.43,
+  "fw": 22.92,
+  "zip-sm": 22.67,
+  "zip-std": 24.61
+ },
+ "N_3 王小明各引擎": {
+  "paraformer": 0.0769,
+  "sensevoice": 0.0769,
+  "fw": 0.1538,
+  "whisper": 0.5385,
+  "zip-sm": 0.0769,
+  "zip-std": 0.0769,
+  "Fun-ASR-Nano": 0.0769,
+  "FireRedASR2-AED": 0.0
+ },
+ "N_7 蔚来各引擎": {
+  "paraformer": 0.0714,
+  "sensevoice": 0.0714,
+  "fw": 0.4286,
+  "whisper": 0.4286,
+  "zip-sm": 0.0714,
+  "zip-std": 0.0714,
+  "Fun-ASR-Nano": 0.0714,
+  "FireRedASR2-AED": 0.0714
+ },
+ "03期C类实测(628s直接喂)": {
+  "SenseVoice(L15-19)": "5/5 成功, CER 1.24-3.41%",
+  "Paraformer(L32-36)": "5/5 成功, CER 0.35-1.77%",
+  "whisper(L50-58)": "只处理前30秒(官方警告), CER 93.9-96.2%",
+  "faster-whisper(L72-76)": "5/5 成功, CER 4.92-14.22%",
+  "zipformer": "内存失败退出(无C段输出行)"
+ },
+ "复跑复现": {
+  "FireRed C_1 复跑": "conformer_encoder.py:318 RuntimeError tensor 15706 vs 5000, 0 字, 2/2",
+  "FunASR C_1 无VAD复跑": "271.2s 无报错, 输出 。A.A. (5字), 原批为 。(1字)",
+  "FunASR VAD开启": "funasr 1.4.16 KeyError frontend, 无法用"
+ }
+}

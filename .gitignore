@@ -23,3 +23,11 @@ Thumbs.db
 **/logs/
 *.log
 run-bench*-log.md
+
+# 第三方 ASR 上游克隆(FireRedASR2S,只作依赖、不入库)
+ep09-asr2/FireRedASR2S/
+
+# 第三方/压缩包(只作依赖或临时下载,不入库)
+ep04-txt2img/ComfyUI-master/
+ep04-txt2img/comfy.zip
+ep02-voice-clone/tools/CosyVoice/

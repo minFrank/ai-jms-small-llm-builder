@@ -71,14 +71,14 @@ def mean_cer(rows):
 
 # ---------- 图1:8 模型平均 CER 总榜(横条) ----------
 DATA1 = [
-    ("Paraformer-zh", 0.0049, GREY, "03 期"),
+    ("Paraformer-zh", 0.0049, GREY, "上期"),
     ("Fun-ASR-Nano", mean_cer(fun_ab["rows"]), BLUE, "本期"),
-    ("SenseVoice-Small", 0.0552, GREY, "03 期"),
+    ("SenseVoice-Small", 0.0552, GREY, "上期"),
     ("FireRedASR2-AED", mean_cer(fre_ab["rows"]), BLUE, "本期"),
-    ("faster-whisper small", 0.1066, GREY, "03 期"),
-    ("Zipformer-CTC small", 0.1690, GREY, "03 期"),
-    ("Whisper-small (ONNX)", 0.2228, GREY, "03 期"),
-    ("Zipformer-CTC zh", 0.2563, GREY, "03 期"),
+    ("faster-whisper small", 0.1066, GREY, "上期"),
+    ("Zipformer-CTC small", 0.1690, GREY, "上期"),
+    ("Whisper-small (ONNX)", 0.2228, GREY, "上期"),
+    ("Zipformer-CTC zh", 0.2563, GREY, "上期"),
 ]
 DATA1.sort(key=lambda x: x[1])
 
@@ -168,7 +168,7 @@ im.save(OUT / "fig3-长音频分段.png")
 print("fig3 OK")
 
 # ---------- 封面(极简) ----------
-im, d = canvas(1180, 500, "FunASR 与 FireRedASR2 实测",
+im, d = canvas(1180, 500, "Fun-ASR 与 FireRedASR2 实测",
                "8 个本地转文字模型同机对照 · 长音频要先切段")
 d.text((48, 200), "无独显电脑 · 同批音频 · 全程断网", font=fb(40), fill=BLUE)
 d.line([(48, 270), (640, 270)], fill=BLUE, width=4)
