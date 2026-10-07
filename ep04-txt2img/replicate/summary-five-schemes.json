@@ -1,0 +1,1129 @@
+{
+ "sources": {
+  "bench4": "7b450167b5e5d756",
+  "bench5": "58e9bcb4b31f1ca3",
+  "bench6": "313e1ef13c24167c"
+ },
+ "batches": {
+  "formal": {
+   "rows": 18,
+   "note": "_s42/_s43/_s44 正式批(已发布)"
+  },
+  "trial": {
+   "rows": 12,
+   "note": "_r0/_r1 早期试跑(条件不同,不入表)"
+  },
+  "trial_stats": {
+   "sdcpp-cpu": {
+    "n": 4,
+    "median": 434.74,
+    "min": 424.82,
+    "max": 444.07,
+    "spread_pct": 4.43,
+    "mean": 434.59
+   },
+   "sdcpp-vulkan": {
+    "n": 4,
+    "median": 309.34,
+    "min": 117.29,
+    "max": 311.94,
+    "spread_pct": 62.93,
+    "mean": 261.98
+   },
+   "diffusers": {
+    "n": 4,
+    "median": 177.62,
+    "min": 120.77,
+    "max": 185.32,
+    "spread_pct": 36.34,
+    "mean": 165.34
+   }
+  }
+ },
+ "schemes": {
+  "sd.cpp · 纯 CPU": {
+   "source": "bench4 正式批(已发布,冻结)",
+   "landing": "CPU",
+   "seconds": {
+    "n": 6,
+    "median": 241.05,
+    "min": 240.31,
+    "max": 244.93,
+    "spread_pct": 1.92,
+    "mean": 241.64
+   },
+   "mem_mb": {
+    "n": 6,
+    "median": 4429.51,
+    "min": 4428.98,
+    "max": 4430.34,
+    "spread_pct": 0.03,
+    "mean": 4429.55
+   }
+  },
+  "sd.cpp · Vulkan 核显": {
+   "source": "bench4 正式批(已发布,冻结)",
+   "landing": "iGPU(Vulkan)",
+   "seconds": {
+    "n": 6,
+    "median": 87.43,
+    "min": 87.25,
+    "max": 87.6,
+    "spread_pct": 0.4,
+    "mean": 87.43
+   },
+   "mem_mb": {
+    "n": 6,
+    "median": 1418.26,
+    "min": 1418.18,
+    "max": 1425.92,
+    "spread_pct": 0.55,
+    "mean": 1420.78
+   }
+  },
+  "diffusers · 纯 CPU": {
+   "source": "bench4 正式批(已发布,冻结)",
+   "landing": "CPU",
+   "seconds": {
+    "n": 6,
+    "median": 119.39,
+    "min": 119.05,
+    "max": 119.82,
+    "spread_pct": 0.64,
+    "mean": 119.4
+   },
+   "mem_mb": {
+    "n": 6,
+    "median": 5368.94,
+    "min": 5271.62,
+    "max": 5369.54,
+    "spread_pct": 1.82,
+    "mean": 5343.84
+   }
+  },
+  "ComfyUI · 纯 CPU(冷启动)": {
+   "source": "bench5 cold",
+   "landing": "CPU",
+   "seconds_total": {
+    "n": 18,
+    "median": 190.84,
+    "min": 188.37,
+    "max": 193.87,
+    "spread_pct": 2.88,
+    "mean": 191.15
+   },
+   "seconds_gen": {
+    "n": 18,
+    "median": 176.88,
+    "min": 174.69,
+    "max": 178.86,
+    "spread_pct": 2.36,
+    "mean": 177.12
+   },
+   "mem_mb": {
+    "n": 18,
+    "median": 7441.1,
+    "min": 6979.6,
+    "max": 8017.4,
+    "spread_pct": 13.95,
+    "mean": 7447.39
+   },
+   "timing_scope": "cold_total_incl_load",
+   "device_evidence": true
+  },
+  "ComfyUI · 纯 CPU(暖态,单列)": {
+   "source": "bench5 warm",
+   "seconds_gen": {
+    "n": 6,
+    "median": 172.5,
+    "min": 172.39,
+    "max": 174.51,
+    "spread_pct": 1.23,
+    "mean": 173.14
+   },
+   "timing_scope": "warm_gen_only"
+  },
+  "ONNX/DML · 核显(冷启动)": {
+   "source": "bench6 timing(最新 attempt)",
+   "landing": "iGPU(DirectML)",
+   "seconds_total": {
+    "n": 18,
+    "median": 115.49,
+    "min": 112.8,
+    "max": 116.56,
+    "spread_pct": 3.26,
+    "mean": 115.02
+   },
+   "seconds_load": {
+    "n": 18,
+    "median": 7.29,
+    "min": 6.73,
+    "max": 7.59,
+    "spread_pct": 11.83,
+    "mean": 7.23
+   },
+   "seconds_gen": {
+    "n": 18,
+    "median": 97.15,
+    "min": 94.34,
+    "max": 97.8,
+    "spread_pct": 3.56,
+    "mean": 96.67
+   },
+   "seconds_decode": {
+    "n": 18,
+    "median": 4.36,
+    "min": 3.55,
+    "max": 4.43,
+    "spread_pct": 20.11,
+    "mean": 4.28
+   },
+   "mem_mb": {
+    "n": 18,
+    "median": 12016.05,
+    "min": 11817.9,
+    "max": 12413.7,
+    "spread_pct": 4.96,
+    "mean": 12052.71
+   },
+   "timing_scope": "cold_incl_session_create",
+   "providers": [
+    "CPUExecutionProvider",
+    "DmlExecutionProvider"
+   ],
+   "nfe": [
+    21
+   ],
+   "per_prompt_seed_median": {
+    "p0_s42": {
+     "n": 3,
+     "median": 115.55
+    },
+    "p0_s43": {
+     "n": 3,
+     "median": 115.5
+    },
+    "p0_s44": {
+     "n": 3,
+     "median": 114.62
+    },
+    "p1_s42": {
+     "n": 3,
+     "median": 115.79
+    },
+    "p1_s43": {
+     "n": 3,
+     "median": 115.62
+    },
+    "p1_s44": {
+     "n": 3,
+     "median": 113.6
+    }
+   },
+   "per_cell_spread": {
+    "p0_s42": {
+     "n": 3,
+     "median": 115.55,
+     "spread_pct": 2.78,
+     "pass_5pct": true
+    },
+    "p0_s43": {
+     "n": 3,
+     "median": 115.5,
+     "spread_pct": 0.19,
+     "pass_5pct": true
+    },
+    "p0_s44": {
+     "n": 3,
+     "median": 114.62,
+     "spread_pct": 0.38,
+     "pass_5pct": true
+    },
+    "p1_s42": {
+     "n": 3,
+     "median": 115.79,
+     "spread_pct": 0.58,
+     "pass_5pct": true
+    },
+    "p1_s43": {
+     "n": 3,
+     "median": 115.62,
+     "spread_pct": 1.53,
+     "pass_5pct": true
+    },
+    "p1_s44": {
+     "n": 3,
+     "median": 113.6,
+     "spread_pct": 0.97,
+     "pass_5pct": true
+    },
+    "all_pass": true
+   },
+   "pooled_spread_note": "池化 spread 只作参考; 判据用 per_cell_spread",
+   "batches": [
+    {
+     "batch_id": "B1",
+     "n": 9,
+     "start": "2026-10-07 03:43:39",
+     "end": "2026-10-07 03:59:21",
+     "attempts": [
+      1
+     ]
+    },
+    {
+     "batch_id": "B2",
+     "n": 6,
+     "start": "2026-10-07 04:06:10",
+     "end": "2026-10-07 04:15:57",
+     "attempts": [
+      2
+     ]
+    },
+    {
+     "batch_id": "B3",
+     "n": 3,
+     "start": "2026-10-07 06:27:39",
+     "end": "2026-10-07 06:31:35",
+     "attempts": [
+      2
+     ]
+    }
+   ],
+   "attempt_mix": {
+    "attempt_1": 9,
+    "attempt_2": 9
+   },
+   "headline_note": "headline 取 latest attempt; 若 attempt_mix 不是单一 attempt, 正文须披露重跑格与原因",
+   "rerun_reasons": [
+    {
+     "archive": "logs/bench6-contaminated-p0s43-att2.json",
+     "reason": "p0_s43 attempt2: 与 evidence_v2 R5 并发跑导致污染(r2=240.4s), 按 C4 人工确认归档, 不入表",
+     "n_rows": 3,
+     "n_cells": 3,
+     "cells": [
+      "onnx_cold_p0_s43_r0",
+      "onnx_cold_p0_s43_r1",
+      "onnx_cold_p0_s43_r2"
+     ],
+     "excluded_from": "summary-five-schemes headline"
+    },
+    {
+     "archive": "logs/bench6-attempt-p0s43-att2.json",
+     "reason": "p0_s43 attempt2 spread=5.33%>5% (r0=109.56 偏快), 按 C4 重跑(第 2 次, 上限内)",
+     "n_rows": 3,
+     "n_cells": 3,
+     "cells": [
+      "onnx_cold_p0_s43_r0",
+      "onnx_cold_p0_s43_r1",
+      "onnx_cold_p0_s43_r2"
+     ],
+     "excluded_from": "summary-five-schemes headline"
+    },
+    {
+     "archive": "logs/bench6-progress.v2-缺陷批.json",
+     "reason": "dsh REVIEW-bench6 首版判 24 处/10 阻断(R1/R2/R3/R4 计时边界与profiling 覆盖缺陷), 整批归档不入表",
+     "n_rows": 51,
+     "n_cells": 24,
+     "cells": [
+      "onnx_cold_p0_s42_r0",
+      "onnx_cold_p0_s42_r1",
+      "onnx_cold_p0_s42_r2",
+      "onnx_cold_p0_s43_r0",
+      "onnx_cold_p0_s43_r1",
+      "onnx_cold_p0_s43_r2",
+      "onnx_cold_p0_s44_r0",
+      "onnx_cold_p0_s44_r1",
+      "onnx_cold_p0_s44_r2",
+      "onnx_cold_p1_s42_r0",
+      "onnx_cold_p1_s42_r1",
+      "onnx_cold_p1_s42_r2"
+     ],
+     "excluded_from": "summary-five-schemes headline"
+    },
+    {
+     "archive": "logs/bench6-progress.v4-批首效应.json",
+     "reason": "加 warmup 前的 timing/profiling 批(含批首效应, spread 21.98%)",
+     "n_rows": 30,
+     "n_cells": 24,
+     "cells": [
+      "onnx_cold_p0_s42_r0",
+      "onnx_cold_p0_s42_r1",
+      "onnx_cold_p0_s42_r2",
+      "onnx_cold_p0_s43_r0",
+      "onnx_cold_p0_s43_r1",
+      "onnx_cold_p0_s43_r2",
+      "onnx_cold_p0_s44_r0",
+      "onnx_cold_p0_s44_r1",
+      "onnx_cold_p0_s44_r2",
+      "onnx_cold_p1_s42_r0",
+      "onnx_cold_p1_s42_r1",
+      "onnx_cold_p1_s42_r2"
+     ],
+     "excluded_from": "summary-five-schemes headline"
+    },
+    {
+     "archive": "logs/bench6-progress.profiling-v3归档.json",
+     "reason": "R4 判据修正前的 profiling 批(fp=1e674d68), 归档不入表",
+     "n_rows": 6,
+     "n_cells": 6,
+     "cells": [
+      "onnx_prof_p0_s42_r0",
+      "onnx_prof_p0_s43_r0",
+      "onnx_prof_p0_s44_r0",
+      "onnx_prof_p1_s42_r0",
+      "onnx_prof_p1_s43_r0",
+      "onnx_prof_p1_s44_r0"
+     ],
+     "excluded_from": "summary-five-schemes headline"
+    },
+    {
+     "archive": "logs/bench6-landing.v1.json",
+     "reason": "旧指纹 landing 证据(PDH GPU + DML/CPU 对照), 结论可复用",
+     "n_rows": 1,
+     "n_cells": 1,
+     "cells": [
+      "landing_p0_s42"
+     ],
+     "excluded_from": "summary-five-schemes headline"
+    },
+    {
+     "archive": "(正式重跑, 已入表)",
+     "reason": "p0_s43 attempt2 首格 r0=109.56s 偏快、按格离散 5.33%>5%, 归档后 warmup 3 重跑(第 2 次, C4 上限内)",
+     "cells": [
+      "onnx_cold_p0_s43_r0",
+      "onnx_cold_p0_s43_r1",
+      "onnx_cold_p0_s43_r2"
+     ],
+     "result": "115.50/115.49/115.71, 离散 0.19%, PASS",
+     "excluded_from": "-"
+    },
+    {
+     "archive": "(定向重跑, 已入表)",
+     "reason": "p0_s42 与 p0_s44 首轮出现 99.9s/104.0s 离群, 按格离散13.09%/10.55%>5%, C4 判污染后定向重跑",
+     "cells": [
+      "onnx_cold_p0_s42_*",
+      "onnx_cold_p0_s44_*"
+     ],
+     "result": "重跑后 spread 2.78% / 0.38%, PASS",
+     "excluded_from": "-"
+    }
+   ],
+   "headline_by_batch": [
+    {
+     "batch_id": "B1",
+     "n": 9,
+     "start": "2026-10-07 03:43:39",
+     "end": "2026-10-07 03:59:21",
+     "attempts": [
+      1
+     ],
+     "median_s": 115.49
+    },
+    {
+     "batch_id": "B2",
+     "n": 6,
+     "start": "2026-10-07 04:06:10",
+     "end": "2026-10-07 04:15:57",
+     "attempts": [
+      2
+     ],
+     "median_s": 114.76
+    },
+    {
+     "batch_id": "B3",
+     "n": 3,
+     "start": "2026-10-07 06:27:39",
+     "end": "2026-10-07 06:31:35",
+     "attempts": [
+      2
+     ],
+     "median_s": 115.5
+    }
+   ]
+  }
+ },
+ "anchor": {
+  "baseline_source": "已发布正文常量 241.6s(均值, n=6)",
+  "runs": [
+   {
+    "date": "2026-10-06",
+    "source": "bench5 anchor",
+    "retested_median": 232.25,
+    "published_median": 241.6,
+    "drift_pct": -3.87,
+    "n": 6,
+    "covers_onnx_batch": false
+   },
+   {
+    "date": "2026-10-07",
+    "source": "evidence-v2 r17",
+    "retested_median": 207.31,
+    "published_median": 241.6,
+    "drift_pct": -14.19,
+    "n": 6,
+    "covers_onnx_batch": true
+   }
+  ],
+  "worst_abs_drift_pct": 14.19,
+  "within_5pct": false,
+  "n": 12,
+  "conclusion": "跨日锚点最差漂移 14.19% (>5%), 整张五方案表的跨批比较必须按该漂移区间解读; 同批内部比较不受影响"
+ },
+ "profiling_gate": {
+  "n": 6,
+  "coverage_pct": [
+   1.8,
+   2.3,
+   1.7,
+   1.7,
+   1.7,
+   1.6
+  ],
+  "coverage_min_pct": 1.6,
+  "gate_usable": false,
+  "cpu_pct": null,
+  "cpu_pct_invalid_reason": "profiling 覆盖率最低 1.6% (<20%), 未记录到 CPU 节点不等于执行在 GPU; 源行的 cpu_pct=0.0 已作废",
+  "conclusion": "ORT profiling 覆盖率 <20%, 时间口径不可用(工具限制); 落点改由 landing 门禁判定",
+  "rows_with_err": []
+ },
+ "landing_gate": {
+  "ok": true,
+  "dml_gen_s": 73.842,
+  "cpu_gen_s": 180.337,
+  "speedup_vs_cpu": 2.442,
+  "gpu_shared_min_mb": 4914.1,
+  "gpu_shared_max_mb": 11295.6,
+  "gpu_dedicated_max_mb": 3458.5,
+  "criteria_A_gpu_counter": true,
+  "criteria_B_dml_faster": true,
+  "cpu_control_providers": [
+   "CPUExecutionProvider"
+  ],
+  "harness_criteria_note": "harness 自带 landing 是旧判据(A: max>500MB, B: n=1), 新判据见 landing_gate_v2"
+ },
+ "landing_gate_v2": {
+  "ok": true,
+  "source": "replicate/evidence-v2.json r4_landing",
+  "dml_gen_s_median": 65.709,
+  "cpu_gen_s_median": 178.491,
+  "speedup_median": 2.716,
+  "A_criteria": {
+   "rule": "max-min > 1024MB (真增长, 非绝对值阈值)",
+   "max_minus_min_mb": 4105,
+   "pass": true
+  },
+  "B_criteria": {
+   "rule": "两侧各 n>=3 预热后中位数, cpu/dml > 1.2",
+   "n_dml": 3,
+   "n_cpu": 3,
+   "pass": true
+  },
+  "cpu_control_providers": null,
+  "regime_note": "四次 DML 跑的 gen 分属不同来源、量级互不一致: evidence r4 65.709s / bench6 landing 73.842s / evidence r10 子进程 86.941s / timing 头条 97.15s。成因未定(已排除可归因证据, parentload_probe 无产物), 故各 landing 倍数只在本轮内部有效, 不得与 115.49s 头条混算。",
+  "publishable": "定性(DML EP 实际启用且显著快于纯 CPU), 倍数不入正文"
+ },
+ "scheduler_evidence": {
+  "published_class": "PNDMScheduler",
+  "harness_class": "PNDMScheduler",
+  "config_class": "PNDMScheduler",
+  "published_timesteps_sha256_20": "89212e07e63e04c5",
+  "harness_timesteps_sha256_20": "89212e07e63e04c5",
+  "class_match": true,
+  "timesteps_match": true,
+  "assert": "两侧独立构造 timesteps 数组哈希相同, 不匹配即 SystemExit",
+  "note": "PNDM 无 sigmas, 比对 timesteps; 已发布行未改 scheduler(管线默认)"
+ },
+ "mem_scope": {
+  "metric": "进程 RSS 峰值(各栈自采, 0.4-0.5s 间隔)",
+  "sdcpp/comfyui/diffusers": "主进程或进程树 RSS",
+  "onnx_dml": "单进程 RSS",
+  "dml_extra": "PDH \\GPU Process Memory 同步实测: RSS 12788MB ≈ Shared 12420MB (ratio 1.03), 即 UMA 上共享显存已计入 RSS",
+  "vulkan_extra": "PDH 实测: RSS 1425MB ≈ Shared 1324MB (ratio 1.077), 另有 Dedicated 3566MB 不在 RSS 内",
+  "comparable": "实测只证明: 两栈的进程 RSS 与各自 GPU Shared 同量级(ratio≈1), 即共享显存已被 RSS 计入。**这不等于跨栈可比**(Vulkan 另有 3566MB Dedicated 不在 RSS 内), 故正文禁止任何内存倍数比较, 只逐栈报描述值并标口径",
+  "numbers_and_their_source": {
+   "12016.05MB": "五方案表 ONNX 行 mem = timing 18 行中位",
+   "12788.1MB": "GPU 记账探针单次 RSS(PDH 对照用)",
+   "11904MB": "R5 最新证据 run 期间 PDH Shared 最大值(旧 evidence-v2 的 12604MB 已过期, 不再引用)"
+  },
+  "forbidden_in_article": [
+   "2.716x / 2.442x 作为受控加速倍数(landing 与 timing 不同源: 65.709 / 73.842 / 97.15 / 86.941)",
+   "12016MB vs 1418MB 的倍数",
+   "11975MB vs 1418MB 的倍数(旧数, 已弃用)",
+   "12604MB 作为 'R5 实测 shared max'(已过期, 正确值 11904MB)",
+   "任何跨栈内存倍数比较",
+   "Vulkan 87.43 vs ONNX 115.49 '打平/同档/快 X 倍'(CLI 进程级 vs 进程内, 隔 2 天, 跨期漂移 14.19%)",
+   "'ONNX/DML CPU 占比 0%' / 'unet 全在 DML' / '零回退'(cpu_pct 已作废置 null)",
+   "把六格 0.19-2.78% 当整批噪声底(须同披露 attempt1 13.09%/10.55% 与 p0_s43 重跑)",
+   "把 anchor -14.19% 当'跨期可比许可证'(它是反向证据)",
+   "把五格内存列并排当可直接比较的柱子",
+   "把 nfe=21 当前向次数(真实 UNet 前向 42 次)",
+   "直述 'ONNX 行 shared 已计入 RSS'(原始行 shared_mem_included:false 未统一, 只写该栈自采 RSS 描述值)",
+   "把'父进程持 4.27GB 管线'或 'warmup 3 吸收批首效应' 当已证机制"
+  ]
+ },
+ "mem_caliber_per_scheme": {
+  "sd.cpp · 纯 CPU": {
+   "value_mb": 4429.51,
+   "caliber": "主进程 RSS 峰值(已发布正文写 4.65GB, 为原始字节÷10⁹)"
+  },
+  "sd.cpp · Vulkan 核显": {
+   "value_mb": 1418.26,
+   "caliber": "进程 RSS 峰值; 另有 GPU Dedicated 3566MB **不在** RSS 内"
+  },
+  "diffusers · 纯 CPU": {
+   "value_mb": 5368.94,
+   "caliber": "进程树 RSS 峰值(已发布正文 5.63GB)"
+  },
+  "ComfyUI · 纯 CPU(冷启动)": {
+   "value_mb": 7441.1,
+   "caliber": "进程树 RSS 峰值(含服务进程)"
+  },
+  "ONNX/DML · 核显(冷启动)": {
+   "value_mb": 12016.05,
+   "caliber": "单进程 RSS 峰值; UMA 上共享显存已计入(探针 RSS 12788 ≈ Shared 12420, ratio 1.03)"
+  },
+  "cross_stack_rule": "五格口径不同(主进程/进程树/含服务), 只逐行标口径描述, 不做跨行相除"
+ },
+ "seed_check_sha": {
+  "('cold', 0, 42)": "SAME",
+  "('cold', 0, 43)": "SAME",
+  "('cold', 0, 44)": "SAME",
+  "('cold', 1, 42)": "SAME",
+  "('cold', 1, 43)": "SAME",
+  "('cold', 1, 44)": "SAME",
+  "('warm', 0, 42)": "SAME",
+  "('warm', 0, 43)": "SAME",
+  "('warm', 0, 44)": "SAME",
+  "('warm', 1, 42)": "SAME",
+  "('warm', 1, 43)": "SAME",
+  "('warm', 1, 44)": "SAME",
+  "('anchor', 0, 42)": "SAME",
+  "('anchor', 0, 43)": "SAME",
+  "('anchor', 0, 44)": "SAME",
+  "('anchor', 1, 42)": "SAME",
+  "('anchor', 1, 43)": "SAME",
+  "('anchor', 1, 44)": "SAME",
+  "('timing', 0, 42)": "SAME",
+  "('timing', 0, 43)": "SAME",
+  "('timing', 0, 44)": "SAME",
+  "('timing', 1, 42)": "SAME",
+  "('timing', 1, 43)": "SAME",
+  "('timing', 1, 44)": "SAME"
+ },
+ "gpu_probe": {
+  "dml": {
+   "pid": 18996,
+   "snapshots": [
+    {
+     "tag": "baseline",
+     "ts": 1791305807.33,
+     "rss_mb": 29.6,
+     "priv_mb": 501.6,
+     "gpu_shared": [],
+     "gpu_dedicated": []
+    },
+    {
+     "tag": "after_import_ort",
+     "ts": 1791305812.85,
+     "rss_mb": 46.0,
+     "priv_mb": 512.1,
+     "gpu_shared": [],
+     "gpu_dedicated": []
+    },
+    {
+     "tag": "after_text_encoder",
+     "ts": 1791305818.54,
+     "rss_mb": 598.0,
+     "priv_mb": 1849.7,
+     "gpu_shared": [
+      "pid_18996_luid_0x00000000_0x0000f49c_phys_0=497119232"
+     ],
+     "gpu_dedicated": [
+      "pid_18996_luid_0x00000000_0x0000f49c_phys_0=836366336"
+     ]
+    },
+    {
+     "tag": "after_unet_session",
+     "ts": 1791305827.84,
+     "rss_mb": 8447.6,
+     "priv_mb": 10828.2,
+     "gpu_shared": [
+      "pid_18996_luid_0x00000000_0x0000f49c_phys_0=8673861632"
+     ],
+     "gpu_dedicated": [
+      "pid_18996_luid_0x00000000_0x0000f49c_phys_0=2029821952"
+     ]
+    },
+    {
+     "tag": "after_all_sessions",
+     "ts": 1791305833.35,
+     "rss_mb": 8638.3,
+     "priv_mb": 11208.5,
+     "gpu_shared": [
+      "pid_18996_luid_0x00000000_0x0000f49c_phys_0=8873644032"
+     ],
+     "gpu_dedicated": [
+      "pid_18996_luid_0x00000000_0x0000f49c_phys_0=2228641792"
+     ]
+    },
+    {
+     "tag": "after_unet_forward",
+     "ts": 1791305842.49,
+     "rss_mb": 10733.1,
+     "priv_mb": 13304.3,
+     "gpu_shared": [
+      "pid_18996_luid_0x00000000_0x0000f49c_phys_0=10868899840"
+     ],
+     "gpu_dedicated": [
+      "pid_18996_luid_0x00000000_0x0000f49c_phys_0=2434428928"
+     ]
+    },
+    {
+     "tag": "after_5_fwd",
+     "ts": 1791305863.62,
+     "rss_mb": 10733.1,
+     "priv_mb": 13304.3,
+     "gpu_shared": [
+      "pid_18996_luid_0x00000000_0x0000f49c_phys_0=10868899840"
+     ],
+     "gpu_dedicated": [
+      "pid_18996_luid_0x00000000_0x0000f49c_phys_0=2434428928"
+     ]
+    },
+    {
+     "tag": "after_te_fwd",
+     "ts": 1791305868.75,
+     "rss_mb": 10735.1,
+     "priv_mb": 13314.7,
+     "gpu_shared": [
+      "pid_18996_luid_0x00000000_0x0000f49c_phys_0=10870996992"
+     ],
+     "gpu_dedicated": [
+      "pid_18996_luid_0x00000000_0x0000f49c_phys_0=2443161600"
+     ]
+    },
+    {
+     "tag": "after_vae_fwd",
+     "ts": 1791305877.72,
+     "rss_mb": 12788.1,
+     "priv_mb": 15375.8,
+     "gpu_shared": [
+      "pid_18996_luid_0x00000000_0x0000f49c_phys_0=13023723520"
+     ],
+     "gpu_dedicated": [
+      "pid_18996_luid_0x00000000_0x0000f49c_phys_0=2455851008"
+     ]
+    }
+   ],
+   "peak_rss_mb": 12788.1,
+   "rss_vs_shared": {
+    "rss_mb": 12788.1,
+    "gpu_shared_mb": 12420.4,
+    "ratio": 1.03
+   }
+  },
+  "vulkan": {
+   "cmdline": "D:/models/txt2img\\vulkan\\sd-cli.exe -m D:/models/txt2img\\v1-5-pruned-emaonly.safetensors --prompt a quiet lake at dawn, mist over the water, pine trees on the far shore, soft light, digital painting -W 512 -H 512 --steps 20 -s 42 -o D:/models/txt2img/out6/vulkan_probe.png --backend diffusion=vulkan0",
+   "seconds": 82.34,
+   "returncode": 0,
+   "samples": 11,
+   "rss_peak_bytes": 1494347776,
+   "rss_peak_mb": 1425.1,
+   "gpu_shared_max_mb": 1323.7,
+   "gpu_dedicated_max_mb": 3565.7,
+   "gpu_shared_samples": [
+    [
+     1791306763.68,
+     160129024
+    ],
+    [
+     1791306771.9,
+     179527680
+    ],
+    [
+     1791306779.48,
+     179527680
+    ],
+    [
+     1791306787.04,
+     179527680
+    ],
+    [
+     1791306794.61,
+     179527680
+    ],
+    [
+     1791306802.24,
+     179527680
+    ],
+    [
+     1791306809.84,
+     179527680
+    ],
+    [
+     1791306817.45,
+     179527680
+    ],
+    [
+     1791306825.08,
+     179527680
+    ],
+    [
+     1791306832.66,
+     179527680
+    ],
+    [
+     1791306840.29,
+     1388011520
+    ]
+   ],
+   "png_ok": true,
+   "rss_vs_shared": {
+    "rss_mb": 1425.1,
+    "gpu_shared_mb": 1323.7,
+    "gpu_dedicated_mb": 3565.7,
+    "ratio": 1.077
+   }
+  }
+ },
+ "b6_verdict": "pass",
+ "evidence_v2": {
+  "ts_start": "2026-10-07 04:48:28",
+  "r5_adapter": {
+   "method": "PDH instance name carries LUID, sampled DURING child run",
+   "adapters": [
+    {
+     "Name": "AMD Radeon(TM) Graphics",
+     "DriverVersion": "31.0.21923.1000",
+     "PNPDeviceID": "PCI\\VEN_1002&DEV_1638&SUBSYS_16361002&REV_C8\\4&EB91FFF&0&0041",
+     "VideoProcessor": "AMD Radeon Graphics Processor (0x1638)"
+    }
+   ],
+   "child_pid": 12948,
+   "child_ok": true,
+   "providers": [
+    "DmlExecutionProvider",
+    "CPUExecutionProvider"
+   ],
+   "luids": [
+    "0x00000000_0x0000f49c"
+   ],
+   "phys_addrs": [
+    0
+   ],
+   "gpu_shared_samples_mb": [
+    {
+     "instance": "pid_12948_luid_0x00000000_0x0000f49c_phys_0",
+     "shared_mb": 7609
+    },
+    {
+     "instance": "pid_12948_luid_0x00000000_0x0000f49c_phys_0",
+     "shared_mb": 7799
+    },
+    {
+     "instance": "pid_12948_luid_0x00000000_0x0000f49c_phys_0",
+     "shared_mb": 9851
+    },
+    {
+     "instance": "pid_12948_luid_0x00000000_0x0000f49c_phys_0",
+     "shared_mb": 9851
+    },
+    {
+     "instance": "pid_12948_luid_0x00000000_0x0000f49c_phys_0",
+     "shared_mb": 9851
+    },
+    {
+     "instance": "pid_12948_luid_0x00000000_0x0000f49c_phys_0",
+     "shared_mb": 9851
+    },
+    {
+     "instance": "pid_12948_luid_0x00000000_0x0000f49c_phys_0",
+     "shared_mb": 9851
+    },
+    {
+     "instance": "pid_12948_luid_0x00000000_0x0000f49c_phys_0",
+     "shared_mb": 9851
+    },
+    {
+     "instance": "pid_12948_luid_0x00000000_0x0000f49c_phys_0",
+     "shared_mb": 9851
+    },
+    {
+     "instance": "pid_12948_luid_0x00000000_0x0000f49c_phys_0",
+     "shared_mb": 9851
+    },
+    {
+     "instance": "pid_12948_luid_0x00000000_0x0000f49c_phys_0",
+     "shared_mb": 9851
+    },
+    {
+     "instance": "pid_12948_luid_0x00000000_0x0000f49c_phys_0",
+     "shared_mb": 9851
+    },
+    {
+     "instance": "pid_12948_luid_0x00000000_0x0000f49c_phys_0",
+     "shared_mb": 9851
+    },
+    {
+     "instance": "pid_12948_luid_0x00000000_0x0000f49c_phys_0",
+     "shared_mb": 9851
+    },
+    {
+     "instance": "pid_12948_luid_0x00000000_0x0000f49c_phys_0",
+     "shared_mb": 9851
+    },
+    {
+     "instance": "pid_12948_luid_0x00000000_0x0000f49c_phys_0",
+     "shared_mb": 9851
+    },
+    {
+     "instance": "pid_12948_luid_0x00000000_0x0000f49c_phys_0",
+     "shared_mb": 9851
+    },
+    {
+     "instance": "pid_12948_luid_0x00000000_0x0000f49c_phys_0",
+     "shared_mb": 9851
+    },
+    {
+     "instance": "pid_12948_luid_0x00000000_0x0000f49c_phys_0",
+     "shared_mb": 9851
+    },
+    {
+     "instance": "pid_12948_luid_0x00000000_0x0000f49c_phys_0",
+     "shared_mb": 11904
+    }
+   ],
+   "gpu_shared_min_mb": 7609,
+   "gpu_shared_max_mb": 11904,
+   "warp_named_in_adapters": false,
+   "hardware_adapters": [
+    {
+     "Name": "AMD Radeon(TM) Graphics",
+     "DriverVersion": "31.0.21923.1000",
+     "PNPDeviceID": "PCI\\VEN_1002&DEV_1638&SUBSYS_16361002&REV_C8\\4&EB91FFF&0&0041"
+    }
+   ],
+   "hardware_adapter_present": true,
+   "adapter_memory_luids": [
+    "0x00000000_0x0000f49c",
+    "0x00000000_0x0000ffa0"
+   ],
+   "luid_maps_to_hw_gpu": true,
+   "warp_exclusion_checks": {
+    "no_basic_render_driver": true,
+    "amd_ven1002_present": true,
+    "pdh_phys_on_hw_counter": true,
+    "shared_grew_gt_1gb": true,
+    "providers_include_dml": true
+   },
+   "warp_excluded": true,
+   "verdict_inputs_ok": true,
+   "warp_excluded_by_speedup": {
+    "speedup_vs_cpu": 2.716,
+    "reason": "若 DML 落到 WARP(软件 CPU 光栅), 不可能比纯 CPU 快 2.716 倍; 结合硬件适配器存在且无 Basic Render Driver, 判定 WARP 已排除"
+   }
+  },
+  "r4_landing": {
+   "dml_gen_s": [
+    65.773,
+    65.477,
+    65.709
+   ],
+   "gpu_shared_mb_samples": [
+    7799,
+    9851,
+    9851,
+    9851,
+    9851,
+    9851,
+    9851,
+    9851,
+    9851,
+    9851,
+    9851,
+    9851,
+    9851,
+    11904
+   ],
+   "gpu_shared_mb_min": 7799,
+   "gpu_shared_mb_max": 11904,
+   "cpu_gen_s": [
+    178.51,
+    177.553,
+    178.491
+   ],
+   "dml_median": 65.709,
+   "cpu_median": 178.491,
+   "speedup_median": 2.716,
+   "A_criteria": {
+    "rule": "max-min > 1024MB (真增长, 非绝对值阈值)",
+    "max_minus_min_mb": 4105,
+    "pass": true
+   },
+   "B_criteria": {
+    "rule": "两侧各 n>=3 预热后中位数, cpu/dml > 1.2",
+    "n_dml": 3,
+    "n_cpu": 3,
+    "pass": true
+   },
+   "ok": true
+  },
+  "r10_offline": {
+   "dead_proxy": "http://127.0.0.1:9",
+   "guard_scope": "child process (inside CHILD_CODE), not just parent",
+   "env": [
+    "HF_HUB_OFFLINE=1",
+    "TRANSFORMERS_OFFLINE=1",
+    "HTTPS_PROXY=http://127.0.0.1:9",
+    "HTTP_PROXY=http://127.0.0.1:9"
+   ],
+   "child_rc": 0,
+   "child_wall_s": 105.504,
+   "child": {
+    "import_s": 0.168,
+    "session_s": 6.083,
+    "init_s": 6.04,
+    "load_s": 6.252,
+    "gen_s": 86.941,
+    "decode_s": 3.735,
+    "cold_total_s": 102.969,
+    "first_unet_run_s": 4.574,
+    "providers": [
+     "DmlExecutionProvider",
+     "CPUExecutionProvider"
+    ],
+    "nfe": 21,
+    "profiles": [],
+    "prof_total_us": null,
+    "prof_by_provider": {},
+    "warnings": [],
+    "img_shape": [
+     1,
+     3,
+     512,
+     512
+    ],
+    "img_sha256": "8e02c13310eed26622c7a2f3c11d7bdf578389d4914faf7be6067884dd995a08",
+    "mem_peak_bytes": 13015998464,
+    "img_mean": -0.293
+   },
+   "child_ok": true,
+   "child_img_sha256": "8e02c13310eed26622c7a2f3c11d7bdf578389d4914faf7be6067884dd995a08",
+   "child_blocked_attempts": [],
+   "child_blocked_count": 0,
+   "child_non_loopback_count": 0,
+   "parent_blocked_attempts": [],
+   "parent_blocked_count": 0,
+   "window": [
+    "2026-10-07 06:54:30",
+    "2026-10-07 06:56:15"
+   ],
+   "evidence_ok": true
+  },
+  "r17_anchor": {
+   "cmdline_template": "D:/models/txt2img\\cpu\\sd-cli.exe -m D:/models/txt2img\\v1-5-pruned-emaonly.safetensors --prompt <P> -W 512 -H 512 --steps 20 -s <SEED> -o <OUT>",
+   "rows": [
+    {
+     "cell": "anchor2_p0_s42",
+     "prompt_idx": 0,
+     "seed": 42,
+     "seconds": 208.57,
+     "mem_peak_mb": 4429.4,
+     "ok": true,
+     "sha256": "bbad790df122197658e4b1d1575314192dabc1baac3c2e29055affe4a84e3292",
+     "device_lines": [
+      "[INFO   ] model_loader.cpp:221  - load D:/models/txt2img\\v1-5-pruned-emaonly.safetensors using safetensors format",
+      "[WARN   ] backend_fit.cpp:444  - auto-fit: no GPU devices; using the default backend",
+      "[INFO   ] model_loader.cpp:1383 - loading tensors completed, taking 0.02s (read: 0.00s, memcpy: 0.00s, convert: 0.00s, copy_to_backend: 0.00s)"
+     ]
+    },
+    {
+     "cell": "anchor2_p0_s43",
+     "prompt_idx": 0,
+     "seed": 43,
+     "seconds": 207.29,
+     "mem_peak_mb": 4428.1,
+     "ok": true,
+     "sha256": "b77d4d840e33f211a5dcaf11ae9ae2f57d562ef44f15081c79c954ae1590369d",
+     "device_lines": [
+      "[INFO   ] model_loader.cpp:221  - load D:/models/txt2img\\v1-5-pruned-emaonly.safetensors using safetensors format",
+      "[WARN   ] backend_fit.cpp:444  - auto-fit: no GPU devices; using the default backend",
+      "[INFO   ] model_loader.cpp:1383 - loading tensors completed, taking 0.03s (read: 0.00s, memcpy: 0.00s, convert: 0.00s, copy_to_backend: 0.00s)"
+     ]
+    },
+    {
+     "cell": "anchor2_p0_s44",
+     "prompt_idx": 0,
+     "seed": 44,
+     "seconds": 207.33,
+     "mem_peak_mb": 4429.0,
+     "ok": true,
+     "sha256": "c49492158894220fba5c0af34896af622c2768f90655863d9942de44c9ae89b5",
+     "device_lines": [
+      "[INFO   ] model_loader.cpp:221  - load D:/models/txt2img\\v1-5-pruned-emaonly.safetensors using safetensors format",
+      "[WARN   ] backend_fit.cpp:444  - auto-fit: no GPU devices; using the default backend",
+      "[INFO   ] model_loader.cpp:1383 - loading tensors completed, taking 0.02s (read: 0.00s, memcpy: 0.00s, convert: 0.00s, copy_to_backend: 0.00s)"
+     ]
+    },
+    {
+     "cell": "anchor2_p1_s42",
+     "prompt_idx": 1,
+     "seed": 42,
+     "seconds": 206.75,
+     "mem_peak_mb": 4429.1,
+     "ok": true,
+     "sha256": "a1d2701f103a7a03a8c178479e0b7672560ebe71c798ab46875c3e14133fd5a4",
+     "device_lines": [
+      "[INFO   ] model_loader.cpp:221  - load D:/models/txt2img\\v1-5-pruned-emaonly.safetensors using safetensors format",
+      "[WARN   ] backend_fit.cpp:444  - auto-fit: no GPU devices; using the default backend",
+      "[INFO   ] model_loader.cpp:1383 - loading tensors completed, taking 0.02s (read: 0.00s, memcpy: 0.00s, convert: 0.00s, copy_to_backend: 0.00s)"
+     ]
+    },
+    {
+     "cell": "anchor2_p1_s43",
+     "prompt_idx": 1,
+     "seed": 43,
+     "seconds": 207.87,
+     "mem_peak_mb": 4429.9,
+     "ok": true,
+     "sha256": "381b0730f268133d6eb2ed59e668edbab991963886110aeaa39d9a6e4170d320",
+     "device_lines": [
+      "[INFO   ] model_loader.cpp:221  - load D:/models/txt2img\\v1-5-pruned-emaonly.safetensors using safetensors format",
+      "[WARN   ] backend_fit.cpp:444  - auto-fit: no GPU devices; using the default backend",
+      "[INFO   ] model_loader.cpp:1383 - loading tensors completed, taking 0.01s (read: 0.00s, memcpy: 0.00s, convert: 0.00s, copy_to_backend: 0.00s)"
+     ]
+    },
+    {
+     "cell": "anchor2_p1_s44",
+     "prompt_idx": 1,
+     "seed": 44,
+     "seconds": 206.73,
+     "mem_peak_mb": 4429.4,
+     "ok": true,
+     "sha256": "af3f80a97c9c9f6c606ee8eb8263765c27c0c7337dd794fd2f7eadcfb984f23b",
+     "device_lines": [
+      "[INFO   ] model_loader.cpp:221  - load D:/models/txt2img\\v1-5-pruned-emaonly.safetensors using safetensors format",
+      "[WARN   ] backend_fit.cpp:444  - auto-fit: no GPU devices; using the default backend",
+      "[INFO   ] model_loader.cpp:1383 - loading tensors completed, taking 0.02s (read: 0.00s, memcpy: 0.00s, convert: 0.00s, copy_to_backend: 0.00s)"
+     ]
+    }
+   ],
+   "n_ok": 6,
+   "ok": true,
+   "median": 207.31,
+   "min": 206.73,
+   "max": 208.57,
+   "spread_pct": 0.89,
+   "published_baseline_s": 241.6,
+   "drift_pct_vs_published": -14.19,
+   "within_5pct": false,
+   "date": "2026-10-07",
+   "covers_onnx_batch_date": true
+  },
+  "ts_end": "2026-10-07 06:56:15",
+  "parent_blocked_attempts": [],
+  "runs": [
+   "r10"
+  ]
+ }
+}

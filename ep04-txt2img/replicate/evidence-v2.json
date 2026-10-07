@@ -1,0 +1,339 @@
+{
+ "ts_start": "2026-10-07 04:48:28",
+ "r5_adapter": {
+  "method": "PDH instance name carries LUID, sampled DURING child run",
+  "adapters": [
+   {
+    "Name": "AMD Radeon(TM) Graphics",
+    "DriverVersion": "31.0.21923.1000",
+    "PNPDeviceID": "PCI\\VEN_1002&DEV_1638&SUBSYS_16361002&REV_C8\\4&EB91FFF&0&0041",
+    "VideoProcessor": "AMD Radeon Graphics Processor (0x1638)"
+   }
+  ],
+  "child_pid": 12948,
+  "child_ok": true,
+  "providers": [
+   "DmlExecutionProvider",
+   "CPUExecutionProvider"
+  ],
+  "luids": [
+   "0x00000000_0x0000f49c"
+  ],
+  "phys_addrs": [
+   0
+  ],
+  "gpu_shared_samples_mb": [
+   {
+    "instance": "pid_12948_luid_0x00000000_0x0000f49c_phys_0",
+    "shared_mb": 7609
+   },
+   {
+    "instance": "pid_12948_luid_0x00000000_0x0000f49c_phys_0",
+    "shared_mb": 7799
+   },
+   {
+    "instance": "pid_12948_luid_0x00000000_0x0000f49c_phys_0",
+    "shared_mb": 9851
+   },
+   {
+    "instance": "pid_12948_luid_0x00000000_0x0000f49c_phys_0",
+    "shared_mb": 9851
+   },
+   {
+    "instance": "pid_12948_luid_0x00000000_0x0000f49c_phys_0",
+    "shared_mb": 9851
+   },
+   {
+    "instance": "pid_12948_luid_0x00000000_0x0000f49c_phys_0",
+    "shared_mb": 9851
+   },
+   {
+    "instance": "pid_12948_luid_0x00000000_0x0000f49c_phys_0",
+    "shared_mb": 9851
+   },
+   {
+    "instance": "pid_12948_luid_0x00000000_0x0000f49c_phys_0",
+    "shared_mb": 9851
+   },
+   {
+    "instance": "pid_12948_luid_0x00000000_0x0000f49c_phys_0",
+    "shared_mb": 9851
+   },
+   {
+    "instance": "pid_12948_luid_0x00000000_0x0000f49c_phys_0",
+    "shared_mb": 9851
+   },
+   {
+    "instance": "pid_12948_luid_0x00000000_0x0000f49c_phys_0",
+    "shared_mb": 9851
+   },
+   {
+    "instance": "pid_12948_luid_0x00000000_0x0000f49c_phys_0",
+    "shared_mb": 9851
+   },
+   {
+    "instance": "pid_12948_luid_0x00000000_0x0000f49c_phys_0",
+    "shared_mb": 9851
+   },
+   {
+    "instance": "pid_12948_luid_0x00000000_0x0000f49c_phys_0",
+    "shared_mb": 9851
+   },
+   {
+    "instance": "pid_12948_luid_0x00000000_0x0000f49c_phys_0",
+    "shared_mb": 9851
+   },
+   {
+    "instance": "pid_12948_luid_0x00000000_0x0000f49c_phys_0",
+    "shared_mb": 9851
+   },
+   {
+    "instance": "pid_12948_luid_0x00000000_0x0000f49c_phys_0",
+    "shared_mb": 9851
+   },
+   {
+    "instance": "pid_12948_luid_0x00000000_0x0000f49c_phys_0",
+    "shared_mb": 9851
+   },
+   {
+    "instance": "pid_12948_luid_0x00000000_0x0000f49c_phys_0",
+    "shared_mb": 9851
+   },
+   {
+    "instance": "pid_12948_luid_0x00000000_0x0000f49c_phys_0",
+    "shared_mb": 11904
+   }
+  ],
+  "gpu_shared_min_mb": 7609,
+  "gpu_shared_max_mb": 11904,
+  "warp_named_in_adapters": false,
+  "hardware_adapters": [
+   {
+    "Name": "AMD Radeon(TM) Graphics",
+    "DriverVersion": "31.0.21923.1000",
+    "PNPDeviceID": "PCI\\VEN_1002&DEV_1638&SUBSYS_16361002&REV_C8\\4&EB91FFF&0&0041"
+   }
+  ],
+  "hardware_adapter_present": true,
+  "adapter_memory_luids": [
+   "0x00000000_0x0000f49c",
+   "0x00000000_0x0000ffa0"
+  ],
+  "luid_maps_to_hw_gpu": true,
+  "warp_exclusion_checks": {
+   "no_basic_render_driver": true,
+   "amd_ven1002_present": true,
+   "pdh_phys_on_hw_counter": true,
+   "shared_grew_gt_1gb": true,
+   "providers_include_dml": true
+  },
+  "warp_excluded": true,
+  "verdict_inputs_ok": true,
+  "warp_excluded_by_speedup": {
+   "speedup_vs_cpu": 2.716,
+   "reason": "若 DML 落到 WARP(软件 CPU 光栅), 不可能比纯 CPU 快 2.716 倍; 结合硬件适配器存在且无 Basic Render Driver, 判定 WARP 已排除"
+  }
+ },
+ "r4_landing": {
+  "dml_gen_s": [
+   65.773,
+   65.477,
+   65.709
+  ],
+  "gpu_shared_mb_samples": [
+   7799,
+   9851,
+   9851,
+   9851,
+   9851,
+   9851,
+   9851,
+   9851,
+   9851,
+   9851,
+   9851,
+   9851,
+   9851,
+   11904
+  ],
+  "gpu_shared_mb_min": 7799,
+  "gpu_shared_mb_max": 11904,
+  "cpu_gen_s": [
+   178.51,
+   177.553,
+   178.491
+  ],
+  "dml_median": 65.709,
+  "cpu_median": 178.491,
+  "speedup_median": 2.716,
+  "A_criteria": {
+   "rule": "max-min > 1024MB (真增长, 非绝对值阈值)",
+   "max_minus_min_mb": 4105,
+   "pass": true
+  },
+  "B_criteria": {
+   "rule": "两侧各 n>=3 预热后中位数, cpu/dml > 1.2",
+   "n_dml": 3,
+   "n_cpu": 3,
+   "pass": true
+  },
+  "ok": true
+ },
+ "r10_offline": {
+  "dead_proxy": "http://127.0.0.1:9",
+  "guard_scope": "child process (inside CHILD_CODE), not just parent",
+  "env": [
+   "HF_HUB_OFFLINE=1",
+   "TRANSFORMERS_OFFLINE=1",
+   "HTTPS_PROXY=http://127.0.0.1:9",
+   "HTTP_PROXY=http://127.0.0.1:9"
+  ],
+  "child_rc": 0,
+  "child_wall_s": 105.504,
+  "child": {
+   "import_s": 0.168,
+   "session_s": 6.083,
+   "init_s": 6.04,
+   "load_s": 6.252,
+   "gen_s": 86.941,
+   "decode_s": 3.735,
+   "cold_total_s": 102.969,
+   "first_unet_run_s": 4.574,
+   "providers": [
+    "DmlExecutionProvider",
+    "CPUExecutionProvider"
+   ],
+   "nfe": 21,
+   "profiles": [],
+   "prof_total_us": null,
+   "prof_by_provider": {},
+   "warnings": [],
+   "img_shape": [
+    1,
+    3,
+    512,
+    512
+   ],
+   "img_sha256": "8e02c13310eed26622c7a2f3c11d7bdf578389d4914faf7be6067884dd995a08",
+   "mem_peak_bytes": 13015998464,
+   "img_mean": -0.293
+  },
+  "child_ok": true,
+  "child_img_sha256": "8e02c13310eed26622c7a2f3c11d7bdf578389d4914faf7be6067884dd995a08",
+  "child_blocked_attempts": [],
+  "child_blocked_count": 0,
+  "child_non_loopback_count": 0,
+  "parent_blocked_attempts": [],
+  "parent_blocked_count": 0,
+  "window": [
+   "2026-10-07 06:54:30",
+   "2026-10-07 06:56:15"
+  ],
+  "evidence_ok": true
+ },
+ "r17_anchor": {
+  "cmdline_template": "D:/models/txt2img\\cpu\\sd-cli.exe -m D:/models/txt2img\\v1-5-pruned-emaonly.safetensors --prompt <P> -W 512 -H 512 --steps 20 -s <SEED> -o <OUT>",
+  "rows": [
+   {
+    "cell": "anchor2_p0_s42",
+    "prompt_idx": 0,
+    "seed": 42,
+    "seconds": 208.57,
+    "mem_peak_mb": 4429.4,
+    "ok": true,
+    "sha256": "bbad790df122197658e4b1d1575314192dabc1baac3c2e29055affe4a84e3292",
+    "device_lines": [
+     "[INFO   ] model_loader.cpp:221  - load D:/models/txt2img\\v1-5-pruned-emaonly.safetensors using safetensors format",
+     "[WARN   ] backend_fit.cpp:444  - auto-fit: no GPU devices; using the default backend",
+     "[INFO   ] model_loader.cpp:1383 - loading tensors completed, taking 0.02s (read: 0.00s, memcpy: 0.00s, convert: 0.00s, copy_to_backend: 0.00s)"
+    ]
+   },
+   {
+    "cell": "anchor2_p0_s43",
+    "prompt_idx": 0,
+    "seed": 43,
+    "seconds": 207.29,
+    "mem_peak_mb": 4428.1,
+    "ok": true,
+    "sha256": "b77d4d840e33f211a5dcaf11ae9ae2f57d562ef44f15081c79c954ae1590369d",
+    "device_lines": [
+     "[INFO   ] model_loader.cpp:221  - load D:/models/txt2img\\v1-5-pruned-emaonly.safetensors using safetensors format",
+     "[WARN   ] backend_fit.cpp:444  - auto-fit: no GPU devices; using the default backend",
+     "[INFO   ] model_loader.cpp:1383 - loading tensors completed, taking 0.03s (read: 0.00s, memcpy: 0.00s, convert: 0.00s, copy_to_backend: 0.00s)"
+    ]
+   },
+   {
+    "cell": "anchor2_p0_s44",
+    "prompt_idx": 0,
+    "seed": 44,
+    "seconds": 207.33,
+    "mem_peak_mb": 4429.0,
+    "ok": true,
+    "sha256": "c49492158894220fba5c0af34896af622c2768f90655863d9942de44c9ae89b5",
+    "device_lines": [
+     "[INFO   ] model_loader.cpp:221  - load D:/models/txt2img\\v1-5-pruned-emaonly.safetensors using safetensors format",
+     "[WARN   ] backend_fit.cpp:444  - auto-fit: no GPU devices; using the default backend",
+     "[INFO   ] model_loader.cpp:1383 - loading tensors completed, taking 0.02s (read: 0.00s, memcpy: 0.00s, convert: 0.00s, copy_to_backend: 0.00s)"
+    ]
+   },
+   {
+    "cell": "anchor2_p1_s42",
+    "prompt_idx": 1,
+    "seed": 42,
+    "seconds": 206.75,
+    "mem_peak_mb": 4429.1,
+    "ok": true,
+    "sha256": "a1d2701f103a7a03a8c178479e0b7672560ebe71c798ab46875c3e14133fd5a4",
+    "device_lines": [
+     "[INFO   ] model_loader.cpp:221  - load D:/models/txt2img\\v1-5-pruned-emaonly.safetensors using safetensors format",
+     "[WARN   ] backend_fit.cpp:444  - auto-fit: no GPU devices; using the default backend",
+     "[INFO   ] model_loader.cpp:1383 - loading tensors completed, taking 0.02s (read: 0.00s, memcpy: 0.00s, convert: 0.00s, copy_to_backend: 0.00s)"
+    ]
+   },
+   {
+    "cell": "anchor2_p1_s43",
+    "prompt_idx": 1,
+    "seed": 43,
+    "seconds": 207.87,
+    "mem_peak_mb": 4429.9,
+    "ok": true,
+    "sha256": "381b0730f268133d6eb2ed59e668edbab991963886110aeaa39d9a6e4170d320",
+    "device_lines": [
+     "[INFO   ] model_loader.cpp:221  - load D:/models/txt2img\\v1-5-pruned-emaonly.safetensors using safetensors format",
+     "[WARN   ] backend_fit.cpp:444  - auto-fit: no GPU devices; using the default backend",
+     "[INFO   ] model_loader.cpp:1383 - loading tensors completed, taking 0.01s (read: 0.00s, memcpy: 0.00s, convert: 0.00s, copy_to_backend: 0.00s)"
+    ]
+   },
+   {
+    "cell": "anchor2_p1_s44",
+    "prompt_idx": 1,
+    "seed": 44,
+    "seconds": 206.73,
+    "mem_peak_mb": 4429.4,
+    "ok": true,
+    "sha256": "af3f80a97c9c9f6c606ee8eb8263765c27c0c7337dd794fd2f7eadcfb984f23b",
+    "device_lines": [
+     "[INFO   ] model_loader.cpp:221  - load D:/models/txt2img\\v1-5-pruned-emaonly.safetensors using safetensors format",
+     "[WARN   ] backend_fit.cpp:444  - auto-fit: no GPU devices; using the default backend",
+     "[INFO   ] model_loader.cpp:1383 - loading tensors completed, taking 0.02s (read: 0.00s, memcpy: 0.00s, convert: 0.00s, copy_to_backend: 0.00s)"
+    ]
+   }
+  ],
+  "n_ok": 6,
+  "ok": true,
+  "median": 207.31,
+  "min": 206.73,
+  "max": 208.57,
+  "spread_pct": 0.89,
+  "published_baseline_s": 241.6,
+  "drift_pct_vs_published": -14.19,
+  "within_5pct": false,
+  "date": "2026-10-07",
+  "covers_onnx_batch_date": true
+ },
+ "ts_end": "2026-10-07 06:56:15",
+ "parent_blocked_attempts": [],
+ "runs": [
+  "r10"
+ ]
+}

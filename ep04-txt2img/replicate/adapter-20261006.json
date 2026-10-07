@@ -1,0 +1,14 @@
+{
+ "providers_available": [
+  "DmlExecutionProvider",
+  "CPUExecutionProvider"
+ ],
+ "ort_version": "1.24.4",
+ "dml_module_err": "No module named 'onnxruntime_directml'",
+ "adapters": {
+  "Name": "AMD Radeon(TM) Graphics",
+  "DriverVersion": "31.0.21923.1000",
+  "PNPDeviceID": "PCI\\VEN_1002&DEV_1638&SUBSYS_16361002&REV_C8\\4&EB91FFF&0&0041"
+ },
+ "warp_suspected": false
+}

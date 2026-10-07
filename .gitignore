@@ -31,3 +31,7 @@ ep09-asr2/FireRedASR2S/
 ep04-txt2img/ComfyUI-master/
 ep04-txt2img/comfy.zip
 ep02-voice-clone/tools/CosyVoice/
+
+# ORT profiling 每次跑都会落一份, 属临时产物(2026-10-07 实测 61 份), 不入库
+ep04-txt2img/onnxruntime_profile__*.json
+onnxruntime_profile__*.json

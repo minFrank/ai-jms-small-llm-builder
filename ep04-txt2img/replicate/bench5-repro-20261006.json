@@ -1,0 +1,10 @@
+{
+ "cmdline": "tools/bench5.py --only warm,anchor",
+ "python": "3.11.16 (main, Sep  1 2026, 14:15:24) [MSC v.1944 64 bit (AMD64)]",
+ "comfy_freeze": "a36d0e65ead9bfe1583eb5849f1afc3c7271e9b6e791f0393813a79b5e95f1da",
+ "ckpt_sha256": "6ce0161689b3853acaa03779ec93eafe75a02f4ced659bee03f50797806fa2fa",
+ "comfy_zip_sha256": "52398422ad070f6be4433d0d32ff7d534cccd3e646f1ecac5e0e52fc2bf89541",
+ "frozen_src_sha256": "7b450167b5e5d75664843a40a2c4a0c98beef3613ec2e7c6b2888894e13ceca8",
+ "bench4_py_sha256": "ce44cb8c711fad81dac9b0892983a9f74d375448200e11d1094f5d79bf3f0fd2",
+ "fingerprint": "e6a47af12c969e7e"
+}
