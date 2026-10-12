@@ -32,11 +32,17 @@ def peak_monitor():
 
 
 def main():
+    global SIZE
     ap = argparse.ArgumentParser()
     ap.add_argument("--prompt", required=True)
     ap.add_argument("--out", required=True)
     ap.add_argument("--seed", type=int, default=42)
+    # 补测第四节四套同表(2026-10-11 批复 D1A):只加参数,默认 512 与已发布口径一致
+    ap.add_argument("--size", type=int, default=512, help="正方形边长")
     a = ap.parse_args()
+    if a.size != 512:
+        SIZE = (a.size, a.size)
+        print("[补测] SIZE=%s" % (SIZE,), file=sys.stderr)
 
     stop, get_peak = peak_monitor()
     t0 = time.time()

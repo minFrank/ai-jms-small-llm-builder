@@ -69,6 +69,7 @@ PROMPTS = [
 NEG = ""
 SEEDS = [42, 43, 44]
 SIZE, STEPS, CFG = (512, 512), 20, 7.0
+WANT_CELLS = None  # 补测小样用:限定只跑 p{p}_s{seed} 这几格(None=全跑)
 SAMPLER, SCHEDULER = "euler", "normal"
 PRECISION, CLIP_SKIP = "fp32", 1
 CKPT = "v1-5-pruned-emaonly.safetensors"
@@ -324,7 +325,7 @@ def start_server(logf, rundir, pk=None):
     raise TimeoutError("ComfyUI 240s 未就绪")
 
 
-def submit(base, prompt_text, rundir, seed, timeout=1200):
+def submit(base, prompt_text, rundir, seed, timeout=2400):  # 2026-10-11: 1024 档 1200s 超时(3/3 FAIL),调到 2400
     """返回 (gen秒, 图路径, err)。B03: 只认 history 返回的 filename,按 mtime 断言本轮。"""
     import urllib.request
     wf = {
@@ -395,7 +396,7 @@ def base_row(mode, p, seed, fingerprint):
         "prompt_idx": p, "prompt_text": PROMPTS[p],
         "prompt_sha256": sha256_text(PROMPTS[p]),
         "negative_prompt": NEG, "seed": seed,
-        "steps": STEPS, "size": "512x512", "cfg": CFG,
+        "steps": STEPS, "size": "%dx%d" % (SIZE[0], SIZE[1]), "cfg": CFG,
         "sampler": SAMPLER, "scheduler": SCHEDULER,
         "precision": PRECISION, "clip_skip": CLIP_SKIP,
         "runtime_version": f"comfyui-0.38.0/torch-{torch_version()}",
@@ -434,6 +435,8 @@ def emit(row, h_src, h_script):
 def run_cold(n, h_src, h_script, fingerprint):
     for p in range(len(PROMPTS)):
         for seed in SEEDS:
+            if WANT_CELLS and ("p%d_s%d" % (p, seed)) not in WANT_CELLS:
+                continue
             for run in range(n):
                 cell = cell_key("cold", p, seed, run)
                 if done_ok(cell, fingerprint):
@@ -519,6 +522,8 @@ def run_warm(h_src, h_script, fingerprint):
         try:
             for p in range(len(PROMPTS)):
                 for seed in SEEDS:
+                    if WANT_CELLS and ("p%d_s%d" % (p, seed)) not in WANT_CELLS:
+                        continue
                     cell = cell_key("warm", p, seed, 0)
                     if done_ok(cell, fingerprint):
                         continue
@@ -642,12 +647,34 @@ def seed_check():
 
 
 def main():
-    global CKPT_SHA
+    global CKPT_SHA, SIZE, LOG, WANT_CELLS, PROMPTS
     ap = argparse.ArgumentParser()
     ap.add_argument("--only", required=True,
                     help="cold|warm|anchor, 可逗号组合")
     ap.add_argument("--n", type=int, default=3, help="cold 每格轮数(DP-14: >=3)")
+    # 补测第四节四套同表(2026-10-11 批复 D1A/D2A):只加参数,默认值不动 -> 旧口径不变
+    ap.add_argument("--size", type=int, default=512,
+                    help="正方形边长;默认 512 与已发布口径一致,补 768/1024 时才传")
+    ap.add_argument("--out", default=None,
+                    help="progress 落盘路径;不传则写已发布的 bench5-progress.json")
+    ap.add_argument("--cells", default=None,
+                    help="只跑指定格, 逗号分隔如 p0_s42(补测小样用)")
+    ap.add_argument("--topics-file", default=None,
+                    help="五类题材 JSON(替换 PROMPTS);不传则用已发布的 p0/p1 两题")
     a = ap.parse_args()
+    if a.size != 512:
+        SIZE = (a.size, a.size)
+        print("[补测] SIZE=%s (已发布批次均为 512x512,本批走新口径)" % (SIZE,), flush=True)
+    if a.out:
+        LOG = a.out
+        print("[补测] progress -> %s (不覆盖已发布的 bench5-progress.json)" % a.out, flush=True)
+    if a.cells:
+        WANT_CELLS = {c.strip() for c in a.cells.split(",") if c.strip()}
+        print("[补测] 定向跑格: %s" % sorted(WANT_CELLS), flush=True)
+    if a.topics_file:
+        _tj = json.load(open(a.topics_file, encoding="utf-8"))
+        PROMPTS = list(_tj["topics"].values())
+        print("[补测] 题材 prompt %d 个: %s" % (len(PROMPTS), ",".join(_tj["topics"].keys())), flush=True)
 
     stages = [s.strip() for s in a.only.split(",") if s.strip()]
     valid = {"cold", "warm", "anchor"}

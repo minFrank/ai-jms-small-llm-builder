@@ -81,7 +81,8 @@ t1 = time.time()
 emb = encode(A["prompt"])
 unemb = encode("")
 _rng = np.random.default_rng(A["seed"])
-lat = _rng.standard_normal((1, 4, 64, 64)).astype(np.float32)
+_lat_n = int(A.get("height", 512)) // 8          # VAE 8x 下采样;不传则 512->64(与已发布一致)
+lat = _rng.standard_normal((1, 4, _lat_n, _lat_n)).astype(np.float32)
 emb_full = np.concatenate([unemb, emb], axis=0)   # P-6: batch=2 CFG
 
 first_unet_s = None

@@ -1,0 +1,13 @@
+{
+  "_comment": "四套对齐补测的五类题材 prompt,与 tools/run_bench2.py L19-23 逐字一致(sd.cpp 那 10 条已发布的同一批 prompt,保证同题同参可比)",
+  "topics": {
+    "portrait": "portrait of an elderly fisherman with wrinkled face, weathered skin, detailed eyes, photorealistic",
+    "crowd": "a busy street market with many people walking, stalls, lanterns, wide angle, illustration",
+    "chart": "a simple bar chart on white background, three blue bars of different heights, clean infographic style",
+    "anime": "anime girl with blue hair standing under cherry blossoms, soft lighting, high quality",
+    "macro": "macro photo of a dew drop on a green leaf, extreme detail, shallow depth of field"
+  },
+  "seeds": [42, 43, 44],
+  "size": 512,
+  "steps": 20
+}

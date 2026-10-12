@@ -381,7 +381,8 @@ t1 = time.time()
 emb = encode(A["prompt"])
 unemb = encode("")
 _rng = np.random.default_rng(A["seed"])
-lat = _rng.standard_normal((1, 4, 64, 64)).astype(np.float32)
+_lat_n = int(A.get("height", 512)) // 8          # VAE 8x 下采样;不传则 512->64(与已发布一致)
+lat = _rng.standard_normal((1, 4, _lat_n, _lat_n)).astype(np.float32)
 emb_full = np.concatenate([unemb, emb], axis=0)   # P-6: batch=2 CFG
 
 first_unet_s = None
@@ -505,6 +506,8 @@ def run_child(prompt_idx, seed, profile=False, out=None, providers=None,
     args = {
         "onnx": ONNX, "prompt": PROMPTS[prompt_idx], "seed": seed,
         "steps": STEPS, "cfg": CFG, "profile": profile,
+        # 2026-10-11 补测:把尺寸传给子进程(原先只改了记录字段,子进程 latent 硬编码 64=512px)
+        "height": SIZE[0], "width": SIZE[1],
         "sched_config": sched_cfg,
         "tokenizer": "openai/clip-vit-large-patch14",
         "out": out,
@@ -666,7 +669,7 @@ def run_landing(hashes, fp, qc):
 
     row = {"cell": "landing_p0_s42", "scheme": "onnx-dml", "mode": "landing",
            "prompt_idx": 0, "seed": 42, "run_idx": 0, "steps": STEPS,
-           "size": "512x512", "cfg": CFG, "attempt": 0, "ts": now_ts(),
+           "size": "%dx%d" % (SIZE[0], SIZE[1]), "cfg": CFG, "attempt": 0, "ts": now_ts(),
            "fingerprint": fp, "requested_n": 1,
            "seconds_gen": dml_gen, "seconds_total": data_dml.get("cold_total_s"),
            "cpu_gen_s": cpu_gen,
@@ -686,19 +689,42 @@ def run_landing(hashes, fp, qc):
 
 
 def main():
+    global SIZE, LOG, ONNX, PROMPTS
     ap = argparse.ArgumentParser()
     ap.add_argument("--mode", required=True,
                     choices=["adapter", "timing", "profiling", "landing"])
     ap.add_argument("--n", type=int, default=3)
+    # 补测第四节四套同表(2026-10-11 批复 D1A/D2A):只加参数,默认值不动 -> 旧口径不变
+    ap.add_argument("--size", type=int, default=512,
+                    help="正方形边长;默认 512 与已发布口径一致,补 768/1024 时才传")
+    ap.add_argument("--out", default=None,
+                    help="progress 落盘路径;不传则写已发布的 bench6-progress.json")
+    ap.add_argument("--onnx-dir", default=None,
+                    help="ONNX 模型目录;默认用已发布的 D:/ep04/onnx/sd15(补测动态版时传新目录)")
+    ap.add_argument("--topics-file", default=None,
+                    help="五类题材 JSON(替换 PROMPTS);不传则用已发布的 p0/p1 两题")
     ap.add_argument("--force", action="store_true",
                     help="忽略已有成功行强制重跑(C4: 污染重跑, 上限 2 次)")
     ap.add_argument("--cells", default=None,
-                    help="只跑指定格, 逗号分隔如 p0_s42(C4: 同格离散>5% 定向重跑)")
+                    help="只跑指定格, 逗号分隔如 p0_s42(C4: 同格离散>5%% 定向重跑)")
     ap.add_argument("--warmup", type=int, default=0,
                     help="正式采集前先跑 N 个不入表的预热子进程(C4 批首效应: "
                          "实测每次进程启动后首个子进程偏快约 20s, 跨 3 批复现 "
                          "94.0/91.0/94.7s, 属冷机高频而非随机噪声)")
     a = ap.parse_args()
+    if a.size != 512:
+        SIZE = (a.size, a.size)
+        print("[补测] SIZE=%s (已发布批次均为 512x512,本批走新口径)" % (SIZE,), flush=True)
+    if a.out:
+        LOG = a.out
+        print("[补测] progress -> %s (不覆盖已发布的 bench6-progress.json)" % a.out, flush=True)
+    if a.onnx_dir:
+        ONNX = a.onnx_dir
+        print("[补测] ONNX 目录 -> %s" % ONNX, flush=True)
+    if a.topics_file:
+        _tj = json.load(open(a.topics_file, encoding="utf-8"))
+        PROMPTS = list(_tj["topics"].values())
+        print("[补测] 题材 prompt %d 个: %s" % (len(PROMPTS), ",".join(_tj["topics"].keys())), flush=True)
 
     hashes = freeze_old()
     print(f"冻结校验 OK b4={hashes[0][:16]}… b5={hashes[1][:16]}… "
@@ -809,7 +835,7 @@ def main():
                        "prompt_idx": p, "prompt_text": PROMPTS[p],
                        "prompt_sha256": sha256_text(PROMPTS[p]),
                        "negative_prompt": NEG, "seed": seed, "run_idx": run,
-                       "steps": STEPS, "size": "512x512", "cfg": CFG,
+                       "steps": STEPS, "size": "%dx%d" % (SIZE[0], SIZE[1]), "cfg": CFG,
                        "sampler": qc["published_scheduler_class"],
                        "scheduler": qc["published_scheduler_class"],
                        "precision": "unet=fp16,te=fp32,vae=fp32",

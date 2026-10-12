@@ -56,7 +56,7 @@ def sha256_group(path):
     return h.hexdigest(), sorted(set(files), key=os.path.basename)
 
 
-def export_part(pipe, part, dtype):
+def export_part(pipe, part, dtype, dynamic=False):
     import torch
     sub = getattr(pipe, part)
     sub = sub.to(dtype).eval()
@@ -109,6 +109,14 @@ def export_part(pipe, part, dtype):
             os.remove(os.path.join(OUTDIR, part, f))
 
         # B2: legacy 导出器(dynamo=False)+ 显式 opset + external data
+        # 2026-10-11 补测 1024: 只给 unet/vae 的空间维开动态;text_encoder 吃 token ids 不变
+        dyn = None
+        if dynamic and part == "unet":
+            dyn = {"sample": {0: "batch", 2: "h", 3: "w"},
+                   "output": {0: "batch", 2: "h", 3: "w"}}
+        elif dynamic and part == "vae":
+            dyn = {"input": {0: "batch", 2: "h", 3: "w"},
+                   "output": {0: "batch", 2: "h", 3: "w"}}
         try:
             torch.onnx.export(
                 model, args, opath,
@@ -117,7 +125,7 @@ def export_part(pipe, part, dtype):
                 do_constant_folding=True,
                 input_names=["input"] if part != "unet" else ["sample", "timestep", "encoder_hidden_states"],
                 output_names=["output"],
-                dynamic_axes=None,
+                dynamic_axes=dyn,
                 # B3: >2GB 必须 external data
                 save_as_external_data=True,
                 all_tensors_to_one_file=True,
@@ -125,6 +133,8 @@ def export_part(pipe, part, dtype):
             )
         except TypeError:
             # 旧签名不收 external data 参数(仍可能超 2GB,由下方检查兜)
+            # 2026-10-11 修: 本 venv 的 torch 走的就是这个分支,原先丢了 dynamic_axes
+            # → 动态版与静态版 sha 逐位相同、1024 仍报 Expected: 64。补上 dyn。
             torch.onnx.export(
                 model, args, opath,
                 opset_version=OPSET,
@@ -132,6 +142,7 @@ def export_part(pipe, part, dtype):
                 do_constant_folding=True,
                 input_names=["input"] if part != "unet" else ["sample", "timestep", "encoder_hidden_states"],
                 output_names=["output"],
+                dynamic_axes=dyn,
             )
     sha, files = sha256_group(opath)
     sizes = {os.path.basename(f): os.path.getsize(f) for f in files}
@@ -147,10 +158,23 @@ def check_onnx(opath):
 
 
 def main():
+    global OUTDIR
     ap = argparse.ArgumentParser()
     ap.add_argument("--part", default="all",
                     choices=["all", "text_encoder", "unet", "vae"])
+    # 2026-10-11 补测 1024(批复 A):导出到新目录 + 只对 unet/vae 开动态 shape,
+    # 默认行为不变(不传 --outdir/--dynamic 时与已发布完全一致)
+    ap.add_argument("--outdir", default=None,
+                    help="导出目录;默认 D:/ep04/onnx/sd15(已发布模型),补测时必须传新目录")
+    ap.add_argument("--dynamic", action="store_true",
+                    help="unet/vae 的空间维开 dynamic_axes(512/768/1024 通用)")
     a = ap.parse_args()
+    if a.outdir:
+        OUTDIR = a.outdir
+        os.makedirs(OUTDIR, exist_ok=True)
+        print(f"[补测] OUTDIR -> {OUTDIR}", flush=True)
+    if a.dynamic:
+        print("[补测] dynamic_axes ON (unet + vae 空间维)", flush=True)
 
     t_start = time.time()
     import torch
@@ -198,7 +222,7 @@ def main():
             raise SystemExit(f"FATAL(C9): 导出时间盒 {TIMEBOX_S}s 到点,停在 {p}")
         print(f"[{time.strftime('%H:%M:%S')}] 导出 {p} ({dt_str})...", flush=True)
         t0 = time.time()
-        opath, sha, sizes = export_part(pipe, p, dtype)
+        opath, sha, sizes = export_part(pipe, p, dtype, dynamic=a.dynamic)
         try:
             check_onnx(opath)
             checker = "ok"
