@@ -1,0 +1,101 @@
+2 Related Work
+
+2.1 Traditional OCR
+
+Optical Character Recognition (OCR) is a classic research topic that aims to convert the image’s
+
+optical contents into an editable format for further downstream processing. Traditional OCR systems,
+
+called OCR-1.0, typically use a framework that is assembled from multiple expert modules. For
+
+instance, to handle diverse optical characters, the OCR system [10] is usually developed by integrating
+
+several domain expert networks, such as layout analysis [54], text detection [18, 19, 26, 30, 43, 45,
+
+52, 55], region extraction, and contents recognition [11, 14, 16]. The reason for using such a pipeline
+
+scheme is that the text recognition module (the OCR part) failed to scale up successfully, which can
+
+only deal with the image format of small slices, resulting in the entire OCR process being in the form
+
+of first detecting texts/cropping regions, and then recognizing the results within the slice. However, a
+
+system with complicated procedures may suffer potential systematic errors and high maintenance
+
+costs. Although some OCR-1.0 models, e.g., Nougat [6] can directly process documents at the
+
+whole page level, they are often designed and trained for a specific sub-task, leading to unsatisfactory
+
+general ability. In the OCR-1.0 era, one inconvenient thing is that we usually need to switch different
+
+models according to various OCR needs.
+
+2.2 LVLM-driven OCR
+
+Large Vision-Language Models (LVLMs) [5, 9, 20, 24, 27, 46, 49] have attracted lots of attention
+
+in the AI-community due to their powerful generalization capabilities. For the current LVLMs
+
+owning perception-reasoning comprehensive capacity, the OCR ability has become a hot spot with
+
+the increasing demand for text-driven visual understanding. Most LVLMs’ OCR capabilities come
+
+from the ready-made CLIP [37], especially those that freeze CLIP encoder [24] to complete the entire
+
+LVLM training. For such models, the vanilla CLIP, mainly with English scene text knowledge, is the
+
+bottleneck for the OCR performance to out-of-domain tasks, such as other languages or documents.
+
+Some other LVLMs [5, 49] choose to unfreeze the encoder and freeze the LLM for training to enhance
+
+the CLIP-encoder and align the image tokens to text ones. These models will face the problem of low
+
+optical character compression rate, as it is difficult for frozen LLM to decode too much text from
+
+an aligned image token. To alleviate this problem, some models [9, 27, 50] adopt a sliding window
+
+manner to decompose input images into smaller patches. Although this dynamic resolution approach
+
+is highly effective in processing high-resolution input images, e.g., PDF, it will result in excessive
+
+image tokens and limit the max length of the generated OCR result to some extent.
+
+3 General OCR Theory
+
+In this work, we propose the general OCR theory, i.e., OCR-2.0 (as expounded in Section 1) to
+
+promote the development of the OCR field. Based on the proposed new theory, we present a novel
+
+OCR model (GOT). In this section, we will introduce the technical details of our model, including
+
+the framework, multi-stage training strategy, and the corresponding data engines.
+
+3.1 Framework
+
+As illustrated in Figure 2, GOT comprises three modules, i.e., an image encoder, a linear layer, and
+
+an output decoder. The linear layer acts as the connector to map the channel dimension between
+
+the vision encoder and the language decoder. We utilize three main steps in optimizing the whole
+
+GOT model. First, we conduct the pure text recognition task to pre-train the vision encoder. To lift
+
+training efficiency and save GPU resources, we choose a tiny decoder to pass gradients to the encoder.
+
+In this stage, we feed images containing scene texts and manual images containing document-level
+
+characters into the model to allow the encoder to gather the two most commonly used characters’
+
+encoding abilities. In the next stage, we form the architecture of GOT by connecting the trained
+
+vision encoder to a new larger decoder. We prepare lots of more general OCR data (e.g., sheet music,
+
+math/molecular formulas, and geometric shapes) to scale up the OCR-2.0 knowledge for this stage. In
+
+the final stage, we intend to improve the generalization and applicability of GOT further. Specifically,
+
+fine-grained and muti-crop/page synthetic data are generated and added for GOT to support region
+
+prompt OCR [20], huge image OCR, and batched PDF OCR features.
+
+4

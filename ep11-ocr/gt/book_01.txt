@@ -1,0 +1,103 @@
+General OCR Theory: Towards OCR-2.0
+
+via a Unified End-to-end Model
+
+Haoran Wei1,∗
+
+, Chenglong Liu3,∗
+
+, Jinyue Chen3
+
+, Jia Wang1
+
+, Lingyu Kong3
+
+, Yanming Xu1
+
+,
+
+Zheng Ge1
+
+, Liang Zhao1
+
+, Jianjian Sun1
+
+, Yuang Peng4
+
+, Chunrui Han2
+
+, Xiangyu Zhang1,2
+
+1StepFun 2Megvii Technology
+
+3University of Chinese Academy of Sciences 4Tsinghua University
+
+https://github.com/Ucas-HaoranWei/GOT-OCR2.0
+
+Abstract
+
+Traditional OCR systems (OCR-1.0) are increasingly unable to meet people’s
+
+usage due to the growing demand for intelligent processing of man-made optical
+
+characters. In this paper, we collectively refer to all artificial optical signals
+
+(e.g., plain texts, math/molecular formulas, tables, charts, sheet music, and even
+
+geometric shapes) as "characters" and propose the General OCR Theory along with
+
+an excellent model, namely GOT, to promote the arrival of OCR-2.0. The GOT,
+
+with 580M parameters, is a unified, elegant, and end-to-end model, consisting of
+
+a high-compression encoder and a long-contexts decoder. As an OCR-2.0 model,
+
+GOT can handle all the above "characters" under various OCR tasks. On the
+
+input side, the model supports commonly used scene- and document-style images
+
+in slice and whole-page styles. On the output side, GOT can generate plain or
+
+formatted results (markdown/tikz/smiles/kern) via an easy prompt. Besides, the
+
+model enjoys interactive OCR features, i.e., region-level recognition guided by
+
+coordinates or colors. Furthermore, we also adapt dynamic resolution and multi￾page OCR technologies to GOT for better practicality. In experiments, we provide
+
+sufficient results to prove the superiority of our model.
+
+1 Introduction
+
+Optical Character Recognition (OCR) is a widely used technology that extracts the characters
+
+embedded in an optical image into an editable format. Typical OCR systems [10] in the OCR-1.0 era
+
+are mainly designed based on a multi-modular pipeline style, commonly including element detection,
+
+region cropping, and character recognition parts. Each module is prone to falling into local optima,
+
+making the whole system incur high maintenance costs. Moreover, traditional OCR methods have
+
+insufficient general ability, reflected as different OCR-1.0 networks usually designed for different
+
+sub-tasks. Nevertheless, choosing a suitable one from diverse OCR models for a special task is
+
+always inconvenient for users.
+
+In the past year, Large Vision Language models (LVLMs) [5, 9, 24, 27, 36, 46, 49] have developed
+
+rapidly and showcased impressive performance. As a highly anticipated ability, the OCR performance
+
+of current LVLMs is continuously improving. Based on CLIP [37], LLaVA [24] naturally acquires
+
+the English OCR ability after the instruct tuning phase. To lift the OCR accuracy and support other
+
+languages, e.g., Chinese, Qwen-VL [5] unfreezes its image encoder (a CLIP-G) and uses lots of
+
+OCR data in its stage-two training. Innovatively, Vary [46] generates a new high-resolution OCR
+
+vision vocabulary paralleling the CLIP branch to deal with document-level dense OCR. By contrast,
+
+∗Equal contribution
+
+arXiv:2409.01704v1 [cs.CV] 3 Sep 2024

@@ -1,0 +1,25 @@
+Document OCR
+
+Fine-grained OCR
+
+More General OCR
+
+Scene Text OCR
+
+1 2
+
+3 4
+
+1 2 3 4
+
+Figure 1: On the input side, GOT supports various optical image types, such as commonly used
+
+photographs and documents. Besides, as a general OCR-2.0 model, GOT can handle more tasks, e.g.,
+
+sheet music, molecular formulas, easy geometric shapes, charts, etc. Moreover, the model can adapt
+
+to region-focus OCR, high-resolution OCR, and multiple-page OCR. GOT mainly supports English
+
+and Chinese and can control the structure results (Mathpix markdown/tikz/smiles/kern) via a prompt.
+
+2
