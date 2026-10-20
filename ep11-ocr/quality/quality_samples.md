@@ -2,18 +2,18 @@
 
 | # | 引擎 | 图 | 行号 | 该行 CER | GT（前60字） | 识别（前60字） |
 |---|---|---|---|---|---|---|
-| 1 | gotocr | shot_01.png | 7 | 58.000 | 换一换 | 新間hao123地图贴吧视频图片阿盘库库AI 文心百度摇子更多 设置 Baidu百度 简三季度中国GDP同比增长4.6% |
-| 2 | gotocr | shot_01.png | 17 | 57.750 | 百度一下 | 新間hao123地图贴吧视频图片阿盘库库AI 文心百度摇子更多 设置 Baidu百度 简三季度中国GDP同比增长4.6% |
-| 3 | gotocr | shot_01.png | 16 | 21.182 | 国模新人古月首登维密秀 | 新間hao123地图贴吧视频图片阿盘库库AI 文心百度摇子更多 设置 Baidu百度 简三季度中国GDP同比增长4.6% |
-| 4 | gotocr | shot_01.png | 2 | 12.167 | 把黄旗海保护好 孩子上班父母也能领工资 | 新間hao123地图贴吧视频图片阿盘库库AI 文心百度摇子更多 设置 Baidu百度 简三季度中国GDP同比增长4.6% |
-| 5 | gotocr | shot_01.png | 0 | 12.111 | 写报告、做图片、代码编程、有问题就找库库  | 新間hao123地图贴吧视频图片阿盘库库AI 文心百度摇子更多 设置 Baidu百度 简三季度中国GDP同比增长4.6% |
-| 6 | gotocr | shot_01.png | 5 | 7.367 | 读懂中国经济的韧性和活力 为戒烟每天存40元 9个月后烟钱摆满床 | 新間hao123地图贴吧视频图片阿盘库库AI 文心百度摇子更多 设置 Baidu百度 简三季度中国GDP同比增长4.6% |
-| 7 | gotocr | shot_01.png | 3 | 7.161 | 披旭日旗的中国留学生已被遣返开除 乒乓球名将王曼昱等3人拟记大功 | 新間hao123地图贴吧视频图片阿盘库库AI 文心百度摇子更多 设置 Baidu百度 简三季度中国GDP同比增长4.6% |
-| 8 | gotocr | shot_01.png | 18 | 6.967 | 新闻 hao123 地图 贴吧 视频 图片 网盘 库库AI 文心 更多 设置 登录 | 新間hao123地图贴吧视频图片阿盘库库AI 文心百度摇子更多 设置 Baidu百度 简三季度中国GDP同比增长4.6% |
-| 9 | gotocr | shot_01.png | 4 | 6.147 | 南太行徒步失联的33岁女子已找到 救场李克勤走红草根歌手3周涨粉40万 | 新間hao123地图贴吧视频图片阿盘库库AI 文心百度摇子更多 设置 Baidu百度 简三季度中国GDP同比增长4.6% |
-| 10 | gotocr | shot_01.png | 6 | 5.914 | 公司给2千员工每人发1条5克纯金手链 情侣无视火焰在抗议现场淡定饮酒交谈 | 新間hao123地图贴吧视频图片阿盘库库AI 文心百度摇子更多 设置 Baidu百度 简三季度中国GDP同比增长4.6% |
-| 11 | gotocr | table_01.png | 1 | 2.000 | 姓名 语文 数学 英语 物理 总分 | 初二3班期中成绩表 魏 88酷然 891-诺 8030平均分 |
-| 12 | gotocr | table_01.png | 0 | 1.778 | 初二3班期中成绩表 | 初二3班期中成绩表 魏 88酷然 891-诺 8030平均分 |
-| 13 | gotocr | table_01.png | 4 | 1.571 | 王浩然 78 96 82 75 331 | 初二3班期中成绩表 魏 88酷然 891-诺 8030平均分 |
-| 14 | gotocr | table_01.png | 6 | 1.500 | 孙一诺 83 89 88 71 331 | 初二3班期中成绩表 魏 88酷然 891-诺 8030平均分 |
-| 15 | gotocr | table_01.png | 2 | 1.400 | 陈思远 92 108 96 88 384 | 初二3班期中成绩表 魏 88酷然 891-诺 8030平均分 |
+| 1 | gotocr | skew_01.png | 5 | 290.000 | , Jia Wang1 | General OCR Theory: Towards OCR- 2.0 via a Unified End- to-  |
+| 2 | gotocr | skew_01.png | 9 | 290.000 | Zheng Ge1 | General OCR Theory: Towards OCR- 2.0 via a Unified End- to-  |
+| 3 | gotocr | skew_01.png | 18 | 290.000 | Abstract | General OCR Theory: Towards OCR- 2.0 via a Unified End- to-  |
+| 4 | gotocr | skew_01.png | 2 | 231.800 | Haoran Wei1,∗ | General OCR Theory: Towards OCR- 2.0 via a Unified End- to-  |
+| 5 | gotocr | skew_01.png | 7 | 231.800 | , Yanming Xu1 | General OCR Theory: Towards OCR- 2.0 via a Unified End- to-  |
+| 6 | gotocr | skew_01.png | 10 | 231.800 | , Liang Zhao1 | General OCR Theory: Towards OCR- 2.0 via a Unified End- to-  |
+| 7 | gotocr | skew_01.png | 12 | 231.800 | , Yuang Peng4 | General OCR Theory: Towards OCR- 2.0 via a Unified End- to-  |
+| 8 | gotocr | skew_01.png | 4 | 210.636 | , Jinyue Chen3 | General OCR Theory: Towards OCR- 2.0 via a Unified End- to-  |
+| 9 | gotocr | skew_01.png | 6 | 210.636 | , Lingyu Kong3 | General OCR Theory: Towards OCR- 2.0 via a Unified End- to-  |
+| 10 | gotocr | skew_01.png | 13 | 210.636 | , Chunrui Han2 | General OCR Theory: Towards OCR- 2.0 via a Unified End- to-  |
+| 11 | gotocr | skew_01.png | 11 | 193.000 | , Jianjian Sun1 | General OCR Theory: Towards OCR- 2.0 via a Unified End- to-  |
+| 12 | gotocr | skew_01.png | 3 | 178.077 | , Chenglong Liu3,∗ | General OCR Theory: Towards OCR- 2.0 via a Unified End- to-  |
+| 13 | gotocr | skew_01.png | 34 | 178.077 | 1 Introduction | General OCR Theory: Towards OCR- 2.0 via a Unified End- to-  |
+| 14 | gotocr | skew_01.png | 14 | 165.286 | , Xiangyu Zhang1,2 | General OCR Theory: Towards OCR- 2.0 via a Unified End- to-  |
+| 15 | gotocr | skew_01.png | 50 | 136.000 | ∗Equal contribution | General OCR Theory: Towards OCR- 2.0 via a Unified End- to-  |

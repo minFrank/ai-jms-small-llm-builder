@@ -85,6 +85,11 @@ code{background:#eef0f4;padding:1px 5px;border-radius:4px;font-size:12px}
     tot = len(cells)
     A("本轮共跑 <b>%s</b> 个测量格，覆盖 %s 个引擎、%s 张样本图。"
       % (m("cells_total", tot), m("engines_n", len(engines)), m("images_n", len(images))))
+    tu0 = M.topup_compare()
+    if tu0:
+        A("补跑批次：%s 项任务（去重 %s 格）全部完成——n&lt;3 的格全部补到 n=3、"
+          "超时格出数、离散格定向重跑，详见十四节。"
+          % (m("tu_tasks", tu0["n_tasks"]), m("tu_unique", tu0["n_unique"])))
     A("</div>")
 
     # ---- 硬件与依赖 ----
@@ -176,7 +181,7 @@ code{background:#eef0f4;padding:1px 5px;border-radius:4px;font-size:12px}
         for k, c in cells.items():
             if c["engine"] != e or c["mode"] != "hot" or c["cer_main"] is None:
                 continue
-            byc.setdefault(cat.get(c["img"], "?"), []).append(c["cer_main"])
+            byc.setdefault(cat.get(c["img"].replace(".png", ""), "?"), []).append(c["cer_main"])
         for cname in sorted(byc):
             vals = sorted(byc[cname])
             import statistics as st
@@ -264,7 +269,66 @@ code{background:#eef0f4;padding:1px 5px;border-radius:4px;font-size:12px}
          m("seg_bad_n", len(data["seg_bad"])), data["seg_n"]))
     A("<br>坏行（截断/非法 JSON）：%s。</div>" % data["bad_lines"])
 
-    A("<h2>十四、口径与不做</h2><div class='card'>"
+    # ---- 补跑批次 ----
+    tu = M.topup_compare()
+    if tu:
+        A("<h2>十四、补跑批次达成情况（%s 项任务 → %s 格，全部完成）</h2>"
+          % (m("tu_tasks", tu["n_tasks"]), m("tu_unique", tu["n_unique"])))
+        A("<div class='card'>")
+        A("① n&lt;3 的格：<b>%s / 19</b> 补到 n=3（同格整格重跑，一格一子进程，预热不计时）；"
+          % m("tu_nlt3_fixed", tu["n_lt3_fixed"]))
+        A("② 超时失败格（gotocr skew_01 hot）：单格上限从 1200s 放宽到 5400s 后出数——"
+          "中位 <b>%s 秒</b>、离散 %s%%、CER %s；归因=<b>上轮超时窗口过短</b>（该图单页就要 10 分钟量级），不是模型失败。"
+          % (m("tu_skew_median", cells.get(tu["timeout_cell"], {}).get("median"), 2),
+             m("tu_skew_spread", cells.get(tu["timeout_cell"], {}).get("spread_pct")),
+             m("tu_skew_cer", cells.get(tu["timeout_cell"], {}).get("cer_main"), 3)))
+        disp = {r["img"]: r for r in tu["disp_fixed"]}
+        A("③ 离散超标格：定向重跑一次（每档只跑一次，不为达标反复跑）→ table_02 %s%%→%s%% 达标；"
+          "invoice_01 %s%%、table_01 %s%% 仍 &gt;5%%，如实标注。"
+          % (m("tu_%s_sp_b" % disp["table_02"]["cell"], disp["table_02"]["sp_b"]),
+             m("tu_%s_sp_a" % disp["table_02"]["cell"], disp["table_02"]["sp_a"]),
+             m("tu_%s_sp_a" % disp["invoice_01"]["cell"], disp["invoice_01"]["sp_a"]),
+             m("tu_%s_sp_a" % disp["table_01"]["cell"], disp["table_01"]["sp_a"])))
+        A("④ 跨批一致性：同格重跑前后中位偏差，全部格最大 %s%%（属亚秒级格）；"
+          "中位 ≥1 秒的格最大 %s%%。"
+          % (m("tu_drift_max", tu["drift_max_pct"]),
+             m("tu_drift_big", tu["drift_big_pct"])))
+        A("</div>")
+        A("<div class='scroll'>")
+        A(table(["引擎", "图", "模式", "触发原因", "n 前→后", "离散% 前→后",
+                 "中位(s) 前→后", "补跑后状态"],
+                [[r["engine"], r["img"], r["mode"], r["reason"],
+                  "%s→%s" % (m("tu_%s_n_b" % r["cell"], r["n_b"]),
+                             m("tu_%s_n_a" % r["cell"], r["n_a"])),
+                  "%s→%s" % (m("tu_%s_sp_b" % r["cell"], r["sp_b"]),
+                             m("tu_%s_sp_a" % r["cell"], r["sp_a"])),
+                  "%s→%s" % (m("tu_%s_md_b" % r["cell"], r["md_b"], 2),
+                             m("tu_%s_md_a" % r["cell"], r["md_a"], 2)),
+                  r["status_a"] + (" " + r["err_a"] if r["err_a"] else "")]
+                 for r in tu["rows"]]))
+        A("</div>")
+        over_txt = "；".join(
+            "%s %s（绝对极差 %s 秒）" % (
+                r["cell"], m("tu_%s_sp_a" % r["cell"], r["sp_a"]),
+                m("tu_abs_%s" % r["cell"],
+                  (cells[r["cell"]]["max"] - cells[r["cell"]]["min"])
+                  if cells.get(r["cell"]) and cells[r["cell"]]["max"] is not None
+                  and cells[r["cell"]]["min"] is not None else None, 3))
+            for r in tu["still_over"])
+        A("<div class='muted'>表注：① 补跑方法 = 命中格整格重跑为新 attempt，聚合按「每格取最新 attempt」；"
+          "被替换的旧 attempt 留在 progress.json 可审计。单格超时上限：paddleocr 1500s / gotocr 2400s（skew_01 单独 5400s）。"
+          "② 仍 &gt;5%% 的 %d 格都是亚秒级页面：%s —— 毫秒级调度抖动在相对口径下被放大；"
+          "按纪律定向重跑只做一次，不再重跑。③ 冷启动补格按「同图 3 个独立进程」读，跨进程极差 invoice_01 %s%%、table_01 %s%%。"
+          "</div>"
+          % (len(tu["still_over"]), over_txt,
+             m("tu_cold_spr_gotocr_invoice_01",
+               next((r["sp_a"] for r in tu["rows"]
+                     if r["cell"] == "gotocr__invoice_01__cold"), None)),
+             m("tu_cold_spr_gotocr_table_01",
+               next((r["sp_a"] for r in tu["rows"]
+                     if r["cell"] == "gotocr__table_01__cold"), None))))
+
+    A("<h2>十五、口径与不做</h2><div class='card'>"
       "① 三引擎依赖栈不同（onnxruntime / paddlepaddle / torch），<b>不做跨引擎排名</b>；"
       "GOT-OCR2.0 为端到端多模态对照维度，不进主线结论。<br>"
       "② RapidOCR 默认 PP-OCRv4 模型、PaddleOCR 默认 PP-OCRv6 模型，<b>代际不同</b>，"

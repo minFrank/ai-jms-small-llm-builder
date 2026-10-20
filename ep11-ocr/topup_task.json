@@ -1,0 +1,258 @@
+{
+  "schema": "ep11-topup-task-v1",
+  "created": "2026-10-20T11:50:23",
+  "note": "补跑清单。只跑这里列出的格子,已完成格一律不重跑(跑测纪律:同一时刻只跑一个测量进程)",
+  "baseline_result": "result.json",
+  "jobs": [
+    {
+      "reason": "n<3",
+      "engine": "gotocr",
+      "img": "book_01.png",
+      "mode": "hot",
+      "have_n": 1,
+      "target_n": 3,
+      "cur_median_s": 225.2081,
+      "status": "ok",
+      "err": ""
+    },
+    {
+      "reason": "n<3",
+      "engine": "gotocr",
+      "img": "invoice_01.png",
+      "mode": "cold",
+      "have_n": 1,
+      "target_n": 3,
+      "cur_median_s": 195.8487,
+      "status": "ok",
+      "err": ""
+    },
+    {
+      "reason": "n<3",
+      "engine": "gotocr",
+      "img": "invoice_01.png",
+      "mode": "hot",
+      "have_n": 1,
+      "target_n": 3,
+      "cur_median_s": 189.3246,
+      "status": "ok",
+      "err": ""
+    },
+    {
+      "reason": "n<3",
+      "engine": "gotocr",
+      "img": "lc_01.png",
+      "mode": "hot",
+      "have_n": 1,
+      "target_n": 3,
+      "cur_median_s": 187.5901,
+      "status": "ok",
+      "err": ""
+    },
+    {
+      "reason": "n<3",
+      "engine": "gotocr",
+      "img": "shot_01.png",
+      "mode": "hot",
+      "have_n": 1,
+      "target_n": 3,
+      "cur_median_s": 187.0297,
+      "status": "ok",
+      "err": ""
+    },
+    {
+      "reason": "n<3",
+      "engine": "gotocr",
+      "img": "skew_01.png",
+      "mode": "hot",
+      "have_n": 0,
+      "target_n": 3,
+      "cur_median_s": null,
+      "status": "fail",
+      "err": "timeout_killed"
+    },
+    {
+      "reason": "n<3",
+      "engine": "gotocr",
+      "img": "table_01.png",
+      "mode": "cold",
+      "have_n": 1,
+      "target_n": 3,
+      "cur_median_s": 182.4903,
+      "status": "ok",
+      "err": ""
+    },
+    {
+      "reason": "n<3",
+      "engine": "gotocr",
+      "img": "table_01.png",
+      "mode": "hot",
+      "have_n": 1,
+      "target_n": 3,
+      "cur_median_s": 175.6372,
+      "status": "ok",
+      "err": ""
+    },
+    {
+      "reason": "n<3",
+      "engine": "paddleocr",
+      "img": "book_02.png",
+      "mode": "hot",
+      "have_n": 1,
+      "target_n": 3,
+      "cur_median_s": 53.3682,
+      "status": "ok",
+      "err": ""
+    },
+    {
+      "reason": "n<3",
+      "engine": "paddleocr",
+      "img": "hard_01.png",
+      "mode": "hot",
+      "have_n": 1,
+      "target_n": 3,
+      "cur_median_s": 96.2722,
+      "status": "ok",
+      "err": ""
+    },
+    {
+      "reason": "n<3",
+      "engine": "paddleocr",
+      "img": "hard_02.png",
+      "mode": "hot",
+      "have_n": 2,
+      "target_n": 3,
+      "cur_median_s": 18.4628,
+      "status": "ok",
+      "err": ""
+    },
+    {
+      "reason": "n<3",
+      "engine": "paddleocr",
+      "img": "invoice_02.png",
+      "mode": "hot",
+      "have_n": 2,
+      "target_n": 3,
+      "cur_median_s": 12.891,
+      "status": "ok",
+      "err": ""
+    },
+    {
+      "reason": "n<3",
+      "engine": "paddleocr",
+      "img": "lc_01.png",
+      "mode": "hot",
+      "have_n": 1,
+      "target_n": 3,
+      "cur_median_s": 25.0575,
+      "status": "ok",
+      "err": ""
+    },
+    {
+      "reason": "n<3",
+      "engine": "paddleocr",
+      "img": "lc_02.png",
+      "mode": "hot",
+      "have_n": 2,
+      "target_n": 3,
+      "cur_median_s": 85.8289,
+      "status": "ok",
+      "err": ""
+    },
+    {
+      "reason": "n<3",
+      "engine": "paddleocr",
+      "img": "shot_01.png",
+      "mode": "hot",
+      "have_n": 1,
+      "target_n": 3,
+      "cur_median_s": 27.5535,
+      "status": "ok",
+      "err": ""
+    },
+    {
+      "reason": "n<3",
+      "engine": "paddleocr",
+      "img": "shot_02.png",
+      "mode": "hot",
+      "have_n": 1,
+      "target_n": 3,
+      "cur_median_s": 46.9297,
+      "status": "ok",
+      "err": ""
+    },
+    {
+      "reason": "n<3",
+      "engine": "paddleocr",
+      "img": "skew_01.png",
+      "mode": "hot",
+      "have_n": 1,
+      "target_n": 3,
+      "cur_median_s": 71.281,
+      "status": "ok",
+      "err": ""
+    },
+    {
+      "reason": "n<3",
+      "engine": "paddleocr",
+      "img": "skew_02.png",
+      "mode": "hot",
+      "have_n": 1,
+      "target_n": 3,
+      "cur_median_s": 60.9891,
+      "status": "ok",
+      "err": ""
+    },
+    {
+      "reason": "n<3",
+      "engine": "paddleocr",
+      "img": "table_02.png",
+      "mode": "hot",
+      "have_n": 2,
+      "target_n": 3,
+      "cur_median_s": 9.2287,
+      "status": "ok",
+      "err": ""
+    },
+    {
+      "reason": "dispersion_over_limit",
+      "engine": "rapidocr",
+      "img": "invoice_01",
+      "mode": "hot",
+      "cur_spread_pct": 7.62,
+      "limit_pct": 5.0,
+      "action": "定向重跑一次;仍超标就如实标注,不为达标反复跑"
+    },
+    {
+      "reason": "dispersion_over_limit",
+      "engine": "rapidocr",
+      "img": "table_01",
+      "mode": "hot",
+      "cur_spread_pct": 12.3,
+      "limit_pct": 5.0,
+      "action": "定向重跑一次;仍超标就如实标注,不为达标反复跑"
+    },
+    {
+      "reason": "dispersion_over_limit",
+      "engine": "rapidocr",
+      "img": "table_02",
+      "mode": "hot",
+      "cur_spread_pct": 10.43,
+      "limit_pct": 5.0,
+      "action": "定向重跑一次;仍超标就如实标注,不为达标反复跑"
+    },
+    {
+      "reason": "timeout_failure",
+      "engine": "gotocr",
+      "img": "skew_01.png",
+      "mode": "hot",
+      "action": "先查为什么超时(单页中位~200s,疑超时阈值过短);放宽阈值重跑一次;仍失败就在报告显式标失败,不留'-'"
+    }
+  ],
+  "acceptance": [
+    "每格 n>=3,(max-min)/median <5%",
+    "失败格显式标失败,不留空/不留'-'",
+    "GT 与画面逐字对应;PDF 文本层缺图内栅格文字的那几类(book_02/shot_01/shot_02/lc_01)CER 不当准确率读,须在报告标注",
+    "CER>1 的格(book_02 1.799)查清是引擎失败还是 GT 问题,写明归因",
+    "断言脚本重跑,输出'不符 0'"
+  ]
+}

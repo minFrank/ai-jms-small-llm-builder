@@ -95,12 +95,41 @@ def expected():
         byc = {}
         for c in cells.values():
             if c["mode"] == "hot" and c["cer_main"] is not None:
-                byc.setdefault((c["engine"], cat.get(c["img"], "?")), []).append(c["cer_main"])
+                byc.setdefault((c["engine"],
+                                cat.get(c["img"].replace(".png", ""), "?")),
+                               []).append(c["cer_main"])
         for (e, cname), vals in byc.items():
             vals = sorted(vals)
             exp["cer_%s_%s_med" % (e, cname)] = st.median(vals)
             exp["cer_%s_%s_min" % (e, cname)] = vals[0]
             exp["cer_%s_%s_max" % (e, cname)] = vals[-1]
+    # 补跑批次（报告第十四节）
+    tu = M.topup_compare()
+    if tu:
+        exp["tu_tasks"] = tu["n_tasks"]
+        exp["tu_unique"] = tu["n_unique"]
+        exp["tu_nlt3_fixed"] = tu["n_lt3_fixed"]
+        exp["tu_drift_max"] = tu["drift_max_pct"]
+        exp["tu_drift_big"] = tu["drift_big_pct"]
+        sk = cells.get(tu["timeout_cell"], {})
+        exp["tu_skew_median"] = sk.get("median")
+        exp["tu_skew_spread"] = sk.get("spread_pct")
+        exp["tu_skew_cer"] = sk.get("cer_main")
+        for r in tu["rows"]:
+            pre_id = "tu_%s_" % r["cell"]
+            exp[pre_id + "n_b"] = r["n_b"]
+            exp[pre_id + "n_a"] = r["n_a"]
+            exp[pre_id + "sp_b"] = r["sp_b"]
+            exp[pre_id + "sp_a"] = r["sp_a"]
+            exp[pre_id + "md_b"] = r["md_b"]
+            exp[pre_id + "md_a"] = r["md_a"]
+            if r["mode"] == "cold":
+                exp["tu_cold_spr_%s_%s" % (r["engine"], r["img"])] = r["sp_a"]
+        for r in tu["still_over"]:
+            c = cells.get(r["cell"], {})
+            exp["tu_abs_%s" % r["cell"]] = (
+                (c["max"] - c["min"])
+                if c.get("max") is not None and c.get("min") is not None else None)
     return exp
 
 

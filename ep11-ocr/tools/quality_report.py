@@ -68,10 +68,10 @@ def main():
     # ---- 失败案例候选：CER 最高的 6 个 (engine,img) ----
     per = []
     for rec in recs:
-        c = cells.get("%s__%s__hot" % (rec["engine"], rec["img"]))
+        c = cells.get("%s__%s__hot" % (rec["engine"], rec["img"].replace(".png", "")))
         if c and c["cer_main"] is not None:
             per.append({"engine": rec["engine"], "img": rec["img"],
-                        "cer": c["cer_main"], "cat": meta.get(rec["img"], {}).get("category", "?"),
+                        "cer": c["cer_main"], "cat": meta.get(rec["img"].replace(".png", ""), {}).get("category", "?"),
                         "n_lines": c["n_lines"],
                         "gt_len": c["gt_norm_len"]})
     per.sort(key=lambda x: -x["cer"])
