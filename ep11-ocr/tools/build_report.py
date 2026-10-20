@@ -256,13 +256,21 @@ code{background:#eef0f4;padding:1px 5px;border-radius:4px;font-size:12px}
     # ---- 数据密度 ----
     A("<h2>十三、数据密度自评</h2>")
     n_fail = len(data["failures"])
+    fc_path = os.path.join(BASE, "quality", "failure_cases.md")
+    n_manual = 0
+    if os.path.exists(fc_path):
+        import re as _re
+        n_manual = len(_re.findall(r"^### 案例 ", open(fc_path, encoding="utf-8").read(),
+                                   _re.M))
     A(table(["项", "实测", "下限", "判定"],
             [["测量格（数据点）", m("density_cells", tot), 30,
               "达标" if tot >= 30 else "<b>不足</b>"],
              ["真实样本图", m("density_images", len(images)), 10,
               "达标" if len(images) >= 10 else "<b>不足</b>"],
-             ["失败案例", m("density_fails", n_fail), 3,
-              "达标" if n_fail >= 3 else "<b>不足</b>（见十二节人工补充）"]]))
+             ["失败格（自动统计，status≠ok）", m("density_fails", n_fail), "—",
+              "本轮 0 个跑挂的格" if n_fail == 0 else "见对应格日志"],
+             ["失败案例（人工判定，十二节）", m("density_fails_manual", n_manual), 3,
+              "达标" if n_manual >= 3 else "<b>不足</b>"]]))
     A("<div class='muted'>离散度（热态，按格算 (max−min)/median）：%s 格可算，超 5%% 的 %s 格。"
       "冷启动段和残差超 5%% 的格：%s / %s。"
       % (data["disp_n"], m("disp_over_n", len(data["disp_over"])),

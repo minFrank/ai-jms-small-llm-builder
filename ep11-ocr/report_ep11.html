@@ -23,7 +23,7 @@ code{background:#eef0f4;padding:1px 5px;border-radius:4px;font-size:12px}
 .kpi .l{color:var(--muted);font-size:12px;margin-top:2px}
 .scroll{overflow-x:auto}
 </style></head><body><div class="wrap">
-<header><h1>ep11 本地 OCR 实测 · 数据报告</h1><div class='sub'>栏目「本地无显卡 AI」第 11 期 · 本文件为<b>数据报告</b>（未写稿、未推草稿箱）· 生成时间 2026-10-20 15:05</div></header>
+<header><h1>ep11 本地 OCR 实测 · 数据报告</h1><div class='sub'>栏目「本地无显卡 AI」第 11 期 · 本文件为<b>数据报告</b>（未写稿、未推草稿箱）· 生成时间 2026-10-20 15:21</div></header>
 <h2>一、一句话结论</h2><div class='card'>
 本轮共跑 <b><span class="m" data-metric="cells_total">91</span></b> 个测量格，覆盖 <span class="m" data-metric="engines_n">3</span> 个引擎、<span class="m" data-metric="images_n">14</span> 张样本图。
 补跑批次：<span class="m" data-metric="tu_tasks">23</span> 项任务（去重 <span class="m" data-metric="tu_unique">22</span> 格）全部完成——n&lt;3 的格全部补到 n=3、超时格出数、离散格定向重跑，详见十四节。
@@ -126,7 +126,7 @@ code{background:#eef0f4;padding:1px 5px;border-radius:4px;font-size:12px}
 - GT 不完备（**不作准确率依据**）：`real_web_pdf` 2 张、`real_web+degrade` 1 张、`real_pdf` 图版页 1 张（book_02 及其派生 skew_02）
 </pre></div>
 <h2>十三、数据密度自评</h2>
-<table><tr><th>项</th><th>实测</th><th>下限</th><th>判定</th></tr><tr><td>测量格（数据点）</td><td><span class="m" data-metric="density_cells">91</span></td><td>30</td><td>达标</td></tr><tr><td>真实样本图</td><td><span class="m" data-metric="density_images">14</span></td><td>10</td><td>达标</td></tr><tr><td>失败案例</td><td><span class="m" data-metric="density_fails">0</span></td><td>3</td><td><b>不足</b>（见十二节人工补充）</td></tr></table>
+<table><tr><th>项</th><th>实测</th><th>下限</th><th>判定</th></tr><tr><td>测量格（数据点）</td><td><span class="m" data-metric="density_cells">91</span></td><td>30</td><td>达标</td></tr><tr><td>真实样本图</td><td><span class="m" data-metric="density_images">14</span></td><td>10</td><td>达标</td></tr><tr><td>失败格（自动统计，status≠ok）</td><td><span class="m" data-metric="density_fails">0</span></td><td>—</td><td>本轮 0 个跑挂的格</td></tr><tr><td>失败案例（人工判定，十二节）</td><td><span class="m" data-metric="density_fails_manual">4</span></td><td>3</td><td>达标</td></tr></table>
 <div class='muted'>离散度（热态，按格算 (max−min)/median）：34 格可算，超 5% 的 <span class="m" data-metric="disp_over_n">2</span> 格。冷启动段和残差超 5% 的格：<span class="m" data-metric="seg_bad_n">0</span> / 57。
 <br>坏行（截断/非法 JSON）：0。</div>
 <h2>十四、补跑批次达成情况（<span class="m" data-metric="tu_tasks">23</span> 项任务 → <span class="m" data-metric="tu_unique">22</span> 格，全部完成）</h2>

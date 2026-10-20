@@ -45,6 +45,11 @@ def expected():
     exp["density_cells"] = len(cells)
     exp["density_images"] = len(data["images"])
     exp["density_fails"] = len(data["failures"])
+    fcp = os.path.join(BASE, "quality", "failure_cases.md")
+    if os.path.exists(fcp):
+        import re as _re
+        exp["density_fails_manual"] = len(_re.findall(
+            r"^### 案例 ", open(fcp, encoding="utf-8").read(), _re.M))
     for k, c in cells.items():
         if c["mode"] == "cold":
             pre = "cold_%s_%s_" % (c.get("cell"), c["img"])
