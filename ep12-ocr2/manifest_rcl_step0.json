@@ -1,0 +1,28 @@
+{
+  "engine": "RapidOCRLite",
+  "version": "5.0.0a15",
+  "tier_requested": "medium",
+  "model_root": "D:/models/ep12-ocr2/rapidocr",
+  "files": [
+    {
+      "path": "D:\\models\\ep12-ocr2\\rapidocr\\ch_ppocr_mobile_v2.0_cls_mobile.onnx",
+      "mb": 0.586,
+      "sha256": "e47acedf663230f8863ff1ab0e64dd2d82b838fceb5957146dab185a89d6215c"
+    },
+    {
+      "path": "D:\\models\\ep12-ocr2\\rapidocr\\PP-OCRv6_det_medium.onnx",
+      "mb": 62.119,
+      "sha256": "92078b7355007ccfffcd4c8cd441a3afd4538904d06881b29a155e1e679907c2"
+    },
+    {
+      "path": "D:\\models\\ep12-ocr2\\rapidocr\\PP-OCRv6_rec_medium.onnx",
+      "mb": 76.63,
+      "sha256": "eef444829dbbe18d7fea59a3f6eb75647518d2b3a9568d27c92e42940204894b"
+    },
+    {
+      "path": "D:\\models\\ep12-ocr2\\rapidocr\\ppocrv6_dict.txt",
+      "mb": 0.075,
+      "sha256": "b5f2bfe2bdd9448429e3e82b51c789775d9b42f2403d082b00662eb77e401c5d"
+    }
+  ]
+}

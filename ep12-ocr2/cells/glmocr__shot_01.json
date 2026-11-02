@@ -1,0 +1,62 @@
+{
+ "schema": "ep12-cell-v1",
+ "cell": "glmocr__shot_01",
+ "engine": "glmocr",
+ "img": "shot_01.png",
+ "imgpath": "C:/Users/Frank/AppData/Local/hermes/workspace/articles/bench/ep11-ocr\\output\\samples\\shot_01.png",
+ "runs": 3,
+ "warmup": 2,
+ "attempt": 1,
+ "session": "ep12-main",
+ "py": "3.11.16",
+ "ts": 1792942375.3629696,
+ "threads": {
+  "cpu_count": 16,
+  "torch_num_threads": 8
+ },
+ "peak_rss_at_load_mb": 2962.7,
+ "rss_scope": "ollama-serve 进程树（推理在 llama-server.exe）",
+ "settings": {
+  "engine": "glmocr",
+  "backend": "Ollama (glm-ocr, CPU)",
+  "params": "0.9B",
+  "api_mode": "local",
+  "cache_note": "按图片缓存 → 每次计时前卸载（keep_alive=0）",
+  "maas_upload": false
+ },
+ "warmup_times": [
+  84.8351,
+  84.4668
+ ],
+ "warmup_converged": true,
+ "peak_rss_mb": 3361.2,
+ "peak_rss_samples": 1532,
+ "t_infers": [
+  86.2899,
+  84.3833,
+  86.2903
+ ],
+ "median": 86.2899,
+ "min": 84.3833,
+ "max": 86.2903,
+ "spread_pct": 2.21,
+ "text": "新闻\nhao123\n地图\n贴吧\n视频\n图片\n网盘\n库库AI\n文心\n更多\n设置\n登录\n\nBai du 百度\n\n国模新人古月首登维密秀\n\n百度一下\n\n百度库库 写报告、做图片、代码编程、有问题就找库库 >\n\n百度热搜 >\n换一换\n\n把黄旗海保护好\n1 披旭日旗的中国留学生已被遣返开除 热\n2 南太行徒步失联的33岁女子已找到\n3 读懂中国经济的韧性和活力\n4 公司给2千员工每人发1条5克纯金手链\n5 孩子上班父母也能领工资\n6 乒乓球名将王曼昱等3人拟记大功\n7 救场李克勤走红草根歌手3周涨粉40万\n8 为戒烟每天存40元9个月后烟钱摆满床\n9 情侣无视火焰在抗议现场淡定饮酒交谈\n\n下载\n辅助",
+ "text_len": 298,
+ "n_lines": 30,
+ "extra": {
+  "wall_s": 86.28013944625854,
+  "load_duration_s": 1.9972,
+  "prompt_eval_count": 2537,
+  "prompt_eval_duration_s": 67.261,
+  "eval_count": 231,
+  "eval_duration_s": 16.9293,
+  "total_duration_s": 86.275,
+  "model": "glm-ocr"
+ },
+ "err": "",
+ "seg": {
+  "t_import": 0.002523,
+  "t_session": 0.358701
+ },
+ "t_total": 429.0145
+}

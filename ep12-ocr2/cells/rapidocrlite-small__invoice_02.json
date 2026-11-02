@@ -1,0 +1,66 @@
+{
+ "schema": "ep12-cell-v1",
+ "cell": "rapidocrlite-small__invoice_02",
+ "engine": "rapidocrlite-small",
+ "img": "invoice_02.png",
+ "imgpath": "C:/Users/Frank/AppData/Local/hermes/workspace/articles/bench/ep11-ocr\\output\\samples\\invoice_02.png",
+ "runs": 3,
+ "warmup": 2,
+ "attempt": 1,
+ "session": "ep12-main",
+ "py": "3.11.16",
+ "ts": 1792978957.580956,
+ "threads": {
+  "cpu_count": 16
+ },
+ "peak_rss_at_load_mb": 66.4,
+ "rss_scope": "本进程 + 后代进程树",
+ "settings": {
+  "engine": "rapidocrlite-small",
+  "backend": "onnxruntime (RapidOCRLite C++/Python)",
+  "rapidocr_version": "5.0.0a15",
+  "tier": "small",
+  "lang_type": "ch",
+  "det_params_aligned_to_paddleocr": true,
+  "aligned_det": {
+   "Det.box_thresh": 0.6,
+   "Det.thresh": 0.3,
+   "Det.unclip_ratio": 1.5
+  }
+ },
+ "warmup_times": [
+  0.7114,
+  0.3649,
+  0.3775
+ ],
+ "warmup_converged": false,
+ "peak_rss_mb": 200.7,
+ "peak_rss_samples": 16,
+ "t_infers": [
+  0.382,
+  0.3889,
+  0.3937
+ ],
+ "median": 0.3889,
+ "min": 0.382,
+ "max": 0.3937,
+ "spread_pct": 3.0,
+ "text": "【实测样例非真实票据】\n电子发票普通发票\n发票号码31905672\n开票日期2026年06月28日\n购买方陈静\n购买方身份证号320102199003152418\n货物或应税劳务名称数量单价金额税额\n办公用品 文件夹 20 12.50 250.00 3.25\n办公用品 中性笔 60 2.80 168.00 2.18\n打印纸 A4 5kg 32.00 160.00 2.08\n合计 578.007.51\n开票人赵敏\n备注栏本发票为实测样例 不作报销凭证",
+ "text_len": 226,
+ "n_lines": 13,
+ "extra": {
+  "elapse": 0.38176319999911357,
+  "elapse_list": [
+   null,
+   null,
+   0.38176319999911357
+  ],
+  "n_boxes": 13
+ },
+ "err": "",
+ "seg": {
+  "t_import": 0.058893,
+  "t_session": 0.906487
+ },
+ "t_total": 3.6324
+}

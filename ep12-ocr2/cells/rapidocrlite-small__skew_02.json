@@ -1,0 +1,66 @@
+{
+ "schema": "ep12-cell-v1",
+ "cell": "rapidocrlite-small__skew_02",
+ "engine": "rapidocrlite-small",
+ "img": "skew_02.png",
+ "imgpath": "C:/Users/Frank/AppData/Local/hermes/workspace/articles/bench/ep11-ocr\\output\\samples\\skew_02.png",
+ "runs": 3,
+ "warmup": 2,
+ "attempt": 1,
+ "session": "ep12-main",
+ "py": "3.11.16",
+ "ts": 1792979019.8806603,
+ "threads": {
+  "cpu_count": 16
+ },
+ "peak_rss_at_load_mb": 66.2,
+ "rss_scope": "本进程 + 后代进程树",
+ "settings": {
+  "engine": "rapidocrlite-small",
+  "backend": "onnxruntime (RapidOCRLite C++/Python)",
+  "rapidocr_version": "5.0.0a15",
+  "tier": "small",
+  "lang_type": "ch",
+  "det_params_aligned_to_paddleocr": true,
+  "aligned_det": {
+   "Det.box_thresh": 0.6,
+   "Det.thresh": 0.3,
+   "Det.unclip_ratio": 1.5
+  }
+ },
+ "warmup_times": [
+  1.3993,
+  1.137,
+  1.1802
+ ],
+ "warmup_converged": false,
+ "peak_rss_mb": 558.2,
+ "peak_rss_samples": 36,
+ "t_infers": [
+  1.1537,
+  1.2097,
+  1.1655
+ ],
+ "median": 1.1655,
+ "min": 1.1537,
+ "max": 1.2097,
+ "spread_pct": 4.81,
+ "text": "Scene Text OCR of you are not naughty...\n现/烤|汉/堡\n好德士 木炭烧烤\nYou're mentally ill\nPICS\nDocument OCR\n((x)-29uj+1-\nFine-grained OCR\nGcloasee ,dn o so ltes\nMore General OCR\nCharematic\nPEW RESEARCH CENTER\nFigure 1: On the input side, GOT supports various optical image types, such as commonly used\nphotographs and documents. Besides, as a general OCR-2.0 model, GOT can handle more tasks, e.g.,\nsheet music, molecular formulas, easy geometric shapes, charts, etc. Moreover, the model can adapt\nto region-focus OCR, high-resolution ÖCR, and multiple-page OCR. GOT mainly supports English\nand Čhinese and can control the structure results (Mathpix markdown/tikz/smiles/kern) via a prompt.\n2",
+ "text_len": 680,
+ "n_lines": 18,
+ "extra": {
+  "elapse": 1.1520205999986501,
+  "elapse_list": [
+   null,
+   null,
+   1.1520205999986501
+  ],
+  "n_boxes": 20
+ },
+ "err": "",
+ "seg": {
+  "t_import": 0.05533,
+  "t_session": 0.906678
+ },
+ "t_total": 8.2569
+}

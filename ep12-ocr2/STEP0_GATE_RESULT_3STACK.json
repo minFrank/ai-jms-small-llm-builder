@@ -1,0 +1,94 @@
+{
+  "criterion": "档位 + rec 输入尺寸 + 字典内容（原'权重 SHA256 全等'已废弃）",
+  "stacks": {
+    "paddleocr": {
+      "tier": "PP-OCRv6_medium",
+      "format": ".pdiparams",
+      "rec_image_shape": [
+        3,
+        48,
+        320
+      ],
+      "dict_count": 18708,
+      "dict_seq_sha256": "679f4f4cbbb4f762e84fae998e02c08a556afbd115968104ca3b4aeee5cb2b19",
+      "det_mb": 61.96,
+      "rec_mb": 76.465
+    },
+    "rapidocrlite": {
+      "tier": "medium（显式指定，默认为 small）",
+      "format": ".onnx",
+      "rec_onnx_input": [
+        "DynamicDimension.0",
+        3,
+        48,
+        "DynamicDimension.1"
+      ],
+      "dict_count": 18708,
+      "dict_seq_sha256": "679f4f4cbbb4f762e84fae998e02c08a556afbd115968104ca3b4aeee5cb2b19",
+      "det_mb": 62.119,
+      "rec_mb": 76.63
+    },
+    "simdpaddleocr": {
+      "tier": "PP-OCRv6_medium（包内 Name 字段）",
+      "format": "嵌入 DLL 的流（det/rec 导出后可读性待判）",
+      "rec_onnx_input": [
+        "DynamicDimension.0",
+        3,
+        48,
+        "DynamicDimension.1"
+      ],
+      "det_onnx_input": [
+        "DynamicDimension.0",
+        3,
+        "DynamicDimension.1",
+        "DynamicDimension.2"
+      ],
+      "dict_count": 18708,
+      "dict_seq_sha256": "679f4f4cbbb4f762e84fae998e02c08a556afbd115968104ca3b4aeee5cb2b19",
+      "det_mb": 62.033,
+      "rec_mb": 76.555,
+      "dict_mb": 0.094
+    }
+  },
+  "checks": {
+    "tier": {
+      "values": {
+        "paddleocr": "PP-OCRv6_medium",
+        "rapidocrlite": "medium",
+        "simdpaddleocr": "PP-OCRv6_medium"
+      },
+      "equal": true
+    },
+    "input_size": {
+      "paddle_CH": [
+        3,
+        48
+      ],
+      "rcl_CH": [
+        3,
+        48
+      ],
+      "simd_CH": [
+        3,
+        48
+      ],
+      "equal": true,
+      "note": "W 为动态轴，三栈运行时按 320 送入；det 三栈皆动态尺寸"
+    },
+    "dict": {
+      "counts": [
+        18708,
+        18708,
+        18708
+      ],
+      "seq_sha256": [
+        "679f4f4cbbb4f762e84fae998e02c08a556afbd115968104ca3b4aeee5cb2b19",
+        "679f4f4cbbb4f762e84fae998e02c08a556afbd115968104ca3b4aeee5cb2b19",
+        "679f4f4cbbb4f762e84fae998e02c08a556afbd115968104ca3b4aeee5cb2b19"
+      ],
+      "equal": true
+    }
+  },
+  "gate_passed_2stack": true,
+  "gate_passed_3stack": true
+}

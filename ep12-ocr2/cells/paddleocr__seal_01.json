@@ -1,0 +1,54 @@
+{
+ "schema": "ep12-cell-v1",
+ "cell": "paddleocr__seal_01",
+ "engine": "paddleocr",
+ "img": "seal_01.png",
+ "imgpath": "C:/Users/Frank/AppData/Local/hermes/workspace/articles/bench/ep12-ocr2\\output\\samples\\seal_01.png",
+ "runs": 3,
+ "warmup": 2,
+ "attempt": 1,
+ "session": "ep12-main",
+ "py": "3.11.16",
+ "ts": 1792936018.3833277,
+ "threads": {
+  "cpu_count": 16,
+  "torch_num_threads": 8
+ },
+ "peak_rss_at_load_mb": 835.0,
+ "rss_scope": "本进程 + 后代进程树",
+ "settings": {
+  "engine": "paddleocr",
+  "backend": "paddlepaddle",
+  "paddleocr": "3.7.0",
+  "models": "PP-OCRv6 det+rec (paddlex 缓存)",
+  "enable_mkldnn": false
+ },
+ "warmup_times": [
+  6.0316,
+  6.0022
+ ],
+ "warmup_converged": true,
+ "peak_rss_mb": 1176.2,
+ "peak_rss_samples": 201,
+ "t_infers": [
+  6.0572,
+  6.0787,
+  6.2149
+ ],
+ "median": 6.0787,
+ "min": 6.0572,
+ "max": 6.2149,
+ "spread_pct": 2.59,
+ "text": "兹证明张明远同志系我单位职工\n自二零一九年三月起在职至今\n现任技术研发部项目经理一职\n特此证明，特予盖章确认\n草位",
+ "text_len": 57,
+ "n_lines": 5,
+ "extra": {
+  "n_boxes": 5
+ },
+ "err": "",
+ "seg": {
+  "t_import": 0.001827,
+  "t_session": 14.653784
+ },
+ "t_total": 47.3791
+}

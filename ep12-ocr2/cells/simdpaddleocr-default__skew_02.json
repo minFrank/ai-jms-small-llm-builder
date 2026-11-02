@@ -1,0 +1,59 @@
+{
+ "schema": "ep12-cell-v1",
+ "cell": "simdpaddleocr-default__skew_02",
+ "engine": "simdpaddleocr-default",
+ "img": "skew_02.png",
+ "imgpath": "C:/Users/Frank/AppData/Local/hermes/workspace/articles/bench/ep11-ocr\\output\\samples\\skew_02.png",
+ "runs": 3,
+ "warmup": 2,
+ "attempt": 1,
+ "session": "ep12-main",
+ "py": "3.11.16",
+ "ts": 1792930329.2901132,
+ "threads": {
+  "cpu_count": 16,
+  "torch_num_threads": 8
+ },
+ "peak_rss_at_load_mb": 226.9,
+ "rss_scope": "本进程 + 后代进程树",
+ "settings": {
+  "engine": "simdpaddleocr-default",
+  "backend": "SimdPaddleOCR 2.0.0 (.NET 10, 纯 C#)",
+  "profile": "default",
+  "bundle": "PP-OCRv6_medium (Sdcb.SimdPaddleOCR.Models.ChineseV6Medium 1.0.0)",
+  "note": "load 计时含 .NET 进程启动，与 Python 引擎不可横比"
+ },
+ "warmup_times": [
+  3.3902,
+  3.296,
+  3.3328
+ ],
+ "warmup_converged": true,
+ "peak_rss_mb": 741.5,
+ "peak_rss_samples": 92,
+ "t_infers": [
+  3.3075,
+  3.2664,
+  3.4261
+ ],
+ "median": 3.3075,
+ "min": 3.2664,
+ "max": 3.4261,
+ "spread_pct": 4.83,
+ "text": "I've been watching this\nu\nScene Text OCR\n现/烤/汉/堡\n好德士 更就样\n木炭烧烤\nYou're mentally ill\ness\nPIGS\nDocument OCR\n(C2,12)=(21+1)1+26r(C2)-1) 0  . Pt + [2| + 1 - 1'2] =\n-(G1+(S|+2((CS)-1) =4(CS)+1+2(nmd7-1-(CK)) −1+2(ad7-(Cx))\n=n(C)+1+2(madT-1-(CS)).\nA+p,$[32240\nFine-grained OCR\n-2[1(1)1(x-1)-nne]\n第八市 传家读观与对策\nWERELWHRWEHETA\n 大王盗金\nGobveTumparace [st tPdDT\nMore General OCR\n9211\n\n\nhm\n2\nFigure 1: On the input side, GOT supports various optical image types, such as commonly used\nphotographs and documents. Besides, as a general OCR-2.0 model, GOT can handle more tasks, e.g.,\nsheet music, molecular formulas, easy geometric shapes, charts, etc. Moreover, the model can adapt\nto region-focus OCR, high-resolution OCR, and multiple-page OCR. GOT mainly supports English\nand Chinese and can control the structure results (Mathpix markdown/tikz/smiles/kern) via a prompt.\n2",
+ "text_len": 858,
+ "n_lines": 32,
+ "extra": {
+  "n_boxes": 38,
+  "t_infers_csharp": [
+   2.327026
+  ],
+  "effective_line_worker_count": 4
+ },
+ "err": "",
+ "seg": {
+  "t_import": 0.002574,
+  "t_session": 0.358658
+ },
+ "t_total": 22.6667
+}

@@ -1,0 +1,66 @@
+{
+ "schema": "ep12-cell-v1",
+ "cell": "rapidocrlite-medium__lowres_01",
+ "engine": "rapidocrlite-medium",
+ "img": "lowres_01.png",
+ "imgpath": "C:/Users/Frank/AppData/Local/hermes/workspace/articles/bench/ep12-ocr2\\output\\samples\\lowres_01.png",
+ "runs": 3,
+ "warmup": 2,
+ "attempt": 1,
+ "session": "ep12-main",
+ "py": "3.11.16",
+ "ts": 1792929286.941333,
+ "threads": {
+  "cpu_count": 16
+ },
+ "peak_rss_at_load_mb": 60.5,
+ "rss_scope": "本进程 + 后代进程树",
+ "settings": {
+  "engine": "rapidocrlite-medium",
+  "backend": "onnxruntime (RapidOCRLite C++/Python)",
+  "rapidocr_version": "5.0.0a15",
+  "tier": "medium",
+  "lang_type": "ch",
+  "det_params_aligned_to_paddleocr": true,
+  "aligned_det": {
+   "Det.box_thresh": 0.6,
+   "Det.thresh": 0.3,
+   "Det.unclip_ratio": 1.5
+  }
+ },
+ "warmup_times": [
+  3.5981,
+  2.6178,
+  2.4871
+ ],
+ "warmup_converged": false,
+ "peak_rss_mb": 875.3,
+ "peak_rss_samples": 75,
+ "t_infers": [
+  2.5556,
+  2.5682,
+  2.5945
+ ],
+ "median": 2.5682,
+ "min": 2.5556,
+ "max": 2.5945,
+ "spread_pct": 1.52,
+ "text": "General OCR Theory: Towards OCR-2.0\nvia a Unified End-to-end Model",
+ "text_len": 66,
+ "n_lines": 2,
+ "extra": {
+  "elapse": 2.5551949000000604,
+  "elapse_list": [
+   null,
+   null,
+   2.5551949000000604
+  ],
+  "n_boxes": 2
+ },
+ "err": "",
+ "seg": {
+  "t_import": 0.042204,
+  "t_session": 0.969969
+ },
+ "t_total": 17.477
+}

@@ -1,0 +1,54 @@
+{
+ "schema": "ep12-cell-v1",
+ "cell": "paddleocr__skew_02",
+ "engine": "paddleocr",
+ "img": "skew_02.png",
+ "imgpath": "C:/Users/Frank/AppData/Local/hermes/workspace/articles/bench/ep11-ocr\\output\\samples\\skew_02.png",
+ "runs": 3,
+ "warmup": 2,
+ "attempt": 1,
+ "session": "ep12-main",
+ "py": "3.11.16",
+ "ts": 1792934768.5526989,
+ "threads": {
+  "cpu_count": 16,
+  "torch_num_threads": 8
+ },
+ "peak_rss_at_load_mb": 835.7,
+ "rss_scope": "本进程 + 后代进程树",
+ "settings": {
+  "engine": "paddleocr",
+  "backend": "paddlepaddle",
+  "paddleocr": "3.7.0",
+  "models": "PP-OCRv6 det+rec (paddlex 缓存)",
+  "enable_mkldnn": false
+ },
+ "warmup_times": [
+  70.371,
+  70.4306
+ ],
+ "warmup_converged": true,
+ "peak_rss_mb": 3719.0,
+ "peak_rss_samples": 1624,
+ "t_infers": [
+  69.9291,
+  70.0528,
+  69.9831
+ ],
+ "median": 69.9831,
+ "min": 69.9291,
+ "max": 70.0528,
+ "spread_pct": 0.18,
+ "text": "group all year, and most I've been watching this\nScene Text OCR of you are not naughty...\n现/烤/双/堡\n好德士 更私鲜\nHAODESHI 木炭烧烤\nYou're mentally ill\nPIGS Tiredness\nARMEDDELICIOUS\nDocument OCR\n(2+ (< 4) - =(° = 3 aa1 y = =)+ = 2(1 = 6, 4)) = 3 (x = n, 0). Note thast d.(C2,br')D) = (C21+10/)+26d)(Ck,v)−1) =[C1 −1 + |S| + 20adJ−1) 2\n(1.26) = (C)+ |X| + 2(dr(CS) -1) −1+ 2(nad7  (Cs))\n(6.13)) = 4c(C,, x;) + 1 + 2(ndT − 1 − φ(C,,X)) =r(C,) + 1 + 2(nalT −1 −dy(C,S)).\n(9.25) [(+p,$)1[(32(H2)4140\n第一：行星角体位，非数量（空统，气）国无数运程\n开作式序的时\n )     ) (9.20)\n-  }n    Fine-grained OCR    \n(11-00,m-)[(x+2)1(x-2j1)-nnn] A. . ,  \no 第八节 传承说收与对策\n9.ANAT\nHermes毯子 Wliowood POVER BAG\n咖啡小威武 冻干\n延楼 Sioy NEW\n达 大王盗金 石端派飞棉杯品\nGlobal views of Trump's characteristics\nMore General OCR N who say they think of President Donald Trump as 75%\nArrogart 65\nIntolerant 62\nNH3 Dangerous A strong 55\nleader 39\nNe43 Wel-qualified Charismatic 26\nto be president Caring about 23\nordinary people Note: Peroentages are globel medians based on 37 countries. Source: Spring 2017 Gaotel Atttudes Survey.\nOH PEW RESEARCH CENTER\nHN\nFigure 1: On the input side, GOT supports various optical image types, such as commonly used\nphotographs and documents. Besides, as a general OCR-2.0 model, GOT can handle more tasks, e.g.,\nsheet music, molecular formulas, easy geometric shapes, charts, etc. Moreover, the model can adapt\nto region-focus OCR, high-resolution OCR, and multiple-page OCR. GOT mainly supports English\nand Chinese and can control the structure results (Mathpix markdown/tikz/smiles/kern) via a prompt.\n2",
+ "text_len": 1553,
+ "n_lines": 41,
+ "extra": {
+  "n_boxes": 88
+ },
+ "err": "",
+ "seg": {
+  "t_import": 0.001642,
+  "t_session": 14.807488
+ },
+ "t_total": 367.9073
+}

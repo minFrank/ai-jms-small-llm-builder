@@ -1,0 +1,60 @@
+{
+ "schema": "ep12-cell-v1",
+ "cell": "easyocr__vert_01",
+ "engine": "easyocr",
+ "img": "vert_01.png",
+ "imgpath": "C:/Users/Frank/AppData/Local/hermes/workspace/articles/bench/ep12-ocr2\\output\\samples\\vert_01.png",
+ "runs": 3,
+ "warmup": 2,
+ "attempt": 1,
+ "session": "ep12-main",
+ "py": "3.11.16",
+ "ts": 1792937340.8565125,
+ "threads": {
+  "cpu_count": 16,
+  "torch_num_threads": 8
+ },
+ "peak_rss_at_load_mb": 900.7,
+ "rss_scope": "本进程 + 后代进程树",
+ "settings": {
+  "engine": "easyocr",
+  "backend": "torch-cpu",
+  "easyocr": "1.7.2",
+  "torch": "2.14.1+cpu",
+  "lang": [
+   "ch_sim",
+   "en"
+  ],
+  "quantize": false,
+  "gpu": false
+ },
+ "warmup_times": [
+  1.4859,
+  1.4018,
+  1.3956
+ ],
+ "warmup_converged": true,
+ "peak_rss_mb": 970.2,
+ "peak_rss_samples": 60,
+ "t_infers": [
+  1.418,
+  1.4072,
+  1.3914
+ ],
+ "median": 1.4072,
+ "min": 1.3914,
+ "max": 1.418,
+ "spread_pct": 1.89,
+ "text": "夤\n:::",
+ "text_len": 5,
+ "n_lines": 2,
+ "extra": {
+  "n_boxes": 2
+ },
+ "err": "",
+ "seg": {
+  "t_import": 0.002006,
+  "t_session": 5.343939
+ },
+ "t_total": 16.1499
+}

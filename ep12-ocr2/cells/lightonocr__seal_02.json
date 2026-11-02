@@ -1,0 +1,67 @@
+{
+ "schema": "ep12-cell-v1",
+ "cell": "lightonocr__seal_02",
+ "engine": "lightonocr",
+ "img": "seal_02.png",
+ "imgpath": "C:/Users/Frank/AppData/Local/hermes/workspace/articles/bench/ep12-ocr2\\output\\samples\\seal_02.png",
+ "runs": 3,
+ "warmup": 2,
+ "attempt": 1,
+ "session": "ep12-main",
+ "py": "3.11.16",
+ "ts": 1792987925.4739735,
+ "threads": {
+  "cpu_count": 16,
+  "torch_num_threads": 8
+ },
+ "peak_rss_at_load_mb": 1368.0,
+ "rss_scope": "ollama-serve 进程树（推理在 llama-server.exe）",
+ "settings": {
+  "engine": "lightonocr",
+  "backend": "Ollama (LightOnOCR-3 0.8b, CPU)",
+  "params": "0.8B",
+  "api_mode": "local",
+  "quant": "Q8_0",
+  "weight_source": "maternion 社区 GGUF 转换（非 LightOn 官方发布）",
+  "license": "Apache-2.0",
+  "cache_note": "按图片缓存 → 每次计时前卸载（keep_alive=0）",
+  "output_field_note": "结果写在 thinking 字段（response 为空），与 GLM-OCR 不同",
+  "maas_upload": false
+ },
+ "warmup_times": [
+  5.8748,
+  5.8987
+ ],
+ "warmup_converged": true,
+ "peak_rss_mb": 1370.2,
+ "peak_rss_samples": 108,
+ "t_infers": [
+  5.9851,
+  5.9461,
+  6.0456
+ ],
+ "median": 5.9851,
+ "min": 5.9461,
+ "max": 6.0456,
+ "spread_pct": 1.66,
+ "text": "南京市长江路小学教务处  \n学生李思远性别男  \n二零一三年八月出生  \n系我校三年级一班学生\n\n![image](image_2.png)",
+ "text_len": 70,
+ "n_lines": 5,
+ "extra": {
+  "wall_s": 5.9779603481292725,
+  "output_field": "thinking",
+  "load_duration_s": 1.6533,
+  "prompt_eval_count": 400,
+  "prompt_eval_duration_s": 2.841,
+  "eval_count": 43,
+  "eval_duration_s": 1.4633,
+  "total_duration_s": 5.9742,
+  "model": "maternion/LightOnOCR-3:0.8b"
+ },
+ "err": "",
+ "seg": {
+  "t_import": 0.001682,
+  "t_session": 0.357739
+ },
+ "t_total": 32.4871
+}

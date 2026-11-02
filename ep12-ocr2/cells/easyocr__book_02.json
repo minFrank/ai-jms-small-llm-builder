@@ -1,0 +1,59 @@
+{
+ "schema": "ep12-cell-v1",
+ "cell": "easyocr__book_02",
+ "engine": "easyocr",
+ "img": "book_02.png",
+ "imgpath": "C:/Users/Frank/AppData/Local/hermes/workspace/articles/bench/ep11-ocr\\output\\samples\\book_02.png",
+ "runs": 3,
+ "warmup": 2,
+ "attempt": 1,
+ "session": "ep12-main",
+ "py": "3.11.16",
+ "ts": 1792936309.0310571,
+ "threads": {
+  "cpu_count": 16,
+  "torch_num_threads": 8
+ },
+ "peak_rss_at_load_mb": 903.8,
+ "rss_scope": "本进程 + 后代进程树",
+ "settings": {
+  "engine": "easyocr",
+  "backend": "torch-cpu",
+  "easyocr": "1.7.2",
+  "torch": "2.14.1+cpu",
+  "lang": [
+   "ch_sim",
+   "en"
+  ],
+  "quantize": false,
+  "gpu": false
+ },
+ "warmup_times": [
+  11.9018,
+  11.6949
+ ],
+ "warmup_converged": true,
+ "peak_rss_mb": 2647.9,
+ "peak_rss_samples": 278,
+ "t_infers": [
+  11.6864,
+  11.7031,
+  11.7196
+ ],
+ "median": 11.7031,
+ "min": 11.6864,
+ "max": 11.7196,
+ "spread_pct": 0.28,
+ "text": "Scene Text OCR\ngroup aLL yea, adl woft Te Lee watrhing Hs\n好k士 IODC 理 |熠[汊( 哽瓿 -) 旷 yau are LC LOgIy\nG8\nA COUE\n休炭燥阁\nUehess You're Wewtally\nDocument OCR\n@。+ [ o( 2 - 之\nN @!,1 ( +N 八」' @。,1(  +[ 匕 七4\n| AC1I MIT\nLIoorleoorrp J{ SICI+ Is+Jrlc.s1-  /C | ! It Jl\nno ~4,〉1+1 + Jd  Iil HCFI JSII\n0'' 1141  !  4101 ^ OTI  VIII\n{ ; !  ` +48}I TIIA | JhI+4L \n吊 !  -I-o5yl-5)-1 g {s 9591RNUNNn 004OU\nFine grained OCR\nN\nrbREhO/ S[PEA u CofTFI\n咖啡小戚a U^\n太451\nMore General OCR\nClobal Vlows IIIhMIII  m IimL  pmw Mml Tnimm ( TTMm[ Rhamatcrlstlcs\nTT\nIL\nDuu U\n450 TI\n1TCI\nIO IMUIUJ\nITSUII hou\nW0J1\nSTSLSLCTTTTP\nFigure 1: On the input side GOT supports various optical image types, such as commonly used\nphotographs and documents. Besides, as a general OCR-2.0 model, GOT can handle more tasks, 2.8,\nsheet music, molecular formulas, easy geometric shapes, charts, etc. Moreover; the model can adapt\nto region-focus OCR, high-resolution OCR, and multiple-page OCR. GOT mainly supports English\nand Chinese and can control the structure results (Mathpix markdownltikzlsmiles/kern) via a prompt。",
+ "text_len": 1070,
+ "n_lines": 37,
+ "extra": {
+  "n_boxes": 97
+ },
+ "err": "",
+ "seg": {
+  "t_import": 0.001875,
+  "t_session": 5.319678
+ },
+ "t_total": 66.2985
+}

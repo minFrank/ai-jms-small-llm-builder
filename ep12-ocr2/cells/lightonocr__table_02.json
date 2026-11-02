@@ -1,0 +1,67 @@
+{
+ "schema": "ep12-cell-v1",
+ "cell": "lightonocr__table_02",
+ "engine": "lightonocr",
+ "img": "table_02.png",
+ "imgpath": "C:/Users/Frank/AppData/Local/hermes/workspace/articles/bench/ep11-ocr\\output\\samples\\table_02.png",
+ "runs": 3,
+ "warmup": 2,
+ "attempt": 1,
+ "session": "ep12-main",
+ "py": "3.11.16",
+ "ts": 1792986876.9784904,
+ "threads": {
+  "cpu_count": 16,
+  "torch_num_threads": 8
+ },
+ "peak_rss_at_load_mb": 1400.7,
+ "rss_scope": "ollama-serve 进程树（推理在 llama-server.exe）",
+ "settings": {
+  "engine": "lightonocr",
+  "backend": "Ollama (LightOnOCR-3 0.8b, CPU)",
+  "params": "0.8B",
+  "api_mode": "local",
+  "quant": "Q8_0",
+  "weight_source": "maternion 社区 GGUF 转换（非 LightOn 官方发布）",
+  "license": "Apache-2.0",
+  "cache_note": "按图片缓存 → 每次计时前卸载（keep_alive=0）",
+  "output_field_note": "结果写在 thinking 字段（response 为空），与 GLM-OCR 不同",
+  "maas_upload": false
+ },
+ "warmup_times": [
+  36.7026,
+  36.0021
+ ],
+ "warmup_converged": true,
+ "peak_rss_mb": 1440.3,
+ "peak_rss_samples": 585,
+ "t_infers": [
+  36.3807,
+  36.1665,
+  36.6036
+ ],
+ "median": 36.3807,
+ "min": 36.1665,
+ "max": 36.6036,
+ "spread_pct": 1.2,
+ "text": "# 家庭月度开支明细\n\n<table border=\"1\" class=\"dataframe\">\n  <thead>\n    <tr style=\"text-align: right;\">\n      <th>类别</th>\n      <th>项目</th>\n      <th>金额</th>\n      <th>占比</th>\n      <th>备注</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <td>居住</td>\n      <td>房贷</td>\n      <td>6800.00</td>\n      <td>46.3%</td>\n      <td>每月15日扣款</td>\n    </tr>\n    <tr>\n      <td>居住</td>\n      <td>物业费</td>\n      <td>420.00</td>\n      <td>2.9%</td>\n      <td>按季预缴</td>\n    </tr>\n    <tr>\n      <td>食品</td>\n      <td>菜场</td>\n      <td>1860.00</td>\n      <td>12.6%</td>\n      <td>现金为主</td>\n    </tr>\n    <tr>\n      <td>食品</td>\n      <td>超市</td>\n      <td>930.00</td>\n      <td>6.3%</td>\n      <td>周末采购</td>\n    </tr>\n    <tr>\n      <td>交通</td>\n      <td>地铁</td>\n      <td>268.00</td>\n      <td>1.8%</td>\n      <td>月票</td>\n    </tr>\n    <tr>\n      <td>交通</td>\n      <td>加油</td>\n      <td>600.00</td>\n      <td>4.1%</td>\n      <td>92号汽油</td>\n    </tr>\n    <tr>\n      <td>教育</td>\n      <td>课外书</td>\n      <td>356.00</td>\n      <td>2.4%</td>\n      <td>网购</td>\n    </tr>\n    <tr>\n      <td>教育</td>\n      <td>文具</td>\n      <td>88.00</td>\n      <td>0.6%</td>\n      <td>学校门口</td>\n    </tr>\n    <tr>\n      <td>医疗</td>\n      <td>门诊</td>\n      <td>240.00</td>\n      <td>1.6%</td>\n      <td>社区医院</td>\n    </tr>\n    <tr>\n      <td>合计</td>\n      <td>14562.00</td>\n      <td>100.0%</td>\n      <td>记账人</td>\n      <td>林岚</td>\n    </tr>\n  </tbody>\n</table>",
+ "text_len": 1413,
+ "n_lines": 84,
+ "extra": {
+  "wall_s": 36.37357234954834,
+  "output_field": "thinking",
+  "load_duration_s": 1.6609,
+  "prompt_eval_count": 856,
+  "prompt_eval_duration_s": 6.8088,
+  "eval_count": 766,
+  "eval_duration_s": 27.8635,
+  "total_duration_s": 36.3679,
+  "model": "maternion/LightOnOCR-3:0.8b"
+ },
+ "err": "",
+ "seg": {
+  "t_import": 0.001786,
+  "t_session": 0.35838
+ },
+ "t_total": 184.4308
+}

@@ -1,0 +1,58 @@
+{
+ "schema": "ep12-cell-v1",
+ "cell": "simdpaddleocr__book_02",
+ "engine": "simdpaddleocr",
+ "img": "book_02.png",
+ "imgpath": "C:/Users/Frank/AppData/Local/hermes/workspace/articles/bench/ep11-ocr\\output\\samples\\book_02.png",
+ "runs": 3,
+ "warmup": 2,
+ "attempt": 1,
+ "session": "ep12-main",
+ "py": "3.11.16",
+ "ts": 1792929433.0332813,
+ "threads": {
+  "cpu_count": 16,
+  "torch_num_threads": 8
+ },
+ "peak_rss_at_load_mb": 227.1,
+ "rss_scope": "本进程 + 后代进程树",
+ "settings": {
+  "engine": "simdpaddleocr-controlled",
+  "backend": "SimdPaddleOCR 2.0.0 (.NET 10, 纯 C#)",
+  "profile": "controlled",
+  "bundle": "PP-OCRv6_medium (Sdcb.SimdPaddleOCR.Models.ChineseV6Medium 1.0.0)",
+  "note": "load 计时含 .NET 进程启动，与 Python 引擎不可横比"
+ },
+ "warmup_times": [
+  5.0568,
+  5.0322
+ ],
+ "warmup_converged": true,
+ "peak_rss_mb": 819.0,
+ "peak_rss_samples": 114,
+ "t_infers": [
+  4.9948,
+  5.1077,
+  5.0214
+ ],
+ "median": 5.0214,
+ "min": 4.9948,
+ "max": 5.1077,
+ "spread_pct": 2.25,
+ "text": "Scene Text OCR\n好德士 现/烤/汉/堡 of you are not naughty... group all year, and most I've been watching this\nPIGS -HAODESHI- 更新鲜\nARMED MDELICIOUS\n木炭烧烤\nTiredness You're mentally ill\nDocument OCR\n(2e {x, a) − u(* = 1 aa1 (e + =a = 2 (1 + (e, u) = 2 (e + s, s). Note thot 1 Kiertie theoey\n(2.59)) ( #c + c) h − 4 { (c.s)*(2e(c,o)de (1.20)\nHx, =)#(2<(4,=))dc =2 fHe,=)#(2c(c,=()dc.\ncnonlinstes v1 = [0. =|, v2 = [0,2e] snck\n = sln g1 sin ps\n(1.21) d),(C2,(r/|) = |C2| + (r]) + 2(dy(CL,r′)−1) = |C1| − 1 + |SM| + 2(nad T − 1)\n= |C,| + |S| + 2(dr(C,S)− 1) − 1 + 2(radT − r (C,s;)) 2 3\nLL # (2 car3 v. 2 coeps slns coeps.2 co=ps slns aln v) = d (C,s;) + 1 + 2(radT − 1 − dr(C,s)) = e2(C,) + 1 + 2(radT − 1 − dr(Cs′)).\n− (° ψ, [ ds 1 sa 24, × (1 + ce×2g/1, rls2μ/1 cw s/2, vlx2/1 rin+γ2) (1.2) [(A+p,β) 1]4z[3A(H2)+2A(H2)+440\n(d   \nProof of Theorom 1.2. (1)m(x,e,1-1) [r(x+e |2)(w-kj 1| )- n(1,/(x)] 撞，开始形成地率的时期。 第一、行星角旁验段，算星际物质（空块、气体）国绕太阳相互藏\nFine-grained OCR\nHermes毯子 Jiewood\nPOWER BAG SUPER FD COFFEE Reducing the number of images\n蓝强 AUGE  第八节 传系现状与对图\n咖啡小威武 冻干\n点 大王姿金 wn\na线\nMore General OCR\nGlobal views of Trump's characteristics\n% who soy they think of President Donald Trump as ...\nArrogant 75%\nIntolerant 65\nDangerous 62\nA strong leader 55\nCharismatic 39\nOH to be president Well-qualified 26\nHN 0 ordinary people Caring about 23\nNote: Peroentages are global medians based on 37 countries. Sourounve.\nPEW RESEARCH CENTER\nFigure 1: On the input side, GOT supports various optical image types, such as commonly used\nphotographs and documents. Besides, as a general OCR-2.0 model, GOT can handle more tasks, e.g.,\nsheet music, molecular formulas, easy geometric shapes, charts, etc. Moreover, the model can adapt\nto region-focus OCR, high-resolution OCR, and multiple-page OCR. GOT mainly supports English\nand Chinese and can control the structure results (Mathpix markdown/tikz/smiles/kern) via a prompt.\n2",
+ "text_len": 1894,
+ "n_lines": 43,
+ "extra": {
+  "n_boxes": 91,
+  "t_infers_csharp": [
+   4.025095
+  ],
+  "effective_line_worker_count": 1
+ },
+ "err": "",
+ "seg": {
+  "t_import": 0.001708,
+  "t_session": 0.358747
+ },
+ "t_total": 27.8561
+}

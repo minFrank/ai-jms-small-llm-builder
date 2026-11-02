@@ -1,0 +1,67 @@
+{
+ "schema": "ep12-cell-v1",
+ "cell": "lightonocr__shot_02",
+ "engine": "lightonocr",
+ "img": "shot_02.png",
+ "imgpath": "C:/Users/Frank/AppData/Local/hermes/workspace/articles/bench/ep11-ocr\\output\\samples\\shot_02.png",
+ "runs": 3,
+ "warmup": 2,
+ "attempt": 1,
+ "session": "ep12-main",
+ "py": "3.11.16",
+ "ts": 1792985408.2777548,
+ "threads": {
+  "cpu_count": 16,
+  "torch_num_threads": 8
+ },
+ "peak_rss_at_load_mb": 1554.9,
+ "rss_scope": "ollama-serve 进程树（推理在 llama-server.exe）",
+ "settings": {
+  "engine": "lightonocr",
+  "backend": "Ollama (LightOnOCR-3 0.8b, CPU)",
+  "params": "0.8B",
+  "api_mode": "local",
+  "quant": "Q8_0",
+  "weight_source": "maternion 社区 GGUF 转换（非 LightOn 官方发布）",
+  "license": "Apache-2.0",
+  "cache_note": "按图片缓存 → 每次计时前卸载（keep_alive=0）",
+  "output_field_note": "结果写在 thinking 字段（response 为空），与 GLM-OCR 不同",
+  "maas_upload": false
+ },
+ "warmup_times": [
+  58.6032,
+  58.9359
+ ],
+ "warmup_converged": true,
+ "peak_rss_mb": 1568.7,
+ "peak_rss_samples": 950,
+ "t_infers": [
+  58.957,
+  57.6961,
+  57.8555
+ ],
+ "median": 57.8555,
+ "min": 57.6961,
+ "max": 58.957,
+ "spread_pct": 2.18,
+ "text": "logo \"中华人民共和国中央人民政府\"\n\n![header](94,62,410,98) 中华人民共和国中央人民政府 www.gov.cn\n\n![header](767,70,952,85) 首页 | 简 | 繁 | EN | 登录 |\n\n![title](68,142,957,168) # “有高远目标，更有耐心有定力” ——习近平总书记在内蒙古乌兰察布考察\n\n![text](154,177,931,192) 习近平在内蒙古乌兰察布考察时强调 统筹高质量发展和高水平保护 坚定不移走生态优先绿色发展之路 | 视频\n\n![image](45,233,584,459) 9组数字看前三季度经济运行总体平稳 高质量发展取得新成效\n\n![caption](59,468,568,499) 动能向新 结构向优：9组数字看前三季度经济运行总体平稳 高质量发展取得新成效\n\n![title](621,225,672,250) ## 要闻\n\n![list](638,262,954,459)\n- 从亚太伙伴关系到亚太共同体——习近平亚太合作迈上新台阶\n- 李强会见伊朗第一副总统阿雷夫 会见白俄罗斯\n- 李强会见塔吉克斯坦总统拉赫蒙 同塔吉克斯坦佐达会谈\n- 丁薛祥出席2026年世界职业技术教育发展大会会见与会外国政要\n- 何立峰与俄罗斯副总理切尔内申科共同主持理事会定期会晤委员会第三十次会议\n- 中俄人文合作委员会第二十七次会议召开 谌科娃共同主持\n\n![title](66,537,156,557) ## 最新政策\n\n![list](81,572,324,794)\n- 中共中央 国务院关于发展新生产力的意见\n- 国务院关于《国家残疾预防行动计划（2026—2030年）》的批复\n- 国务院办公厅关于发展体育赛事激发消费活力的意见\n- 国务院关于《医疗康复护理扩容提升工程实施方案》的批复\n- 中共中央办公厅 国务院办公厅印发《文化遗产保护传承\"十五五\"规划》\n\n![title](114,821,285,842) ## 国务院政策文件库\n\n![text](82,858,157,874) 搜政策......\n\n![text](81,903,317,916) 政府信息公开 | 惠企助企政策集纳查询\n\n![title](410,537,500,557) ## 政策解读\n\n![text](447,587,659,624) 2026年8月 经济数据 点击查看专题>>\n\n![list](411,642,673,768)\n- 9月CPI温和回升PPI涨幅扩大，能读出哪些信息\n- 前三季度金融数据出炉 多元化融资特征鲜明\n- 7部门实施品质电商“五优”行动，商务部进行解读\n\n![title](467,821,618,842) ## 国务院组织机构\n\n![text](447,881,689,918) 国旗 国歌 国徽 | 国情 国务院公报 | 国家行政法规库 | 国家规章库\n\n![title](762,540,954,607) ## 贯彻落实党中央决策部署 国务院工作进行 做有创造力的执行\n\n![list](767,629,954,738)\n- 前三季度我国GDP同比增长4%\n- 国家发展改革委等三部门完善服务价格政策\n- 我国将实施城镇供热“温暖工程”行动\n\n![title](752,772,843,794) ## 政务联播\n\n![list](767,805,954,914)\n- 国务院残工委印发《国家残疾预防行动计划（2026—2030年）》\n- 应急管理部、财政部组织开展防灾减灾群众冬春救助工作\n- 全国秋粮收获进入高峰期 进",
+ "text_len": 1521,
+ "n_lines": 43,
+ "extra": {
+  "wall_s": 58.949172258377075,
+  "output_field": "thinking",
+  "load_duration_s": 1.6604,
+  "prompt_eval_count": 1928,
+  "prompt_eval_duration_s": 18.7972,
+  "eval_count": 972,
+  "eval_duration_s": 38.3775,
+  "total_duration_s": 58.9383,
+  "model": "maternion/LightOnOCR-3:0.8b"
+ },
+ "err": "",
+ "seg": {
+  "t_import": 0.00176,
+  "t_session": 0.357827
+ },
+ "t_total": 294.5732
+}

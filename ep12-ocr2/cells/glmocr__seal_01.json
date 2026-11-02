@@ -1,0 +1,63 @@
+{
+ "schema": "ep12-cell-v1",
+ "cell": "glmocr__seal_01",
+ "engine": "glmocr",
+ "img": "seal_01.png",
+ "imgpath": "C:/Users/Frank/AppData/Local/hermes/workspace/articles/bench/ep12-ocr2\\output\\samples\\seal_01.png",
+ "runs": 3,
+ "warmup": 2,
+ "attempt": 1,
+ "session": "ep12-main",
+ "py": "3.11.16",
+ "ts": 1792946740.0864005,
+ "threads": {
+  "cpu_count": 16,
+  "torch_num_threads": 8
+ },
+ "peak_rss_at_load_mb": 3225.5,
+ "rss_scope": "ollama-serve 进程树（推理在 llama-server.exe）",
+ "settings": {
+  "engine": "glmocr",
+  "backend": "Ollama (glm-ocr, CPU)",
+  "params": "0.9B",
+  "api_mode": "local",
+  "cache_note": "按图片缓存 → 每次计时前卸载（keep_alive=0）",
+  "maas_upload": false
+ },
+ "warmup_times": [
+  12.184,
+  11.7632,
+  11.8353
+ ],
+ "warmup_converged": true,
+ "peak_rss_mb": 0.0,
+ "peak_rss_samples": 261,
+ "t_infers": [
+  11.4211,
+  11.3922,
+  11.3575
+ ],
+ "median": 11.3922,
+ "min": 11.3575,
+ "max": 11.4211,
+ "spread_pct": 0.56,
+ "text": "兹证明张明远同志系我单位职工\n自二零一九年三月起在职至今\n现任技术研发部项目经理一职\n特此证明，特予盖章确认",
+ "text_len": 54,
+ "n_lines": 4,
+ "extra": {
+  "wall_s": 11.411511421203613,
+  "load_duration_s": 1.6816,
+  "prompt_eval_count": 533,
+  "prompt_eval_duration_s": 7.9322,
+  "eval_count": 41,
+  "eval_duration_s": 1.7793,
+  "total_duration_s": 11.4075,
+  "model": "glm-ocr"
+ },
+ "err": "",
+ "seg": {
+  "t_import": 0.001699,
+  "t_session": 0.357248
+ },
+ "t_total": 72.4809
+}

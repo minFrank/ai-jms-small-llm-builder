@@ -1,0 +1,66 @@
+{
+ "schema": "ep12-cell-v1",
+ "cell": "rapidocrlite-small__vert_01",
+ "engine": "rapidocrlite-small",
+ "img": "vert_01.png",
+ "imgpath": "C:/Users/Frank/AppData/Local/hermes/workspace/articles/bench/ep12-ocr2\\output\\samples\\vert_01.png",
+ "runs": 3,
+ "warmup": 2,
+ "attempt": 1,
+ "session": "ep12-main",
+ "py": "3.11.16",
+ "ts": 1792979075.1433656,
+ "threads": {
+  "cpu_count": 16
+ },
+ "peak_rss_at_load_mb": 66.0,
+ "rss_scope": "本进程 + 后代进程树",
+ "settings": {
+  "engine": "rapidocrlite-small",
+  "backend": "onnxruntime (RapidOCRLite C++/Python)",
+  "rapidocr_version": "5.0.0a15",
+  "tier": "small",
+  "lang_type": "ch",
+  "det_params_aligned_to_paddleocr": true,
+  "aligned_det": {
+   "Det.box_thresh": 0.6,
+   "Det.thresh": 0.3,
+   "Det.unclip_ratio": 1.5
+  }
+ },
+ "warmup_times": [
+  0.503,
+  0.1975,
+  0.1937
+ ],
+ "warmup_converged": true,
+ "peak_rss_mb": 170.8,
+ "peak_rss_samples": 11,
+ "t_infers": [
+  0.204,
+  0.201,
+  0.1975
+ ],
+ "median": 0.201,
+ "min": 0.1975,
+ "max": 0.204,
+ "spread_pct": 3.24,
+ "text": "会议纪要\n决议事项三项 出席共十二人\n地点三楼会议室 时间十月廿五日",
+ "text_len": 34,
+ "n_lines": 3,
+ "extra": {
+  "elapse": 0.20366179999837186,
+  "elapse_list": [
+   null,
+   null,
+   0.20366179999837186
+  ],
+  "n_boxes": 5
+ },
+ "err": "",
+ "seg": {
+  "t_import": 0.056212,
+  "t_session": 0.898138
+ },
+ "t_total": 2.4995
+}

@@ -1,0 +1,59 @@
+{
+ "schema": "ep12-cell-v1",
+ "cell": "easyocr__lowres_02",
+ "engine": "easyocr",
+ "img": "lowres_02.png",
+ "imgpath": "C:/Users/Frank/AppData/Local/hermes/workspace/articles/bench/ep12-ocr2\\output\\samples\\lowres_02.png",
+ "runs": 3,
+ "warmup": 2,
+ "attempt": 1,
+ "session": "ep12-main",
+ "py": "3.11.16",
+ "ts": 1792937195.8860586,
+ "threads": {
+  "cpu_count": 16,
+  "torch_num_threads": 8
+ },
+ "peak_rss_at_load_mb": 899.7,
+ "rss_scope": "本进程 + 后代进程树",
+ "settings": {
+  "engine": "easyocr",
+  "backend": "torch-cpu",
+  "easyocr": "1.7.2",
+  "torch": "2.14.1+cpu",
+  "lang": [
+   "ch_sim",
+   "en"
+  ],
+  "quantize": false,
+  "gpu": false
+ },
+ "warmup_times": [
+  6.351,
+  6.2545
+ ],
+ "warmup_converged": true,
+ "peak_rss_mb": 2255.3,
+ "peak_rss_samples": 156,
+ "t_infers": [
+  6.2931,
+  6.3313,
+  6.2865
+ ],
+ "median": 6.2931,
+ "min": 6.2865,
+ "max": 6.3313,
+ "spread_pct": 0.71,
+ "text": "嗵]\nOaiu e匮\n田皿皿\n \n[赢U:^\n亘1T170\na雷5]2[ LD0'\n0WU巴] 晋覃o碍05亘5\n昌汩1019v亚 雷\n舀",
+ "text_len": 69,
+ "n_lines": 10,
+ "extra": {
+  "n_boxes": 13
+ },
+ "err": "",
+ "seg": {
+  "t_import": 0.002314,
+  "t_session": 5.382516
+ },
+ "t_total": 39.2274
+}

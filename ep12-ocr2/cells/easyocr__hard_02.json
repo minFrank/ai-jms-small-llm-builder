@@ -1,0 +1,60 @@
+{
+ "schema": "ep12-cell-v1",
+ "cell": "easyocr__hard_02",
+ "engine": "easyocr",
+ "img": "hard_02.png",
+ "imgpath": "C:/Users/Frank/AppData/Local/hermes/workspace/articles/bench/ep11-ocr\\output\\samples\\hard_02.png",
+ "runs": 3,
+ "warmup": 2,
+ "attempt": 1,
+ "session": "ep12-main",
+ "py": "3.11.16",
+ "ts": 1792936493.9059262,
+ "threads": {
+  "cpu_count": 16,
+  "torch_num_threads": 8
+ },
+ "peak_rss_at_load_mb": 900.1,
+ "rss_scope": "本进程 + 后代进程树",
+ "settings": {
+  "engine": "easyocr",
+  "backend": "torch-cpu",
+  "easyocr": "1.7.2",
+  "torch": "2.14.1+cpu",
+  "lang": [
+   "ch_sim",
+   "en"
+  ],
+  "quantize": false,
+  "gpu": false
+ },
+ "warmup_times": [
+  2.2248,
+  2.175,
+  2.1133
+ ],
+ "warmup_converged": false,
+ "peak_rss_mb": 982.2,
+ "peak_rss_samples": 82,
+ "t_infers": [
+  2.2215,
+  2.1451,
+  2.1482
+ ],
+ "median": 2.1482,
+ "min": 2.1451,
+ "max": 2.2215,
+ "spread_pct": 3.56,
+ "text": "产品说明书  智能空气检测仪 型号 KJ-2000\n一  产品参数\n额定电压 DC 51 24 额定功率  8 颗粒物CDR 200立方米每小时\n甲醛CADR  80立方米每小时 噪声  32至66分贝 适用面积  23至40平方米\n二  指示灯说明\n绿色  常亮  空气质量优良 黄色  常亮  轻度污染 红色  常亮  中重度污染\n蓝色  常亮  正在联网配网 白色  闪烁  固件升级中  请勿断电\n三  故障处理\nE01  传感器无响应  请断电重启 02  风机堵转  请清理进风口\n区03  网络超时  请检查路由器  2.46  频段 E04 存储异常  请恢复出厂设置\n四  售后  保修期-年  全国联保  客服电话  400-820-1234  服务时问  周一至周曰 九点至二十-点",
+ "text_len": 352,
+ "n_lines": 11,
+ "extra": {
+  "n_boxes": 22
+ },
+ "err": "",
+ "seg": {
+  "t_import": 0.003755,
+  "t_session": 5.35182
+ },
+ "t_total": 20.7055
+}

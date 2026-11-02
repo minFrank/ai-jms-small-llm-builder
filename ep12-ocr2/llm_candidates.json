@@ -1,0 +1,110 @@
+[
+ {
+  "model": "Qwen/Qwen3-1.7B",
+  "src": "国内·阿里",
+  "license": "apache-2.0",
+  "params": "?",
+  "downloads": 4114083,
+  "likes": 598,
+  "gguf": false
+ },
+ {
+  "model": "Qwen/Qwen3-4B",
+  "src": "国内·阿里",
+  "license": "apache-2.0",
+  "params": "?",
+  "downloads": 11230567,
+  "likes": 773,
+  "gguf": false
+ },
+ {
+  "model": "Qwen/Qwen2.5-3B-Instruct",
+  "src": "国内·阿里",
+  "license": "other",
+  "params": "?",
+  "downloads": 3473379,
+  "likes": 623,
+  "gguf": false
+ },
+ {
+  "model": "Qwen/Qwen3.5-2B",
+  "src": "国内·阿里",
+  "license": "apache-2.0",
+  "params": "?",
+  "downloads": 3198686,
+  "likes": 459,
+  "gguf": false
+ },
+ {
+  "model": "OpenBMB/MiniCPM5-1B",
+  "src": "国内·面壁",
+  "license": "apache-2.0",
+  "params": "?",
+  "downloads": 316224,
+  "likes": 1176,
+  "gguf": false
+ },
+ {
+  "model": "OpenBMB/MiniCPM5-2B",
+  "src": "国内·面壁(已有)",
+  "license": "apache-2.0",
+  "params": "?",
+  "downloads": 1216145,
+  "likes": 1822,
+  "gguf": false
+ },
+ {
+  "model": "deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B",
+  "src": "国内·深度求索",
+  "license": "mit",
+  "params": "?",
+  "downloads": 1138390,
+  "likes": 1647,
+  "gguf": false
+ },
+ {
+  "model": "meta-llama/Llama-3.2-3B-Instruct",
+  "src": "国际·Meta",
+  "license": "llama3.2",
+  "params": "?",
+  "downloads": 1108628,
+  "likes": 2890,
+  "gguf": false
+ },
+ {
+  "model": "microsoft/Phi-4-mini-instruct",
+  "src": "国际·微软",
+  "license": "mit",
+  "params": "?",
+  "downloads": 352872,
+  "likes": 872,
+  "gguf": false
+ },
+ {
+  "model": "HuggingFaceTB/SmolLM3-3B",
+  "src": "国际·HF",
+  "license": "apache-2.0",
+  "params": "?",
+  "downloads": 694252,
+  "likes": 1071,
+  "gguf": false
+ },
+ {
+  "model": "ibm-granite/granite-3.3-2b-instruct",
+  "src": "国际·IBM",
+  "license": "apache-2.0",
+  "params": "?",
+  "downloads": 337830,
+  "likes": 87,
+  "gguf": false
+ },
+ {
+  "model": "google/gemma-3-1b-it",
+  "src": "国际·Google",
+  "license": "gemma",
+  "params": "?",
+  "downloads": 723032,
+  "likes": 1274,
+  "gguf": false
+ }
+]

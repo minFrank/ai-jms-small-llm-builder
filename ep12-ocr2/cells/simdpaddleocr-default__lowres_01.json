@@ -1,0 +1,58 @@
+{
+ "schema": "ep12-cell-v1",
+ "cell": "simdpaddleocr-default__lowres_01",
+ "engine": "simdpaddleocr-default",
+ "img": "lowres_01.png",
+ "imgpath": "C:/Users/Frank/AppData/Local/hermes/workspace/articles/bench/ep12-ocr2\\output\\samples\\lowres_01.png",
+ "runs": 3,
+ "warmup": 2,
+ "attempt": 1,
+ "session": "ep12-main",
+ "py": "3.11.16",
+ "ts": 1792930402.2566783,
+ "threads": {
+  "cpu_count": 16,
+  "torch_num_threads": 8
+ },
+ "peak_rss_at_load_mb": 227.0,
+ "rss_scope": "本进程 + 后代进程树",
+ "settings": {
+  "engine": "simdpaddleocr-default",
+  "backend": "SimdPaddleOCR 2.0.0 (.NET 10, 纯 C#)",
+  "profile": "default",
+  "bundle": "PP-OCRv6_medium (Sdcb.SimdPaddleOCR.Models.ChineseV6Medium 1.0.0)",
+  "note": "load 计时含 .NET 进程启动，与 Python 引擎不可横比"
+ },
+ "warmup_times": [
+  5.1295,
+  5.1727
+ ],
+ "warmup_converged": true,
+ "peak_rss_mb": 749.3,
+ "peak_rss_samples": 115,
+ "t_infers": [
+  5.1674,
+  5.0567,
+  5.1911
+ ],
+ "median": 5.1674,
+ "min": 5.0567,
+ "max": 5.1911,
+ "spread_pct": 2.6,
+ "text": "General OCR Theory: Towards OCR-2.0\nvia a Unified End-to-end Model\nBeres Tea , Chagbeg Lha  Jhye Chee\", J Waapz, Lngs Keg?, Yommieg Ya.\n ' '    \n'Spian Tappa Testokgo\nPpsivorsiny of Chisse Academy af Scisces \"Trinphss Univenity\nbuupeuAittab.cete-nehiAct-st o\nAstrad\nTraditional Oct upsiems rtca- L ds are inssasingy unahle to mert peoples\neage dee to the goning phrmand te isieligrn proorasng eo man made optical\nctesns h h pps  cbtety c to al ai pl sasd\nég prain trs, matrorocoar frrsaias, saties, carts, pest sis mnsd rrn\nprimarse shapes) as Whurartes\" and propose the Genenal Ocà Thesy aaeg with\nha\narXiv:2409.01704v1 [cs.CV] 3 Sep 2024 with sood poonorrs n a mnited akgpes, ad ond to cnd mdel constieding of\n         \nCo an hte a e he rts\"ake ars C taks Onhe\n  \no    oo    o pt a  e  \n       s \n4  p or0 ag  p\n   ,       \npap s okis lo 0or la htr pra kalky l opetnes, e prth\n     \n1 latrodoction\n0 or ob  ttaat tet\n\nwop  pe smms ps s ppo    pr p s an\nrepirse rripcinp esd rhrete secopsira pats Pcth rsuda s poss  fatiag ints l al aprinsa\na\ninstiion preesal abdity retected as deoes cc i a ro y desiged toe dfr\nà               \n\nIn the pa yoe, Lape Vson Lasgaage msdels (M Ms 15. 9, 14, 27, 3 46. 4 haeve devrkpel\nnapidy and doscresd inmprrss pororeascs Ar a bighty rtsipeed arbdicy tha dckt potresnce\nofvme L Ms is comtiasdy impreving. Pasd  C  Lar. ] natraly paires\n\nIheppes, rua, Chsc, Qon M hsce is knagn ccokr da CrG nd es ls oaf\n GY \nvision vocabelary puraletiey the chuar branch to desl win dovammmn tereld dense (ch. By contras,\n1",
+ "text_len": 1541,
+ "n_lines": 41,
+ "extra": {
+  "n_boxes": 42,
+  "t_infers_csharp": [
+   4.148324
+  ],
+  "effective_line_worker_count": 4
+ },
+ "err": "",
+ "seg": {
+  "t_import": 0.001642,
+  "t_session": 0.358237
+ },
+ "t_total": 28.312
+}

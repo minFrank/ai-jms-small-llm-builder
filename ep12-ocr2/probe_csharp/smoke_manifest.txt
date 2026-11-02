@@ -1,0 +1,2 @@
+C:\Users\Frank\AppData\Local\hermes\workspace\articles\bench\ep11-ocr\output\samples\invoice_01.png
+C:\Users\Frank\AppData\Local\hermes\workspace\articles\bench\ep11-ocr\output\samples\table_01.png

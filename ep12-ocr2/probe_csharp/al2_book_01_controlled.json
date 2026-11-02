@@ -1,0 +1,270 @@
+﻿{
+  "schema": "ep12-simdbench-v1",
+  "profile": "controlled",
+  "runs": 1,
+  "warmup": 0,
+  "processor_count": 16,
+  "images": [
+    {
+      "img": "C:\\Users\\Frank\\AppData\\Local\\hermes\\workspace\\articles\\bench\\ep11-ocr\\output\\samples\\book_01.png",
+      "t_infers": [
+        5.55229
+      ],
+      "median": 5.55229,
+      "min": 5.55229,
+      "max": 5.55229,
+      "spread_pct": 0,
+      "raw_items": [
+        [
+          236,
+          352,
+          "General OCR Theory: Towards OCR-2.0"
+        ],
+        [
+          279.5,
+          417.94,
+          "via a Unified End-to-end Model"
+        ],
+        [
+          400,
+          254,
+          "Haoran Wei1,*, Chenglong Liu3,*, Jinyue Chen3, Jia Wang1, Lingyu Kong3, Yanming Xu1,"
+        ],
+        [
+          426,
+          261.94,
+          "Zheng Ge1, Liang Zhao1, Jianjian Sun\u00B91, Yuang Peng4, Chunrui Han2, Xiangyu Zhang1,2"
+        ],
+        [
+          849,
+          31,
+          "arXiv:2409.01704v1 [cs.CV] 3 Sep 2024"
+        ],
+        [
+          474.5,
+          533.92,
+          "1StepFun 2Megvii Technology"
+        ],
+        [
+          499.5,
+          375.96,
+          "3University of Chinese Academy of Sciences 4Tsinghua University"
+        ],
+        [
+          524.5,
+          422,
+          "https://github.com/Ucas-HaoranWei/GOT-OCR2.0"
+        ],
+        [
+          649,
+          622,
+          "Abstract"
+        ],
+        [
+          703,
+          315,
+          "Traditional OCR systems (OCR-1.0) are increasingly unable to meet people\u0027s"
+        ],
+        [
+          727,
+          315,
+          "usage due to the growing demand for intelligent processing of man-made optical"
+        ],
+        [
+          751.5,
+          315,
+          "characters. In this paper, we collectively refer to all artificial optical signals"
+        ],
+        [
+          776,
+          315,
+          "(e.g., plain texts, math/molecular formulas, tables, charts, sheet music, and even"
+        ],
+        [
+          800,
+          315,
+          "geometric shapes) as \u0022characters\u0022 and propose the General OCR Theory along with"
+        ],
+        [
+          823,
+          314,
+          "an excellent model, namely GOT, to promote the arrival of OCR-2.0. The GOT,"
+        ],
+        [
+          847,
+          315,
+          "with 580M parameters, is a unified, elegant, and end-to-end model, consisting of"
+        ],
+        [
+          871.5,
+          315,
+          "a high-compression encoder and a long-contexts decoder. As an OCR-2.0 model,"
+        ],
+        [
+          895,
+          315,
+          "GOT can handle all the above \u0022characters\u0022 under various OCR tasks. On the"
+        ],
+        [
+          920,
+          315,
+          "input side, the model supports commonly used scene- and document-style images"
+        ],
+        [
+          943,
+          313.97,
+          "in slice and whole-page styles. On the output side, GOT can generate plain or"
+        ],
+        [
+          967,
+          315,
+          "formatted results (markdown/tikz/smiles/kern) via an easy prompt. Besides, the"
+        ],
+        [
+          991.5,
+          315,
+          "model enjoys interactive OCR features, i.e., region-level recognition guided by"
+        ],
+        [
+          1015.5,
+          315,
+          "coordinates or colors. Furthermore, we also adapt dynamic resolution and multi-"
+        ],
+        [
+          1040,
+          315,
+          "page OCR technologies to GOT for better practicality. In experiments, we provide"
+        ],
+        [
+          1063,
+          315,
+          "sufficient results to prove the superiority of our model."
+        ],
+        [
+          1135.5,
+          234,
+          "1 Introduction"
+        ],
+        [
+          1188,
+          237,
+          "Optical Character Recognition (OCR) is a widely used technology that extracts the characters"
+        ],
+        [
+          1212.5,
+          236,
+          "embedded in an optical image into an editable format. Typical OCR systems [10] in the OCR-1.0 era"
+        ],
+        [
+          1237,
+          236,
+          "are mainly designed based on a multi-modular pipeline style, commonly including element detection,"
+        ],
+        [
+          1261,
+          236,
+          "region cropping, and character recognition parts. Each module is prone to falling into local optima,"
+        ],
+        [
+          1284,
+          236,
+          "making the whole system incur high maintenance costs. Moreover, traditional OCR methods have"
+        ],
+        [
+          1308,
+          236,
+          "insufficient general ability, reflected as different OCR-1.0 networks usually designed for different"
+        ],
+        [
+          1332.5,
+          236,
+          "sub-tasks. Nevertheless, choosing a suitable one from diverse OCR models for a special task is"
+        ],
+        [
+          1356.5,
+          237,
+          "always inconvenient for users."
+        ],
+        [
+          1392,
+          236,
+          "In the past year, Large Vision Language models (LVLMs) [5, 9, 24, 27, 36, 46, 49] have developed"
+        ],
+        [
+          1416.5,
+          235.98,
+          "rapidly and showcased impressive performance. As a highly anticipated ability, the OCR performance"
+        ],
+        [
+          1440,
+          236,
+          "of current LVLMs is continuously improving. Based on CLIP [37], LLaVA [24] naturally acquires"
+        ],
+        [
+          1465,
+          236,
+          "the English OCR ability after the instruct tuning phase. To lift the OCR accuracy and support other"
+        ],
+        [
+          1488.5,
+          235.98,
+          "languages, e.g., Chinese, Qwen-VL [5] unfreezes its image encoder (a CLIP-G) and uses lots of"
+        ],
+        [
+          1512.5,
+          236,
+          "OCR data in its stage-two training. Innovatively, Vary [46] generates a new high-resolution OCR"
+        ],
+        [
+          1536,
+          236,
+          "vision vocabulary paralleling the CLIP branch to deal with document-level dense OCR. By contrast,"
+        ],
+        [
+          1575.5,
+          263,
+          "*Equal contribution"
+        ]
+      ],
+      "err": ""
+    }
+  ],
+  "bundle_name": "PP-OCRv6_medium",
+  "t_session_s": 0.623889,
+  "options": {
+    "UseDirectionClassification": "True",
+    "ClassifierThreshold": "0",
+    "LineWorkerCount": "1",
+    "DetIntraOpThreads": "1",
+    "RecBatchLines": "1",
+    "MaxCropPixels": "16000000",
+    "Detector": {
+      "MaxSessionCacheEntries": "10",
+      "MaxPooledSessions": "16",
+      "LimitSideLength": "4096",
+      "MaxCandidates": "3000",
+      "UseDilation": "False",
+      "BitmapThreshold": "0.3",
+      "BoxThreshold": "0.6",
+      "UnclipRatio": "1.5",
+      "MaxImagePixels": "40000000",
+      "Backend": "Auto"
+    },
+    "Classifier": {
+      "Backend": "Auto",
+      "MaxImagePixels": "40000000",
+      "MaxPooledSessions": "16"
+    },
+    "Recognizer": {
+      "MaxPooledSessions": "16",
+      "TargetWidth": "320",
+      "AdaptiveWidth": "True",
+      "MaxImagePixels": "40000000",
+      "Backend": "Auto"
+    }
+  },
+  "effective_line_worker_count": 1,
+  "warmup_times": [],
+  "warmup_converged": true,
+  "t_total_s": 6.292677
+}

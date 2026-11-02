@@ -1,0 +1,66 @@
+{
+ "schema": "ep12-cell-v1",
+ "cell": "rapidocrlite-medium__shot_02",
+ "engine": "rapidocrlite-medium",
+ "img": "shot_02.png",
+ "imgpath": "C:/Users/Frank/AppData/Local/hermes/workspace/articles/bench/ep11-ocr\\output\\samples\\shot_02.png",
+ "runs": 3,
+ "warmup": 2,
+ "attempt": 1,
+ "session": "ep12-main",
+ "py": "3.11.16",
+ "ts": 1792929054.5052104,
+ "threads": {
+  "cpu_count": 16
+ },
+ "peak_rss_at_load_mb": 60.9,
+ "rss_scope": "本进程 + 后代进程树",
+ "settings": {
+  "engine": "rapidocrlite-medium",
+  "backend": "onnxruntime (RapidOCRLite C++/Python)",
+  "rapidocr_version": "5.0.0a15",
+  "tier": "medium",
+  "lang_type": "ch",
+  "det_params_aligned_to_paddleocr": true,
+  "aligned_det": {
+   "Det.box_thresh": 0.6,
+   "Det.thresh": 0.3,
+   "Det.unclip_ratio": 1.5
+  }
+ },
+ "warmup_times": [
+  8.374,
+  6.6355,
+  6.7716
+ ],
+ "warmup_converged": false,
+ "peak_rss_mb": 826.7,
+ "peak_rss_samples": 181,
+ "t_infers": [
+  6.8344,
+  6.5618,
+  6.8776
+ ],
+ "median": 6.8344,
+ "min": 6.5618,
+ "max": 6.8776,
+ "spread_pct": 4.62,
+ "text": "中华人民共和国中央人民政府 Q 首页简繁EN登录\nwww.gov.cn\n“有高远目标，更有耐心有定力” 习近平总书记在内蒙古乌兰察布考\n习近平在内蒙古乌兰察布考察时强调统筹高质量发展和高水平保护坚定不移走生态优先绿色发展之路|视频\n要闻\n动能向新结构向优\n 从亚太伙伴关系到亚太共同体—习近平主\n9组数字看 亚太合作迈上新台阶\n李强会见伊朗第一副总统阿雷夫 会见白俄\n前三季度经济运行总体平稳 尔钦\n高质量发展取得新成效 李强会见塔吉克斯坦总统拉赫蒙 同塔吉克\n苏尔佐达会谈\n丁薛祥出席2026年世界职业技术教育发展大\n会见与会外国政要\n何立峰与俄罗斯副总理切尔内申科共同主持\n理定期会晤委员会第三十次会议\n中俄人文合作委员会第二十七次会议召开谌\n科娃共同主持\n动能向新结构向优：9组数字看前三季度经济运行总体平稳高质量发展\n取得新成效\n最新政策 政策解读 贯彻落实党中央决\n中共中央国务院关于发展新质生产力 解读 国务院工作进行\n的意见 2026年8月 经济数据 做有创造力的执行\n国务院关于《国家残疾预防行动计划 点击查看专题>>\n前三季度我国GDP同比增长\n(2026—2030年)》的批复 9月CPI温和回升PPI涨幅扩大，能读出\n国务院办公厅关于发展体育赛事激发 哪些信息 国家发展改革委等三部门完\n务价格政策\n消费活力的意见 前三季度金融数据出炉多元化融资特\n国务院关于《医疗康复护理扩容提升 征鲜明 我国将实施城镇供热“温暖二\n年行动\n工程实施方案》的批复 7部门实施品质电商“五优”行动，商\n中共中央办公厅国务院办公厅印发 务部进行解读\n《文化遗产保护传承\"十五五\"规划》 政务联播\n国务院残工委印发《国家残\n国务院政策文件库 国务院组织机构 动计划(2026—2030年)》\n搜政策. o 应急管理部、财政部组织开\n灾群众冬春救助工作\n国旗 国歌 国徽国情\n政府信息公开 惠企助企政策集纳查询 国务院公报 国家行政法规库国家规章库 全国秋粮收获进入高峰期进",
+ "text_len": 837,
+ "n_lines": 40,
+ "extra": {
+  "elapse": 6.833373800000118,
+  "elapse_list": [
+   null,
+   null,
+   6.833373800000118
+  ],
+  "n_boxes": 75
+ },
+ "err": "",
+ "seg": {
+  "t_import": 0.037069,
+  "t_session": 0.963711
+ },
+ "t_total": 43.1067
+}

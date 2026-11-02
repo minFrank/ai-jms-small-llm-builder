@@ -1,0 +1,66 @@
+{
+ "schema": "ep12-cell-v1",
+ "cell": "rapidocrlite-small__shot_03",
+ "engine": "rapidocrlite-small",
+ "img": "shot_03.png",
+ "imgpath": "C:/Users/Frank/AppData/Local/hermes/workspace/articles/bench/ep11-ocr\\output\\samples\\shot_03.png",
+ "runs": 3,
+ "warmup": 2,
+ "attempt": 1,
+ "session": "ep12-main",
+ "py": "3.11.16",
+ "ts": 1792979001.9082057,
+ "threads": {
+  "cpu_count": 16
+ },
+ "peak_rss_at_load_mb": 67.0,
+ "rss_scope": "本进程 + 后代进程树",
+ "settings": {
+  "engine": "rapidocrlite-small",
+  "backend": "onnxruntime (RapidOCRLite C++/Python)",
+  "rapidocr_version": "5.0.0a15",
+  "tier": "small",
+  "lang_type": "ch",
+  "det_params_aligned_to_paddleocr": true,
+  "aligned_det": {
+   "Det.box_thresh": 0.6,
+   "Det.thresh": 0.3,
+   "Det.unclip_ratio": 1.5
+  }
+ },
+ "warmup_times": [
+  0.839,
+  0.5309,
+  0.5396
+ ],
+ "warmup_converged": true,
+ "peak_rss_mb": 225.9,
+ "peak_rss_samples": 20,
+ "t_infers": [
+  0.5643,
+  0.5878,
+  0.5611
+ ],
+ "median": 0.5643,
+ "min": 0.5611,
+ "max": 0.5878,
+ "spread_pct": 4.72,
+ "text": "首页产品文档社区下载关于\n本地部署的文字识别服务方案对比\n方案一直接调用开源引擎，改动最小，适合一次性批量任务。\n方案二封装成常驻服务，支持并发与队列，适合长期跑批的场景。\n方案三走云端接口，按次计费，前期成本低但数据要出内网。\n常见问题\n模型下载失败怎么办可改用国内镜像地址重新拉取。\n内存占用过高怎么办可限制并发数并关闭不必要的后端。\n侧栏说明\n本页数据来自单机实测，仅覆盖中文印刷体与常见票据版式，\n手写体与相机拍照场景未纳入本轮测试范围。",
+ "text_len": 223,
+ "n_lines": 11,
+ "extra": {
+  "elapse": 0.5639149999915389,
+  "elapse_list": [
+   null,
+   null,
+   0.5639149999915389
+  ],
+  "n_boxes": 11
+ },
+ "err": "",
+ "seg": {
+  "t_import": 0.060027,
+  "t_session": 0.891118
+ },
+ "t_total": 4.6265
+}

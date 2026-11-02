@@ -1,0 +1,66 @@
+{
+ "schema": "ep12-cell-v1",
+ "cell": "rapidocrlite-small__lowres_01",
+ "engine": "rapidocrlite-small",
+ "img": "lowres_01.png",
+ "imgpath": "C:/Users/Frank/AppData/Local/hermes/workspace/articles/bench/ep12-ocr2\\output\\samples\\lowres_01.png",
+ "runs": 3,
+ "warmup": 2,
+ "attempt": 1,
+ "session": "ep12-main",
+ "py": "3.11.16",
+ "ts": 1792979044.0347402,
+ "threads": {
+  "cpu_count": 16
+ },
+ "peak_rss_at_load_mb": 66.4,
+ "rss_scope": "本进程 + 后代进程树",
+ "settings": {
+  "engine": "rapidocrlite-small",
+  "backend": "onnxruntime (RapidOCRLite C++/Python)",
+  "rapidocr_version": "5.0.0a15",
+  "tier": "small",
+  "lang_type": "ch",
+  "det_params_aligned_to_paddleocr": true,
+  "aligned_det": {
+   "Det.box_thresh": 0.6,
+   "Det.thresh": 0.3,
+   "Det.unclip_ratio": 1.5
+  }
+ },
+ "warmup_times": [
+  1.8373,
+  1.5459,
+  1.5435
+ ],
+ "warmup_converged": true,
+ "peak_rss_mb": 505.4,
+ "peak_rss_samples": 46,
+ "t_infers": [
+  1.5774,
+  1.574,
+  1.5749
+ ],
+ "median": 1.5749,
+ "min": 1.574,
+ "max": 1.5774,
+ "spread_pct": 0.21,
+ "text": "General OCR Theory: Towards OCR-2.0\nvia a Unified End-to-end Model\nBeorn Wa'\", Cengkeng Lie'\". Jaye Che', Je Masy'. Lings Sg'. Yonly Se'.\nAbstraet\nm\nTraditional Oc'k spslems rOck-1.Oi anr incmasinghy sue lo mrl people's\nmage dor to ther asowing demanl ior indelpe peoersing of mans made optil\nchanssns. le dhis popo. we colkoctively ser ts all astcidl -opsical sigads\n[c]\ngeimtrie hapes) an Vhuraters\" and propone the irnenal Oc Theory aeng with\ns sdkest se, somly o0. os penste fe erial of o-é. The oo.\nih 5MM I pomom. in a mitnd. sogae, and ond-o-end model, conicing of\na bighoompio mmooder and a lomg oots dooe. s n ko m\nGot can ode all de ahoe \"horwken\" asder srkos Ock teks the dhe\ninpet s e model egpots moey me sone- and don-le imoge\nin dioe and weile-page ieyles. Ce te ostpet éid. Go can pomoale plais or\nommaod madis imardnikmiesai via an snp pomgs. Benádes, the\nsoadinatos or edns. Ierteoson, we ase adas dysasic melasioe iend mh\npage-Ock: bdeilegies ko Go Ee wten praticaliey. le espeimes, we prmide\nIatroduction\nOpioa Casar Rnpie cock is a sakdy sd ktackyo the oot te dasio\na moisy designed nd on a mi mdaer pipine sple somdy iading ree detavion\nmglio-oing. and -yhanater sgnases peta Eadh modde is pee se fallieg intes lo al -in\nwh toks. Neetelesa, chosing a nae oe Isom dire O mdels lor a spocal tak is\naeays inovie le m\nede ped yoe, Lege Viioe Lapage modk Mo 15, 9, 7, 7. . , 4 hve devkoed\no c LM is oinmsy imping. Rnd  CLP  LLat  staly gims\nde lfeglos ock ahey aker der iotrn tog phane. Te n ibe Cd arsnay al wopor eher\nleepegrs. 4.. Cis. Qecs-VL H iwes às imger eooder (s CLiP-Gi and es lots of\nOCR daa is is stapi-we lrining. lmatihol. Vary +- poesates a nee gh seodutioe OCk\nvisicn voeahuley purleting dhe cL branh so deal win divme led dse tck. ly ontrest,",
+ "text_len": 1777,
+ "n_lines": 31,
+ "extra": {
+  "elapse": 1.5766086999938125,
+  "elapse_list": [
+   null,
+   null,
+   1.5766086999938125
+  ],
+  "n_boxes": 32
+ },
+ "err": "",
+ "seg": {
+  "t_import": 0.055321,
+  "t_session": 0.906244
+ },
+ "t_total": 10.6651
+}

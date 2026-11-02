@@ -1,0 +1,60 @@
+{
+ "schema": "ep12-cell-v1",
+ "cell": "easyocr__book_01",
+ "engine": "easyocr",
+ "img": "book_01.png",
+ "imgpath": "C:/Users/Frank/AppData/Local/hermes/workspace/articles/bench/ep11-ocr\\output\\samples\\book_01.png",
+ "runs": 3,
+ "warmup": 2,
+ "attempt": 1,
+ "session": "ep12-main",
+ "py": "3.11.16",
+ "ts": 1792936227.1299188,
+ "threads": {
+  "cpu_count": 16,
+  "torch_num_threads": 8
+ },
+ "peak_rss_at_load_mb": 904.1,
+ "rss_scope": "本进程 + 后代进程树",
+ "settings": {
+  "engine": "easyocr",
+  "backend": "torch-cpu",
+  "easyocr": "1.7.2",
+  "torch": "2.14.1+cpu",
+  "lang": [
+   "ch_sim",
+   "en"
+  ],
+  "quantize": false,
+  "gpu": false
+ },
+ "warmup_times": [
+  12.2178,
+  11.8938,
+  11.878
+ ],
+ "warmup_converged": true,
+ "peak_rss_mb": 2606.8,
+ "peak_rss_samples": 338,
+ "t_infers": [
+  12.0172,
+  11.8852,
+  11.8379
+ ],
+ "median": 11.8852,
+ "min": 11.8379,
+ "max": 12.0172,
+ "spread_pct": 1.51,
+ "text": "General OCR Theory: Towards OCR-2.0\nvia a Unified End to-end Model\nHaoran Weil * , Chenglong Liu?; Jinyue Chen? , Jia Wangl, Lingyu Kong? , Yanming Xul\nZheng Gel, Liang Zhaol , Jianjian Swn Yuang Peng Chunrwi Han? , Xiangyu Zhangl;2\nIStepFw ?Megvii Technology\n3University Of Chinese Academy Of Sciences   4Tsinghua University\n营 https : //8ithub Com /IJcas-HaoranWei /GOT- OCR2\n曷\nAbstract\nO\nTraditional OCR systems (OCR-1.0) are increasingly unable to meet people's\nusage due to the growing demand for intelligent processing of man-made optical\n冕 Characters。 I this paper; WC collectively refer to all artificial optical signals\n(e.8., plain texts, mathlmolecular formulas, tables, charts, sheet music, and even\ngeometric shapes) as Characters and propose the General OCR Theory along with\n21 excellent model, namely GOT, to promote the arrival of OCR-2.0. The GOT\nwith S80M parameters;, is a unified, elegant, and end-to-end model, consisting of\nhigh-compression encoder and a long-contexts decoder. As an OCR-2.0 model\nGOT Can handle all the above Characters under Various OCR tasks On the\ninput side, the model supports commonly used scene- and document-style images\n i slice and whole-page styles On the output side。 GOI Cahl generate Plain Or\nformatted results (markdownltikzlsmileslkern) via 41 easy Prompt. Besides, the\nmodel enjoys interactive OCR features; 1e, region-level recognition guided by\ncoordinates Or colors. Furthermore, we also adapt dynamic resolution and multi-\npage OCR technologies to GOT for better practicality. I experiments; We provide\nsufficient results to prove the superiority of our model。\n\nIntroduction\nOptical Character Recognition (OCR)is a widely used technology that extracts the characters\nembedded in an optical image into an editable format. Typical OCR systems [10] in the OCR-1.0 era\n9re mainly designed based on a multi-modular pipeline style, commonly including element detection;\nregion cropping; and character recognition parts. Each module is prone to falling into local optima;\nmaking the whole system incur high maintenance costs. Moreover; traditional OCR methods have\nisufficient general ability, reflected as different OCR-1.0 networks usually designed for different\nSUh-[ tasks Nevertheless; choosing a suitable one from diverse OCR models for a special task is\nalways inconvenient for Users\nI the past year。 Large Vision Language models (LVLMs) [5,9,24,27,36,46,49] have developed\nrapidly and showcased impressive performance_ As a highly anticipated ability, the OCR performance\nof current LVLMs is continuously improving. Based on CLIP [37], LLaVA [24] naturally acquires\nthe English OCR ability after the instruct tuning Phase To lift the OCR accuracy and support other\nlanguages, 2.8., Chinese, Qwen-VL [5] unfreezes its image encoder (a CLIP-G) and uses lots of\nOCR data in its stage-twO training. Innovatively; Vary [46] generates a new high-resolution OCR\nVision vocabulary paralleling the CLIP branch to deal with document-level dense OCR. By contrast;\nEqual contribution",
+ "text_len": 3033,
+ "n_lines": 44,
+ "extra": {
+  "n_boxes": 84
+ },
+ "err": "",
+ "seg": {
+  "t_import": 0.001503,
+  "t_session": 6.088664
+ },
+ "t_total": 80.7388
+}

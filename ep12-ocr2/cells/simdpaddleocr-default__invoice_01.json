@@ -1,0 +1,58 @@
+{
+ "schema": "ep12-cell-v1",
+ "cell": "simdpaddleocr-default__invoice_01",
+ "engine": "simdpaddleocr-default",
+ "img": "invoice_01.png",
+ "imgpath": "C:/Users/Frank/AppData/Local/hermes/workspace/articles/bench/ep11-ocr\\output\\samples\\invoice_01.png",
+ "runs": 3,
+ "warmup": 2,
+ "attempt": 1,
+ "session": "ep12-main",
+ "py": "3.11.16",
+ "ts": 1792930121.7019367,
+ "threads": {
+  "cpu_count": 16,
+  "torch_num_threads": 8
+ },
+ "peak_rss_at_load_mb": 226.9,
+ "rss_scope": "本进程 + 后代进程树",
+ "settings": {
+  "engine": "simdpaddleocr-default",
+  "backend": "SimdPaddleOCR 2.0.0 (.NET 10, 纯 C#)",
+  "profile": "default",
+  "bundle": "PP-OCRv6_medium (Sdcb.SimdPaddleOCR.Models.ChineseV6Medium 1.0.0)",
+  "note": "load 计时含 .NET 进程启动，与 Python 引擎不可横比"
+ },
+ "warmup_times": [
+  2.7737,
+  2.7969
+ ],
+ "warmup_converged": true,
+ "peak_rss_mb": 0.0,
+ "peak_rss_samples": 65,
+ "t_infers": [
+  2.774,
+  2.8073,
+  2.82
+ ],
+ "median": 2.8073,
+ "min": 2.774,
+ "max": 2.82,
+ "spread_pct": 1.64,
+ "text": "【实测样例非真实票据】\n增值税电子普通发票\n发票代码 044032200111\n发票号码 25893417\n开票日期2026年03月12日\n购买方南京星桥信息有限公司\n纳税人识别号 91320100MA1MPQX23K\n项目名称规格数量单价金额税率税额\n信息技术服务费 次 1 8000.00 8000.00 6% 480.00\n数据存储服务 GB月 12 150.00 1800.00 6% 108.00\n价税合计 人民币 壹万零叁佰捌拾捌元整 10388.00\n销售方杭州云禾科技有限公司\n收款人李明复核王芳开票人张伟",
+ "text_len": 261,
+ "n_lines": 13,
+ "extra": {
+  "n_boxes": 13,
+  "t_infers_csharp": [
+   1.823663
+  ],
+  "effective_line_worker_count": 4
+ },
+ "err": "",
+ "seg": {
+  "t_import": 0.001607,
+  "t_session": 0.358304
+ },
+ "t_total": 16.6781
+}

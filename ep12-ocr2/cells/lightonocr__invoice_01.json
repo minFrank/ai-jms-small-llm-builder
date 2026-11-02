@@ -1,0 +1,67 @@
+{
+ "schema": "ep12-cell-v1",
+ "cell": "lightonocr__invoice_01",
+ "engine": "lightonocr",
+ "img": "invoice_01.png",
+ "imgpath": "C:/Users/Frank/AppData/Local/hermes/workspace/articles/bench/ep11-ocr\\output\\samples\\invoice_01.png",
+ "runs": 3,
+ "warmup": 2,
+ "attempt": 1,
+ "session": "ep12-main",
+ "py": "3.11.16",
+ "ts": 1792984299.311054,
+ "threads": {
+  "cpu_count": 16,
+  "torch_num_threads": 8
+ },
+ "peak_rss_at_load_mb": 1380.7,
+ "rss_scope": "ollama-serve 进程树（推理在 llama-server.exe）",
+ "settings": {
+  "engine": "lightonocr",
+  "backend": "Ollama (LightOnOCR-3 0.8b, CPU)",
+  "params": "0.8B",
+  "api_mode": "local",
+  "quant": "Q8_0",
+  "weight_source": "maternion 社区 GGUF 转换（非 LightOn 官方发布）",
+  "license": "Apache-2.0",
+  "cache_note": "按图片缓存 → 每次计时前卸载（keep_alive=0）",
+  "output_field_note": "结果写在 thinking 字段（response 为空），与 GLM-OCR 不同",
+  "maas_upload": false
+ },
+ "warmup_times": [
+  24.8652,
+  24.4721
+ ],
+ "warmup_converged": true,
+ "peak_rss_mb": 1430.2,
+ "peak_rss_samples": 402,
+ "t_infers": [
+  25.0161,
+  24.1352,
+  24.1292
+ ],
+ "median": 24.1352,
+ "min": 24.1292,
+ "max": 25.0161,
+ "spread_pct": 3.67,
+ "text": "# 【实测样例 非真实票据】\n\n![text](42,134,239,170) 增值税电子普通发票\n\n![text](43,202,271,237) 发票代码 044032200111\n\n![text](43,269,229,303) 发票号码 25893417\n\n![text](43,335,291,369) 开票日期 2026年03月12日\n\n![text](43,401,335,435) 购买方 南京星桥信息有限公司\n\n![text](43,468,381,501) 纳税人识别号 91320100MA1MPQX23K\n\n![text](43,534,457,568) 项目名称 规格 数量 单价 金额 税率 税额\n\n![text](43,601,534,635) 信息技术服务费 次 1 8000.00 8000.00 6% 480.00\n\n![text](43,667,534,701) 数据存储服务 GB月 12 150.00 1800.00 6% 108.00\n\n![text](44,734,534,768) 价税合计 人民币 壹万零叁佰捌拾捌元整 10388.00\n\n![text](44,799,336,833) 销售方 杭州云禾科技有限公司\n\n![text](43,866,403,900) 收款人 李明 复核 王芳 开票人 张伟",
+ "text_len": 578,
+ "n_lines": 13,
+ "extra": {
+  "wall_s": 25.00634741783142,
+  "output_field": "thinking",
+  "load_duration_s": 1.9231,
+  "prompt_eval_count": 776,
+  "prompt_eval_duration_s": 6.2512,
+  "eval_count": 460,
+  "eval_duration_s": 16.8024,
+  "total_duration_s": 25.0022,
+  "model": "maternion/LightOnOCR-3:0.8b"
+ },
+ "err": "",
+ "seg": {
+  "t_import": 0.002025,
+  "t_session": 0.35874
+ },
+ "t_total": 125.1293
+}

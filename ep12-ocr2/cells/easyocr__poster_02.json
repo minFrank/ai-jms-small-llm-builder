@@ -1,0 +1,60 @@
+{
+ "schema": "ep12-cell-v1",
+ "cell": "easyocr__poster_02",
+ "engine": "easyocr",
+ "img": "poster_02.png",
+ "imgpath": "C:/Users/Frank/AppData/Local/hermes/workspace/articles/bench/ep12-ocr2\\output\\samples\\poster_02.png",
+ "runs": 3,
+ "warmup": 2,
+ "attempt": 1,
+ "session": "ep12-main",
+ "py": "3.11.16",
+ "ts": 1792937268.9112916,
+ "threads": {
+  "cpu_count": 16,
+  "torch_num_threads": 8
+ },
+ "peak_rss_at_load_mb": 900.4,
+ "rss_scope": "本进程 + 后代进程树",
+ "settings": {
+  "engine": "easyocr",
+  "backend": "torch-cpu",
+  "easyocr": "1.7.2",
+  "torch": "2.14.1+cpu",
+  "lang": [
+   "ch_sim",
+   "en"
+  ],
+  "quantize": false,
+  "gpu": false
+ },
+ "warmup_times": [
+  5.0312,
+  4.7659,
+  4.703
+ ],
+ "warmup_converged": true,
+ "peak_rss_mb": 1840.8,
+ "peak_rss_samples": 146,
+ "t_infers": [
+  4.6672,
+  4.8434,
+  4.7381
+ ],
+ "median": 4.7381,
+ "min": 4.6672,
+ "max": 4.8434,
+ "spread_pct": 3.72,
+ "text": "社区义诊\n内科外科中医科\n血压血糖免费测\n六十五岁以上优先\n随带既往病历\n内科外科中医科\n血压血糖免费测\n六十五岁以上优先\n随带既往病历",
+ "text_len": 68,
+ "n_lines": 9,
+ "extra": {
+  "n_boxes": 9
+ },
+ "err": "",
+ "seg": {
+  "t_import": 0.001561,
+  "t_session": 5.313416
+ },
+ "t_total": 36.3146
+}

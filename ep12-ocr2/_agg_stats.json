@@ -1,0 +1,56 @@
+{
+  "RapidOCRLite medium": {
+    "n": 24,
+    "p90": 0.9790068631408962,
+    "perfect": 11,
+    "max_spread": 10.52
+  },
+  "RapidOCRLite small": {
+    "n": 24,
+    "p90": 0.7377049180327869,
+    "perfect": 11,
+    "max_spread": 8.77
+  },
+  "SimdPaddleOCR 受控": {
+    "n": 24,
+    "p90": 0.9393939393939394,
+    "perfect": 11,
+    "max_spread": 4.63
+  },
+  "SimdPaddleOCR 默认": {
+    "n": 24,
+    "p90": 0.7377049180327869,
+    "perfect": 10,
+    "max_spread": 4.64
+  },
+  "PaddleOCR 官方": {
+    "n": 24,
+    "p90": 0.935064935064935,
+    "perfect": 12,
+    "max_spread": 13.44
+  },
+  "EasyOCR": {
+    "n": 24,
+    "p90": 1.0333333333333334,
+    "perfect": 1,
+    "max_spread": 7.18
+  },
+  "GLM-OCR 0.9B": {
+    "n": 24,
+    "p90": 0.9090909090909091,
+    "perfect": 13,
+    "max_spread": 10.69
+  },
+  "LightOnOCR-3 raw": {
+    "n": 24,
+    "p90": 1.901639344262295,
+    "perfect": 4,
+    "max_spread": 9.19
+  },
+  "LightOnOCR-3 剥标记": {
+    "n": 24,
+    "p90": 0.922077922077922,
+    "perfect": 12,
+    "max_spread": 9.19
+  }
+}

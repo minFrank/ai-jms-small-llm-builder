@@ -1,0 +1,66 @@
+{
+ "schema": "ep12-cell-v1",
+ "cell": "rapidocrlite-medium__table_01",
+ "engine": "rapidocrlite-medium",
+ "img": "table_01.png",
+ "imgpath": "C:/Users/Frank/AppData/Local/hermes/workspace/articles/bench/ep11-ocr\\output\\samples\\table_01.png",
+ "runs": 3,
+ "warmup": 2,
+ "attempt": 1,
+ "session": "ep12-main",
+ "py": "3.11.16",
+ "ts": 1792929250.0602229,
+ "threads": {
+  "cpu_count": 16
+ },
+ "peak_rss_at_load_mb": 65.7,
+ "rss_scope": "本进程 + 后代进程树",
+ "settings": {
+  "engine": "rapidocrlite-medium",
+  "backend": "onnxruntime (RapidOCRLite C++/Python)",
+  "rapidocr_version": "5.0.0a15",
+  "tier": "medium",
+  "lang_type": "ch",
+  "det_params_aligned_to_paddleocr": true,
+  "aligned_det": {
+   "Det.box_thresh": 0.6,
+   "Det.thresh": 0.3,
+   "Det.unclip_ratio": 1.5
+  }
+ },
+ "warmup_times": [
+  3.6666,
+  2.484,
+  2.5831
+ ],
+ "warmup_converged": false,
+ "peak_rss_mb": 559.0,
+ "peak_rss_samples": 73,
+ "t_infers": [
+  2.5553,
+  2.6292,
+  2.6407
+ ],
+ "median": 2.6292,
+ "min": 2.5553,
+ "max": 2.6407,
+ "spread_pct": 3.25,
+ "text": "初二3班期中成绩表\n姓名 语文 数学 英语 物理 总分\n陈思远 92 108 96 88 384\n李雨桐 87 115 91 93 386\n王浩然 78 96 82 75 331\n周子涵 95 102 86 90 385\n孙一诺 88 89 88 71 331\n班级平均分 87.0 102.0 91.0 83.4 363.4",
+ "text_len": 163,
+ "n_lines": 8,
+ "extra": {
+  "elapse": 2.5546767999985605,
+  "elapse_list": [
+   null,
+   null,
+   2.5546767999985605
+  ],
+  "n_boxes": 43
+ },
+ "err": "",
+ "seg": {
+  "t_import": 0.043225,
+  "t_session": 0.927183
+ },
+ "t_total": 17.5808
+}

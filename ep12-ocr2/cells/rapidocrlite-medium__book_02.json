@@ -1,0 +1,66 @@
+{
+ "schema": "ep12-cell-v1",
+ "cell": "rapidocrlite-medium__book_02",
+ "engine": "rapidocrlite-medium",
+ "img": "book_02.png",
+ "imgpath": "C:/Users/Frank/AppData/Local/hermes/workspace/articles/bench/ep11-ocr\\output\\samples\\book_02.png",
+ "runs": 3,
+ "warmup": 2,
+ "attempt": 1,
+ "session": "ep12-main",
+ "py": "3.11.16",
+ "ts": 1792928680.087037,
+ "threads": {
+  "cpu_count": 16
+ },
+ "peak_rss_at_load_mb": 60.8,
+ "rss_scope": "本进程 + 后代进程树",
+ "settings": {
+  "engine": "rapidocrlite-medium",
+  "backend": "onnxruntime (RapidOCRLite C++/Python)",
+  "rapidocr_version": "5.0.0a15",
+  "tier": "medium",
+  "lang_type": "ch",
+  "det_params_aligned_to_paddleocr": true,
+  "aligned_det": {
+   "Det.box_thresh": 0.6,
+   "Det.thresh": 0.3,
+   "Det.unclip_ratio": 1.5
+  }
+ },
+ "warmup_times": [
+  9.0643,
+  7.8995,
+  8.0125
+ ],
+ "warmup_converged": true,
+ "peak_rss_mb": 962.8,
+ "peak_rss_samples": 213,
+ "t_infers": [
+  8.2785,
+  8.4188,
+  8.6838
+ ],
+ "median": 8.4188,
+ "min": 8.2785,
+ "max": 8.6838,
+ "spread_pct": 4.81,
+ "text": "Scene Text OCR\nAMMO 好德士 现/烤/汉/堡 group all year, and most of you are not naughty... I've been watching this\nPIGS —HAODESHI- 更新鲜\n木炭烧烤\nTiredness\nYou're mentally ill\nDocument OCR\nNote thot {2< {x, x) − o(o = 1 ax1 (e + = (a = 2 (1 + (e, s() = 2 (e + s, s).\n(t.59)) (c.s) #(2 (c, o)de (1.20) betge b, tath\n42\nTatisolkaing eplerind ceonliastem v1 = 0. =] , v2 = (0.2r) such\n(1.21) d2(C2, (r/|) = (C2| + (r′)) + 2(dy(CL, r′) − 1) = (C1)| − 1 + |S^| + 2(rad T − 1)\n=|C,|+ |s| +2(dr(C,s)− 1) − 1 + 2(rad 7 − dr (C, s;))\nφ (2 cor3 vs, 2 coeps sln vs coeva.2 coep, slnvs sln uv) ×°d woo 1d we cdp =e(C,)+1+2(radT−1−dr(C,s) = d2 (C,, s;) + 1 + 2(rad T  1 − dr(C,,s))\n(1.21) [(A + p,β♂) 1]4z [3A(H2) + 2M(H2) +4|40\n(1)-mx,m,-[r(x+ex|2)1(x-ejx|2)-nx1,n|x1] Uiag Lesans 1.3 with 接，开始形成地率的时期。 第一、行星角旁龄段，鼻励际物质（空块、气体）国绕太阳相互减\nFine-grained OCR\nHermes毯子 Jiewood 八、请问：的利责作品请务和关知句\nPOWER BAG 1004.\n蓝法 第八节 传承现状与对策\n咖啡小威武 冻干\n松达 大王姿金\n#m.-\nMore General OCR\nGlobal views of Trump's characteristics\n% who soy they think of President Donald Trump as.\nArrogant 75%\nIntolerant 65\nDangerous\nA strong leader 55\nCharismatic\nOH to be president Well-qualified 26\nHN ordinary people Caring about 23\nSource: Spring 2017 Globel Astudes Survey. Note: Peroentages are global medians based on 37 countries.\nPEW RESEARCH CENTER\nFigure 1: On the input side, GOT supports various optical image types, such as commonly used\nphotographs and documents. Besides, as a general OCR-2.0 model, GOT can handle more tasks, e.g.,\nsheet music, molecular formulas, easy geometric shapes, charts, etc. Moreover, the model can adapt\nto region-focus OCR, high-resolution OCR, and multiple-page OCR. GOT mainly supports English\nand Chinese and can control the structure results (Mathpix markdown/tikz/smiles/kern) via a prompt.\n2",
+ "text_len": 1765,
+ "n_lines": 41,
+ "extra": {
+  "elapse": 8.27654729999631,
+  "elapse_list": [
+   null,
+   null,
+   8.27654729999631
+  ],
+  "n_boxes": 80
+ },
+ "err": "",
+ "seg": {
+  "t_import": 0.04383,
+  "t_session": 0.93785
+ },
+ "t_total": 51.3954
+}

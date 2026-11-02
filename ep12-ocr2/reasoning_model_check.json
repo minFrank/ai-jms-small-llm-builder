@@ -1,0 +1,55 @@
+{
+ "Qwen/Qwen3-1.7B": [
+  "enable_thinking",
+  "<think>",
+  "reasoning"
+ ],
+ "Qwen/Qwen3-4B": [
+  "enable_thinking",
+  "<think>",
+  "reasoning"
+ ],
+ "Qwen/Qwen3.5-2B": [
+  "enable_thinking",
+  "reasoning",
+  "reasoning model"
+ ],
+ "OpenBMB/MiniCPM5-1B": [
+  "enable_thinking",
+  "<think>",
+  "reasoning",
+  "reasoning model"
+ ],
+ "OpenBMB/MiniCPM5-2B": [
+  "enable_thinking",
+  "reasoning",
+  "reasoning model"
+ ],
+ "deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B": [
+  "<think>",
+  "chain_of_thought",
+  "reasoning",
+  "reasoning model"
+ ],
+ "meta-llama/Llama-3.2-3B-Instruct": [
+  "chain_of_thought",
+  "reasoning"
+ ],
+ "microsoft/Phi-4-mini-instruct": [
+  "chain_of_thought",
+  "reasoning"
+ ],
+ "google/gemma-3-1b-it": [
+  "chain_of_thought",
+  "reasoning"
+ ],
+ "HuggingFaceTB/SmolLM3-3B": [
+  "enable_thinking",
+  "reasoning",
+  "reasoning model"
+ ],
+ "ibm-granite/granite-3.3-2b-instruct": [
+  "<think>",
+  "reasoning"
+ ]
+}

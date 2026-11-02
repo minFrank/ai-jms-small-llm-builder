@@ -1,0 +1,62 @@
+{
+ "schema": "ep12-cell-v1",
+ "cell": "glmocr__book_01",
+ "engine": "glmocr",
+ "img": "book_01.png",
+ "imgpath": "C:/Users/Frank/AppData/Local/hermes/workspace/articles/bench/ep11-ocr\\output\\samples\\book_01.png",
+ "runs": 3,
+ "warmup": 2,
+ "attempt": 1,
+ "session": "ep12-main",
+ "py": "3.11.16",
+ "ts": 1792937529.2983978,
+ "threads": {
+  "cpu_count": 16,
+  "torch_num_threads": 8
+ },
+ "peak_rss_at_load_mb": 35.4,
+ "rss_scope": "ollama-serve 进程树（推理在 llama-server.exe）",
+ "settings": {
+  "engine": "glmocr",
+  "backend": "Ollama (glm-ocr, CPU)",
+  "params": "0.9B",
+  "api_mode": "local",
+  "cache_note": "按图片缓存 → 每次计时前卸载（keep_alive=0）",
+  "maas_upload": false
+ },
+ "warmup_times": [
+  153.9855,
+  150.9132
+ ],
+ "warmup_converged": true,
+ "peak_rss_mb": 3495.0,
+ "peak_rss_samples": 2617,
+ "t_infers": [
+  151.7712,
+  150.9627,
+  151.7046
+ ],
+ "median": 151.7046,
+ "min": 150.9627,
+ "max": 151.7712,
+ "spread_pct": 0.53,
+ "text": "General OCR Theory: Towards OCR-2.0 via a Unified End-to-end Model\n\nHaoran Wei1,*, Chenglong Liu3,*, Jinyue Chen3, Jia Wang1, Lingyu Kong3, Yanming Xu1, Zheng Ge1, Liang Zhao1, Jianjian Sun1, Yuang Peng4, Chunrui Han2, Xiangyu Zhang1,2\n\n1StepFun 2Megvii Technology\n3University of Chinese Academy of Sciences 4Tsinghua University\nhttps://github.com/Ucas-HaoranWei/GOT-OCR2.0\n\nAbstract\n\nTraditional OCR systems (OCR-1.0) are increasingly unable to meet people’s usage due to the growing demand for intelligent processing of man-made optical characters. In this paper, we collectively refer to all artificial optical signals (e.g., plain texts, math/molecular formulas, tables, charts, sheet music, and even geometric shapes) as \"characters\" and propose the General OCR Theory along with an excellent model, namely GOT, to promote the arrival of OCR-2.0. The GOT, with 580M parameters, is a unified, elegant, and end-to-end model, consisting of a high-compression encoder and a long-contexts decoder. As an OCR-2.0 model, GOT can handle all the above \"characters\" under various OCR tasks. On the input side, the model supports commonly used scene- and document-style images in slice and whole-page styles. On the output side, GOT can generate plain or formatted results (markdown/tikz/smiles/kern) via an easy prompt. Besides, the model enjoys interactive OCR features, i.e., region-level recognition guided by coordinates or colors. Furthermore, we also adapt dynamic resolution and multi-page OCR technologies to GOT for better practicality. In experiments, we provide sufficient results to prove the superiority of our model.\n\n1 Introduction\n\nOptical Character Recognition (OCR) is a widely used technology that extracts the characters embedded in an optical image into an editable format. Typical OCR systems [10] in the OCR-1.0 era are mainly designed based on a multi-modular pipeline style, commonly including element detection, region cropping, and character recognition parts. Each module is prone to falling into local optima, making the whole system incur high maintenance costs. Moreover, traditional OCR methods have insufficient general ability, reflected as different OCR-1.0 networks usually designed for different sub-tasks. Nevertheless, choosing a suitable one from diverse OCR models for a special task is always inconvenient for users.\n\nIn the past year, Large Vision Language models (LVLMs) [5, 9, 24, 27, 36, 46, 49] have developed rapidly and showcased impressive performance. As a highly anticipated ability, the OCR performance of current LVLMs is continuously improving. Based on CLIP [37], LLaVA [24] naturally acquires the English OCR ability after the instruct tuning phase. To lift the OCR accuracy and support other languages, e.g., Chinese, Qwen-VL [5] unfreezes its image encoder (a CLIP-G) and uses lots of OCR data in its stage-two training. Innovatively, Vary [46] generates a new high-resolution OCR vision vocabulary paralleling the CLIP branch to deal with document-level dense OCR. By contrast,\n\n*Equal contribution",
+ "text_len": 3053,
+ "n_lines": 11,
+ "extra": {
+  "wall_s": 151.76118636131287,
+  "load_duration_s": 0.0,
+  "prompt_eval_count": null,
+  "prompt_eval_duration_s": 0.0,
+  "eval_count": null,
+  "eval_duration_s": 0.0,
+  "total_duration_s": 0.0,
+  "model": "glm-ocr"
+ },
+ "err": "",
+ "seg": {
+  "t_import": 0.001787,
+  "t_session": 0.357652
+ },
+ "t_total": 762.6895
+}

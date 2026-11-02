@@ -1,0 +1,348 @@
+LIGHTON title=🐴 maternion/LightOnOCR-3
+LIGHTON body=GitHub
+185.5K
+Download
+Models
+Docs
+Pricing
+Sign in
+maternion
+/
+LightOnOCR-3
+
+420
+ Downloads
+Updated 
+2 weeks ago
+
+Best OCR model. LightOnOCR-3 is our flagship OCR model family 4B, 1B, and 0.8B with layout, grounding, and visual understanding. We recommend the 4B for most OCR tasks.
+vision
+tools
+thinking
+0.8b
+1b
+4b
+CLI
+cURL
+Python
+JavaScript
+ollama run maternion/LightOnOCR-3:0.8b
+Applications
+Claude Code
+ollama launch claude --model maternion/LightOnOCR-3:0.8b
+OpenCode
+ollama launch opencode --model maternion/LightOnOCR-3:0.8b
+Hermes Agent
+ollama launch hermes --model maternion/LightOnOCR-3:0.8b
+OpenClaw
+ollama launch openclaw --model maternion/LightOnOCR-3:0.8b
+Models
+View all →
+
+Name
+
+Size / Usage
+
+Context
+
+Input
+
+LightOnOCR-3:0.8b
+
+1.0GB
+
+256K
+
+Text, Image
+
+LightOnOCR-3:1b
+
+1.2GB
+
+16K
+
+Text, Image
+
+LightOnOCR-3:4b
+
+3.4GB
+
+256K
+
+Text, Image
+
+Readme
+LightOnOCR-3
+
+Best OCR model. LightOnO
+LIGHTON FAILED Page.captureScreenshot timed out after 60s
+
+=== search SimdPaddleOCR ===
+Skip to content
+Navigation Menu
+Products
+Developers
+Businesses
+Resources
+Pricing
+Sign in
+Sign up
+repositories Search Results · SimdPaddleOCR
+Filter by
+Code
+...
+ (...)
+results
+Repositories
+6
+ (6)
+results
+Issues
+8
+ (8)
+results
+Pull requests
+37
+ (37)
+results
+AI resources
+47
+ (47)
+results
+Discussions
+0
+ (0)
+results
+More
+Languages
+C#
+Java
+QML
+Rust
+More languages...
+Advanced
+Owner
+Size
+Number of followers
+Number of forks
+Number of stars
+Date created
+Date pushed
+Topic
+License
+Archived
+Public
+Private
+Advanced search
+6 results
+ (111 ms)
+6 results
+Sort by: Best match
+sdcb/SimdPaddleOCR
+纯 C# PP-OCRv6 推理库：多平台手写 Kernel / GEMM 等算子、超高性能、低内存需求、超高准确率。 自带托管 ONNX 解释器，不依赖 Paddle Inference、ONNX Runtime 或 OpenCV 原生库。
+C#
+·
+526
+·
+Updated 3 days ago
+Star
+mg-chao/simd-paddle-ocr-rs
+Rewrite https://github.com/sdcb/SimdPaddleOCR using Rust
+Rust
+·
+4
+·
+Updated 3 days ago
+Star
+wuyuan2009123/simdpaddleocr-native
+simdpaddleocr C API
+Java
+·
+1
+·
+Updated 5 days ago
+Star
+huiyuanai709/Magika.NET
+NET 11 Magika: AI file content-type detection with managed ONNX CPU inference (SimdPaddleOCR-style)
+C#
+·
+1
+·
+Updated 11 days ago
+Star
+py97/Umi-OCR-PPOCRv6
+Umi-OCR v2.1.5 PP-OCRv6 优化版（SimdPaddleOCR 引擎，暖色无边框界面重设计）· 源码与文档仓库，完整程序见 
+
+=== search SimdPaddle ===
+Skip to content
+Navigation Menu
+Products
+Developers
+Businesses
+Resources
+Pricing
+Sign in
+Sign up
+repositories Search Results · SimdPaddle
+Filter by
+Code
+...
+ (...)
+results
+Repositories
+3
+ (3)
+results
+Issues
+0
+ (0)
+results
+Pull requests
+0
+ (0)
+results
+AI resources
+96
+ (96)
+results
+Discussions
+0
+ (0)
+results
+More
+Languages
+C#
+Java
+More languages...
+Advanced
+Owner
+Size
+Number of followers
+Number of forks
+Number of stars
+Date created
+Date pushed
+Topic
+License
+Archived
+Public
+Private
+Advanced search
+3 results
+ (81 ms)
+3 results
+Sort by: Best match
+sdcb/SimdPaddleOCR
+纯 C# PP-OCRv6 推理库：多平台手写 Kernel / GEMM 等算子、超高性能、低内存需求、超高准确率。 自带托管 ONNX 解释器，不依赖 Paddle Inference、ONNX Runtime 或 OpenCV 原生库。
+C#
+·
+526
+·
+Updated 3 days ago
+Star
+wuyuan2009123/simdpaddleocr-native
+simdpaddleocr C API
+Java
+·
+1
+·
+Updated 5 days ago
+Star
+newton5555/ScanFlow-OCR
+Cross-platform Avalonia OCR desktop (Windows/Linux): camera MJPEG + still images, SimdPaddle OCR, keystroke output.
+C#
+·
+0
+·
+Updated on 9月21日
+Star
+Sponsor open source projects you depend on
+Contributors are working behind the scenes to make open source better for everyone—give them the help and recognition they deserve.
+Explore sponsorable projects
+ProTip! Pr
+
+=== search Simd PaddleOCR ===
+Skip to content
+Navigation Menu
+Products
+Developers
+Businesses
+Resources
+Pricing
+Sign in
+Sign up
+repositories Search Results · Simd PaddleOCR
+Filter by
+Code
+...
+ (...)
+results
+Repositories
+2
+ (2)
+results
+Issues
+115
+ (115)
+results
+Pull requests
+79
+ (79)
+results
+AI resources
+38
+ (38)
+results
+Discussions
+1
+ (1)
+results
+More
+Languages
+Rust
+TypeScript
+More languages...
+Advanced
+Owner
+Size
+Number of followers
+Number of forks
+Number of stars
+Date created
+Date pushed
+Topic
+License
+Archived
+Public
+Private
+Advanced search
+2 results
+ (96 ms)
+2 results
+Sort by: Best match
+snowfluke/tiny6-paddleocr
+No onnxruntime. PP-OCRv6 tiny with zero runtime dependencies using WASM SIMD kernels. Just a few KB!
+TypeScript
+·
+1
+·
+Updated on 9月14日
+Star
+ Sponsor
+Piyoxz/alvio-ocr
+High-performance OCR library for Rust powered by PP-OCRv6 and ONNX Runtime. Fast, accurate, multilingual OCR with SIMD acceleration, batc…
+rust
+fast
+pdf
+machine-learning
+ocr
+Rust
+·
+3
+·
+Updated on 9月21日
+Star
+Sponsor open source projects you depend on
+Contributors are working behind the scenes to make open source better for everyone—give them the help and recognition they deserve.
+Explore sponsorable projects
+ProTip! Press the / key to act

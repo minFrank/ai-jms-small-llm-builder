@@ -1,0 +1,96 @@
+{
+ "desc": "归一化口径敏感性对照：现行口径 vs 严格口径(近 ICDAR)",
+ "strict_def": "NFKC，不转小写、不滤标点、不删空白",
+ "current_def": "NFKC + 滤 Unicode P 类留 S 类 + 小写 + 去空白 + 竖排两图字符多重集差(顺序无关)",
+ "aggregate": "逐图计算后取上中位 v[n//2]，24 张(剔 book_02/skew_02)",
+ "rows": [
+  {
+   "name": "RCL small",
+   "cfg": "rapidocrlite-small",
+   "n_img": 24,
+   "cer_current": 0.024194,
+   "cer_strict": 0.071224,
+   "delta_pp": 4.7,
+   "rank_current": 3,
+   "rank_strict": 6,
+   "rank_change": 3
+  },
+  {
+   "name": "RCL medium",
+   "cfg": "rapidocrlite-medium",
+   "n_img": 24,
+   "cer_current": 0.025,
+   "cer_strict": 0.050725,
+   "delta_pp": 2.57,
+   "rank_current": 5,
+   "rank_strict": 2,
+   "rank_change": -3
+  },
+  {
+   "name": "Simd 默认",
+   "cfg": "simdpaddleocr-default",
+   "n_img": 24,
+   "cer_current": 0.025,
+   "cer_strict": 0.06135,
+   "delta_pp": 3.63,
+   "rank_current": 6,
+   "rank_strict": 4,
+   "rank_change": -2
+  },
+  {
+   "name": "Simd 受控",
+   "cfg": "simdpaddleocr",
+   "n_img": 24,
+   "cer_current": 0.024597,
+   "cer_strict": 0.057971,
+   "delta_pp": 3.34,
+   "rank_current": 4,
+   "rank_strict": 3,
+   "rank_change": -1
+  },
+  {
+   "name": "EasyOCR",
+   "cfg": "easyocr",
+   "n_img": 24,
+   "cer_current": 0.065555,
+   "cer_strict": 0.167173,
+   "delta_pp": 10.16,
+   "rank_current": 8,
+   "rank_strict": 8,
+   "rank_change": 0
+  },
+  {
+   "name": "Paddle官方",
+   "cfg": "paddleocr",
+   "n_img": 24,
+   "cer_current": 0.01371,
+   "cer_strict": 0.061594,
+   "delta_pp": 4.79,
+   "rank_current": 2,
+   "rank_strict": 5,
+   "rank_change": 3
+  },
+  {
+   "name": "LightOn剥标",
+   "cfg": "lightonocr",
+   "n_img": 24,
+   "cer_current": 0.026316,
+   "cer_strict": 0.078067,
+   "delta_pp": 5.18,
+   "rank_current": 7,
+   "rank_strict": 7,
+   "rank_change": 0
+  },
+  {
+   "name": "GLM-OCR",
+   "cfg": "glmocr",
+   "n_img": 24,
+   "cer_current": 0.0,
+   "cer_strict": 0.039746,
+   "delta_pp": 3.97,
+   "rank_current": 1,
+   "rank_strict": 1,
+   "rank_change": 0
+  }
+ ]
+}

@@ -1,0 +1,66 @@
+{
+ "schema": "ep12-cell-v1",
+ "cell": "rapidocrlite-small__lowres_02",
+ "engine": "rapidocrlite-small",
+ "img": "lowres_02.png",
+ "imgpath": "C:/Users/Frank/AppData/Local/hermes/workspace/articles/bench/ep12-ocr2\\output\\samples\\lowres_02.png",
+ "runs": 3,
+ "warmup": 2,
+ "attempt": 1,
+ "session": "ep12-main",
+ "py": "3.11.16",
+ "ts": 1792979054.914524,
+ "threads": {
+  "cpu_count": 16
+ },
+ "peak_rss_at_load_mb": 66.4,
+ "rss_scope": "本进程 + 后代进程树",
+ "settings": {
+  "engine": "rapidocrlite-small",
+  "backend": "onnxruntime (RapidOCRLite C++/Python)",
+  "rapidocr_version": "5.0.0a15",
+  "tier": "small",
+  "lang_type": "ch",
+  "det_params_aligned_to_paddleocr": true,
+  "aligned_det": {
+   "Det.box_thresh": 0.6,
+   "Det.thresh": 0.3,
+   "Det.unclip_ratio": 1.5
+  }
+ },
+ "warmup_times": [
+  0.9381,
+  0.6259,
+  0.6414
+ ],
+ "warmup_converged": false,
+ "peak_rss_mb": 334.2,
+ "peak_rss_samples": 22,
+ "t_infers": [
+  0.6457,
+  0.6575,
+  0.6302
+ ],
+ "median": 0.6457,
+ "min": 0.6302,
+ "max": 0.6575,
+ "spread_pct": 4.23,
+ "text": "Baid百度\nEMRHN\n1\n2NHFM",
+ "text_len": 20,
+ "n_lines": 4,
+ "extra": {
+  "elapse": 0.6451404000108596,
+  "elapse_list": [
+   null,
+   null,
+   0.6451404000108596
+  ],
+  "n_boxes": 4
+ },
+ "err": "",
+ "seg": {
+  "t_import": 0.059544,
+  "t_session": 0.88953
+ },
+ "t_total": 5.1347
+}

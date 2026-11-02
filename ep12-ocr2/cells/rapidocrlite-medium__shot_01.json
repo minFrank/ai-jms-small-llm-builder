@@ -1,0 +1,66 @@
+{
+ "schema": "ep12-cell-v1",
+ "cell": "rapidocrlite-medium__shot_01",
+ "engine": "rapidocrlite-medium",
+ "img": "shot_01.png",
+ "imgpath": "C:/Users/Frank/AppData/Local/hermes/workspace/articles/bench/ep11-ocr\\output\\samples\\shot_01.png",
+ "runs": 3,
+ "warmup": 2,
+ "attempt": 1,
+ "session": "ep12-main",
+ "py": "3.11.16",
+ "ts": 1792929028.1519797,
+ "threads": {
+  "cpu_count": 16
+ },
+ "peak_rss_at_load_mb": 66.6,
+ "rss_scope": "本进程 + 后代进程树",
+ "settings": {
+  "engine": "rapidocrlite-medium",
+  "backend": "onnxruntime (RapidOCRLite C++/Python)",
+  "rapidocr_version": "5.0.0a15",
+  "tier": "medium",
+  "lang_type": "ch",
+  "det_params_aligned_to_paddleocr": true,
+  "aligned_det": {
+   "Det.box_thresh": 0.6,
+   "Det.thresh": 0.3,
+   "Det.unclip_ratio": 1.5
+  }
+ },
+ "warmup_times": [
+  5.0396,
+  4.0652,
+  4.0367
+ ],
+ "warmup_converged": true,
+ "peak_rss_mb": 819.4,
+ "peak_rss_samples": 111,
+ "t_infers": [
+  3.9435,
+  4.0233,
+  4.0132
+ ],
+ "median": 4.0132,
+ "min": 3.9435,
+ "max": 4.0233,
+ "spread_pct": 1.99,
+ "text": "新闻 hao123 地图 贴吧 视频 图片 网盘 库库AI 文心 更多 设置\nBaidu百度\n国模新人古月首登维密秀\n百度一下\n百度库库写报告、做图片、代码编程、有问题就找库库>\n百度热搜> 换一换\n把黄旗海保护好 5 孩子上班父母也能领工资\n披旭日旗的中国留学生已被遣返开除 热 6 乒乓球名将王曼昱等3人拟记大功\n南太行徒步失联的33岁女子已找到 7 救场李克勤走红草根歌手3周涨粉40万\n读懂中国经济的韧性和活力 8 为戒烟每天存40元9个月后烟钱摆满床\n4 公司给2千员工每人发1条5克纯金手链 9 情侣无视火焰在抗议现场淡定饮酒交谈\n下载\n辅助",
+ "text_len": 277,
+ "n_lines": 13,
+ "extra": {
+  "elapse": 3.942781900004775,
+  "elapse_list": [
+   null,
+   null,
+   3.942781900004775
+  ],
+  "n_boxes": 30
+ },
+ "err": "",
+ "seg": {
+  "t_import": 0.040064,
+  "t_session": 0.916309
+ },
+ "t_total": 26.1255
+}

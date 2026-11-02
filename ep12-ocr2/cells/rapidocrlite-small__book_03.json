@@ -1,0 +1,66 @@
+{
+ "schema": "ep12-cell-v1",
+ "cell": "rapidocrlite-small__book_03",
+ "engine": "rapidocrlite-small",
+ "img": "book_03.png",
+ "imgpath": "C:/Users/Frank/AppData/Local/hermes/workspace/articles/bench/ep11-ocr\\output\\samples\\book_03.png",
+ "runs": 3,
+ "warmup": 2,
+ "attempt": 1,
+ "session": "ep12-main",
+ "py": "3.11.16",
+ "ts": 1792978924.502609,
+ "threads": {
+  "cpu_count": 16
+ },
+ "peak_rss_at_load_mb": 67.0,
+ "rss_scope": "本进程 + 后代进程树",
+ "settings": {
+  "engine": "rapidocrlite-small",
+  "backend": "onnxruntime (RapidOCRLite C++/Python)",
+  "rapidocr_version": "5.0.0a15",
+  "tier": "small",
+  "lang_type": "ch",
+  "det_params_aligned_to_paddleocr": true,
+  "aligned_det": {
+   "Det.box_thresh": 0.6,
+   "Det.thresh": 0.3,
+   "Det.unclip_ratio": 1.5
+  }
+ },
+ "warmup_times": [
+  1.0906,
+  0.8303,
+  0.8275
+ ],
+ "warmup_converged": true,
+ "peak_rss_mb": 325.2,
+ "peak_rss_samples": 26,
+ "t_infers": [
+  0.8408,
+  0.803,
+  0.8274
+ ],
+ "median": 0.8274,
+ "min": 0.803,
+ "max": 0.8408,
+ "spread_pct": 4.57,
+ "text": "数字文档的自动化处理流程\n一为什么需要文字识别\n纸质材料要进入检索系统，第一步是把版面上的文字变成可编辑的文本。\n这一步的难点不在字符本身，而在版面结构：同一段文字可能是正文、可能是图注、\n也可能是页眉页脚，识别之后还要还原出它们各自的位置与层级关系。\n二处理链条\n常见的处理链条分为三步：版面分析、文字识别、结构还原。\n版面分析先切出阅读顺序，文字识别再逐块出字，结构还原最后把段落、表格、\n公式按原有层次拼回去。三步之中任何一步出错，下游检索都会受影响。\n三常见误差来源\n扫描件的倾斜、复印造成的对比度下降、密集小字排版，都会明显拉高字错率。\n倾斜会让笔画基线偏离水平，识别模型容易把相邻两行的字混到一起：\n对比度下降则会直接吃掉细笔画，中文的撇捺最先受影响。\n四评估口径\n评估一个识别方案，通常同时看三项：单页耗时、内存占用、字错率。\n只看其中一项会得出偏差结论，例如某些端到端模型字错率低但耗时极长，\n在需要批量处理的场合反而不可用。",
+ "text_len": 421,
+ "n_lines": 17,
+ "extra": {
+  "elapse": 0.840207899993402,
+  "elapse_list": [
+   null,
+   null,
+   0.840207899993402
+  ],
+  "n_boxes": 17
+ },
+ "err": "",
+ "seg": {
+  "t_import": 0.060274,
+  "t_session": 0.899946
+ },
+ "t_total": 6.2265
+}

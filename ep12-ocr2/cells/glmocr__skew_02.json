@@ -1,0 +1,35 @@
+{
+ "schema": "ep12-cell-v1",
+ "cell": "glmocr__skew_02",
+ "engine": "glmocr",
+ "img": "skew_02.png",
+ "imgpath": "C:/Users/Frank/AppData/Local/hermes/workspace/articles/bench/ep11-ocr\\output\\samples\\skew_02.png",
+ "runs": 3,
+ "warmup": 2,
+ "attempt": 1,
+ "session": "ep12-main",
+ "py": "3.11.16",
+ "ts": 1792944202.419856,
+ "threads": {
+  "cpu_count": 16,
+  "torch_num_threads": 8
+ },
+ "peak_rss_at_load_mb": 3782.2,
+ "rss_scope": "ollama-serve 进程树（推理在 llama-server.exe）",
+ "settings": {
+  "engine": "glmocr",
+  "backend": "Ollama (glm-ocr, CPU)",
+  "params": "0.9B",
+  "api_mode": "local",
+  "cache_note": "按图片缓存 → 每次计时前卸载（keep_alive=0）",
+  "maas_upload": false
+ },
+ "err": "RuntimeError: warmup: HTTPError: HTTP Error 400: Bad Request",
+ "text": "",
+ "text_len": 0,
+ "seg": {
+  "t_import": 0.002107,
+  "t_session": 0.36144
+ },
+ "t_total": 4.9295
+}

@@ -1,0 +1,60 @@
+{
+ "schema": "ep12-cell-v1",
+ "cell": "easyocr__lc_02",
+ "engine": "easyocr",
+ "img": "lc_02.png",
+ "imgpath": "C:/Users/Frank/AppData/Local/hermes/workspace/articles/bench/ep11-ocr\\output\\samples\\lc_02.png",
+ "runs": 3,
+ "warmup": 2,
+ "attempt": 1,
+ "session": "ep12-main",
+ "py": "3.11.16",
+ "ts": 1792936609.1382492,
+ "threads": {
+  "cpu_count": 16,
+  "torch_num_threads": 8
+ },
+ "peak_rss_at_load_mb": 901.7,
+ "rss_scope": "本进程 + 后代进程树",
+ "settings": {
+  "engine": "easyocr",
+  "backend": "torch-cpu",
+  "easyocr": "1.7.2",
+  "torch": "2.14.1+cpu",
+  "lang": [
+   "ch_sim",
+   "en"
+  ],
+  "quantize": false,
+  "gpu": false
+ },
+ "warmup_times": [
+  14.3544,
+  13.8876,
+  13.8423
+ ],
+ "warmup_converged": true,
+ "peak_rss_mb": 2623.1,
+ "peak_rss_samples": 385,
+ "t_infers": [
+  13.917,
+  14.0263,
+  13.7466
+ ],
+ "median": 13.917,
+ "min": 13.7466,
+ "max": 14.0263,
+ "spread_pct": 2.01,
+ "text": "2 Related TOIL\n21 TraditionalOCR\nOptical Character Recognition (OCR)is Classic research topic that ai\nOptical contents Into an editable format for further downstrean processing\nCalled OCR-I.0 typically Use a framework that is assembled from multiple\nInstance。 to handle diverse optical characters. the OCR system [IO]is usually deve\nSeveral domain expert networks。 such as Iayout analysis [54], text detection [18\n52,551. region extraction。 and contents recognition 1。161. The reason for Usllg\nscheme Is that the text recognition module (the OCR Dart) failed to scale UP successfully。\nOnly deal with the Image format of small slices. resulting In the entire OCR process being I\nOf first detecting textslcropping regions. and then recognizing the results within the slice。 IOIeVC\nSystem with complicated Drocedures Ia suffer potential systematic errors and high maintenance\nCOSLS。 Although some OCR-I.0 models。 Ce Nougat [6] Cqn directly process documents at the\nWhole Page level thev qre Often desi OIed and trained for a specific sub-task。 leading to unsatisfactory\ngeneral ability。 In the OCR-L.0 era. one inconvenient thlne Is that we Usually need tO switch different\nmodels according to various OCR needs\n2.2 LVLNI-driven OCR\nLarge Vision-Language Models (LVLMs) [,9,20,24,27,46,+91 have attracted lots of attention\ni the AI-community due to their powerful generalization capabilities。 Por the Curent LVLMIs\nOwning perception-reasoning comprehensive capacity。 the OCR ability has become a hot spot with\nthe increasing demand for text-driven Visual understanding- Wost LVLMs OCR capabilities come\nfrom the ready-made CLIP [371. especially those that freeze CLIP encoder [24] to complete the entire\nLVLM traiing. For such models, the vanilla CLIP; mainly with Lne lish scene text Knowledge。 is the\nbottleneck for the OCR performance to out-of-domain tasks, such as other Ianguages Or documents。\nSome other LVLMs [5,+9] choose to Unfreeze the encoder and freeze the LLM fortraining to enhance\nthe CLIP-encoder and align the iage tokens to text oles These models will face the problem Of Iow\nOplical character compression rate。 as it is difficult for frozen LLMto decode too much text frol\nA1 aligned inage token. To alleviate this problen。 some Iodels [9,27,50] adopt a sliding window\nIalIer tO decompose input Images into smaller patches. Although this dynamic resolution approach\nIs highly effective In processing high-resolution input iages Ce DDL I VIllIesultI exCessive\nIage tokens and limit the Iax leneth ofthe eenerated OCR result to some extent\n3 GeneralOCR Theory\nIn this WOrk We propose the general OCR theory。 ie.. OCR-2.0 (as expounded i Section tO\npromote the development ofthe OCR field. Based on the proposed new theory。 we present a novel\nOCR model (GOT). In this section。 we willintroduce the technical details ofour model. including\nthe framework。 multi-stage training strategy。 and the corresponding data engines\n31 Framework\nAs illustrated in Figure 2. GOT comprises three modules。i.e.. an inage encoder。 linear Iayer ad\n21 output decoder。 The linear Iayer acts as the colnector to map the channel dimension between\nthe Vision encoder and the Ianguage decoder。 We utilize three Iain steps In optimizing the whole\nGOTmodel. First。 we conduct the pure text recognition task tO pre-train the Vision encoder。 To Iift\ntraining effciency and save GPU resources Ie CIOOse a tIy decoder to Dass gradients tO the encoder\nIn this stage. we feed inages containing scene texts and manual inages containing document-level\nCharacters Into the Iodelto allow the encoderto eather the tWO Iost commonly used characters\nencoding abilities In the Iext stage。 We form the architecture of GOT by conecting the trained\nVision encodertO a IeW larger decoder。 We prepare lots Of more general OCR data e.8-, sheet Iusic\nmathlmolecular formulas a14 geometric shapes) to scale Up the OCR-2.0 Knowledge for this stage. In\nthe final stage we intend to improve the generalization and applicability of GOT further. Specifically\nfne-grained and Iut croplpage synthetic data are generated and added for GOT to support region\nprompt OCR [OI. huge iage OCR。 and batched PDE OCR features",
+ "text_len": 4173,
+ "n_lines": 50,
+ "extra": {
+  "n_boxes": 104
+ },
+ "err": "",
+ "seg": {
+  "t_import": 0.002138,
+  "t_session": 5.42891
+ },
+ "t_total": 91.5389
+}

@@ -1,0 +1,54 @@
+{
+ "schema": "ep12-cell-v1",
+ "cell": "paddleocr__skew_03",
+ "engine": "paddleocr",
+ "img": "skew_03.png",
+ "imgpath": "C:/Users/Frank/AppData/Local/hermes/workspace/articles/bench/ep11-ocr\\output\\samples\\skew_03.png",
+ "runs": 3,
+ "warmup": 2,
+ "attempt": 1,
+ "session": "ep12-main",
+ "py": "3.11.16",
+ "ts": 1792935138.4505765,
+ "threads": {
+  "cpu_count": 16,
+  "torch_num_threads": 8
+ },
+ "peak_rss_at_load_mb": 835.2,
+ "rss_scope": "本进程 + 后代进程树",
+ "settings": {
+  "engine": "paddleocr",
+  "backend": "paddlepaddle",
+  "paddleocr": "3.7.0",
+  "models": "PP-OCRv6 det+rec (paddlex 缓存)",
+  "enable_mkldnn": false
+ },
+ "warmup_times": [
+  28.0485,
+  27.7469
+ ],
+ "warmup_converged": true,
+ "peak_rss_mb": 1928.3,
+ "peak_rss_samples": 692,
+ "t_infers": [
+  27.6431,
+  27.9163,
+  27.8683
+ ],
+ "median": 27.8683,
+ "min": 27.6431,
+ "max": 27.9163,
+ "spread_pct": 0.98,
+ "text": "备注\n占比\n家庭月度开支明细 金额 每月15日扣款\n46.3%\n项目 6800.00 按季预缴\n类别 2.9%\n房贷 420.00 现金为主\n居住 12.6%\n物业费 1860.00 周末采购\n居住 6.3%\n菜场 930.00 月票\n食品 1.8%\n超市 268.00 92号汽油\n食品 4.1%\n地铁 600.00 网购\n交通 2.4%\n加油 356.00 学校门口\n交通 0.6%\n课外书 88.00 社区医院\n教育 1.6%\n文具 240.00 林岚\n教育 记账人\n门诊 100.0%\n医疗\n14562.00\n合计",
+ "text_len": 261,
+ "n_lines": 26,
+ "extra": {
+  "n_boxes": 56
+ },
+ "err": "",
+ "seg": {
+  "t_import": 0.001701,
+  "t_session": 15.018332
+ },
+ "t_total": 156.6833
+}

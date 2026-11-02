@@ -1,0 +1,65 @@
+﻿{
+  "schema": "ep12-simdbench-v1",
+  "profile": "controlled",
+  "runs": 1,
+  "warmup": 0,
+  "processor_count": 16,
+  "images": [
+    {
+      "img": "C:\\Users\\Frank\\AppData\\Local\\hermes\\workspace\\articles\\bench\\ep11-ocr\\output\\samples\\book_02.png",
+      "t_infers": [
+        0.991797
+      ],
+      "median": 0.991797,
+      "min": 0.991797,
+      "max": 0.991797,
+      "spread_pct": 0,
+      "raw_items": [
+        [
+          1457,
+          210,
+          ""
+        ]
+      ],
+      "err": ""
+    }
+  ],
+  "bundle_name": "PP-OCRv6_medium",
+  "t_session_s": 0.648707,
+  "options": {
+    "UseDirectionClassification": "True",
+    "ClassifierThreshold": "0",
+    "LineWorkerCount": "1",
+    "DetIntraOpThreads": "1",
+    "RecBatchLines": "1",
+    "MaxCropPixels": "16000000",
+    "Detector": {
+      "MaxSessionCacheEntries": "10",
+      "MaxPooledSessions": "16",
+      "LimitSideLength": "64",
+      "MaxCandidates": "3000",
+      "UseDilation": "False",
+      "BitmapThreshold": "0.3",
+      "BoxThreshold": "0.6",
+      "UnclipRatio": "1.5",
+      "MaxImagePixels": "40000000",
+      "Backend": "Auto"
+    },
+    "Classifier": {
+      "Backend": "Auto",
+      "MaxImagePixels": "40000000",
+      "MaxPooledSessions": "16"
+    },
+    "Recognizer": {
+      "MaxPooledSessions": "16",
+      "TargetWidth": "320",
+      "AdaptiveWidth": "True",
+      "MaxImagePixels": "40000000",
+      "Backend": "Auto"
+    }
+  },
+  "effective_line_worker_count": 1,
+  "warmup_times": [],
+  "warmup_converged": true,
+  "t_total_s": 1.755837
+}

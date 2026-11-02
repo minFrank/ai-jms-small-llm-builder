@@ -1,0 +1,60 @@
+{
+ "schema": "ep12-cell-v1",
+ "cell": "easyocr__table_01",
+ "engine": "easyocr",
+ "img": "table_01.png",
+ "imgpath": "C:/Users/Frank/AppData/Local/hermes/workspace/articles/bench/ep11-ocr\\output\\samples\\table_01.png",
+ "runs": 3,
+ "warmup": 2,
+ "attempt": 1,
+ "session": "ep12-main",
+ "py": "3.11.16",
+ "ts": 1792937101.9895725,
+ "threads": {
+  "cpu_count": 16,
+  "torch_num_threads": 8
+ },
+ "peak_rss_at_load_mb": 899.7,
+ "rss_scope": "本进程 + 后代进程树",
+ "settings": {
+  "engine": "easyocr",
+  "backend": "torch-cpu",
+  "easyocr": "1.7.2",
+  "torch": "2.14.1+cpu",
+  "lang": [
+   "ch_sim",
+   "en"
+  ],
+  "quantize": false,
+  "gpu": false
+ },
+ "warmup_times": [
+  2.3716,
+  2.4263,
+  2.3886
+ ],
+ "warmup_converged": true,
+ "peak_rss_mb": 1033.8,
+ "peak_rss_samples": 85,
+ "t_infers": [
+  2.2979,
+  2.3503,
+  2.4119
+ ],
+ "median": 2.3503,
+ "min": 2.2979,
+ "max": 2.4119,
+ "spread_pct": 4.85,
+ "text": "初二3班期中成绩表\n姓名 语文 数学 英语 物理 总分\n陈思远 92 108 96 88 384\n李雨桐 87 115 91 93 386\n壬浩然 78 96 82 75 331\n周子涵 95 102 98 90 385\n孙一诺 83 89 88 71 331\n班级平均分 87. 102.0 91.0 83.4 363.4",
+ "text_len": 162,
+ "n_lines": 8,
+ "extra": {
+  "n_boxes": 43
+ },
+ "err": "",
+ "seg": {
+  "t_import": 0.002251,
+  "t_session": 5.350603
+ },
+ "t_total": 21.9044
+}

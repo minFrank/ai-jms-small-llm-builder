@@ -1,0 +1,63 @@
+{
+ "schema": "ep12-cell-v1",
+ "cell": "glmocr__seal_02",
+ "engine": "glmocr",
+ "img": "seal_02.png",
+ "imgpath": "C:/Users/Frank/AppData/Local/hermes/workspace/articles/bench/ep12-ocr2\\output\\samples\\seal_02.png",
+ "runs": 3,
+ "warmup": 2,
+ "attempt": 1,
+ "session": "ep12-main",
+ "py": "3.11.16",
+ "ts": 1792946813.0766656,
+ "threads": {
+  "cpu_count": 16,
+  "torch_num_threads": 8
+ },
+ "peak_rss_at_load_mb": 2813.3,
+ "rss_scope": "ollama-serve 进程树（推理在 llama-server.exe）",
+ "settings": {
+  "engine": "glmocr",
+  "backend": "Ollama (glm-ocr, CPU)",
+  "params": "0.9B",
+  "api_mode": "local",
+  "cache_note": "按图片缓存 → 每次计时前卸载（keep_alive=0）",
+  "maas_upload": false
+ },
+ "warmup_times": [
+  10.975,
+  11.2738,
+  10.9443
+ ],
+ "warmup_converged": false,
+ "peak_rss_mb": 3013.5,
+ "peak_rss_samples": 246,
+ "t_infers": [
+  10.9184,
+  10.9431,
+  10.9854
+ ],
+ "median": 10.9431,
+ "min": 10.9184,
+ "max": 10.9854,
+ "spread_pct": 0.61,
+ "text": "南京市长江路小学教务处\n学生李思远性别男\n二零一三年八月出生\n系我校三年级二班学生",
+ "text_len": 41,
+ "n_lines": 4,
+ "extra": {
+  "wall_s": 10.888033151626587,
+  "load_duration_s": 1.679,
+  "prompt_eval_count": 533,
+  "prompt_eval_duration_s": 7.8894,
+  "eval_count": 31,
+  "eval_duration_s": 1.3001,
+  "total_duration_s": 10.8849,
+  "model": "glm-ocr"
+ },
+ "err": "",
+ "seg": {
+  "t_import": 0.002075,
+  "t_session": 0.357716
+ },
+ "t_total": 68.5606
+}

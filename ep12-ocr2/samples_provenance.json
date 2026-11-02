@@ -1,0 +1,158 @@
+[
+ {
+  "name": "book_01",
+  "category": "书页",
+  "source": "real_pdf",
+  "note": "arXiv 2409.01704 第 1 页，PDF 文本层作 GT"
+ },
+ {
+  "name": "book_02",
+  "category": "书页",
+  "source": "real_pdf",
+  "note": "arXiv 2409.01704 第 2 页，PDF 文本层作 GT"
+ },
+ {
+  "name": "book_03",
+  "category": "书页",
+  "source": "synthetic",
+  "note": "合成技术书内页（黑体标题 + 宋体多段落，自撰内容）"
+ },
+ {
+  "name": "hard_01",
+  "category": "混合难例",
+  "source": "real_pdf",
+  "note": "arXiv 2409.01704 第 3 页 双栏小字"
+ },
+ {
+  "name": "hard_02",
+  "category": "混合难例",
+  "source": "synthetic",
+  "note": "19pt 仿宋 密集混排"
+ },
+ {
+  "name": "invoice_01",
+  "category": "电子发票",
+  "source": "synthetic",
+  "note": "按真实票样版式合成"
+ },
+ {
+  "name": "invoice_02",
+  "category": "电子发票",
+  "source": "synthetic",
+  "note": "按真实票样版式合成"
+ },
+ {
+  "name": "lc_01",
+  "category": "低对比反光",
+  "source": "real_web+degrade",
+  "note": "底图 = shot_01 同页，对比度 0.28 + 右上反光（合成退化）"
+ },
+ {
+  "name": "lc_02",
+  "category": "低对比反光",
+  "source": "real_pdf+degrade",
+  "note": "底图 = arXiv 第 4 页，对比度 0.28 + 右上反光（合成退化）"
+ },
+ {
+  "name": "lc_03",
+  "category": "低对比反光",
+  "source": "synthetic+degrade",
+  "note": "底图 = invoice_02 压对比度 0.28 + 右上反光（合成退化，GT 复用底图）"
+ },
+ {
+  "name": "lowres_01",
+  "category": "低分辨率手机拍",
+  "source": "derived",
+  "note": "由 ep11 真实底图 book_01.png 降采样 22% 再放大，GT 复用底图 GT"
+ },
+ {
+  "name": "lowres_02",
+  "category": "低分辨率手机拍",
+  "source": "derived",
+  "note": "由 ep11 真实底图 shot_01.png 降采样 18% 再放大，GT 复用底图 GT"
+ },
+ {
+  "name": "poster_01",
+  "category": "海报/场景文字",
+  "source": "synthetic",
+  "note": "艺术字标题 + 彩色背景，正文重复呈现（海报常见版式）"
+ },
+ {
+  "name": "poster_02",
+  "category": "海报/场景文字",
+  "source": "synthetic",
+  "note": "艺术字标题 + 彩色背景，正文重复呈现（海报常见版式）"
+ },
+ {
+  "name": "seal_01",
+  "category": "印章/红章压字",
+  "source": "synthetic",
+  "note": "半透明印章叠印，GT 分章内字与章下印刷字两项"
+ },
+ {
+  "name": "seal_02",
+  "category": "印章/红章压字",
+  "source": "synthetic",
+  "note": "半透明印章叠印，GT 分章内字与章下印刷字两项"
+ },
+ {
+  "name": "shot_01",
+  "category": "截图",
+  "source": "real_web_pdf",
+  "note": "baidu.com 首页打印为 PDF 后渲染，GT=PDF 文本层"
+ },
+ {
+  "name": "shot_02",
+  "category": "截图",
+  "source": "real_web_pdf",
+  "note": "gov.cn 首页打印为 PDF 后渲染，GT=PDF 文本层"
+ },
+ {
+  "name": "shot_03",
+  "category": "截图",
+  "source": "synthetic",
+  "note": "合成网页版面（导航条 + 标题 + 要点 + 侧栏，自撰内容）"
+ },
+ {
+  "name": "skew_01",
+  "category": "倾斜拍照",
+  "source": "real_pdf+degrade",
+  "note": "底图 = book_01 同页，整体旋转 7 度（合成退化，非真实拍照）"
+ },
+ {
+  "name": "skew_02",
+  "category": "倾斜拍照",
+  "source": "real_pdf+degrade",
+  "note": "底图 = book_02 同页，整体旋转 13 度（合成退化，非真实拍照）"
+ },
+ {
+  "name": "skew_03",
+  "category": "倾斜拍照",
+  "source": "synthetic+degrade",
+  "note": "底图 = table_02 同表旋转 10 度（合成退化，GT 复用底图）"
+ },
+ {
+  "name": "table_01",
+  "category": "表格",
+  "source": "synthetic",
+  "note": "按真实成绩表版式合成"
+ },
+ {
+  "name": "table_02",
+  "category": "表格",
+  "source": "synthetic",
+  "note": "按真实记账表版式合成"
+ },
+ {
+  "name": "vert_01",
+  "category": "竖排文字",
+  "source": "synthetic",
+  "note": "竖排版式合成，阅读顺序自右向左、列内自上而下"
+ },
+ {
+  "name": "vert_02",
+  "category": "竖排文字",
+  "source": "synthetic",
+  "note": "竖排版式合成，阅读顺序自右向左、列内自上而下"
+ }
+]

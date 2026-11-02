@@ -1,0 +1,58 @@
+{
+ "schema": "ep12-cell-v1",
+ "cell": "simdpaddleocr__hard_02",
+ "engine": "simdpaddleocr",
+ "img": "hard_02.png",
+ "imgpath": "C:/Users/Frank/AppData/Local/hermes/workspace/articles/bench/ep11-ocr\\output\\samples\\hard_02.png",
+ "runs": 3,
+ "warmup": 2,
+ "attempt": 1,
+ "session": "ep12-main",
+ "py": "3.11.16",
+ "ts": 1792929529.6166894,
+ "threads": {
+  "cpu_count": 16,
+  "torch_num_threads": 8
+ },
+ "peak_rss_at_load_mb": 226.8,
+ "rss_scope": "本进程 + 后代进程树",
+ "settings": {
+  "engine": "simdpaddleocr-controlled",
+  "backend": "SimdPaddleOCR 2.0.0 (.NET 10, 纯 C#)",
+  "profile": "controlled",
+  "bundle": "PP-OCRv6_medium (Sdcb.SimdPaddleOCR.Models.ChineseV6Medium 1.0.0)",
+  "note": "load 计时含 .NET 进程启动，与 Python 引擎不可横比"
+ },
+ "warmup_times": [
+  2.9394,
+  2.942
+ ],
+ "warmup_converged": true,
+ "peak_rss_mb": 726.5,
+ "peak_rss_samples": 68,
+ "t_infers": [
+  3.0607,
+  2.9452,
+  2.9356
+ ],
+ "median": 2.9452,
+ "min": 2.9356,
+ "max": 3.0607,
+ "spread_pct": 4.25,
+ "text": "产品说明书智能空气检测仪型号KJ-2000\n一产品参数\n额定电压 DC 5V 2A 额定功率 8W 颗粒物CADR 200立方米每小时\n甲醛CADR 80立方米每小时噪声32至66分贝适用面积23至40平方米\n二指示灯说明\n绿色常亮空气质量优良黄色常亮轻度污染红色常亮中重度污染\n蓝色常亮正在联网配网白色闪烁固件升级中请勿断电\n三故障处理\nE01 传感器无响应请断电重启 E02 风机堵转请清理进风口\nE03 网络超时请检查路由器 2.4G 频段 E04 存储异常请恢复出厂设置\n四售后保修期一年全国联保客服电话400-820-1234服务时间周一至周日九点至二十一点",
+ "text_len": 284,
+ "n_lines": 11,
+ "extra": {
+  "n_boxes": 11,
+  "t_infers_csharp": [
+   2.098674
+  ],
+  "effective_line_worker_count": 1
+ },
+ "err": "",
+ "seg": {
+  "t_import": 0.001472,
+  "t_session": 0.357053
+ },
+ "t_total": 17.3925
+}

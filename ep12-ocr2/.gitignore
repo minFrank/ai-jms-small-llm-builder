@@ -1,0 +1,13 @@
+# 运行环境与临时产物不入库
+venv-*/
+__pycache__/
+*.pyc
+_push_tmp/
+_simd_tmp/
+*.log
+rss_*.json
+.DS_Store
+
+# .NET 编译产物与 NuGet 模型 DLL(单个 132MB)
+bin/
+obj/

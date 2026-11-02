@@ -1,0 +1,55 @@
+{
+ "schema": "ep12-cell-v1",
+ "cell": "paddleocr__vert_01",
+ "engine": "paddleocr",
+ "img": "vert_01.png",
+ "imgpath": "C:/Users/Frank/AppData/Local/hermes/workspace/articles/bench/ep12-ocr2\\output\\samples\\vert_01.png",
+ "runs": 3,
+ "warmup": 2,
+ "attempt": 1,
+ "session": "ep12-main",
+ "py": "3.11.16",
+ "ts": 1792936114.1126673,
+ "threads": {
+  "cpu_count": 16,
+  "torch_num_threads": 8
+ },
+ "peak_rss_at_load_mb": 836.3,
+ "rss_scope": "本进程 + 后代进程树",
+ "settings": {
+  "engine": "paddleocr",
+  "backend": "paddlepaddle",
+  "paddleocr": "3.7.0",
+  "models": "PP-OCRv6 det+rec (paddlex 缓存)",
+  "enable_mkldnn": false
+ },
+ "warmup_times": [
+  6.4219,
+  6.2815,
+  6.2371
+ ],
+ "warmup_converged": true,
+ "peak_rss_mb": 1238.5,
+ "peak_rss_samples": 237,
+ "t_infers": [
+  6.3493,
+  6.4051,
+  6.4166
+ ],
+ "median": 6.4051,
+ "min": 6.3493,
+ "max": 6.4166,
+ "spread_pct": 1.05,
+ "text": "会议纪要\n决议事项三项 出席共十二人\n地点三楼会议室 时间十月廿五日",
+ "text_len": 34,
+ "n_lines": 3,
+ "extra": {
+  "n_boxes": 5
+ },
+ "err": "",
+ "seg": {
+  "t_import": 0.001858,
+  "t_session": 14.406165
+ },
+ "t_total": 54.8363
+}

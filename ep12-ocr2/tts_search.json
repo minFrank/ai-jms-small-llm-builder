@@ -1,0 +1,97 @@
+{
+ "Qwen3-TTS": [
+  "Qwen/Qwen3-TTS-12Hz-1.7B-Base",
+  "Qwen/Qwen3-TTS-12Hz-1.7B-CustomVoice",
+  "Qwen/Qwen3-TTS-12Hz-0.6B-CustomVoice",
+  "Qwen/Qwen3-TTS-12Hz-0.6B-Base",
+  "Serveurperso/Qwen3-TTS-GGUF"
+ ],
+ "CosyVoice3": [
+  "FunAudioLLM/Fun-CosyVoice3-0.5B-2512",
+  "cstr/cosyvoice3-0.5b-2512-GGUF",
+  "Lourdle/Fun-CosyVoice3-0.5B-2512-GGUF",
+  "tonythethompson/CosyVoice-300M-ONNX",
+  "FunAudioLLM/CosyVoice-300M-SFT"
+ ],
+ "fish-speech": [
+  "fishaudio/fish-speech-1.5",
+  "fishaudio/fish-speech-1.4",
+  "fishaudio/fish-speech-1.2",
+  "scarxity/fish-speech-s2-pro-nf4",
+  "AEmotionStudio/fish-speech-s2-pro-fp8"
+ ],
+ "F5-TTS": [
+  "SWivid/F5-TTS",
+  "Misha24-10/F5-TTS_RUSSIAN",
+  "innkl24/f5-shan-tts-model",
+  "hynt/F5-TTS-Vietnamese-ViVoice",
+  "touati-kamel/f5tts-algerian-darja"
+ ],
+ "ChatTTS": [
+  "2Noise/ChatTTS",
+  "vokra/chattts",
+  "Allinsama/2Noise__ChatTTS",
+  "pravinuxd/ChatTTS",
+  "fairy322/ChatTTS"
+ ],
+ "chatterbox": [
+  "ResembleAI/chatterbox",
+  "mlx-community/chatterbox-turbo-4bit",
+  "calcuis/chatterbox-gguf",
+  "ResembleAI/chatterbox-turbo-ONNX",
+  "mlx-community/chatterbox-multilingual-v3"
+ ],
+ "Kokoro-82M": [
+  "hexgrad/Kokoro-82M",
+  "onnx-community/Kokoro-82M-v1.0-ONNX",
+  "mlx-community/Kokoro-82M-bf16",
+  "onnx-community/Kokoro-82M-ONNX",
+  "hexgrad/Kokoro-82M-v1.1-zh"
+ ],
+ "MOSS-TTS": [
+  "OpenMOSS-Team/MOSS-TTS-Nano-100M",
+  "OpenMOSS-Team/MOSS-TTS-v1.5",
+  "christopherthompson81/MOSS-TTS-v1.5-GGUF",
+  "OpenMOSS-Team/MOSS-TTS-Local-Transformer",
+  "christopherthompson81/MOSS-TTSD-GGUF"
+ ],
+ "IndexTTS": [
+  "mlx-community/index-tts2-mlx",
+  "IndexTeam/IndexTTS-2.5",
+  "IndexTeam/IndexTTS-2",
+  "Richasy/IndexTTS-2.5-GGUF",
+  "cstr/indextts-1.5-GGUF"
+ ],
+ "GPT-SoVITS": [
+  "None1145/GPT-SoVITS-Theresa",
+  "lpkpaco/Bocchi-The-Rock-GPT-SoVITS-Models",
+  "None1145/GPT-SoVITS-Rosmontis",
+  "AdamCodd/GPTSoVITS-JP-tts",
+  "None1145/GPT-SoVITS-Lappland"
+ ],
+ "OpenVoice": [
+  "OpenVoiceOS/ovos-m2v-intents-multilingual",
+  "OpenVoiceOS/qwen3-forced-aligner-0.6b-q4-k-m",
+  "OpenVoiceOS/qwen3-asr-0.6b-f16",
+  "OpenVoiceOS/ovos-m2v-intents-multi-128M-v5",
+  "OpenVoiceOS/pipertts_pt-BR_dii"
+ ],
+ "Step-Audio-TTS": [
+  "stepfun-ai/Step-Audio-TTS-3B",
+  "saoyuanyuan/Step-Audio-TTS-3B"
+ ],
+ "Zonos": [
+  "Zyphra/Zonos-v0.1-transformer",
+  "Zyphra/ZONOS2-GGUF",
+  "Zyphra/ZONOS2",
+  "cstr/zonos-v0.1-transformer-GGUF",
+  "Zyphra/Zonos-v0.1-hybrid"
+ ],
+ "VoxCPM": [
+  "openbmb/VoxCPM2",
+  "DennisHuang648/VoxCPM2-GGUF",
+  "openbmb/VoxCPM-0.5B",
+  "openbmb/VoxCPM1.5",
+  "mlx-community/VoxCPM2-8bit"
+ ]
+}

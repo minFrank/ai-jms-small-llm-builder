@@ -1,0 +1,66 @@
+{
+ "schema": "ep12-cell-v1",
+ "cell": "rapidocrlite-medium__seal_02",
+ "engine": "rapidocrlite-medium",
+ "img": "seal_02.png",
+ "imgpath": "C:/Users/Frank/AppData/Local/hermes/workspace/articles/bench/ep12-ocr2\\output\\samples\\seal_02.png",
+ "runs": 3,
+ "warmup": 2,
+ "attempt": 1,
+ "session": "ep12-main",
+ "py": "3.11.16",
+ "ts": 1792929361.9235766,
+ "threads": {
+  "cpu_count": 16
+ },
+ "peak_rss_at_load_mb": 64.9,
+ "rss_scope": "本进程 + 后代进程树",
+ "settings": {
+  "engine": "rapidocrlite-medium",
+  "backend": "onnxruntime (RapidOCRLite C++/Python)",
+  "rapidocr_version": "5.0.0a15",
+  "tier": "medium",
+  "lang_type": "ch",
+  "det_params_aligned_to_paddleocr": true,
+  "aligned_det": {
+   "Det.box_thresh": 0.6,
+   "Det.thresh": 0.3,
+   "Det.unclip_ratio": 1.5
+  }
+ },
+ "warmup_times": [
+  2.8127,
+  1.6275,
+  1.6923
+ ],
+ "warmup_converged": false,
+ "peak_rss_mb": 629.0,
+ "peak_rss_samples": 52,
+ "t_infers": [
+  1.6268,
+  1.6681,
+  1.6389
+ ],
+ "median": 1.6389,
+ "min": 1.6268,
+ "max": 1.6681,
+ "spread_pct": 2.53,
+ "text": "南京市长江路小学教务处\n学生李思远性别男\n二零一三年八方出生学\n系我校三年级二班学生",
+ "text_len": 42,
+ "n_lines": 4,
+ "extra": {
+  "elapse": 1.626181200001156,
+  "elapse_list": [
+   null,
+   null,
+   1.626181200001156
+  ],
+  "n_boxes": 4
+ },
+ "err": "",
+ "seg": {
+  "t_import": 0.047768,
+  "t_session": 0.926292
+ },
+ "t_total": 12.087
+}

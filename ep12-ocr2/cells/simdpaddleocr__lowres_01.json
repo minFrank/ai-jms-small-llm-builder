@@ -1,0 +1,58 @@
+{
+ "schema": "ep12-cell-v1",
+ "cell": "simdpaddleocr__lowres_01",
+ "engine": "simdpaddleocr",
+ "img": "lowres_01.png",
+ "imgpath": "C:/Users/Frank/AppData/Local/hermes/workspace/articles/bench/ep12-ocr2\\output\\samples\\lowres_01.png",
+ "runs": 3,
+ "warmup": 2,
+ "attempt": 1,
+ "session": "ep12-main",
+ "py": "3.11.16",
+ "ts": 1792929850.0844347,
+ "threads": {
+  "cpu_count": 16,
+  "torch_num_threads": 8
+ },
+ "peak_rss_at_load_mb": 227.0,
+ "rss_scope": "本进程 + 后代进程树",
+ "settings": {
+  "engine": "simdpaddleocr-controlled",
+  "backend": "SimdPaddleOCR 2.0.0 (.NET 10, 纯 C#)",
+  "profile": "controlled",
+  "bundle": "PP-OCRv6_medium (Sdcb.SimdPaddleOCR.Models.ChineseV6Medium 1.0.0)",
+  "note": "load 计时含 .NET 进程启动，与 Python 引擎不可横比"
+ },
+ "warmup_times": [
+  2.919,
+  2.8993
+ ],
+ "warmup_converged": true,
+ "peak_rss_mb": 768.3,
+ "peak_rss_samples": 68,
+ "t_infers": [
+  2.9243,
+  2.9627,
+  2.9332
+ ],
+ "median": 2.9332,
+ "min": 2.9243,
+ "max": 2.9627,
+ "spread_pct": 1.31,
+ "text": "General OCR Theory: Towards OCR-2.0\nvia a Unified End-to-end Model\nunuwoua.cn\n3 Sep 2024",
+ "text_len": 88,
+ "n_lines": 4,
+ "extra": {
+  "n_boxes": 4,
+  "t_infers_csharp": [
+   1.953584
+  ],
+  "effective_line_worker_count": 1
+ },
+ "err": "",
+ "seg": {
+  "t_import": 0.001635,
+  "t_session": 0.359251
+ },
+ "t_total": 17.2291
+}

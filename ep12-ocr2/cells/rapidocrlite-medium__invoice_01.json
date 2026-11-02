@@ -1,0 +1,66 @@
+{
+ "schema": "ep12-cell-v1",
+ "cell": "rapidocrlite-medium__invoice_01",
+ "engine": "rapidocrlite-medium",
+ "img": "invoice_01.png",
+ "imgpath": "C:/Users/Frank/AppData/Local/hermes/workspace/articles/bench/ep11-ocr\\output\\samples\\invoice_01.png",
+ "runs": 3,
+ "warmup": 2,
+ "attempt": 1,
+ "session": "ep12-main",
+ "py": "3.11.16",
+ "ts": 1792928876.7512922,
+ "threads": {
+  "cpu_count": 16
+ },
+ "peak_rss_at_load_mb": 60.8,
+ "rss_scope": "本进程 + 后代进程树",
+ "settings": {
+  "engine": "rapidocrlite-medium",
+  "backend": "onnxruntime (RapidOCRLite C++/Python)",
+  "rapidocr_version": "5.0.0a15",
+  "tier": "medium",
+  "lang_type": "ch",
+  "det_params_aligned_to_paddleocr": true,
+  "aligned_det": {
+   "Det.box_thresh": 0.6,
+   "Det.thresh": 0.3,
+   "Det.unclip_ratio": 1.5
+  }
+ },
+ "warmup_times": [
+  3.2189,
+  2.0986,
+  2.077
+ ],
+ "warmup_converged": true,
+ "peak_rss_mb": 542.0,
+ "peak_rss_samples": 62,
+ "t_infers": [
+  2.1815,
+  2.1071,
+  2.0751
+ ],
+ "median": 2.1071,
+ "min": 2.0751,
+ "max": 2.1815,
+ "spread_pct": 5.05,
+ "text": "【实测样例非真实票据】\n增值税电子普通发票\n发票代码 044032200111\n发票号码 25893417\n开票日期 2026年03月12日\n购买方南京星桥信息有限公司\n纳税人识别号 91320100MA1MPQX23K\n项目名称规格数量单价金额税率税额\n信息技术服务费 次 1 8000.00 8000.00 6% 480.00\n数据存储服务 GB月 12 150.00 1800.00 6% 108.00\n价税合计 人民币 壹万零叁佰捌拾捌元整 10388.00\n销售方杭州云禾科技有限公司\n收款人李明复核王芳开票人张伟",
+ "text_len": 262,
+ "n_lines": 13,
+ "extra": {
+  "elapse": 2.1808604000034393,
+  "elapse_list": [
+   null,
+   null,
+   2.1808604000034393
+  ],
+  "n_boxes": 13
+ },
+ "err": "",
+ "seg": {
+  "t_import": 0.043756,
+  "t_session": 0.923666
+ },
+ "t_total": 14.7714
+}

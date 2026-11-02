@@ -1,0 +1,67 @@
+{
+ "schema": "ep12-cell-v1",
+ "cell": "lightonocr__lc_02",
+ "engine": "lightonocr",
+ "img": "lc_02.png",
+ "imgpath": "C:/Users/Frank/AppData/Local/hermes/workspace/articles/bench/ep11-ocr\\output\\samples\\lc_02.png",
+ "runs": 3,
+ "warmup": 2,
+ "attempt": 1,
+ "session": "ep12-main",
+ "py": "3.11.16",
+ "ts": 1792984751.8125966,
+ "threads": {
+  "cpu_count": 16,
+  "torch_num_threads": 8
+ },
+ "peak_rss_at_load_mb": 1553.6,
+ "rss_scope": "ollama-serve 进程树（推理在 llama-server.exe）",
+ "settings": {
+  "engine": "lightonocr",
+  "backend": "Ollama (LightOnOCR-3 0.8b, CPU)",
+  "params": "0.8B",
+  "api_mode": "local",
+  "quant": "Q8_0",
+  "weight_source": "maternion 社区 GGUF 转换（非 LightOn 官方发布）",
+  "license": "Apache-2.0",
+  "cache_note": "按图片缓存 → 每次计时前卸载（keep_alive=0）",
+  "output_field_note": "结果写在 thinking 字段（response 为空），与 GLM-OCR 不同",
+  "maas_upload": false
+ },
+ "warmup_times": [
+  62.7125,
+  63.9003
+ ],
+ "warmup_converged": true,
+ "peak_rss_mb": 1600.1,
+ "peak_rss_samples": 1042,
+ "t_infers": [
+  63.041,
+  63.3838,
+  63.185
+ ],
+ "median": 63.185,
+ "min": 63.041,
+ "max": 63.3838,
+ "spread_pct": 0.54,
+ "text": "# 2 Related Work\n\n## 2.1 Traditional OCR\n\nOptical Character Recognition (OCR) is a classic research topic that aims to extract text from scanned documents into an editable format for further downstream processing. Traditional OCR, called OCR-1.0, typically uses a framework that is assembled from multiple instances to handle diverse optical characters. The OCR system [10] is usually developed using several domain expert networks, such as layout analysis [54], text detection [18, 52, 55], region extraction, and contents recognition [11, 14, 16]. The reason for using such a scheme is that the text recognition module (the OCR part) failed to scale up successfully, only dealing with the image format of small slices, resulting in the entire OCR process being in a state of first detecting texts/cropping regions, and then recognizing the results within the slice. However, systems with complicated procedures may suffer potential systematic errors and high maintenance costs. Although some OCR-1.0 models, e.g., Nougat [6] can directly process documents at the whole page level, they are often designed and trained for a specific sub-task, leading to unsatisfactory general ability. In the OCR-1.0 era, one inconvenient thing is that we usually need to switch different models according to various OCR needs.\n\n## 2.2 LVLM-driven OCR\n\nLarge Vision-Language Models (LVLMs) [5, 9, 20, 24, 27, 46, 49] have attracted lots of attention in the AI-community due to their powerful generalization capabilities. For the current LVLMs, owning perception-reasoning comprehensive capacity, the OCR ability has become a hot spot with the increasing demand for text-driven visual understanding. Most LVLMs’ OCR capabilities come from the ready-made CLIP [37], especially those that freeze CLIP encoder [24] to complete the entire LVLM training. For such models, the vanilla CLIP, mainly with English scene text knowledge, is the bottleneck for the OCR performance to out-of-domain tasks, such as other languages or documents. Some other LVLMs [5, 49] choose to unfreeze the encoder and freeze the LLM for training to enhance the CLIP-encoder and align the image tokens to text ones. These models will face the problem of low optical character compression rate, as it is difficult for frozen LLM to decode too much text from an aligned image token. To alleviate this problem, some models [9, 27, 50] adopt a sliding window manner to decompose input images into smaller patches. Although this dynamic resolution approach is highly effective in processing high-resolution input images, e.g., PDF, it will result in excessive image tokens and limit the max length of the generated OCR result to some extent.\n\n# 3 General OCR Theory\n\nIn this work, we propose the general OCR theory, i.e., OCR-2.0 (as expounded in Section 1) to promote the development of the OCR field. Based on the proposed new theory, we present a novel OCR model (GOT). In this section, we will introduce the technical details of our model, including the framework, multi-stage training strategy, and the corresponding data engines.\n\n## 3.1 Framework\n\nAs illustrated in Figure 2, GOT comprises three modules, i.e., an image encoder, a linear layer, and an output decoder. The linear layer acts as the connector to map the channel dimension between the vision encoder and the language decoder. We utilize three main steps in optimizing the whole GOT model. First, we conduct the pure text recognition task to pre-train the vision encoder. To lift training efficiency and save GPU resources, we choose a tiny decoder to pass gradients to the encoder. In this stage, we feed images containing scene texts and manual images containing document-level characters into the model to allow the encoder to gather the two most commonly used characters’ encoding abilities. In the next stage, we form the architecture of GOT by connecting the trained vision encoder to a new larger decoder. We prepare lots of more general OCR data (e.g., sheet music, math/molecular formulas, and geometric shapes) to scale up the OCR-2.0 knowledge for this stage. In the final stage, we intend to improve the generalization and applicability of GOT further. Specifically, fine-grained and multi-crop/page synthetic data are generated and added for GOT to support region prompt OCR [20], huge image OCR, and batched PDF OCR features.",
+ "text_len": 4359,
+ "n_lines": 9,
+ "extra": {
+  "wall_s": 63.03165674209595,
+  "output_field": "thinking",
+  "load_duration_s": 1.6376,
+  "prompt_eval_count": 2296,
+  "prompt_eval_duration_s": 23.0764,
+  "eval_count": 963,
+  "eval_duration_s": 38.198,
+  "total_duration_s": 62.9982,
+  "model": "maternion/LightOnOCR-3:0.8b"
+ },
+ "err": "",
+ "seg": {
+  "t_import": 0.001655,
+  "t_session": 0.357528
+ },
+ "t_total": 318.7717
+}

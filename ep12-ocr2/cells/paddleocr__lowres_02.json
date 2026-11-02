@@ -1,0 +1,54 @@
+{
+ "schema": "ep12-cell-v1",
+ "cell": "paddleocr__lowres_02",
+ "engine": "paddleocr",
+ "img": "lowres_02.png",
+ "imgpath": "C:/Users/Frank/AppData/Local/hermes/workspace/articles/bench/ep12-ocr2\\output\\samples\\lowres_02.png",
+ "runs": 3,
+ "warmup": 2,
+ "attempt": 1,
+ "session": "ep12-main",
+ "py": "3.11.16",
+ "ts": 1792935663.7601974,
+ "threads": {
+  "cpu_count": 16,
+  "torch_num_threads": 8
+ },
+ "peak_rss_at_load_mb": 835.7,
+ "rss_scope": "本进程 + 后代进程树",
+ "settings": {
+  "engine": "paddleocr",
+  "backend": "paddlepaddle",
+  "paddleocr": "3.7.0",
+  "models": "PP-OCRv6 det+rec (paddlex 缓存)",
+  "enable_mkldnn": false
+ },
+ "warmup_times": [
+  25.994,
+  26.0427
+ ],
+ "warmup_converged": true,
+ "peak_rss_mb": 2313.6,
+ "peak_rss_samples": 651,
+ "t_infers": [
+  26.0549,
+  26.3679,
+  26.3596
+ ],
+ "median": 26.3596,
+ "min": 26.0549,
+ "max": 26.3679,
+ "spread_pct": 1.19,
+ "text": " 11\nBaidu百度\n国时能人内用的间\n0 ④\n.\n11 O\nT 5 日评上0号电量0工网\n1 请S0RI国国TE0号AN 福 PATA4TORTG2N\n周士行铺步国的加市★TCH用 7 H90V05国105\n3中国的 月\n4 20TAT1 中100\nof ©",
+ "text_len": 131,
+ "n_lines": 12,
+ "extra": {
+  "n_boxes": 20
+ },
+ "err": "",
+ "seg": {
+  "t_import": 0.002236,
+  "t_session": 14.702601
+ },
+ "t_total": 147.8985
+}

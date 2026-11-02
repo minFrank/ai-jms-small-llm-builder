@@ -1,0 +1,309 @@
+{
+  "engine": "PaddleOCR",
+  "version": "3.7.0",
+  "site_packages": "D:\\study\\ai-jms\\ai-radar-trend\\.venv\\Lib\\site-packages",
+  "note": "只读采集 ep11 venv，未做任何修改",
+  "weights": [
+    {
+      "rel": "C:\\Users\\Frank\\.paddlex\\official_models\\PP-OCRv6_medium_det\\.cache\\huggingface\\trees\\8e0f56fb2ef86b461d99cfc7ac5c137738985f61.json",
+      "mb": 0.001,
+      "sha256": "a594e1c1da719685f9ceefd47a7aad4e37d6ff012c1abcb8993767a47e8d29bf"
+    },
+    {
+      "rel": "C:\\Users\\Frank\\.paddlex\\official_models\\PP-OCRv6_medium_det\\inference.json",
+      "mb": 0.312,
+      "sha256": "0f1a7ec35da36173529c7a60238b7f7919e3831929c3f700ad90ad4896adecd5"
+    },
+    {
+      "rel": "C:\\Users\\Frank\\.paddlex\\official_models\\PP-OCRv6_medium_det\\inference.pdiparams",
+      "mb": 61.96,
+      "sha256": "85218d2e3d98f5a21c58b4220627be923a97aee5db3cc71f39536ab31ac53960"
+    },
+    {
+      "rel": "C:\\Users\\Frank\\.paddlex\\official_models\\PP-OCRv6_medium_det\\inference.yml",
+      "mb": 0.001,
+      "sha256": "7298d5ead546584af2504d03355f881ac7a7bc0eb1e282d3e159277c1d0af871"
+    },
+    {
+      "rel": "C:\\Users\\Frank\\.paddlex\\official_models\\PP-OCRv6_medium_rec\\.cache\\huggingface\\trees\\e5a92bcbc5cc1b494628e458d267778f0704fd7c.json",
+      "mb": 0.001,
+      "sha256": "18bc6eb8bf348ff39f7af4340de5d6653d37dc2fae3c5354cbb44661bfd8ecc0"
+    },
+    {
+      "rel": "C:\\Users\\Frank\\.paddlex\\official_models\\PP-OCRv6_medium_rec\\inference.json",
+      "mb": 0.222,
+      "sha256": "0b2e25e990bd072f1bf77d59d67d508bce6c4bd44af6624e0fb27d6da2cd00e8"
+    },
+    {
+      "rel": "C:\\Users\\Frank\\.paddlex\\official_models\\PP-OCRv6_medium_rec\\inference.pdiparams",
+      "mb": 76.465,
+      "sha256": "1b01c79a914587933f615569e75de54f2e638ebb5d3f3b3c1b38c24ede8c7319"
+    },
+    {
+      "rel": "C:\\Users\\Frank\\.paddlex\\official_models\\PP-OCRv6_medium_rec\\inference.yml",
+      "mb": 0.151,
+      "sha256": "991b700facf5b50a7de193468207d5f4255b538dde0d312ae3b7c7a9b6873129"
+    },
+    {
+      "rel": "D:\\models\\.cache\\huggingface\\.agent_harnesses.json",
+      "mb": 0.006,
+      "sha256": "fce17fe375f6d857126d31f6a3e3ae5697c44d530b1bc652aaeb43fe8d7b357c"
+    },
+    {
+      "rel": "D:\\models\\asr\\faster-whisper-base\\config.json",
+      "mb": 0.002,
+      "sha256": "56a6d8110d311f19c8f0471e562832c7527f146b567275bfca59fcf7c184da9a"
+    },
+    {
+      "rel": "D:\\models\\asr\\faster-whisper-base\\tokenizer.json",
+      "mb": 2.203,
+      "sha256": "fb7b63191e9bb045082c79fd742a3106a12c99513ab30df4a0d47fa6cb6fd0ab"
+    },
+    {
+      "rel": "D:\\models\\asr\\faster-whisper-base\\vocabulary.txt",
+      "mb": 0.46,
+      "sha256": "34ce3fe1c5041027b3f8d42912270993f986dbc4bb34cf27f951e34a1e453913"
+    },
+    {
+      "rel": "D:\\models\\asr\\faster-whisper-small\\config.json",
+      "mb": 0.002,
+      "sha256": "b55496ac7940a7ae47d2c01eab40edfd8701feec1229d9cce3b40014383fb828"
+    },
+    {
+      "rel": "D:\\models\\asr\\faster-whisper-small\\tokenizer.json",
+      "mb": 2.203,
+      "sha256": "fb7b63191e9bb045082c79fd742a3106a12c99513ab30df4a0d47fa6cb6fd0ab"
+    },
+    {
+      "rel": "D:\\models\\asr\\faster-whisper-small\\vocabulary.txt",
+      "mb": 0.46,
+      "sha256": "34ce3fe1c5041027b3f8d42912270993f986dbc4bb34cf27f951e34a1e453913"
+    },
+    {
+      "rel": "D:\\models\\asr\\FireRedASR2-AED\\configuration.json",
+      "mb": 0.0,
+      "sha256": "c57f6a580d63f7465c6a22ba95847aee05a1ae1181f5abddffb943d9febda061"
+    },
+    {
+      "rel": "D:\\models\\asr\\FireRedASR2-AED\\dict.txt",
+      "mb": 0.079,
+      "sha256": "1bc613de2112d257e61a349c3e72d1b1a9cf19c33d3ca954197ad2171e5ea07b"
+    },
+    {
+      "rel": "D:\\models\\asr\\Fun-ASR-Nano-2512\\config.yaml",
+      "mb": 0.003,
+      "sha256": "daed38ea6484f5650fb32cbd9069b9aa13880acaf2bcb1f0bf4be2712837917c"
+    },
+    {
+      "rel": "D:\\models\\asr\\Fun-ASR-Nano-2512\\configuration.json",
+      "mb": 0.0,
+      "sha256": "b64a3a55d35bcbe2cf4d31f2d3ef25a423d3ba2ebff203298c27fa055f3c7612"
+    },
+    {
+      "rel": "D:\\models\\asr\\Fun-ASR-Nano-2512\\Qwen3-0.6B\\config.json",
+      "mb": 0.001,
+      "sha256": "660db3b73d788119c04535e48cf9be5f55bc3100841a718637ae695b442f27dd"
+    },
+    {
+      "rel": "D:\\models\\asr\\Fun-ASR-Nano-2512\\Qwen3-0.6B\\generation_config.json",
+      "mb": 0.0,
+      "sha256": "2325da0f15bb848e018c5ae071b7943332e9f871d6b60e2ed22ca97d4cb993d2"
+    },
+    {
+      "rel": "D:\\models\\asr\\Fun-ASR-Nano-2512\\Qwen3-0.6B\\merges.txt",
+      "mb": 1.672,
+      "sha256": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5"
+    },
+    {
+      "rel": "D:\\models\\asr\\Fun-ASR-Nano-2512\\Qwen3-0.6B\\tokenizer.json",
+      "mb": 11.423,
+      "sha256": "aeb13307a71acd8fe81861d94ad54ab689df773318809eed3cbe794b4492dae4"
+    },
+    {
+      "rel": "D:\\models\\asr\\Fun-ASR-Nano-2512\\Qwen3-0.6B\\tokenizer_config.json",
+      "mb": 0.01,
+      "sha256": "d5d09f07b48c3086c508b30d1c9114bd1189145b74e982a265350c923acd8101"
+    },
+    {
+      "rel": "D:\\models\\asr\\Fun-ASR-Nano-2512\\Qwen3-0.6B\\vocab.json",
+      "mb": 2.777,
+      "sha256": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+    },
+    {
+      "rel": "D:\\models\\asr\\Qwen3-ASR-0.6B-hf\\.cache\\huggingface\\trees\\7f1569a48a89f3e3f4dc3a5c9d28bddd903bc76c.json",
+      "mb": 0.001,
+      "sha256": "6c25e31ac83104563cad7ef135a88e1c42190e85df74990aeaa1eb61115b20dd"
+    },
+    {
+      "rel": "D:\\models\\asr\\Qwen3-ASR-0.6B-hf\\config.json",
+      "mb": 0.002,
+      "sha256": "9eecf6f1b383e343889c2e6010e632590fa57d4bc678e151c7d6a160a0dfb04a"
+    },
+    {
+      "rel": "D:\\models\\asr\\Qwen3-ASR-0.6B-hf\\generation_config.json",
+      "mb": 0.0,
+      "sha256": "9939fc9388b79bd70757f938b87381e817173d6a6158f5af6506c0b73e775c3c"
+    },
+    {
+      "rel": "D:\\models\\asr\\Qwen3-ASR-0.6B-hf\\processor_config.json",
+      "mb": 0.0,
+      "sha256": "bc0b230081b44e629dd5b9045b78495615c1831b4b9f4cffe97bd37e82a6156a"
+    },
+    {
+      "rel": "D:\\models\\asr\\Qwen3-ASR-0.6B-hf\\tokenizer.json",
+      "mb": 11.43,
+      "sha256": "fe1fad59be22a41ee293363fcf95fdedbc7c93f3b49270b1d2e18bd1399a7a05"
+    },
+    {
+      "rel": "D:\\models\\asr\\Qwen3-ASR-0.6B-hf\\tokenizer_config.json",
+      "mb": 0.001,
+      "sha256": "945e980986de2ca7768f3326bfdbb4fbea3406f972b8ae0be233089f2b253c11"
+    },
+    {
+      "rel": "D:\\models\\asr\\Qwen3-ASR-1.7B-hf\\.cache\\huggingface\\trees\\bcd2b5b7f32b480ab5790554cfa8347f246a14f3.json",
+      "mb": 0.001,
+      "sha256": "ebe0525ddac2a4f1e13721d4941fc4294314f17b7456969928dffa7c0d6655d6"
+    },
+    {
+      "rel": "D:\\models\\asr\\Qwen3-ASR-1.7B-hf\\config.json",
+      "mb": 0.002,
+      "sha256": "117ac8e63e2af7cae3665e5a632d6eb03f5f384915519ceb6403c15ec6533f63"
+    },
+    {
+      "rel": "D:\\models\\asr\\Qwen3-ASR-1.7B-hf\\generation_config.json",
+      "mb": 0.0,
+      "sha256": "9939fc9388b79bd70757f938b87381e817173d6a6158f5af6506c0b73e775c3c"
+    },
+    {
+      "rel": "D:\\models\\asr\\Qwen3-ASR-1.7B-hf\\processor_config.json",
+      "mb": 0.0,
+      "sha256": "bc0b230081b44e629dd5b9045b78495615c1831b4b9f4cffe97bd37e82a6156a"
+    },
+    {
+      "rel": "D:\\models\\asr\\Qwen3-ASR-1.7B-hf\\tokenizer.json",
+      "mb": 11.43,
+      "sha256": "fe1fad59be22a41ee293363fcf95fdedbc7c93f3b49270b1d2e18bd1399a7a05"
+    },
+    {
+      "rel": "D:\\models\\asr\\Qwen3-ASR-1.7B-hf\\tokenizer_config.json",
+      "mb": 0.001,
+      "sha256": "945e980986de2ca7768f3326bfdbb4fbea3406f972b8ae0be233089f2b253c11"
+    },
+    {
+      "rel": "D:\\models\\asr\\sherpa-onnx-paraformer-zh-2023-09-14\\config.yaml",
+      "mb": 0.057,
+      "sha256": "6244fb74572573abcf7127283c9c20b440a2f43d4891a5d8ede0eee351855d87"
+    },
+    {
+      "rel": "D:\\models\\asr\\sherpa-onnx-paraformer-zh-2023-09-14\\configuration.json",
+      "mb": 0.001,
+      "sha256": "6e4e5234d4f657eb5530fbda198915b9f219aedbaa13a7b59b62819f43022af3"
+    },
+    {
+      "rel": "D:\\models\\asr\\sherpa-onnx-paraformer-zh-2023-09-14\\tokens.txt",
+      "mb": 0.076,
+      "sha256": "59aba8873a2ed1e122c25fee421e25f283b63290efbde85c1f01a853d83cb6e6"
+    },
+    {
+      "rel": "D:\\models\\asr\\sherpa-onnx-sense-voice-zh-en-ja-ko-yue-2024-07-17\\tokens.txt",
+      "mb": 0.316,
+      "sha256": "f449eb28dc567533d7fa59be34e2abca8784f771850c78a47fb731a31429a1dc"
+    },
+    {
+      "rel": "D:\\models\\asr\\sherpa-onnx-whisper-small\\small-tokens.txt",
+      "mb": 0.817,
+      "sha256": "b34b360dbb493e781e479794586d661700670d65564001f23024971d1f2fa126"
+    },
+    {
+      "rel": "D:\\models\\asr\\sherpa-onnx-whisper-small\\test_wavs\\trans.txt",
+      "mb": 0.0,
+      "sha256": "b9ac44e7b794abb1a2d5faf0005e98a665971e7ac2ed15435832cc34edaa9100"
+    },
+    {
+      "rel": "D:\\models\\asr\\sherpa-onnx-zipformer-ctc-small-zh-int8-2025-07-16\\tokens.txt",
+      "mb": 0.013,
+      "sha256": "6fed8c6c248516f38e7faa19404b57413e8ce259f1cbc1fa4aebc86eac32fdfd"
+    },
+    {
+      "rel": "D:\\models\\asr\\sherpa-onnx-zipformer-ctc-zh-int8-2025-07-03\\tokens.txt",
+      "mb": 0.013,
+      "sha256": "6fed8c6c248516f38e7faa19404b57413e8ce259f1cbc1fa4aebc86eac32fdfd"
+    },
+    {
+      "rel": "D:\\models\\ocr\\GOT-OCR2-0-CPU\\.cache\\huggingface\\trees\\e11182e0f650ff1b9aba49d010cb4202b80497fe.json",
+      "mb": 0.002,
+      "sha256": "1afe402d4a152d368f52e8d254dadcd24997f07e05aacb11761d2eb26bc2bf5c"
+    },
+    {
+      "rel": "D:\\models\\ocr\\GOT-OCR2-0-CPU\\config.json",
+      "mb": 0.001,
+      "sha256": "59db7f1fc9346e596221a1af3d836b11148d6ac5e6344f64f34820df672ac629"
+    },
+    {
+      "rel": "D:\\models\\ocr\\GOT-OCR2-0-CPU\\generation_config.json",
+      "mb": 0.0,
+      "sha256": "edc59b3fbc1eabfcd133ac2eb052bcb644512a1d349782ed9c808b186335f7b1"
+    },
+    {
+      "rel": "D:\\models\\ocr\\GOT-OCR2-0-CPU\\special_tokens_map.json",
+      "mb": 0.0,
+      "sha256": "3f3f1efcb858050c70f644df02deb886f47ac6656f6d3a78a69d9e324e3ddc08"
+    },
+    {
+      "rel": "D:\\models\\ocr\\GOT-OCR2-0-CPU\\tokenizer_config.json",
+      "mb": 0.0,
+      "sha256": "d95cb017449fd78f08cb85a59115921edbde7b26abad096f73618a1bb26dbcb1"
+    },
+    {
+      "rel": "D:\\models\\ocr\\got-venv\\Lib\\site-packages\\accelerate-0.28.0.dist-info\\entry_points.txt",
+      "mb": 0.0,
+      "sha256": "67f295e7db48b78a19b540c4434c3c253849ebfd5d77cbd1f21787db80de0172"
+    },
+    {
+      "rel": "D:\\models\\ocr\\got-venv\\Lib\\site-packages\\accelerate-0.28.0.dist-info\\top_level.txt",
+      "mb": 0.0,
+      "sha256": "7ac55f7714e276c8d0f74cec37facfa632c52788a3465c789a72eb1b4f6196de"
+    },
+    {
+      "rel": "D:\\models\\ocr\\got-venv\\Lib\\site-packages\\annotated_doc-0.0.5.dist-info\\entry_points.txt",
+      "mb": 0.0,
+      "sha256": "e8e62005c2f21425207aa2e09ef332389c4f096ce0cbbb1ee2b2cf2ad3689ccb"
+    },
+    {
+      "rel": "D:\\models\\ocr\\got-venv\\Lib\\site-packages\\anyio-4.15.1.dist-info\\entry_points.txt",
+      "mb": 0.0,
+      "sha256": "fdde98bbaba269998d7b40b2768c22ac4f429a0ef350bda0d3cb50a684b742f7"
+    },
+    {
+      "rel": "D:\\models\\ocr\\got-venv\\Lib\\site-packages\\anyio-4.15.1.dist-info\\top_level.txt",
+      "mb": 0.0,
+      "sha256": "420952322597f3fe5da685401081dd118cefa8531d4985a60a3ead630d884e44"
+    },
+    {
+      "rel": "D:\\models\\ocr\\got-venv\\Lib\\site-packages\\certifi-2026.10.18.dist-info\\top_level.txt",
+      "mb": 0.0,
+      "sha256": "28cbb8bd409fb232eb90f6d235d81d7a44bea552730402453bffe723c345ebe5"
+    },
+    {
+      "rel": "D:\\models\\ocr\\got-venv\\Lib\\site-packages\\charset_normalizer-3.5.2.dist-info\\entry_points.txt",
+      "mb": 0.0,
+      "sha256": "0034932ab91767786174e5458ba0dc5041d0452d317f10c813fa44cf8c0b2170"
+    },
+    {
+      "rel": "D:\\models\\ocr\\got-venv\\Lib\\site-packages\\charset_normalizer-3.5.2.dist-info\\top_level.txt",
+      "mb": 0.0,
+      "sha256": "ec04b2cde3ebf3fc6e65626c9ea263201b7257cbe1128d30042bf530f4518b74"
+    },
+    {
+      "rel": "D:\\models\\ocr\\got-venv\\Lib\\site-packages\\click-8.5.0.dist-info\\licenses\\LICENSE.txt",
+      "mb": 0.001,
+      "sha256": "9a8ad106a394e853bfe21f42f4e72d592819a22805d991b5f3275029292b658d"
+    },
+    {
+      "rel": "D:\\models\\ocr\\got-venv\\Lib\\site-packages\\colorama-0.4.6.dist-info\\licenses\\LICENSE.txt",
+      "mb": 0.001,
+      "sha256": "cac35c02686e5d04a5a7140bfb3b36e73aed496656e891102e428886d7930318"
+    }
+  ],
+  "configs": []
+}

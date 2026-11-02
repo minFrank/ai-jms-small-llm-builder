@@ -1,0 +1,63 @@
+{
+ "schema": "ep12-cell-v1",
+ "cell": "glmocr__table_01",
+ "engine": "glmocr",
+ "img": "table_01.png",
+ "imgpath": "C:/Users/Frank/AppData/Local/hermes/workspace/articles/bench/ep11-ocr\\output\\samples\\table_01.png",
+ "runs": 3,
+ "warmup": 2,
+ "attempt": 1,
+ "session": "ep12-main",
+ "py": "3.11.16",
+ "ts": 1792944574.6399777,
+ "threads": {
+  "cpu_count": 16,
+  "torch_num_threads": 8
+ },
+ "peak_rss_at_load_mb": 3181.5,
+ "rss_scope": "ollama-serve 进程树（推理在 llama-server.exe）",
+ "settings": {
+  "engine": "glmocr",
+  "backend": "Ollama (glm-ocr, CPU)",
+  "params": "0.9B",
+  "api_mode": "local",
+  "cache_note": "按图片缓存 → 每次计时前卸载（keep_alive=0）",
+  "maas_upload": false
+ },
+ "warmup_times": [
+  25.3142,
+  8.9816,
+  25.4046
+ ],
+ "warmup_converged": false,
+ "peak_rss_mb": 3181.5,
+ "peak_rss_samples": 458,
+ "t_infers": [
+  24.4439,
+  24.8626,
+  24.5661
+ ],
+ "median": 24.5661,
+ "min": 24.4439,
+ "max": 24.8626,
+ "spread_pct": 1.7,
+ "text": "初二3班期中成绩表\n姓名 语文 数学 英语 物理 总分\n陈思远 92 108 96 88 384\n李雨桐 87 115 91 93 386\n王浩然 78 96 82 75 331\n周子涵 95 102 98 90 385\n孙一诺 83 89 88 71 331\n班级平均分 87.0 102.0 91.0 83.4 363.4",
+ "text_len": 163,
+ "n_lines": 8,
+ "extra": {
+  "wall_s": 24.435322761535645,
+  "load_duration_s": 1.9455,
+  "prompt_eval_count": 770,
+  "prompt_eval_duration_s": 13.8023,
+  "eval_count": 155,
+  "eval_duration_s": 8.632,
+  "total_duration_s": 24.4102,
+  "model": "glm-ocr"
+ },
+ "err": "",
+ "seg": {
+  "t_import": 0.001896,
+  "t_session": 0.358973
+ },
+ "t_total": 136.2739
+}

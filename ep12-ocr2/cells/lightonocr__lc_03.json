@@ -1,0 +1,67 @@
+{
+ "schema": "ep12-cell-v1",
+ "cell": "lightonocr__lc_03",
+ "engine": "lightonocr",
+ "img": "lc_03.png",
+ "imgpath": "C:/Users/Frank/AppData/Local/hermes/workspace/articles/bench/ep11-ocr\\output\\samples\\lc_03.png",
+ "runs": 3,
+ "warmup": 2,
+ "attempt": 1,
+ "session": "ep12-main",
+ "py": "3.11.16",
+ "ts": 1792985071.18519,
+ "threads": {
+  "cpu_count": 16,
+  "torch_num_threads": 8
+ },
+ "peak_rss_at_load_mb": 1548.5,
+ "rss_scope": "ollama-serve 进程树（推理在 llama-server.exe）",
+ "settings": {
+  "engine": "lightonocr",
+  "backend": "Ollama (LightOnOCR-3 0.8b, CPU)",
+  "params": "0.8B",
+  "api_mode": "local",
+  "quant": "Q8_0",
+  "weight_source": "maternion 社区 GGUF 转换（非 LightOn 官方发布）",
+  "license": "Apache-2.0",
+  "cache_note": "按图片缓存 → 每次计时前卸载（keep_alive=0）",
+  "output_field_note": "结果写在 thinking 字段（response 为空），与 GLM-OCR 不同",
+  "maas_upload": false
+ },
+ "warmup_times": [
+  23.2044,
+  22.9855
+ ],
+ "warmup_converged": true,
+ "peak_rss_mb": 1548.5,
+ "peak_rss_samples": 379,
+ "t_infers": [
+  23.5875,
+  23.0229,
+  22.902
+ ],
+ "median": 23.0229,
+ "min": 22.902,
+ "max": 23.5875,
+ "spread_pct": 2.98,
+ "text": "# 【实测样例 非真实票据】\n\n![text](45,132,248,170) 电子发票 普通发票\n\n![text](45,198,251,235) 发票号码 31905672\n\n![text](45,266,321,301) 开票日期 2026年06月28日\n\n![text](44,331,176,370) 购买方 陈静\n\n![text](45,399,448,436) 购买方身份证号 320102199003152418\n\n![text](46,466,499,501) 货物或应税劳务名称 数量 单价 金额 税额\n\n![text](46,534,483,568) 办公用品 文件夹 20 12.50 250.00 3.25\n\n![text](46,601,472,636) 办公用品 中性笔 60 2.80 168.00 2.18\n\n![text](46,668,427,701) 打印纸 A4 5kg 32.00 160.00 2.08\n\n![text](46,734,241,769) 合计 578.00 7.51\n\n![text](44,798,176,837) 开票人 赵敏\n\n![text](46,866,474,901) 备注栏 本发票为实测样例 不作报销凭证",
+ "text_len": 541,
+ "n_lines": 13,
+ "extra": {
+  "wall_s": 23.580636024475098,
+  "output_field": "thinking",
+  "load_duration_s": 1.6673,
+  "prompt_eval_count": 754,
+  "prompt_eval_duration_s": 5.6295,
+  "eval_count": 440,
+  "eval_duration_s": 16.2483,
+  "total_duration_s": 23.5766,
+  "model": "maternion/LightOnOCR-3:0.8b"
+ },
+ "err": "",
+ "seg": {
+  "t_import": 0.001772,
+  "t_session": 0.357437
+ },
+ "t_total": 118.2501
+}

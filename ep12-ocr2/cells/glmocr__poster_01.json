@@ -1,0 +1,62 @@
+{
+ "schema": "ep12-cell-v1",
+ "cell": "glmocr__poster_01",
+ "engine": "glmocr",
+ "img": "poster_01.png",
+ "imgpath": "C:/Users/Frank/AppData/Local/hermes/workspace/articles/bench/ep12-ocr2\\output\\samples\\poster_01.png",
+ "runs": 3,
+ "warmup": 2,
+ "attempt": 1,
+ "session": "ep12-main",
+ "py": "3.11.16",
+ "ts": 1792946136.7458265,
+ "threads": {
+  "cpu_count": 16,
+  "torch_num_threads": 8
+ },
+ "peak_rss_at_load_mb": 3243.3,
+ "rss_scope": "ollama-serve 进程树（推理在 llama-server.exe）",
+ "settings": {
+  "engine": "glmocr",
+  "backend": "Ollama (glm-ocr, CPU)",
+  "params": "0.9B",
+  "api_mode": "local",
+  "cache_note": "按图片缓存 → 每次计时前卸载（keep_alive=0）",
+  "maas_upload": false
+ },
+ "warmup_times": [
+  54.3372,
+  54.2487
+ ],
+ "warmup_converged": true,
+ "peak_rss_mb": 0.0,
+ "peak_rss_samples": 1056,
+ "t_infers": [
+  58.6293,
+  52.8072,
+  54.4662
+ ],
+ "median": 54.4662,
+ "min": 52.8072,
+ "max": 58.6293,
+ "spread_pct": 10.69,
+ "text": "春季公开课\n\n主讲人工智能基础\n时间周六上午九点\n地点市图书馆报告厅\n免费入场无需报名\n\n主讲人工智能基础\n时间周六上午九点\n地点市图书馆报告厅\n免费入场无需报名",
+ "text_len": 81,
+ "n_lines": 9,
+ "extra": {
+  "wall_s": 58.624470710754395,
+  "load_duration_s": 1.6981,
+  "prompt_eval_count": 2135,
+  "prompt_eval_duration_s": 53.9942,
+  "eval_count": 52,
+  "eval_duration_s": 2.8629,
+  "total_duration_s": 58.621,
+  "model": "glm-ocr"
+ },
+ "err": "",
+ "seg": {
+  "t_import": 0.001734,
+  "t_session": 0.358834
+ },
+ "t_total": 277.0471
+}

@@ -1,0 +1,58 @@
+{
+ "schema": "ep12-cell-v1",
+ "cell": "simdpaddleocr-default__table_01",
+ "engine": "simdpaddleocr-default",
+ "img": "table_01.png",
+ "imgpath": "C:/Users/Frank/AppData/Local/hermes/workspace/articles/bench/ep11-ocr\\output\\samples\\table_01.png",
+ "runs": 3,
+ "warmup": 2,
+ "attempt": 1,
+ "session": "ep12-main",
+ "py": "3.11.16",
+ "ts": 1792930368.6706252,
+ "threads": {
+  "cpu_count": 16,
+  "torch_num_threads": 8
+ },
+ "peak_rss_at_load_mb": 226.5,
+ "rss_scope": "本进程 + 后代进程树",
+ "settings": {
+  "engine": "simdpaddleocr-default",
+  "backend": "SimdPaddleOCR 2.0.0 (.NET 10, 纯 C#)",
+  "profile": "default",
+  "bundle": "PP-OCRv6_medium (Sdcb.SimdPaddleOCR.Models.ChineseV6Medium 1.0.0)",
+  "note": "load 计时含 .NET 进程启动，与 Python 引擎不可横比"
+ },
+ "warmup_times": [
+  2.4134,
+  2.3695
+ ],
+ "warmup_converged": true,
+ "peak_rss_mb": 741.3,
+ "peak_rss_samples": 56,
+ "t_infers": [
+  2.3503,
+  2.458,
+  2.3929
+ ],
+ "median": 2.3929,
+ "min": 2.3503,
+ "max": 2.458,
+ "spread_pct": 4.5,
+ "text": "初二3班期中成绩表\n姓名 语文 数学 英语 物理 总分\n陈思远 92 108 96 88 384\n李雨桐 78 115 91 93 386\n王浩然 78 96 82 77 331\n周子涵 96 102 86 06 385\n孙一诺 83 68 88 71 331\n班级平均分 87.0 102.0 91.0 83.4 363.4",
+ "text_len": 163,
+ "n_lines": 8,
+ "extra": {
+  "n_boxes": 43,
+  "t_infers_csharp": [
+   1.37159
+  ],
+  "effective_line_worker_count": 4
+ },
+ "err": "",
+ "seg": {
+  "t_import": 0.002212,
+  "t_session": 0.35993
+ },
+ "t_total": 14.5866
+}

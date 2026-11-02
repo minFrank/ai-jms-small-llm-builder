@@ -1,0 +1,66 @@
+{
+ "schema": "ep12-cell-v1",
+ "cell": "rapidocrlite-medium__seal_01",
+ "engine": "rapidocrlite-medium",
+ "img": "seal_01.png",
+ "imgpath": "C:/Users/Frank/AppData/Local/hermes/workspace/articles/bench/ep12-ocr2\\output\\samples\\seal_01.png",
+ "runs": 3,
+ "warmup": 2,
+ "attempt": 1,
+ "session": "ep12-main",
+ "py": "3.11.16",
+ "ts": 1792929349.131899,
+ "threads": {
+  "cpu_count": 16
+ },
+ "peak_rss_at_load_mb": 63.0,
+ "rss_scope": "本进程 + 后代进程树",
+ "settings": {
+  "engine": "rapidocrlite-medium",
+  "backend": "onnxruntime (RapidOCRLite C++/Python)",
+  "rapidocr_version": "5.0.0a15",
+  "tier": "medium",
+  "lang_type": "ch",
+  "det_params_aligned_to_paddleocr": true,
+  "aligned_det": {
+   "Det.box_thresh": 0.6,
+   "Det.thresh": 0.3,
+   "Det.unclip_ratio": 1.5
+  }
+ },
+ "warmup_times": [
+  2.8341,
+  1.863,
+  1.7036
+ ],
+ "warmup_converged": false,
+ "peak_rss_mb": 629.0,
+ "peak_rss_samples": 55,
+ "t_infers": [
+  1.7004,
+  1.734,
+  1.6945
+ ],
+ "median": 1.7004,
+ "min": 1.6945,
+ "max": 1.734,
+ "spread_pct": 2.32,
+ "text": "兹证明张明远同志系我单位职工\n自二零一九年三\n理一职\n特此证明，特予盖章确认",
+ "text_len": 38,
+ "n_lines": 4,
+ "extra": {
+  "elapse": 1.7001335999957519,
+  "elapse_list": [
+   null,
+   null,
+   1.7001335999957519
+  ],
+  "n_boxes": 4
+ },
+ "err": "",
+ "seg": {
+  "t_import": 0.042239,
+  "t_session": 0.946016
+ },
+ "t_total": 12.5695
+}

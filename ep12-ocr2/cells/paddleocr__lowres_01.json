@@ -1,0 +1,54 @@
+{
+ "schema": "ep12-cell-v1",
+ "cell": "paddleocr__lowres_01",
+ "engine": "paddleocr",
+ "img": "lowres_01.png",
+ "imgpath": "C:/Users/Frank/AppData/Local/hermes/workspace/articles/bench/ep12-ocr2\\output\\samples\\lowres_01.png",
+ "runs": 3,
+ "warmup": 2,
+ "attempt": 1,
+ "session": "ep12-main",
+ "py": "3.11.16",
+ "ts": 1792935534.085007,
+ "threads": {
+  "cpu_count": 16,
+  "torch_num_threads": 8
+ },
+ "peak_rss_at_load_mb": 834.3,
+ "rss_scope": "本进程 + 后代进程树",
+ "settings": {
+  "engine": "paddleocr",
+  "backend": "paddlepaddle",
+  "paddleocr": "3.7.0",
+  "models": "PP-OCRv6 det+rec (paddlex 缓存)",
+  "enable_mkldnn": false
+ },
+ "warmup_times": [
+  22.3101,
+  21.9708
+ ],
+ "warmup_converged": true,
+ "peak_rss_mb": 2566.5,
+ "peak_rss_samples": 560,
+ "t_infers": [
+  21.9904,
+  22.191,
+  22.2314
+ ],
+ "median": 22.191,
+ "min": 21.9904,
+ "max": 22.2314,
+ "spread_pct": 1.09,
+ "text": "General OCR Theory: Towards OCR-2.0\nvia a Unified End-to-end Model\n1.\n3 024",
+ "text_len": 75,
+ "n_lines": 4,
+ "extra": {
+  "n_boxes": 4
+ },
+ "err": "",
+ "seg": {
+  "t_import": 0.001729,
+  "t_session": 14.636662
+ },
+ "t_total": 127.6456
+}

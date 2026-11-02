@@ -1,0 +1,106 @@
+[
+ {
+  "model": "Qwen/Qwen3-TTS-12Hz-0.6B-CustomVoice",
+  "src": "国内·阿里",
+  "license": "apache-2.0",
+  "downloads": 833214,
+  "likes": 210,
+  "gguf": false
+ },
+ {
+  "model": "Qwen/Qwen3-TTS-12Hz-1.7B-CustomVoice",
+  "src": "国内·阿里",
+  "license": "apache-2.0",
+  "downloads": 1877958,
+  "likes": 2180,
+  "gguf": false
+ },
+ {
+  "model": "FunAudioLLM/Fun-CosyVoice3-0.5B-2512",
+  "src": "国内·阿里(已有)",
+  "license": "apache-2.0",
+  "downloads": 256878,
+  "likes": 674,
+  "gguf": false
+ },
+ {
+  "model": "fishaudio/fish-speech-1.5",
+  "src": "国际·Fish Audio",
+  "license": "cc-by-nc-sa-4.0",
+  "downloads": 4116,
+  "likes": 779,
+  "gguf": false
+ },
+ {
+  "model": "SWivid/F5-TTS",
+  "src": "国际·SWivid",
+  "license": "cc-by-nc-4.0",
+  "downloads": 1035316,
+  "likes": 1224,
+  "gguf": false
+ },
+ {
+  "model": "2Noise/ChatTTS",
+  "src": "国际·2Noise",
+  "license": "cc-by-nc-4.0",
+  "downloads": 5886,
+  "likes": 1689,
+  "gguf": false
+ },
+ {
+  "model": "ResembleAI/chatterbox",
+  "src": "国际·Resemble",
+  "license": "mit",
+  "downloads": 1982575,
+  "likes": 1870,
+  "gguf": false
+ },
+ {
+  "model": "hexgrad/Kokoro-82M",
+  "src": "国际·hexgrad",
+  "license": "apache-2.0",
+  "downloads": 10608154,
+  "likes": 7287,
+  "gguf": false
+ },
+ {
+  "model": "OpenMOSS-Team/MOSS-TTS-v1.5",
+  "src": "国内·OpenMOSS",
+  "license": "apache-2.0",
+  "downloads": 107273,
+  "likes": 216,
+  "gguf": false
+ },
+ {
+  "model": "IndexTeam/IndexTTS-2.5",
+  "src": "国内·B站",
+  "license": "other",
+  "downloads": 20316,
+  "likes": 261,
+  "gguf": false
+ },
+ {
+  "model": "stepfun-ai/Step-Audio-TTS-3B",
+  "src": "国内·阶跃",
+  "license": "apache-2.0",
+  "downloads": 203,
+  "likes": 197,
+  "gguf": false
+ },
+ {
+  "model": "Zyphra/ZONOS2",
+  "src": "国际·Zyphra",
+  "license": "apache-2.0",
+  "downloads": 2284,
+  "likes": 153,
+  "gguf": false
+ },
+ {
+  "model": "openbmb/VoxCPM2",
+  "src": "国内·面壁",
+  "license": "apache-2.0",
+  "downloads": 983377,
+  "likes": 1732,
+  "gguf": false
+ }
+]

@@ -1,0 +1,55 @@
+{
+ "schema": "ep12-cell-v1",
+ "cell": "paddleocr__shot_03",
+ "engine": "paddleocr",
+ "img": "shot_03.png",
+ "imgpath": "C:/Users/Frank/AppData/Local/hermes/workspace/articles/bench/ep11-ocr\\output\\samples\\shot_03.png",
+ "runs": 3,
+ "warmup": 2,
+ "attempt": 1,
+ "session": "ep12-main",
+ "py": "3.11.16",
+ "ts": 1792934226.1615336,
+ "threads": {
+  "cpu_count": 16,
+  "torch_num_threads": 8
+ },
+ "peak_rss_at_load_mb": 835.7,
+ "rss_scope": "本进程 + 后代进程树",
+ "settings": {
+  "engine": "paddleocr",
+  "backend": "paddlepaddle",
+  "paddleocr": "3.7.0",
+  "models": "PP-OCRv6 det+rec (paddlex 缓存)",
+  "enable_mkldnn": false
+ },
+ "warmup_times": [
+  16.2345,
+  17.1001,
+  17.4934
+ ],
+ "warmup_converged": false,
+ "peak_rss_mb": 1396.1,
+ "peak_rss_samples": 517,
+ "t_infers": [
+  17.3629,
+  17.3359,
+  17.3925
+ ],
+ "median": 17.3629,
+ "min": 17.3359,
+ "max": 17.3925,
+ "spread_pct": 0.33,
+ "text": "首页产品文档社区下载关于\n本地部署的文字识别服务方案对比\n方案一直接调用开源引擎，改动最小，适合一次性批量任务。\n方案二封装成常驻服务，支持并发与队列，适合长期跑批的场景。\n方案三走云端接口，按次计费，前期成本低但数据要出内网。\n常见问题\n模型下载失败怎么办可改用国内镜像地址重新拉取。\n内存占用过高怎么办可限制并发数并关闭不必要的后端。\n侧栏说明\n本页数据来自单机实测，仅覆盖中文印刷体与常见票据版式，\n手写体与相机拍照场景未纳入本轮测试范围。",
+ "text_len": 223,
+ "n_lines": 11,
+ "extra": {
+  "n_boxes": 11
+ },
+ "err": "",
+ "seg": {
+  "t_import": 0.001707,
+  "t_session": 12.018227
+ },
+ "t_total": 116.9246
+}

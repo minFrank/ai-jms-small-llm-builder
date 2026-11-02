@@ -1,0 +1,65 @@
+{
+  "engine": "RapidOCRLite",
+  "version": "5.0.0a15",
+  "backend": "onnxruntime",
+  "default_config": {
+    "model_type": "small",
+    "ocr_version": "PP-OCRv6",
+    "lang_type": "ch",
+    "src": "config.yaml L144-146"
+  },
+  "ppocrv6_variants": {
+    "det": {
+      "tiny": {
+        "name": "multi_PP-OCRv6_det_tiny",
+        "url": "https://www.modelscope.cn/models/RapidAI/RapidOCR/resolve/v3.10.0/onnx/PP-OCRv6/det/PP-OCRv6_det_tiny.onnx",
+        "sha256": "f42c0fbd294d95eac1a550e131b277dac97462c8025fa4b6c3cec1b7894bd3d5",
+        "dict_url": ""
+      },
+      "small": {
+        "name": "multi_PP-OCRv6_det_small",
+        "url": "https://www.modelscope.cn/models/RapidAI/RapidOCR/resolve/v3.10.0/onnx/PP-OCRv6/det/PP-OCRv6_det_small.onnx",
+        "sha256": "090f04abcd9d9a7498bc4ebf677e4cb9bdce1fe4197ddb7e529f1ef44e1ff94f",
+        "dict_url": ""
+      },
+      "medium": {
+        "name": "multi_PP-OCRv6_det_medium",
+        "url": "https://www.modelscope.cn/models/RapidAI/RapidOCR/resolve/v3.10.0/onnx/PP-OCRv6/det/PP-OCRv6_det_medium.onnx",
+        "sha256": "92078b7355007ccfffcd4c8cd441a3afd4538904d06881b29a155e1e679907c2",
+        "dict_url": ""
+      },
+      "det": {
+        "name": "lite_indra_det",
+        "url": "",
+        "sha256": "",
+        "dict_url": ""
+      }
+    },
+    "rec": {
+      "tiny": {
+        "name": "multi_PP-OCRv6_rec_tiny",
+        "url": "https://www.modelscope.cn/models/RapidAI/RapidOCR/resolve/v3.10.0/onnx/PP-OCRv6/rec/PP-OCRv6_rec_tiny.onnx",
+        "sha256": "e16e242de5937ad92609223f19bc2aff3727ee40b095f996907c24749bad251b",
+        "dict_url": "https://www.modelscope.cn/models/RapidAI/RapidOCR/resolve/v3.10.0/paddle/PP-OCRv6/rec/PP-OCRv6_rec_tiny/ppocrv6_tiny_dict.txt"
+      },
+      "small": {
+        "name": "multi_PP-OCRv6_rec_small",
+        "url": "https://www.modelscope.cn/models/RapidAI/RapidOCR/resolve/v3.10.0/onnx/PP-OCRv6/rec/PP-OCRv6_rec_small.onnx",
+        "sha256": "6f327246b50388f3c176ae304bd95767ea6dc0c9ae92153ef8cbe210b3c14884",
+        "dict_url": "https://www.modelscope.cn/models/RapidAI/RapidOCR/resolve/v3.10.0/paddle/PP-OCRv6/rec/PP-OCRv6_rec_small/ppocrv6_dict.txt"
+      },
+      "medium": {
+        "name": "multi_PP-OCRv6_rec_medium",
+        "url": "https://www.modelscope.cn/models/RapidAI/RapidOCR/resolve/v3.10.0/onnx/PP-OCRv6/rec/PP-OCRv6_rec_medium.onnx",
+        "sha256": "eef444829dbbe18d7fea59a3f6eb75647518d2b3a9568d27c92e42940204894b",
+        "dict_url": "https://www.modelscope.cn/models/RapidAI/RapidOCR/resolve/v3.10.0/paddle/PP-OCRv6/rec/PP-OCRv6_rec_medium/ppocrv6_dict.txt"
+      },
+      "rec": {
+        "name": "lite_indra_rec",
+        "url": "",
+        "sha256": "",
+        "dict_url": ""
+      }
+    }
+  }
+}

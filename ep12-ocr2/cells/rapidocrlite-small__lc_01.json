@@ -1,0 +1,66 @@
+{
+ "schema": "ep12-cell-v1",
+ "cell": "rapidocrlite-small__lc_01",
+ "engine": "rapidocrlite-small",
+ "img": "lc_01.png",
+ "imgpath": "C:/Users/Frank/AppData/Local/hermes/workspace/articles/bench/ep11-ocr\\output\\samples\\lc_01.png",
+ "runs": 3,
+ "warmup": 2,
+ "attempt": 1,
+ "session": "ep12-main",
+ "py": "3.11.16",
+ "ts": 1792978961.4093587,
+ "threads": {
+  "cpu_count": 16
+ },
+ "peak_rss_at_load_mb": 66.4,
+ "rss_scope": "本进程 + 后代进程树",
+ "settings": {
+  "engine": "rapidocrlite-small",
+  "backend": "onnxruntime (RapidOCRLite C++/Python)",
+  "rapidocr_version": "5.0.0a15",
+  "tier": "small",
+  "lang_type": "ch",
+  "det_params_aligned_to_paddleocr": true,
+  "aligned_det": {
+   "Det.box_thresh": 0.6,
+   "Det.thresh": 0.3,
+   "Det.unclip_ratio": 1.5
+  }
+ },
+ "warmup_times": [
+  1.0,
+  0.6502,
+  0.7134
+ ],
+ "warmup_converged": false,
+ "peak_rss_mb": 371.7,
+ "peak_rss_samples": 23,
+ "t_infers": [
+  0.6827,
+  0.6943,
+  0.6874
+ ],
+ "median": 0.6874,
+ "min": 0.6827,
+ "max": 0.6943,
+ "spread_pct": 1.69,
+ "text": "新闻hao123地图贴吧视频图片网盘 库库AI\nBaid百度\n百度库库写报告、做图片、代码编程、有问题就找库库>\n百度热搜\n把黄旗海保护好 孩子上班父母也能领工资\n披旭日旗的中国留学生已被遣返开除 乒乓球名将王曼昱等3人拟记大功\n南太行徒步失联的33岁女子已找到 救场李克勤走红草根歌手3周涨粉40万\n读懂中国经济的韧性和活力 为戒烟每天存40元9个月后烟钱摆满床\n公司给2千员工每人发1条5克纯金手链 情侣无视火焰在抗议现场淡定饮酒交谈\n下载\n辅助",
+ "text_len": 225,
+ "n_lines": 11,
+ "extra": {
+  "elapse": 0.6822231999976793,
+  "elapse_list": [
+   null,
+   null,
+   0.6822231999976793
+  ],
+  "n_boxes": 17
+ },
+ "err": "",
+ "seg": {
+  "t_import": 0.057557,
+  "t_session": 0.895646
+ },
+ "t_total": 5.4325
+}

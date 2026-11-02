@@ -1,0 +1,66 @@
+{
+ "schema": "ep12-cell-v1",
+ "cell": "rapidocrlite-medium__poster_02",
+ "engine": "rapidocrlite-medium",
+ "img": "poster_02.png",
+ "imgpath": "C:/Users/Frank/AppData/Local/hermes/workspace/articles/bench/ep12-ocr2\\output\\samples\\poster_02.png",
+ "runs": 3,
+ "warmup": 2,
+ "attempt": 1,
+ "session": "ep12-main",
+ "py": "3.11.16",
+ "ts": 1792929334.7220943,
+ "threads": {
+  "cpu_count": 16
+ },
+ "peak_rss_at_load_mb": 65.8,
+ "rss_scope": "本进程 + 后代进程树",
+ "settings": {
+  "engine": "rapidocrlite-medium",
+  "backend": "onnxruntime (RapidOCRLite C++/Python)",
+  "rapidocr_version": "5.0.0a15",
+  "tier": "medium",
+  "lang_type": "ch",
+  "det_params_aligned_to_paddleocr": true,
+  "aligned_det": {
+   "Det.box_thresh": 0.6,
+   "Det.thresh": 0.3,
+   "Det.unclip_ratio": 1.5
+  }
+ },
+ "warmup_times": [
+  3.0158,
+  1.9877,
+  2.0674
+ ],
+ "warmup_converged": false,
+ "peak_rss_mb": 686.4,
+ "peak_rss_samples": 59,
+ "t_infers": [
+  2.1393,
+  1.9932,
+  1.9628
+ ],
+ "median": 1.9932,
+ "min": 1.9628,
+ "max": 2.1393,
+ "spread_pct": 8.85,
+ "text": "社区义诊\n内科外科中医科\n血压血糖免费测\n六十五岁以上优先\n随带既往病历\n内科外科中医科\n血压血糖免费测\n六十五岁以上优先\n随带既往病历",
+ "text_len": 68,
+ "n_lines": 9,
+ "extra": {
+  "elapse": 2.1387937999970745,
+  "elapse_list": [
+   null,
+   null,
+   2.1387937999970745
+  ],
+  "n_boxes": 9
+ },
+ "err": "",
+ "seg": {
+  "t_import": 0.04028,
+  "t_session": 0.9214
+ },
+ "t_total": 14.1818
+}

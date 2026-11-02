@@ -1,0 +1,66 @@
+{
+ "schema": "ep12-cell-v1",
+ "cell": "rapidocrlite-medium__hard_02",
+ "engine": "rapidocrlite-medium",
+ "img": "hard_02.png",
+ "imgpath": "C:/Users/Frank/AppData/Local/hermes/workspace/articles/bench/ep11-ocr\\output\\samples\\hard_02.png",
+ "runs": 3,
+ "warmup": 2,
+ "attempt": 1,
+ "session": "ep12-main",
+ "py": "3.11.16",
+ "ts": 1792928855.1255102,
+ "threads": {
+  "cpu_count": 16
+ },
+ "peak_rss_at_load_mb": 61.2,
+ "rss_scope": "本进程 + 后代进程树",
+ "settings": {
+  "engine": "rapidocrlite-medium",
+  "backend": "onnxruntime (RapidOCRLite C++/Python)",
+  "rapidocr_version": "5.0.0a15",
+  "tier": "medium",
+  "lang_type": "ch",
+  "det_params_aligned_to_paddleocr": true,
+  "aligned_det": {
+   "Det.box_thresh": 0.6,
+   "Det.thresh": 0.3,
+   "Det.unclip_ratio": 1.5
+  }
+ },
+ "warmup_times": [
+  4.205,
+  3.3645,
+  3.3033
+ ],
+ "warmup_converged": true,
+ "peak_rss_mb": 647.9,
+ "peak_rss_samples": 87,
+ "t_infers": [
+  3.1088,
+  3.1233,
+  3.2854
+ ],
+ "median": 3.1233,
+ "min": 3.1088,
+ "max": 3.2854,
+ "spread_pct": 5.65,
+ "text": "产品说明书智能空气检测仪型号KJ-2000\n一产品参数\n额定电压 DC 5V 2A 额定功率 8W 颗粒物CADR 200立方米每小时\n甲醛CADR 80立方米每小时 噪声32至66分贝 适用面积23至40平方米\n二指示灯说明\n绿色常亮空气质量优良黄色常亮轻度污染红色常亮中重度污染\n蓝色常亮正在联网配网白色闪烁固件升级中请勿断电\n三故障处理\nE01 传感器无响应 请断电重启 E02 风机堵转 请清理进风口\nE03 网络超时 请检查路由器 2.4G 频段 E04 存储异常请恢复出厂设置\n四售后保修期一年全国联保客服电话400-820-1234 服务时间周一至周日 九点至二十一点",
+ "text_len": 291,
+ "n_lines": 11,
+ "extra": {
+  "elapse": 3.108504499999981,
+  "elapse_list": [
+   null,
+   null,
+   3.108504499999981
+  ],
+  "n_boxes": 11
+ },
+ "err": "",
+ "seg": {
+  "t_import": 0.044619,
+  "t_session": 0.944972
+ },
+ "t_total": 21.4218
+}

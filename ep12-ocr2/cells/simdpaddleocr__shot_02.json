@@ -1,0 +1,58 @@
+{
+ "schema": "ep12-cell-v1",
+ "cell": "simdpaddleocr__shot_02",
+ "engine": "simdpaddleocr",
+ "img": "shot_02.png",
+ "imgpath": "C:/Users/Frank/AppData/Local/hermes/workspace/articles/bench/ep11-ocr\\output\\samples\\shot_02.png",
+ "runs": 3,
+ "warmup": 2,
+ "attempt": 1,
+ "session": "ep12-main",
+ "py": "3.11.16",
+ "ts": 1792929684.8941946,
+ "threads": {
+  "cpu_count": 16,
+  "torch_num_threads": 8
+ },
+ "peak_rss_at_load_mb": 226.4,
+ "rss_scope": "本进程 + 后代进程树",
+ "settings": {
+  "engine": "simdpaddleocr-controlled",
+  "backend": "SimdPaddleOCR 2.0.0 (.NET 10, 纯 C#)",
+  "profile": "controlled",
+  "bundle": "PP-OCRv6_medium (Sdcb.SimdPaddleOCR.Models.ChineseV6Medium 1.0.0)",
+  "note": "load 计时含 .NET 进程启动，与 Python 引擎不可横比"
+ },
+ "warmup_times": [
+  4.7722,
+  4.7872
+ ],
+ "warmup_converged": true,
+ "peak_rss_mb": 795.2,
+ "peak_rss_samples": 109,
+ "t_infers": [
+  4.7627,
+  4.7484,
+  4.796
+ ],
+ "median": 4.7627,
+ "min": 4.7484,
+ "max": 4.796,
+ "spread_pct": 1.0,
+ "text": "中华人民共和国中央人民政府 Q 首页 | 简 繁 | EN| 登录|\nwww.gov.cn\n“有高远目标，更有耐心有定力” 习近平总书记在内蒙古乌兰察布考\n习近平在内蒙古乌兰察布考察时强调统筹高质量发展和高水平保护坚定不移走生态优先绿色发展之路|视频\n要闻\n动能向新结构向优\n 从亚太伙伴关系到亚太共同体——习近平主\n9组数字看 亚太合作迈上新台阶\n李强会见伊朗第一副总统阿雷夫 会见白俄\n前三季度经济运行总体平稳 尔钦\n高质量发展取得新成效 李强会见塔吉克斯坦总统拉赫蒙 同塔吉克\n苏尔佐达会谈\n丁薛祥出席2026年世界职业技术教育发展大\n会见与会外国政要\n何立峰与俄罗斯副总理切尔内申科共同主持\n理定期会晤委员会第三十次会议\n中俄人文合作委员会第二十七次会议召开谌\n科娃共同主持\n动能向新结构向优：9组数字看前三季度经济运行总体平稳高质量发展\n取得新成效\n最新政策 政策解读 贯彻落实党中央决\n中共中央国务院关于发展新质生产力 解读 国务院工作进行\n的意见 2026年8月经济数据 做有创造力的执行\n国务院关于《国家残疾预防行动计划 点击查看专题>>\n前三季度我国GDP同比增长\n(2026—2030年)》的批复 9月CPI温和回升PPI涨幅扩大，能读出\n国务院办公厅关于发展体育赛事激发 哪些信息 国家发展改革委等三部门完\n务价格政策\n消费活力的意见 前三季度金融数据出炉多元化融资特\n国务院关于《医疗康复护理扩容提升 征鲜明 我国将实施城镇供热“温暖工\n年行动\n工程实施方案》的批复 7部门实施品质电商“五优”行动，商\n中共中央办公厅国务院办公厅印发 务部进行解读\n《文化遗产保护传承\"十五五\"规划》 政务联播\n国务院残工委印发《国家残\n国务院政策文件库 国务院组织机构 动计划（2026—2030年）》\n搜政策. Q 应急管理部、财政部组织开\n灾群众冬春救助工作\n国旗 国歌 国徽国情\n政府信息公开惠企助企政策集纳查询 国务院公报国家行政法规库国家规章库 全国秋粮收获进入高峰期进",
+ "text_len": 845,
+ "n_lines": 40,
+ "extra": {
+  "n_boxes": 70,
+  "t_infers_csharp": [
+   3.793158
+  ],
+  "effective_line_worker_count": 1
+ },
+ "err": "",
+ "seg": {
+  "t_import": 0.001636,
+  "t_session": 0.358386
+ },
+ "t_total": 26.4431
+}

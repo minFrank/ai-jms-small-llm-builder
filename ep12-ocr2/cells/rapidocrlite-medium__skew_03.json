@@ -1,0 +1,66 @@
+{
+ "schema": "ep12-cell-v1",
+ "cell": "rapidocrlite-medium__skew_03",
+ "engine": "rapidocrlite-medium",
+ "img": "skew_03.png",
+ "imgpath": "C:/Users/Frank/AppData/Local/hermes/workspace/articles/bench/ep11-ocr\\output\\samples\\skew_03.png",
+ "runs": 3,
+ "warmup": 2,
+ "attempt": 1,
+ "session": "ep12-main",
+ "py": "3.11.16",
+ "ts": 1792929227.5750303,
+ "threads": {
+  "cpu_count": 16
+ },
+ "peak_rss_at_load_mb": 61.2,
+ "rss_scope": "本进程 + 后代进程树",
+ "settings": {
+  "engine": "rapidocrlite-medium",
+  "backend": "onnxruntime (RapidOCRLite C++/Python)",
+  "rapidocr_version": "5.0.0a15",
+  "tier": "medium",
+  "lang_type": "ch",
+  "det_params_aligned_to_paddleocr": true,
+  "aligned_det": {
+   "Det.box_thresh": 0.6,
+   "Det.thresh": 0.3,
+   "Det.unclip_ratio": 1.5
+  }
+ },
+ "warmup_times": [
+  4.4921,
+  3.3374,
+  3.3047
+ ],
+ "warmup_converged": true,
+ "peak_rss_mb": 690.4,
+ "peak_rss_samples": 93,
+ "t_infers": [
+  3.5059,
+  3.3068,
+  3.3086
+ ],
+ "median": 3.3086,
+ "min": 3.3068,
+ "max": 3.5059,
+ "spread_pct": 6.02,
+ "text": "备注\n占比\n家庭月度开支明细 金额 每月15日扣款\n46.3%\n项目 6800.00 按季预缴\n类别 2.9%\n房贷 420.00 现金为主\n居住 12.6%\n物业费 1860.00 周末采购\n居住 6.3%\n菜场 930.00 月票\n食品 1.8%\n超市 268.00 92号汽油\n食品 4.1%\n地铁 600.00 网购\n交通 2.4%\n加油 356.00 学校门口\n交通 0.6%\n课外书 88.00 社区医院\n教育 1.6%\n文具 240.00 林岚\n教育 记账人\n门诊 100.0%\n医疗\n14562.00\n合计",
+ "text_len": 261,
+ "n_lines": 26,
+ "extra": {
+  "elapse": 3.505156300001545,
+  "elapse_list": [
+   null,
+   null,
+   3.505156300001545
+  ],
+  "n_boxes": 56
+ },
+ "err": "",
+ "seg": {
+  "t_import": 0.044064,
+  "t_session": 0.93772
+ },
+ "t_total": 22.2776
+}

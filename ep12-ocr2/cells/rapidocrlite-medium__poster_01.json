@@ -1,0 +1,66 @@
+{
+ "schema": "ep12-cell-v1",
+ "cell": "rapidocrlite-medium__poster_01",
+ "engine": "rapidocrlite-medium",
+ "img": "poster_01.png",
+ "imgpath": "C:/Users/Frank/AppData/Local/hermes/workspace/articles/bench/ep12-ocr2\\output\\samples\\poster_01.png",
+ "runs": 3,
+ "warmup": 2,
+ "attempt": 1,
+ "session": "ep12-main",
+ "py": "3.11.16",
+ "ts": 1792929319.393092,
+ "threads": {
+  "cpu_count": 16
+ },
+ "peak_rss_at_load_mb": 64.3,
+ "rss_scope": "本进程 + 后代进程树",
+ "settings": {
+  "engine": "rapidocrlite-medium",
+  "backend": "onnxruntime (RapidOCRLite C++/Python)",
+  "rapidocr_version": "5.0.0a15",
+  "tier": "medium",
+  "lang_type": "ch",
+  "det_params_aligned_to_paddleocr": true,
+  "aligned_det": {
+   "Det.box_thresh": 0.6,
+   "Det.thresh": 0.3,
+   "Det.unclip_ratio": 1.5
+  }
+ },
+ "warmup_times": [
+  3.1774,
+  2.1586,
+  2.1374
+ ],
+ "warmup_converged": true,
+ "peak_rss_mb": 713.8,
+ "peak_rss_samples": 64,
+ "t_infers": [
+  2.1183,
+  2.2786,
+  2.1977
+ ],
+ "median": 2.1977,
+ "min": 2.1183,
+ "max": 2.2786,
+ "spread_pct": 7.29,
+ "text": "春季公开课\n主讲人工智能基础\n时间周六上午九点\n地点市图书馆报告厅\n免费入场无需报名\n主讲人工智能基础\n时间周六上午九点\n地点市图书馆报告厅\n免费入场无需报名",
+ "text_len": 79,
+ "n_lines": 9,
+ "extra": {
+  "elapse": 2.117804100002104,
+  "elapse_list": [
+   null,
+   null,
+   2.117804100002104
+  ],
+  "n_boxes": 9
+ },
+ "err": "",
+ "seg": {
+  "t_import": 0.039986,
+  "t_session": 0.949549
+ },
+ "t_total": 15.1103
+}

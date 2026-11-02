@@ -1,0 +1,68 @@
+{
+ "schema": "ep12-cell-v1",
+ "cell": "lightonocr__shot_03",
+ "engine": "lightonocr",
+ "img": "shot_03.png",
+ "imgpath": "C:/Users/Frank/AppData/Local/hermes/workspace/articles/bench/ep11-ocr\\output\\samples\\shot_03.png",
+ "runs": 3,
+ "warmup": 2,
+ "attempt": 1,
+ "session": "ep12-main",
+ "py": "3.11.16",
+ "ts": 1792985703.3945372,
+ "threads": {
+  "cpu_count": 16,
+  "torch_num_threads": 8
+ },
+ "peak_rss_at_load_mb": 1559.9,
+ "rss_scope": "ollama-serve 进程树（推理在 llama-server.exe）",
+ "settings": {
+  "engine": "lightonocr",
+  "backend": "Ollama (LightOnOCR-3 0.8b, CPU)",
+  "params": "0.8B",
+  "api_mode": "local",
+  "quant": "Q8_0",
+  "weight_source": "maternion 社区 GGUF 转换（非 LightOn 官方发布）",
+  "license": "Apache-2.0",
+  "cache_note": "按图片缓存 → 每次计时前卸载（keep_alive=0）",
+  "output_field_note": "结果写在 thinking 字段（response 为空），与 GLM-OCR 不同",
+  "maas_upload": false
+ },
+ "warmup_times": [
+  19.2651,
+  18.8262,
+  19.2091
+ ],
+ "warmup_converged": false,
+ "peak_rss_mb": 1559.9,
+ "peak_rss_samples": 376,
+ "t_infers": [
+  19.2911,
+  18.8841,
+  18.9268
+ ],
+ "median": 18.9268,
+ "min": 18.8841,
+ "max": 19.2911,
+ "spread_pct": 2.15,
+ "text": "首页 产品文档 社区 下载 关于\n\n![text](40,173,306,211) 本地部署的文字识别服务方案对比\n\n![text](40,248,514,286) 方案一 直接调用开源引擎，改动最小，适合一次性批量任务。\n\n![text](40,324,551,362) 方案二 封装成常驻服务，支持并发与队列，适合长期跑批的场景。\n\n![text](40,398,514,436) 方案三 走云端接口，按次计费，前期成本低但数据要出内网。\n\n![title](39,467,114,515) 常见问题\n\n![text](40,548,446,586) 模型下载失败怎么办 可改用国内镜像地址重新拉取。\n\n![text](40,622,479,661) 内存占用过高怎么办 可限制并发数并关闭不必要的后端。\n\n![title](39,694,114,740) 侧栏说明\n\n![text](40,772,509,809) 本页数据来自单机实测，仅覆盖中文印刷体与常见票据版式，\n\n![text](40,846,387,884) 手写体与相机拍照场景未纳入本轮测试范围。",
+ "text_len": 484,
+ "n_lines": 11,
+ "extra": {
+  "wall_s": 19.283164739608765,
+  "output_field": "thinking",
+  "load_duration_s": 1.6617,
+  "prompt_eval_count": 657,
+  "prompt_eval_duration_s": 4.9069,
+  "eval_count": 352,
+  "eval_duration_s": 12.679,
+  "total_duration_s": 19.2766,
+  "model": "maternion/LightOnOCR-3:0.8b"
+ },
+ "err": "",
+ "seg": {
+  "t_import": 0.001807,
+  "t_session": 0.357157
+ },
+ "t_total": 116.8635
+}

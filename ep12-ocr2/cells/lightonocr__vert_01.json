@@ -1,0 +1,68 @@
+{
+ "schema": "ep12-cell-v1",
+ "cell": "lightonocr__vert_01",
+ "engine": "lightonocr",
+ "img": "vert_01.png",
+ "imgpath": "C:/Users/Frank/AppData/Local/hermes/workspace/articles/bench/ep12-ocr2\\output\\samples\\vert_01.png",
+ "runs": 3,
+ "warmup": 2,
+ "attempt": 1,
+ "session": "ep12-main",
+ "py": "3.11.16",
+ "ts": 1792987958.552906,
+ "threads": {
+  "cpu_count": 16,
+  "torch_num_threads": 8
+ },
+ "peak_rss_at_load_mb": 1368.1,
+ "rss_scope": "ollama-serve 进程树（推理在 llama-server.exe）",
+ "settings": {
+  "engine": "lightonocr",
+  "backend": "Ollama (LightOnOCR-3 0.8b, CPU)",
+  "params": "0.8B",
+  "api_mode": "local",
+  "quant": "Q8_0",
+  "weight_source": "maternion 社区 GGUF 转换（非 LightOn 官方发布）",
+  "license": "Apache-2.0",
+  "cache_note": "按图片缓存 → 每次计时前卸载（keep_alive=0）",
+  "output_field_note": "结果写在 thinking 字段（response 为空），与 GLM-OCR 不同",
+  "maas_upload": false
+ },
+ "warmup_times": [
+  5.9233,
+  6.163,
+  6.2782
+ ],
+ "warmup_converged": true,
+ "peak_rss_mb": 1385.3,
+ "peak_rss_samples": 132,
+ "t_infers": [
+  5.8751,
+  5.9205,
+  6.0071
+ ],
+ "median": 5.9205,
+ "min": 5.8751,
+ "max": 6.0071,
+ "spread_pct": 2.23,
+ "text": "```text\n会议纪要\n\n决议事项三项 出席共十二人 地点三楼会议室 时间十月廿五日",
+ "text_len": 43,
+ "n_lines": 3,
+ "extra": {
+  "wall_s": 5.868462324142456,
+  "output_field": "thinking",
+  "load_duration_s": 1.6561,
+  "prompt_eval_count": 490,
+  "prompt_eval_duration_s": 3.3656,
+  "eval_count": 24,
+  "eval_duration_s": 0.8232,
+  "total_duration_s": 5.8645,
+  "model": "maternion/LightOnOCR-3:0.8b"
+ },
+ "err": "",
+ "seg": {
+  "t_import": 0.001626,
+  "t_session": 0.358444
+ },
+ "t_total": 38.7337
+}

@@ -1,0 +1,65 @@
+{
+ "schema": "ep12-cell-v1",
+ "cell": "smoke_lightonocr__book_01",
+ "engine": "lightonocr",
+ "img": "book_01.png",
+ "imgpath": "C:/Users/Frank/AppData/Local/hermes/workspace/articles/bench/ep11-ocr/output/samples/book_01.png",
+ "runs": 2,
+ "warmup": 1,
+ "attempt": 1,
+ "session": "ep12-smoke",
+ "py": "3.11.16",
+ "ts": 1792981977.1361156,
+ "threads": {
+  "cpu_count": 16,
+  "torch_num_threads": 8
+ },
+ "peak_rss_at_load_mb": 1590.7,
+ "rss_scope": "ollama-serve 进程树（推理在 llama-server.exe）",
+ "settings": {
+  "engine": "lightonocr",
+  "backend": "Ollama (LightOnOCR-3 0.8b, CPU)",
+  "params": "0.8B",
+  "api_mode": "local",
+  "quant": "Q8_0",
+  "weight_source": "maternion 社区 GGUF 转换（非 LightOn 官方发布）",
+  "license": "Apache-2.0",
+  "cache_note": "按图片缓存 → 每次计时前卸载（keep_alive=0）",
+  "output_field_note": "结果写在 thinking 字段（response 为空），与 GLM-OCR 不同",
+  "maas_upload": false
+ },
+ "warmup_times": [
+  56.1926
+ ],
+ "warmup_converged": true,
+ "peak_rss_mb": 1600.9,
+ "peak_rss_samples": 576,
+ "t_infers": [
+  56.6342,
+  56.4057
+ ],
+ "median": 56.6342,
+ "min": 56.4057,
+ "max": 56.6342,
+ "spread_pct": 0.4,
+ "text": "# General OCR Theory: Towards OCR-2.0 via a Unified End-to-end Model\n\nHaoran Wei${}^{1,*}$, Chenglong Liu${}^{3,*}$, Jinyue Chen${}^{3}$, Jia Wang${}^{1}$, Lingyu Kong${}^{3}$, Yanming Xu${}^{1}$, Zheng Ge${}^{1}$, Liang Zhao${}^{1}$, Jianjian Sun${}^{1}$, Yuang Peng${}^{4}$, Chunrui Han${}^{2}$, Xiangyu Zhang${}^{1,2}$\n\n${}^{1}$StepFun ${}^{2}$Megvii Technology  \n${}^{3}$University of Chinese Academy of Sciences ${}^{4}$Tsinghua University  \nhttps://github.com/Ucas-HaoranWei/GOT-OCR2.0\n\n## Abstract\n\nTraditional OCR systems (OCR-1.0) are increasingly unable to meet people’s usage due to the growing demand for intelligent processing of man-made optical characters. In this paper, we collectively refer to all artificial optical signals (e.g., plain texts, math/molecular formulas, tables, charts, sheet music, and even geometric shapes) as \"characters\" and propose the General OCR Theory along with an excellent model, namely GOT, to promote the arrival of OCR-2.0. The GOT, with 580M parameters, is a unified, elegant, and end-to-end model, consisting of a high-compression encoder and a long-contexts decoder. As an OCR-2.0 model, GOT can handle all the above \"characters\" under various OCR tasks. On the input side, the model supports commonly used scene- and document-style images in slice and whole-page styles. On the output side, GOT can generate plain or formatted results (markdown/tikz/smiles/kern) via an easy prompt. Besides, the model enjoys interactive OCR features, i.e., region-level recognition guided by coordinates or colors. Furthermore, we also adapt dynamic resolution and multi-page OCR technologies to GOT for better practicality. In experiments, we provide sufficient results to prove the superiority of our model.\n\n## 1 Introduction\n\nOptical Character Recognition (OCR) is a widely used technology that extracts the characters embedded in an optical image into an editable format. Typical OCR systems [10] in the OCR-1.0 era are mainly designed based on a multi-modular pipeline style, commonly including element detection, region cropping, and character recognition parts. Each module is prone to falling into local optima, making the whole system incur high maintenance costs. Moreover, traditional OCR methods have insufficient general ability, reflected as different OCR-1.0 networks usually designed for different sub-tasks. Nevertheless, choosing a suitable one from diverse OCR models for a special task is always inconvenient for users.\n\nIn the past year, Large Vision Language models (LVLMs) [5, 9, 24, 27, 36, 46, 49] have developed rapidly and showcased impressive performance. As a highly anticipated ability, the OCR performance of current LVLMs is continuously improving. Based on CLIP [37], LLaVA [24] naturally acquires the English OCR ability after the instruct tuning phase. To lift the OCR accuracy and support other languages, e.g., Chinese, Qwen-VL [5] unfreezes its image encoder (a CLIP-G) and uses lots of OCR data in its stage-two training. Innovatively, Vary [46] generates a new high-resolution OCR vision vocabulary paralleling the CLIP branch to deal with document-level dense OCR. By contrast,\n\n*Equal contribution\n\narXiv:2409.01704v1 [cs.CV] 3 Sep 2024",
+ "text_len": 3216,
+ "n_lines": 12,
+ "extra": {
+  "wall_s": 56.62202000617981,
+  "output_field": "thinking",
+  "load_duration_s": 1.6597,
+  "prompt_eval_count": 2296,
+  "prompt_eval_duration_s": 22.989,
+  "eval_count": 812,
+  "eval_duration_s": 31.8708,
+  "total_duration_s": 56.6125,
+  "model": "maternion/LightOnOCR-3:0.8b"
+ },
+ "err": "",
+ "seg": {
+  "t_import": 0.001765,
+  "t_session": 0.358664
+ },
+ "t_total": 171.9134
+}

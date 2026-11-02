@@ -1,0 +1,58 @@
+{
+ "schema": "ep12-cell-v1",
+ "cell": "simdpaddleocr__shot_01",
+ "engine": "simdpaddleocr",
+ "img": "shot_01.png",
+ "imgpath": "C:/Users/Frank/AppData/Local/hermes/workspace/articles/bench/ep11-ocr\\output\\samples\\shot_01.png",
+ "runs": 3,
+ "warmup": 2,
+ "attempt": 1,
+ "session": "ep12-main",
+ "py": "3.11.16",
+ "ts": 1792929664.5797842,
+ "threads": {
+  "cpu_count": 16,
+  "torch_num_threads": 8
+ },
+ "peak_rss_at_load_mb": 226.4,
+ "rss_scope": "本进程 + 后代进程树",
+ "settings": {
+  "engine": "simdpaddleocr-controlled",
+  "backend": "SimdPaddleOCR 2.0.0 (.NET 10, 纯 C#)",
+  "profile": "controlled",
+  "bundle": "PP-OCRv6_medium (Sdcb.SimdPaddleOCR.Models.ChineseV6Medium 1.0.0)",
+  "note": "load 计时含 .NET 进程启动，与 Python 引擎不可横比"
+ },
+ "warmup_times": [
+  3.4644,
+  3.4027
+ ],
+ "warmup_converged": true,
+ "peak_rss_mb": 771.3,
+ "peak_rss_samples": 79,
+ "t_infers": [
+  3.3989,
+  3.4142,
+  3.4141
+ ],
+ "median": 3.4141,
+ "min": 3.3989,
+ "max": 3.4142,
+ "spread_pct": 0.45,
+ "text": "新闻 hao123 地图 贴吧 视频 图片 网盘 库库AI 文心 更多 设置 登录\nBaidu百度\n国模新人古月首登维密秀\no + 百度一下\n百度库库写报告、做图片、代码编程、有问题就找库库>\n百度热搜> 换一换\n不 把黄旗海保护好 5 孩子上班父母也能领工资\n披旭日旗的中国留学生已被遣返开除 热 9 乒乓球名将王曼昱等3人拟记大功\n2 南太行徒步失联的33岁女子已找到 7 救场李克勤走红草根歌手3周涨粉40万\n3 读懂中国经济的韧性和活力 8 为戒烟每天存40元9个月后烟钱摆满床\n4 公司给2千员工每人发1条5克纯金手链 9 情侣无视火焰在抗议现场淡定饮酒交谈\n下载\n辅助",
+ "text_len": 290,
+ "n_lines": 13,
+ "extra": {
+  "n_boxes": 35,
+  "t_infers_csharp": [
+   2.424396
+  ],
+  "effective_line_worker_count": 1
+ },
+ "err": "",
+ "seg": {
+  "t_import": 0.001632,
+  "t_session": 0.357602
+ },
+ "t_total": 19.7181
+}

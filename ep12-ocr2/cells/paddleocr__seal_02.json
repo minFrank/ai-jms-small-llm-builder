@@ -1,0 +1,54 @@
+{
+ "schema": "ep12-cell-v1",
+ "cell": "paddleocr__seal_02",
+ "engine": "paddleocr",
+ "img": "seal_02.png",
+ "imgpath": "C:/Users/Frank/AppData/Local/hermes/workspace/articles/bench/ep12-ocr2\\output\\samples\\seal_02.png",
+ "runs": 3,
+ "warmup": 2,
+ "attempt": 1,
+ "session": "ep12-main",
+ "py": "3.11.16",
+ "ts": 1792936067.70386,
+ "threads": {
+  "cpu_count": 16,
+  "torch_num_threads": 8
+ },
+ "peak_rss_at_load_mb": 836.4,
+ "rss_scope": "本进程 + 后代进程树",
+ "settings": {
+  "engine": "paddleocr",
+  "backend": "paddlepaddle",
+  "paddleocr": "3.7.0",
+  "models": "PP-OCRv6 det+rec (paddlex 缓存)",
+  "enable_mkldnn": false
+ },
+ "warmup_times": [
+  5.5293,
+  5.4387
+ ],
+ "warmup_converged": true,
+ "peak_rss_mb": 1173.9,
+ "peak_rss_samples": 189,
+ "t_infers": [
+  5.5482,
+  5.5031,
+  5.4677
+ ],
+ "median": 5.5031,
+ "min": 5.4677,
+ "max": 5.5482,
+ "spread_pct": 1.46,
+ "text": "南京市长江路小学教务处\n学生李思远性别男\n二零一三年八专出生学\n系我校三年级二班学生\n用籍",
+ "text_len": 45,
+ "n_lines": 5,
+ "extra": {
+  "n_boxes": 5
+ },
+ "err": "",
+ "seg": {
+  "t_import": 0.001682,
+  "t_session": 14.691227
+ },
+ "t_total": 44.4449
+}

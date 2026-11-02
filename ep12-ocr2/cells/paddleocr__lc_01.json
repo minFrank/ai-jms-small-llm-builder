@@ -1,0 +1,54 @@
+{
+ "schema": "ep12-cell-v1",
+ "cell": "paddleocr__lc_01",
+ "engine": "paddleocr",
+ "img": "lc_01.png",
+ "imgpath": "C:/Users/Frank/AppData/Local/hermes/workspace/articles/bench/ep11-ocr\\output\\samples\\lc_01.png",
+ "runs": 3,
+ "warmup": 2,
+ "attempt": 1,
+ "session": "ep12-main",
+ "py": "3.11.16",
+ "ts": 1792932995.908765,
+ "threads": {
+  "cpu_count": 16,
+  "torch_num_threads": 8
+ },
+ "peak_rss_at_load_mb": 831.2,
+ "rss_scope": "本进程 + 后代进程树",
+ "settings": {
+  "engine": "paddleocr",
+  "backend": "paddlepaddle",
+  "paddleocr": "3.7.0",
+  "models": "PP-OCRv6 det+rec (paddlex 缓存)",
+  "enable_mkldnn": false
+ },
+ "warmup_times": [
+  28.7271,
+  28.8124
+ ],
+ "warmup_converged": true,
+ "peak_rss_mb": 2327.5,
+ "peak_rss_samples": 712,
+ "t_infers": [
+  28.8671,
+  28.8859,
+  28.7207
+ ],
+ "median": 28.8671,
+ "min": 28.7207,
+ "max": 28.8859,
+ "spread_pct": 0.57,
+ "text": "新闻 hao123 地图 贴吧 视频 图片 网盘 库库AI 文\nBaidu百度\n国模新人古月首登维密秀\n ⊕ 百度一\n百度库库写报告、做图片、代码编程、有问题就找库库>\n百度热搜 换一换\n把黄旗海保护好 5 孩子上班父母也能领工资\n1 披旭日旗的中国留学生已被遣返开除 6 乒乓球名将王曼昱等3人拟记大功\n2 南太行徒步失联的33岁女子已找到 7 救场李克勤走红草根歌手3周涨粉40万\n读懂中国经济的韧性和活力 8 为戒烟每天存40元9个月后烟钱摆满床\n4 公司给2千员工每人发1条5克纯金手链 9 情侣无视火焰在抗议现场淡定饮酒交谈\n下载\n辅助",
+ "text_len": 273,
+ "n_lines": 13,
+ "extra": {
+  "n_boxes": 20
+ },
+ "err": "",
+ "seg": {
+  "t_import": 0.002903,
+  "t_session": 14.319002
+ },
+ "t_total": 160.5912
+}

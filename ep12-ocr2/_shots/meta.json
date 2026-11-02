@@ -1,0 +1,26 @@
+[
+ {
+  "key": "rapidocr",
+  "url": "https://github.com/RapidAI/RapidOCRLite",
+  "file": "D:/study/ai-jms/ep12-ocr2-venvs/_shots\\rapidocr.png",
+  "title": "GitHub - RapidAI/RapidOCRLite: RapidOCR lite edition, for smaller, faster. · GitHub"
+ },
+ {
+  "key": "paddleocr",
+  "url": "https://github.com/PaddlePaddle/PaddleOCR",
+  "file": "D:/study/ai-jms/ep12-ocr2-venvs/_shots\\paddleocr.png",
+  "title": "🐴 GitHub - PaddlePaddle/PaddleOCR: Turn any PDF or image document into structured data for your AI. A powerful, lightweight OCR toolkit that bridges the gap between images/PDFs and LLMs. Supports 100+ languages. · GitHub"
+ },
+ {
+  "key": "easyocr",
+  "url": "https://github.com/JaidedAI/EasyOCR",
+  "file": "D:/study/ai-jms/ep12-ocr2-venvs/_shots\\easyocr.png",
+  "title": "🐴 GitHub - JaidedAI/EasyOCR: Ready-to-use OCR with 80+ supported languages and all popular writing scripts including Latin, Chinese, Arabic, Devanagari, Cyrillic and etc. · GitHub"
+ },
+ {
+  "key": "glmocr",
+  "url": "https://github.com/zai-org/GLM-OCR",
+  "file": "D:/study/ai-jms/ep12-ocr2-venvs/_shots\\glmocr.png",
+  "title": "🐴 GitHub - zai-org/GLM-OCR: GLM-OCR: Accurate × Fast × Comprehensive · GitHub"
+ }
+]

@@ -1,0 +1,63 @@
+{
+ "schema": "ep12-cell-v1",
+ "cell": "glmocr__table_02",
+ "engine": "glmocr",
+ "img": "table_02.png",
+ "imgpath": "C:/Users/Frank/AppData/Local/hermes/workspace/articles/bench/ep11-ocr\\output\\samples\\table_02.png",
+ "runs": 3,
+ "warmup": 2,
+ "attempt": 1,
+ "session": "ep12-main",
+ "py": "3.11.16",
+ "ts": 1792944711.52314,
+ "threads": {
+  "cpu_count": 16,
+  "torch_num_threads": 8
+ },
+ "peak_rss_at_load_mb": 2889.0,
+ "rss_scope": "ollama-serve 进程树（推理在 llama-server.exe）",
+ "settings": {
+  "engine": "glmocr",
+  "backend": "Ollama (glm-ocr, CPU)",
+  "params": "0.9B",
+  "api_mode": "local",
+  "cache_note": "按图片缓存 → 每次计时前卸载（keep_alive=0）",
+  "maas_upload": false
+ },
+ "warmup_times": [
+  37.6922,
+  38.6818,
+  37.1586
+ ],
+ "warmup_converged": false,
+ "peak_rss_mb": 3007.3,
+ "peak_rss_samples": 785,
+ "t_infers": [
+  38.2476,
+  38.8724,
+  37.1953
+ ],
+ "median": 38.2476,
+ "min": 37.1953,
+ "max": 38.8724,
+ "spread_pct": 4.38,
+ "text": "家庭月度开支明细\n\n类别\t项目\t金额\t占比\t备注\n居住\t房贷\t6800.00\t46.3%\t每月15日扣款\n居住\t物业费\t420.00\t2.9%\t按季预缴\n食品\t菜场\t1860.00\t12.6%\t现金为主\n食品\t超市\t930.00\t6.3%\t周末采购\n交通\t地铁\t268.00\t1.8%\t月票\n交通\t加油\t600.00\t4.1%\t92号汽油\n教育\t课外书\t356.00\t2.4%\t网购\n教育、文具\t88.00\t0.6%\t学校门口\n医疗\t门诊\t240.00\t1.6%\t社区医院\n合计\t14562.00\t100.0%\t记账人\t林岚",
+ "text_len": 262,
+ "n_lines": 12,
+ "extra": {
+  "wall_s": 38.24249219894409,
+  "load_duration_s": 1.9667,
+  "prompt_eval_count": 1136,
+  "prompt_eval_duration_s": 22.5146,
+  "eval_count": 229,
+  "eval_duration_s": 13.7149,
+  "total_duration_s": 38.2373,
+  "model": "glm-ocr"
+ },
+ "err": "",
+ "seg": {
+  "t_import": 0.001836,
+  "t_session": 0.357207
+ },
+ "t_total": 230.5288
+}

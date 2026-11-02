@@ -1,0 +1,63 @@
+{
+ "schema": "ep12-cell-v1",
+ "cell": "glmocr__lowres_02",
+ "engine": "glmocr",
+ "img": "lowres_02.png",
+ "imgpath": "C:/Users/Frank/AppData/Local/hermes/workspace/articles/bench/ep12-ocr2\\output\\samples\\lowres_02.png",
+ "runs": 3,
+ "warmup": 2,
+ "attempt": 1,
+ "session": "ep12-main",
+ "py": "3.11.16",
+ "ts": 1792945680.7543428,
+ "threads": {
+  "cpu_count": 16,
+  "torch_num_threads": 8
+ },
+ "peak_rss_at_load_mb": 3471.8,
+ "rss_scope": "ollama-serve 进程树（推理在 llama-server.exe）",
+ "settings": {
+  "engine": "glmocr",
+  "backend": "Ollama (glm-ocr, CPU)",
+  "params": "0.9B",
+  "api_mode": "local",
+  "cache_note": "按图片缓存 → 每次计时前卸载（keep_alive=0）",
+  "maas_upload": false
+ },
+ "warmup_times": [
+  79.1537,
+  75.5035,
+  73.5585
+ ],
+ "warmup_converged": false,
+ "peak_rss_mb": 3471.8,
+ "peak_rss_samples": 1714,
+ "t_infers": [
+  75.4864,
+  73.6521,
+  75.458
+ ],
+ "median": 75.458,
+ "min": 73.6521,
+ "max": 75.4864,
+ "spread_pct": 2.43,
+ "text": "Bai 百度\n\n请输入搜索关键词\n立即搜索\n\n器懂易用 可发现、被图片、代码教程、有问题找客服\n\n器懂易用\n1 免费版海护好\n1 继续目前的中国留学在线课程开始\n2 退出行健护我的20护学平台找到\n3 读懂中国经济的特性及动力\n4 公司能2千员口人数1单4周续手链\n5 孩子止咳20号急救工具\n6 沪气降息两星期停6人验证大物\n7 救助季更新版红草暖暖孕5周期40万\n8 为成都每天40元9个月短期课程满减\n9 博照月需头脸脸软20周临定饮食问答\n\n下载\n阅读",
+ "text_len": 230,
+ "n_lines": 17,
+ "extra": {
+  "wall_s": 75.4485239982605,
+  "load_duration_s": 1.6886,
+  "prompt_eval_count": 2537,
+  "prompt_eval_duration_s": 63.4261,
+  "eval_count": 173,
+  "eval_duration_s": 10.2591,
+  "total_duration_s": 75.4439,
+  "model": "glm-ocr"
+ },
+ "err": "",
+ "seg": {
+  "t_import": 0.001494,
+  "t_session": 0.360418
+ },
+ "t_total": 455.477
+}

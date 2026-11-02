@@ -1,0 +1,59 @@
+{
+ "schema": "ep12-cell-v1",
+ "cell": "simdpaddleocr-default__skew_01",
+ "engine": "simdpaddleocr-default",
+ "img": "skew_01.png",
+ "imgpath": "C:/Users/Frank/AppData/Local/hermes/workspace/articles/bench/ep11-ocr\\output\\samples\\skew_01.png",
+ "runs": 3,
+ "warmup": 2,
+ "attempt": 1,
+ "session": "ep12-main",
+ "py": "3.11.16",
+ "ts": 1792930293.32169,
+ "threads": {
+  "cpu_count": 16,
+  "torch_num_threads": 8
+ },
+ "peak_rss_at_load_mb": 226.4,
+ "rss_scope": "本进程 + 后代进程树",
+ "settings": {
+  "engine": "simdpaddleocr-default",
+  "backend": "SimdPaddleOCR 2.0.0 (.NET 10, 纯 C#)",
+  "profile": "default",
+  "bundle": "PP-OCRv6_medium (Sdcb.SimdPaddleOCR.Models.ChineseV6Medium 1.0.0)",
+  "note": "load 计时含 .NET 进程启动，与 Python 引擎不可横比"
+ },
+ "warmup_times": [
+  5.5016,
+  5.3725,
+  5.4494
+ ],
+ "warmup_converged": true,
+ "peak_rss_mb": 761.9,
+ "peak_rss_samples": 146,
+ "t_infers": [
+  5.4659,
+  5.4096,
+  5.5514
+ ],
+ "median": 5.4659,
+ "min": 5.4096,
+ "max": 5.5514,
+ "spread_pct": 2.59,
+ "text": "General OCR Theory: Towards OCR-2.0\n6.6 via a Unified End-to-end Model\nHaoran Wei1,*, Chenglong Liu3,*, Jinyue Chen3, Jia Wang1, Lingyu Kong3, Yanming Xu1,\nZheng Ge1, Liang Zhao1, Jianjian Sun1, Yuang Peng4, Chunrui Han2, Xiangyu Zhang1,2\n1StepFun 2Megvii Technology\n3University of Chinese Academy of Sciences 4Tsinghua University\nhttps://github.com/Ucas-HaoranWei/GOT-OCR2.0\nAbstract\nTraditional OCR systems (OCR-1.0) are increasingly unable to meet people's\nusage due to the growing demand for intelligent processing of man-made optical\ncharacters. In this paper, we collectively refer to all artificial optical signals\n(e.g., plain texts, math/molecular formulas, tables, charts, sheet music, and even\ngeometric shapes) as \"characters\" and propose the General OCR Theory along with\nan excellent model, namely GOT, to promote the arrival of OCR-2.0. The GOT,\nwith 580M parameters, is a unified, elegant, and end-to-end model, consisting of\na high-compression encoder and a long-contexts decoder. As an OCR-2.0 model,\nGOT can handle all the above \"characters\" under various OCR tasks. On the\narXiv:2409.01704v1 [cs.CV] 3 Sep 2024 input side, the model supports commonly used scene- and document-style images\nin slice and whole-page styles. On the output side, GOT can generate plain or\nformatted results (markdown/tikz/smiles/kern) via an easy prompt. Besides, the\nmodel enjoys interactive OCR features, i.e., region-level recognition guided by\ncoordinates or colors. Furthermore, we also adapt dynamic resolution and multi-\npage OCR technologies to GOT for better practicality. In experiments, we provide\nsufficient results to prove the superiority of our model.\n1 Introduction Optical Character Recognition (OCR) is a widely used technology that extracts the characters\nembedded in an optical image into an editable format. Typical OCR systems [10] in the OCR-1.0 era\nare mainly designed based on a multi-modular pipeline style, commonly including element detection,\nregion cropping, and character recognition parts. Each module is prone to falling into local optima,\nmaking the whole system incur high maintenance costs. Moreover, traditional OCR methods have\ninsufficient general ability, reflected as different OCR-1.0 networks usually designed for different\nsub-tasks. Nevertheless, choosing a suitable one from diverse OCR models for a special task is\nalways inconvenient for users. In the past year, Large Vision Language models (LVLMs) [5, 9, 24, 27, 36, 46, 49] have developed\nrapidly and showcased impressive performance. As a highly anticipated ability, the OCR performance\nof current LVLMs is continuously improving. Based on CLIP [37], LLaVA [24] naturally acquires\nthe English OCR ability after the instruct tuning phase. To lift the OCR accuracy and support other\nlanguages, e.g., Chinese, Qwen-VL [5] unfreezes its image encoder (a CLIP-G) and uses lots of\nOCR data in its stage-two training. Innovatively, Vary [46] generates a new high-resolution OCR\nvision vocabulary paralleling the CLIP branch to deal with document-level dense OCR. By contrast,\n*Equal contribution",
+ "text_len": 3088,
+ "n_lines": 39,
+ "extra": {
+  "n_boxes": 43,
+  "t_infers_csharp": [
+   4.485956
+  ],
+  "effective_line_worker_count": 4
+ },
+ "err": "",
+ "seg": {
+  "t_import": 0.001425,
+  "t_session": 0.359531
+ },
+ "t_total": 35.3378
+}

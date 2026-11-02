@@ -1,0 +1,59 @@
+{
+ "schema": "ep12-cell-v1",
+ "cell": "easyocr__poster_01",
+ "engine": "easyocr",
+ "img": "poster_01.png",
+ "imgpath": "C:/Users/Frank/AppData/Local/hermes/workspace/articles/bench/ep12-ocr2\\output\\samples\\poster_01.png",
+ "runs": 3,
+ "warmup": 2,
+ "attempt": 1,
+ "session": "ep12-main",
+ "py": "3.11.16",
+ "ts": 1792937236.1879573,
+ "threads": {
+  "cpu_count": 16,
+  "torch_num_threads": 8
+ },
+ "peak_rss_at_load_mb": 900.3,
+ "rss_scope": "本进程 + 后代进程树",
+ "settings": {
+  "engine": "easyocr",
+  "backend": "torch-cpu",
+  "easyocr": "1.7.2",
+  "torch": "2.14.1+cpu",
+  "lang": [
+   "ch_sim",
+   "en"
+  ],
+  "quantize": false,
+  "gpu": false
+ },
+ "warmup_times": [
+  4.7907,
+  4.8069
+ ],
+ "warmup_converged": true,
+ "peak_rss_mb": 1837.3,
+ "peak_rss_samples": 128,
+ "t_infers": [
+  4.7125,
+  4.8264,
+  4.8143
+ ],
+ "median": 4.8143,
+ "min": 4.7125,
+ "max": 4.8264,
+ "spread_pct": 2.37,
+ "text": "春季公开课\n主讲人工智能基础\n时间周六上午九点\n地点市图书馆报告厅\n免费入场无需搬名\n主讲人工智能基础\n时间周六上午九点\n地点市图书馆报告厅\n免费入场无需报名",
+ "text_len": 79,
+ "n_lines": 9,
+ "extra": {
+  "n_boxes": 9
+ },
+ "err": "",
+ "seg": {
+  "t_import": 0.001612,
+  "t_session": 5.318909
+ },
+ "t_total": 31.5663
+}

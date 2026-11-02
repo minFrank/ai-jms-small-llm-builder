@@ -1,0 +1,66 @@
+{
+ "schema": "ep12-cell-v1",
+ "cell": "rapidocrlite-medium__skew_02",
+ "engine": "rapidocrlite-medium",
+ "img": "skew_02.png",
+ "imgpath": "C:/Users/Frank/AppData/Local/hermes/workspace/articles/bench/ep11-ocr\\output\\samples\\skew_02.png",
+ "runs": 3,
+ "warmup": 2,
+ "attempt": 1,
+ "session": "ep12-main",
+ "py": "3.11.16",
+ "ts": 1792929186.5872538,
+ "threads": {
+  "cpu_count": 16
+ },
+ "peak_rss_at_load_mb": 64.6,
+ "rss_scope": "本进程 + 后代进程树",
+ "settings": {
+  "engine": "rapidocrlite-medium",
+  "backend": "onnxruntime (RapidOCRLite C++/Python)",
+  "rapidocr_version": "5.0.0a15",
+  "tier": "medium",
+  "lang_type": "ch",
+  "det_params_aligned_to_paddleocr": true,
+  "aligned_det": {
+   "Det.box_thresh": 0.6,
+   "Det.thresh": 0.3,
+   "Det.unclip_ratio": 1.5
+  }
+ },
+ "warmup_times": [
+  7.3782,
+  6.4871,
+  6.6024
+ ],
+ "warmup_converged": true,
+ "peak_rss_mb": 1290.3,
+ "peak_rss_samples": 171,
+ "t_infers": [
+  6.3004,
+  6.7156,
+  6.2838
+ ],
+ "median": 6.3004,
+ "min": 6.2838,
+ "max": 6.7156,
+ "spread_pct": 6.85,
+ "text": "group all year, and most of you are not naughty...\nScene Text OCR\n现/烤|双|堡\n好德士 木炭烧烤\nYou're mentally ill\nPIGS Tiredness\nARMED NO DELICIOUS\nDocument OCR\n= 4 (C., 5,) + 1 + 2(nd 7 – 1 – 4v (C_ xX))\n[(,β)-[3320R3)4-0\nFine-grained OCR\nWlowood POVER BAG\n咖啡小成武 冻干\n大王盗金\nMore General OCR % who way they think of President Donald Trump as .. 75%\nArrogrt 65\nIntolerant\nleader\nHN N43 Charismatic\nCaring about\nFigure 1: On the input side, GOT supports various optical image types, such as commonly used\nphotographs and documents. Besides, as a general OCR-2.0 model, GOT can handle more tasks, e.g.,\nsheet music, molecular formulas, easy geometric shapes, charts, etc. Moreover, the model can adapt\nto region-focus OCR, high-resolution OCR, and multiple-page OCR. GOT mainly supports English\nand Chinese and can control the structure results (Mathpix markdown/tikz/smiles/kern) via a prompt.\n2",
+ "text_len": 879,
+ "n_lines": 26,
+ "extra": {
+  "elapse": 6.297330300003523,
+  "elapse_list": [
+   null,
+   null,
+   6.297330300003523
+  ],
+  "n_boxes": 36
+ },
+ "err": "",
+ "seg": {
+  "t_import": 0.03676,
+  "t_session": 0.917893
+ },
+ "t_total": 40.7637
+}

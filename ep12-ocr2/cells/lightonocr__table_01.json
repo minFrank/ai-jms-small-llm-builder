@@ -1,0 +1,67 @@
+{
+ "schema": "ep12-cell-v1",
+ "cell": "lightonocr__table_01",
+ "engine": "lightonocr",
+ "img": "table_01.png",
+ "imgpath": "C:/Users/Frank/AppData/Local/hermes/workspace/articles/bench/ep11-ocr\\output\\samples\\table_01.png",
+ "runs": 3,
+ "warmup": 2,
+ "attempt": 1,
+ "session": "ep12-main",
+ "py": "3.11.16",
+ "ts": 1792986739.8888488,
+ "threads": {
+  "cpu_count": 16,
+  "torch_num_threads": 8
+ },
+ "peak_rss_at_load_mb": 1513.3,
+ "rss_scope": "ollama-serve 进程树（推理在 llama-server.exe）",
+ "settings": {
+  "engine": "lightonocr",
+  "backend": "Ollama (LightOnOCR-3 0.8b, CPU)",
+  "params": "0.8B",
+  "api_mode": "local",
+  "quant": "Q8_0",
+  "weight_source": "maternion 社区 GGUF 转换（非 LightOn 官方发布）",
+  "license": "Apache-2.0",
+  "cache_note": "按图片缓存 → 每次计时前卸载（keep_alive=0）",
+  "output_field_note": "结果写在 thinking 字段（response 为空），与 GLM-OCR 不同",
+  "maas_upload": false
+ },
+ "warmup_times": [
+  26.5564,
+  26.8386
+ ],
+ "warmup_converged": true,
+ "peak_rss_mb": 1513.3,
+ "peak_rss_samples": 422,
+ "t_infers": [
+  26.7745,
+  26.5614,
+  27.2962
+ ],
+ "median": 26.7745,
+ "min": 26.5614,
+ "max": 27.2962,
+ "spread_pct": 2.74,
+ "text": "# 初二3班期中成绩表\n\n<table border=\"1\" class=\"dataframe\">\n  <thead>\n    <tr style=\"text-align: right;\">\n      <th>姓名</th>\n      <th>语文</th>\n      <th>数学</th>\n      <th>英语</th>\n      <th>物理</th>\n      <th>总分</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <td>陈思远</td>\n      <td>92</td>\n      <td>108</td>\n      <td>96</td>\n      <td>88</td>\n      <td>384</td>\n    </tr>\n    <tr>\n      <td>李雨桐</td>\n      <td>87</td>\n      <td>115</td>\n      <td>91</td>\n      <td>93</td>\n      <td>386</td>\n    </tr>\n    <tr>\n      <td>王浩然</td>\n      <td>78</td>\n      <td>96</td>\n      <td>82</td>\n      <td>75</td>\n      <td>331</td>\n    </tr>\n    <tr>\n      <td>周子涵</td>\n      <td>95</td>\n      <td>102</td>\n      <td>98</td>\n      <td>90</td>\n      <td>385</td>\n    </tr>\n    <tr>\n      <td>孙一诺</td>\n      <td>83</td>\n      <td>89</td>\n      <td>88</td>\n      <td>71</td>\n      <td>331</td>\n    </tr>\n    <tr>\n      <td>班级平均分</td>\n      <td>87.0</td>\n      <td>102.0</td>\n      <td>91.0</td>\n      <td>83.4</td>\n      <td>363.4</td>\n    </tr>\n  </tbody>\n</table>",
+ "text_len": 1044,
+ "n_lines": 63,
+ "extra": {
+  "wall_s": 26.76847791671753,
+  "output_field": "thinking",
+  "load_duration_s": 1.6723,
+  "prompt_eval_count": 606,
+  "prompt_eval_duration_s": 4.3383,
+  "eval_count": 575,
+  "eval_duration_s": 20.7347,
+  "total_duration_s": 26.7634,
+  "model": "maternion/LightOnOCR-3:0.8b"
+ },
+ "err": "",
+ "seg": {
+  "t_import": 0.001881,
+  "t_session": 0.357182
+ },
+ "t_total": 136.5457
+}

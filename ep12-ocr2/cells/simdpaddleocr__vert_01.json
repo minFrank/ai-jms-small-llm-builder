@@ -1,0 +1,59 @@
+{
+ "schema": "ep12-cell-v1",
+ "cell": "simdpaddleocr__vert_01",
+ "engine": "simdpaddleocr",
+ "img": "vert_01.png",
+ "imgpath": "C:/Users/Frank/AppData/Local/hermes/workspace/articles/bench/ep12-ocr2\\output\\samples\\vert_01.png",
+ "runs": 3,
+ "warmup": 2,
+ "attempt": 1,
+ "session": "ep12-main",
+ "py": "3.11.16",
+ "ts": 1792929954.3690727,
+ "threads": {
+  "cpu_count": 16,
+  "torch_num_threads": 8
+ },
+ "peak_rss_at_load_mb": 227.0,
+ "rss_scope": "本进程 + 后代进程树",
+ "settings": {
+  "engine": "simdpaddleocr-controlled",
+  "backend": "SimdPaddleOCR 2.0.0 (.NET 10, 纯 C#)",
+  "profile": "controlled",
+  "bundle": "PP-OCRv6_medium (Sdcb.SimdPaddleOCR.Models.ChineseV6Medium 1.0.0)",
+  "note": "load 计时含 .NET 进程启动，与 Python 引擎不可横比"
+ },
+ "warmup_times": [
+  2.1299,
+  2.2046,
+  2.1543
+ ],
+ "warmup_converged": false,
+ "peak_rss_mb": 708.9,
+ "peak_rss_samples": 60,
+ "t_infers": [
+  2.1395,
+  2.1525,
+  2.1235
+ ],
+ "median": 2.1395,
+ "min": 2.1235,
+ "max": 2.1525,
+ "spread_pct": 1.36,
+ "text": "会议纪要\n决议事项三项 出席共十二人\n地点三楼会议室 时间十月廿五日",
+ "text_len": 34,
+ "n_lines": 3,
+ "extra": {
+  "n_boxes": 5,
+  "t_infers_csharp": [
+   1.193037
+  ],
+  "effective_line_worker_count": 1
+ },
+ "err": "",
+ "seg": {
+  "t_import": 0.002839,
+  "t_session": 0.358097
+ },
+ "t_total": 15.49
+}

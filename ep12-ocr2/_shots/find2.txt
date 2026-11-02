@@ -1,0 +1,5 @@
+simdpaddle ok 34 KB
+lighton attempt 1 FAILED Page.captureScreenshot timed out after 60s
+lighton attempt 2 FAILED WebSocket connection closed
+lighton attempt 3 FAILED no close frame received or sent
+readme FAILED no close frame received or sent

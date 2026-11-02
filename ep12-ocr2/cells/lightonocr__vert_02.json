@@ -1,0 +1,68 @@
+{
+ "schema": "ep12-cell-v1",
+ "cell": "lightonocr__vert_02",
+ "engine": "lightonocr",
+ "img": "vert_02.png",
+ "imgpath": "C:/Users/Frank/AppData/Local/hermes/workspace/articles/bench/ep12-ocr2\\output\\samples\\vert_02.png",
+ "runs": 3,
+ "warmup": 2,
+ "attempt": 1,
+ "session": "ep12-main",
+ "py": "3.11.16",
+ "ts": 1792987997.83348,
+ "threads": {
+  "cpu_count": 16,
+  "torch_num_threads": 8
+ },
+ "peak_rss_at_load_mb": 1382.6,
+ "rss_scope": "ollama-serve 进程树（推理在 llama-server.exe）",
+ "settings": {
+  "engine": "lightonocr",
+  "backend": "Ollama (LightOnOCR-3 0.8b, CPU)",
+  "params": "0.8B",
+  "api_mode": "local",
+  "quant": "Q8_0",
+  "weight_source": "maternion 社区 GGUF 转换（非 LightOn 官方发布）",
+  "license": "Apache-2.0",
+  "cache_note": "按图片缓存 → 每次计时前卸载（keep_alive=0）",
+  "output_field_note": "结果写在 thinking 字段（response 为空），与 GLM-OCR 不同",
+  "maas_upload": false
+ },
+ "warmup_times": [
+  6.6219,
+  6.3287,
+  6.4662
+ ],
+ "warmup_converged": false,
+ "peak_rss_mb": 1385.9,
+ "peak_rss_samples": 142,
+ "t_infers": [
+  6.3392,
+  6.6168,
+  6.42
+ ],
+ "median": 6.42,
+ "min": 6.3392,
+ "max": 6.6168,
+ "spread_pct": 4.32,
+ "text": "药品说明：每日三次饭后服，避光密封保存，儿童用量减半，有效期廿四月",
+ "text_len": 33,
+ "n_lines": 1,
+ "extra": {
+  "wall_s": 6.333853721618652,
+  "output_field": "thinking",
+  "load_duration_s": 1.63,
+  "prompt_eval_count": 490,
+  "prompt_eval_duration_s": 3.3623,
+  "eval_count": 38,
+  "eval_duration_s": 1.2985,
+  "total_duration_s": 6.3125,
+  "model": "maternion/LightOnOCR-3:0.8b"
+ },
+ "err": "",
+ "seg": {
+  "t_import": 0.001751,
+  "t_session": 0.357472
+ },
+ "t_total": 41.356
+}

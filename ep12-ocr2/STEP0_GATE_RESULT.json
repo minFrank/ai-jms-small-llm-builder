@@ -1,0 +1,94 @@
+{
+  "criterion_revised": "档位 + 输入尺寸 + 字典内容（原'权重SHA256全等'已废弃，跨格式不可比）",
+  "stacks": {},
+  "checks": {
+    "tier": {
+      "paddle": "PP-OCRv6_medium",
+      "rapidocr": "medium",
+      "equal": true
+    },
+    "input_size": {
+      "paddle_rec_image_shape": [
+        3,
+        48,
+        320
+      ],
+      "rcl_rec_onnx_input": [
+        "DynamicDimension.0",
+        3,
+        48,
+        "DynamicDimension.1"
+      ],
+      "paddle_det_preprocess": [
+        "DecodeImage",
+        "DetLabelEncode",
+        "DetResizeForTest",
+        "NormalizeImage",
+        "ToCHWImage",
+        "KeepKeys"
+      ],
+      "rcl_det_onnx_input": [
+        "DynamicDimension.0",
+        3,
+        "DynamicDimension.1",
+        "DynamicDimension.2"
+      ],
+      "note": "Paddle image_shape=[C,H,W]；ONNX 输入=[N,C,H,W]，比对时按 C/H 位对齐",
+      "rec_C_H_equal": true,
+      "paddle_rec_W_fixed": 320,
+      "rcl_rec_W": "dynamic (ONNX 动态轴)",
+      "det_dynamic_both": true
+    },
+    "dict": {
+      "paddle_count": 18708,
+      "rcl_count": 18708,
+      "same_length": true,
+      "diff_count": 0,
+      "content_equal": true,
+      "paddle_seq_sha256": "679f4f4cbbb4f762e84fae998e02c08a556afbd115968104ca3b4aeee5cb2b19",
+      "rcl_seq_sha256": "679f4f4cbbb4f762e84fae998e02c08a556afbd115968104ca3b4aeee5cb2b19",
+      "diff_sample": []
+    }
+  },
+  "gate_passed": true,
+  "verdict": "PASS: 三栈可视为同一套 PP-OCRv6 medium",
+  "weights": {
+    "rcl_det_onnx": {
+      "path": "D:\\models\\ep12-ocr2\\rapidocr\\PP-OCRv6_det_medium.onnx",
+      "mb": 62.119,
+      "sha256": "92078b7355007ccfffcd4c8cd441a3afd4538904d06881b29a155e1e679907c2",
+      "onnx_input": [
+        "DynamicDimension.0",
+        3,
+        "DynamicDimension.1",
+        "DynamicDimension.2"
+      ]
+    },
+    "rcl_rec_onnx": {
+      "path": "D:\\models\\ep12-ocr2\\rapidocr\\PP-OCRv6_rec_medium.onnx",
+      "mb": 76.63,
+      "sha256": "eef444829dbbe18d7fea59a3f6eb75647518d2b3a9568d27c92e42940204894b",
+      "onnx_input": [
+        "DynamicDimension.0",
+        3,
+        48,
+        "DynamicDimension.1"
+      ]
+    },
+    "rcl_cls_onnx": {
+      "path": "D:\\models\\ep12-ocr2\\rapidocr\\ch_ppocr_mobile_v2.0_cls_mobile.onnx",
+      "mb": 0.586,
+      "sha256": "e47acedf663230f8863ff1ab0e64dd2d82b838fceb5957146dab185a89d6215c"
+    },
+    "paddle_det_pdiparams": {
+      "path": "C:\\Users\\Frank\\.paddlex\\official_models\\PP-OCRv6_medium_det\\inference.pdiparams",
+      "mb": 61.96,
+      "sha256": "85218d2e3d98f5a21c58b4220627be923a97aee5db3cc71f39536ab31ac53960"
+    },
+    "paddle_rec_pdiparams": {
+      "path": "C:\\Users\\Frank\\.paddlex\\official_models\\PP-OCRv6_medium_rec\\inference.pdiparams",
+      "mb": 76.465,
+      "sha256": "1b01c79a914587933f615569e75de54f2e638ebb5d3f3b3c1b38c24ede8c7319"
+    }
+  }
+}

@@ -1,0 +1,63 @@
+{
+ "schema": "ep12-cell-v1",
+ "cell": "glmocr__vert_01",
+ "engine": "glmocr",
+ "img": "vert_01.png",
+ "imgpath": "C:/Users/Frank/AppData/Local/hermes/workspace/articles/bench/ep12-ocr2\\output\\samples\\vert_01.png",
+ "runs": 3,
+ "warmup": 2,
+ "attempt": 1,
+ "session": "ep12-main",
+ "py": "3.11.16",
+ "ts": 1792946882.1700296,
+ "threads": {
+  "cpu_count": 16,
+  "torch_num_threads": 8
+ },
+ "peak_rss_at_load_mb": 2812.9,
+ "rss_scope": "ollama-serve 进程树（推理在 llama-server.exe）",
+ "settings": {
+  "engine": "glmocr",
+  "backend": "Ollama (glm-ocr, CPU)",
+  "params": "0.9B",
+  "api_mode": "local",
+  "cache_note": "按图片缓存 → 每次计时前卸载（keep_alive=0）",
+  "maas_upload": false
+ },
+ "warmup_times": [
+  12.9588,
+  12.5266,
+  13.0104
+ ],
+ "warmup_converged": false,
+ "peak_rss_mb": 2854.0,
+ "peak_rss_samples": 289,
+ "t_infers": [
+  13.0356,
+  12.6,
+  12.6205
+ ],
+ "median": 12.6205,
+ "min": 12.6,
+ "max": 13.0356,
+ "spread_pct": 3.45,
+ "text": "会议纪要\n\n时间十月廿五日\n地点三楼会议室\n出席共十二人\n决议事项三项",
+ "text_len": 35,
+ "n_lines": 5,
+ "extra": {
+  "wall_s": 13.030022621154785,
+  "load_duration_s": 1.6723,
+  "prompt_eval_count": 629,
+  "prompt_eval_duration_s": 10.211,
+  "eval_count": 26,
+  "eval_duration_s": 1.0991,
+  "total_duration_s": 13.0053,
+  "model": "glm-ocr"
+ },
+ "err": "",
+ "seg": {
+  "t_import": 0.001716,
+  "t_session": 0.357904
+ },
+ "t_total": 79.2656
+}

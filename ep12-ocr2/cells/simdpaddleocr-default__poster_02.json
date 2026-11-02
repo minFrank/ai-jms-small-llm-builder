@@ -1,0 +1,58 @@
+{
+ "schema": "ep12-cell-v1",
+ "cell": "simdpaddleocr-default__poster_02",
+ "engine": "simdpaddleocr-default",
+ "img": "poster_02.png",
+ "imgpath": "C:/Users/Frank/AppData/Local/hermes/workspace/articles/bench/ep12-ocr2\\output\\samples\\poster_02.png",
+ "runs": 3,
+ "warmup": 2,
+ "attempt": 1,
+ "session": "ep12-main",
+ "py": "3.11.16",
+ "ts": 1792930463.5497053,
+ "threads": {
+  "cpu_count": 16,
+  "torch_num_threads": 8
+ },
+ "peak_rss_at_load_mb": 226.6,
+ "rss_scope": "本进程 + 后代进程树",
+ "settings": {
+  "engine": "simdpaddleocr-default",
+  "backend": "SimdPaddleOCR 2.0.0 (.NET 10, 纯 C#)",
+  "profile": "default",
+  "bundle": "PP-OCRv6_medium (Sdcb.SimdPaddleOCR.Models.ChineseV6Medium 1.0.0)",
+  "note": "load 计时含 .NET 进程启动，与 Python 引擎不可横比"
+ },
+ "warmup_times": [
+  2.3994,
+  2.4207
+ ],
+ "warmup_converged": true,
+ "peak_rss_mb": 744.9,
+ "peak_rss_samples": 55,
+ "t_infers": [
+  2.3526,
+  2.3526,
+  2.3825
+ ],
+ "median": 2.3526,
+ "min": 2.3526,
+ "max": 2.3825,
+ "spread_pct": 1.27,
+ "text": "社区义诊\n内科外科中医科\n血压血糖免费测\n六十五岁以上优先\n随带既往病历\n内科外科中医科\n血压血糖免费测\n六十五岁以上优先\n随带既往病历",
+ "text_len": 68,
+ "n_lines": 9,
+ "extra": {
+  "n_boxes": 9,
+  "t_infers_csharp": [
+   1.391282
+  ],
+  "effective_line_worker_count": 4
+ },
+ "err": "",
+ "seg": {
+  "t_import": 0.001476,
+  "t_session": 0.357674
+ },
+ "t_total": 14.503
+}

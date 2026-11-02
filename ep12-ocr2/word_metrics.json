@@ -1,0 +1,50 @@
+[
+ {
+  "name": "RCL small",
+  "n_img": 24,
+  "line_er_upper_median": 0.75,
+  "line_acc_upper_median": 0.315789
+ },
+ {
+  "name": "RCL medium",
+  "n_img": 24,
+  "line_er_upper_median": 0.5,
+  "line_acc_upper_median": 0.538462
+ },
+ {
+  "name": "Simd 默认",
+  "n_img": 24,
+  "line_er_upper_median": 0.5,
+  "line_acc_upper_median": 0.5
+ },
+ {
+  "name": "Simd 受控",
+  "n_img": 24,
+  "line_er_upper_median": 0.538462,
+  "line_acc_upper_median": 0.538462
+ },
+ {
+  "name": "EasyOCR",
+  "n_img": 24,
+  "line_er_upper_median": 0.923077,
+  "line_acc_upper_median": 0.096154
+ },
+ {
+  "name": "Paddle官方",
+  "n_img": 24,
+  "line_er_upper_median": 0.615385,
+  "line_acc_upper_median": 0.454545
+ },
+ {
+  "name": "LightOn剥标",
+  "n_img": 24,
+  "line_er_upper_median": 1.0,
+  "line_acc_upper_median": 0.0
+ },
+ {
+  "name": "GLM-OCR",
+  "n_img": 24,
+  "line_er_upper_median": 0.545455,
+  "line_acc_upper_median": 1.0
+ }
+]

@@ -1,0 +1,68 @@
+{
+ "schema": "ep12-cell-v1",
+ "cell": "lightonocr__seal_01",
+ "engine": "lightonocr",
+ "img": "seal_01.png",
+ "imgpath": "C:/Users/Frank/AppData/Local/hermes/workspace/articles/bench/ep12-ocr2\\output\\samples\\seal_01.png",
+ "runs": 3,
+ "warmup": 2,
+ "attempt": 1,
+ "session": "ep12-main",
+ "py": "3.11.16",
+ "ts": 1792987878.5365007,
+ "threads": {
+  "cpu_count": 16,
+  "torch_num_threads": 8
+ },
+ "peak_rss_at_load_mb": 1533.6,
+ "rss_scope": "ollama-serve 进程树（推理在 llama-server.exe）",
+ "settings": {
+  "engine": "lightonocr",
+  "backend": "Ollama (LightOnOCR-3 0.8b, CPU)",
+  "params": "0.8B",
+  "api_mode": "local",
+  "quant": "Q8_0",
+  "weight_source": "maternion 社区 GGUF 转换（非 LightOn 官方发布）",
+  "license": "Apache-2.0",
+  "cache_note": "按图片缓存 → 每次计时前卸载（keep_alive=0）",
+  "output_field_note": "结果写在 thinking 字段（response 为空），与 GLM-OCR 不同",
+  "maas_upload": false
+ },
+ "warmup_times": [
+  7.1305,
+  7.2916,
+  7.2596
+ ],
+ "warmup_converged": true,
+ "peak_rss_mb": 1533.6,
+ "peak_rss_samples": 153,
+ "t_infers": [
+  6.9886,
+  7.4208,
+  7.6705
+ ],
+ "median": 7.4208,
+ "min": 6.9886,
+ "max": 7.6705,
+ "spread_pct": 9.19,
+ "text": "stamp \"公單位章\"\n\n![text](58,137,561,692) 兹证明张明远同志系我单位职工自二零一九年三月起在职至今现任技术研发部项目经理一职特此证明，特予盖章确认",
+ "text_len": 89,
+ "n_lines": 2,
+ "extra": {
+  "wall_s": 6.98213005065918,
+  "output_field": "thinking",
+  "load_duration_s": 1.6584,
+  "prompt_eval_count": 400,
+  "prompt_eval_duration_s": 2.6727,
+  "eval_count": 77,
+  "eval_duration_s": 2.6298,
+  "total_duration_s": 6.9781,
+  "model": "maternion/LightOnOCR-3:0.8b"
+ },
+ "err": "",
+ "seg": {
+  "t_import": 0.001599,
+  "t_session": 0.356272
+ },
+ "t_total": 46.3653
+}

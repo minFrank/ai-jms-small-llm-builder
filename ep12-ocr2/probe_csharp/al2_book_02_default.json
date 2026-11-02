@@ -1,0 +1,195 @@
+﻿{
+  "schema": "ep12-simdbench-v1",
+  "profile": "default",
+  "runs": 1,
+  "warmup": 0,
+  "processor_count": 16,
+  "images": [
+    {
+      "img": "C:\\Users\\Frank\\AppData\\Local\\hermes\\workspace\\articles\\bench\\ep11-ocr\\output\\samples\\book_02.png",
+      "t_infers": [
+        2.21933
+      ],
+      "median": 2.21933,
+      "min": 2.21933,
+      "max": 2.21933,
+      "spread_pct": 0,
+      "raw_items": [
+        [
+          184.5,
+          582,
+          "Scene Text OCR"
+        ],
+        [
+          217,
+          906,
+          "I\u0027ve been watching this"
+        ],
+        [
+          240.5,
+          545,
+          "\u597D\u5FB7\u58EB"
+        ],
+        [
+          236,
+          635,
+          "\u73B0/\u70E4|\u6C49/\u5821"
+        ],
+        [
+          230,
+          900,
+          "group all year, and most"
+        ],
+        [
+          261.5,
+          359,
+          "PIGS"
+        ],
+        [
+          240.5,
+          364,
+          "AMMO"
+        ],
+        [
+          240.5,
+          900,
+          "of you are not naughty..."
+        ],
+        [
+          252.5,
+          644,
+          "\u66F4\u65B0\u9C9C"
+        ],
+        [
+          302.5,
+          716,
+          "\u6728\u70AD\u70E7\u70E4"
+        ],
+        [
+          352.5,
+          761,
+          "edness"
+        ],
+        [
+          367,
+          915,
+          "You\u0027re mentally ill"
+        ],
+        [
+          408.5,
+          591,
+          "Document OCR"
+        ],
+        [
+          609,
+          752,
+          "= d2 (C,,s) \u002B 1 \u002B 2(radT \u2212 1 \u2212 dr(C,,s))"
+        ],
+        [
+          652,
+          732,
+          "[A\u002Bp,\u03B21[3A(RH]\u002B2AH2)\u002B440"
+        ],
+        [
+          741.5,
+          575,
+          "Fine-grained OCR"
+        ],
+        [
+          872.5,
+          496,
+          "\u5496\u5561\u5C0F\u54B8\u6B66"
+        ],
+        [
+          883,
+          608,
+          "\u51BB\u5E72"
+        ],
+        [
+          917,
+          318,
+          ""
+        ],
+        [
+          917.5,
+          372,
+          "\u5927\u738B\u5A46\u91D1"
+        ],
+        [
+          1057.5,
+          567,
+          "More General OCR"
+        ],
+        [
+          1409,
+          234,
+          "Figure 1: On the input side, GOT supports various optical image types, such as commonly used"
+        ],
+        [
+          1433,
+          236,
+          "photographs and documents. Besides, as a general OCR-2.0 model, GOT can handle more tasks, e.g.,"
+        ],
+        [
+          1457,
+          236,
+          "sheet music, molecular formulas, easy geometric shapes, charts, etc. Moreover, the model can adapt"
+        ],
+        [
+          1481,
+          236,
+          "to region-focus OCR, high-resolution OCR, and multiple-page OCR. GOT mainly supports English"
+        ],
+        [
+          1505,
+          233.95,
+          "and Chinese and can control the structure results (Mathpix markdown/tikz/smiles/kern) via a prompt."
+        ],
+        [
+          1641,
+          664,
+          "2"
+        ]
+      ],
+      "err": ""
+    }
+  ],
+  "bundle_name": "PP-OCRv6_medium",
+  "t_session_s": 0.653298,
+  "options": {
+    "UseDirectionClassification": "True",
+    "ClassifierThreshold": "0",
+    "LineWorkerCount": "0",
+    "DetIntraOpThreads": "0",
+    "RecBatchLines": "1",
+    "MaxCropPixels": "16000000",
+    "Detector": {
+      "MaxSessionCacheEntries": "10",
+      "MaxPooledSessions": "16",
+      "LimitSideLength": "960",
+      "MaxCandidates": "3000",
+      "UseDilation": "False",
+      "BitmapThreshold": "0.2",
+      "BoxThreshold": "0.45",
+      "UnclipRatio": "1.4",
+      "MaxImagePixels": "40000000",
+      "Backend": "Auto"
+    },
+    "Classifier": {
+      "Backend": "Auto",
+      "MaxImagePixels": "40000000",
+      "MaxPooledSessions": "16"
+    },
+    "Recognizer": {
+      "MaxPooledSessions": "16",
+      "TargetWidth": "320",
+      "AdaptiveWidth": "True",
+      "MaxImagePixels": "40000000",
+      "Backend": "Auto"
+    }
+  },
+  "effective_line_worker_count": 4,
+  "warmup_times": [],
+  "warmup_converged": true,
+  "t_total_s": 2.984144
+}

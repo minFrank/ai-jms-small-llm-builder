@@ -1,0 +1,59 @@
+{
+ "schema": "ep12-cell-v1",
+ "cell": "easyocr__hard_01",
+ "engine": "easyocr",
+ "img": "hard_01.png",
+ "imgpath": "C:/Users/Frank/AppData/Local/hermes/workspace/articles/bench/ep11-ocr\\output\\samples\\hard_01.png",
+ "runs": 3,
+ "warmup": 2,
+ "attempt": 1,
+ "session": "ep12-main",
+ "py": "3.11.16",
+ "ts": 1792936410.4952097,
+ "threads": {
+  "cpu_count": 16,
+  "torch_num_threads": 8
+ },
+ "peak_rss_at_load_mb": 899.6,
+ "rss_scope": "本进程 + 后代进程树",
+ "settings": {
+  "engine": "easyocr",
+  "backend": "torch-cpu",
+  "easyocr": "1.7.2",
+  "torch": "2.14.1+cpu",
+  "lang": [
+   "ch_sim",
+   "en"
+  ],
+  "quantize": false,
+  "gpu": false
+ },
+ "warmup_times": [
+  14.9541,
+  14.6902
+ ],
+ "warmup_converged": true,
+ "peak_rss_mb": 2661.2,
+ "peak_rss_samples": 351,
+ "t_infers": [
+  14.556,
+  14.6788,
+  15.6095
+ ],
+ "median": 14.6788,
+ "min": 14.556,
+ "max": 15.6095,
+ "spread_pct": 7.18,
+ "text": "Intern VL-1.5 [9] and other models [27,50] utilize a sliding window manner to crop the whole image\ninto multiple sub-patches for high-resolution OCR. Hence。 9 consensus is that optical character\nperception and recognition are the foundation of text-driven image understanding; drawing many\nresearchers tO pay more attention to LVLMs` OCR booster:\nHowever; the popular designs of LVLMs may not be suitable for diverse OCR tasks for the following\nreasons: 1) The conflicts between perception and reasoning. LVLMs mainly focus On Visual reasoning\nperformance; 2.8. VQA [33,42], because that is what the LLM excels at。 To quickly obtain the\nQA-gain benefits from LLMs most LVLMs [15,24,49] align image tokens to text ones. However; i\nis unreasonable to do this for pure perception OCR tasks, especially high-density text scenes, because\neach aligned vision token (biased towards text token) cannot compress enough characters. Imagine\nhow wasteful it is tO use thousands of image tokens, 2.8., the image-cropping manner [9,23], to\nencode an equal amount of Optical characters (e.8. texts within only an A4-PDF page) 2) High\nieration and deployment costs_ LVLMoften enjoys billions of parameters, leading to the post-training\nand deployment costs being too high. Generally speaking, for LVLMs, fine-tuning is not enough\nonce we want to add a new OCR pattern, 2.8., 8 new language, instead of enough GPU resources for\nPre ~training. However; rerunning the pre-training with billions of parameters, only to introduce a new\nOCR feature, is also wasteful。\nAccordingly, we propose the general OCR theory, i.e., OCR-2.0, to break the bottlenecks of both\ntraditional and LVLM manners on OCR tasks. We think that  modelof OCR 2.0 should have the\nfollowing essential characteristics:\nEnd-to-end. Compared to OCR-1.0 models with complex procedures, the OCR-2.0 model should\nenjoy unified and end-to-end architecture to ensure lower maintenance cOSts。 It is COol that a\nbeginner can quickly master the entire OCR system in the 2.0 era。\nLow training and inference costs. The OCR-2.0 model should not be a chatbot;, like LVLM, that\nfocuses OIl reasoning tasks Its focus should be on strong perception and recognition Of optical\ncharacters, S0 it needs a reasonable number Of model parameters in exchange for lower training\nand inference costs_\nVersatility。 The OCR-2.0 model's other important point is versatility; including recognizing more\ngeneral artificial optical ` characters \" 2.8., sheet music, charts, geometric shapes, etc Besides, the\nmodel should support the output format with stronger readability, 2.8., IIEXMarkdown format for\nformulas and tables_\nBased on the proposed general OCR theory; we present a primary OCR-2.0 model (GOT ) to bridge\nthe gap between OCR-1.0 models and people s higher optical character processing demands. 皿\narchitecture; we adopt the unsophisticated encoder-decoder paradigm for the model. Specifically;\nGOT enjoys high compression rate encoder to transfer the optical image to tokens as well as\nlong context length decoder to output the corresponding OCR results_ The encoder has aPPrOx-\nimately 8OM parameters posing 1024*1024 input size which is enough to deal with commonly\nused photoldocument input styles_ Each input image will be compressed to tokens with 256*1024\ndimensions The decoder of GOT, with 0.58 parameters, supports 8k max length tokens to ensure\ni can tackle long-context scenarios. We devise 41 effective and efficient training strategy for GOT\nwhich can be divided into three procedures, i.e ., decoupled pre-training of the encoder; joint-training\nof the encoder with a new decoder, and further Post-training of the decoder: Besides, to further Iift\nthe practicality Of GOI; we additionally adapt the fine-grained OCR feature for better interactivity;\ndynamic resolution strategy for ultra-high-resolution images (2.8' OVeI 2k), and the multi-page OCR\ntechnology to alleviate the problem of diffculty i breaking pages i PDF image-text Pairs (2.8;\nPage breaks i [e files). To support each training stage, we do many data engines for synthetic data\nproduction, which is the key to the success of GOT and will be described in detail in this paper: The\nmain input data format supported by OU model can be seen i Figure 1\nAs a model for envisioning OCR-2.0, GOT demonstrates promising performance i our experiments\ni various OCR tasks。 We hope the proposed simple and elegant GOT can draw more researchers to\ninvest in the research of OCR-2.0. Of course, the Path to OCR-2.0 is still long and GOT also enjoys\nmuch improvement room, such as supporting more languages, more general artificial signals, and\nIIOIe complex geometries. In this new era led by LVLMs, we are convinced that the pure OCR model\nis not over。 i may even be a new beginning。",
+ "text_len": 4783,
+ "n_lines": 54,
+ "extra": {
+  "n_boxes": 109
+ },
+ "err": "",
+ "seg": {
+  "t_import": 0.001661,
+  "t_session": 5.434541
+ },
+ "t_total": 82.2986
+}
