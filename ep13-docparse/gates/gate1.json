@@ -1,0 +1,174 @@
+{
+ "gate": "G1",
+ "verdict": "pass",
+ "checks": [
+  {
+   "check": "complete_cell_rate S26",
+   "ok": true,
+   "detail": "156"
+  },
+  {
+   "check": "complete_cell_rate S24",
+   "ok": true,
+   "detail": "不适用：† 两张成员未在规格中预注册冻结，本期不出 S24 主榜（build_data_report.py 已披露）"
+  },
+  {
+   "check": "engine_success_rate 逐引擎",
+   "ok": true,
+   "detail": "monkey_rec 163/163; ovis_ocr2 167/168(ineligible); oxr 197/197(ineligible); paddleocr_vl 160/160; surya_2_5 168/168(ineligible); xiaomi_vl 167/167"
+  },
+  {
+   "check": "diff_pct 齐全",
+   "ok": true,
+   "detail": "caliber n=156 max_diff=0.4%(cell 74ac3433-45b) >10%数=0"
+  },
+  {
+   "check": "diff_pct>10 已注",
+   "ok": true,
+   "detail": "caliber n=156 max_diff=0.4%(cell 74ac3433-45b) >10%数=0"
+  },
+  {
+   "check": "partial 不入名次",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "unstable 分层披露",
+   "ok": true,
+   "detail": "质量名次含 unstable 格（CER 可用）；计时稳定列由报告单独呈现"
+  },
+  {
+   "check": "layer 维排名",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "unstable_timing_disclosed",
+   "ok": true,
+   "detail": "unstable 不移出质量名次（CER 可用）；报告须含计时稳定列（build 已加）。原 _moved=False"
+  }
+ ],
+ "per_engine": {
+  "monkey_rec": {
+   "n": 26,
+   "valid": 163,
+   "attempt": 163,
+   "unstable": 0,
+   "stable": 26,
+   "ranking_eligible": true,
+   "quality_eligible": true,
+   "engine_success_rate": 1.0
+  },
+  "ovis_ocr2": {
+   "n": 26,
+   "valid": 167,
+   "attempt": 168,
+   "unstable": 2,
+   "stable": 24,
+   "ranking_eligible": false,
+   "quality_eligible": true,
+   "engine_success_rate": 0.994
+  },
+  "oxr": {
+   "n": 26,
+   "valid": 197,
+   "attempt": 197,
+   "unstable": 6,
+   "stable": 20,
+   "ranking_eligible": false,
+   "quality_eligible": true,
+   "engine_success_rate": 1.0
+  },
+  "paddleocr_vl": {
+   "n": 26,
+   "valid": 160,
+   "attempt": 160,
+   "unstable": 0,
+   "stable": 26,
+   "ranking_eligible": true,
+   "quality_eligible": true,
+   "engine_success_rate": 1.0
+  },
+  "surya_2_5": {
+   "n": 26,
+   "valid": 168,
+   "attempt": 168,
+   "unstable": 2,
+   "stable": 24,
+   "ranking_eligible": false,
+   "quality_eligible": true,
+   "engine_success_rate": 1.0
+  },
+  "xiaomi_vl": {
+   "n": 26,
+   "valid": 167,
+   "attempt": 167,
+   "unstable": 1,
+   "stable": 25,
+   "ranking_eligible": true,
+   "quality_eligible": true,
+   "engine_success_rate": 1.0
+  }
+ },
+ "caliber_per_engine": {
+  "monkey_rec": {
+   "n_cells": 26,
+   "wall_median_s": 100.32,
+   "wall_self_median_s": 0.0,
+   "median_diff_pct": 0.04,
+   "max_diff_pct": 0.15,
+   "load_in_wall": "外置（session 级，不计入 wall）",
+   "note": "全部 ≤10%"
+  },
+  "ovis_ocr2": {
+   "n_cells": 26,
+   "wall_median_s": 73.918,
+   "wall_self_median_s": 0.0,
+   "median_diff_pct": 0.07,
+   "max_diff_pct": 0.21,
+   "load_in_wall": "外置（session 级，不计入 wall）",
+   "note": "全部 ≤10%"
+  },
+  "oxr": {
+   "n_cells": 26,
+   "wall_median_s": 118.173,
+   "wall_self_median_s": 0.0,
+   "median_diff_pct": 0.11,
+   "max_diff_pct": 0.25,
+   "load_in_wall": "外置（session 级，不计入 wall）",
+   "note": "全部 ≤10%"
+  },
+  "paddleocr_vl": {
+   "n_cells": 26,
+   "wall_median_s": 49.636,
+   "wall_self_median_s": 0.0,
+   "median_diff_pct": 0.08,
+   "max_diff_pct": 0.25,
+   "load_in_wall": "外置（session 级，不计入 wall）",
+   "note": "全部 ≤10%"
+  },
+  "surya_2_5": {
+   "n_cells": 26,
+   "wall_median_s": 76.008,
+   "wall_self_median_s": 0.0,
+   "median_diff_pct": 0.05,
+   "max_diff_pct": 0.13,
+   "load_in_wall": "外置（session 级，不计入 wall）",
+   "note": "全部 ≤10%"
+  },
+  "xiaomi_vl": {
+   "n_cells": 26,
+   "wall_median_s": 66.766,
+   "wall_self_median_s": 0.0,
+   "median_diff_pct": 0.07,
+   "max_diff_pct": 0.4,
+   "load_in_wall": "外置（session 级，不计入 wall）",
+   "note": "全部 ≤10%"
+  }
+ },
+ "partial_detail": "partial=0（156 格全 complete，无 partial 入排名）",
+ "unstable_detail": "判据分层（A+C, 2026-11-09）：unstable=wall 计时波动（CER 多为 12 次全同），不移出质量名次；质量名次按 CER 中位（6 引擎全排），计时稳定性单列（stable/26）。当前 unstable 11 格，计时列如实披露。",
+ "layer_detail": "layer=A 全 156 格（六引擎同层，层内排名）",
+ "ranking_note": "判据分层：质量名次 eligibility=CER 可用格≥25（6 引擎全入）；计时稳定列 eligibility=wall stable≥25（oxr/ovis/surya 不足 → 计时名次不含，仅质量名次）",
+ "finished_at": "2026-11-12T01:18:28"
+}

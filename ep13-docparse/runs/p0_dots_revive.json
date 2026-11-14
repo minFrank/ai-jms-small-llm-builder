@@ -1,0 +1,21 @@
+{
+ "engine": "dots-revive-official",
+ "route": "demo_hf-process_vision_info",
+ "reps": [
+  {
+   "rep": 1,
+   "wall_s": 159.6,
+   "len": 0,
+   "text_head": ""
+  },
+  {
+   "rep": 2,
+   "wall_s": 172.0,
+   "len": 0,
+   "text_head": ""
+  }
+ ],
+ "judge_nonempty_len": false,
+ "judge_twice_same": true,
+ "verdict": "FAIL"
+}

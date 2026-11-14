@@ -1,0 +1,56 @@
+{
+ "schema": 6,
+ "run_id": "ep13-smoke-002",
+ "cell_key": "a63dad76-3708-42d3-8ebf-2a693697d423__ovis_ocr2__p1",
+ "engine": "ovis_ocr2",
+ "layer": "A",
+ "sample_id": "a63dad76-3708-42d3-8ebf-2a693697d423",
+ "set": "S26",
+ "input": {
+  "kind": "image",
+  "sha256": "953b089b916eaa5e675e5ab5beefc8933d0b73836e0a06f7e133fe8cae7bdc8a",
+  "page_no": 1,
+  "dpi": 300
+ },
+ "fingerprint": {
+  "git": "ep13",
+  "weights_sha": "see-MANIFEST",
+  "deps": "see-venv",
+  "config_hash": "engines-ep13-v1",
+  "extract_v": "contract-v1",
+  "gt_v": "none-smoke",
+  "gt_hash": "none-smoke",
+  "sample_sha": "953b089b916eaa5e675e5ab5beefc8933d0b73836e0a06f7e133fe8cae7bdc8a",
+  "engine_version": "p0-validated",
+  "host_manifest_id": "host-1",
+  "seed": 0,
+  "order": 0
+ },
+ "target_valid": 6,
+ "max_attempts": 1,
+ "status": "failed",
+ "err": "schema_err:1 is not one of [8, 12]\n\nFailed validating 'enum' in schema['properties']['max_attempts']:\n    {'type': 'integer', 'enum': [8, 12]}\n\nOn instance['max_attempts']:\n    1",
+ "err_kind": null,
+ "n_attempt": 1,
+ "n_valid": 1,
+ "n_fail": 0,
+ "wall_median": null,
+ "wall_iqr": null,
+ "cer_median": null,
+ "cell_success_rate": null,
+ "trunc_rate": null,
+ "unstable": false,
+ "reps": [
+  {
+   "n": 1,
+   "attempt": 1,
+   "status": "ok",
+   "wall": 469.946,
+   "wall_self": 469.852,
+   "cer": null,
+   "truncated": false,
+   "err_kind": null,
+   "ts": "2026-11-04T18:39:42"
+  }
+ ]
+}

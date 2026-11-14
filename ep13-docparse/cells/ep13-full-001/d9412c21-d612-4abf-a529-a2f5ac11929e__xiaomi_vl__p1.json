@@ -1,0 +1,113 @@
+{
+ "schema": 6,
+ "run_id": "ep13-full-001",
+ "cell_key": "d9412c21-d612-4abf-a529-a2f5ac11929e__xiaomi_vl__p1",
+ "engine": "xiaomi_vl",
+ "layer": "A",
+ "sample_id": "d9412c21-d612-4abf-a529-a2f5ac11929e",
+ "set": "S26",
+ "input": {
+  "kind": "image",
+  "sha256": "fe182871223c990a51ae4d6ecac520361606cfc7e2c17947599cdacb4851030c",
+  "page_no": 1,
+  "dpi": 300
+ },
+ "fingerprint": {
+  "git": "ep13",
+  "weights_sha": "d4551e9f6127ac9e35cff7b4f7a72a90410e03e6c8676a36f0e2b7eaeb5d5348",
+  "deps": "see-venv",
+  "config_hash": "engines-ep13-v1",
+  "extract_v": "contract-v1",
+  "gt_v": "ep13-gt-v2",
+  "gt_hash": "6ef78365904461afb0dcb4f0854e315134b62bf094d66b2a30df881999aa0271",
+  "sample_sha": "fe182871223c990a51ae4d6ecac520361606cfc7e2c17947599cdacb4851030c",
+  "engine_version": "p0-validated",
+  "host_manifest_id": "host-1",
+  "seed": 0,
+  "order": 0,
+  "gt_hash_scope": "per-sample GT sha256（r15 回填：重跑格被 runner 占位 none-smoke 覆盖）",
+  "weights_sha_src": "WEIGHTS_SHA256.json（r16 回填：重跑格被 runner 占位）"
+ },
+ "target_valid": 6,
+ "max_attempts": 8,
+ "status": "complete",
+ "err": null,
+ "err_kind": null,
+ "n_attempt": 6,
+ "n_valid": 6,
+ "n_fail": 0,
+ "wall_median": 145.199,
+ "wall_iqr": 0.5112500000000182,
+ "cer_median": 0.068384,
+ "cell_success_rate": 1.0,
+ "trunc_rate": 0.0,
+ "unstable": false,
+ "reps": [
+  {
+   "n": 1,
+   "attempt": 1,
+   "status": "ok",
+   "wall": 145.652,
+   "wall_self": 145.535,
+   "cer": 0.068384,
+   "truncated": false,
+   "err_kind": null,
+   "ts": "2026-11-08T20:28:35"
+  },
+  {
+   "n": 2,
+   "attempt": 2,
+   "status": "ok",
+   "wall": 145.161,
+   "wall_self": 145.113,
+   "cer": 0.068384,
+   "truncated": false,
+   "err_kind": null,
+   "ts": "2026-11-08T20:31:02"
+  },
+  {
+   "n": 3,
+   "attempt": 3,
+   "status": "ok",
+   "wall": 144.756,
+   "wall_self": 144.713,
+   "cer": 0.068384,
+   "truncated": false,
+   "err_kind": null,
+   "ts": "2026-11-08T20:33:30"
+  },
+  {
+   "n": 4,
+   "attempt": 4,
+   "status": "ok",
+   "wall": 145.267,
+   "wall_self": 145.215,
+   "cer": 0.068384,
+   "truncated": false,
+   "err_kind": null,
+   "ts": "2026-11-08T20:35:57"
+  },
+  {
+   "n": 5,
+   "attempt": 5,
+   "status": "ok",
+   "wall": 144.884,
+   "wall_self": 144.832,
+   "cer": 0.068384,
+   "truncated": false,
+   "err_kind": null,
+   "ts": "2026-11-08T20:38:24"
+  },
+  {
+   "n": 6,
+   "attempt": 6,
+   "status": "ok",
+   "wall": 145.237,
+   "wall_self": 145.19,
+   "cer": 0.068384,
+   "truncated": false,
+   "err_kind": null,
+   "ts": "2026-11-08T20:40:52"
+  }
+ ]
+}

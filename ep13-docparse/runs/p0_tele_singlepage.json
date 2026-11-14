@@ -1,0 +1,18 @@
+{
+ "engine": "tele",
+ "route": "transformers-direct",
+ "model_dir": "D:/models/models/ocr/ep13-docparse/TeleOCR",
+ "cold_load_s": 3.9,
+ "reps": [
+  {
+   "rep": 1,
+   "wall_s": 595.6,
+   "len": 1981,
+   "n_tokens": 1024,
+   "text_head": "<box:1000年524年。女,“子,有”子,“学,有“子”子。在“子!尽,有‘子’!\\n!公,“中,有。”子,说“中”!\\n!\\n!,“中。”\\n!\\!\\n!=\\!\\!\\!\\!!\\!\\!(女,写)女,与“子、女,有,有!有!女,为“子。女:女,在“女:子,在‘女:人,在”子。”\\text{女:“子”,“子:“学”子”教,“生,“名:“中”。\\n!“中:“身,“身:“女,‘女’!\\!有”女,女,于“女。”\\fcel>“子。”!\\fcel>\\( \\text{学} \\)“学:“生。”\\taper\\!\\!会\\!\\!/,“立,“与,“女”!\\!女\\!\\n!(女)\\!\\!与\\!\\!=\\!!\\!*\\!\\!成\\!\\!(年)\\!\\!\\in\\!\\mathbb{R}^{2}\\!\\!\\times\\!\\left.\\right.\\!\\!\\left.女,\\!\\text{子}!\\!\\frac{\\text{书}}{\\text>学,“真”!\\!\\!=!\\!\\!,\\!\\mathrm{学}\\!\\!1\\!\\cdot\\!\\frac{1}{2}\\mathrm{~年}\\!\\cdot 1\\mathrm{年}\\!*\\mathrm{1}\\!\\mathrm{x}\\!\\text{i}\\!\\!=1\\,\\mathrm{yr}\\!\\circ\\!\\overline{\\mathrm{女}}\\!\\!,“学\\!\\perp\\!\\right.\\!*\\!"
+  }
+ ],
+ "judge_nonempty_len": true,
+ "judge_twice_same": true,
+ "verdict": "PASS"
+}

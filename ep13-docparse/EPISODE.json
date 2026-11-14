@@ -1,0 +1,18 @@
+{
+ "episode": "ep13",
+ "date": "2026-11-10",
+ "title": "文档解析·专用模型 8 引擎",
+ "code_git": "HEAD",
+ "spec_version": "V6d",
+ "spec_path": "C:/Users/Frank/AppData/Local/hermes/.hermes/plans/2026-11-03-docparse-bench-console-spec.md",
+ "models_dir": "D:/models/models/ocr/ep13-docparse/",
+ "control_dir": "ep13-docparse/control/",
+ "created": "2026-11-03 15:56",
+ "spec_version_note": "V6d 与 V6e 指同一份规格：权威源正文标题 V6d、§2.2b 增补为 V6e（build_data_report.py 已按此披露）。samples/manifest.json 与 SOURCES.md 记 V6e，engines.yaml/sets.yaml 记 V6d-errata，均为各自冻结时的表述，非版本冲突。",
+ "code_git_note": "HEAD 是占位符，不是可解析版本。2026-11-12 实测 git rev-parse HEAD 失败：本仓库尚无任何 commit，故 code_git 无法钉到真实 hash。未编造版本号；发布前若需代码级可复现，请先做首次提交并回填。",
+ "code_git_resolved": null,
+ "run_manifest": "ep13-docparse/control/run_manifest.json",
+ "lineup_note": "立项 8 引擎，实跑 6：TeleOCR(1.2B)、dots.ocr(1.7B) 经 P0 共 16 项 CPU 直载复活实验判定不可行，归档 N/A（runs/p0_tele_verdict.json=FAIL_FINAL_CPU、runs/p0_dots_verdict.json=FAIL_FINAL），不进排名。",
+ "gates_snapshot_20261112": "G0 pass / G1 pass / G2 pass / G3 fail（七判据 7/7、pre_push 10/10、original 硬阻断 0，仅差用户终审）",
+ "updated_at": "2026-11-12"
+}

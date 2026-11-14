@@ -1,0 +1,81 @@
+已读三份材料：v4 279 行、errata 334 行、r3 93 行。仅基于这三份，不查其他文件。
+
+结论先行：6 条阻断项均已达到“工程实质闭环”；四组 A/C/D 可执行/可推导，B 可执行但负例有 3 条 schema 闭合规则必须在写 schema 时落；跨文件数字全部一致。判定：可开工（附开工前对齐 5 条、实现期盯点 7 条）。
+
+一、6 条阻断项逐条
+
+1. 已闭环。errata 规格本轮在位：L3 总述、L51 S_ALL=156+S_PDF、L53 S26=1872/S24=1728、L54 input 统一 sha256、L71 unstable 口径、L80 非量化即 A、L308 F-01=1872；v4 的 L6/L47/L54/L214/L262 均已对应。spec 中已无 live 的 2496/page_sha，L51 的“208”只是历史说明。残留：v4 L278 仍写“5 处已入权威源”，与 L6“8 处已改”不一致，属文档级。
+
+2. 已闭环。v4 L131—162：__init__ 实例化 reps/walls/cers/n_attempt；absorb 单点 n_attempt+1；TimeoutError 生成 status=timeout 的 rep；WorkerFatal 先 respawn 再 continue、不 absorb；run() 返回 cell；finally 先 finish 再 save_raw；空 walls→median=null→failed。实现期要盯：respawn 预算耗尽时 respawn_or_mark() 必须置 cell.fatal，否则 n_attempt 不增会死循环；timeout 分支要按 spec §3.9 kill+respawn/丢弃迟到响应，v4 代码段未展开。
+
+3. 已闭环。v4 L173 与 spec L71 已是同一句：n_attempt 达 12 且 n_valid≥6 且 valid walls 的 IQR/median>10%→unstable；6valid/6fail 也按此判；A⑤ L267 明确 expected=unstable；原 §2.2⑥ 的矛盾注已删。残留：v4 L9/L49 写“规格 L67”，实际在 L71，行号需改。
+
+4. 已闭环。v4 L234：25/23 为 cell 级参考线，字段带 _cells/_reps；L269 的 C 组已补 engine_success_rate<95%、25/23 不达标、diff_pct 缺失→not_run；L236 写明 1092=156×7，7=target 6 valid+1 容错 attempt/格，非协议上限。spec L63 同。实现期需定一句：25/23 的“可评 cell”是否排除 skipped/全失败格。
+
+5. 已闭环。v4 L269 的 C 组：S_ALL expected 错 fixture 已删；G0 补 run 级 mismatch 拒跑、revoke→skipped、非法 skip err_kind、LICENSE/SOURCES；G1 补第二层、25/23、diff_pct 缺失、layer 排名；G2 补归档 N/A/as-of/dots；G3 补 original_guard。残留措辞：v4 L226 G0② 仍写“revoke 后拒跑或 skip”，与 §0 L46“二选一冻结”不完全一致；C fixture 已选 skip，建议改成“run 级不符拒跑；样本级未签/revoke→skipped”。
+
+6. 已闭环（清单层）。v4 L216 err_kind 进 properties；L218 skipped 的 cell_success_rate/trunc_rate/cer_median/wall 全 null、reps=[]、n_*=0；L268 负例覆盖 page_sha、缺 cer_median、枚举越界、必填缺失、嵌套/顶层多余键、failed wall=0、skipped 带 reps/n_attempt。schema 闭合层还有 3 条要在实现时写死，见下文 B 组。
+
+二、四组测试 A/B/C/D
+
+A 组：可推导 9/9。
+① 6 次 ok→n_attempt=6、complete。
+② 6ok 超阈+第 7/8 次 fail→第 8 次触发扩展至 12→仍超→unstable。
+③ 5valid/3fail→第 8 次停、partial。
+④ 0valid/8fail→failed、reps 恰 8 条。
+⑤ 6valid/6fail 且 IQR 超→unstable；夹具必须保证第 6 个 valid 在第 8 次前出现且第 8 次 IQR 已超，否则会先停在 partial。
+⑥ CellFatal→failed 且落盘；状态可推，但 err_kind 要定（见下）。
+⑦ timeout→timeout rep 占 attempt，可推。
+⑧ 12 全 ok 超阈→unstable，可推。
+⑨ 4valid 且 median≤0→①在④前，failed 非 partial，可推。
+
+B 组：正例可执行；负例 8 类齐全，但有 3 条 schema 闭合规则不落会失真：
+- cer_median 的 required 身份冲突：spec §3.2 的 required 19 项里没有 cer_median，v4 L210 又说它是 required 聚合字段，B 还有“缺 cer_median ✗”。必须二选一并同步 spec：加进 required（变 20 项），或在 validate_schema.py 里做跨字段必填。
+- failed wall=0、skipped 带 reps>0/n_attempt>0：type/additionalProperties 拒不掉，必须用 if/then 或自定义 validate 写死；否则负例会“该拒未拒”。
+- err_kind 枚举与 CellFatal 对齐：v4 §2.2② 写“err_kind CellFatal/超预算 WorkerFatal”，L216 枚举只有 extract_fail/worker_fatal，没有 cell_fatal；A⑥ 若断言 err_kind 会撞 schema。
+另：failed 全 null 的规则要明确——A⑨ 的 median≤0 是 failed 且有 4 个 valid walls；若 failed 一律 wall=null，A⑨ 只断言 status/err，不能把 wall_median 当证据。
+
+C 组：fixture 名单齐，可执行；G0/G1/G2/G3 均有对应 fail 例。expected 需定死 3 处：
+- revoke：run 级 GT manifest 不符→拒跑；样本级未签/revoke→skipped，删掉“或 skip”。
+- LICENSE 归门：spec G0 表只写 SOURCES，v4 G0③ 把 LICENSE 也放 G0；C fixture 按 G0 失败，需确认 LICENSE 在 G0 还是 G3。
+- 非法 skip 的允许集合：v4 只写“合法 err_kind{gt_unsigned,gt_mismatch,…}”，省略号未定义；建议写死 skipped 仅允许 gt_unsigned/gt_mismatch，C 用 timeout 之类做非法值。
+
+D 组：可执行/可推导。156/144/149/137/1872/1728/25/23 算术全对；25/23 已标 cell 级；1092=156×7 来源已写；1728 注明仅预算对照；457.7/138.8/238 算术对。
+
+三、跨文件断言逐项
+
+156：v4 L233/L236/L270=156；spec L48=156；26×6。一致。
+144：v4 L233=144；spec L49=144；24×6。一致。
+149：v4 L234=149；spec L62=149；ceil(156×0.95)=ceil(148.2)。一致。
+137：v4 L234=137；spec L62=137；ceil(144×0.95)=ceil(136.8)。一致。
+1872：v4 L236=156×12；spec L53/L308=1872。一致。
+25/23：v4 L234=25/23 cells；spec L63=25/23 cells；ceil(26×0.95)=25、ceil(24×0.95)=23。一致。v4 §5/L269 仍用“样本”二字，按 r3 的“cell/样本”同义可接受，建议统一写 cell。
+S_ALL：v4 L233/L270=展示视图不产 cell、156+S_PDF；spec L51 同。一致。
+1872（F-01 上限）：spec L308 与 v4 L236 同。一致。
+补充：1728=144×12，S24 是视图不额外产 rep；1092=156×7，规格未列 1092，属 v4 工期推导，不构成冲突；457.7=(60+161+241+993+308+983)/6，1092×457.7≈138.8h，1872×457.7≈238.0h，全对。
+page_sha/2496：spec 无 live 值，v4 无残留；L51 的 208 仅历史。通过。
+input sha256 / 非量化即 A / unstable：spec L54/L80/L71 与 v4 L214/L262/L173 一致。通过。
+
+四、判定
+
+判定：可开工。
+
+6 条阻断项已无架构级缺口；四组测试中 A/C/D 可直接执行/推导，B 的 3 条 schema 闭合属于实现第一件事，不影响开工。若你要求文档零歧义再开工，这 3 条可作为一次 v4.1 小改，不必再走一轮全评审。
+
+开工前 30 分钟建议对齐 5 条（不改变架构）：
+1. B 的 cer_median required、failed/skipped 条件约束、CellFatal err_kind 三处写死。
+2. C/G0 的 revoke 语义定成“run 级拒跑、样本级 skip”，删“或 skip”。
+3. 25/23 的计数口径定一句（是否排除 skipped/全失败格）。
+4. wall 起止表：v4 L252/L55 仍写“待你确认后冻结”；本次终审若认可，就在开工令里冻结，否则 G1 的 diff_pct 没有唯一口径。
+5. 文档状态：spec L6 仍写“六轮终判可开工/P0 开跑”，与当前 r4 终验不一致；v4 L278“5 处”与 L6“8 处”不一致；L67 行号应为 L71。
+
+实现期重点盯：
+1. WorkerFatal 超预算必须置 cell.fatal，防死循环。
+2. timeout 后必须 kill+respawn/丢弃迟到响应，不能只生成 timeout rep。
+3. validate_soft 失败要按 spec §3.5 重存 schema_err；v4 finally 目前只写 save_raw+validate_soft。
+4. A⑤ 夹具固定“6 valid 在第 8 次前出现且第 8 次 IQR>10”；A⑥ 先定 CellFatal 的 err_kind。
+5. B 的 if/then 与 cer_median required 落进 schema，否则 B 负例会失真。
+6. failed 全 null 与 A⑨ 的 median≤0 证据保留要统一口径。
+7. G0 的 LICENSE 归门、非法 skip 允许集合、S_PDF 多页 cell_key、S_ALL 只做展示 union 不产 cell.set=S_ALL。
+
+一句话：可以开工；剩余都是 schema 闭合和文字口径，不是方向/架构问题。

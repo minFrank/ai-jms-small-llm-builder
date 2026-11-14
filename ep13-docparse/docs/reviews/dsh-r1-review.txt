@@ -1,0 +1,347 @@
+======================================================================
+ep13 文档解析 · 正式跑测「实测代码设计」交叉评审
+======================================================================
+评审编号：dsh-code-r1b
+评审对象：review-code-design-r1.md（设计稿 v1，197 行）
+唯一权威源：review-spec-v6c.md（文件头自称 V6d；版本标识冲突见 C-29）
+评审日期：2026-11-04
+评审方式：仅基于两份文档交叉核对，未执行代码；P0 引擎跑通结论按设计稿陈述采信。
+编号说明：C-xx 为条目序号；级别栏中的 C 表示「与规格 V6c/V6d 冲突」。
+
+结论：需大改，不可开工。
+统计：P0 11 条、P1 22 条、X 4 条。引擎层细节质量较高，问题集中在数据契约、协议 A 终止逻辑、G0–G3 定义、6 引擎分母与受控环境证据。
+
+======================================================================
+一、P0 致命问题（跑测会失败或数据不可用）
+======================================================================
+
+C-01 【P0｜C】
+位置：§3 主循环，第 88–91 行。
+问题：超阈扩展至 12 的逻辑没有实现。`if n >= 8: break` 在 IQR 仍大于 10% 时直接结束；后面的 `if n >= 12: break` 永远不可达（n>=8 已先 break）。设计稿自己的注释写着「超阈固定加跑至 12 封顶」，代码却是到 8 即停，注释与实现互相矛盾。
+依据：V6c §2.2 F-01/X-01：`IQR/median>10% → extension_target=12（扩展期内 max_attempts=12）`；`cell.done := (n_valid≥6 且 IQR 合格) 或 n_attempt ≥ max_attempts(8 或 12) 或 fatal`。
+修法：改成显式两阶段状态机：初期限 8；第 6–8 个有效 rep 仍超阈时把 max_attempts 置为 12 并继续；到 12 仍超阈置 `unstable=true` 后 done。删除 12 的死分支，增加单测覆盖「6 次达标」「8 次仍超阈→12」「12 次仍超阈」。
+
+C-02 【P0】
+位置：§3 主循环，第 83–91 行。
+问题：用 `n = len(valid_reps)` 的有效 rep 数代替尝试数。`max_attempts` 约束的是 attempt，失败、超时、skipped 也占 attempt；全失败时 n 永远为 0，`while True` 没有任何出口。另 `reps.push(cell)` 把 cell 当 rep 压入，`valid_reps` 未定义，伪代码不可直接实现。
+依据：V6c §2.2 分列 `n_attempt` 与 `n_valid`，并明确「max_attempts 是硬终止，任何阶段到点即停」；§3.5「retry 有界（1 次+退避）」。
+修法：每轮先 `attempt += 1`；失败/超时也写 rep；只有 ok 才 `n_valid += 1`；每轮入口先判 `n_attempt >= max_attempts`；所有失败路径必须能终止；伪代码区分 cell 与 rep 对象。
+
+C-03 【P0｜C】
+位置：§3 主循环；§4 status 枚举。
+问题：没有实现 `n_valid<4 → status=failed`、`4≤n_valid<6 → status=partial`、`12 次有效后仍>10% → unstable:true 只报分布不排名`、`median≤0 → 报错`。status 用 `done` 代替 `complete`，partial 只是枚举值没有判定规则，失败格和部分格无法按规格进入分母/单列。
+依据：V6c §2.2 明文规定上述四种收尾；§3.2 status 四态为 `complete/partial/failed/skipped`。
+修法：把四条规则写进 `cell.done` 状态机；status 严格用四态；partial 进分母但不进名次、单列数量与清单；unstable 引擎只报分布；median≤0 直接标错并留痕。
+
+C-04 【P0｜C】
+位置：§3 第 92 行；§4 第 118 行。
+问题：两处都写「jsonschema 校验在 save 之前」，与规格 F-05 的 save_raw 先行相反。校验一旦失败，cell 根本不会落盘，正好复现 F-05 要修的丢格。第 92 行又说「校验失败也留失败记录」，逻辑上自相矛盾：失败记录同样要过同一 schema。
+依据：V6c §3.5：`finally: cell.save_raw(); try validate_schema(cell); except SchemaErr as e: cell.schema_err=str(e); cell.save_raw()`；F-05「先落盘，永不因校验丢失」。
+修法：先 save_raw（至少含 status/err_kind/原始 reps）→ validate_soft → 失败写 schema_err 再 save_raw。raw 与 validated 分层，禁止把 validate 作为落盘前置条件。
+
+C-05 【P0｜C】
+位置：§3 第 84 行；同节停止语义表。
+问题：控制检查放在 `while True` 的 rep 循环内，会在 cell 中途暂停/停止，违反同一节「格间安全停（当前格跑完才停）」和 F-13。cell 可能停在半成品状态，status 无法定义，且与「paused 是 run 级状态、不产生 cell 状态」冲突。
+依据：V6c §3.5/§3.8 F-13：rep 循环内不查控制；只在 sample 边界、cell 落盘后 `control_desired()`；§4.1 pause 在 sample 边界 ack。
+修法：删除 rep 循环内的控制检查；移到 `finally save+validate` 之后、下一 sample 之前；ack 后再进入 pause/stop；补「停止发生在格中」的测试，确认当前格完整落盘。
+
+C-06 【P0｜C】
+位置：§3 第 85 行；§1 runner 心跳描述。
+问题：心跳写在 sample 边界（cell 落盘后），而单格实测可长达 16.5 分钟。V6c 的 stale 判据是连续 15s 无 heartbeat，按此设计会被误判为 run 死亡，可能被 supervisor 杀掉；也没有独立心跳进程。
+依据：V6c §4.1 F-14；§3.8 `start_heartbeat(control/, interval=5, process="independent")`。
+修法：独立进程每 5s 写 task.json（tmp+rename 原子写），与推理完全解耦；格边界只更新 last_progress/ack；stale 判定同时检查 owner_pid 是否存活，活着标 stalled 而非直接判死。
+
+C-07 【P0｜C】
+位置：§4 第 104–105 行；§1 cells 路径。
+问题：主键写成 `cell_id`，值含 run_id 和 `/`（`ep13-20261104-143000-oxr/book_01`）；路径 `cells/<run_id>/<engine>/<sample>.json` 比规格多一层 engine。run_id 本身又带 `-oxr`，等于每引擎一个 run，与「一个 run 跑全引擎、sessions/<run_id>.json 一份」的 run 级聚合冲突。
+依据：V6c §3.2 F-03：`cell_key=<sample_id>__<engine>__p<page>`，不含 run_id；路径 `cells/<run_id>/<cell_key>.json`（run 只一层）；API `GET /api/cells?run_id=&cell_key=` 走 query 避免 `/`；§3.8 一个 run 内循环 engines。
+修法：改用 `cell_key`；sample_id 用 UUID；路径只保留一层 run 目录；run_id 不按引擎拆分；删除 cell_id 中的 `/`；API 用 query 参数。
+
+C-08 【P0｜C】
+位置：§4 第 103–115 行。
+问题：这不是 v6 cell schema。required 缺 `schema, cell_key, layer, set, input, target_valid, max_attempts, n_attempt, n_valid, n_fail, wall_median, wall_iqr, fingerprint, err`；status 的 `done` 不在 enum；rep 用 `rep/wall_s/ok/text/fail_reason`，缺 `n/attempt/status/wall/wall_self/cer/err_kind/ts`；没有 `cell_success_rate/trunc_rate/unstable/engine_session_id/peak_rss_mb/rss_scope`；`timing.cold_load_s` 放在格内。按设计稿字段生成的 cell 无法通过 §3.2 的 v6 schema；若改用 v6 schema，写入代码又缺字段——两者必有一边失败。
+依据：V6c §3.2 required/enum/nullable 与示例；F-04；F-12。
+修法：以 `schema/cell.schema.json` 为唯一实现源，逐字段照 §3.2 重写；status 四态；rep.status 四态 `ok/fail/timeout/skipped`；补聚合字段；cold_load 移到 `sessions/engines/<run_id>/<engine>.json`；写入与聚合两侧都 validate。
+
+C-09 【P0｜C】
+位置：§4 第 110–113 行。
+问题：溯源信息不足且错位。`version` 只有 git/spec/weights_sha/deps，缺 `config_hash, extract_v, gt_v, sample_sha, engine_version, host_manifest_id, seed, order`；`gt_hash` 放顶层，规格要求进 `fingerprint`；没有 `input{kind,sha256,page_no,dpi}`、没有 `layer`、没有 `set`，`sample` 也不是 UUID。G0 的分组一致性矩阵、GT 逐格比对、按层排名都无法执行。
+依据：V6c §3.2 fingerprint 字段；§2.1 InputRef；§2.3 aggregate 必带 layer；§4.5 G0 一致性矩阵。
+修法：补齐 fingerprint 全字段与 input；sample_id 用 UUID；layer/set 必填；gt_hash 同时保留 `fingerprint.gt_hash` 与 `gt_v`；seed/order 从 run_manifest 注入；sample_sha/gt_hash 的规范化算法写死。
+
+C-10 【P0｜C】
+位置：§5 G0 行。
+问题：G0 判据被改成「预期格数=实有格数；每格 rep 数达标；版本指纹全格一致；控制文件 mtime 在本期内」。其中「版本指纹全格一致」若按字面执行必然失败：weights_sha 逐引擎不同、gt_hash/sample_sha 逐样本不同、deps 逐 venv 不同。G0 还缺四态分母、failed/expected≤2%、skipped 按 err_kind 单列、SOURCES 无「待补」、GT 逐格 `gt_v+gt_hash` 比对、caliber audit passed 且 `finished_at>run.started_at`。「控制文件 mtime」不是审计时效。
+依据：V6c §4.5 G0（F-06/F-07/F-08/F-17）；四态 pass/fail/not_run/stale。
+修法：逐条照 §4.5 G0 重写；一致性按字段分组：全 run 相同 `{extract_v, config_hash}`，逐引擎相同 `{weights_sha, engine_version}`，逐样本相同 `sample_sha/gt_hash`，seed/order 为 run 冻结值不参与随机性检查；审计用 caliber audit 的 `finished_at`，不用文件 mtime。
+
+C-11 【P0｜C】
+位置：§1/§3/§5；§2.1。
+问题：6 引擎分母没有重算。规格 S26 expected=208、S24=192（8 引擎），95% 最小样本量写的是「≥192 cells 的 95% 即 ≥183 valid」；该口径本身把「engine 级」和「总样本 192」混在一起，修订时需明确是总量还是逐引擎。按总量口径折算，6 引擎 S26=156、S24=144，最小样本量约 S26≥149、S24≥137；若按逐引擎 95% 口径，则 S26=26 需≥25、S24=24 需≥23。S_PDF 应为页数×6。设计稿只写「26 样本×6 引擎」，没有 sets.yaml、没有 S24/S26/S_PDF/S_ALL 的区别，也没说主榜用哪个。若沿用 208/192，G0 必然失败或阈值失效。
+依据：V6c §2.1（sets.yaml 唯一分母；N-04/F-06）；§2.2 95% 阈值与最小样本量；§1 P-1=A。
+修法：在 sets.yaml 冻结 6 引擎 expected_cells（S26=156、S24=144、S_PDF=页数×6），重算 95% 最小样本量；明确主榜 S24 与 S26 的关系；先修订规格中的 expected 208/192 与最小样本量 192 门槛，再开跑。
+
+======================================================================
+二、P1 严重问题（需返工）
+======================================================================
+
+C-12 【P1｜C】
+位置：§5 闸门表；§5 末段发布链。
+问题：G0–G3 与 V6c 完全错位：设计 G1=jsonschema/GT（GT 比对属规格 G0；jsonschema 是写入/聚合校验）；G2=caliber audit（规格在 G1）；G3=七判据汇总（规格 G3=pre_push_check+original_guard+终审）；规格 G2「宣称与 lineup」完全缺失。又把已有三闸门放在 G0–G3 之前，形成「三重前置+四门」的七门链。四态 pass/fail/not_run/stale、gate0–3.json 产物也没有定义。
+依据：V6c §4.5 F-10 四门定义；F-21；四态段。
+修法：保留 V6c 的 G0/G1/G2/G3 名称与判据；已有三闸门按规格嵌入 G1/G3，不另立门；补 gate0–3.json 和四态；补 G2 的 lineup/宣称/as-of/surya 参数检查。
+
+C-13 【P1｜C】
+位置：§2 引擎层；§3/§1。
+问题：没有 runner 单进程 + 每引擎独立 venv 子进程 + JSON IPC 的设计；没有 NDJSON、握手、单飞、分块、sha256、每命令 timeout。6 个 venv 的 transformers 5.0/5.1/5.22 互不兼容，进程内直载无法同时成立；大 markdown 走普通管道有死锁/截断风险。
+依据：V6c §3.1；§3.9 F-19；§3.6 要求 `ipc.py`/`engine_base_ep13.py`。
+修法：补 worker 进程模型与 IPC 协议；runner 只调度；worker 在各自 venv 启动；stdout 专用于 NDJSON、日志走 stderr；大消息分块；单飞+超时 kill/respawn；握手带 protocol_v/engine/pid。
+
+C-14 【P1】
+位置：§9 D2；§6。
+问题：30 分钟/rep 只是决策项，未落到 engines.yaml 的 load/infer/teardown 每命令 timeout；更重要的是没有强制中断机制——单线程 generate 卡住时，Python 内无法取消，记录 `ok=false, timeout` 也到不了，run 会永久挂起。D2 未拍板前不应开跑。
+依据：V6c §3.9「每命令独立 timeout（load/infer/teardown 各自上限写死 engines.yaml）」；§3.5 WorkerFatal/respawn。
+修法：D2 定为 30 分钟并写入 engines.yaml；timeout 由父进程计时，到点 kill worker、记 timeout、按预算 respawn；infer 失败不占 valid；先做一次「挂起 1 分钟后被杀」的演练。
+
+C-15 【P1｜C】
+位置：§3 主循环。
+问题：没有 CellFatal/WorkerFatal 分支、respawn 预算（1 次/引擎/小时）、journal 每 rep 追加、retry 有界（1 次+退避）；一个引擎崩溃或输入坏会中断整轮或无限重试；伪代码没有 try/except/finally。
+依据：V6c §3.5；§3.7 teardown；§3.8。
+修法：补齐异常分层与 respawn；每 rep 追加 journal；CellFatal→failed 继续下一格；WorkerFatal→respawn，超预算标 engine session unavailable；重试有界。
+
+C-16 【P1｜C】
+位置：§3 控制；§1 control/。
+问题：control 只有 start/pause/stop 文件，缺 task.json 的 `state/state_seq/desired_state/ack_seq/owner_pid/lease{token,expires_at,renewed_at}/heartbeat_at/run_id/attempt/finished_at`；缺 lease TTL 60s 续期、token/epoch fencing、tmp+rename 原子写、restart/reset、stale 判定。多 runner 或旧 runner 会互相覆盖。
+依据：V6c §4.1 F-13~F-16。
+修法：按 §4.1 实现 task.json 状态机与 lease；外部只写 desired；runner ack_seq++ 后 UI 才显目标态；原子写；补 restart/reset 端点/语义。
+
+C-17 【P1｜C】
+位置：§3/§6。
+问题：没有 `warmup_reps=1` 的设计，也未说明 warmup 不计入；cold_load 放在每格 timing，规格要求 session 级 `sessions/engines/<run_id>/<engine>.json`，否则每格重复冷加载值、无法审计；也没有 `sessions/<run_id>.json` 的 set/GT/stats_policy 冻结。
+依据：V6c §2.2「warmup_reps=1 不计入」；§3.6 F-12/X-02；§3.7 load 返回值接线。
+修法：每引擎 load 后跑 1 次 warmup 不记账；cold_load 写 session 文件；cell 只引用 engine_session_id；补 sessions/<run_id>.json 的冻结字段。
+
+C-18 【P1｜C】
+位置：§6 计时口径。
+问题：wall 定义为「generate() 调用→返回（纯推理），不含 preprocess」，而规格指标叫「端到端耗时」且 infer 包含预处理；OXR 的 D-FINE 版面 0.93s/页也被排除在 wall 外，跨引擎不可比。没有 `wall_self`，bench_caliber_audit 无法算 `diff_pct/self_median`；也没有跑测前审计，只在发布链跑一次。
+依据：V6c §2.2 端到端耗时与自报对账差>10% 双注；§4.5 G1 字段 `{wall_median,self_median,diff_pct,load_in_wall,note}`；§2.2 caliber audit 跑测前后各一次。
+修法：先定义 wall=infer 全程（含预处理，load 外置），或修订规格并明确「纯 generate」；统一 OXR 是否含 D-FINE；补 wall_self 与 diff_pct；跑前/跑后各审计一次。
+
+C-19 【P1｜C】
+位置：§2 路径 A gen；§5 G3。
+问题：「官方 prompt + 官方 sampling，一个不多传」与规格固定 greedy、batch=1、并发=1、max_new_tokens 上限冲突；官方 sampling 可能是 temperature/top_p，非 greedy 不可复现。设计没有 max_new_tokens 统一值，也没有 trunc_rate 入格（只有 rep.truncated）。
+依据：V6c §2.3 P-2 固定 batch=1/并发=1/greedy/max_new_tokens 上限+trunc_rate；§2.2。
+修法：强制 greedy（do_sample=false 或等价设置），batch=1、并发=1；每引擎 engines.yaml 写 max_new_tokens；cell 记 trunc_rate；prompt 原文+hash 入 MANIFEST。
+
+C-20 【P1｜C】
+位置：§2 路径 A；§4 schema；§5 G3。
+问题：没有 layer 字段，未声明 6 引擎的 A/B 归属；路径 A 统一 bf16、Xiaomi fp32，是否属于 A 层「全精度」未定义。规格 aggregate 必带 layer、层内排名；缺 layer 会使主榜口径不成立。
+依据：V6c §2.3；§3.2 layer enum [A,B]；§4.3 aggregate 必带 layer。
+修法：engines.yaml 为每引擎冻结 layer；明确 bf16 是否算 A 层（建议规格定义为「非量化即 A」）；cell 写 layer；aggregate 按 layer 分组。
+
+C-21 【P1｜C】
+位置：§5 G1；§3/§4。
+问题：GT 只在 G1 事后比对 gt_hash；规格要求 runner 启动时校验 `status=signed` 且 `version+hash==run manifest 冻结值`，不符拒跑；GT 未签/不符要创建 `status=skipped, err_kind=gt_unsigned|gt_mismatch` 的 cell。设计没有 gt_v、没有 manifest 的 signed/reviewer/signed_at、没有 skip 分支。
+依据：V6c §3.4 F-08/F-09；§3.5 F-11；§4.5 G0。
+修法：启动前置校验并拒跑；未签/不符建 skipped cell；cell/fingerprint 写 gt_v+gt_hash；hash 的规范化算法写死；补 gt/sign、revoke 流程。
+
+C-22 【P1｜C】
+位置：§5 G3；§2.2。
+问题：没有 `engine_success_rate=Σn_valid/Σn_attempt`、95% 阈值、最小样本量、`ranking_eligible`（只存 engine/aggregate）、unstable 移出名次、partial 单列。设计只有「七判据逐引擎」，无法执行 P-3=A「成功率先行，<95% 不排名」。
+依据：V6c §2.2 F-02；§4.3；§4.5 G1。
+修法：agg.py 计算 engine 级成功率；按 6 引擎重算最小样本量；ranking_eligible 只在 engine/aggregate；unstable/partial 单列；G1 检查。
+
+C-23 【P1｜C】
+位置：§1 extract_text.py；§4 version。
+问题：只有「先人工过 6 引擎输出再冻结」，没有 EXTRACTION_CONTRACT.md 五类规则、golden 单测、盲审冻结、extract_v 入 fingerprint。提取口径未冻结就开跑，CER/正文不可复现。
+依据：V6c §3.3 R-10；§3.2 fingerprint.extract_v。
+修法：先写 contract + golden cases（6 引擎各至少 1 例），盲审后冻结版本；extract_v 入 fingerprint；GT 归一化独立。
+
+C-24 【P1｜C】
+位置：§8 第 7 条；§2.5。
+问题：只写「样本全量前先过内存预检」，没有 host manifest（CPU/内存/OS/Python/线程/电源/负载/GPU:none）、OMP/MKL 固定、idle guard、热降频阈值、`outlier{reason,action}`、`n_excluded`。Windows11/5700G/30GB 的受控环境证据缺失，16 分钟级单页的热降频会直接污染计时。
+依据：V6c §2.5 N-11；§2.2 内存/耗时口径。
+修法：跑前生成 host_manifest.json；固定 OMP/MKL/线程；idle guard；记录热降频与 outlier；聚合报 n_excluded；内存预检给出具体阈值和失败动作。
+
+C-25 【P1｜C】
+位置：§6 第 137 行；§4。
+问题：只对服务型引擎按端口/PID 采样内存，普通引擎没有进程树 0.2s 采样、peak_rss_mb、rss_scope；没有 teardown 返回值接线和 `rss_after<=baseline` assert、端口释放检查。规格 F-20 要求 teardown 返回值必须接线。
+依据：V6c §2.2 内存；§3.6 F-20；§3.7 teardown；§4.5 G0。
+修法：统一 tree+port sampler（interval 0.2）；cell 记 peak_rss_mb/rss_scope；finally rpc teardown，assert rss_after 回落、端口释放；跨引擎 assert。
+
+C-26 【P1｜C】
+位置：§5 G3。
+问题：七判据被改写：②「>200 字符」取代「长度>类型下限」；③「CER sanity」取代「单页 CER<60%」；④丢了「或有解释」；⑦磁盘≥模型总和+10GB 完全缺失；LICENSE/来源只在 G3 汇总且「降级标注」不阻断。规格的七条是 P0 可行性判据，不是可降级的展示项。
+依据：V6c §2.4 七条；§4.5 G3。
+修法：逐条实现七判据并给出阈值/证据；磁盘检查跑前做；LICENSE/SOURCES 登记入 G0/G3；失败应阻断或明确降级条件，不能只「标注」。
+
+C-27 【P1｜C】
+位置：§1 目录；§2.1。
+问题：没有 sets.yaml、engines.yaml、samples/manifest.json、SOURCES.md、pdfs/pages_300dpi、S_PDF/page-level、InputRef 的 300DPI/sha256/page_no；样本用 `book_01` 而非 UUID。主榜 26 图与 S24（去†两张）未区分；PDF+结构附录（P-1）未落地。
+依据：V6c §2.1；§3.6；§4.2；§4.5 G0（SOURCES 无待补）。
+修法：补 sets.yaml 四集与 expected；samples/manifest UUID/hash/sets/pages；300DPI 页图与 sha256；S_PDF 按页；SOURCES.md 回填；明确主榜 S24。
+
+C-28 【P1｜C】
+位置：§7 一键清理。
+问题：只列 `--data`/`--models`，缺 `--config`、输入期号回车确认、`--no-archive`、`archive/ep13-<ts>.tar.zst` 路径、CLEANUP.log 的 who/when/what/size/archive、模型目录 `D:/models/models/ocr/ep13-docparse/`；`--data` 未列明 cells/runs/sessions/control/outputs/audit 的保留/删除边界，存在误删代码/配置/样本/GT 的风险。
+依据：V6c §4.6。
+修法：按 §4.6 实现参数与确认；默认 dry-run；打包后再删；日志字段齐全；模型默认永不删；加路径白名单和 dry-run 清单测试。
+
+C-29 【P1｜C】
+位置：§1 EPISODE.json；§2/§4 version；§8 第 1/3 条。
+问题：EPISODE 字段不全（缺 sets_hash/created，code_git 命名不一致）；`version.spec` 写「V6c」，而权威文件头自称 V6d；引用 MANIFEST 但目录树没有 MANIFEST；5.0/5.1/5.22 的 venv 版本未钉入 EPISODE，config 补丁/prompt hash 无落点。强关联链在「哪版代码+哪版方案+哪份 GT」上仍断。
+依据：V6c §4.6 EPISODE 字段；§8 第 1/3 条；§3.2 fingerprint；设计稿 §1。
+修法：统一版本字符串（按文件头 V6d，或改文件头为 V6c 并全量同步）；EPISODE 补 sets_hash/created/per-engine venv freeze；建 MANIFEST 记录 config patch、prompt hash、模型路径；cell/fingerprint 引用 MANIFEST id。
+
+C-30 【P1｜C】
+位置：§3 主循环；§1 EPISODE。
+问题：没有 run_manifest 冻结：set 来源、sets_yaml_hash、gt_versions、seed/order、config_hash、stats_policy_hash 都未定义；seeded 随机顺序只写在注释里，seed/order 不入 fingerprint，事后无法复现顺序偏置控制。
+依据：V6c §3.8 F-11/F-17；§3.6 sessions/<run_id>.json；§4.5 G0 seed/order 冻结。
+修法：启动时 freeze run_manifest 并落 sessions/<run_id>.json；seed/order 注入 fingerprint；set 从 CLI 参数进 run，不写死；配置哈希入 manifest。
+
+C-31 【P1】
+位置：§5/§9 D4。
+问题：6 引擎×26 样本×协议 A 的 rep 预算/工期未重算。规格 2496 是 8 引擎×208×12；6 引擎上限应为 S26 156×12=1872、S24 144×12=1728。设计只写「预计总时长按 D2 上限估算后附表」，没有表；30 分钟/rep 的最坏工期没有可行性结论。
+依据：V6c §2.1 reps 预算；§5 流程「按 rep 吞吐重算工期报你」。
+修法：按 P0 实测吞吐和 6 引擎重算总时长/磁盘/内存；给出最坏与期望两版；D4 先做 3 样本冒烟再全量。
+
+C-32 【P1】
+位置：§2 路径 A 切片。
+问题：「inputs_embeds 路径智能判别（带 prompt 去 prompt，纯生成直用）」没有确定性规则、没有 golden 测试；「智能」若按字符串匹配去 prompt，可能误删正文/截断，OXR 输出不可复现。
+依据：V6c §3.3 提取 contract + golden 单测；§2.2 数据可复现。
+修法：把判别条件写成显式分支（模型/输入类型/是否 inputs_embeds/是否含 prompt token ids），每条分支做 golden 用例；禁止字符串启发式；输出切片前后哈希/长度入 journal。
+
+C-33 【P1】
+位置：§7 进程纪律。
+问题：只有两条规则文字，没有单实例锁、跑前/跑后进程盘点脚本、cmdline 整串匹配、CONFIRM 打印、raw socket 验活、端口释放断言的可执行实现；P0 两起翻车（误杀/孤儿）没有变成代码。
+依据：设计稿 §7 自身；V6c §3.1 退出核 RSS/端口释放；§4.1 stale。
+修法：实现 `process_guard.py`：单实例 lock、按 cmdline 盘点、kill 前 CONFIRM、kill 后 raw socket 验活、端口/RSS 断言；runner 前后调用；clean_episode 复用。
+
+======================================================================
+三、X 方向问题
+======================================================================
+
+C-34 【X｜C】
+位置：§9 D1；§2 6 引擎阵容。
+问题：把「8 引擎 lineup → 6 引擎实跑」作为待拍板项，等于重开已锁定的方向（8 引擎名单、指标分层、口径铁律、流程闸门）。P0 已实证 TeleOCR/dots 不可行，设计选 A（标 N/A）方向正确；但规格 V6c 仍按 8 引擎写 expected=208/192、95% 最小样本量 192、reps 上限 2496。不先改规格就按 6 引擎跑，是「用新事实跑旧契约」。
+依据：V6c 头部收敛框架与 §1 拍板记录；§2.1 8 引擎 lineup/expected；§2.2 95% 最小样本量。
+修法：D1 不再作为开放决策，直接定 A；先出规格 V6d/V6c 修订页，把 lineup 改成「6 跑 + 2 归档 N/A」，同步 expected/阈值/reps 预算，再进代码设计 v2。
+
+C-35 【X｜C】
+位置：§9 D3，选项 B。
+问题：D3 B「首轮先跑一致性判据，CER 第二轮补」与 V6c「GT 未签核拒跑、cell 记 cer_median、G0/G1 校验」冲突，不是合法选项；设计稿自己又把 CER 放在 G3，等于把同一指标拆到两个阶段。把它列为可选，会把「先出首版数据」置于「GT 冻结」之上。
+依据：V6c §3.4 runner 启动校验 signed；§2.2 正文 CER 入 cell；§4.5 G0/G1。
+修法：删除 D3 B，只保留 D3 A；GT 签核与 gt_hash 冻结作为开跑前置，不作为第二轮补丁。
+
+C-36 【X｜C】
+位置：§9 D4，选项 A。
+问题：D4 A「评审通过后直接开跑 6×26×协议 A」跳过了 V6c §5 的「P0 → 按 rep 吞吐重算工期 → 预跑 → 全量」流程；在协议 A/schema/闸门尚未修正的情况下直接全量，返工成本最大。
+依据：V6c §5 流程；§3.5 F-05/F-11 的留痕要求。
+修法：D4 定 B：先 3 样本冒烟（覆盖最快、最慢、最大图），确认 cell schema/计时/超时/落盘，再全量；冒烟数据单独 run_id，不混入正式分母。
+
+C-37 【X】
+位置：第 19 行（设计原则一句话）；全文结构。
+问题：设计范围与优先级错位：稿子把「引擎层 P0 适配」写成主体，数据契约/协议/闸门只用伪代码带过；「每一行都能指回 P0 一次真实跑通或翻车」不能替代与唯一权威源逐条对齐。结果是引擎细节可信，但 cell schema、G0–G3、协议 A 三处恰好是数据可用性的根基。
+依据：V6c 头部「唯一权威源」；§3.2/§4.5；设计稿第 19 行自述。
+修法：v2 调整结构：第一层「协议 A + cell schema + G0–G3 + 分母」，第二层「引擎适配/进程/IPC」，第三层「清理/追溯」；每节先贴 V6c 条款号，再写实现，最后给验收测试。
+
+======================================================================
+四、设计稿 §8「P0 教训 → 设计约束」逐条复核
+======================================================================
+
+1. 5.22 无 rope_type='default'（Paddle/Tele 中招）
+   设计落实：有 venvs/，但 EPISODE 没有每引擎版本钉死，MANIFEST 不存在。
+   结论：部分遗漏 → C-29。
+
+2. 官方仓 use_cache=False 缺陷（110 分钟 vs 161 秒）
+   设计落实：§2 engine_worker 强制 use_cache=True。
+   结论：已落实。
+
+3. 自造 prompt → spotting/复读；prompt 取官方原文并入 MANIFEST 留 hash
+   设计落实：文字要求有「官方 prompt」，但没有 MANIFEST、没有 prompt hash 字段/落点。
+   结论：部分遗漏 → C-29、C-23。
+
+4. 漏 inputs.to(dtype) 输出退化
+   设计落实：§2 gen 段固定 dtype 对齐。
+   结论：已落实（建议补 model.device，CPU 场景可忽略）。
+
+5. mm_token_type_ids 被 generate 拒（dots）
+   设计落实：§2 按 prepare ∪ forward 签名过滤。
+   结论：已落实。
+
+6. OXR buffer 未初始化 → 零输出
+   设计落实：§2 显式恢复 indicator_token_indices + eos 断言打印。
+   结论：已落实。
+
+7. 大图 OOM（book_01 9072 patch）；qwen3_5 单页 16 分钟
+   设计落实：只有「样本全量前先过内存预检」一句；无阈值、无流程、无 host manifest；rep 超时仍停在 D2 决策。
+   结论：部分遗漏 → C-24、C-25、C-14。
+
+8. Tele/dots CPU 不可行（16 项实验归档）
+   设计落实：§2 路径 C 归档、lineup 标 N/A；但 sets/expected/95% 仍按 8 引擎。
+   结论：归档已落实，分母未同步 → C-11、C-34。
+
+补充背景约束核对：
+- Windows11 / 无 N 卡：host manifest 的 `gpu:none` 缺失 → C-24。
+- Ryzen 7 5700G / 30GB 内存：内存预检阈值、peak RSS、outlier 缺失 → C-24、C-25。
+- 每引擎独立 venv、5.0/5.1/5.22 互不兼容：venv 目录有了，但版本未钉死入 EPISODE/MANIFEST → C-29。
+- 已有三闸门 pre_push_check/original_guard/bench_caliber_audit：被设计重排成「前置三闸 + G0–G3」，与 V6c 的 G1/G3 嵌入关系冲突 → C-12。
+
+======================================================================
+五、三项专项核对（对应评审要求 3）
+======================================================================
+
+A. 协议 A（n_target=6 / max_attempts=8 / 超阈加跑至 12 封顶）
+- n_target=6：写了。
+- max_attempts=8：写了。
+- 超阈→12：未实现，12 是死代码（C-01）。
+- attempt 与 valid：混淆，全失败死循环（C-02）。
+- partial/failed/unstable/median≤0：缺（C-03）。
+- 控制检查位置：在 rep 循环内，错（C-05）。
+- 心跳：在 sample 边界，错（C-06）。
+结论：不合格。协议 A 是本期数据可信度的核心，必须重写为显式状态机并配单测。
+
+B. cell schema（v6）
+- 主键/路径：cell_id 含 run_id 和 `/`，路径多一层 engine（C-07）。
+- required/enum/reps：与 §3.2 大面积不符（C-08）。
+- input/layer/set/gt_v/fingerprint：缺（C-09）。
+- timing/cold_load：cold 放格内，缺 wall_median/wall_iqr/cer_median（C-08、C-17、C-18）。
+结论：不合格。按现稿写入的 cell 无法通过 v6 schema；若强行通过，G0/G1/aggregate 也因缺字段无法计算。
+
+C. 闸门（G0–G3）
+- G0 判据：错（C-10）。
+- 四门映射/产物/四态：错（C-12）。
+- 6 引擎分母与 95% 阈值：未重算（C-11）。
+- G2 宣称与 lineup：整门缺失（C-12）。
+- 发布链：把已有三闸门另立前置，与规格的 G1/G3 嵌入关系冲突（C-12）。
+结论：不合格。
+
+D. P0 已实证约束（§8）
+- 引擎侧第 2/4/5/6 条已落实；第 1/3/7 条部分或遗漏；第 8 条归档已落实但分母未同步。
+- 数据/环境侧遗漏：host manifest、每引擎版本钉死、MANIFEST、内存采样、6 引擎 expected、GT 前置签核。
+
+======================================================================
+六、判定与开工前必改清单
+======================================================================
+
+判定：需大改（不是需小改，不可开工）。
+
+理由：问题不是文字措辞，而是三处数据根基与唯一权威源不一致：
+1) 协议 A 的终止/扩展/失败分级不成立，会出现「超阈不扩展」「全失败死循环」「partial/failed 无定义」；
+2) cell schema 不是 v6，按设计稿写入的数据无法通过 v6 schema（G0/G1 任一侧），按 v6 写入又缺设计稿字段，二者必有一边失败；
+3) G0–G3 被整体重排，6 引擎分母/95% 阈值未重算，按现稿跑会出现「6 引擎数据用 8 引擎门槛发布」或「G0 直接失败」。
+
+可保留：§2 的引擎适配细节（use_cache=True、dtype 对齐、签名过滤、OXR buffer 恢复、Tele/dots 归档）是强项，v2 不必重写引擎层；问题集中在数据契约、协议、闸门、环境证据与追溯。
+
+v2 必改项（按依赖顺序）：
+1. 协议 A 状态机：attempt/valid 分离；8→12 两阶段；partial/failed/unstable/median≤0；控制只在格边界；独立 5s 心跳。配单测。
+2. cell schema：直接落 `schema/cell.schema.json`，逐字段照 V6c §3.2；cell_key/路径/status 四态/rep 四态/input/layer/set/fingerprint/聚合字段；save_raw 先于 validate。
+3. G0–G3：照 V6c §4.5 重写，删除自造门号；四态与 gate0–3.json；G0 四态分母/failed≤2%/SOURCES/GT 逐格/一致性分组/caliber audit finished_at；G2 lineup 不缺席。
+4. 6 引擎分母：sets.yaml 冻结 S26=156、S24=144、S_PDF=页数×6；95% 最小样本量重算（S26≥149、S24≥137）；reps 上限 1872/1728；主榜 S24 与 S26 关系写死。
+5. 运行架构：runner 单进程 + 每引擎 venv worker + NDJSON IPC/分块/单飞/每命令 timeout；WorkerFatal respawn 预算；teardown RSS/端口断言；control task.json 状态机/lease/ack/restart/reset。
+6. GT 与提取：启动校验 signed+version+hash，不符拒跑；未签/不符建 skipped cell；EXTRACTION_CONTRACT.md + golden + extract_v；gt_v/gt_hash 入 fingerprint。
+7. 计时与环境：wall 口径先定义（含/不含 preprocess、OXR 是否含 D-FINE）；wall_self/diff_pct；跑前跑后 caliber audit；host manifest（GPU:none、OMP/MKL、idle guard、热降频、outlier/n_excluded）；peak RSS/rss_scope。
+8. 资产与追溯：EPISODE 补 sets_hash/created/per-engine venv freeze；MANIFEST 落 config patch/prompt hash/模型路径；版本字符串统一（V6c vs V6d）；clean_episode 补 --config/确认/archive 路径/日志字段/模型白名单。
+9. 决策点冻结：D1=A 但先改规格；D3 只留 A；D4=B 先 3 样本冒烟；D2=30 分钟且必须可 kill；删除把「直接全量」作为推荐的选项。
+
+评审边界：本评审只基于两份文档，未执行代码；P0 判据 JSON×8、复活归档 JSON×2、设计稿 HTML 未提供，未核验其内容；引擎跑通结论按设计稿陈述采信。

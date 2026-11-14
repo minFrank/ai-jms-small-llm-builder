@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ep13 正式跑测 · 实测代码设计评审稿 v3</title>
+<style>
+:root{--bg:#fafafa;--card:#fff;--ink:#1a1a1a;--sub:#666;--line:#e5e5e5;--accent:#2563eb;--warn:#b45309;--ok:#15803d;--bad:#b91c1c;--code-bg:#f6f8fa}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.75 -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif}
+.wrap{max-width:980px;margin:0 auto;padding:32px 20px 80px}
+h1{font-size:26px;line-height:1.4;margin:8px 0 4px}
+h2{font-size:21px;margin:46px 0 12px;padding-top:18px;border-top:1px solid var(--line)}
+h3{font-size:17px;margin:26px 0 8px}
+.meta{color:var(--sub);font-size:14px;margin-bottom:22px}
+.lead{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:16px 18px;margin:18px 0}
+table{width:100%;border-collapse:collapse;background:var(--card);border:1px solid var(--line);border-radius:10px;overflow:hidden;font-size:14px;margin:12px 0}
+th,td{border-bottom:1px solid var(--line);padding:8px 11px;text-align:left;vertical-align:top}
+th{background:#f1f3f5;font-weight:600}
+tr:last-child td{border-bottom:none}
+code{background:var(--code-bg);padding:1px 6px;border-radius:4px;font:13px/1.6 Consolas,Menlo,monospace}
+pre{background:var(--code-bg);border:1px solid var(--line);border-radius:8px;padding:14px 16px;overflow-x:auto;font:12.8px/1.6 Consolas,Menlo,monospace;margin:10px 0}
+pre code{background:none;padding:0}
+.tag{display:inline-block;padding:1px 9px;border-radius:99px;font-size:12.5px;font-weight:600;vertical-align:1px}
+.ok{background:#dcfce7;color:var(--ok)}.bad{background:#fee2e2;color:var(--bad)}.warn{background:#fef3c7;color:var(--warn)}.info{background:#dbeafe;color:var(--accent)}
+.note{border-left:3px solid var(--accent);background:#eff6ff;padding:10px 14px;margin:12px 0;border-radius:0 8px 8px 0;font-size:14.5px}
+.pit{border-left:3px solid #dc2626;background:#fef2f2;padding:10px 14px;margin:12px 0;border-radius:0 8px 8px 0;font-size:14.5px}
+.ref{border-left:3px solid #9ca3af;background:#f9fafb;padding:9px 14px;margin:10px 0;border-radius:0 8px 8px 0;font-size:13.5px;color:#444}
+ul,ol{padding-left:22px}li{margin:5px 0}
+.small{font-size:13.5px;color:var(--sub)}
+.toc{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px 20px;font-size:14.5px}
+.toc a{color:var(--accent);text-decoration:none}
+/* ER 图 */
+.er{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:16px 10px;margin:14px 0}
+.ent{border:1.5px solid var(--accent);border-radius:9px;background:#eff6ff;padding:8px 12px;font-size:13px;min-width:150px;text-align:center}
+.ent b{display:block;font-size:13.5px;color:#1e40af}
+.ent span{color:var(--sub);font-size:11.5px}
+.ent.aux{border-color:#9ca3af;background:#f9fafb}
+.ent.aux b{color:#374151}
+.rel{align-self:center;font-size:12px;color:var(--sub);text-align:center;padding:0 2px}
+.rel b{color:var(--ink)}
+/* 状态机 */
+.sm{display:flex;flex-wrap:wrap;gap:8px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:16px 12px;margin:14px 0}
+.st{border:1.5px solid #16a34a;border-radius:99px;background:#f0fdf4;padding:6px 14px;font-size:13px;font-weight:600}
+.st.run{border-color:#2563eb;background:#eff6ff}
+.st.end{border-color:#9ca3af;background:#f3f4f6;font-weight:500}
+.st.bad{border-color:#dc2626;background:#fef2f2}
+.sm .arrow{color:#9ca3af;padding:0 4px}
+.cond{font-size:11.5px;color:var(--sub);display:block;font-weight:400}
+@media (max-width:640px){.wrap{padding:20px 12px 60px}h1{font-size:22px}h2{font-size:19px}table{font-size:13px}th,td{padding:6px 8px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<h1>ep13 正式跑测 · 实测代码设计 <span style="color:#2563eb">v3</span></h1>
+<div class="meta">v3 ｜ 2026-11-04 ｜ 依据：dsh-code-r2「需小改」10 条必改 + R2-01~20 逐条处置 + 规格 <b>V6d-errata</b>（5 处已改）<br>
+状态：<span class="tag warn">待你评审 → 通过后推 dsh 定向复评（四组测试）→ 可开工</span></div>
+
+<div class="lead"><b>v3 新增（你点名）：</b>§1 <b>实测数据模型</b>（8 实体关系图 + 字段表 + 生产者）、§2 <b>逻辑</b>（CellRunner 状态机 + 四收尾判定树 + 端到端数据流）。<b>同时</b>完成 r2 的 10 条必改与 V6d-errata 五改（S_ALL=156+F-01=1872+成功率两层单位+非量化即A层）。</div>
+
+<div class="toc"><b>目录</b>
+<ol>
+<li><a href="#s0">r2 自评状态纠正 + R2 处置映射</a></li>
+<li><a href="#s1">实测数据模型（8 实体）</a></li>
+<li><a href="#s2">逻辑：状态机 / 判定树 / 数据流</a></li>
+<li><a href="#s3">协议 A 状态机 v3（R2-01/10 接线）</a></li>
+<li><a href="#s4">cell schema v3（R2-02/03/15）</a></li>
+<li><a href="#s5">G0–G3 v3（R2-06/07/11/12/18）</a></li>
+<li><a href="#s6">分母·指标·工期 v3（R2-04/05/08/14）</a></li>
+<li><a href="#s7">进程与控制 v3（R2-09/17）</a></li>
+<li><a href="#s8">计时·环境·层 v3（R2-13/16/19）</a></li>
+<li><a href="#s9">四组定向测试（复评对象）与执行流程</a></li>
+<li><a href="#s10">附录 · 引擎层</a></li>
+</ol></div>
+
+<!-- ===================== §0 ===================== -->
+<h2 id="s0">0. r2 自评纠正 + R2-01~20 处置映射</h2>
+<div class="pit"><b>R2-20 接受：</b>v2 的「全闭环/全部接受」表述失真——实际 15 条部分闭环。本表为 v3 的诚实自评：<b>P0 清零前不写「全闭环」</b>。映射行号以本 v3 为准。</div>
+
+<table>
+<tr><th>r2 新问题</th><th>级别</th><th>v3 处置</th><th>落点</th><th>状态</th></tr>
+<tr><td>R2-01 状态机↔schema 没接线</td><td>P0</td><td>Cell 累加器类，run() 返回 Cell；finish() 填全 required；rep.status=="ok"；try/except CellFatal 包 infer，fatal 也走 finish+save_raw；补异常/超时/全失败单测</td><td>§2.1 / §3</td><td><span class="tag ok">已改</span></td></tr>
+<tr><td>R2-02 cell_key 固定 p1</td><td>P0</td><td>改 <code>p&lt;page_no&gt;</code>；图片 page_no=1；S_PDF 每页唯一 + 多页单测 + G0 按 pages×6 校验</td><td>§4</td><td><span class="tag ok">已改</span></td></tr>
+<tr><td>R2-03 缺 cer_median</td><td>P0</td><td>cell 增 cer_median（nullable）；=valid reps 的 cer 中位数；aggregate/G1 增 CER；schema 正反例</td><td>§4 / §5</td><td><span class="tag ok">已改</span></td></tr>
+<tr><td>R2-04 149/137 单位混用</td><td>P0</td><td><b>V6d-errata 已改规格</b>：两层指标冻结（complete_cell_rate cell 级 149/137 + engine_success_rate rep 级逐引擎 95%、样本下限 25/23）；G1 两层都查；字段带 _cells/_reps 单位后缀</td><td>规格 §2.2 / §6</td><td><span class="tag ok">已改</span></td></tr>
+<tr><td>R2-05 S24/S26 模型未冻结</td><td>P1</td><td><b>冻结方案 A</b>：一次 S26 run，cell.set=S26；S24=样本∈S24 的<b>视图</b>，G0/G1 S24 作用域 expected=144；S_ALL 仅展示视图不产 cell</td><td>§6 / sets.yaml</td><td><span class="tag ok">已改</span></td></tr>
+<tr><td>R2-06 G0 GT 与 skipped 冲突</td><td>P1</td><td>GT 比对只作用于 <b>非 skipped</b> cell；skipped+gt_* 合法 err_kind 单列并阻断排名；补「1 未签样本」fixture</td><td>§5</td><td><span class="tag ok">已改</span></td></tr>
+<tr><td>R2-07 拒跑 vs skip 两层混淆</td><td>P1</td><td>三层：run 级 manifest 不符→拒跑；样本级未签/revoke→skip cell 续跑；补 gt/sign、gt/revoke（reviewer/signed_at、revoke 后拒跑或 skip）</td><td>§5 / §6</td><td><span class="tag ok">已改</span></td></tr>
+<tr><td>R2-08 V6d 残留 208/2496</td><td>P1</td><td><b>V6d-errata 已改</b>：S_ALL=156+S_PDF、F-01 上限 1872；跨文件断言入 D 组测试</td><td>规格 L50/L302</td><td><span class="tag ok">已改</span></td></tr>
+<tr><td>R2-09 task.json 双写竞态</td><td>P1</td><td><b>单写者</b>：runner 独占 task.json；心跳只写 heartbeat.json；补 lease.renewed_at/updated_by/last_progress；stale=15s 无心跳<b>或</b> last_progress&gt;cell timeout；并发写单测</td><td>§7</td><td><span class="tag ok">已改</span></td></tr>
+<tr><td>R2-10 四收尾边界错</td><td>P1</td><td>median≤0 <b>提到分级之前</b>；unstable 语义冻结为「<b>n_attempt=12 且 n_valid≥6 且 IQR 仍超</b>」（与 done=n_attempt≥max 一致）并写入规格同句；6valid/12attempt 与 12valid 两单测</td><td>§2.2 / §3</td><td><span class="tag ok">已改</span></td></tr>
+<tr><td>R2-11 G1 缺 partial/layer/引擎级 unstable</td><td>P1</td><td>partial 一律 ranking_eligible=false；engine 级规则=<b>任一 cell unstable → 该引擎移出名次并单列</b>；aggregate 按 engine×layer×set×run；G1 输出 layer 维排名与 unstable_list</td><td>§5</td><td><span class="tag ok">已改</span></td></tr>
+<tr><td>R2-12 七判据只写 4/7</td><td>P1</td><td>七行判据表（阈值/证据字段/失败动作齐全）：①markdown 非空+UTF-8 ②类型下限表 ③CER&lt;60% ④两次一致或解释 ⑤cold/rss/timeout 三件套 ⑥LICENSE+SOURCES 入 G0 ⑦模型总量+10GB 跑前磁盘审计 JSON；<b>嵌入 G3 执行</b></td><td>§5</td><td><span class="tag ok">已改</span></td></tr>
+<tr><td>R2-13 阈值占位</td><td>P1</td><td>冻结数字：idle=CPU&lt;15% 且可用内存&gt;8GB 连续 60s（否则延迟启动上限 30min→停机报错）；热降频=连续 2 rep wall&gt;中位×1.5 → outlier+冷却 10min；内存预检=baseline+单页峰值×1.5+2GB ≤ 可用，否则该样本 skip+err_kind=mem_preflight</td><td>§8</td><td><span class="tag ok">已改</span></td></tr>
+<tr><td>R2-14 工期算术错</td><td>P1</td><td>按六引擎算术均值 <b>457.7s</b> 重算：期望 1092 rep≈<b>138.8h</b>、最坏 1872 rep≈<b>238h</b>；补磁盘/内存测算；冒烟后回填实测吞吐</td><td>§6</td><td><span class="tag ok">已改</span></td></tr>
+<tr><td>R2-15 input 字段冲突</td><td>P1</td><td><b>冻结 sha256</b>（与 §3.2 示例一致，规格 §2.1 的 page_sha 同步改）；path <b>不入 cell</b>（由 samples/manifest 提供）；schema 正反例</td><td>§4 / 规格 §2.1</td><td><span class="tag ok">已改</span></td></tr>
+<tr><td>R2-16 wall 口径未冻结</td><td>P1</td><td>逐引擎 wall 起止点表（预处理=resize/normalize 起、后处理=解码止，OXR=D-FINE 起）；<b>wall_self 必填</b>（无内部计时的引擎用外部分段 fallback），diff_pct 缺失→G1 not_run 阻断；<b>口径经你本次 v3 确认后冻结</b></td><td>§8</td><td><span class="tag warn">待你确认</span></td></tr>
+<tr><td>R2-17 respawn 重载无记录</td><td>P1</td><td>session 增 <code>load_events[]={ts, reason:initial|respawn, wall, rss_after, ok}</code> + respawn_count；teardown 断言按最后一次 load 的 baseline</td><td>§7</td><td><span class="tag ok">已改</span></td></tr>
+<tr><td>R2-18 G2 自我放宽</td><td>P1</td><td>G2 硬性：surya=0.69B、dots=1.7B、<b>8 行齐全</b>（Tele/dots 归档 N/A 在表）、宣称/as-of 在位、「OmniDocBench overall≠本测 CER 禁同表」文案检查——删「或标未核」</td><td>§5</td><td><span class="tag ok">已改</span></td></tr>
+<tr><td>R2-19 bf16 归 A 无依据</td><td>P1</td><td><b>V6d-errata 已写入规格 §2.3</b>：非量化（fp32/bf16）即 A、量化即 B；六引擎全 A；engines.yaml/aggregate/G1 按此</td><td>规格 §2.3</td><td><span class="tag ok">已改</span></td></tr>
+<tr><td>R2-20 自评失真</td><td>X</td><td>本 §0 逐条状态表；删除「全闭环」措辞</td><td>本节</td><td><span class="tag ok">已改</span></td></tr>
+</table>
+
+<!-- ===================== §1 数据模型 ===================== -->
+<h2 id="s1">1. 实测数据模型（8 实体 · 全部可从磁盘反查）</h2>
+
+<h3>1.1 实体关系图</h3>
+<div class="er">
+  <div class="ent"><b>RunManifest</b><span>sessions/&lt;run_id&gt;.json<br>set/seed/order/冻结哈希</span></div>
+  <div class="rel">1 ──── N<br><b>产</b></div>
+  <div class="ent"><b>Cell</b><span>cells/&lt;run_id&gt;/&lt;cell_key&gt;.json<br>1 格 = 引擎×样本×页</span></div>
+  <div class="rel">1 ──── N<br><b>含</b></div>
+  <div class="ent"><b>Rep</b><span>reps[] 内嵌<br>1 rep = 1 次 attempt</span></div>
+</div>
+<div class="er">
+  <div class="ent aux"><b>SampleManifest</b><span>samples/manifest.json<br>UUID/sha256/300DPI/sets</span></div>
+  <div class="rel">1 ──── N<br><b>被引用</b></div>
+  <div class="ent"><b>Cell</b></div>
+  <div class="rel">N ──── 1<br><b>校验</b></div>
+  <div class="ent aux"><b>GTManifest</b><span>gt/ + signed<br>gt_v + gt_hash</span></div>
+</div>
+<div class="er">
+  <div class="ent aux"><b>EngineSession</b><span>sessions/engines/&lt;run_id&gt;/&lt;e&gt;.json<br>cold_load / load_events / respawn</span></div>
+  <div class="rel">1 ──── N<br><b>engine_session_id 引用</b></div>
+  <div class="ent"><b>Cell</b></div>
+  <div class="rel">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+  <div class="ent aux"><b>Heartbeat</b><span>control/heartbeat.json<br>5s 独立进程（单写者外）</span></div>
+</div>
+<div class="er">
+  <div class="ent aux"><b>TaskState</b><span>control/task.json<br>runner 独占写</span></div>
+  <div class="rel">1 ──── 1<br><b>run 级</b></div>
+  <div class="ent"><b>RunManifest</b></div>
+  <div class="rel">1 ──── 1<br><b>评估</b></div>
+  <div class="ent aux"><b>GateResult</b><span>gates/gate0-3.json<br>四态 pass/fail/not_run/stale</span></div>
+</div>
+
+<h3>1.2 字段表（生产者 = 谁写这个字段）</h3>
+
+<table>
+<tr><th>实体</th><th>关键字段</th><th>约束</th><th>生产者</th></tr>
+<tr><td><b>RunManifest</b><br><span class="small">sessions/&lt;run_id&gt;.json</span></td><td>run_id(=ep13-&lt;ts&gt;) · set(=S26) · sets_yaml_hash · gt_versions · seed · order(引擎+样本随机序) · config_hash · stats_policy_hash · started_at</td><td>启动时 <b>freeze 一次</b>，此后只读；seed/order 入每个 cell 的 fingerprint</td><td>runner 启动</td></tr>
+<tr><td><b>Cell</b><br><span class="small">cells/&lt;run_id&gt;/&lt;cell_key&gt;.json</span></td><td>cell_key=<code>&lt;uuid&gt;__&lt;engine&gt;__p&lt;page_no&gt;</code> · engine · layer · sample_id · set · input{kind,sha256,page_no,dpi} · reps[] · target_valid/max_attempts/n_attempt/n_valid/n_fail · status(4态) · wall_median/wall_iqr · <b>cer_median</b> · cell_success_rate · trunc_rate · unstable · engine_session_id · peak_rss_mb/rss_scope · fingerprint{12项} · err</td><td>required 19+聚合字段；nullable: wall_median/wall_iqr/cer_median/err_kind（failed/skipped 可 null，<b>禁写 0</b>）；skipped: reps=[]、n_*=0、wall=null；<b>save_raw 先行 validate 后置</b></td><td>CellRunner（§3 状态机产出）</td></tr>
+<tr><td><b>Rep</b>（cell 内嵌）</td><td>n · attempt · status∈{ok,fail,timeout,skipped} · wall · wall_self · cer · truncated · err_kind · ts</td><td>每次 attempt 恰一条；fail/timeout 也占 n_attempt</td><td>worker 回包 → runner 落</td></tr>
+<tr><td><b>SampleManifest</b></td><td>sample_id(UUID) · kind(image/pdf) · sha256 · path · dpi(300) · page_no(S_PDF 逐页) · sets[S26,S24,S_PDF] · gt_ref</td><td>跑前冻结；cell.input 从此引用（path 不入 cell）</td><td>资产冻结阶段</td></tr>
+<tr><td><b>GTManifest</b></td><td>gt_v · gt_hash(规范化算法写死) · status∈{draft,signed} · reviewer · signed_at · revoked_at</td><td>run 级 version+hash 入 RunManifest；sample 级入 cell.fingerprint</td><td>gt/sign 流程</td></tr>
+<tr><td><b>EngineSession</b></td><td>engine · venv(python/torch/transformers 版本) · cold_load_s · <b>load_events[]={ts,reason,wall,rss_after,ok}</b> · respawn_count · baseline_rss · teardown_result</td><td>cell.engine_session_id 引用；wall 永不计入 load</td><td>worker RPC(load/teardown) 回执</td></tr>
+<tr><td><b>TaskState</b>（runner 独占）</td><td>state · state_seq · desired_state · ack_seq · owner_pid · lease{token,expires_at,<b>renewed_at</b>} · heartbeat_at · last_progress · run_id · attempt · finished_at · <b>updated_by</b></td><td><b>唯一写者=runner</b>（R2-09）；tmp+rename 原子写；lease TTL 60s</td><td>runner（心跳不碰此文件）</td></tr>
+<tr><td><b>Heartbeat</b></td><td>hb_at · owner_pid · run_id</td><td>独立进程 5s 写 <code>heartbeat.json</code>（与 TaskState 分文件，消竞态）</td><td>心跳进程</td></tr>
+<tr><td><b>GateResult</b></td><td>gate_id(G0-G3) · run_id · verdict∈{pass,fail,not_run,stale} · checks[] · finished_at · artifact(gateN.json)</td><td>四态齐全；not_run/stale 同样阻断；期详情聚合一行</td><td>闸门执行器</td></tr>
+</table>
+
+<div class="note"><b>强关联链（知识库落地）：</b>任一 Cell → fingerprint.git/spec V6d/weights_sha/gt_v/seed/order → RunManifest → EPISODE.json（git commit + sets_hash + venv freeze）→ 代码库与权威规格；docs/reviews/README.md 落地清单逐项勾选对应本模型的实现文件。</div>
+
+<!-- ===================== §2 逻辑 ===================== -->
+<h2 id="s2">2. 逻辑（状态机 / 判定树 / 数据流）</h2>
+
+<h3>2.1 CellRunner 状态机（R2-01 接线版）</h3>
+<div class="sm">
+  <span class="st end">INIT<span class="cond">建 Cell 累加器</span></span>
+  <span class="arrow">→</span>
+  <span class="st run">RUNNING<span class="cond">n_attempt+1 → infer(timeout=1800s)</span></span>
+  <span class="arrow">→</span>
+  <span class="st run">RECORDED<span class="cond">rep 入 reps[]；ok→n_valid+1,walls/cers 追加</span></span>
+  <span class="arrow">→</span>
+  <span class="st">EVAL<span class="cond">见 2.2 判定树</span></span>
+  <span class="arrow">↻</span>
+  <span class="st run">RUNNING<span class="cond">未达出口且 attempt&lt;max</span></span>
+</div>
+<div class="sm">
+  <span class="st">EXTENDING<span class="cond">attempt≥8 且 n_valid≥6 且 IQR&gt;10% → max=12</span></span>
+  <span class="arrow">→</span>
+  <span class="st end">DONE-complete<span class="cond">n_valid≥6 且 IQR 合格</span></span>
+  <span class="arrow">|</span>
+  <span class="st end">DONE-complete+unstable<span class="cond">attempt=12 且仍超阈</span></span>
+  <span class="arrow">|</span>
+  <span class="st end">DONE-partial<span class="cond">4≤n_valid&lt;6</span></span>
+  <span class="arrow">|</span>
+  <span class="st bad">DONE-failed<span class="cond">fatal / n_valid&lt;4 / median≤0</span></span>
+</div>
+
+<pre><code><span style="color:#b45309"># R2-01 接线：状态机产出的就是 schema 对象</span>
+class Cell:                      <span class="small"># 累加器 = schema 的生产者</span>
+    reps: list[Rep] = [];  n_attempt = 0;  n_valid = 0;  fatal = None
+    def absorb(self, rep):       <span class="small"># 每次 attempt 恰一条</span>
+        self.reps.append(rep);  self.n_attempt += 1
+        if rep.status == "ok":   <span class="small"># R2-01：不是 rep.ok</span>
+            self.n_valid += 1; self.walls.append(rep.wall); self.cers.append(rep.cer)
+    def to_schema(self):         <span class="small"># fill required 19 + 聚合字段</span>
+        ... n_fail = n_attempt-n_valid; wall_median/iqr; cer_median;
+           cell_success_rate=n_valid/n_attempt; trunc_rate; unstable; err...
+
+def run(cell, worker):
+    try:
+        while True:
+            if cell.fatal: break                       <span class="small"># 异常置位也走这</span>
+            if cell.n_attempt &gt;= cell.max_attempts: break
+            cell.n_attempt_pre()                       <span class="small"># 预增（attempt 占位）</span>
+            try:    rep = worker.infer(timeout=1800)
+            except CellFatal as e:  cell.fatal = e.kind;  break
+            except WorkerFatal as e: respawn_or_mark(e)   <span class="small"># §7</span>
+            cell.absorb(rep)
+            if extension_gate(cell): cell.max_attempts = 12      <span class="small"># R2-10 语义见 2.2</span>
+            if done_ok(cell): break
+    finally:
+        cell.finish()             <span class="small"># 2.2 判定树：唯一出口顺序</span>
+        save_raw(cell); validate_soft(cell)   <span class="small"># F-05</span></code></pre>
+
+<h3>2.2 四收尾判定树（R2-10：顺序即正确性）</h3>
+<table>
+<tr><th>顺序</th><th>条件</th><th>结果</th><th>说明</th></tr>
+<tr><td><b>①</b></td><td><code>median(walls) ≤ 0</code></td><td><b>failed + err=median_le_0（报错留痕）</b></td><td><b>提到分级之前</b>（R2-10 修复：4-5 valid+median≤0 不得走 partial）</td></tr>
+<tr><td>②</td><td>fatal 非空</td><td>failed + err_kind</td><td>CellFatal/超预算 WorkerFatal</td></tr>
+<tr><td>③</td><td><code>n_valid &lt; 4</code></td><td>failed</td><td>含 0 valid 全失败</td></tr>
+<tr><td>④</td><td><code>4 ≤ n_valid &lt; 6</code></td><td><b>partial</b>（进分母、<b>不进名次</b>、单列）</td><td>G1 强制 ranking_eligible=false</td></tr>
+<tr><td>⑤</td><td><code>n_valid ≥ 6 且 IQR/median ≤ 10%</code></td><td>complete</td><td>达标</td></tr>
+<tr><td>⑥</td><td><code>n_attempt = 12 且 n_valid ≥ 6 且 IQR &gt; 10%</code></td><td>complete + <b>unstable=true</b>（只报分布不排名）</td><td><b>unstable 语义冻结</b>：attempt 硬终止口径（与 done 定义同句，写入规格）；6valid/6fail 的 12attempt 场景<b>不</b>判 unstable（n_valid≥6 已满足但 IQR 按 valid walls 算——单测⑤覆盖）</td></tr>
+</table>
+
+<h3>2.3 端到端数据流</h3>
+<pre>samples/manifest ──引用──▶ Cell.input{sha256,page_no,dpi}
+GTManifest(signed) ──校验──▶ RunManifest.freeze ──▶ 每 Cell.fingerprint.gt_v+gt_hash
+                                    │
+                                    ▼
+runner(独占 task.json) ──spawn──▶ worker(独立venv) ◀──NDJSON──▶ runner
+        │  5s ▶ heartbeat.json          │ infer(1800s,父进程kill)
+        │                               ▼
+        │                        Rep{status,wall,wall_self,cer,...}
+        │                               ▼
+        └──格边界控制检查 ◀── Cell.absorb() ──finally──▶ save_raw → validate_soft
+                                                            │
+                                                            ▼
+                                        aggregate(validate双侧) ──▶ G0 → G1 → G2 → G3 → 发布
+                                              │按 engine×layer×set×run + S24视图
+                                              └─ complete_cell_rate(149/137) + engine_success_rate(95%,25/23)</pre>
+
+<!-- ===================== §3 协议A ===================== -->
+<h2 id="s3">3. 协议 A 关键参数（终表）</h2>
+<table>
+<tr><th>参数</th><th>值</th><th>依据</th></tr>
+<tr><td>target_valid / initial_max / extension</td><td>6 / 8 / 12（<b>两阶段封顶，无 16</b>）</td><td>规格 §2.2 F-01/X-01</td></tr>
+<tr><td>扩展触发</td><td><code>attempt≥8 且 n_valid≥6 且 IQR&gt;10%</code> → max=12 继续</td><td>§2.2；dsh A2 通过的边界已写单测</td></tr>
+<tr><td>unstable</td><td><code>attempt=12 且 n_valid≥6 且 IQR&gt;10%</code></td><td>R2-10 冻结（规格同句）</td></tr>
+<tr><td>硬终止</td><td>attempt≥max_attempts 任何阶段即停</td><td>§2.2</td></tr>
+<tr><td>控制检查</td><td><b>仅格边界</b>（cell save 后）；rep 循环零检查</td><td>F-13</td></tr>
+<tr><td>心跳</td><td>独立进程 5s → heartbeat.json；stale=15s 无心跳<b>或</b>last_progress&gt;cell timeout</td><td>F-14 + R2-09</td></tr>
+<tr><td>timeout</td><td>infer=1800s / load / teardown 各自写死 engines.yaml；<b>父进程 kill</b></td><td>D2 冻结 + R2-14</td></tr>
+</table>
+
+<!-- ===================== §4 schema ===================== -->
+<h2 id="s4">4. cell schema v3 增量（对 §1.2 Cell 行的补充）</h2>
+<ul>
+<li><b>cell_key 修正（R2-02）</b>：<code>&lt;uuid&gt;__&lt;engine&gt;__p&lt;page_no&gt;</code>——图片 page_no=1；S_PDF 每页独立 key；单测：同 UUID 两页生成两 key、G0 expected=pages×6。</li>
+<li><b>cer_median（R2-03）</b>：required 聚合字段，nullable；=valid reps 的 cer 中位数；CER=(S+D+I)/N；aggregate 同名字段入主榜。</li>
+<li><b>nullable 显式声明（B8/B9）</b>：<code>wall_median/wall_iqr/cer_median/err_kind: type [number,null]</code>；skipped cell 显式允许 reps=[]、n_*=0、wall=null——schema 正反例入 B 组测试。</li>
+<li><b>input 命名冻结（R2-15）</b>：<code>{kind, sha256, page_no, dpi}</code>，<b>sha256 为全仓唯一字段名</b>（规格 §2.1 的 page_sha 同步改）；path 不入 cell。</li>
+<li><b>schema 文件</b>：<code>schema/cell.schema.json</code>，$id/version=6、additionalProperties=false；写入+聚合双 validate；schema hash 入 session。</li>
+</ul>
+
+<!-- ===================== §5 闸门 ===================== -->
+<h2 id="s5">5. G0–G3 v3 增量</h2>
+<table>
+<tr><th>门</th><th>v3 关键修正</th></tr>
+<tr><td><b>G0</b></td><td>① <b>GT 比对排除 skipped</b>（R2-06）：非 skipped cell 必须 == <b>当前</b> signed manifest；skipped 必须带合法 err_kind{gt_unsigned,gt_mismatch,…} 单列并阻断排名；② GT 三层（R2-07）：run 级不符<b>拒跑</b> / 样本级未签-revoke <b>skip 续跑</b> / gt-sign·revoke API 补齐（reviewer/signed_at，revoke 后拒跑或 skip）；③ LICENSE 与 SOURCES 同入判据；④ S24 作用域=样本∈S24 子集，expected=144；S_PDF expected=pages×6。</td></tr>
+<tr><td><b>G1</b></td><td>① <b>两层指标都查</b>（R2-04）：complete_cell_rate≥149/137（cell 级）<b>且</b> engine_success_rate=Σn_valid/Σn_attempt≥95%（rep 级、逐引擎、样本下限 25/23）；② partial 一律 ranking_eligible=false；③ <b>引擎级 unstable：任一 cell unstable → 该引擎移出名次并单列</b>；④ aggregate 按 engine×layer×set×run，输出 layer 维排名；⑤ caliber 五字段逐引擎，diff_pct 缺失→not_run 阻断（R2-16）；⑥ CER 聚合字段在位（R2-03）。</td></tr>
+<tr><td><b>G2</b></td><td>硬性清单（R2-18）：lineup <b>8 行齐全</b>、Tele/dots 归档 N/A 在表、surya=<b>0.69B</b>、dots=<b>1.7B</b>、宣称/as-of 在位、「overall≠CER 禁同表」caveat——<b>删「或标未核」</b>。</td></tr>
+<tr><td><b>G3</b></td><td><b>七判据表嵌入执行</b>（R2-12，每行=阈值+证据字段+失败动作）：<br>
+① 非空 UTF-8 且为 markdown ② 长度&gt;类型下限（文本≥200 / 表格≥500 / 公式≥50，按样本类型表）③ 单页 CER&lt;60% ④ 两次一致或有解释 ⑤ session.cold_load + cell.peak_rss + rep.timeout 三件套齐全 ⑥ LICENSE+SOURCES 全登记（G0 已查，G3 复核）⑦ 磁盘 ≥ models/ 总量+10GB（跑前磁盘审计 JSON）——任一失败=阻断；+ pre_push_check 10 项 + original_guard + 你终审。</td></tr>
+</table>
+
+<!-- ===================== §6 分母工期 ===================== -->
+<h2 id="s6">6. 分母 · 指标 · 工期 v3</h2>
+<table>
+<tr><th>项</th><th>冻结值</th></tr>
+<tr><td>数据模型（R2-05）</td><td><b>方案 A：一次 S26 run</b>（cell.set=S26）；S24=视图（expected=144）；S_ALL=展示视图不产 cell；S_PDF=pages×6</td></tr>
+<tr><td>两层指标（R2-04，V6d-errata）</td><td>层1 complete_cell_rate：S26≥<b>149</b> cells / S24≥<b>137</b> cells；层2 engine_success_rate（rep）：逐引擎≥95%、下限 <b>25/23</b> reps；G1 两者都查</td></tr>
+<tr><td>reps 预算</td><td>S26=156×12=**1872**（最坏）；S24 视图不额外产 rep</td></tr>
+<tr><td>工期（R2-14 重算）</td><td>六引擎单页 60/161/241/993/308/983s → <b>算术均值 457.7s</b>；期望 1092 rep×457.7s≈<b>138.8h</b>；最坏 1872×457.7s≈<b>238h</b>（分批夜跑）；<b>冒烟后回填真实吞吐</b></td></tr>
+<tr><td>磁盘（新增）</td><td>cells：~100KB/格×156≈<b>16MB</b>；journal+日志≈<b>500MB</b>；模型 22.4GB（共享不动）；archive 按需——总量无压力</td></tr>
+<tr><td>内存（新增）</td><td>峰值引擎 OXR（模型6.4GB+D-FINE 0.5GB）≈<b>7GB</b>；+常驻（Hermes/VoiceStudio/litellm ≈6GB）→ 峰值≈13GB &lt; 27.9GB ✓；预检公式见 §8</td></tr>
+</table>
+
+<!-- ===================== §7 进程控制 ===================== -->
+<h2 id="s7">7. 进程与控制 v3</h2>
+<ul>
+<li><b>单写者（R2-09）</b>：runner 独占 <code>control/task.json</code>（state/seq/ack/lease/last_progress/updated_by）；心跳进程只写 <code>control/heartbeat.json</code>；外部 UI 只写 <code>desired_state</code>（经 API 落 task 的 desired 字段由 runner 收编）；任何写=tmp+rename；lease TTL 60s 由 runner 续（renewed_at）。</li>
+<li><b>stale 双判据</b>：heartbeat.json 超 15s <b>或</b> last_progress 超过当前 cell timeout → 查 owner_pid：死=stale 阻断，活=stalled 标记不判死。</li>
+<li><b>load_events（R2-17）</b>：session 记 initial/respawn 每次 load 的 wall+rss_after+ok、respawn_count；teardown 断言按最后一次 load 的 baseline。</li>
+<li>worker：venv 子进程、NDJSON 专用 fd、握手 hello{protocol_v,engine,python,torch,transformers}、单飞、分块、respawn 预算 1 次/引擎/小时、进程纪律走 process_guard.py。</li>
+</ul>
+
+<!-- ===================== §8 计时环境 ===================== -->
+<h2 id="s8">8. 计时 · 环境 · 层 v3</h2>
+<div class="pit"><b>wall 口径逐引擎起止表（R2-16，待你 v3 确认后冻结）</b></div>
+<table>
+<tr><th>引擎</th><th>wall 起点</th><th>wall 止点</th><th>wall_self 来源</th></tr>
+<tr><td>OXR</td><td>D-FINE 版面服务收图</td><td>OXR 识别 markdown 解码完</td><td>识别段内部分解（版面+识别）</td></tr>
+<tr><td>Paddle/Xiaomi/Ovis/Monkey/surya</td><td>processor 图像预处理开始（resize/normalize）</td><td>输出解码完（batch_decode 返回）</td><td>generate 内计时（预处理外置分段）</td></tr>
+</table>
+<div class="small">load 全部外置（session 级）；warmup=1 不计入；wall_self <b>必填</b>（上述分段 fallback）→ diff_pct 必产，缺失=G1 not_run；caliber audit 跑前+跑后各一次。</div>
+<ul>
+<li><b>受控环境数字（R2-13）</b>：idle guard=CPU&lt;15% 且 free&gt;8GB 连续 60s（否则延迟上限 30min→停机报错）；热降频=连续 2 rep wall&gt;1.5×中位 → outlier{reason=thermal,action=cooldown_10min} + n_excluded；内存预检=baseline+单页峰值×1.5+2GB ≤ free 否则 skip+err_kind=mem_preflight；OMP_NUM_THREADS/MKL 固定写死 host_manifest。</li>
+<li><b>层（R2-19，V6d-errata）</b>：非量化即 A——六引擎全 A 层；engines.yaml 冻结 layer；aggregate/G1 按 layer 分组。</li>
+</ul>
+
+<!-- ===================== §9 测试 ===================== -->
+<h2 id="s9">9. 四组定向测试（dsh 复评对象）与执行流程</h2>
+<table>
+<tr><th>组</th><th>用例</th></tr>
+<tr><td><b>A 协议A九例</b></td><td>①6次ok达标→complete ②6ok超阈+7/8fail→扩展至12→仍超→unstable ③5valid/3fail→partial ④0valid/8fail→failed ⑤6valid/6fail且IQR超→按冻结语义判定（单测固化） ⑥infer抛CellFatal→failed且落盘 ⑦infer超时→rep timeout占attempt ⑧12全ok超阈→unstable ⑨4valid且median≤0→<b>报错非partial</b></td></tr>
+<tr><td><b>B schema正反例</b></td><td>complete/partial/failed/skipped 四态各一 ✓；wall=null 的 failed ✓；skipped reps=[] n=0 ✓；多页 S_PDF 两 key ✓；input 用 page_sha 的反例 ✗ 拒；缺 cer_median ✗ 拒；additionalProperties 多余键 ✗ 拒</td></tr>
+<tr><td><b>C 闸门fail fixture</b></td><td>G0：1个未签skip样本（须单列不误杀）/ failed&gt;2% / S_ALL expected 错 / 分组不一致；G1：diff_pct&gt;10未注 / partial混排名 / unstable引擎未移 / 149不达标；G2：surya参数错 / 7行缺1 / 同表caveat缺；G3：七判据各破坏一项 + pre_push 故意破坏</td></tr>
+<tr><td><b>D 分母工期表</b></td><td>156/144/149/137/1872/1728/25/23 算术；S_ALL=156+S_PDF；F-01=1872；六引擎均值457.7s；跨文件断言（sets.yaml ↔ V6d 表逐项）</td></tr>
+</table>
+<div class="note"><b>执行流程</b>：本 v3 你评审 → 通过后推 dsh <b>定向复评</b>（只核四组+10必改 diff）→ 判「可开工」→ 你终审 → 按 §1 数据模型+§2 逻辑实现 → 四组自测过 → 3 样本冒烟报你 → 全量。</div>
+
+<!-- ===================== §10 ===================== -->
+<h2 id="s10">10. 附录 · 引擎层（r1/r2 均评「强项」，不变）</h2>
+<p class="small">路径 A（5 引擎标准直载：官方类/use_fast=False/inputs.to(dtype)/签名过滤/use_cache=True/官方 prompt）、路径 B（OXR 三服务 + buffer 恢复 + eos）、路径 C（Tele/dots 归档 N/A）——细节见 v2 §10 与 P0 实证记录，本轮未改。</p>
+
+<div class="lead small">配套：规格 <b>V6d-errata</b>（5 处已入权威源）· dsh r2 原文 <code>review-20261104/dsh-code-r2-out.txt</code> · 知识库 <code>ep13-docparse/docs/reviews/</code>（v3 出稿后入库）。评审意见直接回本会话。</div>
+
+</div>
+</body>
+</html>

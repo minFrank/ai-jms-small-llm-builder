@@ -1,0 +1,47 @@
+{
+ "gate": "G0",
+ "verdict": "pass",
+ "checks": [
+  {
+   "check": "分母==expected",
+   "ok": true,
+   "detail": "156"
+  },
+  {
+   "check": "failed≤2%",
+   "ok": true,
+   "detail": "0/156"
+  },
+  {
+   "check": "skipped err_kind 合法",
+   "ok": true,
+   "detail": "skipped=0（无归档格入本 run）"
+  },
+  {
+   "check": "GT==signed(非skipped)",
+   "ok": true,
+   "detail": "per-sample gt_hash==samples_manifest.gt_sha256：156/156；gt_v=ep13-gt-v2（gt_audit 26/26 字节级佐证）"
+  },
+  {
+   "check": "FK run_id 无孤儿",
+   "ok": true,
+   "detail": "run_id=ep13-full-001 全 156 格在册；sample_id 26 UUID 与 manifest 一一对应"
+  },
+  {
+   "check": "SOURCES 无待补",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "LICENSE 登记",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "caliber audit finished_at",
+   "ok": true,
+   "detail": "caliber n=156 max_diff=0.4% >10%=0；run_manifest.started_at=2026-11-04T21:18:39（证据：cells/ep13-full-001/*.json 全部 156 格、1023 条 reps 中 reps[].ts 的最小值（1022 条带 ts，1 条失败 rep 无 ts）。跨全部格聚合，属 run 级证据，非单格内近似。）——finished_at>started_at 可验证"
+  }
+ ],
+ "finished_at": "2026-11-12T01:18:28"
+}

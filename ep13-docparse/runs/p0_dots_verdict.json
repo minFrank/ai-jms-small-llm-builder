@@ -1,0 +1,10 @@
+{
+ "engine": "dots.ocr",
+ "verdict": "FAIL_FINAL",
+ "revive_result": "复活流程走完5项全排除:fp32同end/官方prompt逐字节同/process_vision_info路径同/官方CPU步骤sdpa同/融合定量2646=2646输入侧正确。transformers HF路径下模型第一步输出endofassistant(151673)是稳定行为;官方主路径vLLM(集成vLLM>=0.11.0)需GPU,本机不可行",
+ "evidence": [
+  "runs/p0_dots_sdpa.log",
+  "runs/p0_dots_fp32.log",
+  "runs/p0_dots_revive5.log"
+ ]
+}

@@ -1,0 +1,478 @@
+{
+ "now": "2026-11-08T00:34:55.914703",
+ "state": {
+  "desired": "running",
+  "run_id": "ep13-full-001",
+  "seq": "done",
+  "last_progress": "2026-11-07T18:03:45",
+  "n_run": 4,
+  "n_skip": 22,
+  "n_fail": 0,
+  "finished_at": "2026-11-07T18:03:45",
+  "seed": 1301,
+  "seed_note": "任务序随机化种子，证据 batch_runner.py（回填于闸门复核轮）",
+  "state_kind": "residual（末批残值：n_run/n_skip 只描述最后一批；全量统计以 cells 156 格为准）",
+  "started_at": null,
+  "started_at_reason": "跑批未落显式 started_at（实现缺口）；cell 无时间戳字段；文件 mtime 已被回填写入刷新、不可作跑批证据——如实 null"
+ },
+ "n_cells": 156,
+ "status_cnt": {
+  "complete": 156
+ },
+ "eng_status": {
+  "monkey_rec": {
+   "complete": 26
+  },
+  "ovis_ocr2": {
+   "complete": 26
+  },
+  "oxr": {
+   "complete": 26
+  },
+  "paddleocr_vl": {
+   "complete": 26
+  },
+  "surya_2_5": {
+   "complete": 26
+  },
+  "xiaomi_vl": {
+   "complete": 26
+  }
+ },
+ "key_shapes": [
+  {
+   "n": 155,
+   "keys": [
+    "cell_key",
+    "cell_success_rate",
+    "cer_median",
+    "engine",
+    "err",
+    "err_kind",
+    "fingerprint",
+    "input",
+    "layer",
+    "max_attempts",
+    "n_attempt",
+    "n_fail",
+    "n_valid",
+    "reps",
+    "run_id",
+    "sample_id",
+    "schema",
+    "set",
+    "status",
+    "target_valid",
+    "trunc_rate",
+    "unstable",
+    "wall_iqr",
+    "wall_median"
+   ]
+  },
+  {
+   "n": 1,
+   "keys": [
+    "cell_key",
+    "cell_success_rate",
+    "cer_median",
+    "engine",
+    "err",
+    "err_kind",
+    "extension_note",
+    "fingerprint",
+    "input",
+    "layer",
+    "max_attempts",
+    "n_attempt",
+    "n_fail",
+    "n_valid",
+    "reps",
+    "run_id",
+    "sample_id",
+    "schema",
+    "set",
+    "status",
+    "target_valid",
+    "trunc_rate",
+    "unstable",
+    "wall_iqr",
+    "wall_iqr_6rep",
+    "wall_iqr_6rep_note",
+    "wall_median"
+   ]
+  }
+ ],
+ "cer_median_normal": 0.068362,
+ "n_normal": 131,
+ "outliers": [
+  {
+   "engine": "monkey_rec",
+   "cer": 10.296928,
+   "sample": "lc_01.png",
+   "sha": "0284b05f9857",
+   "file": "616ccf6d-cd84-4f11-960f-3da65f01f490__monkey_rec__p1.json"
+  },
+  {
+   "engine": "surya_2_5",
+   "cer": 1.672355,
+   "sample": "shot_01.png",
+   "sha": "db17286d47d8",
+   "file": "e241e718-975f-4938-9867-cb4ae1d53c4d__surya_2_5__p1.json"
+  },
+  {
+   "engine": "surya_2_5",
+   "cer": 1.549488,
+   "sample": "lc_01.png",
+   "sha": "0284b05f9857",
+   "file": "616ccf6d-cd84-4f11-960f-3da65f01f490__surya_2_5__p1.json"
+  },
+  {
+   "engine": "surya_2_5",
+   "cer": 1.243902,
+   "sample": "shot_02.png",
+   "sha": "c5b324811e22",
+   "file": "6d329f42-6a63-4825-8aee-c2d0c2cb1ff2__surya_2_5__p1.json"
+  },
+  {
+   "engine": "ovis_ocr2",
+   "cer": 0.99878,
+   "sample": "shot_02.png",
+   "sha": "c5b324811e22",
+   "file": "6d329f42-6a63-4825-8aee-c2d0c2cb1ff2__ovis_ocr2__p1.json"
+  },
+  {
+   "engine": "oxr",
+   "cer": 0.962195,
+   "sample": "shot_02.png",
+   "sha": "c5b324811e22",
+   "file": "6d329f42-6a63-4825-8aee-c2d0c2cb1ff2__oxr__p1.json"
+  },
+  {
+   "engine": "ovis_ocr2",
+   "cer": 0.952218,
+   "sample": "shot_01.png",
+   "sha": "db17286d47d8",
+   "file": "e241e718-975f-4938-9867-cb4ae1d53c4d__ovis_ocr2__p1.json"
+  },
+  {
+   "engine": "ovis_ocr2",
+   "cer": 0.935154,
+   "sample": "lc_01.png",
+   "sha": "0284b05f9857",
+   "file": "616ccf6d-cd84-4f11-960f-3da65f01f490__ovis_ocr2__p1.json"
+  },
+  {
+   "engine": "paddleocr_vl",
+   "cer": 0.924956,
+   "sample": "book_02.png",
+   "sha": "9f3e5cd4d768",
+   "file": "5b6f285a-5cc5-4e61-aadf-c207ddf211eb__paddleocr_vl__p1.json"
+  },
+  {
+   "engine": "xiaomi_vl",
+   "cer": 0.923171,
+   "sample": "shot_02.png",
+   "sha": "c5b324811e22",
+   "file": "6d329f42-6a63-4825-8aee-c2d0c2cb1ff2__xiaomi_vl__p1.json"
+  },
+  {
+   "engine": "monkey_rec",
+   "cer": 0.896341,
+   "sample": "shot_02.png",
+   "sha": "c5b324811e22",
+   "file": "6d329f42-6a63-4825-8aee-c2d0c2cb1ff2__monkey_rec__p1.json"
+  },
+  {
+   "engine": "monkey_rec",
+   "cer": 0.802792,
+   "sample": "book_02.png",
+   "sha": "9f3e5cd4d768",
+   "file": "5b6f285a-5cc5-4e61-aadf-c207ddf211eb__monkey_rec__p1.json"
+  },
+  {
+   "engine": "paddleocr_vl",
+   "cer": 0.785366,
+   "sample": "shot_02.png",
+   "sha": "c5b324811e22",
+   "file": "6d329f42-6a63-4825-8aee-c2d0c2cb1ff2__paddleocr_vl__p1.json"
+  },
+  {
+   "engine": "monkey_rec",
+   "cer": 0.78157,
+   "sample": "shot_01.png",
+   "sha": "db17286d47d8",
+   "file": "e241e718-975f-4938-9867-cb4ae1d53c4d__monkey_rec__p1.json"
+  },
+  {
+   "engine": "oxr",
+   "cer": 0.778157,
+   "sample": "shot_01.png",
+   "sha": "db17286d47d8",
+   "file": "e241e718-975f-4938-9867-cb4ae1d53c4d__oxr__p1.json"
+  },
+  {
+   "engine": "oxr",
+   "cer": 0.774744,
+   "sample": "lc_01.png",
+   "sha": "0284b05f9857",
+   "file": "616ccf6d-cd84-4f11-960f-3da65f01f490__oxr__p1.json"
+  },
+  {
+   "engine": "xiaomi_vl",
+   "cer": 0.773234,
+   "sample": "table_02.png",
+   "sha": "d404159ce88b",
+   "file": "c5b71320-e615-4867-9487-d9b088afb48f__xiaomi_vl__p1.json"
+  },
+  {
+   "engine": "xiaomi_vl",
+   "cer": 0.730375,
+   "sample": "lc_01.png",
+   "sha": "0284b05f9857",
+   "file": "616ccf6d-cd84-4f11-960f-3da65f01f490__xiaomi_vl__p1.json"
+  },
+  {
+   "engine": "xiaomi_vl",
+   "cer": 0.713755,
+   "sample": "skew_03.png",
+   "sha": "70ab6166cba8",
+   "file": "8c988f28-e9e3-475a-aff3-1859efad14ea__xiaomi_vl__p1.json"
+  },
+  {
+   "engine": "xiaomi_vl",
+   "cer": 0.713311,
+   "sample": "shot_01.png",
+   "sha": "db17286d47d8",
+   "file": "e241e718-975f-4938-9867-cb4ae1d53c4d__xiaomi_vl__p1.json"
+  },
+  {
+   "engine": "paddleocr_vl",
+   "cer": 0.679181,
+   "sample": "shot_01.png",
+   "sha": "db17286d47d8",
+   "file": "e241e718-975f-4938-9867-cb4ae1d53c4d__paddleocr_vl__p1.json"
+  },
+  {
+   "engine": "paddleocr_vl",
+   "cer": 0.641638,
+   "sample": "lc_01.png",
+   "sha": "0284b05f9857",
+   "file": "616ccf6d-cd84-4f11-960f-3da65f01f490__paddleocr_vl__p1.json"
+  },
+  {
+   "engine": "surya_2_5",
+   "cer": 0.635253,
+   "sample": "book_02.png",
+   "sha": "9f3e5cd4d768",
+   "file": "5b6f285a-5cc5-4e61-aadf-c207ddf211eb__surya_2_5__p1.json"
+  },
+  {
+   "engine": "xiaomi_vl",
+   "cer": 0.588957,
+   "sample": "table_01.png",
+   "sha": "71a74396e60f",
+   "file": "50711f63-8a9a-4f58-9636-8a88b5fe7c96__xiaomi_vl__p1.json"
+  },
+  {
+   "engine": "surya_2_5",
+   "cer": 0.532286,
+   "sample": "skew_02.png",
+   "sha": "ead672eb12d3",
+   "file": "74ac3433-45b9-42e1-91d5-c4206cc496a6__surya_2_5__p1.json"
+  }
+ ],
+ "wall_median": 79.35925,
+ "non_complete": [],
+ "mtime_min": "2026-11-08T00:02:25.397296",
+ "mtime_max": "2026-11-08T00:33:52.906224",
+ "mtime_series": [
+  "11-08 00:02",
+  "11-08 00:02",
+  "11-08 00:02",
+  "11-08 00:02",
+  "11-08 00:02",
+  "11-08 00:02",
+  "11-08 00:02",
+  "11-08 00:02",
+  "11-08 00:02",
+  "11-08 00:02",
+  "11-08 00:02",
+  "11-08 00:02",
+  "11-08 00:02",
+  "11-08 00:02",
+  "11-08 00:02",
+  "11-08 00:02",
+  "11-08 00:02",
+  "11-08 00:02",
+  "11-08 00:02",
+  "11-08 00:02",
+  "11-08 00:02",
+  "11-08 00:02",
+  "11-08 00:02",
+  "11-08 00:02",
+  "11-08 00:02",
+  "11-08 00:02",
+  "11-08 00:02",
+  "11-08 00:02",
+  "11-08 00:02",
+  "11-08 00:02",
+  "11-08 00:02",
+  "11-08 00:02",
+  "11-08 00:02",
+  "11-08 00:02",
+  "11-08 00:02",
+  "11-08 00:02",
+  "11-08 00:02",
+  "11-08 00:02",
+  "11-08 00:02",
+  "11-08 00:02",
+  "11-08 00:02",
+  "11-08 00:02",
+  "11-08 00:02",
+  "11-08 00:02",
+  "11-08 00:02",
+  "11-08 00:02",
+  "11-08 00:02",
+  "11-08 00:02",
+  "11-08 00:02",
+  "11-08 00:02",
+  "11-08 00:02",
+  "11-08 00:02",
+  "11-08 00:02",
+  "11-08 00:02",
+  "11-08 00:02",
+  "11-08 00:02",
+  "11-08 00:02",
+  "11-08 00:02",
+  "11-08 00:02",
+  "11-08 00:02",
+  "11-08 00:02",
+  "11-08 00:02",
+  "11-08 00:02",
+  "11-08 00:02",
+  "11-08 00:02",
+  "11-08 00:02",
+  "11-08 00:02",
+  "11-08 00:02",
+  "11-08 00:02",
+  "11-08 00:02",
+  "11-08 00:02",
+  "11-08 00:02",
+  "11-08 00:02",
+  "11-08 00:02",
+  "11-08 00:02",
+  "11-08 00:02",
+  "11-08 00:02",
+  "11-08 00:02",
+  "11-08 00:02",
+  "11-08 00:02",
+  "11-08 00:02",
+  "11-08 00:02",
+  "11-08 00:02",
+  "11-08 00:02",
+  "11-08 00:02",
+  "11-08 00:02",
+  "11-08 00:02",
+  "11-08 00:02",
+  "11-08 00:02",
+  "11-08 00:02",
+  "11-08 00:02",
+  "11-08 00:02",
+  "11-08 00:02",
+  "11-08 00:02",
+  "11-08 00:02",
+  "11-08 00:02",
+  "11-08 00:02",
+  "11-08 00:02",
+  "11-08 00:02",
+  "11-08 00:02",
+  "11-08 00:02",
+  "11-08 00:02",
+  "11-08 00:02",
+  "11-08 00:02",
+  "11-08 00:02",
+  "11-08 00:02",
+  "11-08 00:02",
+  "11-08 00:02",
+  "11-08 00:02",
+  "11-08 00:02",
+  "11-08 00:02",
+  "11-08 00:02",
+  "11-08 00:02",
+  "11-08 00:02",
+  "11-08 00:02",
+  "11-08 00:02",
+  "11-08 00:02",
+  "11-08 00:02",
+  "11-08 00:02",
+  "11-08 00:02",
+  "11-08 00:02",
+  "11-08 00:02",
+  "11-08 00:02",
+  "11-08 00:02",
+  "11-08 00:02",
+  "11-08 00:02",
+  "11-08 00:02",
+  "11-08 00:02",
+  "11-08 00:02",
+  "11-08 00:02",
+  "11-08 00:02",
+  "11-08 00:02",
+  "11-08 00:02",
+  "11-08 00:02",
+  "11-08 00:02",
+  "11-08 00:02",
+  "11-08 00:02",
+  "11-08 00:02",
+  "11-08 00:02",
+  "11-08 00:02",
+  "11-08 00:02",
+  "11-08 00:02",
+  "11-08 00:02",
+  "11-08 00:02",
+  "11-08 00:02",
+  "11-08 00:02",
+  "11-08 00:02",
+  "11-08 00:02",
+  "11-08 00:02",
+  "11-08 00:02",
+  "11-08 00:02",
+  "11-08 00:02",
+  "11-08 00:02",
+  "11-08 00:02",
+  "11-08 00:02",
+  "11-08 00:33"
+ ],
+ "manifest_entries": 26,
+ "manifest_top": [
+  [
+   "9df1b73dc4b7dbd2a0eb3e00b55a16ddb55f466d1569bc08e8e8d133a14629c5",
+   "cn_doc_01.png"
+  ],
+  [
+   "34b2e4146f8ae3533717eb33b3123336a7ca94c5c89983b7403d6f5785dc3dfc",
+   "contract_01.png"
+  ],
+  [
+   "457f7c31cd6eb7d95e70f05ec39080d548543ed29ece0dcdb1a4a5cbc3a4bc45",
+   "menu_01.png"
+  ]
+ ],
+ "per_engine_cer_median": {
+  "monkey_rec": 0.0663665,
+  "ovis_ocr2": 0.105422,
+  "oxr": 0.07438,
+  "paddleocr_vl": 0.046423000000000006,
+  "surya_2_5": 0.07663,
+  "xiaomi_vl": 0.0534105
+ },
+ "per_engine_wall_median": {
+  "monkey_rec": 102.70100000000001,
+  "ovis_ocr2": 72.01575,
+  "oxr": 121.601,
+  "paddleocr_vl": 52.839749999999995,
+  "surya_2_5": 79.5505,
+  "xiaomi_vl": 60.00075
+ },
+ "n_sha_missing_sample": 0
+}

@@ -1,0 +1,170 @@
+{
+ "gt_v": "ep13-gt-v2",
+ "status": "signed",
+ "created": "2026-11-04",
+ "count": 26,
+ "total_chars": 24679,
+ "content_hash": "5266101978d42ef676021a8a5ac75835bc7fdb24ebf4ac6c04bebfd45ff4663b",
+ "reviewer": "user",
+ "signed_at": "2026-11-08T06:57:34",
+ "samples": [
+  {
+   "sample_id": "cn_doc_01",
+   "file": "cn_doc_01.txt",
+   "sha256": "016799434fd927c59c6198c8e6b5a6b0318d45a942bc51682bf237d413ea80ac",
+   "chars": 332
+  },
+  {
+   "sample_id": "contract_01",
+   "file": "contract_01.txt",
+   "sha256": "5c66e788c14e9d64a025a1f0d4c8c8c779871d608df24baa1315bb27f6354156",
+   "chars": 446
+  },
+  {
+   "sample_id": "menu_01",
+   "file": "menu_01.txt",
+   "sha256": "dd88b8af6488e8fd0ebba1955fe7cc2ced92fb573829c6a45940ac26a0294e74",
+   "chars": 266
+  },
+  {
+   "sample_id": "poster_01",
+   "file": "poster_01.txt",
+   "sha256": "8c0a3bd4b35d75e7e2f13bc6103926ac6745c214a412d7489ef9a4f72506ab85",
+   "chars": 285
+  },
+  {
+   "sample_id": "paper_01",
+   "file": "paper_01.txt",
+   "sha256": "c00ffaad9cf7b00b70501795d1a60bd1eb5ddaf38387112afe4bd13fad4a3d3e",
+   "chars": 1475
+  },
+  {
+   "sample_id": "form_01",
+   "file": "form_01.txt",
+   "sha256": "1c447336da54ff3d74d94c1140efb2bbf42b2a0e28d10e5dd8b128e943150f23",
+   "chars": 384
+  },
+  {
+   "sample_id": "resume_01",
+   "file": "resume_01.txt",
+   "sha256": "ce05e42f3392a529ecb7e2e2124ceb9c9c9884ffcde89b7bffe558eca2b6b1e6",
+   "chars": 484
+  },
+  {
+   "sample_id": "mixed_01",
+   "file": "mixed_01.txt",
+   "sha256": "9326e5e640511d61f1f4cebf31a0db902229e71da9c46ef0471a111773546ed3",
+   "chars": 387
+  },
+  {
+   "sample_id": "book_01",
+   "file": "book_01.txt",
+   "sha256": "6ef78365904461afb0dcb4f0854e315134b62bf094d66b2a30df881999aa0271",
+   "chars": 3144
+  },
+  {
+   "sample_id": "book_02",
+   "file": "book_02.txt",
+   "sha256": "af4893c2031e2e96c43ce99111c5fde2971c0799718cfe389d9be7eb972006d5",
+   "chars": 573
+  },
+  {
+   "sample_id": "book_03",
+   "file": "book_03.txt",
+   "sha256": "bcdc469fd07a63f60387fe0845d4f60afd3065b82cb0f1de6b6a5e81a6edb7f7",
+   "chars": 425
+  },
+  {
+   "sample_id": "hard_01",
+   "file": "hard_01.txt",
+   "sha256": "cea04320b893b7d6e34ae4d4280c45710d7430a8b5673c89574b542679b7943d",
+   "chars": 4876
+  },
+  {
+   "sample_id": "hard_02",
+   "file": "hard_02.txt",
+   "sha256": "b4a5621560fbc37146b75c5897c12087dea83db9befbb5a4a22365b64ff8da08",
+   "chars": 329
+  },
+  {
+   "sample_id": "invoice_01",
+   "file": "invoice_01.txt",
+   "sha256": "ad19a716fec8ca502631b9cec6500611d3c5f293655d51ff63311ece94c13c64",
+   "chars": 276
+  },
+  {
+   "sample_id": "invoice_02",
+   "file": "invoice_02.txt",
+   "sha256": "103e92c712d845284f7131e080801fdb7bc3a70bdef37359350f1c392c3f90a9",
+   "chars": 239
+  },
+  {
+   "sample_id": "lc_01",
+   "file": "lc_01.txt",
+   "sha256": "86182755ad12e1e58e289e57769df77abadeb164451cb245d6d8ef7f2a21b231",
+   "chars": 293
+  },
+  {
+   "sample_id": "lc_02",
+   "file": "lc_02.txt",
+   "sha256": "5b9133d69e3d89bd4a8565243e38baf696370bbe6adebc77be50fb89dc032331",
+   "chars": 4463
+  },
+  {
+   "sample_id": "lc_03",
+   "file": "lc_03.txt",
+   "sha256": "103e92c712d845284f7131e080801fdb7bc3a70bdef37359350f1c392c3f90a9",
+   "chars": 239
+  },
+  {
+   "sample_id": "shot_01",
+   "file": "shot_01.txt",
+   "sha256": "86182755ad12e1e58e289e57769df77abadeb164451cb245d6d8ef7f2a21b231",
+   "chars": 293
+  },
+  {
+   "sample_id": "shot_02",
+   "file": "shot_02.txt",
+   "sha256": "45d8e0149b526c6f6b51c4d5028ea5a591f481123520a207da1f42def9759c7b",
+   "chars": 820
+  },
+  {
+   "sample_id": "shot_03",
+   "file": "shot_03.txt",
+   "sha256": "df3b2565d7a8236cd7c5dc911ea90cf7862f2d5587a8ed9a8129f4081d127204",
+   "chars": 232
+  },
+  {
+   "sample_id": "skew_01",
+   "file": "skew_01.txt",
+   "sha256": "6ef78365904461afb0dcb4f0854e315134b62bf094d66b2a30df881999aa0271",
+   "chars": 3144
+  },
+  {
+   "sample_id": "skew_02",
+   "file": "skew_02.txt",
+   "sha256": "af4893c2031e2e96c43ce99111c5fde2971c0799718cfe389d9be7eb972006d5",
+   "chars": 573
+  },
+  {
+   "sample_id": "skew_03",
+   "file": "skew_03.txt",
+   "sha256": "f24f98dfe50c4b02c1de1e695c4e03056187ea7c53092ef192af06973dfed46f",
+   "chars": 269
+  },
+  {
+   "sample_id": "table_01",
+   "file": "table_01.txt",
+   "sha256": "a1660837c593b57762e3620793fd38f9be71ef1f19cab8ed5cd71561e7a9ca5a",
+   "chars": 163
+  },
+  {
+   "sample_id": "table_02",
+   "file": "table_02.txt",
+   "sha256": "f24f98dfe50c4b02c1de1e695c4e03056187ea7c53092ef192af06973dfed46f",
+   "chars": 269
+  }
+ ],
+ "contract_v": "EXTRACTION_CONTRACT v1",
+ "errata": "chars 字段原值与 GT 文件实际字符数不一致 26/26（r12 按文件 len 修正；CER 分母 N=strip后文件 len，CER×N 整数性 156/156 验证通过）；total_chars 由 25439（旧 CRLF 口径）修正为 24682（Σchars，r13）；r14: 清除 book_01/hard_01/skew_01 的 U+FFFE 非字符（ep13-gt-v1→ep13-gt-v2 等字符数变化），gt_v 升 ep13-gt-v1→ep13-gt-v2 并重签"
+}

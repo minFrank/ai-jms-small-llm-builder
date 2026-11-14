@@ -1,0 +1,17 @@
+{
+ "method_unstable": "permutation 20000, seed 1301, stat=max-min rate",
+ "unstable_counts": {
+  "xiaomi_vl": 1,
+  "paddleocr_vl": 0,
+  "oxr": 6,
+  "monkey_rec": 0,
+  "ovis_ocr2": 2,
+  "surya_2_5": 2
+ },
+ "obs_range": 0.2308,
+ "p_value": 0.0203,
+ "method_wall": "Kruskal-Wallis on per-cell wall IQR/med",
+ "H": 9.62,
+ "df": 5,
+ "note": "chi2 crit 11.07 @0.05"
+}

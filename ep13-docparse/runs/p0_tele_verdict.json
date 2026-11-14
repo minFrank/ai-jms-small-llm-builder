@@ -1,0 +1,11 @@
+{
+ "engine": "TeleOCR",
+ "verdict": "FAIL_FINAL_CPU",
+ "revive_result": "复活流程:实验1(官方空sampling无penalty,原图)仍乱码;实验2(官方预处理链PNG→PDF72dpi→200dpi渲染,4234x3800→16335token)CPU上192token生成55分钟未完成,判决无法在合理时间获得。累计排除11项:3种官方prompt/bf16+fp32/ngram+repetition+官方空sampling/messages/dtype转换/权重双源(StarDoc=XingChen同乱)/701:701加载/slow processor/transformers5.1/rope修复/官方图像预处理链(时间成本失控)",
+ "conclusion": "transformers CPU直载对Tele不可行(乱码或慢至不可用);官方主路径vLLM(teleocr_vllm)需GPU。正式跑测阶段:有GPU条件再走官方vLLM路径",
+ "evidence": [
+  "runs/p0_tele_revive1.log",
+  "runs/p0_tele_revive2.log",
+  "runs/p0_tele_revive3.log"
+ ]
+}

@@ -1,0 +1,15 @@
+{
+ "run_id": "ep13-full-001",
+ "finished_at": "2026-11-12T01:18:28",
+ "gates": {
+  "G0": "pass",
+  "G1": "pass",
+  "G2": "pass",
+  "G3": "fail"
+ },
+ "gates_note": "G0/G1/G2 由本执行器现算；G3 复用 gates/gate3.json 已锁定的人工实跑产物（不重算）。四态以各 gateN.json 为准。",
+ "cells_total": 156,
+ "cells_status": {
+  "complete": 156
+ }
+}

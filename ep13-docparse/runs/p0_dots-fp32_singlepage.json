@@ -1,0 +1,18 @@
+{
+ "engine": "dots-fp32",
+ "route": "transformers-direct",
+ "model_dir": "D:/models/models/ocr/ep13-docparse/dots.ocr",
+ "cold_load_s": 13.8,
+ "reps": [
+  {
+   "rep": 1,
+   "wall_s": 16.0,
+   "len": 18,
+   "n_tokens": 1,
+   "text_head": "<|endofassistant|>"
+  }
+ ],
+ "judge_nonempty_len": false,
+ "judge_twice_same": true,
+ "verdict": "FAIL"
+}

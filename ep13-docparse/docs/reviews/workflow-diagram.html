@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ep13 全流程图 · 评审 / 代码执行 / 数据发布</title>
+<style>
+:root{--bg:#fafafa;--card:#fff;--ink:#1a1a1a;--sub:#666;--line:#e5e5e5;--blue:#2563eb;--blue-bg:#eff6ff;--green:#15803d;--green-bg:#f0fdf4;--amber:#b45309;--amber-bg:#fffbeb;--gray-bg:#f3f4f6;--red:#b91c1c}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:15.5px/1.7 -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif}
+.wrap{max-width:1080px;margin:0 auto;padding:28px 18px 70px}
+h1{font-size:24px;margin:6px 0 2px}
+.meta{color:var(--sub);font-size:13.5px;margin-bottom:22px}
+.branch{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px 18px 20px;margin:22px 0}
+.branch.exec{border:2px solid var(--blue);background:linear-gradient(180deg,#eff6ff 0%,#fff 70px)}
+.b-title{font-size:17px;font-weight:700;margin:0 0 4px}
+.b-title .step-no{display:inline-block;width:24px;height:24px;border-radius:50%;background:var(--ink);color:#fff;font-size:13px;text-align:center;line-height:24px;margin-right:8px;vertical-align:-4px}
+.branch.exec .b-title .step-no{background:var(--blue)}
+.b-sub{color:var(--sub);font-size:13px;margin:0 0 14px 32px}
+.flow{display:flex;flex-wrap:wrap;align-items:center;gap:6px 0}
+.node{background:#fff;border:1.5px solid var(--line);border-radius:9px;padding:9px 13px;font-size:13.5px;line-height:1.55;min-width:120px;max-width:210px;box-shadow:0 1px 2px rgba(0,0,0,.04)}
+.node b{font-size:13.5px}
+.node .sub{display:block;color:var(--sub);font-size:12px;margin-top:2px}
+.branch.exec .node{border-color:#bfdbfe}
+.branch.exec .node.key{border-color:var(--blue);background:var(--blue-bg);font-weight:600}
+.node.gate{border-color:#f0b429;background:var(--amber-bg)}
+.node.done{border-color:#86efac;background:var(--green-bg)}
+.node.wait{border-color:#d1d5db;background:var(--gray-bg);color:var(--sub)}
+.node.stop{border-color:#fca5a5;background:#fef2f2;color:var(--red)}
+.arrow{color:#9ca3af;padding:0 7px;font-size:16px;flex:0 0 auto}
+.branch-note{margin-top:12px;font-size:13px;color:var(--sub);border-top:1px dashed var(--line);padding-top:9px}
+.branch-note b{color:var(--ink)}
+.legend{display:flex;flex-wrap:wrap;gap:14px;font-size:13px;color:var(--sub);margin:8px 0 0}
+.legend span{display:flex;align-items:center;gap:6px}
+.dot{width:14px;height:14px;border-radius:4px;border:1.5px solid var(--line);display:inline-block}
+.dot.b{border-color:var(--blue);background:var(--blue-bg)}.dot.g{border-color:#f0b429;background:var(--amber-bg)}
+.dot.ok{border-color:#86efac;background:var(--green-bg)}.dot.r{border-color:#fca5a5;background:#fef2f2}
+@media (max-width:640px){
+ .flow{flex-direction:column;align-items:stretch}
+ .arrow{transform:rotate(90deg);text-align:center;padding:2px 0}
+ .node{max-width:none}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<h1>ep13 正式跑测 · 全流程图</h1>
+<div class="meta">2026-11-04 ｜ 配套：代码设计评审稿 v2 + 规格 V6d ｜ <b>代码执行为独立分支（蓝色高亮）</b></div>
+
+<div class="legend">
+<span><i class="dot b"></i>代码执行（独立分支）</span>
+<span><i class="dot g"></i>人工/评审卡点</span>
+<span><i class="dot ok"></i>已完成</span>
+<span><i class="dot r"></i>阻断/失败出口</span>
+</div>
+
+<!-- ========== 分支 1：评审流 ========== -->
+<div class="branch">
+  <p class="b-title"><span class="step-no">1</span>评审分支（进行中 → 终审）</p>
+  <p class="b-sub">每轮 dsh 意见逐条闭环，你终审后执行分支才允许启动</p>
+  <div class="flow">
+    <div class="node done"><b>方案 v1</b><span class="sub">六轮 dsh 闭环「可开工」</span></div>
+    <span class="arrow">→</span>
+    <div class="node done"><b>代码设计 r1</b><span class="sub">dsh-code-r1b：37 条「需大改」</span></div>
+    <span class="arrow">→</span>
+    <div class="node done"><b>v2 + 规格 V6d</b><span class="sub">9 条必改全落、分母重算</span></div>
+    <span class="arrow">→</span>
+    <div class="node wait"><b>dsh r2 复评</b><span class="sub">37 条闭环核验 + R2 新问题（跑批中）</span></div>
+    <span class="arrow">→</span>
+    <div class="node gate"><b>你终审</b><span class="sub">评审通过 = 执行分支放行</span></div>
+    <span class="arrow">→</span>
+    <div class="node done"><b>知识库入库</b><span class="sub">docs/reviews/ 全套 + 落地检查清单</span></div>
+  </div>
+  <p class="branch-note"><b>卡点规则：</b>任一轮 dsh 判「需大改」→ 回 v 修订；「需小改」→ 列必改项改完即过；<b>只有「可开工」+ 你点头，分支 2 才能开始</b>。</p>
+</div>
+
+<!-- ========== 分支 2：代码执行（独立分支） ========== -->
+<div class="branch exec">
+  <p class="b-title"><span class="step-no">2</span>代码执行分支（独立 · 评审通过后启动）</p>
+  <p class="b-sub">五道闸：冻结资产 → 实现 → 闸门自测 → 冒烟（你确认）→ 全量</p>
+  <div class="flow">
+    <div class="node key"><b>① 冻结资产</b><span class="sub">sets.yaml(156/144) · engines.yaml(layer/prompt/timeout) · 样本 manifest(UUID/300DPI) · EXTRACTION_CONTRACT+golden · GT 签核(拒跑前置) · host_manifest(gpu:none) · SOURCES</span></div>
+    <span class="arrow">→</span>
+    <div class="node key"><b>② 实现</b><span class="sub">schema/cell.schema.json（照 V6d §3.2 生成）→ CellRunner 状态机+单测三例 → worker/NDJSON/timeout/respawn → process_guard → 平台四门端点</span></div>
+    <span class="arrow">→</span>
+    <div class="node gate"><b>③ 闸门自测</b><span class="sub">G0–G3 各造 fail 样本验证能拦：not_run / stale / failed&gt;2% / 分组不一致 / diff_pct 未注</span></div>
+    <span class="arrow">→</span>
+    <div class="node gate"><b>④ 3 样本冒烟</b><span class="sub">最快+最慢+最大图 · 独立 run_id 不入分母</span></div>
+    <span class="arrow">→</span>
+    <div class="node gate"><b>你确认</b><span class="sub">cell 全字段 / 计时口径 / 超时 kill / 落盘校验</span></div>
+    <span class="arrow">→</span>
+    <div class="node key"><b>⑤ 全量跑测</b><span class="sub">6 引擎 × S26=156 格 × 协议A(6→12) · 分批夜跑 · 跑前 caliber audit + idle guard</span></div>
+    <span class="arrow">→</span>
+    <div class="node done"><b>数据产出</b><span class="sub">cells/ + sessions/ + journal 全落盘</span></div>
+  </div>
+  <p class="branch-note"><b>执行内循环（协议 A 状态机，每格）：</b>
+    <code>n_attempt+1 → worker.infer(timeout=1800s, 父进程kill) → reps入账(ok/fail/timeout) → n_valid≥6 且 IQR≤10%? → 达标停 ｜ attempt≥8 且仍超阈 → extension=12 继续 ｜ attempt≥12 → unstable 只报分布 ｜ fatal → failed</code><br>
+    <b>失败出口：</b>CellFatal → 该格 failed 继续；WorkerFatal → respawn(1次/引擎/小时)；超预算 → engine session unavailable；<b>格边界才查 pause/stop</b>（当前格完整落盘）；独立心跳进程 5s 写 task.json。</p>
+</div>
+
+<!-- ========== 分支 3：数据发布 ========== -->
+<div class="branch">
+  <p class="b-title"><span class="step-no">3</span>数据与发布分支（全量跑完后）</p>
+  <p class="b-sub">四门按序，任一 not_run/stale 同样阻断</p>
+  <div class="flow">
+    <div class="node"><b>聚合 validate</b><span class="sub">写入+聚合双侧过 schema</span></div>
+    <span class="arrow">→</span>
+    <div class="node gate"><b>G0 数据完整性</b><span class="sub">四态分母=156 · failed≤2% · GT逐格 · 分组一致性 · caliber finished_at</span></div>
+    <span class="arrow">→</span>
+    <div class="node gate"><b>G1 指标与排名</b><span class="sub">diff_pct≤10% · 成功率≥95% 且 ≥149/137 · unstable/partial 单列</span></div>
+    <span class="arrow">→</span>
+    <div class="node gate"><b>G2 宣称与 lineup</b><span class="sub">参照不进同表 · 宣称/as-of/surya 0.69B 在位</span></div>
+    <span class="arrow">→</span>
+    <div class="node gate"><b>G3 发布</b><span class="sub">pre_push_check 10项 + original_guard + 你终审</span></div>
+    <span class="arrow">→</span>
+    <div class="node done"><b>发布</b><span class="sub">gate0-3.json 齐 → 成稿推送</span></div>
+  </div>
+  <p class="branch-note"><b>贯穿两分支的审计：</b>caliber audit 跑测前+后各一次；每格 fingerprint(git/spec V6d/weights/gt/seed/order) 可反查；清理 <code>clean_episode.py</code> 默认 dry-run、模型永不默认删。</p>
+</div>
+
+<!-- ========== 分支 4：兜底 ========== -->
+<div class="branch">
+  <p class="b-title"><span class="step-no">4</span>兜底分支（异常出口）</p>
+  <div class="flow">
+    <div class="node stop"><b>挂起超 30min</b><span class="sub">父进程 kill → 记 timeout</span></div>
+    <span class="arrow">→</span>
+    <div class="node stop"><b>respawn 超预算</b><span class="sub">engine session unavailable</span></div>
+    <span class="arrow">→</span>
+    <div class="node stop"><b>GT 未签核</b><span class="sub">拒跑 / skipped 落盘</span></div>
+    <span class="arrow">→</span>
+    <div class="node gate"><b>归档实录</b><span class="sub">不可行不编数据（Tele/dots 先例）</span></div>
+  </div>
+</div>
+
+</div>
+</body>
+</html>

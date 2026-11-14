@@ -1,0 +1,465 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "$id": "ep13-docparse/cell.schema.json",
+ "title": "ep13 Cell v6",
+ "version": 6,
+ "type": "object",
+ "additionalProperties": false,
+ "required": [
+  "schema",
+  "run_id",
+  "cell_key",
+  "engine",
+  "layer",
+  "sample_id",
+  "set",
+  "input",
+  "reps",
+  "target_valid",
+  "max_attempts",
+  "n_attempt",
+  "n_valid",
+  "n_fail",
+  "status",
+  "wall_median",
+  "wall_iqr",
+  "cer_median",
+  "fingerprint",
+  "err"
+ ],
+ "properties": {
+  "schema": {
+   "const": 6
+  },
+  "run_id": {
+   "type": "string",
+   "pattern": "^ep13-"
+  },
+  "cell_key": {
+   "type": "string",
+   "pattern": "^[0-9a-f-]{36}__[a-z0-9_]+__p[0-9]+$"
+  },
+  "engine": {
+   "enum": [
+    "oxr",
+    "paddleocr_vl",
+    "xiaomi_vl",
+    "ovis_ocr2",
+    "monkey_rec",
+    "surya_2_5"
+   ]
+  },
+  "layer": {
+   "enum": [
+    "A",
+    "B"
+   ]
+  },
+  "sample_id": {
+   "type": "string"
+  },
+  "set": {
+   "enum": [
+    "S26",
+    "S24",
+    "S_PDF"
+   ]
+  },
+  "input": {
+   "type": "object",
+   "additionalProperties": false,
+   "required": [
+    "kind",
+    "sha256",
+    "page_no",
+    "dpi"
+   ],
+   "properties": {
+    "kind": {
+     "enum": [
+      "image",
+      "pdf"
+     ]
+    },
+    "sha256": {
+     "type": "string",
+     "pattern": "^[0-9a-f]{64}$"
+    },
+    "page_no": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "dpi": {
+     "type": "integer",
+     "enum": [
+      150,
+      300
+     ],
+     "description": "样本 DPI：合成8张=150、复用18张=300（r4 N2 按实际回填）"
+    }
+   }
+  },
+  "reps": {
+   "type": "array",
+   "items": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+     "n",
+     "attempt",
+     "status",
+     "wall",
+     "wall_self",
+     "cer",
+     "truncated",
+     "err_kind",
+     "ts"
+    ],
+    "properties": {
+     "n": {
+      "type": "integer",
+      "minimum": 1
+     },
+     "attempt": {
+      "type": "integer",
+      "minimum": 1
+     },
+     "status": {
+      "enum": [
+       "ok",
+       "fail",
+       "timeout",
+       "skipped"
+      ]
+     },
+     "wall": {
+      "type": [
+       "number",
+       "null"
+      ]
+     },
+     "wall_self": {
+      "type": [
+       "number",
+       "null"
+      ]
+     },
+     "cer": {
+      "type": [
+       "number",
+       "null"
+      ]
+     },
+     "truncated": {
+      "type": [
+       "boolean",
+       "null"
+      ]
+     },
+     "err_kind": {
+      "type": [
+       "string",
+       "null"
+      ],
+      "enum": [
+       "gt_unsigned",
+       "gt_mismatch",
+       "timeout",
+       "mem_preflight",
+       "worker_fatal",
+       "cell_fatal",
+       "median_le_0",
+       "extract_fail",
+       null
+      ]
+     },
+     "ts": {
+      "type": [
+       "string",
+       "null"
+      ]
+     }
+    }
+   }
+  },
+  "target_valid": {
+   "const": 6
+  },
+  "max_attempts": {
+   "type": "integer",
+   "enum": [
+    8,
+    12
+   ]
+  },
+  "n_attempt": {
+   "type": "integer",
+   "minimum": 0
+  },
+  "n_valid": {
+   "type": "integer",
+   "minimum": 0
+  },
+  "n_fail": {
+   "type": "integer",
+   "minimum": 0
+  },
+  "status": {
+   "enum": [
+    "complete",
+    "partial",
+    "failed",
+    "skipped"
+   ]
+  },
+  "wall_median": {
+   "type": [
+    "number",
+    "null"
+   ]
+  },
+  "wall_iqr": {
+   "type": [
+    "number",
+    "null"
+   ]
+  },
+  "cer_median": {
+   "type": [
+    "number",
+    "null"
+   ]
+  },
+  "cell_success_rate": {
+   "type": [
+    "number",
+    "null"
+   ]
+  },
+  "trunc_rate": {
+   "type": [
+    "number",
+    "null"
+   ]
+  },
+  "unstable": {
+   "type": "boolean"
+  },
+  "engine_session_id": {
+   "type": [
+    "string",
+    "null"
+   ]
+  },
+  "peak_rss_mb": {
+   "type": [
+    "number",
+    "null"
+   ]
+  },
+  "rss_scope": {
+   "type": [
+    "string",
+    "null"
+   ]
+  },
+  "err": {
+   "type": [
+    "string",
+    "null"
+   ]
+  },
+  "err_kind": {
+   "type": [
+    "string",
+    "null"
+   ],
+   "enum": [
+    "gt_unsigned",
+    "gt_mismatch",
+    "timeout",
+    "mem_preflight",
+    "worker_fatal",
+    "cell_fatal",
+    "median_le_0",
+    "extract_fail",
+    null
+   ]
+  },
+  "fingerprint": {
+   "type": "object",
+   "additionalProperties": false,
+   "required": [
+    "git",
+    "weights_sha",
+    "deps",
+    "config_hash",
+    "extract_v",
+    "gt_v",
+    "gt_hash",
+    "sample_sha",
+    "engine_version",
+    "host_manifest_id",
+    "seed",
+    "order"
+   ],
+   "properties": {
+    "git": {
+     "type": "string"
+    },
+    "weights_sha": {
+     "type": "string"
+    },
+    "deps": {
+     "type": "string"
+    },
+    "config_hash": {
+     "type": "string"
+    },
+    "extract_v": {
+     "type": "string"
+    },
+    "gt_v": {
+     "type": "string"
+    },
+    "gt_hash": {
+     "type": "string"
+    },
+    "sample_sha": {
+     "type": "string"
+    },
+    "engine_version": {
+     "type": "string"
+    },
+    "host_manifest_id": {
+     "type": "string"
+    },
+    "seed": {
+     "type": "integer"
+    },
+    "order": {
+     "type": "integer"
+    },
+    "weights_sha_src": {
+     "type": "string"
+    },
+    "gt_hash_scope": {
+     "type": "string",
+     "description": "gt_hash 语义说明（r10 回填）"
+    }
+   }
+  },
+  "extra_reps": {
+   "type": "array",
+   "description": "协议外多跑的 rep（无 IQR 触发），不计入 n_valid/n_attempt/wall/cer 统计",
+   "items": {
+    "type": "object"
+   }
+  },
+  "weights_sha_src": {
+   "type": "string",
+   "description": "weights_sha 来源说明（r7 回填）"
+  },
+  "extension_note": {
+   "type": "string",
+   "description": "协议扩展说明（n>6 时的触发与收敛依据）"
+  },
+  "extra_reps_note": {
+   "type": "string",
+   "description": "extra_reps 说明（若有）"
+  },
+  "wall_iqr_6rep": {
+   "type": "number",
+   "description": "扩展触发时的 6-rep IQR（结构化留痕，n>6 的格可有）"
+  },
+  "wall_iqr_6rep_note": {
+   "type": "string"
+  }
+ },
+ "allOf": [
+  {
+   "if": {
+    "properties": {
+     "status": {
+      "const": "skipped"
+     }
+    }
+   },
+   "then": {
+    "properties": {
+     "reps": {
+      "maxItems": 0
+     },
+     "n_attempt": {
+      "const": 0
+     },
+     "n_valid": {
+      "const": 0
+     },
+     "wall_median": {
+      "type": "null"
+     },
+     "cer_median": {
+      "type": "null"
+     },
+     "cell_success_rate": {
+      "type": "null"
+     }
+    }
+   }
+  },
+  {
+   "if": {
+    "properties": {
+     "status": {
+      "const": "failed"
+     }
+    }
+   },
+   "then": {
+    "properties": {
+     "wall_median": {
+      "type": "null"
+     },
+     "wall_iqr": {
+      "type": "null"
+     },
+     "cer_median": {
+      "type": "null"
+     },
+     "cell_success_rate": {
+      "type": "null"
+     },
+     "trunc_rate": {
+      "type": "null"
+     }
+    }
+   }
+  },
+  {
+   "if": {
+    "properties": {
+     "status": {
+      "enum": [
+       "complete",
+       "partial"
+      ]
+     }
+    }
+   },
+   "then": {
+    "properties": {
+     "wall_median": {
+      "type": "number"
+     },
+     "cer_median": {
+      "type": "number"
+     },
+     "cell_success_rate": {
+      "type": "number"
+     }
+    }
+   }
+  }
+ ]
+}

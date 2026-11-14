@@ -1,0 +1,36 @@
+# ep13 引擎配置（V6d 冻结 · wall 表随开工令冻结 2026-11-04）
+version: engines-ep13-v3   # v3: +eos_token_id(tok∪gc)传入generate(2026-11-05 ovis复读根因)   # v2: 4引擎prompt对齐P0 markdown(2026-11-05复读事故), paddle保留OCR:
+spec: V6d-errata
+defaults:
+  layer: A                 # 非量化即 A（V6d-errata）
+  sampling: {do_sample: false, batch: 1, concurrency: 1}   # greedy
+  timeout_s: {load: 600, infer: 1800, teardown: 120}       # D2=30min 父进程 kill
+  warmup_reps: 1           # 不记账
+  wall_self: required      # 分段 fallback 必填 → diff_pct 必产
+engines:
+  oxr:
+    model: D:/models/models/ocr/ep13-docparse/OXR-Doc
+    venv: venvs/oxr
+    wall: {start: D-FINE 版面服务收图, end: OXR 识别 markdown 解码完}   # 端到端含版面
+    services: {layout: D-FINE 8081}
+  paddleocr_vl:
+    model: D:/models/models/ocr/ep13-docparse/PaddleOCR-VL-1.6
+    venv: venvs/paddle
+    wall: {start: processor 图像预处理开始, end: 输出解码完(batch_decode 返回)}
+    official_prompt: "OCR:"
+  xiaomi_vl:
+    model: D:/models/models/ocr/ep13-docparse/XiaomiMiMo-VL-7B
+    venv: venvs/ovis
+    wall: {start: processor 图像预处理开始, end: 输出解码完}
+  ovis_ocr2:
+    model: D:/models/models/ocr/ep13-docparse/OvisOCR2
+    venv: venvs/ovis
+    wall: {start: processor 图像预处理开始, end: 输出解码完}
+  monkey_rec:
+    model: D:/models/models/ocr/ep13-docparse/MonkeyOCR/Recognition
+    venv: venvs/dots      # 复用（qwen2_5_vl 标准）
+    wall: {start: processor 图像预处理开始, end: 输出解码完}
+  surya_2_5:
+    model: D:/models/models/ocr/ep13-docparse/surya-ocr-2.5
+    venv: venvs/dots
+    wall: {start: processor 图像预处理开始, end: 输出解码完}

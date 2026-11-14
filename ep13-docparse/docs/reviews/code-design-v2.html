@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ep13 正式跑测 · 实测代码设计评审稿 v2</title>
+<style>
+:root{--bg:#fafafa;--card:#fff;--ink:#1a1a1a;--sub:#666;--line:#e5e5e5;--accent:#2563eb;--warn:#b45309;--ok:#15803d;--bad:#b91c1c;--code-bg:#f6f8fa}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.75 -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif}
+.wrap{max-width:960px;margin:0 auto;padding:32px 20px 80px}
+h1{font-size:26px;line-height:1.4;margin:8px 0 4px}
+h2{font-size:21px;margin:44px 0 12px;padding-top:18px;border-top:1px solid var(--line)}
+h3{font-size:17px;margin:26px 0 8px}
+.meta{color:var(--sub);font-size:14px;margin-bottom:22px}
+.lead{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:16px 18px;margin:18px 0}
+table{width:100%;border-collapse:collapse;background:var(--card);border:1px solid var(--line);border-radius:10px;overflow:hidden;font-size:14.5px;margin:12px 0}
+th,td{border-bottom:1px solid var(--line);padding:9px 12px;text-align:left;vertical-align:top}
+th{background:#f1f3f5;font-weight:600}
+tr:last-child td{border-bottom:none}
+code{background:var(--code-bg);padding:1px 6px;border-radius:4px;font:13.5px/1.6 Consolas,Menlo,monospace}
+pre{background:var(--code-bg);border:1px solid var(--line);border-radius:8px;padding:14px 16px;overflow-x:auto;font:13px/1.6 Consolas,Menlo,monospace;margin:10px 0}
+pre code{background:none;padding:0}
+.tag{display:inline-block;padding:1px 9px;border-radius:99px;font-size:12.5px;font-weight:600;vertical-align:1px}
+.ok{background:#dcfce7;color:var(--ok)}.bad{background:#fee2e2;color:var(--bad)}.warn{background:#fef3c7;color:var(--warn)}.info{background:#dbeafe;color:var(--accent)}
+.decision{border:1.5px solid #f0b429;background:#fffbeb;border-radius:10px;padding:13px 17px;margin:14px 0}
+.note{border-left:3px solid var(--accent);background:#eff6ff;padding:10px 14px;margin:12px 0;border-radius:0 8px 8px 0;font-size:14.5px}
+.pit{border-left:3px solid #dc2626;background:#fef2f2;padding:10px 14px;margin:12px 0;border-radius:0 8px 8px 0;font-size:14.5px}
+.ref{border-left:3px solid #9ca3af;background:#f9fafb;padding:9px 14px;margin:10px 0;border-radius:0 8px 8px 0;font-size:14px;color:#444}
+ul,ol{padding-left:22px}li{margin:5px 0}
+.small{font-size:13.5px;color:var(--sub)}
+.toc{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px 20px;font-size:14.5px}
+.toc a{color:var(--accent);text-decoration:none}
+@media (max-width:600px){.wrap{padding:20px 12px 60px}h1{font-size:22px}h2{font-size:19px}table{font-size:13.5px}th,td{padding:7px 8px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<h1>ep13 正式跑测 · 实测代码设计 <span style="color:#2563eb">v2</span></h1>
+<div class="meta">v2 ｜ 2026-11-04 ｜ 依据：dsh-code-r1b 交叉评审 37 条（P0×11 / P1×22 / X×4）逐条处置 + 规格升 <b>V6d</b><br>
+状态：<span class="tag warn">待你评审（r1 判定「需大改」，v2 按 9 条必改清单重写）</span></div>
+
+<div class="lead"><b>v2 改了什么（一句话）：</b>r1 把引擎适配写了主体、数据契约用伪代码带过；v2 反过来——<b>第一层就是协议 A + cell schema + G0–G3 + 分母</b>（与权威源逐字段对齐），引擎层降为第二层（r1 已评为强项，只补进程模型）。<b>规格已同步升 V6d</b>（6 引擎分母/阈值/预算先行落地，消解 C-11/C-34）。</div>
+
+<div class="toc"><b>目录</b>
+<ol>
+<li><a href="#s0">对 r1 37 条的处置映射（全闭环）</a></li>
+<li><a href="#s1">第一层 · 协议 A 显式状态机（C-01/02/03/05/06）</a></li>
+<li><a href="#s2">第一层 · cell schema v6（C-07/08/09/17/18）</a></li>
+<li><a href="#s3">第一层 · G0–G3 四门（C-10/12/22/26）</a></li>
+<li><a href="#s4">第一层 · 分母与预算（V6d 已落地，C-11/31）</a></li>
+<li><a href="#s5">第二层 · 进程架构：runner + venv worker + NDJSON（C-13/14/15/16）</a></li>
+<li><a href="#s6">第二层 · GT 签核与提取 contract（C-21/23）</a></li>
+<li><a href="#s7">第二层 · 计时口径与受控环境（C-18/19/24/25）</a></li>
+<li><a href="#s8">第三层 · 资产追溯与一键清理（C-27/28/29/30/33）</a></li>
+<li><a href="#s9">决策冻结（C-34/35/36）与执行流程</a></li>
+<li><a href="#s10">附录 · 引擎层（r1 保留项 + 补充）</a></li>
+</ol></div>
+
+<!-- ================================================================ -->
+<h2 id="s0">0. 对 r1 37 条的处置映射（dsh 要求可闭环，全表）</h2>
+<table>
+<tr><th>条目</th><th>处置</th><th>落在 v2 哪里</th></tr>
+<tr><td><b>P0×11</b>：C-01~C-11</td><td><span class="tag ok">全部接受</span></td><td>C-01/02/03/05/06→§1；C-04→§2；C-07/08/09→§2；C-10→§3；C-11→§4（V6d 已改）</td></tr>
+<tr><td><b>P1×22</b>：C-12~C-33</td><td><span class="tag ok">21 条接受</span>；C-18 部分修正（见下）</td><td>C-12/22/26→§3；C-13/14/15/16→§5；C-17/18/19/20/24/25→§2/§7；C-21/23→§6；C-27/28/29/30/33→§8；C-31→§4；C-32→§10</td></tr>
+<tr><td>C-18 wall 口径</td><td><span class="tag warn">接受但需你拍板</span>：v2 按规格定义 <b>wall=infer 全程（含预处理）、load 外置、OXR 含 D-FINE</b>——这意味着 r1 设计的「纯 generate」作废，P0 已报的单页秒数在正式跑测按新口径重测（P0 数字仅作可行性参考）</td><td>§7</td></tr>
+<tr><td><b>X×4</b>：C-34/35/36/37</td><td><span class="tag ok">全接受</span></td><td>C-34→V6d 已改+§9；C-35/36→§9 决策冻结；C-37→本稿结构本身</td></tr>
+</table>
+
+<!-- ================================================================ -->
+<h2 id="s1">1. 第一层 · 协议 A 显式状态机（重写 r1 伪代码）</h2>
+<div class="ref">权威源 §2.2（F-01/X-01）：target_valid=6；initial_max_attempts=8；IQR/median&gt;10% → 扩展至 12；12 次有效仍&gt;10% → unstable；n_valid&lt;4 → failed；4≤n_valid&lt;6 → partial；median≤0 → 报错；max_attempts 硬终止。</div>
+
+<pre><code>class CellRunner:                       <span class="small"># C-01/C-02/C-03 修复</span>
+    n_attempt = 0;  n_valid = 0        <span class="small"># ★两个计数分离——失败/超时也占 attempt</span>
+    max_attempts = 8;  extension = False
+    walls = [];  reps = [];  fatal = None
+
+    def run(self):
+        while True:                     <span class="small"># 出口只有三个，全失败也必出</span>
+            if fatal: break             <span class="small"># ① CellFatal</span>
+            if n_attempt &gt;= max_attempts: break   <span class="small"># ② 硬终止（8 或 12）</span>
+            n_attempt += 1
+            rep = worker.infer(timeout=T_INFER)    <span class="small"># 父进程计时，超时 kill+respawn(§5)</span>
+            reps.append(rep)            <span class="small"># status ∈ ok|fail|timeout|skipped 全入账</span>
+            if rep.ok:
+                n_valid += 1; walls.append(rep.wall)
+            <span style="color:#b45309"># —— 扩展触发（C-01 修复：8→12 显式两阶段）——</span>
+            if (not extension and n_attempt &gt;= 8
+                    and n_valid &gt;= 6 and iqr_over(walls)):
+                extension = True;  max_attempts = 12   <span class="small"># 触发后继续跑到 12</span>
+            <span style="color:#b45309"># —— 达标即停 ——</span>
+            if n_valid &gt;= 6 and not iqr_over(walls): break
+        return self.finish()
+
+    def finish(self):                   <span class="small"># C-03 四种收尾（规格 §2.2 原文）</span>
+        if fatal:                return status="failed",  err_kind=fatal
+        if n_valid &lt; 4:          return status="failed"
+        if 4 &lt;= n_valid &lt; 6:     return status="partial"        <span class="small"># 进分母、不进名次、单列</span>
+        if median(walls) &lt;= 0:   return status="failed", err="median_le_0"   <span class="small"># 报错留痕</span>
+        if iqr_over(walls):      return status="complete", unstable=True    <span class="small"># 12 次仍不稳：只报分布不排名</span>
+        return status="complete"
+
+    <span class="small"># 单测三例（dsh 要求）：① 6 次达标即停 ② 8 次仍超阈→max=12 继续 ③ 12 次仍超阈→unstable</span></code></pre>
+
+<table>
+<tr><th>C-xx</th><th>v2 修复</th></tr>
+<tr><td>C-01 死分支</td><td>8→12 由 <code>extension</code> 显式触发后 <b>max_attempts 变 12 继续跑</b>，删除不可达分支</td></tr>
+<tr><td>C-02 valid当attempt</td><td><code>n_attempt</code> 每轮先 +1；失败/超时入 reps 占 attempt；三出口保证全失败不死循环</td></tr>
+<tr><td>C-03 四收尾缺失</td><td><code>finish()</code> 逐条实现 failed/partial/unstable/median≤0；status 严格四态 <code>complete|partial|failed|skipped</code></td></tr>
+<tr><td>C-05 控制在格中</td><td>rep 循环内<b>零控制检查</b>；控制检查移到 cell save 之后的<b>格边界</b>（§5 伪代码）</td></tr>
+<tr><td>C-06 心跳</td><td><b>独立心跳进程</b>每 5s 原子写 <code>control/task.json</code>（tmp+rename），与推理解耦；stale=连续15s 无心跳<b>且</b>owner_pid 死亡；pid 活着标 stalled 不判死</td></tr>
+</table>
+
+<!-- ================================================================ -->
+<h2 id="s2">2. 第一层 · cell schema v6（逐字段照权威源 §3.2，不再自创）</h2>
+<div class="ref">C-04 修复（F-05）：<b>save_raw 先行，validate 后置</b>——<code>finally: cell.save_raw(); try: validate(cell) except: cell.schema_err=…; cell.save_raw()</code>。校验永不作为落盘前置，失败也留原始记录。</div>
+
+<pre><code><span class="small"># 主键与路径（C-07）：</span>
+cell_key  = &lt;sample_uuid&gt;__&lt;engine&gt;__p1        <span class="small"># 不含 run_id、无斜杠</span>
+文件       cells/&lt;run_id&gt;/&lt;cell_key&gt;.json        <span class="small"># run 只一层（r1 多了 engine 层）</span>
+API       GET /api/cells?run_id=&amp;cell_key=      <span class="small"># query 参数</span>
+run_id     = ep13-&lt;ts&gt;（一个 run 跑全部 6 引擎，不按引擎拆）</code></pre>
+
+<table>
+<tr><th>schema 必填（照 §3.2）</th><th>值/说明</th></tr>
+<tr><td>required</td><td><code>schema, run_id, cell_key, engine, layer, sample_id, set, input, reps, target_valid, max_attempts, n_attempt, n_valid, n_fail, status, wall_median, wall_iqr, fingerprint, err</code></td></tr>
+<tr><td>status enum</td><td><code>complete | partial | failed | skipped</code>（r1 的 <code>done</code> 作废）</td></tr>
+<tr><td>rep 结构（C-08）</td><td><code>{n, attempt, status∈ok|fail|timeout|skipped, wall, wall_self, cer, truncated, err_kind, ts}</code></td></tr>
+<tr><td>聚合字段</td><td><code>cell_success_rate, trunc_rate, unstable, engine_session_id, peak_rss_mb, rss_scope{pids,ports,sampler,interval}</code>；<code>ranking_eligible</code> 不在 cell（F-02）</td></tr>
+<tr><td>input（C-09）</td><td><code>{kind∈image|pdf, sha256, page_no, dpi}</code></td></tr>
+<tr><td>fingerprint（C-09）</td><td><code>{git, weights_sha, deps, config_hash, extract_v, gt_v, gt_hash, sample_sha, engine_version, host_manifest_id, seed, order}</code>——gt_hash 在 fingerprint 内（r1 放顶层作废）</td></tr>
+<tr><td>cold_load（C-17）</td><td>移出 cell → <code>sessions/engines/&lt;run_id&gt;/&lt;engine&gt;.json</code>（session 级，一次加载一次记录）</td></tr>
+<tr><td>layer / set（C-20）</td><td><code>layer∈A|B</code> 每引擎在 engines.yaml 冻结；<code>set∈S26|S24|S_PDF</code> 必填</td></tr>
+</table>
+<div class="note"><b>实现约束</b>：唯一实现源 <code>schema/cell.schema.json</code>（直接从规格 §3.2 生成）；<b>写入侧与聚合侧双 validate</b>；schema 版本+hash 记入 session。r1 的字段表全部作废，以本节为准。</div>
+
+<!-- ================================================================ -->
+<h2 id="s3">3. 第一层 · G0–G3 四门（照权威源 §4.5，删除 r1 自造门号）</h2>
+<table>
+<tr><th>门</th><th>判据（照 §4.5 全文执行）</th><th>产物</th></tr>
+<tr><td><b>G0 数据完整性</b>（C-10）</td><td>按 <b>run_id 作用域</b>：① 分母四态全计 <code>complete+partial+failed+skipped == expected(run,set)</code>；② 只约束 complete 的 <code>n_valid≥6</code>（partial 单列不致失败）；<b>failed/expected≤2%</b>；skipped 按 err_kind 单列；GT 逐 cell <code>gt_v+gt_hash==signed manifest</code>；SOURCES 无「待补」；<b>一致性按字段分组</b>：全 run 相同 {extract_v, config_hash}、逐引擎相同 {weights_sha, engine_version}、逐样本相同 {sample_sha, gt_hash}、seed/order 为冻结值不参与；caliber audit <code>passed</code> 且 <code>finished_at&gt;run.started_at</code>（<b>不用文件 mtime</b>）</td><td>gate0.json</td></tr>
+<tr><td><b>G1 指标与排名</b></td><td>caliber audit 字段 {wall_median, self_median, diff_pct, load_in_wall, note} 逐引擎；无 diff_pct&gt;10 未注；unstable 移出名次；engine_success_rate≥95% 且最小样本量（V6d：S26≥149 / S24≥137）达标才 ranking_eligible</td><td>gate1.json</td></tr>
+<tr><td><b>G2 宣称与 lineup</b>（C-12 整门补回）</td><td>lineup 仅外部参照不与本测同表；「宣称」标注在位；热度 as-of 在位；surya 参数已回填（V6d=0.69B）或标「未核」</td><td>gate2.json</td></tr>
+<tr><td><b>G3 发布</b></td><td>已有三闸门按规格<b>嵌入本门</b>（pre_push_check 10 项 + original_guard）+ 你终审</td><td>gate3.json</td></tr>
+</table>
+<div class="pit">r1 的「三重前置 + 四门」七门链作废：三闸门<b>不另立门</b>，按规格嵌入 G1（caliber audit）与 G3（pre_push_check/original_guard）。四态 <code>pass/fail/not_run/stale</code>，not_run 与 stale 同样阻断；期详情聚合 G0–G3 一行。<br>
+C-26 七判据恢复规格原文：②长度&gt;<b>类型下限</b>（非 200 硬编码）③单页 <b>CER&lt;60%</b> ④「或有解释」⑦磁盘 ≥ 模型总和+10GB <b>跑前做</b>；LICENSE/SOURCES 入 G0 登记，失败<b>阻断</b>非「标注」。</div>
+
+<!-- ================================================================ -->
+<h2 id="s4">4. 第一层 · 分母与预算（规格已升 V6d，先行落地）</h2>
+<table>
+<tr><th>项</th><th>V6d 值</th></tr>
+<tr><td>实跑阵容</td><td>6 引擎（OXR/Paddle/Xiaomi/Ovis/Monkey/surya）；Tele、dots 归档 N/A</td></tr>
+<tr><td>expected_cells</td><td>S26=<b>156</b>（26×6）、S24=<b>144</b>（24×6）、S_PDF=页数×6</td></tr>
+<tr><td>95% 最小样本量</td><td>总量口径 S26≥<b>149</b> valid、S24≥<b>137</b> valid（逐引擎参考线 25/23）</td></tr>
+<tr><td>reps 预算</td><td>S26 上限 156×12=<b>1872</b>、S24=144×12=<b>1728</b></td></tr>
+<tr><td>sets.yaml</td><td>唯一分母文件，跑前冻结 <code>expected_cells</code> 与 <code>sets_yaml_hash</code> 入 run_manifest</td></tr>
+</table>
+<div class="note"><b>工期（C-31，按 P0 实测吞吐估算）</b>：6 引擎单页实测 60s/161s/241s/993s/308s/983s；warmup+协议 A 期望 ≈7 rep/格（6+1 超阈概率低）→ S26 期望 rep≈1092。按均值 ~350s/rep 估 <b>期望 ≈107 小时</b>；最坏 1872 rep × 最慢引擎占比重加权 ≈ 150–170 小时（分批夜跑）。<b>冒烟先行（D4=B）先拿真实吞吐再出最终排期表。</b></div>
+
+<!-- ================================================================ -->
+<h2 id="s5">5. 第二层 · 进程架构（r1 缺失的主干，照 §3.1/§3.5/§3.8/§3.9）</h2>
+<pre><code>runner.py（单进程调度，自带 control 状态机）
+ ├─ start_heartbeat(control/, interval=5, process="independent")   <span class="small"># C-06 独立心跳</span>
+ ├─ run_manifest = freeze(run_id, set=CLI, sets_yaml_hash, gt_versions, seed, order)
+ ├─ 每引擎: spawn_worker(engine)                                    <span class="small"># C-13 子进程隔离</span>
+ │    └─ 启动于 venvs/&lt;engine&gt;，握手 hello{protocol_v, engine, pid}
+ │    └─ NDJSON 走 stdout 专用 fd；引擎日志 → stderr/文件
+ │    └─ 单飞一问一答；每命令 timeout 从 engines.yaml 读（load/infer/teardown 各自上限）
+ │    └─ 超时: 父进程计时 → kill worker → rep 记 timeout → respawn（预算 1 次/引擎/小时，C-14）
+ │    └─ 大消息分块 {v,id,chunk,n,data}…{final,sha256}（markdown 输出可达百 KB）
+ ├─ cold = rpc(load) → write_session_engine()                        <span class="small"># C-17 cold 出格</span>
+ │    └─ warmup_reps=1 跑一次不记账
+ ├─ for sample: cell = CellRunner(...).run() → finally save_raw→validate
+ │    └─ CellFatal → status=failed 继续下一格；journal 每 rep 追加（C-15）
+ │    └─ 格边界才 control_desired()（pause/stop/restart + ack_seq，C-16）
+ └─ rpc(teardown) → assert rss_after≤baseline 且端口释放（C-25）</code></pre>
+<table>
+<tr><th>C-xx</th><th>v2 落点</th></tr>
+<tr><td>C-13</td><td>runner 单进程 + 每引擎 venv 子进程 + NDJSON 专用 fd + 分块 + 单飞——6 个 venv 的 transformers 版本互斥靠<b>进程隔离</b>成立（r1 进程内直载不成立）</td></tr>
+<tr><td>C-14</td><td>D2 冻结 <b>30 分钟</b>：写入 engines.yaml 的 <code>timeout.infer=1800</code>、load/teardown 各设；<b>父进程 kill</b>（Python 线程内无法取消，必须进程级）；开跑前做「挂起 1 分钟被杀」演练</td></tr>
+<tr><td>C-15</td><td>CellFatal/WorkerFatal 分层、respawn 预算、journal 每 rep 追加、retry 有界（1 次+退避）、try/except/finally 全覆盖</td></tr>
+<tr><td>C-16</td><td>control/task.json 全字段状态机：<code>state/state_seq/desired_state/ack_seq/owner_pid/lease{token,expires_at}/heartbeat_at/run_id/attempt/finished_at</code>；lease TTL 60s 续期、fencing、tmp+rename 原子写、restart/reset 语义</td></tr>
+</table>
+
+<!-- ================================================================ -->
+<h2 id="s6">6. 第二层 · GT 签核与提取 contract</h2>
+<table>
+<tr><th>项</th><th>做法（C-21/C-23）</th></tr>
+<tr><td>GT 前置签核</td><td>runner <b>启动时</b>校验 <code>status=signed</code> 且 <code>version+hash == run_manifest 冻结值</code>，不符<b>拒跑</b>；未签/不符的样本建 <code>status=skipped, err_kind=gt_unsigned|gt_mismatch</code> 的 cell 并落盘</td></tr>
+<tr><td>提取 contract</td><td>跑测前写 <code>EXTRACTION_CONTRACT.md</code>（五类规则：换行/表格/公式/图片占位/阅读顺序）+ <b>golden 单测</b>（6 引擎各 ≥1 例）→ 盲审 → 冻结 <code>extract_v</code> 入 fingerprint；冻结后禁改</td></tr>
+<tr><td>gt_hash 规范化</td><td>规范化算法（NFC、行尾、尾空白）写死进 contract；gt_v+gt_hash 同入 fingerprint</td></tr>
+</table>
+
+<!-- ================================================================ -->
+<h2 id="s7">7. 第二层 · 计时口径与受控环境（C-18/19/24/25）</h2>
+<div class="pit"><b>C-18 wall 口径（r1 作废，按规格重定义，需你确认）</b>：<br>
+• <b>wall = 端到端 infer 全程</b>（含图像预处理 + generate + 后处理第一步），<b>load 外置</b>（session 级），warmup 不计入；<br>
+• <b>OXR 的 wall 含 D-FINE 版面</b>（端到端语义，版面是其管线第一步）；<br>
+• 每 rep 另记 <code>wall_self</code>（模型自报/引擎内部分解，能拿到才记）→ 算 <code>diff_pct</code> 入 G1 对账；<br>
+• caliber audit <b>跑测前 + 跑测后各一次</b>；<br>
+• 后果：P0 的「单页秒数」全部按新口径在正式跑测重测，P0 数字仅作可行性与工期估算参考。</div>
+<table>
+<tr><th>项</th><th>做法</th></tr>
+<tr><td>C-19</td><td>强制 <code>greedy（do_sample=false）</code>、batch=1、并发=1；<code>max_new_tokens</code> 每引擎写死 engines.yaml；<code>trunc_rate</code> 入 cell；prompt 原文+sha256 入 MANIFEST</td></tr>
+<tr><td>C-24</td><td>跑前生成 <code>host_manifest.json</code>（cpu=5700G, mem=30GB, os=win11, python 每 venv, threads, <b>gpu:none</b>, power, load）→ id 入 fingerprint；OMP_NUM_THREADS/MKL 固定写死；idle guard（负载&gt;阈值 延迟启动）；热降频记录 <code>outlier{reason,action}</code>；聚合报 <code>n_excluded</code></td></tr>
+<tr><td>C-25</td><td>统一 tree+port 采样（interval=0.2s，含普通引擎）；cell 记 <code>peak_rss_mb/rss_scope</code>；finally rpc teardown + assert rss 回落 + 端口释放</td></tr>
+<tr><td>C-32</td><td>切片判别改<b>显式分支</b>：按 (模型, 是否 inputs_embeds, out 是否含 prompt token ids) 三元组写死分支表，每分支 golden 用例；禁止「智能」字符串启发式；切片前后 sha256/长度入 journal</td></tr>
+</table>
+
+<!-- ================================================================ -->
+<h2 id="s8">8. 第三层 · 资产追溯与一键清理（C-27/28/29/30/33）</h2>
+<table>
+<tr><th>项</th><th>v2 补齐</th></tr>
+<tr><td>C-27 资产</td><td>补 <code>sets.yaml</code>（四集+expected）、<code>engines.yaml</code>（6 引擎 layer/prompt hash/timeout/max_new_tokens/venv 路径）、<code>samples/manifest.json</code>（UUID/sets/sha256/300DPI 页图）、<code>SOURCES.md</code>、<code>pdfs/pages_300dpi/</code>（S_PDF page-level）、InputRef 300DPI+sha256</td></tr>
+<tr><td>C-28 清理</td><td>clean_episode 补 <code>--config</code>、期号回车确认、<code>--no-archive</code>、<code>archive/ep13-&lt;ts&gt;.tar.zst</code>、CLEANUP.log 字段 who/when/what/size/archive；<code>--data</code> 明确删除清单（cells/runs/sessions/control/outputs/audit）与<b>白名单保留</b>（scripts/配置/samples/gt/venvs/EPISODE）；模型目录 <code>D:/models/models/ocr/ep13-docparse/</code> 默认永不删；dry-run 清单单测</td></tr>
+<tr><td>C-29 追溯</td><td>EPISODE 补 <code>sets_hash/created/per-engine venv freeze（torch/transformers 版本）</code>；新建 <code>MANIFEST.md</code> 记 config 补丁（P0-PATCH 5 处）、prompt sha256、模型路径；<b>版本字符串统一 V6d</b>（权威文件头已改，r1 的「V6c」引用全部更正）</td></tr>
+<tr><td>C-30 run_manifest</td><td>启动冻结 set 来源/sets_yaml_hash/gt_versions/seed/order/config_hash/stats_policy_hash → <code>sessions/&lt;run_id&gt;.json</code>；seed+order 入 fingerprint</td></tr>
+<tr><td>C-33 进程纪律成码</td><td><code>process_guard.py</code>：单实例 lock、按整串 cmdline 盘点、kill 前 CONFIRM 打印、kill 后 raw socket 验活、端口/RSS 断言；runner 前后调用；clean_episode 复用</td></tr>
+</table>
+
+<!-- ================================================================ -->
+<h2 id="s9">9. 决策冻结与执行流程（C-34/35/36）</h2>
+<div class="decision"><b>已冻结（不再开放）：</b><br>
+<b>D1</b> → <span class="tag ok">已由规格 V6d 消解</span>：lineup 已改「6 跑 + 2 归档 N/A」，expected/阈值/预算同步——不再作为决策项。<br>
+<b>D2</b> → <b>30 分钟/rep</b>，落到 engines.yaml <code>timeout.infer=1800</code>，<b>父进程 kill</b> 可中断（含挂起演练）。<br>
+<b>D3</b> → 只留 <b>A</b>：GT 签核+gt_hash 冻结是开跑前置（B 与「未签拒跑」冲突，按 C-35 删除）。<br>
+<b>D4</b> → <b>B</b>：先 <b>3 样本冒烟</b>（最快/最慢/最大图）→ 你确认 cell 格式与数据 → 再全量；冒烟用独立 run_id 不入分母。</div>
+
+<table>
+<tr><th>执行顺序（评审通过后）</th><th>内容</th></tr>
+<tr><td>① 冻结资产</td><td>sets.yaml/engines.yaml/样本 manifest/EXTRACTION_CONTRACT+golden/GT 签核/host_manifest/SOURCES——全部就位才动 runner</td></tr>
+<tr><td>② 实现</td><td>schema/cell.schema.json（从 §3.2 生成）→ CellRunner+单测三例 → worker+NDJSON+timeout/respawn → process_guard → 平台四门端点</td></tr>
+<tr><td>③ 闸门自测</td><td>G0–G3 各造一份 fail 样本验证能拦（not_run/stale/failed&gt;2% 分组不一致逐项）</td></tr>
+<tr><td>④ 3 样本冒烟</td><td>独立 run_id；核 cell 全字段/计时口径/超时 kill/落盘校验；报你确认</td></tr>
+<tr><td>⑤ 全量跑测</td><td>6 引擎 × 分批夜跑；跑前 caliber audit + idle guard；进度按 run_id 实时报</td></tr>
+</table>
+
+<!-- ================================================================ -->
+<h2 id="s10">10. 附录 · 引擎层（r1 §2 保留，仅三处补充）</h2>
+<ul>
+<li>路径 A/B/C 与 P0 全部实证细节<b>原样保留</b>（dsh：「引擎适配细节是强项，v2 不必重写」）；6 引擎 PASS 终表、Tele/dots 归档不变。</li>
+<li><b>补充 1</b>：每引擎 engines.yaml 冻结 <code>layer（A/B 归属）</code>、<code>prompt_sha256</code>、<code>timeout.{load,infer,teardown}</code>、<code>max_new_tokens</code>——bf16/Xiaomi-fp32 均按「非量化即 A 层」记入（规格 §2.3）。</li>
+<li><b>补充 2</b>：worker 启动即打印 <code>python/torch/transformers</code> 版本入握手，与 EPISODE venv freeze 对账。</li>
+<li><b>补充 3</b>：warmup_reps=1 每引擎 load 后跑一次不记账。</li>
+</ul>
+
+<div class="lead small">配套：规格 <b>V6d</b>（权威源，已升版）· dsh 评审原文 <code>review-20261104/dsh-code-r1b-out.txt</code> · v1 存档 <code>2026-11-04-…-评审稿.html</code>。评审意见直接回本会话。</div>
+
+</div>
+</body>
+</html>

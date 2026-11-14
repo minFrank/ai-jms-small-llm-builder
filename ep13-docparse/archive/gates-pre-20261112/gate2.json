@@ -1,0 +1,101 @@
+{
+ "gate": "G2",
+ "verdict": "pass",
+ "checks": [
+  {
+   "check": "lineup 8 行",
+   "ok": true,
+   "detail": "行数=8：oxr,teleocr,xiaomi_vl,ovis,paddleocr_vl,monkey,surya,dots"
+  },
+  {
+   "check": "surya=0.69B",
+   "ok": true,
+   "detail": "0.69B"
+  },
+  {
+   "check": "dots=1.7B",
+   "ok": true,
+   "detail": "1.7B"
+  },
+  {
+   "check": "归档 N/A",
+   "ok": true,
+   "detail": "teleocr/dots run_mode=N/A(归档)"
+  },
+  {
+   "check": "as-of 在位",
+   "ok": true,
+   "detail": "每行 as_of=2026-11-03"
+  },
+  {
+   "check": "宣称在位",
+   "ok": true,
+   "detail": "claim 字段逐行在位"
+  },
+  {
+   "check": "overall≠CER caveat",
+   "ok": true,
+   "detail": "spec §2.1 要求（overall 为官方宣称口径，非本期 CER）"
+  }
+ ],
+ "lineup_rows": [
+  {
+   "name": "oxr",
+   "params": "1.3B",
+   "run_mode": "跑",
+   "as_of": "2026-11-03",
+   "claim": "官方宣称三榜第一"
+  },
+  {
+   "name": "teleocr",
+   "params": "1.2B",
+   "run_mode": "N/A(归档)",
+   "as_of": "2026-11-03",
+   "claim": "96.87 榜内最高"
+  },
+  {
+   "name": "xiaomi_vl",
+   "params": "0.8B",
+   "run_mode": "跑",
+   "as_of": "2026-11-03",
+   "claim": "96.83"
+  },
+  {
+   "name": "ovis",
+   "params": "0.8B",
+   "run_mode": "跑",
+   "as_of": "2026-11-03",
+   "claim": "96.58"
+  },
+  {
+   "name": "paddleocr_vl",
+   "params": "0.9B",
+   "run_mode": "跑",
+   "as_of": "2026-11-03",
+   "claim": "96.33"
+  },
+  {
+   "name": "monkey",
+   "params": "1.2B",
+   "run_mode": "跑",
+   "as_of": "2026-11-03",
+   "claim": "宣称中文超自家3B版7.4%"
+  },
+  {
+   "name": "surya",
+   "params": "0.69B",
+   "run_mode": "跑",
+   "as_of": "2026-11-03",
+   "claim": "P0实算"
+  },
+  {
+   "name": "dots",
+   "params": "1.7B",
+   "run_mode": "N/A(归档)",
+   "as_of": "2026-11-03",
+   "claim": "90.8"
+  }
+ ],
+ "lineup_asof": "2026-11-03/04（P0 实算与官方 README）",
+ "finished_at": "2026-11-10T00:54:56"
+}

@@ -1,0 +1,629 @@
+{
+ "note": "判据分层（A+C, 2026-11-09）：质量名次=CER 可用格（156 全量、6 引擎全入）；计时稳定列=wall stable≥25（['ovis_ocr2', 'oxr', 'surya_2_5'] 不足仅计时名次不含）",
+ "cells": [
+  {
+   "sample_id": "07174aba-a048-4fa4-91bb-4b12638747cf",
+   "engine": "monkey_rec"
+  },
+  {
+   "sample_id": "07174aba-a048-4fa4-91bb-4b12638747cf",
+   "engine": "ovis_ocr2"
+  },
+  {
+   "sample_id": "07174aba-a048-4fa4-91bb-4b12638747cf",
+   "engine": "oxr"
+  },
+  {
+   "sample_id": "07174aba-a048-4fa4-91bb-4b12638747cf",
+   "engine": "paddleocr_vl"
+  },
+  {
+   "sample_id": "07174aba-a048-4fa4-91bb-4b12638747cf",
+   "engine": "surya_2_5"
+  },
+  {
+   "sample_id": "07174aba-a048-4fa4-91bb-4b12638747cf",
+   "engine": "xiaomi_vl"
+  },
+  {
+   "sample_id": "0a5e458b-631e-4acf-a84c-3e314cf2b788",
+   "engine": "monkey_rec"
+  },
+  {
+   "sample_id": "0a5e458b-631e-4acf-a84c-3e314cf2b788",
+   "engine": "ovis_ocr2"
+  },
+  {
+   "sample_id": "0a5e458b-631e-4acf-a84c-3e314cf2b788",
+   "engine": "oxr"
+  },
+  {
+   "sample_id": "0a5e458b-631e-4acf-a84c-3e314cf2b788",
+   "engine": "paddleocr_vl"
+  },
+  {
+   "sample_id": "0a5e458b-631e-4acf-a84c-3e314cf2b788",
+   "engine": "surya_2_5"
+  },
+  {
+   "sample_id": "0a5e458b-631e-4acf-a84c-3e314cf2b788",
+   "engine": "xiaomi_vl"
+  },
+  {
+   "sample_id": "0a6a4a2b-1390-4ecc-a67e-7343ee7efb6e",
+   "engine": "monkey_rec"
+  },
+  {
+   "sample_id": "0a6a4a2b-1390-4ecc-a67e-7343ee7efb6e",
+   "engine": "ovis_ocr2"
+  },
+  {
+   "sample_id": "0a6a4a2b-1390-4ecc-a67e-7343ee7efb6e",
+   "engine": "oxr"
+  },
+  {
+   "sample_id": "0a6a4a2b-1390-4ecc-a67e-7343ee7efb6e",
+   "engine": "paddleocr_vl"
+  },
+  {
+   "sample_id": "0a6a4a2b-1390-4ecc-a67e-7343ee7efb6e",
+   "engine": "surya_2_5"
+  },
+  {
+   "sample_id": "0a6a4a2b-1390-4ecc-a67e-7343ee7efb6e",
+   "engine": "xiaomi_vl"
+  },
+  {
+   "sample_id": "2ac8345e-78bd-48bc-af1b-e8f0dffa22fd",
+   "engine": "monkey_rec"
+  },
+  {
+   "sample_id": "2ac8345e-78bd-48bc-af1b-e8f0dffa22fd",
+   "engine": "ovis_ocr2"
+  },
+  {
+   "sample_id": "2ac8345e-78bd-48bc-af1b-e8f0dffa22fd",
+   "engine": "oxr"
+  },
+  {
+   "sample_id": "2ac8345e-78bd-48bc-af1b-e8f0dffa22fd",
+   "engine": "paddleocr_vl"
+  },
+  {
+   "sample_id": "2ac8345e-78bd-48bc-af1b-e8f0dffa22fd",
+   "engine": "surya_2_5"
+  },
+  {
+   "sample_id": "2ac8345e-78bd-48bc-af1b-e8f0dffa22fd",
+   "engine": "xiaomi_vl"
+  },
+  {
+   "sample_id": "36bd261c-deb1-4b78-94af-48a47d5e5444",
+   "engine": "monkey_rec"
+  },
+  {
+   "sample_id": "36bd261c-deb1-4b78-94af-48a47d5e5444",
+   "engine": "ovis_ocr2"
+  },
+  {
+   "sample_id": "36bd261c-deb1-4b78-94af-48a47d5e5444",
+   "engine": "oxr"
+  },
+  {
+   "sample_id": "36bd261c-deb1-4b78-94af-48a47d5e5444",
+   "engine": "paddleocr_vl"
+  },
+  {
+   "sample_id": "36bd261c-deb1-4b78-94af-48a47d5e5444",
+   "engine": "surya_2_5"
+  },
+  {
+   "sample_id": "36bd261c-deb1-4b78-94af-48a47d5e5444",
+   "engine": "xiaomi_vl"
+  },
+  {
+   "sample_id": "39c98bfe-ed88-4a3b-bb33-d32b8ab74fd6",
+   "engine": "monkey_rec"
+  },
+  {
+   "sample_id": "39c98bfe-ed88-4a3b-bb33-d32b8ab74fd6",
+   "engine": "ovis_ocr2"
+  },
+  {
+   "sample_id": "39c98bfe-ed88-4a3b-bb33-d32b8ab74fd6",
+   "engine": "oxr"
+  },
+  {
+   "sample_id": "39c98bfe-ed88-4a3b-bb33-d32b8ab74fd6",
+   "engine": "paddleocr_vl"
+  },
+  {
+   "sample_id": "39c98bfe-ed88-4a3b-bb33-d32b8ab74fd6",
+   "engine": "surya_2_5"
+  },
+  {
+   "sample_id": "39c98bfe-ed88-4a3b-bb33-d32b8ab74fd6",
+   "engine": "xiaomi_vl"
+  },
+  {
+   "sample_id": "437708b6-3c74-4db7-9386-49d03688c526",
+   "engine": "monkey_rec"
+  },
+  {
+   "sample_id": "437708b6-3c74-4db7-9386-49d03688c526",
+   "engine": "ovis_ocr2"
+  },
+  {
+   "sample_id": "437708b6-3c74-4db7-9386-49d03688c526",
+   "engine": "oxr"
+  },
+  {
+   "sample_id": "437708b6-3c74-4db7-9386-49d03688c526",
+   "engine": "paddleocr_vl"
+  },
+  {
+   "sample_id": "437708b6-3c74-4db7-9386-49d03688c526",
+   "engine": "surya_2_5"
+  },
+  {
+   "sample_id": "437708b6-3c74-4db7-9386-49d03688c526",
+   "engine": "xiaomi_vl"
+  },
+  {
+   "sample_id": "50711f63-8a9a-4f58-9636-8a88b5fe7c96",
+   "engine": "monkey_rec"
+  },
+  {
+   "sample_id": "50711f63-8a9a-4f58-9636-8a88b5fe7c96",
+   "engine": "ovis_ocr2"
+  },
+  {
+   "sample_id": "50711f63-8a9a-4f58-9636-8a88b5fe7c96",
+   "engine": "oxr"
+  },
+  {
+   "sample_id": "50711f63-8a9a-4f58-9636-8a88b5fe7c96",
+   "engine": "paddleocr_vl"
+  },
+  {
+   "sample_id": "50711f63-8a9a-4f58-9636-8a88b5fe7c96",
+   "engine": "surya_2_5"
+  },
+  {
+   "sample_id": "50711f63-8a9a-4f58-9636-8a88b5fe7c96",
+   "engine": "xiaomi_vl"
+  },
+  {
+   "sample_id": "5b6f285a-5cc5-4e61-aadf-c207ddf211eb",
+   "engine": "monkey_rec"
+  },
+  {
+   "sample_id": "5b6f285a-5cc5-4e61-aadf-c207ddf211eb",
+   "engine": "ovis_ocr2"
+  },
+  {
+   "sample_id": "5b6f285a-5cc5-4e61-aadf-c207ddf211eb",
+   "engine": "oxr"
+  },
+  {
+   "sample_id": "5b6f285a-5cc5-4e61-aadf-c207ddf211eb",
+   "engine": "paddleocr_vl"
+  },
+  {
+   "sample_id": "5b6f285a-5cc5-4e61-aadf-c207ddf211eb",
+   "engine": "surya_2_5"
+  },
+  {
+   "sample_id": "5b6f285a-5cc5-4e61-aadf-c207ddf211eb",
+   "engine": "xiaomi_vl"
+  },
+  {
+   "sample_id": "616ccf6d-cd84-4f11-960f-3da65f01f490",
+   "engine": "monkey_rec"
+  },
+  {
+   "sample_id": "616ccf6d-cd84-4f11-960f-3da65f01f490",
+   "engine": "ovis_ocr2"
+  },
+  {
+   "sample_id": "616ccf6d-cd84-4f11-960f-3da65f01f490",
+   "engine": "oxr"
+  },
+  {
+   "sample_id": "616ccf6d-cd84-4f11-960f-3da65f01f490",
+   "engine": "paddleocr_vl"
+  },
+  {
+   "sample_id": "616ccf6d-cd84-4f11-960f-3da65f01f490",
+   "engine": "surya_2_5"
+  },
+  {
+   "sample_id": "616ccf6d-cd84-4f11-960f-3da65f01f490",
+   "engine": "xiaomi_vl"
+  },
+  {
+   "sample_id": "6cb9d7a3-1027-426d-a125-6e040ffa9719",
+   "engine": "monkey_rec"
+  },
+  {
+   "sample_id": "6cb9d7a3-1027-426d-a125-6e040ffa9719",
+   "engine": "ovis_ocr2"
+  },
+  {
+   "sample_id": "6cb9d7a3-1027-426d-a125-6e040ffa9719",
+   "engine": "oxr"
+  },
+  {
+   "sample_id": "6cb9d7a3-1027-426d-a125-6e040ffa9719",
+   "engine": "paddleocr_vl"
+  },
+  {
+   "sample_id": "6cb9d7a3-1027-426d-a125-6e040ffa9719",
+   "engine": "surya_2_5"
+  },
+  {
+   "sample_id": "6cb9d7a3-1027-426d-a125-6e040ffa9719",
+   "engine": "xiaomi_vl"
+  },
+  {
+   "sample_id": "6d329f42-6a63-4825-8aee-c2d0c2cb1ff2",
+   "engine": "monkey_rec"
+  },
+  {
+   "sample_id": "6d329f42-6a63-4825-8aee-c2d0c2cb1ff2",
+   "engine": "ovis_ocr2"
+  },
+  {
+   "sample_id": "6d329f42-6a63-4825-8aee-c2d0c2cb1ff2",
+   "engine": "oxr"
+  },
+  {
+   "sample_id": "6d329f42-6a63-4825-8aee-c2d0c2cb1ff2",
+   "engine": "paddleocr_vl"
+  },
+  {
+   "sample_id": "6d329f42-6a63-4825-8aee-c2d0c2cb1ff2",
+   "engine": "surya_2_5"
+  },
+  {
+   "sample_id": "6d329f42-6a63-4825-8aee-c2d0c2cb1ff2",
+   "engine": "xiaomi_vl"
+  },
+  {
+   "sample_id": "74ac3433-45b9-42e1-91d5-c4206cc496a6",
+   "engine": "monkey_rec"
+  },
+  {
+   "sample_id": "74ac3433-45b9-42e1-91d5-c4206cc496a6",
+   "engine": "ovis_ocr2"
+  },
+  {
+   "sample_id": "74ac3433-45b9-42e1-91d5-c4206cc496a6",
+   "engine": "oxr"
+  },
+  {
+   "sample_id": "74ac3433-45b9-42e1-91d5-c4206cc496a6",
+   "engine": "paddleocr_vl"
+  },
+  {
+   "sample_id": "74ac3433-45b9-42e1-91d5-c4206cc496a6",
+   "engine": "surya_2_5"
+  },
+  {
+   "sample_id": "74ac3433-45b9-42e1-91d5-c4206cc496a6",
+   "engine": "xiaomi_vl"
+  },
+  {
+   "sample_id": "78f43f62-ef57-43ad-b467-fdbc3d5c735d",
+   "engine": "monkey_rec"
+  },
+  {
+   "sample_id": "78f43f62-ef57-43ad-b467-fdbc3d5c735d",
+   "engine": "ovis_ocr2"
+  },
+  {
+   "sample_id": "78f43f62-ef57-43ad-b467-fdbc3d5c735d",
+   "engine": "oxr"
+  },
+  {
+   "sample_id": "78f43f62-ef57-43ad-b467-fdbc3d5c735d",
+   "engine": "paddleocr_vl"
+  },
+  {
+   "sample_id": "78f43f62-ef57-43ad-b467-fdbc3d5c735d",
+   "engine": "surya_2_5"
+  },
+  {
+   "sample_id": "78f43f62-ef57-43ad-b467-fdbc3d5c735d",
+   "engine": "xiaomi_vl"
+  },
+  {
+   "sample_id": "8c988f28-e9e3-475a-aff3-1859efad14ea",
+   "engine": "monkey_rec"
+  },
+  {
+   "sample_id": "8c988f28-e9e3-475a-aff3-1859efad14ea",
+   "engine": "ovis_ocr2"
+  },
+  {
+   "sample_id": "8c988f28-e9e3-475a-aff3-1859efad14ea",
+   "engine": "oxr"
+  },
+  {
+   "sample_id": "8c988f28-e9e3-475a-aff3-1859efad14ea",
+   "engine": "paddleocr_vl"
+  },
+  {
+   "sample_id": "8c988f28-e9e3-475a-aff3-1859efad14ea",
+   "engine": "surya_2_5"
+  },
+  {
+   "sample_id": "8c988f28-e9e3-475a-aff3-1859efad14ea",
+   "engine": "xiaomi_vl"
+  },
+  {
+   "sample_id": "9511eccb-9d16-4e68-b552-a484c67c43df",
+   "engine": "monkey_rec"
+  },
+  {
+   "sample_id": "9511eccb-9d16-4e68-b552-a484c67c43df",
+   "engine": "ovis_ocr2"
+  },
+  {
+   "sample_id": "9511eccb-9d16-4e68-b552-a484c67c43df",
+   "engine": "oxr"
+  },
+  {
+   "sample_id": "9511eccb-9d16-4e68-b552-a484c67c43df",
+   "engine": "paddleocr_vl"
+  },
+  {
+   "sample_id": "9511eccb-9d16-4e68-b552-a484c67c43df",
+   "engine": "surya_2_5"
+  },
+  {
+   "sample_id": "9511eccb-9d16-4e68-b552-a484c67c43df",
+   "engine": "xiaomi_vl"
+  },
+  {
+   "sample_id": "a0822e45-3420-4f79-8e6d-2b9c198a3e36",
+   "engine": "monkey_rec"
+  },
+  {
+   "sample_id": "a0822e45-3420-4f79-8e6d-2b9c198a3e36",
+   "engine": "ovis_ocr2"
+  },
+  {
+   "sample_id": "a0822e45-3420-4f79-8e6d-2b9c198a3e36",
+   "engine": "oxr"
+  },
+  {
+   "sample_id": "a0822e45-3420-4f79-8e6d-2b9c198a3e36",
+   "engine": "paddleocr_vl"
+  },
+  {
+   "sample_id": "a0822e45-3420-4f79-8e6d-2b9c198a3e36",
+   "engine": "surya_2_5"
+  },
+  {
+   "sample_id": "a0822e45-3420-4f79-8e6d-2b9c198a3e36",
+   "engine": "xiaomi_vl"
+  },
+  {
+   "sample_id": "ad14bc0e-ee65-479f-84a1-e1a1b5d42ee7",
+   "engine": "monkey_rec"
+  },
+  {
+   "sample_id": "ad14bc0e-ee65-479f-84a1-e1a1b5d42ee7",
+   "engine": "ovis_ocr2"
+  },
+  {
+   "sample_id": "ad14bc0e-ee65-479f-84a1-e1a1b5d42ee7",
+   "engine": "oxr"
+  },
+  {
+   "sample_id": "ad14bc0e-ee65-479f-84a1-e1a1b5d42ee7",
+   "engine": "paddleocr_vl"
+  },
+  {
+   "sample_id": "ad14bc0e-ee65-479f-84a1-e1a1b5d42ee7",
+   "engine": "surya_2_5"
+  },
+  {
+   "sample_id": "ad14bc0e-ee65-479f-84a1-e1a1b5d42ee7",
+   "engine": "xiaomi_vl"
+  },
+  {
+   "sample_id": "b3376d81-be27-4a3b-b6fd-1af30bd9446f",
+   "engine": "monkey_rec"
+  },
+  {
+   "sample_id": "b3376d81-be27-4a3b-b6fd-1af30bd9446f",
+   "engine": "ovis_ocr2"
+  },
+  {
+   "sample_id": "b3376d81-be27-4a3b-b6fd-1af30bd9446f",
+   "engine": "oxr"
+  },
+  {
+   "sample_id": "b3376d81-be27-4a3b-b6fd-1af30bd9446f",
+   "engine": "paddleocr_vl"
+  },
+  {
+   "sample_id": "b3376d81-be27-4a3b-b6fd-1af30bd9446f",
+   "engine": "surya_2_5"
+  },
+  {
+   "sample_id": "b3376d81-be27-4a3b-b6fd-1af30bd9446f",
+   "engine": "xiaomi_vl"
+  },
+  {
+   "sample_id": "b9e11a48-8fa5-40e6-a840-8f86cc65e307",
+   "engine": "monkey_rec"
+  },
+  {
+   "sample_id": "b9e11a48-8fa5-40e6-a840-8f86cc65e307",
+   "engine": "ovis_ocr2"
+  },
+  {
+   "sample_id": "b9e11a48-8fa5-40e6-a840-8f86cc65e307",
+   "engine": "oxr"
+  },
+  {
+   "sample_id": "b9e11a48-8fa5-40e6-a840-8f86cc65e307",
+   "engine": "paddleocr_vl"
+  },
+  {
+   "sample_id": "b9e11a48-8fa5-40e6-a840-8f86cc65e307",
+   "engine": "surya_2_5"
+  },
+  {
+   "sample_id": "b9e11a48-8fa5-40e6-a840-8f86cc65e307",
+   "engine": "xiaomi_vl"
+  },
+  {
+   "sample_id": "c5b71320-e615-4867-9487-d9b088afb48f",
+   "engine": "monkey_rec"
+  },
+  {
+   "sample_id": "c5b71320-e615-4867-9487-d9b088afb48f",
+   "engine": "ovis_ocr2"
+  },
+  {
+   "sample_id": "c5b71320-e615-4867-9487-d9b088afb48f",
+   "engine": "oxr"
+  },
+  {
+   "sample_id": "c5b71320-e615-4867-9487-d9b088afb48f",
+   "engine": "paddleocr_vl"
+  },
+  {
+   "sample_id": "c5b71320-e615-4867-9487-d9b088afb48f",
+   "engine": "surya_2_5"
+  },
+  {
+   "sample_id": "c5b71320-e615-4867-9487-d9b088afb48f",
+   "engine": "xiaomi_vl"
+  },
+  {
+   "sample_id": "d9412c21-d612-4abf-a529-a2f5ac11929e",
+   "engine": "monkey_rec"
+  },
+  {
+   "sample_id": "d9412c21-d612-4abf-a529-a2f5ac11929e",
+   "engine": "ovis_ocr2"
+  },
+  {
+   "sample_id": "d9412c21-d612-4abf-a529-a2f5ac11929e",
+   "engine": "oxr"
+  },
+  {
+   "sample_id": "d9412c21-d612-4abf-a529-a2f5ac11929e",
+   "engine": "paddleocr_vl"
+  },
+  {
+   "sample_id": "d9412c21-d612-4abf-a529-a2f5ac11929e",
+   "engine": "surya_2_5"
+  },
+  {
+   "sample_id": "d9412c21-d612-4abf-a529-a2f5ac11929e",
+   "engine": "xiaomi_vl"
+  },
+  {
+   "sample_id": "e241e718-975f-4938-9867-cb4ae1d53c4d",
+   "engine": "monkey_rec"
+  },
+  {
+   "sample_id": "e241e718-975f-4938-9867-cb4ae1d53c4d",
+   "engine": "ovis_ocr2"
+  },
+  {
+   "sample_id": "e241e718-975f-4938-9867-cb4ae1d53c4d",
+   "engine": "oxr"
+  },
+  {
+   "sample_id": "e241e718-975f-4938-9867-cb4ae1d53c4d",
+   "engine": "paddleocr_vl"
+  },
+  {
+   "sample_id": "e241e718-975f-4938-9867-cb4ae1d53c4d",
+   "engine": "surya_2_5"
+  },
+  {
+   "sample_id": "e241e718-975f-4938-9867-cb4ae1d53c4d",
+   "engine": "xiaomi_vl"
+  },
+  {
+   "sample_id": "e8583fbc-6d97-4651-973e-187cf43b5107",
+   "engine": "monkey_rec"
+  },
+  {
+   "sample_id": "e8583fbc-6d97-4651-973e-187cf43b5107",
+   "engine": "ovis_ocr2"
+  },
+  {
+   "sample_id": "e8583fbc-6d97-4651-973e-187cf43b5107",
+   "engine": "oxr"
+  },
+  {
+   "sample_id": "e8583fbc-6d97-4651-973e-187cf43b5107",
+   "engine": "paddleocr_vl"
+  },
+  {
+   "sample_id": "e8583fbc-6d97-4651-973e-187cf43b5107",
+   "engine": "surya_2_5"
+  },
+  {
+   "sample_id": "e8583fbc-6d97-4651-973e-187cf43b5107",
+   "engine": "xiaomi_vl"
+  },
+  {
+   "sample_id": "f19ea525-68d6-4be4-9c45-464537f08e6e",
+   "engine": "monkey_rec"
+  },
+  {
+   "sample_id": "f19ea525-68d6-4be4-9c45-464537f08e6e",
+   "engine": "ovis_ocr2"
+  },
+  {
+   "sample_id": "f19ea525-68d6-4be4-9c45-464537f08e6e",
+   "engine": "oxr"
+  },
+  {
+   "sample_id": "f19ea525-68d6-4be4-9c45-464537f08e6e",
+   "engine": "paddleocr_vl"
+  },
+  {
+   "sample_id": "f19ea525-68d6-4be4-9c45-464537f08e6e",
+   "engine": "surya_2_5"
+  },
+  {
+   "sample_id": "f19ea525-68d6-4be4-9c45-464537f08e6e",
+   "engine": "xiaomi_vl"
+  },
+  {
+   "sample_id": "f8b97fd2-c806-4815-95fd-19b5735ade9a",
+   "engine": "monkey_rec"
+  },
+  {
+   "sample_id": "f8b97fd2-c806-4815-95fd-19b5735ade9a",
+   "engine": "ovis_ocr2"
+  },
+  {
+   "sample_id": "f8b97fd2-c806-4815-95fd-19b5735ade9a",
+   "engine": "oxr"
+  },
+  {
+   "sample_id": "f8b97fd2-c806-4815-95fd-19b5735ade9a",
+   "engine": "paddleocr_vl"
+  },
+  {
+   "sample_id": "f8b97fd2-c806-4815-95fd-19b5735ade9a",
+   "engine": "surya_2_5"
+  },
+  {
+   "sample_id": "f8b97fd2-c806-4815-95fd-19b5735ade9a",
+   "engine": "xiaomi_vl"
+  }
+ ]
+}

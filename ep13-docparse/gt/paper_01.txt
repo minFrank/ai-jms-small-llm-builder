@@ -1,0 +1,14 @@
+A SURVEY OF DOCUMENT PARSING MODELS
+Zhang Wei and Li Ming
+School of Computer Science, Nanjing University
+Abstract—Document parsing converts heterogeneous documents into structured representations. This paper reviews recent advances in layout analysis, optical character recognition, and table recognition, and discusses benchmark datasets and evaluation metrics used in the field.
+I. INTRODUCTION
+Documents such as invoices, contracts, and scientific papers carry information in both textual and spatial forms. Effective parsing requires accurate detection of text blocks, reading order reconstruction, and faithful recovery of tables and formulas.
+II. LAYOUT ANALYSIS
+Modern detectors treat layout analysis as object detection over page images. Typical categories include title, paragraph, table, figure, and list. Anchors and feature pyramids remain common design choices.
+III. CHARACTER RECOGNITION
+Recognition models map image patches to character sequences. Connectionist temporal classification and attention mechanisms dominate. Subword tokenization helps with long lines and mixed scripts.
+IV. EVALUATION
+Character error rate is the standard metric, computed as the sum of substitutions, deletions, and insertions divided by the number of reference characters. End-to-end scores additionally penalize ordering errors.
+CONCLUSION
+Document parsing benefits from joint training of detection and recognition, but benchmark consistency across papers remains an open issue.

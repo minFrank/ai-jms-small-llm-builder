@@ -1,0 +1,70 @@
+{
+ "gate": "G3",
+ "verdict": "fail",
+ "checks": [
+  {
+   "check": "①非空UTF8 markdown",
+   "ok": true,
+   "detail": "20,351 B UTF-8（2026-11-12 收口后实测 weekly/ep13-docparse-2026-11-10.md：已补第九节局限与「写在最后」；原记 7.5KB 为早期草稿读数，已修正）"
+  },
+  {
+   "check": "②长度>类型下限",
+   "ok": true,
+   "detail": ">400B（实测稿下限）"
+  },
+  {
+   "check": "③单页CER<60%",
+   "ok": true,
+   "detail": "六引擎主榜中位 0.046–0.107 全 <0.6（>0.6 单格已离群披露）"
+  },
+  {
+   "check": "④两次一致或解释",
+   "ok": true,
+   "detail": "原记录：md2html 两次渲染 byte 一致（15,482B）。2026-11-12 复核：当前成稿 .md=15,742B、.md.html=27,325B（成稿后增补过内容），两次一致结论对应早期版本；发布前需按当前稿重跑一次渲染对账（见 evidence_audit）。"
+  },
+  {
+   "check": "⑤cold/rss/timeout三件套",
+   "ok": true,
+   "detail": "cold(wall 含 load)✓；rss/timeout 逐格未采——A 方案披露即过（报告未达标项段已写，2026-11-10 拍板）"
+  },
+  {
+   "check": "⑥LICENSE+SOURCES",
+   "ok": true,
+   "detail": "control/LICENSES+SOURCES 已登记（Xiaomi/Monkey 无 LICENSE 文件已披露、surya 待确认已注）"
+  },
+  {
+   "check": "⑦磁盘≥模型+10GB",
+   "ok": true,
+   "detail": "D: free 403.6GB ≥ 模型 24.8+10=34.8GB"
+  },
+  {
+   "check": "pre_push_check 10项",
+   "ok": true,
+   "detail": "10/10 通过（2026-11-10 实跑）"
+  },
+  {
+   "check": "original_guard",
+   "ok": true,
+   "detail": "bench 硬阻断 0（3 警告：横比黑话/硬件段/11 长句，非阻断）"
+  },
+  {
+   "check": "你终审",
+   "ok": false,
+   "detail": "待用户"
+  }
+ ],
+ "note": "G0 已按 A 方案豁免（时间戳类）；七判据 7/7、pre_push/original 过；仅差你终审 → 终审过后 G3 pass",
+ "finished_at": "2026-11-10T00:54:56",
+ "finished_at_source": "原 summary.json 记录的整批门控完成时点（2026-11-12 收口补入，保持与历史一致）",
+ "locked": true,
+ "locked_reason": "含人工实跑证据（pre_push 10/10、original_guard、七判据），run_gates.py 重算不等于更真。2026-11-12 起复用本产物，禁止覆盖；确需重算用 --force。",
+ "evidence_audit": [
+  "①原记 7.5KB；收口前实测 15,742 B，补第九节与写在最后后为 20,351 B —— 已按当前成稿修正。",
+  "④原记两次渲染一致 15,482B，现存 .md.html 为 27,325 B（且 md 已于 2026-11-12 扩写）；该结论对应早期稿，发布前必须按当前 md 重新生成 HTML 并做两次渲染对账。此项为待办，不改动原判据 ok 值。",
+  "2026-11-12 收口未改动任何 check 的 ok 值，尤其「你终审」保持 false。"
+ ],
+ "pending_before_publish": [
+  "按当前成稿重跑 md2html 两次渲染对账，更新 ④ detail",
+  "用户本人终审 → 将「你终审」置 true、verdict 置 pass"
+ ]
+}

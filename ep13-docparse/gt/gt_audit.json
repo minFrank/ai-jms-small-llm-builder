@@ -1,0 +1,163 @@
+{
+ "audit_v": "ep13-gt-audit-v2",
+ "created": "2026-11-08T06:57:34",
+ "method": "sha256 over raw file bytes (rb)",
+ "files": [
+  {
+   "sample_id": "cn_doc_01",
+   "bytes": 893,
+   "sha256": "016799434fd927c59c6198c8e6b5a6b0318d45a942bc51682bf237d413ea80ac",
+   "matches_samples_manifest": true
+  },
+  {
+   "sample_id": "contract_01",
+   "bytes": 1202,
+   "sha256": "5c66e788c14e9d64a025a1f0d4c8c8c779871d608df24baa1315bb27f6354156",
+   "matches_samples_manifest": true
+  },
+  {
+   "sample_id": "menu_01",
+   "bytes": 613,
+   "sha256": "dd88b8af6488e8fd0ebba1955fe7cc2ced92fb573829c6a45940ac26a0294e74",
+   "matches_samples_manifest": true
+  },
+  {
+   "sample_id": "poster_01",
+   "bytes": 642,
+   "sha256": "8c0a3bd4b35d75e7e2f13bc6103926ac6745c214a412d7489ef9a4f72506ab85",
+   "matches_samples_manifest": true
+  },
+  {
+   "sample_id": "paper_01",
+   "bytes": 1490,
+   "sha256": "c00ffaad9cf7b00b70501795d1a60bd1eb5ddaf38387112afe4bd13fad4a3d3e",
+   "matches_samples_manifest": true
+  },
+  {
+   "sample_id": "form_01",
+   "bytes": 893,
+   "sha256": "1c447336da54ff3d74d94c1140efb2bbf42b2a0e28d10e5dd8b128e943150f23",
+   "matches_samples_manifest": true
+  },
+  {
+   "sample_id": "resume_01",
+   "bytes": 1118,
+   "sha256": "ce05e42f3392a529ecb7e2e2124ceb9c9c9884ffcde89b7bffe558eca2b6b1e6",
+   "matches_samples_manifest": true
+  },
+  {
+   "sample_id": "mixed_01",
+   "bytes": 996,
+   "sha256": "9326e5e640511d61f1f4cebf31a0db902229e71da9c46ef0471a111773546ed3",
+   "matches_samples_manifest": true
+  },
+  {
+   "sample_id": "book_01",
+   "bytes": 3152,
+   "sha256": "6ef78365904461afb0dcb4f0854e315134b62bf094d66b2a30df881999aa0271",
+   "matches_samples_manifest": true
+  },
+  {
+   "sample_id": "book_02",
+   "bytes": 597,
+   "sha256": "af4893c2031e2e96c43ce99111c5fde2971c0799718cfe389d9be7eb972006d5",
+   "matches_samples_manifest": true
+  },
+  {
+   "sample_id": "book_03",
+   "bytes": 1251,
+   "sha256": "bcdc469fd07a63f60387fe0845d4f60afd3065b82cb0f1de6b6a5e81a6edb7f7",
+   "matches_samples_manifest": true
+  },
+  {
+   "sample_id": "hard_01",
+   "bytes": 4894,
+   "sha256": "cea04320b893b7d6e34ae4d4280c45710d7430a8b5673c89574b542679b7943d",
+   "matches_samples_manifest": true
+  },
+  {
+   "sample_id": "hard_02",
+   "bytes": 727,
+   "sha256": "b4a5621560fbc37146b75c5897c12087dea83db9befbb5a4a22365b64ff8da08",
+   "matches_samples_manifest": true
+  },
+  {
+   "sample_id": "invoice_01",
+   "bytes": 546,
+   "sha256": "ad19a716fec8ca502631b9cec6500611d3c5f293655d51ff63311ece94c13c64",
+   "matches_samples_manifest": true
+  },
+  {
+   "sample_id": "invoice_02",
+   "bytes": 451,
+   "sha256": "103e92c712d845284f7131e080801fdb7bc3a70bdef37359350f1c392c3f90a9",
+   "matches_samples_manifest": true
+  },
+  {
+   "sample_id": "lc_01",
+   "bytes": 721,
+   "sha256": "86182755ad12e1e58e289e57769df77abadeb164451cb245d6d8ef7f2a21b231",
+   "matches_samples_manifest": true
+  },
+  {
+   "sample_id": "lc_02",
+   "bytes": 4569,
+   "sha256": "5b9133d69e3d89bd4a8565243e38baf696370bbe6adebc77be50fb89dc032331",
+   "matches_samples_manifest": true
+  },
+  {
+   "sample_id": "lc_03",
+   "bytes": 451,
+   "sha256": "103e92c712d845284f7131e080801fdb7bc3a70bdef37359350f1c392c3f90a9",
+   "matches_samples_manifest": true
+  },
+  {
+   "sample_id": "shot_01",
+   "bytes": 721,
+   "sha256": "86182755ad12e1e58e289e57769df77abadeb164451cb245d6d8ef7f2a21b231",
+   "matches_samples_manifest": true
+  },
+  {
+   "sample_id": "shot_02",
+   "bytes": 2134,
+   "sha256": "45d8e0149b526c6f6b51c4d5028ea5a591f481123520a207da1f42def9759c7b",
+   "matches_samples_manifest": true
+  },
+  {
+   "sample_id": "shot_03",
+   "bytes": 668,
+   "sha256": "df3b2565d7a8236cd7c5dc911ea90cf7862f2d5587a8ed9a8129f4081d127204",
+   "matches_samples_manifest": true
+  },
+  {
+   "sample_id": "skew_01",
+   "bytes": 3152,
+   "sha256": "6ef78365904461afb0dcb4f0854e315134b62bf094d66b2a30df881999aa0271",
+   "matches_samples_manifest": true
+  },
+  {
+   "sample_id": "skew_02",
+   "bytes": 597,
+   "sha256": "af4893c2031e2e96c43ce99111c5fde2971c0799718cfe389d9be7eb972006d5",
+   "matches_samples_manifest": true
+  },
+  {
+   "sample_id": "skew_03",
+   "bytes": 474,
+   "sha256": "f24f98dfe50c4b02c1de1e695c4e03056187ea7c53092ef192af06973dfed46f",
+   "matches_samples_manifest": true
+  },
+  {
+   "sample_id": "table_01",
+   "bytes": 250,
+   "sha256": "a1660837c593b57762e3620793fd38f9be71ef1f19cab8ed5cd71561e7a9ca5a",
+   "matches_samples_manifest": true
+  },
+  {
+   "sample_id": "table_02",
+   "bytes": 474,
+   "sha256": "f24f98dfe50c4b02c1de1e695c4e03056187ea7c53092ef192af06973dfed46f",
+   "matches_samples_manifest": true
+  }
+ ]
+}

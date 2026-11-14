@@ -1,0 +1,25 @@
+# ep13 分组与样本集（V6d 冻结 · r4 终验数字）
+version: sets-ep13-v1
+spec: V6d-errata
+engines_run: [oxr, paddleocr_vl, xiaomi_vl, ovis_ocr2, monkey_rec, surya_2_5]
+engines_archived_n_a: [teleocr, dots_ocr]   # 归档 N/A，行保留在 lineup
+S26:
+  samples: 26            # 主榜图片集
+  expected_cells: 156    # 26×6
+  min_complete_cells: 149  # ceil(156×0.95) cell 级
+  per_engine_ref_cells: 25 # ceil(26×0.95) cell 级参考线
+  max_reps: 1872         # 156×12 最坏
+  expected_reps: 1092    # 156×7（6 valid+1 容错/格期望）
+S24:
+  view_of: S26           # ★ 视图方案 A：不单独跑，样本∈S24 的 cell 子集
+  samples: 24
+  expected_cells: 144
+  min_complete_cells: 137  # ceil(144×0.95)
+  per_engine_ref_cells: 23
+  budget_reps_ref: 1728    # 仅预算对照，不额外产 rep
+S_PDF:
+  unit: page             # 逐页 cell
+  expected_cells: pages×6  # 跑前由 manifest 实算
+S_ALL:
+  nature: display_view   # 展示 union，不产生 cell.set=S_ALL
+  expected: 156 + S_PDF

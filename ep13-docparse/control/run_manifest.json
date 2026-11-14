@@ -1,0 +1,21 @@
+{
+  "run_id": "ep13-full-001",
+  "started_at": "2026-11-04T21:18:39",
+  "started_at_source": "cells/ep13-full-001/*.json 全部 156 格、1023 条 reps 中 reps[].ts 的最小值（1022 条带 ts，1 条失败 rep 无 ts）。跨全部格聚合，属 run 级证据，非单格内近似。",
+  "started_at_kind": "lower_bound_from_first_rep_ts",
+  "started_at_caveat": "这是「本次 run 首次产生数据」的可验证下界，不是 batch_runner 进程启动的精确时刻（进程启动必然更早）。G0 判据要求 finished_at > started_at 的时序可验证，本字段满足；不声称等价于进程启动时间。若需精确值，须补跑测期的调度日志，目前 control/ 下未留存。",
+  "finished_at": "2026-11-08T22:54:14",
+  "finished_at_source": "control/batch_state.json.finished_at（末批完成时刻）",
+  "last_rep_ts": "2026-11-08T22:54:11",
+  "first_rep_ts": "2026-11-04T21:18:39",
+  "cells": 156,
+  "set": "S26",
+  "reps_total": 1023,
+  "reps_valid": 1022,
+  "reps_with_ts": 1022,
+  "unstable_cells": 11,
+  "status_all_complete": true,
+  "created_at": "2026-11-12",
+  "created_reason": "补 G0 唯一失败项「caliber audit finished_at」所需的 run 级 started_at 证据。全程只读采集，未修改、未重跑任何推理数据；推理结论不变。",
+  "related": ["gates/gate0.json", "scripts/gate_checks.py:gate0", "docs/data_provenance.md"]
+}

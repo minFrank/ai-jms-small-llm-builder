@@ -1,0 +1,113 @@
+{
+ "schema": 6,
+ "run_id": "ep13-full-001",
+ "cell_key": "f19ea525-68d6-4be4-9c45-464537f08e6e__ovis_ocr2__p1",
+ "engine": "ovis_ocr2",
+ "layer": "A",
+ "sample_id": "f19ea525-68d6-4be4-9c45-464537f08e6e",
+ "set": "S26",
+ "input": {
+  "kind": "image",
+  "sha256": "e8ad54c5c629202663d457fc968bb2e80c4c92616147d17f3222247fae411e2c",
+  "page_no": 1,
+  "dpi": 300
+ },
+ "fingerprint": {
+  "git": "ep13",
+  "weights_sha": "9270560288656ece5cb3a6989001afcf5af8d223bceed4a423c33a008861d009",
+  "deps": "see-venv",
+  "config_hash": "engines-ep13-v1",
+  "extract_v": "contract-v1",
+  "gt_v": "ep13-gt-v2",
+  "gt_hash": "c00ffaad9cf7b00b70501795d1a60bd1eb5ddaf38387112afe4bd13fad4a3d3e",
+  "sample_sha": "e8ad54c5c629202663d457fc968bb2e80c4c92616147d17f3222247fae411e2c",
+  "engine_version": "p0-validated",
+  "host_manifest_id": "host-1",
+  "seed": 0,
+  "order": 0,
+  "gt_hash_scope": "per-sample GT sha256（r15 回填：重跑格被 runner 占位 none-smoke 覆盖）",
+  "weights_sha_src": "WEIGHTS_SHA256.json（r16 回填：重跑格被 runner 占位）"
+ },
+ "target_valid": 6,
+ "max_attempts": 8,
+ "status": "complete",
+ "err": null,
+ "err_kind": null,
+ "n_attempt": 6,
+ "n_valid": 6,
+ "n_fail": 0,
+ "wall_median": 81.70750000000001,
+ "wall_iqr": 0.6484999999999985,
+ "cer_median": 0.008814,
+ "cell_success_rate": 1.0,
+ "trunc_rate": 0.0,
+ "unstable": false,
+ "reps": [
+  {
+   "n": 1,
+   "attempt": 1,
+   "status": "ok",
+   "wall": 81.266,
+   "wall_self": 81.106,
+   "cer": 0.008814,
+   "truncated": false,
+   "err_kind": null,
+   "ts": "2026-11-08T17:24:10"
+  },
+  {
+   "n": 2,
+   "attempt": 2,
+   "status": "ok",
+   "wall": 81.792,
+   "wall_self": 81.735,
+   "cer": 0.008814,
+   "truncated": false,
+   "err_kind": null,
+   "ts": "2026-11-08T17:25:32"
+  },
+  {
+   "n": 3,
+   "attempt": 3,
+   "status": "ok",
+   "wall": 82.025,
+   "wall_self": 81.964,
+   "cer": 0.008814,
+   "truncated": false,
+   "err_kind": null,
+   "ts": "2026-11-08T17:26:55"
+  },
+  {
+   "n": 4,
+   "attempt": 4,
+   "status": "ok",
+   "wall": 81.449,
+   "wall_self": 81.4,
+   "cer": 0.008814,
+   "truncated": false,
+   "err_kind": null,
+   "ts": "2026-11-08T17:28:17"
+  },
+  {
+   "n": 5,
+   "attempt": 5,
+   "status": "ok",
+   "wall": 81.623,
+   "wall_self": 81.581,
+   "cer": 0.008814,
+   "truncated": false,
+   "err_kind": null,
+   "ts": "2026-11-08T17:29:39"
+  },
+  {
+   "n": 6,
+   "attempt": 6,
+   "status": "ok",
+   "wall": 82.132,
+   "wall_self": 82.088,
+   "cer": 0.008814,
+   "truncated": false,
+   "err_kind": null,
+   "ts": "2026-11-08T17:31:02"
+  }
+ ]
+}

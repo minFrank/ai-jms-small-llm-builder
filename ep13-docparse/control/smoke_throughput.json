@@ -1,0 +1,22 @@
+{
+ "_caliber": "冒烟实测（2026-11-04，单 rep、单图、CPU、greedy、含预处理端到端 wall）——与 P0 基线（demo 图单页）口径不同，不可直接比",
+ "paddleocr_vl": {
+  "img": "hard_02.png",
+  "wall_s": 31.706,
+  "wall_self_s": 31.656,
+  "rep": "6/6 complete"
+ },
+ "ovis_ocr2": {
+  "img": "hard_02.png",
+  "wall_s": 469.946,
+  "wall_self_s": 469.852,
+  "rep": "1 ok（冒烟）"
+ },
+ "surya_2_5": {
+  "img": "invoice_01.png",
+  "wall_s": 68.143,
+  "wall_self_s": 68.028,
+  "rep": "1 ok（冒烟）"
+ },
+ "note": "Ovis book_01 大图轮 474s/rep（杀时 2 ok）；xiaomi/monkey/oxr 冒烟未跑（进 B 层前补）"
+}

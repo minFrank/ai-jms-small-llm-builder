@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ep13 正式跑测 · 实测代码设计评审稿</title>
+<style>
+:root{--bg:#fafafa;--card:#fff;--ink:#1a1a1a;--sub:#666;--line:#e5e5e5;--accent:#2563eb;--warn:#b45309;--ok:#15803d;--bad:#b91c1c;--code-bg:#f6f8fa}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.75 -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif}
+.wrap{max-width:920px;margin:0 auto;padding:32px 20px 80px}
+h1{font-size:26px;line-height:1.4;margin:8px 0 4px}
+h2{font-size:21px;margin:44px 0 12px;padding-top:18px;border-top:1px solid var(--line)}
+h3{font-size:17px;margin:26px 0 8px}
+.meta{color:var(--sub);font-size:14px;margin-bottom:24px}
+.lead{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:16px 18px;margin:18px 0}
+table{width:100%;border-collapse:collapse;background:var(--card);border:1px solid var(--line);border-radius:10px;overflow:hidden;font-size:14.5px;margin:12px 0}
+th,td{border-bottom:1px solid var(--line);padding:9px 12px;text-align:left;vertical-align:top}
+th{background:#f1f3f5;font-weight:600}
+tr:last-child td{border-bottom:none}
+code{background:var(--code-bg);padding:1px 6px;border-radius:4px;font:13.5px/1.6 Consolas,Menlo,monospace}
+pre{background:var(--code-bg);border:1px solid var(--line);border-radius:8px;padding:14px 16px;overflow-x:auto;font:13px/1.65 Consolas,Menlo,monospace;margin:10px 0}
+pre code{background:none;padding:0}
+.tag{display:inline-block;padding:1px 9px;border-radius:99px;font-size:12.5px;font-weight:600;vertical-align:1px}
+.ok{background:#dcfce7;color:var(--ok)}.bad{background:#fee2e2;color:var(--bad)}.warn{background:#fef3c7;color:var(--warn)}.info{background:#dbeafe;color:var(--accent)}
+.decision{border:1.5px solid #f0b429;background:#fffbeb;border-radius:10px;padding:14px 18px;margin:16px 0}
+.decision b.did{color:var(--warn)}
+.note{border-left:3px solid var(--accent);background:#eff6ff;padding:10px 14px;margin:12px 0;border-radius:0 8px 8px 0;font-size:14.5px}
+.pit{border-left:3px solid #dc2626;background:#fef2f2;padding:10px 14px;margin:12px 0;border-radius:0 8px 8px 0;font-size:14.5px}
+ul{padding-left:22px}li{margin:5px 0}
+.small{font-size:13.5px;color:var(--sub)}
+.toc{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px 20px;font-size:14.5px}
+.toc a{color:var(--accent);text-decoration:none}
+.toc li{margin:3px 0}
+@media (max-width:600px){.wrap{padding:20px 12px 60px}h1{font-size:22px}h2{font-size:19px}table{font-size:13.5px}th,td{padding:7px 8px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<h1>ep13 文档解析 · 正式跑测实测代码设计</h1>
+<div class="meta">评审稿 v1 ｜ 2026-11-04 ｜ 依据：P0 六引擎真实跑通代码 + 规格 V6c §3.6–3.9 ＋ P0 攻坚全部实测教训<br>
+状态：<span class="tag warn">待你评审，点头后才执行跑测</span></div>
+
+<div class="toc"><b>目录</b>
+<ol>
+<li><a href="#s1">总体架构与目录</a></li>
+<li><a href="#s2">引擎层 engine_worker（P0 已验证三路径）</a></li>
+<li><a href="#s3">主循环 runner（协议 A 落地）</a></li>
+<li><a href="#s4">数据层 cell schema v6 + 版本指纹</a></li>
+<li><a href="#s5">判据与四道闸门</a></li>
+<li><a href="#s6">计时口径三处同步</a></li>
+<li><a href="#s7">进程纪律与一键清理</a></li>
+<li><a href="#s8">P0 教训 → 设计约束对照表</a></li>
+<li><a href="#s9">待你拍板的 4 个决策点</a></li>
+</ol></div>
+
+<div class="lead"><b>设计原则一句话：</b>每一行设计都能指回 P0 的一次真实跑通或一次真实翻车——没有纸面推测。评审通过后按此执行 26 样本 × 6 引擎 × 协议 A 的正式跑测。</div>
+
+<h2 id="s1">1. 总体架构与目录</h2>
+<pre>ep13-docparse/
+├── EPISODE.json            <span class="small"># 期号/代码git commit/spec版本/数据哈希 ← 强关联锚点（你的新需求）</span>
+├── scripts/
+│   ├── engine_worker.py    <span class="small"># 引擎层：从 p0_vl_test.py 提取（6 引擎已验证）</span>
+│   ├── runner.py           <span class="small"># 主循环：协议A + 状态机 + 心跳</span>
+│   ├── extract_text.py     <span class="small"># 统一提取（先人工过 6 引擎输出再冻结，冻结后禁改）</span>
+│   ├── clean_episode.py    <span class="small"># 一键清理（dry-run → archive → 删）</span>
+│   └── p0_*.py / *.py      <span class="small"># P0 原始脚本保留（复现证据）</span>
+├── venvs/&lt;engine&gt;/         <span class="small"># 每引擎独立 venv（P0 实证 5.0/5.1/5.22 互不兼容）</span>
+├── control/                <span class="small"># 控制文件单源：start/pause/stop（R-04）</span>
+├── cells/&lt;run_id&gt;/          <span class="small"># 每格一文件：&lt;run_id&gt;/&lt;engine&gt;/&lt;sample&gt;.json</span>
+├── runs/ sessions/         <span class="small"># 跑测记录、会话日志</span>
+├── samples/ gt/ gt_versions/ <span class="small"># 样本与 GT（gt_hash 入格）</span>
+├── schema/                 <span class="small"># cell schema v6 + jsonschema</span>
+└── CLEANUP.log             <span class="small"># 每次清理留痕</span></table></pre>
+
+<div class="note"><b>强关联（你的需求）：</b>任一 cell 文件 → <code>run_id</code> 含期号 → <code>EPISODE.json</code> 记录 git commit / spec 版本 / GT 哈希 → 可反查「这份数据是哪版代码+哪版方案+哪份 GT 产的」。<b>一键清理：</b><code>clean_episode.py ep13</code> 默认 dry-run 列清单+总大小；<code>--data</code> 先自动打包 archive 再删；<code>--models</code> 显式才碰（跨期共享，默认永不删）；每次写 CLEANUP.log。</div>
+
+<h2 id="s2">2. 引擎层 engine_worker（P0 已验证三路径）</h2>
+
+<h3>路径 A：标准 VLM 直载（5 引擎已通）</h3>
+<pre>load:   AutoModelForImageTextToText.from_pretrained(dir, dtype=bf16)  <span class="small"># 官方类；不带 trust_remote_code/low_cpu_mem_usage（Paddle 实证会触发 text_config 错）</span>
+        AutoProcessor(use_fast=False)          <span class="small"># 5.x 默认 fast 预处理与训练时不一致（Qwen 系已知坑）</span>
+prep:   官方单链 apply_chat_template(tokenize=True, images_kwargs={size})
+        失败 → 官方等价拆分链 processor(text=..., images=...)
+gen:    inputs.to(dtype=model.dtype)           <span class="small"># 官方 client 明确要求，漏了输出退化（Tele 实证）</span>
+        按 prepare ∪ forward 签名过滤多余键     <span class="small"># 照抄 transformers 5.x _validate_model_kwargs（dots 实证 mm_token_type_ids）</span>
+        use_cache=True                         <span class="small"># 官方仓 use_cache=False 是缺陷（512tok 要 110 分钟）</span>
+        官方 prompt + 官方 sampling，一个不多传  <span class="small"># Tele 教训：自造长句 prompt → spotting 输出</span>
+切片:   inputs_embeds 路径智能判别（带 prompt 去 prompt，纯生成直用）<span class="small"># OXR 实证</span></pre>
+
+<h3>路径 B：OXR 三服务（已通）</h3>
+<pre>D-FINE 版面服务（CPU 0.93s/页）→ OXR 识别（preprocess_inputs → generate，60s/页）
+补丁：indicator_token_indices 显式恢复 arange（checkpoint 不含该 buffer）+ eos [151643,151645]</pre>
+
+<h3>路径 C：不可行归档（TeleOCR / dots.ocr）</h3>
+<div class="pit">两引擎复活流程共 16 项实验全部排除（详见 §8 末行），官方主路径为 vLLM/GPU，本机不可行。<b>lineup 中标 N/A 并附归档 JSON 引用，不参与排名、不产数据。</b>未来有 GPU 条件按归档档案直接续。</div>
+
+<h3>6 引擎阵容（P0 终表）</h3>
+<table>
+<tr><th>引擎</th><th>路径</th><th>cold</th><th>单页 wall（P0 实测）</th><th>P0 判定</th></tr>
+<tr><td>OXR-1.0</td><td>B 三服务</td><td>8.5s</td><td>60s</td><td><span class="tag ok">PASS</span></td></tr>
+<tr><td>PaddleOCR-VL-1.6</td><td>A</td><td>2.1s</td><td>161s/512tok</td><td><span class="tag ok">PASS</span></td></tr>
+<tr><td>Xiaomi-OCR-0</td><td>A（fp32）</td><td>4.6s</td><td>241s</td><td><span class="tag ok">PASS</span></td></tr>
+<tr><td>OvisOCR2</td><td>A</td><td>2.8s</td><td>993s（qwen3_5 CPU 慢）</td><td><span class="tag ok">PASS</span></td></tr>
+<tr><td>Monkey Recognition</td><td>A</td><td>3.7s</td><td>308s</td><td><span class="tag ok">PASS</span></td></tr>
+<tr><td>surya-ocr-2.5</td><td>A</td><td>2.1s</td><td>983s（qwen3_5 CPU 慢）</td><td><span class="tag ok">PASS</span></td></tr>
+<tr><td>TeleOCR</td><td>C 归档</td><td>—</td><td>—</td><td><span class="tag bad">N/A</span></td></tr>
+<tr><td>dots.ocr</td><td>C 归档</td><td>—</td><td>—</td><td><span class="tag bad">N/A</span></td></tr>
+</table>
+<div class="small">注：OXR 版面层 D-FINE 单独计（0.93s/页），OXR 识别 60s/页为整页直喂；正式跑测每格计时以 generate 边界为准（§6）。</div>
+
+<h2 id="s3">3. 主循环 runner（协议 A 落地）</h2>
+<pre>for engine in 按 seeded 随机化的顺序:          <span class="small"># seeded：跑测顺序可复现（防顺序偏置）</span>
+  for sample in 26 张样本:
+    while True:                                <span class="small"># 协议 A 重试环</span>
+      检查 control/pause|stop → 格间安全停（当前格跑完才停，R 停止语义 A）
+      cell = run_cell(engine, sample)          <span class="small"># 心跳写在 sample 边界（cell 落盘后）</span>
+      reps.push(cell)                          <span class="small"># 每 rep: ok/失败原因/截断标记</span>
+      n = len(valid_reps)
+      if n >= 6:
+        if IQR/median &lt;= 10%: break            <span class="small"># 达标</span>
+        if n &gt;= 8: break                       <span class="small"># max_attempts 到（协议A：超阈固定加跑至12封顶）</span>
+      if n &gt;= 12: break                        <span class="small"># 硬封顶</span>
+    落盘 cell（jsonschema 校验在 save 之前）    <span class="small"># F-05：校验失败也留失败记录，不吞格</span></pre>
+<table>
+<tr><th>协议 A 参数（规格 §2.2 定稿）</th><th>值</th></tr>
+<tr><td>n_target</td><td>6（有效 rep）</td></tr>
+<tr><td>max_attempts</td><td>8</td></tr>
+<tr><td>超阈规则</td><td>IQR/中位 &gt; 10% → 固定加跑至 12 封顶（初版「或注明」自由裁量已删，R-13 闭环）</td></tr>
+<tr><td>停止语义</td><td>格间安全停（当前格跑完才停）+ start 转场（F-16）</td></tr>
+</table>
+
+<h2 id="s4">4. 数据层 cell schema v6 + 版本指纹</h2>
+<pre>{
+  "cell_id":  "ep13-20261104-143000-oxr/book_01",   <span class="small"># run_id 内嵌期号（N-01 主键唯一）</span>
+  "run_id":   "ep13-20261104-143000-oxr",
+  "engine":   "oxr", "sample": "book_01",
+  "reps": [ {"rep":1, "wall_s":60.1, "ok":true,  "text":"...", "truncated":false},
+            {"rep":2, "wall_s":60.2, "ok":false, "fail_reason":"timeout"} ],
+  "status":   "done | failed | skipped | partial",   <span class="small"># N-03 失败态显式化</span>
+  "gt_hash":  "sha256:...",                          <span class="small"># N-08 入格</span>
+  "version":  {"git":"e7431c2", "spec":"V6c",
+               "weights_sha":"...", "deps":{"torch":"2.15.0+cpu", ...}},  <span class="small"># 版本指纹入格</span>
+  "timing":   {"boundary":"generate()调用→返回", "cold_load_s":8.5},
+  "judges":   {"nonempty":true, "len_ok":true, "twice_same":true, "cer":null}
+}</pre>
+<ul>
+<li><b>强关联链</b>：cell → run_id（期号）→ EPISODE.json（git/spec/GT 哈希）→ 代码库可反查</li>
+<li><b>落盘前 jsonschema 校验</b>（validate 在 save 之前，F-05）；校验失败写入 <code>status=failed</code> + 原因，绝不静默丢格</li>
+<li><b>失败格也入账</b>：缺格在 G0 闸门阻断发布（not_run 与 stale 同罪）</li>
+</ul>
+
+<h2 id="s5">5. 判据与四道闸门</h2>
+<table>
+<tr><th>闸门</th><th>检查项（全部量化）</th><th>失败动作</th></tr>
+<tr><td><b>G0 数据完整性</b></td><td>预期格数=实有格数；每格 rep 数达标；版本指纹全格一致；审计时效（控制文件 mtime 在本期内）</td><td><span class="tag bad">阻断发布</span></td></tr>
+<tr><td><b>G1 结构校验</b></td><td>jsonschema v6 逐格；gt_hash 与签核 GT 一致（N-08）</td><td><span class="tag bad">阻断</span></td></tr>
+<tr><td><b>G2 口径审计</b></td><td>bench_caliber_audit：wall vs 自报对账、正文口径注存在性</td><td><span class="tag bad">阻断</span>（exit=1）</td></tr>
+<tr><td><b>G3 判据汇总</b></td><td>七判据逐引擎：非空UTF-8 / &gt;200字符 / 两次一致 / cold记录 / peak内存 / LICENSE登记 / CER sanity</td><td><span class="tag warn">降级标注</span></td></tr>
+</table>
+<div class="note">发布链顺序固定：<code>pre_push_check（10项格式）→ original_guard（原创自洽）→ bench_caliber_audit（口径）→ G0–G3</code>。前三闸门已在库（ep12 实证），G0–G3 为本期新增。</div>
+
+<h2 id="s6">6. 计时口径三处同步（ep12 教训制度化）</h2>
+<ul>
+<li><b>wall 定义</b>：<code>generate()</code> 调用→返回（纯推理），<b>不含</b> load、不含 preprocess</li>
+<li><b>cold_load 单列</b>：from_pretrained 计时独立字段，禁止与 wall 混算</li>
+<li><b>三处同步</b>：代码注释（timing.boundary 字段）＋ 方案文档 ＋ 文章正文——bench_caliber_audit 闸门自动核对后两处</li>
+<li>服务型引擎（D-FINE/OXR daemon）按端口/PID 采样内存（R-14），不按主进程</li>
+</ul>
+
+<h2 id="s7">7. 进程纪律与一键清理（本次 P0 教训固化）</h2>
+<div class="pit"><b>P0 实翻车两起，已成规则：</b>
+① 误杀活服务——netstat 的 LISTENING pid 是 wrapper 父，socket 在子进程 → <b>杀前 CONFIRM 打印完整 cmdline，杀后 raw socket 验服务</b>（307/404=活，urllib 会误报 10061）；
+② 孤儿进程——6 个 ep12 sampler 残留 → <b>跑测单实例，每轮前后进程盘点</b>（PowerShell 按整串 cmdline 匹配）。</div>
+<pre># 一键清理（默认全部 dry-run）
+python scripts/clean_episode.py ep13             # 列将删清单+总大小，不动手
+python scripts/clean_episode.py ep13 --data      # 打包 archive → 删（可回滚）
+python scripts/clean_episode.py ep13 --models    # 显式才碰模型（跨期共享，默认永不删）</pre>
+
+<h2 id="s8">8. P0 教训 → 设计约束对照表（每条都有实证）</h2>
+<table>
+<tr><th>#</th><th>P0 实测发现</th><th>转化为设计约束</th></tr>
+<tr><td>1</td><td>5.22 无 rope_type='default'（Paddle/Tele 两家中招）</td><td>venv 版本钉死写入 EPISODE.json；config 补丁记入 MANIFEST</td></tr>
+<tr><td>2</td><td>官方仓 use_cache=False 缺陷（110 分钟 vs 161 秒）</td><td>engine_worker 强制 use_cache=True</td></tr>
+<tr><td>3</td><td>自造 prompt → spotting/复读输出（Paddle、Tele）</td><td>prompt 一律取自官方仓库原文，入 MANIFEST 留 hash</td></tr>
+<tr><td>4</td><td>漏 inputs.to(dtype) 输出退化（Tele）</td><td>gen 段固定 dtype 对齐，代码评审项</td></tr>
+<tr><td>5</td><td>mm_token_type_ids 被 generate 拒（dots）</td><td>按 prepare ∪ forward 签名过滤（照抄 transformers 校验）</td></tr>
+<tr><td>6</td><td>OXR buffer 未初始化 → 零输出</td><td>加载后显式恢复关键 buffer + 断言打印</td></tr>
+<tr><td>7</td><td>大图 OOM（book_01 9072 patch）</td><td>样本全量前先过内存预检；qwen3_5 两引擎单页 16 分钟 → rep 超时上限见 D2</td></tr>
+<tr><td>8</td><td>Tele/dots CPU 不可行（16 项实验归档）</td><td>路径 C 归档机制；lineup 标 N/A 不排名</td></tr>
+</table>
+
+<h2 id="s9">9. 待你拍板的 4 个决策点</h2>
+
+<div class="decision"><b class="did">D1 · Tele/dots 在 lineup 的呈现</b><br>
+A（推荐）：保留在名单标 <span class="tag bad">N/A · CPU不可行</span> + 归档链接——诚实呈现「测过、不可行」<br>
+B：从名单移除，仅在正文附一段说明<br>
+<i>选 A 的理由：读者能看到我们试过什么，归档可复现；不占排名位。</i></div>
+
+<div class="decision"><b class="did">D2 · 单 rep 超时上限</b><br>
+A（推荐）：<b>30 分钟/rep</b>——覆盖已知最慢（Ovis 16.5 分钟 + 余量），超时记 <code>ok=false, fail_reason=timeout</code> 入 G0<br>
+B：60 分钟（更宽，但一格卡住拖整天）<br>
+<i>依据：P0 实测最慢 rep=996s；官方预处理链 55 分钟未完的 Tele 实验已证明无上限不可行。</i></div>
+
+<div class="decision"><b class="did">D3 · CER（字错率）接入时机</b><br>
+A（推荐）：跑测前接 GT（gt manifest+签核，N-07），G3 含 CER sanity——一步到位<br>
+B：首轮先跑「一致性判据」（非空/两次一致），CER 第二轮补——更快出首版数据<br>
+<i>CER=(S+D+I)/N 含插入项 I（术语红线已核）；GT 未签核则 G1 直接阻断。</i></div>
+
+<div class="decision"><b class="did">D4 · 执行授权</b><br>
+本稿评审通过后：<br>
+A（推荐）：直接开跑（6 引擎 × 26 样本 × 协议 A），预计总时长按 D2 上限估算后附表<br>
+B：先跑 3 样本冒烟 → 你确认数据格式 → 再全量</div>
+
+<div class="lead small">配套文件：规格 V6c（唯一权威源）· P0 判据 JSON×8 · 复活归档 JSON×2 · 本稿 HTML。评审意见直接回本会话，逐条改后出 v2。</div>
+
+</div>
+</body>
+</html>

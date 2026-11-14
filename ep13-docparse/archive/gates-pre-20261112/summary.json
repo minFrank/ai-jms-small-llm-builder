@@ -1,0 +1,14 @@
+{
+ "run_id": "ep13-full-001",
+ "finished_at": "2026-11-10T00:54:56",
+ "gates": {
+  "G0": "fail",
+  "G1": "pass",
+  "G2": "pass",
+  "G3": "not_run"
+ },
+ "cells_total": 156,
+ "cells_status": {
+  "complete": 156
+ }
+}

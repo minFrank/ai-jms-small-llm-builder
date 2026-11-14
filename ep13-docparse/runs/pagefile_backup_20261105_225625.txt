@@ -1,0 +1,2 @@
+AutoManaged=True
+Usage: D:\pagefile.sys Alloc=86016MB Peak=12340MB
