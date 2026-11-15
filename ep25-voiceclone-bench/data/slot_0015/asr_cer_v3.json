@@ -1,0 +1,4323 @@
+{
+ "ts": "2026-10-30 07:28:08",
+ "model": "small",
+ "lang": "zh",
+ "n_vote": 3,
+ "total": 88,
+ "results": [
+  {
+   "kind": "cell",
+   "engine": "omnivoice",
+   "qid": "q00",
+   "rep": 1,
+   "group": "1 基准短句",
+   "text_chars": 27,
+   "text": "关注 AI 积木师，带你从 AI 的视角解读和理解生活",
+   "wall_s": 295.609,
+   "audio_s": 6.66,
+   "sr": 24000,
+   "rtf": 44.386,
+   "cold_load_s": 295.837,
+   "ok": true,
+   "note": "OK sr=24000 dur=6.66s rms=0.1129",
+   "path": "D:/study/ai-jms/voice_samples/ep25_run\\slot_0015\\audio\\omnivoice\\q00_rep1.wav",
+   "ts": "00:21:48",
+   "asr_ok": true,
+   "asr_model": "small",
+   "asr_lang": "zh",
+   "asr_hyps": [
+    "关注AI机幕时,带你从AI的视角,解读和理解生活。",
+    "关注AI机幕时,带你从AI的视角,解读和理解生活。",
+    "关注AI机幕时,带你从AI的视角,解读和理解生活。"
+   ],
+   "asr_votes": 3,
+   "asr_text": "关注AI机幕时,带你从AI的视角,解读和理解生活。",
+   "cer_pct": 13.64,
+   "cer_all": [
+    13.64,
+    13.64,
+    13.64
+   ],
+   "asr_time_s": [
+    2.85,
+    2.688,
+    2.67
+   ],
+   "ref_text": "关注 AI 积木师，带你从 AI 的视角解读和理解生活",
+   "cer_v2_pct": 13.64,
+   "cer_v2_all": [
+    13.64,
+    13.64,
+    13.64
+   ],
+   "cer_v3_pct": 13.64,
+   "cer_v3_norm_ref": "关注ai积木师带你从ai的视角解读和理解生活",
+   "cer_v3_norm_hyp": "关注ai机幕时带你从ai的视角解读和理解生活"
+  },
+  {
+   "kind": "cell",
+   "engine": "omnivoice",
+   "qid": "q01",
+   "rep": 1,
+   "group": "1 基准短句",
+   "text_chars": 26,
+   "text": "这是我用三十秒录音克隆出来的声音，现在由它来念这段话",
+   "wall_s": 328.499,
+   "audio_s": 8.74,
+   "sr": 24000,
+   "rtf": 37.586,
+   "cold_load_s": null,
+   "ok": true,
+   "note": "OK sr=24000 dur=8.74s rms=0.0953",
+   "path": "D:/study/ai-jms/voice_samples/ep25_run\\slot_0015\\audio\\omnivoice\\q01_rep1.wav",
+   "ts": "00:27:17",
+   "asr_ok": true,
+   "asr_model": "small",
+   "asr_lang": "zh",
+   "asr_hyps": [
+    "这是我用30秒录音克龙出来的声音现在由它来念这段话",
+    "这是我用30秒录音克龙出来的声音现在由它来念这段话",
+    "这是我用30秒录音克龙出来的声音现在由它来念这段话"
+   ],
+   "asr_votes": 3,
+   "asr_text": "这是我用30秒录音克龙出来的声音现在由它来念这段话",
+   "cer_pct": 12.0,
+   "cer_all": [
+    12.0,
+    12.0,
+    12.0
+   ],
+   "asr_time_s": [
+    2.713,
+    2.743,
+    2.702
+   ],
+   "ref_text": "这是我用三十秒录音克隆出来的声音，现在由它来念这段话",
+   "cer_v2_pct": 4.0,
+   "cer_v2_all": [
+    4.0,
+    4.0,
+    4.0
+   ],
+   "cer_v3_pct": 4.0,
+   "cer_v3_norm_ref": "这是我用30秒录音克隆出来的声音现在由它来念这段话",
+   "cer_v3_norm_hyp": "这是我用30秒录音克龙出来的声音现在由它来念这段话"
+  },
+  {
+   "kind": "cell",
+   "engine": "omnivoice",
+   "qid": "q02",
+   "rep": 1,
+   "group": "1 基准短句",
+   "text_chars": 22,
+   "text": "今天是二零二六年十月二十七日，星期二，天气晴",
+   "wall_s": 296.013,
+   "audio_s": 7.91,
+   "sr": 24000,
+   "rtf": 37.423,
+   "cold_load_s": null,
+   "ok": true,
+   "note": "OK sr=24000 dur=7.91s rms=0.1013",
+   "path": "D:/study/ai-jms/voice_samples/ep25_run\\slot_0015\\audio\\omnivoice\\q02_rep1.wav",
+   "ts": "00:32:13",
+   "asr_ok": true,
+   "asr_model": "small",
+   "asr_lang": "zh",
+   "asr_hyps": [
+    "今天是2026年10月27日星期二天天气晴",
+    "今天是2026年10月27日星期二天天气晴",
+    "今天是2026年10月27日星期二天天气晴"
+   ],
+   "asr_votes": 3,
+   "asr_text": "今天是2026年10月27日星期二天天气晴",
+   "cer_pct": 50.0,
+   "cer_all": [
+    50.0,
+    50.0,
+    50.0
+   ],
+   "asr_time_s": [
+    2.538,
+    2.503,
+    2.558
+   ],
+   "ref_text": "今天是二零二六年十月二十七日，星期二，天气晴",
+   "cer_v2_pct": 5.0,
+   "cer_v2_all": [
+    5.0,
+    5.0,
+    5.0
+   ],
+   "cer_v3_pct": 5.0,
+   "cer_v3_norm_ref": "今天是2026年10月27日星期2天气晴",
+   "cer_v3_norm_hyp": "今天是2026年10月27日星期2天天气晴"
+  },
+  {
+   "kind": "cell",
+   "engine": "omnivoice",
+   "qid": "q03",
+   "rep": 1,
+   "group": "1 基准短句",
+   "text_chars": 19,
+   "text": "没显卡的电脑也能跑语音合成，只是慢一点",
+   "wall_s": 280.134,
+   "audio_s": 6.43,
+   "sr": 24000,
+   "rtf": 43.567,
+   "cold_load_s": null,
+   "ok": true,
+   "note": "OK sr=24000 dur=6.43s rms=0.0879",
+   "path": "D:/study/ai-jms/voice_samples/ep25_run\\slot_0015\\audio\\omnivoice\\q03_rep1.wav",
+   "ts": "00:36:53",
+   "asr_ok": true,
+   "asr_model": "small",
+   "asr_lang": "zh",
+   "asr_hyps": [
+    "没显卡的电脑也能跑语音合成只是慢一点",
+    "没显卡的电脑也能跑语音合成只是慢一点",
+    "没显卡的电脑也能跑语音合成只是慢一点"
+   ],
+   "asr_votes": 3,
+   "asr_text": "没显卡的电脑也能跑语音合成只是慢一点",
+   "cer_pct": 0.0,
+   "cer_all": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "asr_time_s": [
+    2.645,
+    2.633,
+    2.615
+   ],
+   "ref_text": "没显卡的电脑也能跑语音合成，只是慢一点",
+   "cer_v2_pct": 0.0,
+   "cer_v2_all": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "cer_v3_pct": 0.0,
+   "cer_v3_norm_ref": "没显卡的电脑也能跑语音合成只是慢1.",
+   "cer_v3_norm_hyp": "没显卡的电脑也能跑语音合成只是慢1."
+  },
+  {
+   "kind": "cell",
+   "engine": "omnivoice",
+   "qid": "q04",
+   "rep": 1,
+   "group": "1 基准短句",
+   "text_chars": 19,
+   "text": "一句话，一段录音，一个属于你自己的声音",
+   "wall_s": 273.76,
+   "audio_s": 5.94,
+   "sr": 24000,
+   "rtf": 46.088,
+   "cold_load_s": null,
+   "ok": true,
+   "note": "OK sr=24000 dur=5.94s rms=0.1078",
+   "path": "D:/study/ai-jms/voice_samples/ep25_run\\slot_0015\\audio\\omnivoice\\q04_rep1.wav",
+   "ts": "00:41:27",
+   "asr_ok": true,
+   "asr_model": "small",
+   "asr_lang": "zh",
+   "asr_hyps": [
+    "一句话,一段录音,一个属于你自己的声音。",
+    "一句话,一段录音,一个属于你自己的声音。",
+    "一句话,一段录音,一个属于你自己的声音。"
+   ],
+   "asr_votes": 3,
+   "asr_text": "一句话,一段录音,一个属于你自己的声音。",
+   "cer_pct": 0.0,
+   "cer_all": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "asr_time_s": [
+    2.548,
+    2.567,
+    2.565
+   ],
+   "ref_text": "一句话，一段录音，一个属于你自己的声音",
+   "cer_v2_pct": 0.0,
+   "cer_v2_all": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "cer_v3_pct": 0.0,
+   "cer_v3_norm_ref": "1句话1段录音1个属于你自己的声音",
+   "cer_v3_norm_hyp": "1句话1段录音1个属于你自己的声音"
+  },
+  {
+   "kind": "cell",
+   "engine": "omnivoice",
+   "qid": "q05",
+   "rep": 1,
+   "group": "2 多音字",
+   "text_chars": 19,
+   "text": "这件衣服太重了，我们重新称一下它的重量",
+   "wall_s": 280.469,
+   "audio_s": 5.07,
+   "sr": 24000,
+   "rtf": 55.319,
+   "cold_load_s": null,
+   "ok": true,
+   "note": "OK sr=24000 dur=5.07s rms=0.1086",
+   "path": "D:/study/ai-jms/voice_samples/ep25_run\\slot_0015\\audio\\omnivoice\\q05_rep1.wav",
+   "ts": "00:46:07",
+   "asr_ok": true,
+   "asr_model": "small",
+   "asr_lang": "zh",
+   "asr_hyps": [
+    "这件衣服太重了我们重新称一下它的重量",
+    "这件衣服太重了我们重新称一下它的重量",
+    "这件衣服太重了我们重新称一下它的重量"
+   ],
+   "asr_votes": 3,
+   "asr_text": "这件衣服太重了我们重新称一下它的重量",
+   "cer_pct": 0.0,
+   "cer_all": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "asr_time_s": [
+    2.578,
+    2.553,
+    2.536
+   ],
+   "ref_text": "这件衣服太重了，我们重新称一下它的重量",
+   "cer_v2_pct": 0.0,
+   "cer_v2_all": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "cer_v3_pct": 0.0,
+   "cer_v3_norm_ref": "这件衣服太重了我们重新称1下它的重量",
+   "cer_v3_norm_hyp": "这件衣服太重了我们重新称1下它的重量"
+  },
+  {
+   "kind": "cell",
+   "engine": "omnivoice",
+   "qid": "q06",
+   "rep": 1,
+   "group": "2 多音字",
+   "text_chars": 21,
+   "text": "银行行长说，今年行业行情不错，值得重新评估",
+   "wall_s": 288.378,
+   "audio_s": 6.78,
+   "sr": 24000,
+   "rtf": 42.534,
+   "cold_load_s": null,
+   "ok": true,
+   "note": "OK sr=24000 dur=6.78s rms=0.1107",
+   "path": "D:/study/ai-jms/voice_samples/ep25_run\\slot_0015\\audio\\omnivoice\\q06_rep1.wav",
+   "ts": "00:50:56",
+   "asr_ok": true,
+   "asr_model": "small",
+   "asr_lang": "zh",
+   "asr_hyps": [
+    "银行行长说今年行业行情不错值得重新评估",
+    "银行行长说今年行业行情不错值得重新评估",
+    "银行行长说今年行业行情不错值得重新评估"
+   ],
+   "asr_votes": 3,
+   "asr_text": "银行行长说今年行业行情不错值得重新评估",
+   "cer_pct": 0.0,
+   "cer_all": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "asr_time_s": [
+    2.747,
+    2.767,
+    2.77
+   ],
+   "ref_text": "银行行长说，今年行业行情不错，值得重新评估",
+   "cer_v2_pct": 0.0,
+   "cer_v2_all": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "cer_v3_pct": 0.0,
+   "cer_v3_norm_ref": "银行行长说今年行业行情不错值得重新评估",
+   "cer_v3_norm_hyp": "银行行长说今年行业行情不错值得重新评估"
+  },
+  {
+   "kind": "cell",
+   "engine": "omnivoice",
+   "qid": "q07",
+   "rep": 1,
+   "group": "2 多音字",
+   "text_chars": 21,
+   "text": "他喜欢音乐，更乐于助人，大家都说他活得快乐",
+   "wall_s": 290.293,
+   "audio_s": 6.83,
+   "sr": 24000,
+   "rtf": 42.503,
+   "cold_load_s": null,
+   "ok": true,
+   "note": "OK sr=24000 dur=6.83s rms=0.1005",
+   "path": "D:/study/ai-jms/voice_samples/ep25_run\\slot_0015\\audio\\omnivoice\\q07_rep1.wav",
+   "ts": "00:55:46",
+   "asr_ok": true,
+   "asr_model": "small",
+   "asr_lang": "zh",
+   "asr_hyps": [
+    "他喜歡音樂,更樂於助人,大家都說他活得快樂。",
+    "他喜歡音樂,更樂於助人,大家都說他活得快樂。",
+    "他喜歡音樂,更樂於助人,大家都說他活得快樂。"
+   ],
+   "asr_votes": 3,
+   "asr_text": "他喜歡音樂,更樂於助人,大家都說他活得快樂。",
+   "cer_pct": 31.58,
+   "cer_all": [
+    31.58,
+    31.58,
+    31.58
+   ],
+   "asr_time_s": [
+    2.566,
+    2.537,
+    2.558
+   ],
+   "ref_text": "他喜欢音乐，更乐于助人，大家都说他活得快乐",
+   "cer_v2_pct": 31.58,
+   "cer_v2_all": [
+    31.58,
+    31.58,
+    31.58
+   ],
+   "cer_v3_pct": 0.0,
+   "cer_v3_norm_ref": "他喜欢音乐更乐于助人大家都说他活得快乐",
+   "cer_v3_norm_hyp": "他喜欢音乐更乐于助人大家都说他活得快乐"
+  },
+  {
+   "kind": "cell",
+   "engine": "omnivoice",
+   "qid": "q08",
+   "rep": 1,
+   "group": "2 多音字",
+   "text_chars": 19,
+   "text": "这条裙子长度太长了，需要重新量一次尺寸",
+   "wall_s": 280.795,
+   "audio_s": 6.93,
+   "sr": 24000,
+   "rtf": 40.519,
+   "cold_load_s": null,
+   "ok": true,
+   "note": "OK sr=24000 dur=6.93s rms=0.0970",
+   "path": "D:/study/ai-jms/voice_samples/ep25_run\\slot_0015\\audio\\omnivoice\\q08_rep1.wav",
+   "ts": "01:00:27",
+   "asr_ok": true,
+   "asr_model": "small",
+   "asr_lang": "zh",
+   "asr_hyps": [
+    "这条裙子长度太长了需要重新量一次尺寸",
+    "这条裙子长度太长了需要重新量一次尺寸",
+    "这条裙子长度太长了需要重新量一次尺寸"
+   ],
+   "asr_votes": 3,
+   "asr_text": "这条裙子长度太长了需要重新量一次尺寸",
+   "cer_pct": 0.0,
+   "cer_all": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "asr_time_s": [
+    2.601,
+    2.623,
+    2.609
+   ],
+   "ref_text": "这条裙子长度太长了，需要重新量一次尺寸",
+   "cer_v2_pct": 0.0,
+   "cer_v2_all": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "cer_v3_pct": 0.0,
+   "cer_v3_norm_ref": "这条裙子长度太长了需要重新量1次尺寸",
+   "cer_v3_norm_hyp": "这条裙子长度太长了需要重新量1次尺寸"
+  },
+  {
+   "kind": "cell",
+   "engine": "omnivoice",
+   "qid": "q09",
+   "rep": 1,
+   "group": "2 多音字",
+   "text_chars": 19,
+   "text": "天气真差，差点迟到，估计差不多个把小时",
+   "wall_s": 275.566,
+   "audio_s": 6.95,
+   "sr": 24000,
+   "rtf": 39.65,
+   "cold_load_s": null,
+   "ok": true,
+   "note": "OK sr=24000 dur=6.95s rms=0.0846",
+   "path": "D:/study/ai-jms/voice_samples/ep25_run\\slot_0015\\audio\\omnivoice\\q09_rep1.wav",
+   "ts": "01:05:02",
+   "asr_ok": true,
+   "asr_model": "small",
+   "asr_lang": "zh",
+   "asr_hyps": [
+    "天气真差,差点迟到估计差不多各把小时",
+    "天气真差,差点迟到估计差不多各把小时",
+    "天气真差,差点迟到估计差不多各把小时"
+   ],
+   "asr_votes": 3,
+   "asr_text": "天气真差,差点迟到估计差不多各把小时",
+   "cer_pct": 5.88,
+   "cer_all": [
+    5.88,
+    5.88,
+    5.88
+   ],
+   "asr_time_s": [
+    2.641,
+    2.564,
+    2.578
+   ],
+   "ref_text": "天气真差，差点迟到，估计差不多个把小时",
+   "cer_v2_pct": 5.56,
+   "cer_v2_all": [
+    5.56,
+    5.56,
+    5.56
+   ],
+   "cer_v3_pct": 5.56,
+   "cer_v3_norm_ref": "天气真差差0.迟到估计差不多个把小时",
+   "cer_v3_norm_hyp": "天气真差差0.迟到估计差不多各把小时"
+  },
+  {
+   "kind": "cell",
+   "engine": "omnivoice",
+   "qid": "q11",
+   "rep": 1,
+   "group": "3 长句与停顿",
+   "text_chars": 54,
+   "text": "这段话一共四十多个字，主要用来观察它在长句当中的换气位置，以及说到最后几个字的时候，音色会不会和开头不一致。",
+   "wall_s": 533.646,
+   "audio_s": 17.56,
+   "sr": 24000,
+   "rtf": 30.39,
+   "cold_load_s": null,
+   "ok": true,
+   "note": "OK sr=24000 dur=17.56s rms=0.0940",
+   "path": "D:/study/ai-jms/voice_samples/ep25_run\\slot_0015\\audio\\omnivoice\\q11_rep1.wav",
+   "ts": "01:23:57",
+   "asr_ok": true,
+   "asr_model": "small",
+   "asr_lang": "zh",
+   "asr_hyps": [
+    "这段话一共四十多个字主要用来观察它在长句当中的唤气位置以及说到最后几个字的时候音色会不会和开头不一致",
+    "这段话一共四十多个字主要用来观察它在长句当中的唤气位置以及说到最后几个字的时候音色会不会和开头不一致",
+    "这段话一共四十多个字主要用来观察它在长句当中的唤气位置以及说到最后几个字的时候音色会不会和开头不一致"
+   ],
+   "asr_votes": 3,
+   "asr_text": "这段话一共四十多个字主要用来观察它在长句当中的唤气位置以及说到最后几个字的时候音色会不会和开头不一致",
+   "cer_pct": 2.0,
+   "cer_all": [
+    2.0,
+    2.0,
+    2.0
+   ],
+   "asr_time_s": [
+    3.438,
+    3.377,
+    3.422
+   ],
+   "ref_text": "这段话一共四十多个字，主要用来观察它在长句当中的换气位置，以及说到最后几个字的时候，音色会不会和开头不一致。",
+   "cer_v2_pct": 2.0,
+   "cer_v2_all": [
+    2.0,
+    2.0,
+    2.0
+   ],
+   "cer_v3_pct": 2.0,
+   "cer_v3_norm_ref": "这段话1共40多个字主要用来观察它在长句当中的换气位置以及说到最后几个字的时候音色会不会和开头不1致",
+   "cer_v3_norm_hyp": "这段话1共40多个字主要用来观察它在长句当中的唤气位置以及说到最后几个字的时候音色会不会和开头不1致"
+  },
+  {
+   "kind": "cell",
+   "engine": "omnivoice",
+   "qid": "q12",
+   "rep": 1,
+   "group": "3 长句与停顿",
+   "text_chars": 42,
+   "text": "早上一杯豆浆，中午一碗面条，晚上一碗白粥，这就是我这两天的全部食谱，简单，但很管饱。",
+   "wall_s": 422.772,
+   "audio_s": 14.39,
+   "sr": 24000,
+   "rtf": 29.38,
+   "cold_load_s": null,
+   "ok": true,
+   "note": "OK sr=24000 dur=14.39s rms=0.0858",
+   "path": "D:/study/ai-jms/voice_samples/ep25_run\\slot_0015\\audio\\omnivoice\\q12_rep1.wav",
+   "ts": "01:30:59",
+   "asr_ok": true,
+   "asr_model": "small",
+   "asr_lang": "zh",
+   "asr_hyps": [
+    "早上一杯豆浆,中午一碗面条,晚上一碗白粥这就是我这两天的全部食谱简单,但很管饱",
+    "早上一杯豆浆,中午一碗面条,晚上一碗白粥这就是我这两天的全部食谱简单,但很管饱",
+    "早上一杯豆浆,中午一碗面条,晚上一碗白粥这就是我这两天的全部食谱简单,但很管饱"
+   ],
+   "asr_votes": 3,
+   "asr_text": "早上一杯豆浆,中午一碗面条,晚上一碗白粥这就是我这两天的全部食谱简单,但很管饱",
+   "cer_pct": 0.0,
+   "cer_all": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "asr_time_s": [
+    3.205,
+    3.201,
+    3.277
+   ],
+   "ref_text": "早上一杯豆浆，中午一碗面条，晚上一碗白粥，这就是我这两天的全部食谱，简单，但很管饱。",
+   "cer_v2_pct": 0.0,
+   "cer_v2_all": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "cer_v3_pct": 0.0,
+   "cer_v3_norm_ref": "早上1杯豆浆中午1碗面条晚上1碗白粥这就是我这2天的全部食谱简单但很管饱",
+   "cer_v3_norm_hyp": "早上1杯豆浆中午1碗面条晚上1碗白粥这就是我这2天的全部食谱简单但很管饱"
+  },
+  {
+   "kind": "cell",
+   "engine": "omnivoice",
+   "qid": "q13",
+   "rep": 1,
+   "group": "3 长句与停顿",
+   "text_chars": 49,
+   "text": "他先是愣了一下，随后笑了笑，把桌上的文件整理好，转身对同事说，这个方案我们明天再讨论，今天太晚了。",
+   "wall_s": 471.101,
+   "audio_s": 17.28,
+   "sr": 24000,
+   "rtf": 27.263,
+   "cold_load_s": null,
+   "ok": true,
+   "note": "OK sr=24000 dur=17.28s rms=0.0722",
+   "path": "D:/study/ai-jms/voice_samples/ep25_run\\slot_0015\\audio\\omnivoice\\q13_rep1.wav",
+   "ts": "01:38:50",
+   "asr_ok": true,
+   "asr_model": "small",
+   "asr_lang": "zh",
+   "asr_hyps": [
+    "他先是愣了一下,随后笑了笑,把桌上的文件整理好,转身对同事说,这个方案,我们明天再讨论,今天太晚了。",
+    "他先是愣了一下,随后笑了笑,把桌上的文件整理好,转身对同事说,这个方案,我们明天再讨论,今天太晚了。",
+    "他先是愣了一下,随后笑了笑,把桌上的文件整理好,转身对同事说,这个方案,我们明天再讨论,今天太晚了。"
+   ],
+   "asr_votes": 3,
+   "asr_text": "他先是愣了一下,随后笑了笑,把桌上的文件整理好,转身对同事说,这个方案,我们明天再讨论,今天太晚了。",
+   "cer_pct": 0.0,
+   "cer_all": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "asr_time_s": [
+    3.458,
+    3.422,
+    3.375
+   ],
+   "ref_text": "他先是愣了一下，随后笑了笑，把桌上的文件整理好，转身对同事说，这个方案我们明天再讨论，今天太晚了。",
+   "cer_v2_pct": 0.0,
+   "cer_v2_all": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "cer_v3_pct": 0.0,
+   "cer_v3_norm_ref": "他先是愣了1下随后笑了笑把桌上的文件整理好转身对同事说这个方案我们明天再讨论今天太晚了",
+   "cer_v3_norm_hyp": "他先是愣了1下随后笑了笑把桌上的文件整理好转身对同事说这个方案我们明天再讨论今天太晚了"
+  },
+  {
+   "kind": "cell",
+   "engine": "omnivoice",
+   "qid": "q14",
+   "rep": 1,
+   "group": "3 长句与停顿",
+   "text_chars": 49,
+   "text": "从录音到合成，中间要经过参考音频编码、文本编码、声学预测、声码器解码这四个步骤，每一步都要花时间。",
+   "wall_s": 472.9,
+   "audio_s": 15.88,
+   "sr": 24000,
+   "rtf": 29.78,
+   "cold_load_s": null,
+   "ok": true,
+   "note": "OK sr=24000 dur=15.88s rms=0.1019",
+   "path": "D:/study/ai-jms/voice_samples/ep25_run\\slot_0015\\audio\\omnivoice\\q14_rep1.wav",
+   "ts": "01:46:43",
+   "asr_ok": true,
+   "asr_model": "small",
+   "asr_lang": "zh",
+   "asr_hyps": [
+    "从录音到合成中间要经过参考音频编码文本编码生学预测生码气结码这四个步骤每一步都要花时间",
+    "从录音到合成中间要经过参考音频编码文本编码生学预测生码气结码这四个步骤每一步都要花时间",
+    "从录音到合成中间要经过参考音频编码文本编码生学预测生码气结码这四个步骤每一步都要花时间"
+   ],
+   "asr_votes": 3,
+   "asr_text": "从录音到合成中间要经过参考音频编码文本编码生学预测生码气结码这四个步骤每一步都要花时间",
+   "cer_pct": 9.3,
+   "cer_all": [
+    9.3,
+    9.3,
+    9.3
+   ],
+   "asr_time_s": [
+    3.752,
+    3.758,
+    3.95
+   ],
+   "ref_text": "从录音到合成，中间要经过参考音频编码、文本编码、声学预测、声码器解码这四个步骤，每一步都要花时间。",
+   "cer_v2_pct": 9.3,
+   "cer_v2_all": [
+    9.3,
+    9.3,
+    9.3
+   ],
+   "cer_v3_pct": 9.3,
+   "cer_v3_norm_ref": "从录音到合成中间要经过参考音频编码文本编码声学预测声码器解码这4个步骤每1步都要花时间",
+   "cer_v3_norm_hyp": "从录音到合成中间要经过参考音频编码文本编码生学预测生码气结码这4个步骤每1步都要花时间"
+  },
+  {
+   "kind": "cell",
+   "engine": "omnivoice",
+   "qid": "q15",
+   "rep": 1,
+   "group": "4 数字与英文夹杂",
+   "text_chars": 40,
+   "text": "我用的是 Ryzen 7 5700G 处理器，内存三十二GB，硬盘剩五百三十GB",
+   "wall_s": 364.232,
+   "audio_s": 10.75,
+   "sr": 24000,
+   "rtf": 33.882,
+   "cold_load_s": null,
+   "ok": true,
+   "note": "OK sr=24000 dur=10.75s rms=0.0820",
+   "path": "D:/study/ai-jms/voice_samples/ep25_run\\slot_0015\\audio\\omnivoice\\q15_rep1.wav",
+   "ts": "01:52:48",
+   "asr_ok": true,
+   "asr_model": "small",
+   "asr_lang": "zh",
+   "asr_hyps": [
+    "我用的是Ryzen 西文 5700G 处理器内存 32GB 硬盘剩 530GB",
+    "我用的是Ryzen 西文 5700G 处理器内存 32GB 硬盘剩 530GB",
+    "我用的是Ryzen 西文 5700G 处理器内存 32GB 硬盘剩 530GB"
+   ],
+   "asr_votes": 3,
+   "asr_text": "我用的是Ryzen 西文 5700G 处理器内存 32GB 硬盘剩 530GB",
+   "cer_pct": 26.47,
+   "cer_all": [
+    26.47,
+    26.47,
+    26.47
+   ],
+   "asr_time_s": [
+    2.916,
+    2.858,
+    2.854
+   ],
+   "ref_text": "我用的是 Ryzen 7 5700G 处理器，内存三十二GB，硬盘剩五百三十GB",
+   "cer_v2_pct": 6.25,
+   "cer_v2_all": [
+    6.25,
+    6.25,
+    6.25
+   ],
+   "cer_v3_pct": 6.25,
+   "cer_v3_norm_ref": "我用的是ryzen75700g处理器内存32gb硬盘剩530gb",
+   "cer_v3_norm_hyp": "我用的是ryzen西文5700g处理器内存32gb硬盘剩530gb"
+  },
+  {
+   "kind": "cell",
+   "engine": "omnivoice",
+   "qid": "q16",
+   "rep": 1,
+   "group": "4 数字与英文夹杂",
+   "text_chars": 32,
+   "text": "这段音频采样率是两万四千赫兹，时长大约十四秒，文件六百七十九KB",
+   "wall_s": 364.769,
+   "audio_s": 11.36,
+   "sr": 24000,
+   "rtf": 32.11,
+   "cold_load_s": null,
+   "ok": true,
+   "note": "OK sr=24000 dur=11.36s rms=0.0890",
+   "path": "D:/study/ai-jms/voice_samples/ep25_run\\slot_0015\\audio\\omnivoice\\q16_rep1.wav",
+   "ts": "01:58:52",
+   "asr_ok": true,
+   "asr_model": "small",
+   "asr_lang": "zh",
+   "asr_hyps": [
+    "这段音频采样率是24000Hz时长大约14秒,文件679KB",
+    "这段音频采样率是24000Hz时长大约14秒,文件679KB",
+    "这段音频采样率是24000Hz时长大约14秒,文件679KB"
+   ],
+   "asr_votes": 3,
+   "asr_text": "这段音频采样率是24000Hz时长大约14秒,文件679KB",
+   "cer_pct": 46.67,
+   "cer_all": [
+    46.67,
+    46.67,
+    46.67
+   ],
+   "asr_time_s": [
+    2.754,
+    2.774,
+    2.758
+   ],
+   "ref_text": "这段音频采样率是两万四千赫兹，时长大约十四秒，文件六百七十九KB",
+   "cer_v2_pct": 99.73,
+   "cer_v2_all": [
+    99.73,
+    99.73,
+    99.73
+   ],
+   "cer_v3_pct": 6.9,
+   "cer_v3_norm_ref": "这段音频采样率是24000赫兹时长大约14秒文件679kb",
+   "cer_v3_norm_hyp": "这段音频采样率是24000hz时长大约14秒文件679kb"
+  },
+  {
+   "kind": "cell",
+   "engine": "omnivoice",
+   "qid": "q17",
+   "rep": 1,
+   "group": "4 数字与英文夹杂",
+   "text_chars": 36,
+   "text": "打开 Terminal，输入 pip install，回车，等它装完就行",
+   "wall_s": 285.902,
+   "audio_s": 7.45,
+   "sr": 24000,
+   "rtf": 38.376,
+   "cold_load_s": null,
+   "ok": true,
+   "note": "OK sr=24000 dur=7.45s rms=0.0854",
+   "path": "D:/study/ai-jms/voice_samples/ep25_run\\slot_0015\\audio\\omnivoice\\q17_rep1.wav",
+   "ts": "02:03:38",
+   "asr_ok": true,
+   "asr_model": "small",
+   "asr_lang": "zh",
+   "asr_hyps": [
+    "打开terminal,输入,peep,install,回车,等它装完就行。",
+    "打开terminal,输入,peep,install,回车,等它装完就行。",
+    "打开terminal,输入,peep,install,回车,等它装完就行。"
+   ],
+   "asr_votes": 3,
+   "asr_text": "打开terminal,输入,peep,install,回车,等它装完就行。",
+   "cer_pct": 6.67,
+   "cer_all": [
+    6.67,
+    6.67,
+    6.67
+   ],
+   "asr_time_s": [
+    2.739,
+    2.722,
+    2.711
+   ],
+   "ref_text": "打开 Terminal，输入 pip install，回车，等它装完就行",
+   "cer_v2_pct": 6.67,
+   "cer_v2_all": [
+    6.67,
+    6.67,
+    6.67
+   ],
+   "cer_v3_pct": 6.67,
+   "cer_v3_norm_ref": "打开terminal输入pipinstall回车等它装完就行",
+   "cer_v3_norm_hyp": "打开terminal输入peepinstall回车等它装完就行"
+  },
+  {
+   "kind": "cell",
+   "engine": "omnivoice",
+   "qid": "q18",
+   "rep": 1,
+   "group": "4 数字与英文夹杂",
+   "text_chars": 24,
+   "text": "二零二六年，第三季度，营收同比增长百分之十二点六",
+   "wall_s": 310.495,
+   "audio_s": 8.17,
+   "sr": 24000,
+   "rtf": 38.004,
+   "cold_load_s": null,
+   "ok": true,
+   "note": "OK sr=24000 dur=8.17s rms=0.0965",
+   "path": "D:/study/ai-jms/voice_samples/ep25_run\\slot_0015\\audio\\omnivoice\\q18_rep1.wav",
+   "ts": "02:08:49",
+   "asr_ok": true,
+   "asr_model": "small",
+   "asr_lang": "zh",
+   "asr_hyps": [
+    "2026年第三季度,营收同比增长12.6%",
+    "2026年第三季度,营收同比增长12.6%",
+    "2026年第三季度,营收同比增长12.6%"
+   ],
+   "asr_votes": 3,
+   "asr_text": "2026年第三季度,营收同比增长12.6%",
+   "cer_pct": 50.0,
+   "cer_all": [
+    50.0,
+    50.0,
+    50.0
+   ],
+   "asr_time_s": [
+    2.587,
+    2.566,
+    2.625
+   ],
+   "ref_text": "二零二六年，第三季度，营收同比增长百分之十二点六",
+   "cer_v2_pct": 10.0,
+   "cer_v2_all": [
+    10.0,
+    10.0,
+    10.0
+   ],
+   "cer_v3_pct": 0.0,
+   "cer_v3_norm_ref": "2026年第3季度营收同比增长12.6",
+   "cer_v3_norm_hyp": "2026年第3季度营收同比增长12.6"
+  },
+  {
+   "kind": "cell",
+   "engine": "omnivoice",
+   "qid": "q19",
+   "rep": 1,
+   "group": "4 数字与英文夹杂",
+   "text_chars": 25,
+   "text": "这个模型有零点六个B参数，量化之后大概二点三四GB",
+   "wall_s": 311.892,
+   "audio_s": 8.17,
+   "sr": 24000,
+   "rtf": 38.175,
+   "cold_load_s": null,
+   "ok": true,
+   "note": "OK sr=24000 dur=8.17s rms=0.0953",
+   "path": "D:/study/ai-jms/voice_samples/ep25_run\\slot_0015\\audio\\omnivoice\\q19_rep1.wav",
+   "ts": "02:14:01",
+   "asr_ok": true,
+   "asr_model": "small",
+   "asr_lang": "zh",
+   "asr_hyps": [
+    "這個模型有0.6個b參數,量化之後,大概2.34GB",
+    "這個模型有0.6個b參數,量化之後,大概2.34GB",
+    "這個模型有0.6個b參數,量化之後,大概2.34GB"
+   ],
+   "asr_votes": 3,
+   "asr_text": "這個模型有0.6個b參數,量化之後,大概2.34GB",
+   "cer_pct": 54.17,
+   "cer_all": [
+    54.17,
+    54.17,
+    54.17
+   ],
+   "asr_time_s": [
+    2.592,
+    2.611,
+    2.68
+   ],
+   "ref_text": "这个模型有零点六个B参数，量化之后大概二点三四GB",
+   "cer_v2_pct": 33.33,
+   "cer_v2_all": [
+    33.33,
+    33.33,
+    33.33
+   ],
+   "cer_v3_pct": 0.0,
+   "cer_v3_norm_ref": "这个模型有0.6个b参数量化之后大概2.34gb",
+   "cer_v3_norm_hyp": "这个模型有0.6个b参数量化之后大概2.34gb"
+  },
+  {
+   "kind": "cell",
+   "engine": "omnivoice",
+   "qid": "q20",
+   "rep": 1,
+   "group": "5 语气与情感",
+   "text_chars": 26,
+   "text": "太好了，终于跑通了，我就知道这台老电脑还能再战几年。",
+   "wall_s": 322.689,
+   "audio_s": 9.21,
+   "sr": 24000,
+   "rtf": 35.037,
+   "cold_load_s": null,
+   "ok": true,
+   "note": "OK sr=24000 dur=9.21s rms=0.0754",
+   "path": "D:/study/ai-jms/voice_samples/ep25_run\\slot_0015\\audio\\omnivoice\\q20_rep1.wav",
+   "ts": "02:19:23",
+   "asr_ok": true,
+   "asr_model": "small",
+   "asr_lang": "zh",
+   "asr_hyps": [
+    "太好了,终于跑通了我就知道这台老电脑还能再占几年",
+    "太好了,终于跑通了我就知道这台老电脑还能再占几年",
+    "太好了,终于跑通了我就知道这台老电脑还能再占几年"
+   ],
+   "asr_votes": 3,
+   "asr_text": "太好了,终于跑通了我就知道这台老电脑还能再占几年",
+   "cer_pct": 4.35,
+   "cer_all": [
+    4.35,
+    4.35,
+    4.35
+   ],
+   "asr_time_s": [
+    2.737,
+    2.749,
+    2.775
+   ],
+   "ref_text": "太好了，终于跑通了，我就知道这台老电脑还能再战几年。",
+   "cer_v2_pct": 4.35,
+   "cer_v2_all": [
+    4.35,
+    4.35,
+    4.35
+   ],
+   "cer_v3_pct": 4.35,
+   "cer_v3_norm_ref": "太好了终于跑通了我就知道这台老电脑还能再战几年",
+   "cer_v3_norm_hyp": "太好了终于跑通了我就知道这台老电脑还能再占几年"
+  },
+  {
+   "kind": "cell",
+   "engine": "omnivoice",
+   "qid": "q21",
+   "rep": 1,
+   "group": "5 语气与情感",
+   "text_chars": 19,
+   "text": "唉，又失败了，第三遍了，还是那个报错。",
+   "wall_s": 266.514,
+   "audio_s": 5.38,
+   "sr": 24000,
+   "rtf": 49.538,
+   "cold_load_s": null,
+   "ok": true,
+   "note": "OK sr=24000 dur=5.38s rms=0.0875",
+   "path": "D:/study/ai-jms/voice_samples/ep25_run\\slot_0015\\audio\\omnivoice\\q21_rep1.wav",
+   "ts": "02:23:50",
+   "asr_ok": true,
+   "asr_model": "small",
+   "asr_lang": "zh",
+   "asr_hyps": [
+    "诶又失败了第三遍了还是那个抱错",
+    "诶又失败了第三遍了还是那个抱错",
+    "诶又失败了第三遍了还是那个抱错"
+   ],
+   "asr_votes": 3,
+   "asr_text": "诶又失败了第三遍了还是那个抱错",
+   "cer_pct": 13.33,
+   "cer_all": [
+    13.33,
+    13.33,
+    13.33
+   ],
+   "asr_time_s": [
+    2.52,
+    2.549,
+    2.55
+   ],
+   "ref_text": "唉，又失败了，第三遍了，还是那个报错。",
+   "cer_v2_pct": 13.33,
+   "cer_v2_all": [
+    13.33,
+    13.33,
+    13.33
+   ],
+   "cer_v3_pct": 13.33,
+   "cer_v3_norm_ref": "唉又失败了第3遍了还是那个报错",
+   "cer_v3_norm_hyp": "诶又失败了第3遍了还是那个抱错"
+  },
+  {
+   "kind": "cell",
+   "engine": "omnivoice",
+   "qid": "q22",
+   "rep": 1,
+   "group": "5 语气与情感",
+   "text_chars": 20,
+   "text": "你听一下这段，是不是有点像我自己的声音？",
+   "wall_s": 283.101,
+   "audio_s": 6.25,
+   "sr": 24000,
+   "rtf": 45.296,
+   "cold_load_s": null,
+   "ok": true,
+   "note": "OK sr=24000 dur=6.25s rms=0.1040",
+   "path": "D:/study/ai-jms/voice_samples/ep25_run\\slot_0015\\audio\\omnivoice\\q22_rep1.wav",
+   "ts": "02:28:33",
+   "asr_ok": true,
+   "asr_model": "small",
+   "asr_lang": "zh",
+   "asr_hyps": [
+    "你听一下这段,是不是有点像我自己的声音?",
+    "你听一下这段,是不是有点像我自己的声音?",
+    "你听一下这段,是不是有点像我自己的声音?"
+   ],
+   "asr_votes": 3,
+   "asr_text": "你听一下这段,是不是有点像我自己的声音?",
+   "cer_pct": 0.0,
+   "cer_all": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "asr_time_s": [
+    2.482,
+    2.531,
+    2.489
+   ],
+   "ref_text": "你听一下这段，是不是有点像我自己的声音？",
+   "cer_v2_pct": 0.0,
+   "cer_v2_all": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "cer_v3_pct": 0.0,
+   "cer_v3_norm_ref": "你听1下这段是不是有0.像我自己的声音",
+   "cer_v3_norm_hyp": "你听1下这段是不是有0.像我自己的声音"
+  },
+  {
+   "kind": "cell",
+   "engine": "omnivoice",
+   "qid": "q23",
+   "rep": 1,
+   "group": "5 语气与情感",
+   "text_chars": 19,
+   "text": "别急，慢慢来，这个参数改完应该就好了。",
+   "wall_s": 271.635,
+   "audio_s": 5.48,
+   "sr": 24000,
+   "rtf": 49.568,
+   "cold_load_s": null,
+   "ok": true,
+   "note": "OK sr=24000 dur=5.48s rms=0.0989",
+   "path": "D:/study/ai-jms/voice_samples/ep25_run\\slot_0015\\audio\\omnivoice\\q23_rep1.wav",
+   "ts": "02:33:05",
+   "asr_ok": true,
+   "asr_model": "small",
+   "asr_lang": "zh",
+   "asr_hyps": [
+    "别急,慢慢来这个参数改完应该就好了",
+    "别急,慢慢来这个参数改完应该就好了",
+    "别急,慢慢来这个参数改完应该就好了"
+   ],
+   "asr_votes": 3,
+   "asr_text": "别急,慢慢来这个参数改完应该就好了",
+   "cer_pct": 0.0,
+   "cer_all": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "asr_time_s": [
+    2.529,
+    2.522,
+    2.525
+   ],
+   "ref_text": "别急，慢慢来，这个参数改完应该就好了。",
+   "cer_v2_pct": 0.0,
+   "cer_v2_all": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "cer_v3_pct": 0.0,
+   "cer_v3_norm_ref": "别急慢慢来这个参数改完应该就好了",
+   "cer_v3_norm_hyp": "别急慢慢来这个参数改完应该就好了"
+  },
+  {
+   "kind": "cell",
+   "engine": "omnivoice",
+   "qid": "q24",
+   "rep": 1,
+   "group": "5 语气与情感",
+   "text_chars": 18,
+   "text": "行，就这么定了，明天开始跑正式测试。",
+   "wall_s": 262.5,
+   "audio_s": 5.29,
+   "sr": 24000,
+   "rtf": 49.622,
+   "cold_load_s": null,
+   "ok": true,
+   "note": "OK sr=24000 dur=5.29s rms=0.0915",
+   "path": "D:/study/ai-jms/voice_samples/ep25_run\\slot_0015\\audio\\omnivoice\\q24_rep1.wav",
+   "ts": "02:37:27",
+   "asr_ok": true,
+   "asr_model": "small",
+   "asr_lang": "zh",
+   "asr_hyps": [
+    "行,就这么定了明天开始跑正式测试",
+    "行,就这么定了明天开始跑正式测试",
+    "行,就这么定了明天开始跑正式测试"
+   ],
+   "asr_votes": 3,
+   "asr_text": "行,就这么定了明天开始跑正式测试",
+   "cer_pct": 0.0,
+   "cer_all": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "asr_time_s": [
+    2.61,
+    2.595,
+    2.691
+   ],
+   "ref_text": "行，就这么定了，明天开始跑正式测试。",
+   "cer_v2_pct": 0.0,
+   "cer_v2_all": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "cer_v3_pct": 0.0,
+   "cer_v3_norm_ref": "行就这么定了明天开始跑正式测试",
+   "cer_v3_norm_hyp": "行就这么定了明天开始跑正式测试"
+  },
+  {
+   "kind": "cell",
+   "engine": "cosyvoice",
+   "qid": "q00",
+   "rep": 1,
+   "group": "1 基准短句",
+   "text_chars": 27,
+   "text": "关注 AI 积木师，带你从 AI 的视角解读和理解生活",
+   "wall_s": 92.332,
+   "audio_s": 6.28,
+   "sr": 24000,
+   "rtf": 14.703,
+   "cold_load_s": 92.342,
+   "ok": true,
+   "note": "OK sr=24000 dur=6.28s rms=0.1244",
+   "path": "D:/study/ai-jms/voice_samples/ep25_run\\slot_0015\\audio\\cosyvoice\\q00_rep1.wav",
+   "ts": "02:39:00",
+   "asr_ok": true,
+   "asr_model": "small",
+   "asr_lang": "zh",
+   "asr_hyps": [
+    "关注AI机幕时,带你从AI的视角解读和理解生活",
+    "关注AI机幕时,带你从AI的视角解读和理解生活",
+    "关注AI机幕时,带你从AI的视角解读和理解生活"
+   ],
+   "asr_votes": 3,
+   "asr_text": "关注AI机幕时,带你从AI的视角解读和理解生活",
+   "cer_pct": 13.64,
+   "cer_all": [
+    13.64,
+    13.64,
+    13.64
+   ],
+   "asr_time_s": [
+    2.636,
+    2.617,
+    2.617
+   ],
+   "ref_text": "关注 AI 积木师，带你从 AI 的视角解读和理解生活",
+   "cer_v2_pct": 13.64,
+   "cer_v2_all": [
+    13.64,
+    13.64,
+    13.64
+   ],
+   "cer_v3_pct": 13.64,
+   "cer_v3_norm_ref": "关注ai积木师带你从ai的视角解读和理解生活",
+   "cer_v3_norm_hyp": "关注ai机幕时带你从ai的视角解读和理解生活"
+  },
+  {
+   "kind": "cell",
+   "engine": "cosyvoice",
+   "qid": "q01",
+   "rep": 1,
+   "group": "1 基准短句",
+   "text_chars": 26,
+   "text": "这是我用三十秒录音克隆出来的声音，现在由它来念这段话",
+   "wall_s": 63.112,
+   "audio_s": 8.32,
+   "sr": 24000,
+   "rtf": 7.586,
+   "cold_load_s": null,
+   "ok": true,
+   "note": "OK sr=24000 dur=8.32s rms=0.1254",
+   "path": "D:/study/ai-jms/voice_samples/ep25_run\\slot_0015\\audio\\cosyvoice\\q01_rep1.wav",
+   "ts": "02:40:03",
+   "asr_ok": true,
+   "asr_model": "small",
+   "asr_lang": "zh",
+   "asr_hyps": [
+    "这是我用30秒录音克隆出来的声音现在由它来念这段话",
+    "这是我用30秒录音克隆出来的声音现在由它来念这段话",
+    "这是我用30秒录音克隆出来的声音现在由它来念这段话"
+   ],
+   "asr_votes": 3,
+   "asr_text": "这是我用30秒录音克隆出来的声音现在由它来念这段话",
+   "cer_pct": 8.0,
+   "cer_all": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "asr_time_s": [
+    2.705,
+    2.691,
+    2.745
+   ],
+   "ref_text": "这是我用三十秒录音克隆出来的声音，现在由它来念这段话",
+   "cer_v2_pct": 0.0,
+   "cer_v2_all": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "cer_v3_pct": 0.0,
+   "cer_v3_norm_ref": "这是我用30秒录音克隆出来的声音现在由它来念这段话",
+   "cer_v3_norm_hyp": "这是我用30秒录音克隆出来的声音现在由它来念这段话"
+  },
+  {
+   "kind": "cell",
+   "engine": "cosyvoice",
+   "qid": "q02",
+   "rep": 1,
+   "group": "1 基准短句",
+   "text_chars": 22,
+   "text": "今天是二零二六年十月二十七日，星期二，天气晴",
+   "wall_s": 58.739,
+   "audio_s": 7.52,
+   "sr": 24000,
+   "rtf": 7.811,
+   "cold_load_s": null,
+   "ok": true,
+   "note": "OK sr=24000 dur=7.52s rms=0.1428",
+   "path": "D:/study/ai-jms/voice_samples/ep25_run\\slot_0015\\audio\\cosyvoice\\q02_rep1.wav",
+   "ts": "02:41:01",
+   "asr_ok": true,
+   "asr_model": "small",
+   "asr_lang": "zh",
+   "asr_hyps": [
+    "今天是2026年10月27日星期二天气晴",
+    "今天是2026年10月27日星期二天气晴",
+    "今天是2026年10月27日星期二天气晴"
+   ],
+   "asr_votes": 3,
+   "asr_text": "今天是2026年10月27日星期二天气晴",
+   "cer_pct": 45.0,
+   "cer_all": [
+    45.0,
+    45.0,
+    45.0
+   ],
+   "asr_time_s": [
+    2.787,
+    2.549,
+    2.517
+   ],
+   "ref_text": "今天是二零二六年十月二十七日，星期二，天气晴",
+   "cer_v2_pct": 0.0,
+   "cer_v2_all": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "cer_v3_pct": 0.0,
+   "cer_v3_norm_ref": "今天是2026年10月27日星期2天气晴",
+   "cer_v3_norm_hyp": "今天是2026年10月27日星期2天气晴"
+  },
+  {
+   "kind": "cell",
+   "engine": "cosyvoice",
+   "qid": "q03",
+   "rep": 1,
+   "group": "1 基准短句",
+   "text_chars": 19,
+   "text": "没显卡的电脑也能跑语音合成，只是慢一点",
+   "wall_s": 56.602,
+   "audio_s": 7.2,
+   "sr": 24000,
+   "rtf": 7.861,
+   "cold_load_s": null,
+   "ok": true,
+   "note": "OK sr=24000 dur=7.20s rms=0.1095",
+   "path": "D:/study/ai-jms/voice_samples/ep25_run\\slot_0015\\audio\\cosyvoice\\q03_rep1.wav",
+   "ts": "02:41:58",
+   "asr_ok": true,
+   "asr_model": "small",
+   "asr_lang": "zh",
+   "asr_hyps": [
+    "每显卡的电脑也能跑语音合成,只是慢一点",
+    "每显卡的电脑也能跑语音合成,只是慢一点",
+    "每显卡的电脑也能跑语音合成,只是慢一点"
+   ],
+   "asr_votes": 3,
+   "asr_text": "每显卡的电脑也能跑语音合成,只是慢一点",
+   "cer_pct": 5.56,
+   "cer_all": [
+    5.56,
+    5.56,
+    5.56
+   ],
+   "asr_time_s": [
+    2.602,
+    2.647,
+    2.608
+   ],
+   "ref_text": "没显卡的电脑也能跑语音合成，只是慢一点",
+   "cer_v2_pct": 5.56,
+   "cer_v2_all": [
+    5.56,
+    5.56,
+    5.56
+   ],
+   "cer_v3_pct": 5.56,
+   "cer_v3_norm_ref": "没显卡的电脑也能跑语音合成只是慢1.",
+   "cer_v3_norm_hyp": "每显卡的电脑也能跑语音合成只是慢1."
+  },
+  {
+   "kind": "cell",
+   "engine": "cosyvoice",
+   "qid": "q04",
+   "rep": 1,
+   "group": "1 基准短句",
+   "text_chars": 19,
+   "text": "一句话，一段录音，一个属于你自己的声音",
+   "wall_s": 41.918,
+   "audio_s": 4.76,
+   "sr": 24000,
+   "rtf": 8.806,
+   "cold_load_s": null,
+   "ok": true,
+   "note": "OK sr=24000 dur=4.76s rms=0.1365",
+   "path": "D:/study/ai-jms/voice_samples/ep25_run\\slot_0015\\audio\\cosyvoice\\q04_rep1.wav",
+   "ts": "02:42:40",
+   "asr_ok": true,
+   "asr_model": "small",
+   "asr_lang": "zh",
+   "asr_hyps": [
+    "一句话一段录音一个属于你自己的声音",
+    "一句话一段录音一个属于你自己的声音",
+    "一句话一段录音一个属于你自己的声音"
+   ],
+   "asr_votes": 3,
+   "asr_text": "一句话一段录音一个属于你自己的声音",
+   "cer_pct": 0.0,
+   "cer_all": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "asr_time_s": [
+    2.564,
+    2.535,
+    2.56
+   ],
+   "ref_text": "一句话，一段录音，一个属于你自己的声音",
+   "cer_v2_pct": 0.0,
+   "cer_v2_all": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "cer_v3_pct": 0.0,
+   "cer_v3_norm_ref": "1句话1段录音1个属于你自己的声音",
+   "cer_v3_norm_hyp": "1句话1段录音1个属于你自己的声音"
+  },
+  {
+   "kind": "cell",
+   "engine": "cosyvoice",
+   "qid": "q05",
+   "rep": 1,
+   "group": "2 多音字",
+   "text_chars": 19,
+   "text": "这件衣服太重了，我们重新称一下它的重量",
+   "wall_s": 41.088,
+   "audio_s": 4.6,
+   "sr": 24000,
+   "rtf": 8.932,
+   "cold_load_s": null,
+   "ok": true,
+   "note": "OK sr=24000 dur=4.60s rms=0.1388",
+   "path": "D:/study/ai-jms/voice_samples/ep25_run\\slot_0015\\audio\\cosyvoice\\q05_rep1.wav",
+   "ts": "02:43:21",
+   "asr_ok": true,
+   "asr_model": "small",
+   "asr_lang": "zh",
+   "asr_hyps": [
+    "这件衣服太重了我们重新称一下它的重量",
+    "这件衣服太重了我们重新称一下它的重量",
+    "这件衣服太重了我们重新称一下它的重量"
+   ],
+   "asr_votes": 3,
+   "asr_text": "这件衣服太重了我们重新称一下它的重量",
+   "cer_pct": 0.0,
+   "cer_all": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "asr_time_s": [
+    2.58,
+    2.526,
+    2.547
+   ],
+   "ref_text": "这件衣服太重了，我们重新称一下它的重量",
+   "cer_v2_pct": 0.0,
+   "cer_v2_all": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "cer_v3_pct": 0.0,
+   "cer_v3_norm_ref": "这件衣服太重了我们重新称1下它的重量",
+   "cer_v3_norm_hyp": "这件衣服太重了我们重新称1下它的重量"
+  },
+  {
+   "kind": "cell",
+   "engine": "cosyvoice",
+   "qid": "q06",
+   "rep": 1,
+   "group": "2 多音字",
+   "text_chars": 21,
+   "text": "银行行长说，今年行业行情不错，值得重新评估",
+   "wall_s": 55.425,
+   "audio_s": 7.04,
+   "sr": 24000,
+   "rtf": 7.873,
+   "cold_load_s": null,
+   "ok": true,
+   "note": "OK sr=24000 dur=7.04s rms=0.1272",
+   "path": "D:/study/ai-jms/voice_samples/ep25_run\\slot_0015\\audio\\cosyvoice\\q06_rep1.wav",
+   "ts": "02:44:17",
+   "asr_ok": true,
+   "asr_model": "small",
+   "asr_lang": "zh",
+   "asr_hyps": [
+    "银行行涨说今年行业行情不错值得重新评估",
+    "银行行涨说今年行业行情不错值得重新评估",
+    "银行行涨说今年行业行情不错值得重新评估"
+   ],
+   "asr_votes": 3,
+   "asr_text": "银行行涨说今年行业行情不错值得重新评估",
+   "cer_pct": 5.26,
+   "cer_all": [
+    5.26,
+    5.26,
+    5.26
+   ],
+   "asr_time_s": [
+    2.766,
+    2.745,
+    2.771
+   ],
+   "ref_text": "银行行长说，今年行业行情不错，值得重新评估",
+   "cer_v2_pct": 5.26,
+   "cer_v2_all": [
+    5.26,
+    5.26,
+    5.26
+   ],
+   "cer_v3_pct": 5.26,
+   "cer_v3_norm_ref": "银行行长说今年行业行情不错值得重新评估",
+   "cer_v3_norm_hyp": "银行行涨说今年行业行情不错值得重新评估"
+  },
+  {
+   "kind": "cell",
+   "engine": "cosyvoice",
+   "qid": "q07",
+   "rep": 1,
+   "group": "2 多音字",
+   "text_chars": 21,
+   "text": "他喜欢音乐，更乐于助人，大家都说他活得快乐",
+   "wall_s": 56.14,
+   "audio_s": 7.08,
+   "sr": 24000,
+   "rtf": 7.929,
+   "cold_load_s": null,
+   "ok": true,
+   "note": "OK sr=24000 dur=7.08s rms=0.1358",
+   "path": "D:/study/ai-jms/voice_samples/ep25_run\\slot_0015\\audio\\cosyvoice\\q07_rep1.wav",
+   "ts": "02:45:13",
+   "asr_ok": true,
+   "asr_model": "small",
+   "asr_lang": "zh",
+   "asr_hyps": [
+    "他喜歡音樂,更樂於助人大家都說他活得快樂",
+    "他喜歡音樂,更樂於助人大家都說他活得快樂",
+    "他喜歡音樂,更樂於助人大家都說他活得快樂"
+   ],
+   "asr_votes": 3,
+   "asr_text": "他喜歡音樂,更樂於助人大家都說他活得快樂",
+   "cer_pct": 31.58,
+   "cer_all": [
+    31.58,
+    31.58,
+    31.58
+   ],
+   "asr_time_s": [
+    2.597,
+    2.549,
+    2.639
+   ],
+   "ref_text": "他喜欢音乐，更乐于助人，大家都说他活得快乐",
+   "cer_v2_pct": 31.58,
+   "cer_v2_all": [
+    31.58,
+    31.58,
+    31.58
+   ],
+   "cer_v3_pct": 0.0,
+   "cer_v3_norm_ref": "他喜欢音乐更乐于助人大家都说他活得快乐",
+   "cer_v3_norm_hyp": "他喜欢音乐更乐于助人大家都说他活得快乐"
+  },
+  {
+   "kind": "cell",
+   "engine": "cosyvoice",
+   "qid": "q08",
+   "rep": 1,
+   "group": "2 多音字",
+   "text_chars": 19,
+   "text": "这条裙子长度太长了，需要重新量一次尺寸",
+   "wall_s": 61.002,
+   "audio_s": 7.92,
+   "sr": 24000,
+   "rtf": 7.702,
+   "cold_load_s": null,
+   "ok": true,
+   "note": "OK sr=24000 dur=7.92s rms=0.1092",
+   "path": "D:/study/ai-jms/voice_samples/ep25_run\\slot_0015\\audio\\cosyvoice\\q08_rep1.wav",
+   "ts": "02:46:14",
+   "asr_ok": true,
+   "asr_model": "small",
+   "asr_lang": "zh",
+   "asr_hyps": [
+    "这条裙子长度太长了需要重新量一次尺寸",
+    "这条裙子长度太长了需要重新量一次尺寸",
+    "这条裙子长度太长了需要重新量一次尺寸"
+   ],
+   "asr_votes": 3,
+   "asr_text": "这条裙子长度太长了需要重新量一次尺寸",
+   "cer_pct": 0.0,
+   "cer_all": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "asr_time_s": [
+    2.602,
+    2.661,
+    2.585
+   ],
+   "ref_text": "这条裙子长度太长了，需要重新量一次尺寸",
+   "cer_v2_pct": 0.0,
+   "cer_v2_all": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "cer_v3_pct": 0.0,
+   "cer_v3_norm_ref": "这条裙子长度太长了需要重新量1次尺寸",
+   "cer_v3_norm_hyp": "这条裙子长度太长了需要重新量1次尺寸"
+  },
+  {
+   "kind": "cell",
+   "engine": "cosyvoice",
+   "qid": "q09",
+   "rep": 1,
+   "group": "2 多音字",
+   "text_chars": 19,
+   "text": "天气真差，差点迟到，估计差不多个把小时",
+   "wall_s": 53.711,
+   "audio_s": 6.68,
+   "sr": 24000,
+   "rtf": 8.041,
+   "cold_load_s": null,
+   "ok": true,
+   "note": "OK sr=24000 dur=6.68s rms=0.1050",
+   "path": "D:/study/ai-jms/voice_samples/ep25_run\\slot_0015\\audio\\cosyvoice\\q09_rep1.wav",
+   "ts": "02:47:07",
+   "asr_ok": true,
+   "asr_model": "small",
+   "asr_lang": "zh",
+   "asr_hyps": [
+    "天气真差,差点迟到,估计差不多各把小时",
+    "天气真差,差点迟到,估计差不多各把小时",
+    "天气真差,差点迟到,估计差不多各把小时"
+   ],
+   "asr_votes": 3,
+   "asr_text": "天气真差,差点迟到,估计差不多各把小时",
+   "cer_pct": 5.88,
+   "cer_all": [
+    5.88,
+    5.88,
+    5.88
+   ],
+   "asr_time_s": [
+    2.595,
+    2.595,
+    2.605
+   ],
+   "ref_text": "天气真差，差点迟到，估计差不多个把小时",
+   "cer_v2_pct": 5.56,
+   "cer_v2_all": [
+    5.56,
+    5.56,
+    5.56
+   ],
+   "cer_v3_pct": 5.56,
+   "cer_v3_norm_ref": "天气真差差0.迟到估计差不多个把小时",
+   "cer_v3_norm_hyp": "天气真差差0.迟到估计差不多各把小时"
+  },
+  {
+   "kind": "cell",
+   "engine": "cosyvoice",
+   "qid": "q10",
+   "rep": 1,
+   "group": "3 长句与停顿",
+   "text_chars": 69,
+   "text": "如果你也想在自己的电脑上跑一个语音合成模型，第一步是准备一段干净的录音，第二步是选一个许可允许商用的开源引擎，第三步就是等它把文字念出来。",
+   "wall_s": 117.291,
+   "audio_s": 16.48,
+   "sr": 24000,
+   "rtf": 7.117,
+   "cold_load_s": null,
+   "ok": true,
+   "note": "OK sr=24000 dur=16.48s rms=0.1130",
+   "path": "D:/study/ai-jms/voice_samples/ep25_run\\slot_0015\\audio\\cosyvoice\\q10_rep1.wav",
+   "ts": "02:49:05",
+   "asr_ok": true,
+   "asr_model": "small",
+   "asr_lang": "zh",
+   "asr_hyps": [
+    "如果您也想在自己的电脑上跑一个语音合成模型第一步是准备一段干净的录音第二步是选一个许可允许商用的开源引擎第三步就是等它把文字念出来",
+    "如果您也想在自己的电脑上跑一个语音合成模型第一步是准备一段干净的录音第二步是选一个许可允许商用的开源引擎第三步就是等它把文字念出来",
+    "如果您也想在自己的电脑上跑一个语音合成模型第一步是准备一段干净的录音第二步是选一个许可允许商用的开源引擎第三步就是等它把文字念出来"
+   ],
+   "asr_votes": 3,
+   "asr_text": "如果您也想在自己的电脑上跑一个语音合成模型第一步是准备一段干净的录音第二步是选一个许可允许商用的开源引擎第三步就是等它把文字念出来",
+   "cer_pct": 1.54,
+   "cer_all": [
+    1.54,
+    1.54,
+    1.54
+   ],
+   "asr_time_s": [
+    3.984,
+    3.903,
+    3.862
+   ],
+   "ref_text": "如果你也想在自己的电脑上跑一个语音合成模型，第一步是准备一段干净的录音，第二步是选一个许可允许商用的开源引擎，第三步就是等它把文字念出来。",
+   "cer_v2_pct": 1.54,
+   "cer_v2_all": [
+    1.54,
+    1.54,
+    1.54
+   ],
+   "cer_v3_pct": 1.54,
+   "cer_v3_norm_ref": "如果你也想在自己的电脑上跑1个语音合成模型第1步是准备1段干净的录音第2步是选1个许可允许商用的开源引擎第3步就是等它把文字念出来",
+   "cer_v3_norm_hyp": "如果您也想在自己的电脑上跑1个语音合成模型第1步是准备1段干净的录音第2步是选1个许可允许商用的开源引擎第3步就是等它把文字念出来"
+  },
+  {
+   "kind": "cell",
+   "engine": "cosyvoice",
+   "qid": "q11",
+   "rep": 1,
+   "group": "3 长句与停顿",
+   "text_chars": 54,
+   "text": "这段话一共四十多个字，主要用来观察它在长句当中的换气位置，以及说到最后几个字的时候，音色会不会和开头不一致。",
+   "wall_s": 104.641,
+   "audio_s": 14.6,
+   "sr": 24000,
+   "rtf": 7.167,
+   "cold_load_s": null,
+   "ok": true,
+   "note": "OK sr=24000 dur=14.60s rms=0.1104",
+   "path": "D:/study/ai-jms/voice_samples/ep25_run\\slot_0015\\audio\\cosyvoice\\q11_rep1.wav",
+   "ts": "02:50:49",
+   "asr_ok": true,
+   "asr_model": "small",
+   "asr_lang": "zh",
+   "asr_hyps": [
+    "这段话一共四十多个字主要用来观察它在长距当中的换期位置以及说到最后几个字的时候音色会不会和开头不一致",
+    "这段话一共四十多个字主要用来观察它在长距当中的换期位置以及说到最后几个字的时候音色会不会和开头不一致",
+    "这段话一共四十多个字主要用来观察它在长距当中的换期位置以及说到最后几个字的时候音色会不会和开头不一致"
+   ],
+   "asr_votes": 3,
+   "asr_text": "这段话一共四十多个字主要用来观察它在长距当中的换期位置以及说到最后几个字的时候音色会不会和开头不一致",
+   "cer_pct": 4.0,
+   "cer_all": [
+    4.0,
+    4.0,
+    4.0
+   ],
+   "asr_time_s": [
+    3.388,
+    3.391,
+    3.404
+   ],
+   "ref_text": "这段话一共四十多个字，主要用来观察它在长句当中的换气位置，以及说到最后几个字的时候，音色会不会和开头不一致。",
+   "cer_v2_pct": 4.0,
+   "cer_v2_all": [
+    4.0,
+    4.0,
+    4.0
+   ],
+   "cer_v3_pct": 4.0,
+   "cer_v3_norm_ref": "这段话1共40多个字主要用来观察它在长句当中的换气位置以及说到最后几个字的时候音色会不会和开头不1致",
+   "cer_v3_norm_hyp": "这段话1共40多个字主要用来观察它在长距当中的换期位置以及说到最后几个字的时候音色会不会和开头不1致"
+  },
+  {
+   "kind": "cell",
+   "engine": "cosyvoice",
+   "qid": "q12",
+   "rep": 1,
+   "group": "3 长句与停顿",
+   "text_chars": 42,
+   "text": "早上一杯豆浆，中午一碗面条，晚上一碗白粥，这就是我这两天的全部食谱，简单，但很管饱。",
+   "wall_s": 109.606,
+   "audio_s": 15.52,
+   "sr": 24000,
+   "rtf": 7.062,
+   "cold_load_s": null,
+   "ok": true,
+   "note": "OK sr=24000 dur=15.52s rms=0.1045",
+   "path": "D:/study/ai-jms/voice_samples/ep25_run\\slot_0015\\audio\\cosyvoice\\q12_rep1.wav",
+   "ts": "02:52:39",
+   "asr_ok": true,
+   "asr_model": "small",
+   "asr_lang": "zh",
+   "asr_hyps": [
+    "早上一杯豆浆中午一碗面条晚上一碗白粥这就是我这两天的全部食谱简单 但很管饱",
+    "早上一杯豆浆中午一碗面条晚上一碗白粥这就是我这两天的全部食谱简单 但很管饱",
+    "早上一杯豆浆中午一碗面条晚上一碗白粥这就是我这两天的全部食谱简单 但很管饱"
+   ],
+   "asr_votes": 3,
+   "asr_text": "早上一杯豆浆中午一碗面条晚上一碗白粥这就是我这两天的全部食谱简单 但很管饱",
+   "cer_pct": 0.0,
+   "cer_all": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "asr_time_s": [
+    3.265,
+    3.316,
+    3.261
+   ],
+   "ref_text": "早上一杯豆浆，中午一碗面条，晚上一碗白粥，这就是我这两天的全部食谱，简单，但很管饱。",
+   "cer_v2_pct": 0.0,
+   "cer_v2_all": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "cer_v3_pct": 0.0,
+   "cer_v3_norm_ref": "早上1杯豆浆中午1碗面条晚上1碗白粥这就是我这2天的全部食谱简单但很管饱",
+   "cer_v3_norm_hyp": "早上1杯豆浆中午1碗面条晚上1碗白粥这就是我这2天的全部食谱简单但很管饱"
+  },
+  {
+   "kind": "cell",
+   "engine": "cosyvoice",
+   "qid": "q13",
+   "rep": 1,
+   "group": "3 长句与停顿",
+   "text_chars": 49,
+   "text": "他先是愣了一下，随后笑了笑，把桌上的文件整理好，转身对同事说，这个方案我们明天再讨论，今天太晚了。",
+   "wall_s": 100.175,
+   "audio_s": 13.88,
+   "sr": 24000,
+   "rtf": 7.217,
+   "cold_load_s": null,
+   "ok": true,
+   "note": "OK sr=24000 dur=13.88s rms=0.1093",
+   "path": "D:/study/ai-jms/voice_samples/ep25_run\\slot_0015\\audio\\cosyvoice\\q13_rep1.wav",
+   "ts": "02:54:19",
+   "asr_ok": true,
+   "asr_model": "small",
+   "asr_lang": "zh",
+   "asr_hyps": [
+    "他先是认了一下,随后笑了笑,把桌上的文件整理好,转身对同事说,这个方案我们明天再讨论,今天太晚了。",
+    "他先是认了一下,随后笑了笑,把桌上的文件整理好,转身对同事说,这个方案我们明天再讨论,今天太晚了。",
+    "他先是认了一下,随后笑了笑,把桌上的文件整理好,转身对同事说,这个方案我们明天再讨论,今天太晚了。"
+   ],
+   "asr_votes": 3,
+   "asr_text": "他先是认了一下,随后笑了笑,把桌上的文件整理好,转身对同事说,这个方案我们明天再讨论,今天太晚了。",
+   "cer_pct": 2.33,
+   "cer_all": [
+    2.33,
+    2.33,
+    2.33
+   ],
+   "asr_time_s": [
+    3.337,
+    3.355,
+    3.277
+   ],
+   "ref_text": "他先是愣了一下，随后笑了笑，把桌上的文件整理好，转身对同事说，这个方案我们明天再讨论，今天太晚了。",
+   "cer_v2_pct": 2.33,
+   "cer_v2_all": [
+    2.33,
+    2.33,
+    2.33
+   ],
+   "cer_v3_pct": 2.33,
+   "cer_v3_norm_ref": "他先是愣了1下随后笑了笑把桌上的文件整理好转身对同事说这个方案我们明天再讨论今天太晚了",
+   "cer_v3_norm_hyp": "他先是认了1下随后笑了笑把桌上的文件整理好转身对同事说这个方案我们明天再讨论今天太晚了"
+  },
+  {
+   "kind": "cell",
+   "engine": "cosyvoice",
+   "qid": "q14",
+   "rep": 1,
+   "group": "3 长句与停顿",
+   "text_chars": 49,
+   "text": "从录音到合成，中间要经过参考音频编码、文本编码、声学预测、声码器解码这四个步骤，每一步都要花时间。",
+   "wall_s": 119.402,
+   "audio_s": 16.96,
+   "sr": 24000,
+   "rtf": 7.04,
+   "cold_load_s": null,
+   "ok": true,
+   "note": "OK sr=24000 dur=16.96s rms=0.1034",
+   "path": "D:/study/ai-jms/voice_samples/ep25_run\\slot_0015\\audio\\cosyvoice\\q14_rep1.wav",
+   "ts": "02:56:19",
+   "asr_ok": true,
+   "asr_model": "small",
+   "asr_lang": "zh",
+   "asr_hyps": [
+    "从录音到合尘中间要经过参考音频编码文本编码生学预测生码器 解码这四个步骤每一步都要花时间",
+    "从录音到合尘中间要经过参考音频编码文本编码生学预测生码器 解码这四个步骤每一步都要花时间",
+    "从录音到合尘中间要经过参考音频编码文本编码生学预测生码器 解码这四个步骤每一步都要花时间"
+   ],
+   "asr_votes": 3,
+   "asr_text": "从录音到合尘中间要经过参考音频编码文本编码生学预测生码器 解码这四个步骤每一步都要花时间",
+   "cer_pct": 6.98,
+   "cer_all": [
+    6.98,
+    6.98,
+    6.98
+   ],
+   "asr_time_s": [
+    3.821,
+    3.771,
+    3.783
+   ],
+   "ref_text": "从录音到合成，中间要经过参考音频编码、文本编码、声学预测、声码器解码这四个步骤，每一步都要花时间。",
+   "cer_v2_pct": 6.98,
+   "cer_v2_all": [
+    6.98,
+    6.98,
+    6.98
+   ],
+   "cer_v3_pct": 6.98,
+   "cer_v3_norm_ref": "从录音到合成中间要经过参考音频编码文本编码声学预测声码器解码这4个步骤每1步都要花时间",
+   "cer_v3_norm_hyp": "从录音到合尘中间要经过参考音频编码文本编码生学预测生码器解码这4个步骤每1步都要花时间"
+  },
+  {
+   "kind": "cell",
+   "engine": "cosyvoice",
+   "qid": "q15",
+   "rep": 1,
+   "group": "4 数字与英文夹杂",
+   "text_chars": 40,
+   "text": "我用的是 Ryzen 7 5700G 处理器，内存三十二GB，硬盘剩五百三十GB",
+   "wall_s": 73.913,
+   "audio_s": 9.96,
+   "sr": 24000,
+   "rtf": 7.421,
+   "cold_load_s": null,
+   "ok": true,
+   "note": "OK sr=24000 dur=9.96s rms=0.1306",
+   "path": "D:/study/ai-jms/voice_samples/ep25_run\\slot_0015\\audio\\cosyvoice\\q15_rep1.wav",
+   "ts": "02:57:33",
+   "asr_ok": true,
+   "asr_model": "small",
+   "asr_lang": "zh",
+   "asr_hyps": [
+    "我用的是Ryzen 75700G 处理器内存32GB 硬盘剩530GB",
+    "我用的是Ryzen 75700G 处理器内存32GB 硬盘剩530GB",
+    "我用的是Ryzen 75700G 处理器内存32GB 硬盘剩530GB"
+   ],
+   "asr_votes": 3,
+   "asr_text": "我用的是Ryzen 75700G 处理器内存32GB 硬盘剩530GB",
+   "cer_pct": 20.59,
+   "cer_all": [
+    20.59,
+    20.59,
+    20.59
+   ],
+   "asr_time_s": [
+    2.82,
+    2.817,
+    2.794
+   ],
+   "ref_text": "我用的是 Ryzen 7 5700G 处理器，内存三十二GB，硬盘剩五百三十GB",
+   "cer_v2_pct": 0.0,
+   "cer_v2_all": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "cer_v3_pct": 0.0,
+   "cer_v3_norm_ref": "我用的是ryzen75700g处理器内存32gb硬盘剩530gb",
+   "cer_v3_norm_hyp": "我用的是ryzen75700g处理器内存32gb硬盘剩530gb"
+  },
+  {
+   "kind": "cell",
+   "engine": "cosyvoice",
+   "qid": "q16",
+   "rep": 1,
+   "group": "4 数字与英文夹杂",
+   "text_chars": 32,
+   "text": "这段音频采样率是两万四千赫兹，时长大约十四秒，文件六百七十九KB",
+   "wall_s": 81.687,
+   "audio_s": 11.28,
+   "sr": 24000,
+   "rtf": 7.242,
+   "cold_load_s": null,
+   "ok": true,
+   "note": "OK sr=24000 dur=11.28s rms=0.1070",
+   "path": "D:/study/ai-jms/voice_samples/ep25_run\\slot_0015\\audio\\cosyvoice\\q16_rep1.wav",
+   "ts": "02:58:54",
+   "asr_ok": true,
+   "asr_model": "small",
+   "asr_lang": "zh",
+   "asr_hyps": [
+    "这段音频采样率是两万四千盒子时长大约十四秒,文件679KB",
+    "这段音频采样率是两万四千盒子时长大约十四秒,文件679KB",
+    "这段音频采样率是两万四千盒子时长大约十四秒,文件679KB"
+   ],
+   "asr_votes": 3,
+   "asr_text": "这段音频采样率是两万四千盒子时长大约十四秒,文件679KB",
+   "cer_pct": 23.33,
+   "cer_all": [
+    23.33,
+    23.33,
+    23.33
+   ],
+   "asr_time_s": [
+    2.874,
+    2.858,
+    2.895
+   ],
+   "ref_text": "这段音频采样率是两万四千赫兹，时长大约十四秒，文件六百七十九KB",
+   "cer_v2_pct": 0.02,
+   "cer_v2_all": [
+    0.02,
+    0.02,
+    0.02
+   ],
+   "cer_v3_pct": 6.9,
+   "cer_v3_norm_ref": "这段音频采样率是24000赫兹时长大约14秒文件679kb",
+   "cer_v3_norm_hyp": "这段音频采样率是24000盒子时长大约14秒文件679kb"
+  },
+  {
+   "kind": "cell",
+   "engine": "cosyvoice",
+   "qid": "q17",
+   "rep": 1,
+   "group": "4 数字与英文夹杂",
+   "text_chars": 36,
+   "text": "打开 Terminal，输入 pip install，回车，等它装完就行",
+   "wall_s": 62.185,
+   "audio_s": 8.08,
+   "sr": 24000,
+   "rtf": 7.696,
+   "cold_load_s": null,
+   "ok": true,
+   "note": "OK sr=24000 dur=8.08s rms=0.1018",
+   "path": "D:/study/ai-jms/voice_samples/ep25_run\\slot_0015\\audio\\cosyvoice\\q17_rep1.wav",
+   "ts": "02:59:57",
+   "asr_ok": true,
+   "asr_model": "small",
+   "asr_lang": "zh",
+   "asr_hyps": [
+    "打开terminal,输入,pp install,回车,等它装完就行",
+    "打开terminal,输入,pp install,回车,等它装完就行",
+    "打开terminal,输入,pp install,回车,等它装完就行"
+   ],
+   "asr_votes": 3,
+   "asr_text": "打开terminal,输入,pp install,回车,等它装完就行",
+   "cer_pct": 3.33,
+   "cer_all": [
+    3.33,
+    3.33,
+    3.33
+   ],
+   "asr_time_s": [
+    2.633,
+    2.675,
+    2.748
+   ],
+   "ref_text": "打开 Terminal，输入 pip install，回车，等它装完就行",
+   "cer_v2_pct": 3.33,
+   "cer_v2_all": [
+    3.33,
+    3.33,
+    3.33
+   ],
+   "cer_v3_pct": 3.33,
+   "cer_v3_norm_ref": "打开terminal输入pipinstall回车等它装完就行",
+   "cer_v3_norm_hyp": "打开terminal输入ppinstall回车等它装完就行"
+  },
+  {
+   "kind": "cell",
+   "engine": "cosyvoice",
+   "qid": "q18",
+   "rep": 1,
+   "group": "4 数字与英文夹杂",
+   "text_chars": 24,
+   "text": "二零二六年，第三季度，营收同比增长百分之十二点六",
+   "wall_s": 60.273,
+   "audio_s": 7.76,
+   "sr": 24000,
+   "rtf": 7.767,
+   "cold_load_s": null,
+   "ok": true,
+   "note": "OK sr=24000 dur=7.76s rms=0.1135",
+   "path": "D:/study/ai-jms/voice_samples/ep25_run\\slot_0015\\audio\\cosyvoice\\q18_rep1.wav",
+   "ts": "03:00:57",
+   "asr_ok": true,
+   "asr_model": "small",
+   "asr_lang": "zh",
+   "asr_hyps": [
+    "2026年第三季度,营收同比增长12.6%",
+    "2026年第三季度,营收同比增长12.6%",
+    "2026年第三季度,营收同比增长12.6%"
+   ],
+   "asr_votes": 3,
+   "asr_text": "2026年第三季度,营收同比增长12.6%",
+   "cer_pct": 50.0,
+   "cer_all": [
+    50.0,
+    50.0,
+    50.0
+   ],
+   "asr_time_s": [
+    2.606,
+    2.591,
+    2.601
+   ],
+   "ref_text": "二零二六年，第三季度，营收同比增长百分之十二点六",
+   "cer_v2_pct": 10.0,
+   "cer_v2_all": [
+    10.0,
+    10.0,
+    10.0
+   ],
+   "cer_v3_pct": 0.0,
+   "cer_v3_norm_ref": "2026年第3季度营收同比增长12.6",
+   "cer_v3_norm_hyp": "2026年第3季度营收同比增长12.6"
+  },
+  {
+   "kind": "cell",
+   "engine": "cosyvoice",
+   "qid": "q19",
+   "rep": 1,
+   "group": "4 数字与英文夹杂",
+   "text_chars": 25,
+   "text": "这个模型有零点六个B参数，量化之后大概二点三四GB",
+   "wall_s": 54.548,
+   "audio_s": 6.8,
+   "sr": 24000,
+   "rtf": 8.022,
+   "cold_load_s": null,
+   "ok": true,
+   "note": "OK sr=24000 dur=6.80s rms=0.1278",
+   "path": "D:/study/ai-jms/voice_samples/ep25_run\\slot_0015\\audio\\cosyvoice\\q19_rep1.wav",
+   "ts": "03:01:51",
+   "asr_ok": true,
+   "asr_model": "small",
+   "asr_lang": "zh",
+   "asr_hyps": [
+    "这个模型有0.6个B参数练画之后大概2.34Gb",
+    "这个模型有0.6个B参数练画之后大概2.34Gb",
+    "这个模型有0.6个B参数练画之后大概2.34Gb"
+   ],
+   "asr_votes": 3,
+   "asr_text": "这个模型有0.6个B参数练画之后大概2.34Gb",
+   "cer_pct": 37.5,
+   "cer_all": [
+    37.5,
+    37.5,
+    37.5
+   ],
+   "asr_time_s": [
+    2.654,
+    2.693,
+    2.716
+   ],
+   "ref_text": "这个模型有零点六个B参数，量化之后大概二点三四GB",
+   "cer_v2_pct": 16.67,
+   "cer_v2_all": [
+    16.67,
+    16.67,
+    16.67
+   ],
+   "cer_v3_pct": 8.33,
+   "cer_v3_norm_ref": "这个模型有0.6个b参数量化之后大概2.34gb",
+   "cer_v3_norm_hyp": "这个模型有0.6个b参数练画之后大概2.34gb"
+  },
+  {
+   "kind": "cell",
+   "engine": "cosyvoice",
+   "qid": "q20",
+   "rep": 1,
+   "group": "5 语气与情感",
+   "text_chars": 26,
+   "text": "太好了，终于跑通了，我就知道这台老电脑还能再战几年。",
+   "wall_s": 51.409,
+   "audio_s": 6.2,
+   "sr": 24000,
+   "rtf": 8.292,
+   "cold_load_s": null,
+   "ok": true,
+   "note": "OK sr=24000 dur=6.20s rms=0.1084",
+   "path": "D:/study/ai-jms/voice_samples/ep25_run\\slot_0015\\audio\\cosyvoice\\q20_rep1.wav",
+   "ts": "03:02:43",
+   "asr_ok": true,
+   "asr_model": "small",
+   "asr_lang": "zh",
+   "asr_hyps": [
+    "太好了,终于跑通了,我就知道这台老电脑还能再占几年",
+    "太好了,终于跑通了,我就知道这台老电脑还能再占几年",
+    "太好了,终于跑通了,我就知道这台老电脑还能再占几年"
+   ],
+   "asr_votes": 3,
+   "asr_text": "太好了,终于跑通了,我就知道这台老电脑还能再占几年",
+   "cer_pct": 4.35,
+   "cer_all": [
+    4.35,
+    4.35,
+    4.35
+   ],
+   "asr_time_s": [
+    2.695,
+    2.685,
+    2.722
+   ],
+   "ref_text": "太好了，终于跑通了，我就知道这台老电脑还能再战几年。",
+   "cer_v2_pct": 4.35,
+   "cer_v2_all": [
+    4.35,
+    4.35,
+    4.35
+   ],
+   "cer_v3_pct": 4.35,
+   "cer_v3_norm_ref": "太好了终于跑通了我就知道这台老电脑还能再战几年",
+   "cer_v3_norm_hyp": "太好了终于跑通了我就知道这台老电脑还能再占几年"
+  },
+  {
+   "kind": "cell",
+   "engine": "cosyvoice",
+   "qid": "q21",
+   "rep": 1,
+   "group": "5 语气与情感",
+   "text_chars": 19,
+   "text": "唉，又失败了，第三遍了，还是那个报错。",
+   "wall_s": 57.232,
+   "audio_s": 7.24,
+   "sr": 24000,
+   "rtf": 7.905,
+   "cold_load_s": null,
+   "ok": true,
+   "note": "OK sr=24000 dur=7.24s rms=0.0912",
+   "path": "D:/study/ai-jms/voice_samples/ep25_run\\slot_0015\\audio\\cosyvoice\\q21_rep1.wav",
+   "ts": "03:03:40",
+   "asr_ok": true,
+   "asr_model": "small",
+   "asr_lang": "zh",
+   "asr_hyps": [
+    "哎,又失败了,第三遍了还是那个抱错",
+    "哎,又失败了,第三遍了还是那个抱错",
+    "哎,又失败了,第三遍了还是那个抱错"
+   ],
+   "asr_votes": 3,
+   "asr_text": "哎,又失败了,第三遍了还是那个抱错",
+   "cer_pct": 13.33,
+   "cer_all": [
+    13.33,
+    13.33,
+    13.33
+   ],
+   "asr_time_s": [
+    2.548,
+    2.532,
+    2.528
+   ],
+   "ref_text": "唉，又失败了，第三遍了，还是那个报错。",
+   "cer_v2_pct": 13.33,
+   "cer_v2_all": [
+    13.33,
+    13.33,
+    13.33
+   ],
+   "cer_v3_pct": 13.33,
+   "cer_v3_norm_ref": "唉又失败了第3遍了还是那个报错",
+   "cer_v3_norm_hyp": "哎又失败了第3遍了还是那个抱错"
+  },
+  {
+   "kind": "cell",
+   "engine": "cosyvoice",
+   "qid": "q22",
+   "rep": 1,
+   "group": "5 语气与情感",
+   "text_chars": 20,
+   "text": "你听一下这段，是不是有点像我自己的声音？",
+   "wall_s": 44.841,
+   "audio_s": 5.16,
+   "sr": 24000,
+   "rtf": 8.69,
+   "cold_load_s": null,
+   "ok": true,
+   "note": "OK sr=24000 dur=5.16s rms=0.1267",
+   "path": "D:/study/ai-jms/voice_samples/ep25_run\\slot_0015\\audio\\cosyvoice\\q22_rep1.wav",
+   "ts": "03:04:25",
+   "asr_ok": true,
+   "asr_model": "small",
+   "asr_lang": "zh",
+   "asr_hyps": [
+    "你听一下这段是不是有点像我自己的声音",
+    "你听一下这段是不是有点像我自己的声音",
+    "你听一下这段是不是有点像我自己的声音"
+   ],
+   "asr_votes": 3,
+   "asr_text": "你听一下这段是不是有点像我自己的声音",
+   "cer_pct": 0.0,
+   "cer_all": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "asr_time_s": [
+    2.458,
+    2.465,
+    2.461
+   ],
+   "ref_text": "你听一下这段，是不是有点像我自己的声音？",
+   "cer_v2_pct": 0.0,
+   "cer_v2_all": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "cer_v3_pct": 0.0,
+   "cer_v3_norm_ref": "你听1下这段是不是有0.像我自己的声音",
+   "cer_v3_norm_hyp": "你听1下这段是不是有0.像我自己的声音"
+  },
+  {
+   "kind": "cell",
+   "engine": "cosyvoice",
+   "qid": "q23",
+   "rep": 1,
+   "group": "5 语气与情感",
+   "text_chars": 19,
+   "text": "别急，慢慢来，这个参数改完应该就好了。",
+   "wall_s": 51.144,
+   "audio_s": 6.28,
+   "sr": 24000,
+   "rtf": 8.144,
+   "cold_load_s": null,
+   "ok": true,
+   "note": "OK sr=24000 dur=6.28s rms=0.1091",
+   "path": "D:/study/ai-jms/voice_samples/ep25_run\\slot_0015\\audio\\cosyvoice\\q23_rep1.wav",
+   "ts": "03:05:16",
+   "asr_ok": true,
+   "asr_model": "small",
+   "asr_lang": "zh",
+   "asr_hyps": [
+    "别急 慢慢来这个参数改完应该就好了",
+    "别急 慢慢来这个参数改完应该就好了",
+    "别急 慢慢来这个参数改完应该就好了"
+   ],
+   "asr_votes": 3,
+   "asr_text": "别急 慢慢来这个参数改完应该就好了",
+   "cer_pct": 0.0,
+   "cer_all": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "asr_time_s": [
+    2.526,
+    2.536,
+    2.535
+   ],
+   "ref_text": "别急，慢慢来，这个参数改完应该就好了。",
+   "cer_v2_pct": 0.0,
+   "cer_v2_all": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "cer_v3_pct": 0.0,
+   "cer_v3_norm_ref": "别急慢慢来这个参数改完应该就好了",
+   "cer_v3_norm_hyp": "别急慢慢来这个参数改完应该就好了"
+  },
+  {
+   "kind": "cell",
+   "engine": "cosyvoice",
+   "qid": "q24",
+   "rep": 1,
+   "group": "5 语气与情感",
+   "text_chars": 18,
+   "text": "行，就这么定了，明天开始跑正式测试。",
+   "wall_s": 45.007,
+   "audio_s": 5.2,
+   "sr": 24000,
+   "rtf": 8.655,
+   "cold_load_s": null,
+   "ok": true,
+   "note": "OK sr=24000 dur=5.20s rms=0.1104",
+   "path": "D:/study/ai-jms/voice_samples/ep25_run\\slot_0015\\audio\\cosyvoice\\q24_rep1.wav",
+   "ts": "03:06:01",
+   "asr_ok": true,
+   "asr_model": "small",
+   "asr_lang": "zh",
+   "asr_hyps": [
+    "行就这么定了明天开始跑正式测试",
+    "行就这么定了明天开始跑正式测试",
+    "行就这么定了明天开始跑正式测试"
+   ],
+   "asr_votes": 3,
+   "asr_text": "行就这么定了明天开始跑正式测试",
+   "cer_pct": 0.0,
+   "cer_all": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "asr_time_s": [
+    2.516,
+    2.488,
+    2.553
+   ],
+   "ref_text": "行，就这么定了，明天开始跑正式测试。",
+   "cer_v2_pct": 0.0,
+   "cer_v2_all": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "cer_v3_pct": 0.0,
+   "cer_v3_norm_ref": "行就这么定了明天开始跑正式测试",
+   "cer_v3_norm_hyp": "行就这么定了明天开始跑正式测试"
+  },
+  {
+   "kind": "cell",
+   "engine": "voxcpm2",
+   "qid": "q00",
+   "rep": 1,
+   "group": "1 基准短句",
+   "text_chars": 27,
+   "text": "关注 AI 积木师，带你从 AI 的视角解读和理解生活",
+   "wall_s": 267.531,
+   "audio_s": 5.6,
+   "sr": 48000,
+   "rtf": 47.773,
+   "cold_load_s": 267.54,
+   "ok": true,
+   "note": "OK sr=48000 dur=5.60s rms=0.1272",
+   "path": "D:/study/ai-jms/voice_samples/ep25_run\\slot_0015\\audio\\voxcpm2\\q00_rep1.wav",
+   "ts": "03:10:29",
+   "asr_ok": true,
+   "asr_model": "small",
+   "asr_lang": "zh",
+   "asr_hyps": [
+    "关注AI机幕时,带你从AI的视角,解读和理解生活",
+    "关注AI机幕时,带你从AI的视角,解读和理解生活",
+    "关注AI机幕时,带你从AI的视角,解读和理解生活"
+   ],
+   "asr_votes": 3,
+   "asr_text": "关注AI机幕时,带你从AI的视角,解读和理解生活",
+   "cer_pct": 13.64,
+   "cer_all": [
+    13.64,
+    13.64,
+    13.64
+   ],
+   "asr_time_s": [
+    2.69,
+    2.64,
+    2.896
+   ],
+   "ref_text": "关注 AI 积木师，带你从 AI 的视角解读和理解生活",
+   "cer_v2_pct": 13.64,
+   "cer_v2_all": [
+    13.64,
+    13.64,
+    13.64
+   ],
+   "cer_v3_pct": 13.64,
+   "cer_v3_norm_ref": "关注ai积木师带你从ai的视角解读和理解生活",
+   "cer_v3_norm_hyp": "关注ai机幕时带你从ai的视角解读和理解生活"
+  },
+  {
+   "kind": "cell",
+   "engine": "voxcpm2",
+   "qid": "q01",
+   "rep": 1,
+   "group": "1 基准短句",
+   "text_chars": 26,
+   "text": "这是我用三十秒录音克隆出来的声音，现在由它来念这段话",
+   "wall_s": 191.738,
+   "audio_s": 5.44,
+   "sr": 48000,
+   "rtf": 35.246,
+   "cold_load_s": null,
+   "ok": true,
+   "note": "OK sr=48000 dur=5.44s rms=0.1320",
+   "path": "D:/study/ai-jms/voice_samples/ep25_run\\slot_0015\\audio\\voxcpm2\\q01_rep1.wav",
+   "ts": "03:13:40",
+   "asr_ok": true,
+   "asr_model": "small",
+   "asr_lang": "zh",
+   "asr_hyps": [
+    "这是我用30秒录音克隆出来的声音现在由它来念这段画",
+    "这是我用30秒录音克隆出来的声音现在由它来念这段画",
+    "这是我用30秒录音克隆出来的声音现在由它来念这段画"
+   ],
+   "asr_votes": 3,
+   "asr_text": "这是我用30秒录音克隆出来的声音现在由它来念这段画",
+   "cer_pct": 12.0,
+   "cer_all": [
+    12.0,
+    12.0,
+    12.0
+   ],
+   "asr_time_s": [
+    2.694,
+    2.672,
+    2.689
+   ],
+   "ref_text": "这是我用三十秒录音克隆出来的声音，现在由它来念这段话",
+   "cer_v2_pct": 4.0,
+   "cer_v2_all": [
+    4.0,
+    4.0,
+    4.0
+   ],
+   "cer_v3_pct": 4.0,
+   "cer_v3_norm_ref": "这是我用30秒录音克隆出来的声音现在由它来念这段话",
+   "cer_v3_norm_hyp": "这是我用30秒录音克隆出来的声音现在由它来念这段画"
+  },
+  {
+   "kind": "cell",
+   "engine": "voxcpm2",
+   "qid": "q02",
+   "rep": 1,
+   "group": "1 基准短句",
+   "text_chars": 22,
+   "text": "今天是二零二六年十月二十七日，星期二，天气晴",
+   "wall_s": 191.024,
+   "audio_s": 5.44,
+   "sr": 48000,
+   "rtf": 35.115,
+   "cold_load_s": null,
+   "ok": true,
+   "note": "OK sr=48000 dur=5.44s rms=0.1223",
+   "path": "D:/study/ai-jms/voice_samples/ep25_run\\slot_0015\\audio\\voxcpm2\\q02_rep1.wav",
+   "ts": "03:16:52",
+   "asr_ok": true,
+   "asr_model": "small",
+   "asr_lang": "zh",
+   "asr_hyps": [
+    "今天是2026年10月27日星期二天气晴",
+    "今天是2026年10月27日星期二天气晴",
+    "今天是2026年10月27日星期二天气晴"
+   ],
+   "asr_votes": 3,
+   "asr_text": "今天是2026年10月27日星期二天气晴",
+   "cer_pct": 45.0,
+   "cer_all": [
+    45.0,
+    45.0,
+    45.0
+   ],
+   "asr_time_s": [
+    2.502,
+    2.482,
+    2.52
+   ],
+   "ref_text": "今天是二零二六年十月二十七日，星期二，天气晴",
+   "cer_v2_pct": 0.0,
+   "cer_v2_all": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "cer_v3_pct": 0.0,
+   "cer_v3_norm_ref": "今天是2026年10月27日星期2天气晴",
+   "cer_v3_norm_hyp": "今天是2026年10月27日星期2天气晴"
+  },
+  {
+   "kind": "cell",
+   "engine": "voxcpm2",
+   "qid": "q03",
+   "rep": 1,
+   "group": "1 基准短句",
+   "text_chars": 19,
+   "text": "没显卡的电脑也能跑语音合成，只是慢一点",
+   "wall_s": 171.168,
+   "audio_s": 4.8,
+   "sr": 48000,
+   "rtf": 35.66,
+   "cold_load_s": null,
+   "ok": true,
+   "note": "OK sr=48000 dur=4.80s rms=0.1219",
+   "path": "D:/study/ai-jms/voice_samples/ep25_run\\slot_0015\\audio\\voxcpm2\\q03_rep1.wav",
+   "ts": "03:19:43",
+   "asr_ok": true,
+   "asr_model": "small",
+   "asr_lang": "zh",
+   "asr_hyps": [
+    "没显卡的电脑也能跑语音合成只是慢一点",
+    "没显卡的电脑也能跑语音合成只是慢一点",
+    "没显卡的电脑也能跑语音合成只是慢一点"
+   ],
+   "asr_votes": 3,
+   "asr_text": "没显卡的电脑也能跑语音合成只是慢一点",
+   "cer_pct": 0.0,
+   "cer_all": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "asr_time_s": [
+    2.593,
+    2.563,
+    2.563
+   ],
+   "ref_text": "没显卡的电脑也能跑语音合成，只是慢一点",
+   "cer_v2_pct": 0.0,
+   "cer_v2_all": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "cer_v3_pct": 0.0,
+   "cer_v3_norm_ref": "没显卡的电脑也能跑语音合成只是慢1.",
+   "cer_v3_norm_hyp": "没显卡的电脑也能跑语音合成只是慢1."
+  },
+  {
+   "kind": "cell",
+   "engine": "voxcpm2",
+   "qid": "q04",
+   "rep": 1,
+   "group": "1 基准短句",
+   "text_chars": 19,
+   "text": "一句话，一段录音，一个属于你自己的声音",
+   "wall_s": 165.945,
+   "audio_s": 4.64,
+   "sr": 48000,
+   "rtf": 35.764,
+   "cold_load_s": null,
+   "ok": true,
+   "note": "OK sr=48000 dur=4.64s rms=0.1318",
+   "path": "D:/study/ai-jms/voice_samples/ep25_run\\slot_0015\\audio\\voxcpm2\\q04_rep1.wav",
+   "ts": "03:22:29",
+   "asr_ok": true,
+   "asr_model": "small",
+   "asr_lang": "zh",
+   "asr_hyps": [
+    "一句话,一段录音,一个属于你自己的声音",
+    "一句话,一段录音,一个属于你自己的声音",
+    "一句话,一段录音,一个属于你自己的声音"
+   ],
+   "asr_votes": 3,
+   "asr_text": "一句话,一段录音,一个属于你自己的声音",
+   "cer_pct": 0.0,
+   "cer_all": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "asr_time_s": [
+    2.532,
+    2.514,
+    2.531
+   ],
+   "ref_text": "一句话，一段录音，一个属于你自己的声音",
+   "cer_v2_pct": 0.0,
+   "cer_v2_all": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "cer_v3_pct": 0.0,
+   "cer_v3_norm_ref": "1句话1段录音1个属于你自己的声音",
+   "cer_v3_norm_hyp": "1句话1段录音1个属于你自己的声音"
+  },
+  {
+   "kind": "cell",
+   "engine": "voxcpm2",
+   "qid": "q05",
+   "rep": 1,
+   "group": "2 多音字",
+   "text_chars": 19,
+   "text": "这件衣服太重了，我们重新称一下它的重量",
+   "wall_s": 150.91,
+   "audio_s": 4.16,
+   "sr": 48000,
+   "rtf": 36.277,
+   "cold_load_s": null,
+   "ok": true,
+   "note": "OK sr=48000 dur=4.16s rms=0.1312",
+   "path": "D:/study/ai-jms/voice_samples/ep25_run\\slot_0015\\audio\\voxcpm2\\q05_rep1.wav",
+   "ts": "03:25:00",
+   "asr_ok": true,
+   "asr_model": "small",
+   "asr_lang": "zh",
+   "asr_hyps": [
+    "这件衣服太重了我们重新称一下它的重量",
+    "这件衣服太重了我们重新称一下它的重量",
+    "这件衣服太重了我们重新称一下它的重量"
+   ],
+   "asr_votes": 3,
+   "asr_text": "这件衣服太重了我们重新称一下它的重量",
+   "cer_pct": 0.0,
+   "cer_all": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "asr_time_s": [
+    2.535,
+    2.515,
+    2.537
+   ],
+   "ref_text": "这件衣服太重了，我们重新称一下它的重量",
+   "cer_v2_pct": 0.0,
+   "cer_v2_all": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "cer_v3_pct": 0.0,
+   "cer_v3_norm_ref": "这件衣服太重了我们重新称1下它的重量",
+   "cer_v3_norm_hyp": "这件衣服太重了我们重新称1下它的重量"
+  },
+  {
+   "kind": "cell",
+   "engine": "voxcpm2",
+   "qid": "q06",
+   "rep": 1,
+   "group": "2 多音字",
+   "text_chars": 21,
+   "text": "银行行长说，今年行业行情不错，值得重新评估",
+   "wall_s": 175.607,
+   "audio_s": 4.96,
+   "sr": 48000,
+   "rtf": 35.405,
+   "cold_load_s": null,
+   "ok": true,
+   "note": "OK sr=48000 dur=4.96s rms=0.1372",
+   "path": "D:/study/ai-jms/voice_samples/ep25_run\\slot_0015\\audio\\voxcpm2\\q06_rep1.wav",
+   "ts": "03:27:55",
+   "asr_ok": true,
+   "asr_model": "small",
+   "asr_lang": "zh",
+   "asr_hyps": [
+    "银行行长说,今年行业行情不错,值得重新评估",
+    "银行行长说,今年行业行情不错,值得重新评估",
+    "银行行长说,今年行业行情不错,值得重新评估"
+   ],
+   "asr_votes": 3,
+   "asr_text": "银行行长说,今年行业行情不错,值得重新评估",
+   "cer_pct": 0.0,
+   "cer_all": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "asr_time_s": [
+    2.652,
+    2.691,
+    2.695
+   ],
+   "ref_text": "银行行长说，今年行业行情不错，值得重新评估",
+   "cer_v2_pct": 0.0,
+   "cer_v2_all": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "cer_v3_pct": 0.0,
+   "cer_v3_norm_ref": "银行行长说今年行业行情不错值得重新评估",
+   "cer_v3_norm_hyp": "银行行长说今年行业行情不错值得重新评估"
+  },
+  {
+   "kind": "cell",
+   "engine": "voxcpm2",
+   "qid": "q07",
+   "rep": 1,
+   "group": "2 多音字",
+   "text_chars": 21,
+   "text": "他喜欢音乐，更乐于助人，大家都说他活得快乐",
+   "wall_s": 156.396,
+   "audio_s": 4.32,
+   "sr": 48000,
+   "rtf": 36.203,
+   "cold_load_s": null,
+   "ok": true,
+   "note": "OK sr=48000 dur=4.32s rms=0.1247",
+   "path": "D:/study/ai-jms/voice_samples/ep25_run\\slot_0015\\audio\\voxcpm2\\q07_rep1.wav",
+   "ts": "03:30:32",
+   "asr_ok": true,
+   "asr_model": "small",
+   "asr_lang": "zh",
+   "asr_hyps": [
+    "他喜欢音乐,更乐于助人,大家都说他活得快乐",
+    "他喜欢音乐,更乐于助人,大家都说他活得快乐",
+    "他喜欢音乐,更乐于助人,大家都说他活得快乐"
+   ],
+   "asr_votes": 3,
+   "asr_text": "他喜欢音乐,更乐于助人,大家都说他活得快乐",
+   "cer_pct": 0.0,
+   "cer_all": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "asr_time_s": [
+    2.551,
+    2.568,
+    2.549
+   ],
+   "ref_text": "他喜欢音乐，更乐于助人，大家都说他活得快乐",
+   "cer_v2_pct": 0.0,
+   "cer_v2_all": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "cer_v3_pct": 0.0,
+   "cer_v3_norm_ref": "他喜欢音乐更乐于助人大家都说他活得快乐",
+   "cer_v3_norm_hyp": "他喜欢音乐更乐于助人大家都说他活得快乐"
+  },
+  {
+   "kind": "cell",
+   "engine": "voxcpm2",
+   "qid": "q08",
+   "rep": 1,
+   "group": "2 多音字",
+   "text_chars": 19,
+   "text": "这条裙子长度太长了，需要重新量一次尺寸",
+   "wall_s": 160.514,
+   "audio_s": 4.48,
+   "sr": 48000,
+   "rtf": 35.829,
+   "cold_load_s": null,
+   "ok": true,
+   "note": "OK sr=48000 dur=4.48s rms=0.1128",
+   "path": "D:/study/ai-jms/voice_samples/ep25_run\\slot_0015\\audio\\voxcpm2\\q08_rep1.wav",
+   "ts": "03:33:12",
+   "asr_ok": true,
+   "asr_model": "small",
+   "asr_lang": "zh",
+   "asr_hyps": [
+    "这条裙子长度太长了需要重新量一次尺寸",
+    "这条裙子长度太长了需要重新量一次尺寸",
+    "这条裙子长度太长了需要重新量一次尺寸"
+   ],
+   "asr_votes": 3,
+   "asr_text": "这条裙子长度太长了需要重新量一次尺寸",
+   "cer_pct": 0.0,
+   "cer_all": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "asr_time_s": [
+    2.61,
+    2.584,
+    2.593
+   ],
+   "ref_text": "这条裙子长度太长了，需要重新量一次尺寸",
+   "cer_v2_pct": 0.0,
+   "cer_v2_all": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "cer_v3_pct": 0.0,
+   "cer_v3_norm_ref": "这条裙子长度太长了需要重新量1次尺寸",
+   "cer_v3_norm_hyp": "这条裙子长度太长了需要重新量1次尺寸"
+  },
+  {
+   "kind": "cell",
+   "engine": "voxcpm2",
+   "qid": "q09",
+   "rep": 1,
+   "group": "2 多音字",
+   "text_chars": 19,
+   "text": "天气真差，差点迟到，估计差不多个把小时",
+   "wall_s": 181.142,
+   "audio_s": 5.12,
+   "sr": 48000,
+   "rtf": 35.379,
+   "cold_load_s": null,
+   "ok": true,
+   "note": "OK sr=48000 dur=5.12s rms=0.1123",
+   "path": "D:/study/ai-jms/voice_samples/ep25_run\\slot_0015\\audio\\voxcpm2\\q09_rep1.wav",
+   "ts": "03:36:13",
+   "asr_ok": true,
+   "asr_model": "small",
+   "asr_lang": "zh",
+   "asr_hyps": [
+    "天气真差,差点迟到估计差不多各8小时",
+    "天气真差,差点迟到估计差不多各8小时",
+    "天气真差,差点迟到估计差不多各8小时"
+   ],
+   "asr_votes": 3,
+   "asr_text": "天气真差,差点迟到估计差不多各8小时",
+   "cer_pct": 11.76,
+   "cer_all": [
+    11.76,
+    11.76,
+    11.76
+   ],
+   "asr_time_s": [
+    2.597,
+    2.611,
+    2.636
+   ],
+   "ref_text": "天气真差，差点迟到，估计差不多个把小时",
+   "cer_v2_pct": 11.11,
+   "cer_v2_all": [
+    11.11,
+    11.11,
+    11.11
+   ],
+   "cer_v3_pct": 11.11,
+   "cer_v3_norm_ref": "天气真差差0.迟到估计差不多个把小时",
+   "cer_v3_norm_hyp": "天气真差差0.迟到估计差不多各8小时"
+  },
+  {
+   "kind": "cell",
+   "engine": "voxcpm2",
+   "qid": "q10",
+   "rep": 1,
+   "group": "3 长句与停顿",
+   "text_chars": 69,
+   "text": "如果你也想在自己的电脑上跑一个语音合成模型，第一步是准备一段干净的录音，第二步是选一个许可允许商用的开源引擎，第三步就是等它把文字念出来。",
+   "wall_s": 540.229,
+   "audio_s": 16.48,
+   "sr": 48000,
+   "rtf": 32.781,
+   "cold_load_s": null,
+   "ok": true,
+   "note": "OK sr=48000 dur=16.48s rms=0.1234",
+   "path": "D:/study/ai-jms/voice_samples/ep25_run\\slot_0015\\audio\\voxcpm2\\q10_rep1.wav",
+   "ts": "03:45:14",
+   "asr_ok": true,
+   "asr_model": "small",
+   "asr_lang": "zh",
+   "asr_hyps": [
+    "如果你也想在自己的电脑上跑一个语音合成模型第一步是准备一段干净的录音第二步是选一个许可允许商用的开源引擎第三步就是等他把文字念出来",
+    "如果你也想在自己的电脑上跑一个语音合成模型第一步是准备一段干净的录音第二步是选一个许可允许商用的开源引擎第三步就是等他把文字念出来",
+    "如果你也想在自己的电脑上跑一个语音合成模型第一步是准备一段干净的录音第二步是选一个许可允许商用的开源引擎第三步就是等他把文字念出来"
+   ],
+   "asr_votes": 3,
+   "asr_text": "如果你也想在自己的电脑上跑一个语音合成模型第一步是准备一段干净的录音第二步是选一个许可允许商用的开源引擎第三步就是等他把文字念出来",
+   "cer_pct": 1.54,
+   "cer_all": [
+    1.54,
+    1.54,
+    1.54
+   ],
+   "asr_time_s": [
+    3.881,
+    3.915,
+    3.863
+   ],
+   "ref_text": "如果你也想在自己的电脑上跑一个语音合成模型，第一步是准备一段干净的录音，第二步是选一个许可允许商用的开源引擎，第三步就是等它把文字念出来。",
+   "cer_v2_pct": 1.54,
+   "cer_v2_all": [
+    1.54,
+    1.54,
+    1.54
+   ],
+   "cer_v3_pct": 1.54,
+   "cer_v3_norm_ref": "如果你也想在自己的电脑上跑1个语音合成模型第1步是准备1段干净的录音第2步是选1个许可允许商用的开源引擎第3步就是等它把文字念出来",
+   "cer_v3_norm_hyp": "如果你也想在自己的电脑上跑1个语音合成模型第1步是准备1段干净的录音第2步是选1个许可允许商用的开源引擎第3步就是等他把文字念出来"
+  },
+  {
+   "kind": "cell",
+   "engine": "voxcpm2",
+   "qid": "q11",
+   "rep": 1,
+   "group": "3 长句与停顿",
+   "text_chars": 54,
+   "text": "这段话一共四十多个字，主要用来观察它在长句当中的换气位置，以及说到最后几个字的时候，音色会不会和开头不一致。",
+   "wall_s": 372.259,
+   "audio_s": 11.04,
+   "sr": 48000,
+   "rtf": 33.719,
+   "cold_load_s": null,
+   "ok": true,
+   "note": "OK sr=48000 dur=11.04s rms=0.1322",
+   "path": "D:/study/ai-jms/voice_samples/ep25_run\\slot_0015\\audio\\voxcpm2\\q11_rep1.wav",
+   "ts": "03:51:26",
+   "asr_ok": true,
+   "asr_model": "small",
+   "asr_lang": "zh",
+   "asr_hyps": [
+    "这段话一共40多个字主要用来观察它在长距当中的换期位置以及说到最后几个字的时候音色会不会和开头不一致",
+    "这段话一共40多个字主要用来观察它在长距当中的换期位置以及说到最后几个字的时候音色会不会和开头不一致",
+    "这段话一共40多个字主要用来观察它在长距当中的换期位置以及说到最后几个字的时候音色会不会和开头不一致"
+   ],
+   "asr_votes": 3,
+   "asr_text": "这段话一共40多个字主要用来观察它在长距当中的换期位置以及说到最后几个字的时候音色会不会和开头不一致",
+   "cer_pct": 8.0,
+   "cer_all": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "asr_time_s": [
+    3.383,
+    3.389,
+    3.39
+   ],
+   "ref_text": "这段话一共四十多个字，主要用来观察它在长句当中的换气位置，以及说到最后几个字的时候，音色会不会和开头不一致。",
+   "cer_v2_pct": 4.0,
+   "cer_v2_all": [
+    4.0,
+    4.0,
+    4.0
+   ],
+   "cer_v3_pct": 4.0,
+   "cer_v3_norm_ref": "这段话1共40多个字主要用来观察它在长句当中的换气位置以及说到最后几个字的时候音色会不会和开头不1致",
+   "cer_v3_norm_hyp": "这段话1共40多个字主要用来观察它在长距当中的换期位置以及说到最后几个字的时候音色会不会和开头不1致"
+  },
+  {
+   "kind": "cell",
+   "engine": "voxcpm2",
+   "qid": "q12",
+   "rep": 1,
+   "group": "3 长句与停顿",
+   "text_chars": 42,
+   "text": "早上一杯豆浆，中午一碗面条，晚上一碗白粥，这就是我这两天的全部食谱，简单，但很管饱。",
+   "wall_s": 348.434,
+   "audio_s": 10.4,
+   "sr": 48000,
+   "rtf": 33.503,
+   "cold_load_s": null,
+   "ok": true,
+   "note": "OK sr=48000 dur=10.40s rms=0.1077",
+   "path": "D:/study/ai-jms/voice_samples/ep25_run\\slot_0015\\audio\\voxcpm2\\q12_rep1.wav",
+   "ts": "03:57:14",
+   "asr_ok": true,
+   "asr_model": "small",
+   "asr_lang": "zh",
+   "asr_hyps": [
+    "早上一杯豆浆,中午一碗面条,晚上一碗白粥这就是我这两天的全部食谱,简单但很滚宝",
+    "早上一杯豆浆,中午一碗面条,晚上一碗白粥这就是我这两天的全部食谱,简单但很滚宝",
+    "早上一杯豆浆,中午一碗面条,晚上一碗白粥这就是我这两天的全部食谱,简单但很滚宝"
+   ],
+   "asr_votes": 3,
+   "asr_text": "早上一杯豆浆,中午一碗面条,晚上一碗白粥这就是我这两天的全部食谱,简单但很滚宝",
+   "cer_pct": 5.56,
+   "cer_all": [
+    5.56,
+    5.56,
+    5.56
+   ],
+   "asr_time_s": [
+    3.207,
+    3.247,
+    3.235
+   ],
+   "ref_text": "早上一杯豆浆，中午一碗面条，晚上一碗白粥，这就是我这两天的全部食谱，简单，但很管饱。",
+   "cer_v2_pct": 5.56,
+   "cer_v2_all": [
+    5.56,
+    5.56,
+    5.56
+   ],
+   "cer_v3_pct": 5.56,
+   "cer_v3_norm_ref": "早上1杯豆浆中午1碗面条晚上1碗白粥这就是我这2天的全部食谱简单但很管饱",
+   "cer_v3_norm_hyp": "早上1杯豆浆中午1碗面条晚上1碗白粥这就是我这2天的全部食谱简单但很滚宝"
+  },
+  {
+   "kind": "cell",
+   "engine": "voxcpm2",
+   "qid": "q13",
+   "rep": 1,
+   "group": "3 长句与停顿",
+   "text_chars": 49,
+   "text": "他先是愣了一下，随后笑了笑，把桌上的文件整理好，转身对同事说，这个方案我们明天再讨论，今天太晚了。",
+   "wall_s": 346.734,
+   "audio_s": 10.24,
+   "sr": 48000,
+   "rtf": 33.861,
+   "cold_load_s": null,
+   "ok": true,
+   "note": "OK sr=48000 dur=10.24s rms=0.1285",
+   "path": "D:/study/ai-jms/voice_samples/ep25_run\\slot_0015\\audio\\voxcpm2\\q13_rep1.wav",
+   "ts": "04:03:01",
+   "asr_ok": true,
+   "asr_model": "small",
+   "asr_lang": "zh",
+   "asr_hyps": [
+    "他先是愣了一下,随后笑了笑,把桌上的文件整理好转身对同事说,这个方案我们明天再讨论,今天太晚了",
+    "他先是愣了一下,随后笑了笑,把桌上的文件整理好转身对同事说,这个方案我们明天再讨论,今天太晚了",
+    "他先是愣了一下,随后笑了笑,把桌上的文件整理好转身对同事说,这个方案我们明天再讨论,今天太晚了"
+   ],
+   "asr_votes": 3,
+   "asr_text": "他先是愣了一下,随后笑了笑,把桌上的文件整理好转身对同事说,这个方案我们明天再讨论,今天太晚了",
+   "cer_pct": 0.0,
+   "cer_all": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "asr_time_s": [
+    3.298,
+    3.286,
+    3.345
+   ],
+   "ref_text": "他先是愣了一下，随后笑了笑，把桌上的文件整理好，转身对同事说，这个方案我们明天再讨论，今天太晚了。",
+   "cer_v2_pct": 0.0,
+   "cer_v2_all": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "cer_v3_pct": 0.0,
+   "cer_v3_norm_ref": "他先是愣了1下随后笑了笑把桌上的文件整理好转身对同事说这个方案我们明天再讨论今天太晚了",
+   "cer_v3_norm_hyp": "他先是愣了1下随后笑了笑把桌上的文件整理好转身对同事说这个方案我们明天再讨论今天太晚了"
+  },
+  {
+   "kind": "cell",
+   "engine": "voxcpm2",
+   "qid": "q14",
+   "rep": 1,
+   "group": "3 长句与停顿",
+   "text_chars": 49,
+   "text": "从录音到合成，中间要经过参考音频编码、文本编码、声学预测、声码器解码这四个步骤，每一步都要花时间。",
+   "wall_s": 358.21,
+   "audio_s": 10.716,
+   "sr": 48000,
+   "rtf": 33.428,
+   "cold_load_s": null,
+   "ok": true,
+   "note": "OK sr=48000 dur=10.72s rms=0.1330",
+   "path": "D:/study/ai-jms/voice_samples/ep25_run\\slot_0015\\audio\\voxcpm2\\q14_rep1.wav",
+   "ts": "04:08:59",
+   "asr_ok": true,
+   "asr_model": "small",
+   "asr_lang": "zh",
+   "asr_hyps": [
+    "从录音到合成中间要经过参考音频编码、文本编码、声学预测、生码器解码这四个步骤每一步都要花时间",
+    "从录音到合成中间要经过参考音频编码、文本编码、声学预测、生码器解码这四个步骤每一步都要花时间",
+    "从录音到合成中间要经过参考音频编码、文本编码、声学预测、生码器解码这四个步骤每一步都要花时间"
+   ],
+   "asr_votes": 3,
+   "asr_text": "从录音到合成中间要经过参考音频编码、文本编码、声学预测、生码器解码这四个步骤每一步都要花时间",
+   "cer_pct": 2.33,
+   "cer_all": [
+    2.33,
+    2.33,
+    2.33
+   ],
+   "asr_time_s": [
+    3.714,
+    3.651,
+    3.646
+   ],
+   "ref_text": "从录音到合成，中间要经过参考音频编码、文本编码、声学预测、声码器解码这四个步骤，每一步都要花时间。",
+   "cer_v2_pct": 2.33,
+   "cer_v2_all": [
+    2.33,
+    2.33,
+    2.33
+   ],
+   "cer_v3_pct": 2.33,
+   "cer_v3_norm_ref": "从录音到合成中间要经过参考音频编码文本编码声学预测声码器解码这4个步骤每1步都要花时间",
+   "cer_v3_norm_hyp": "从录音到合成中间要经过参考音频编码文本编码声学预测生码器解码这4个步骤每1步都要花时间"
+  },
+  {
+   "kind": "cell",
+   "engine": "voxcpm2",
+   "qid": "q15",
+   "rep": 1,
+   "group": "4 数字与英文夹杂",
+   "text_chars": 40,
+   "text": "我用的是 Ryzen 7 5700G 处理器，内存三十二GB，硬盘剩五百三十GB",
+   "wall_s": 266.916,
+   "audio_s": 7.84,
+   "sr": 48000,
+   "rtf": 34.045,
+   "cold_load_s": null,
+   "ok": true,
+   "note": "OK sr=48000 dur=7.84s rms=0.1327",
+   "path": "D:/study/ai-jms/voice_samples/ep25_run\\slot_0015\\audio\\voxcpm2\\q15_rep1.wav",
+   "ts": "04:13:26",
+   "asr_ok": true,
+   "asr_model": "small",
+   "asr_lang": "zh",
+   "asr_hyps": [
+    "我用的是Ryzen 7 5700处理器内存32GB,硬盘剩530GB",
+    "我用的是Ryzen 7 5700处理器内存32GB,硬盘剩530GB",
+    "我用的是Ryzen 7 5700处理器内存32GB,硬盘剩530GB"
+   ],
+   "asr_votes": 3,
+   "asr_text": "我用的是Ryzen 7 5700处理器内存32GB,硬盘剩530GB",
+   "cer_pct": 23.53,
+   "cer_all": [
+    23.53,
+    23.53,
+    23.53
+   ],
+   "asr_time_s": [
+    2.847,
+    2.877,
+    2.815
+   ],
+   "ref_text": "我用的是 Ryzen 7 5700G 处理器，内存三十二GB，硬盘剩五百三十GB",
+   "cer_v2_pct": 3.12,
+   "cer_v2_all": [
+    3.12,
+    3.12,
+    3.12
+   ],
+   "cer_v3_pct": 3.12,
+   "cer_v3_norm_ref": "我用的是ryzen75700g处理器内存32gb硬盘剩530gb",
+   "cer_v3_norm_hyp": "我用的是ryzen75700处理器内存32gb硬盘剩530gb"
+  },
+  {
+   "kind": "cell",
+   "engine": "voxcpm2",
+   "qid": "q16",
+   "rep": 1,
+   "group": "4 数字与英文夹杂",
+   "text_chars": 32,
+   "text": "这段音频采样率是两万四千赫兹，时长大约十四秒，文件六百七十九KB",
+   "wall_s": 276.567,
+   "audio_s": 8.16,
+   "sr": 48000,
+   "rtf": 33.893,
+   "cold_load_s": null,
+   "ok": true,
+   "note": "OK sr=48000 dur=8.16s rms=0.1055",
+   "path": "D:/study/ai-jms/voice_samples/ep25_run\\slot_0015\\audio\\voxcpm2\\q16_rep1.wav",
+   "ts": "04:18:03",
+   "asr_ok": true,
+   "asr_model": "small",
+   "asr_lang": "zh",
+   "asr_hyps": [
+    "这段音频采烊率是24000Hz时长大约14秒文件679KB",
+    "这段音频采烊率是24000Hz时长大约14秒文件679KB",
+    "这段音频采烊率是24000Hz时长大约14秒文件679KB"
+   ],
+   "asr_votes": 3,
+   "asr_text": "这段音频采烊率是24000Hz时长大约14秒文件679KB",
+   "cer_pct": 50.0,
+   "cer_all": [
+    50.0,
+    50.0,
+    50.0
+   ],
+   "asr_time_s": [
+    2.825,
+    2.813,
+    2.812
+   ],
+   "ref_text": "这段音频采样率是两万四千赫兹，时长大约十四秒，文件六百七十九KB",
+   "cer_v2_pct": 99.74,
+   "cer_v2_all": [
+    99.74,
+    99.74,
+    99.74
+   ],
+   "cer_v3_pct": 10.34,
+   "cer_v3_norm_ref": "这段音频采样率是24000赫兹时长大约14秒文件679kb",
+   "cer_v3_norm_hyp": "这段音频采烊率是24000hz时长大约14秒文件679kb"
+  },
+  {
+   "kind": "cell",
+   "engine": "voxcpm2",
+   "qid": "q17",
+   "rep": 1,
+   "group": "4 数字与英文夹杂",
+   "text_chars": 36,
+   "text": "打开 Terminal，输入 pip install，回车，等它装完就行",
+   "wall_s": 195.406,
+   "audio_s": 5.6,
+   "sr": 48000,
+   "rtf": 34.894,
+   "cold_load_s": null,
+   "ok": true,
+   "note": "OK sr=48000 dur=5.60s rms=0.1060",
+   "path": "D:/study/ai-jms/voice_samples/ep25_run\\slot_0015\\audio\\voxcpm2\\q17_rep1.wav",
+   "ts": "04:21:18",
+   "asr_ok": true,
+   "asr_model": "small",
+   "asr_lang": "zh",
+   "asr_hyps": [
+    "打开terminal,输入pp install,回车,等它装完就行",
+    "打开terminal,输入pp install,回车,等它装完就行",
+    "打开terminal,输入pp install,回车,等它装完就行"
+   ],
+   "asr_votes": 3,
+   "asr_text": "打开terminal,输入pp install,回车,等它装完就行",
+   "cer_pct": 3.33,
+   "cer_all": [
+    3.33,
+    3.33,
+    3.33
+   ],
+   "asr_time_s": [
+    2.63,
+    2.612,
+    2.592
+   ],
+   "ref_text": "打开 Terminal，输入 pip install，回车，等它装完就行",
+   "cer_v2_pct": 3.33,
+   "cer_v2_all": [
+    3.33,
+    3.33,
+    3.33
+   ],
+   "cer_v3_pct": 3.33,
+   "cer_v3_norm_ref": "打开terminal输入pipinstall回车等它装完就行",
+   "cer_v3_norm_hyp": "打开terminal输入ppinstall回车等它装完就行"
+  },
+  {
+   "kind": "cell",
+   "engine": "voxcpm2",
+   "qid": "q18",
+   "rep": 1,
+   "group": "4 数字与英文夹杂",
+   "text_chars": 24,
+   "text": "二零二六年，第三季度，营收同比增长百分之十二点六",
+   "wall_s": 191.205,
+   "audio_s": 5.44,
+   "sr": 48000,
+   "rtf": 35.148,
+   "cold_load_s": null,
+   "ok": true,
+   "note": "OK sr=48000 dur=5.44s rms=0.1294",
+   "path": "D:/study/ai-jms/voice_samples/ep25_run\\slot_0015\\audio\\voxcpm2\\q18_rep1.wav",
+   "ts": "04:24:29",
+   "asr_ok": true,
+   "asr_model": "small",
+   "asr_lang": "zh",
+   "asr_hyps": [
+    "2026年,第三季度,营收同比增长12.6%",
+    "2026年,第三季度,营收同比增长12.6%",
+    "2026年,第三季度,营收同比增长12.6%"
+   ],
+   "asr_votes": 3,
+   "asr_text": "2026年,第三季度,营收同比增长12.6%",
+   "cer_pct": 50.0,
+   "cer_all": [
+    50.0,
+    50.0,
+    50.0
+   ],
+   "asr_time_s": [
+    2.619,
+    2.581,
+    2.626
+   ],
+   "ref_text": "二零二六年，第三季度，营收同比增长百分之十二点六",
+   "cer_v2_pct": 10.0,
+   "cer_v2_all": [
+    10.0,
+    10.0,
+    10.0
+   ],
+   "cer_v3_pct": 0.0,
+   "cer_v3_norm_ref": "2026年第3季度营收同比增长12.6",
+   "cer_v3_norm_hyp": "2026年第3季度营收同比增长12.6"
+  },
+  {
+   "kind": "cell",
+   "engine": "voxcpm2",
+   "qid": "q19",
+   "rep": 1,
+   "group": "4 数字与英文夹杂",
+   "text_chars": 25,
+   "text": "这个模型有零点六个B参数，量化之后大概二点三四GB",
+   "wall_s": 206.623,
+   "audio_s": 5.92,
+   "sr": 48000,
+   "rtf": 34.903,
+   "cold_load_s": null,
+   "ok": true,
+   "note": "OK sr=48000 dur=5.92s rms=0.1234",
+   "path": "D:/study/ai-jms/voice_samples/ep25_run\\slot_0015\\audio\\voxcpm2\\q19_rep1.wav",
+   "ts": "04:27:56",
+   "asr_ok": true,
+   "asr_model": "small",
+   "asr_lang": "zh",
+   "asr_hyps": [
+    "这个模型有0.6个臂参数变化之后大概2.34Gb",
+    "这个模型有0.6个臂参数变化之后大概2.34Gb",
+    "这个模型有0.6个臂参数变化之后大概2.34Gb"
+   ],
+   "asr_votes": 3,
+   "asr_text": "这个模型有0.6个臂参数变化之后大概2.34Gb",
+   "cer_pct": 37.5,
+   "cer_all": [
+    37.5,
+    37.5,
+    37.5
+   ],
+   "asr_time_s": [
+    2.731,
+    2.681,
+    2.699
+   ],
+   "ref_text": "这个模型有零点六个B参数，量化之后大概二点三四GB",
+   "cer_v2_pct": 16.67,
+   "cer_v2_all": [
+    16.67,
+    16.67,
+    16.67
+   ],
+   "cer_v3_pct": 8.33,
+   "cer_v3_norm_ref": "这个模型有0.6个b参数量化之后大概2.34gb",
+   "cer_v3_norm_hyp": "这个模型有0.6个臂参数变化之后大概2.34gb"
+  },
+  {
+   "kind": "cell",
+   "engine": "voxcpm2",
+   "qid": "q20",
+   "rep": 1,
+   "group": "5 语气与情感",
+   "text_chars": 26,
+   "text": "太好了，终于跑通了，我就知道这台老电脑还能再战几年。",
+   "wall_s": 211.026,
+   "audio_s": 6.08,
+   "sr": 48000,
+   "rtf": 34.708,
+   "cold_load_s": null,
+   "ok": true,
+   "note": "OK sr=48000 dur=6.08s rms=0.1219",
+   "path": "D:/study/ai-jms/voice_samples/ep25_run\\slot_0015\\audio\\voxcpm2\\q20_rep1.wav",
+   "ts": "04:31:27",
+   "asr_ok": true,
+   "asr_model": "small",
+   "asr_lang": "zh",
+   "asr_hyps": [
+    "太好了,终于跑通了我就知道这台老电脑还能再占几年",
+    "太好了,终于跑通了我就知道这台老电脑还能再占几年",
+    "太好了,终于跑通了我就知道这台老电脑还能再占几年"
+   ],
+   "asr_votes": 3,
+   "asr_text": "太好了,终于跑通了我就知道这台老电脑还能再占几年",
+   "cer_pct": 4.35,
+   "cer_all": [
+    4.35,
+    4.35,
+    4.35
+   ],
+   "asr_time_s": [
+    2.722,
+    2.717,
+    2.736
+   ],
+   "ref_text": "太好了，终于跑通了，我就知道这台老电脑还能再战几年。",
+   "cer_v2_pct": 4.35,
+   "cer_v2_all": [
+    4.35,
+    4.35,
+    4.35
+   ],
+   "cer_v3_pct": 4.35,
+   "cer_v3_norm_ref": "太好了终于跑通了我就知道这台老电脑还能再战几年",
+   "cer_v3_norm_hyp": "太好了终于跑通了我就知道这台老电脑还能再占几年"
+  },
+  {
+   "kind": "cell",
+   "engine": "voxcpm2",
+   "qid": "q21",
+   "rep": 1,
+   "group": "5 语气与情感",
+   "text_chars": 19,
+   "text": "唉，又失败了，第三遍了，还是那个报错。",
+   "wall_s": 122.053,
+   "audio_s": 3.2,
+   "sr": 48000,
+   "rtf": 38.142,
+   "cold_load_s": null,
+   "ok": true,
+   "note": "OK sr=48000 dur=3.20s rms=0.1334",
+   "path": "D:/study/ai-jms/voice_samples/ep25_run\\slot_0015\\audio\\voxcpm2\\q21_rep1.wav",
+   "ts": "04:33:29",
+   "asr_ok": true,
+   "asr_model": "small",
+   "asr_lang": "zh",
+   "asr_hyps": [
+    "又失敗了,第三遍了,还是那个爆错",
+    "又失敗了,第三遍了,还是那个爆错",
+    "又失敗了,第三遍了,还是那个爆错"
+   ],
+   "asr_votes": 3,
+   "asr_text": "又失敗了,第三遍了,还是那个爆错",
+   "cer_pct": 20.0,
+   "cer_all": [
+    20.0,
+    20.0,
+    20.0
+   ],
+   "asr_time_s": [
+    2.5,
+    2.425,
+    2.465
+   ],
+   "ref_text": "唉，又失败了，第三遍了，还是那个报错。",
+   "cer_v2_pct": 20.0,
+   "cer_v2_all": [
+    20.0,
+    20.0,
+    20.0
+   ],
+   "cer_v3_pct": 20.0,
+   "cer_v3_norm_ref": "唉又失败了第3遍了还是那个报错",
+   "cer_v3_norm_hyp": "又失敗了第3遍了还是那个爆错"
+  },
+  {
+   "kind": "cell",
+   "engine": "voxcpm2",
+   "qid": "q22",
+   "rep": 1,
+   "group": "5 语气与情感",
+   "text_chars": 20,
+   "text": "你听一下这段，是不是有点像我自己的声音？",
+   "wall_s": 155.325,
+   "audio_s": 4.32,
+   "sr": 48000,
+   "rtf": 35.955,
+   "cold_load_s": null,
+   "ok": true,
+   "note": "OK sr=48000 dur=4.32s rms=0.1187",
+   "path": "D:/study/ai-jms/voice_samples/ep25_run\\slot_0015\\audio\\voxcpm2\\q22_rep1.wav",
+   "ts": "04:36:04",
+   "asr_ok": true,
+   "asr_model": "small",
+   "asr_lang": "zh",
+   "asr_hyps": [
+    "你听一下这段是不是有点像我自己的声音",
+    "你听一下这段是不是有点像我自己的声音",
+    "你听一下这段是不是有点像我自己的声音"
+   ],
+   "asr_votes": 3,
+   "asr_text": "你听一下这段是不是有点像我自己的声音",
+   "cer_pct": 0.0,
+   "cer_all": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "asr_time_s": [
+    2.461,
+    2.471,
+    2.444
+   ],
+   "ref_text": "你听一下这段，是不是有点像我自己的声音？",
+   "cer_v2_pct": 0.0,
+   "cer_v2_all": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "cer_v3_pct": 0.0,
+   "cer_v3_norm_ref": "你听1下这段是不是有0.像我自己的声音",
+   "cer_v3_norm_hyp": "你听1下这段是不是有0.像我自己的声音"
+  },
+  {
+   "kind": "cell",
+   "engine": "voxcpm2",
+   "qid": "q23",
+   "rep": 1,
+   "group": "5 语气与情感",
+   "text_chars": 19,
+   "text": "别急，慢慢来，这个参数改完应该就好了。",
+   "wall_s": 145.789,
+   "audio_s": 4.0,
+   "sr": 48000,
+   "rtf": 36.447,
+   "cold_load_s": null,
+   "ok": true,
+   "note": "OK sr=48000 dur=4.00s rms=0.1181",
+   "path": "D:/study/ai-jms/voice_samples/ep25_run\\slot_0015\\audio\\voxcpm2\\q23_rep1.wav",
+   "ts": "04:38:30",
+   "asr_ok": true,
+   "asr_model": "small",
+   "asr_lang": "zh",
+   "asr_hyps": [
+    "别急慢慢来这个参数改完应该就好了",
+    "别急慢慢来这个参数改完应该就好了",
+    "别急慢慢来这个参数改完应该就好了"
+   ],
+   "asr_votes": 3,
+   "asr_text": "别急慢慢来这个参数改完应该就好了",
+   "cer_pct": 0.0,
+   "cer_all": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "asr_time_s": [
+    2.516,
+    2.491,
+    2.545
+   ],
+   "ref_text": "别急，慢慢来，这个参数改完应该就好了。",
+   "cer_v2_pct": 0.0,
+   "cer_v2_all": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "cer_v3_pct": 0.0,
+   "cer_v3_norm_ref": "别急慢慢来这个参数改完应该就好了",
+   "cer_v3_norm_hyp": "别急慢慢来这个参数改完应该就好了"
+  },
+  {
+   "kind": "cell",
+   "engine": "voxcpm2",
+   "qid": "q24",
+   "rep": 1,
+   "group": "5 语气与情感",
+   "text_chars": 18,
+   "text": "行，就这么定了，明天开始跑正式测试。",
+   "wall_s": 135.502,
+   "audio_s": 3.68,
+   "sr": 48000,
+   "rtf": 36.821,
+   "cold_load_s": null,
+   "ok": true,
+   "note": "OK sr=48000 dur=3.68s rms=0.1225",
+   "path": "D:/study/ai-jms/voice_samples/ep25_run\\slot_0015\\audio\\voxcpm2\\q24_rep1.wav",
+   "ts": "04:40:46",
+   "asr_ok": true,
+   "asr_model": "small",
+   "asr_lang": "zh",
+   "asr_hyps": [
+    "就这么定了,明天开始跑正式测试",
+    "就这么定了,明天开始跑正式测试",
+    "就这么定了,明天开始跑正式测试"
+   ],
+   "asr_votes": 3,
+   "asr_text": "就这么定了,明天开始跑正式测试",
+   "cer_pct": 6.67,
+   "cer_all": [
+    6.67,
+    6.67,
+    6.67
+   ],
+   "asr_time_s": [
+    2.449,
+    2.466,
+    2.447
+   ],
+   "ref_text": "行，就这么定了，明天开始跑正式测试。",
+   "cer_v2_pct": 6.67,
+   "cer_v2_all": [
+    6.67,
+    6.67,
+    6.67
+   ],
+   "cer_v3_pct": 6.67,
+   "cer_v3_norm_ref": "行就这么定了明天开始跑正式测试",
+   "cer_v3_norm_hyp": "就这么定了明天开始跑正式测试"
+  },
+  {
+   "kind": "cell",
+   "engine": "omnivoice-subprocess",
+   "qid": "q00",
+   "rep": 1,
+   "group": "1 基准短句",
+   "text_chars": 27,
+   "text": "关注 AI 积木师，带你从 AI 的视角解读和理解生活",
+   "wall_s": 317.703,
+   "audio_s": 6.9,
+   "sr": 24000,
+   "rtf": 46.044,
+   "cold_load_s": 317.716,
+   "ok": true,
+   "note": "OK sr=24000 dur=6.90s rms=0.0980",
+   "path": "D:/study/ai-jms/voice_samples/ep25_run\\slot_0015\\audio\\omnivoice-subprocess\\q00_rep1.wav",
+   "ts": "04:46:04",
+   "asr_ok": true,
+   "asr_model": "small",
+   "asr_lang": "zh",
+   "asr_hyps": [
+    "关注 AI 金牧师带你从 AI 的视角解读和理解生活",
+    "关注 AI 金牧师带你从 AI 的视角解读和理解生活",
+    "关注 AI 金牧师带你从 AI 的视角解读和理解生活"
+   ],
+   "asr_votes": 3,
+   "asr_text": "关注 AI 金牧师带你从 AI 的视角解读和理解生活",
+   "cer_pct": 9.09,
+   "cer_all": [
+    9.09,
+    9.09,
+    9.09
+   ],
+   "asr_time_s": [
+    2.759,
+    2.725,
+    2.715
+   ],
+   "ref_text": "关注 AI 积木师，带你从 AI 的视角解读和理解生活",
+   "cer_v2_pct": 9.09,
+   "cer_v2_all": [
+    9.09,
+    9.09,
+    9.09
+   ],
+   "cer_v3_pct": 9.09,
+   "cer_v3_norm_ref": "关注ai积木师带你从ai的视角解读和理解生活",
+   "cer_v3_norm_hyp": "关注ai金牧师带你从ai的视角解读和理解生活"
+  },
+  {
+   "kind": "cell",
+   "engine": "omnivoice-subprocess",
+   "qid": "q02",
+   "rep": 1,
+   "group": "1 基准短句",
+   "text_chars": 22,
+   "text": "今天是二零二六年十月二十七日，星期二，天气晴",
+   "wall_s": 316.495,
+   "audio_s": 6.15,
+   "sr": 24000,
+   "rtf": 51.463,
+   "cold_load_s": null,
+   "ok": true,
+   "note": "OK sr=24000 dur=6.15s rms=0.1115",
+   "path": "D:/study/ai-jms/voice_samples/ep25_run\\slot_0015\\audio\\omnivoice-subprocess\\q02_rep1.wav",
+   "ts": "04:56:21",
+   "asr_ok": true,
+   "asr_model": "small",
+   "asr_lang": "zh",
+   "asr_hyps": [
+    "今天是2026年10月27日星期二天气晴",
+    "今天是2026年10月27日星期二天气晴",
+    "今天是2026年10月27日星期二天气晴"
+   ],
+   "asr_votes": 3,
+   "asr_text": "今天是2026年10月27日星期二天气晴",
+   "cer_pct": 45.0,
+   "cer_all": [
+    45.0,
+    45.0,
+    45.0
+   ],
+   "asr_time_s": [
+    2.482,
+    2.516,
+    2.478
+   ],
+   "ref_text": "今天是二零二六年十月二十七日，星期二，天气晴",
+   "cer_v2_pct": 0.0,
+   "cer_v2_all": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "cer_v3_pct": 0.0,
+   "cer_v3_norm_ref": "今天是2026年10月27日星期2天气晴",
+   "cer_v3_norm_hyp": "今天是2026年10月27日星期2天气晴"
+  },
+  {
+   "kind": "cell",
+   "engine": "omnivoice-subprocess",
+   "qid": "q03",
+   "rep": 1,
+   "group": "1 基准短句",
+   "text_chars": 19,
+   "text": "没显卡的电脑也能跑语音合成，只是慢一点",
+   "wall_s": 280.859,
+   "audio_s": 6.9,
+   "sr": 24000,
+   "rtf": 40.704,
+   "cold_load_s": null,
+   "ok": true,
+   "note": "OK sr=24000 dur=6.90s rms=0.0949",
+   "path": "D:/study/ai-jms/voice_samples/ep25_run\\slot_0015\\audio\\omnivoice-subprocess\\q03_rep1.wav",
+   "ts": "05:01:01",
+   "asr_ok": true,
+   "asr_model": "small",
+   "asr_lang": "zh",
+   "asr_hyps": [
+    "没显卡的电脑也能跑语音合成,只是慢一点",
+    "没显卡的电脑也能跑语音合成,只是慢一点",
+    "没显卡的电脑也能跑语音合成,只是慢一点"
+   ],
+   "asr_votes": 3,
+   "asr_text": "没显卡的电脑也能跑语音合成,只是慢一点",
+   "cer_pct": 0.0,
+   "cer_all": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "asr_time_s": [
+    2.655,
+    2.649,
+    2.646
+   ],
+   "ref_text": "没显卡的电脑也能跑语音合成，只是慢一点",
+   "cer_v2_pct": 0.0,
+   "cer_v2_all": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "cer_v3_pct": 0.0,
+   "cer_v3_norm_ref": "没显卡的电脑也能跑语音合成只是慢1.",
+   "cer_v3_norm_hyp": "没显卡的电脑也能跑语音合成只是慢1."
+  },
+  {
+   "kind": "cell",
+   "engine": "omnivoice-subprocess",
+   "qid": "q04",
+   "rep": 1,
+   "group": "1 基准短句",
+   "text_chars": 19,
+   "text": "一句话，一段录音，一个属于你自己的声音",
+   "wall_s": 273.094,
+   "audio_s": 5.58,
+   "sr": 24000,
+   "rtf": 48.942,
+   "cold_load_s": null,
+   "ok": true,
+   "note": "OK sr=24000 dur=5.58s rms=0.1157",
+   "path": "D:/study/ai-jms/voice_samples/ep25_run\\slot_0015\\audio\\omnivoice-subprocess\\q04_rep1.wav",
+   "ts": "05:05:35",
+   "asr_ok": true,
+   "asr_model": "small",
+   "asr_lang": "zh",
+   "asr_hyps": [
+    "一句话,一段录音,一个属于你自己的声音",
+    "一句话,一段录音,一个属于你自己的声音",
+    "一句话,一段录音,一个属于你自己的声音"
+   ],
+   "asr_votes": 3,
+   "asr_text": "一句话,一段录音,一个属于你自己的声音",
+   "cer_pct": 0.0,
+   "cer_all": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "asr_time_s": [
+    2.568,
+    2.561,
+    2.546
+   ],
+   "ref_text": "一句话，一段录音，一个属于你自己的声音",
+   "cer_v2_pct": 0.0,
+   "cer_v2_all": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "cer_v3_pct": 0.0,
+   "cer_v3_norm_ref": "1句话1段录音1个属于你自己的声音",
+   "cer_v3_norm_hyp": "1句话1段录音1个属于你自己的声音"
+  },
+  {
+   "kind": "cell",
+   "engine": "omnivoice-subprocess",
+   "qid": "q05",
+   "rep": 1,
+   "group": "2 多音字",
+   "text_chars": 19,
+   "text": "这件衣服太重了，我们重新称一下它的重量",
+   "wall_s": 279.927,
+   "audio_s": 5.96,
+   "sr": 24000,
+   "rtf": 46.968,
+   "cold_load_s": null,
+   "ok": true,
+   "note": "OK sr=24000 dur=5.96s rms=0.0922",
+   "path": "D:/study/ai-jms/voice_samples/ep25_run\\slot_0015\\audio\\omnivoice-subprocess\\q05_rep1.wav",
+   "ts": "05:10:14",
+   "asr_ok": true,
+   "asr_model": "small",
+   "asr_lang": "zh",
+   "asr_hyps": [
+    "这件衣服太重了我们重新称一下它的重量",
+    "这件衣服太重了我们重新称一下它的重量",
+    "这件衣服太重了我们重新称一下它的重量"
+   ],
+   "asr_votes": 3,
+   "asr_text": "这件衣服太重了我们重新称一下它的重量",
+   "cer_pct": 0.0,
+   "cer_all": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "asr_time_s": [
+    2.572,
+    2.59,
+    2.559
+   ],
+   "ref_text": "这件衣服太重了，我们重新称一下它的重量",
+   "cer_v2_pct": 0.0,
+   "cer_v2_all": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "cer_v3_pct": 0.0,
+   "cer_v3_norm_ref": "这件衣服太重了我们重新称1下它的重量",
+   "cer_v3_norm_hyp": "这件衣服太重了我们重新称1下它的重量"
+  },
+  {
+   "kind": "cell",
+   "engine": "omnivoice-subprocess",
+   "qid": "q06",
+   "rep": 1,
+   "group": "2 多音字",
+   "text_chars": 21,
+   "text": "银行行长说，今年行业行情不错，值得重新评估",
+   "wall_s": 287.533,
+   "audio_s": 7.44,
+   "sr": 24000,
+   "rtf": 38.647,
+   "cold_load_s": null,
+   "ok": true,
+   "note": "OK sr=24000 dur=7.44s rms=0.1059",
+   "path": "D:/study/ai-jms/voice_samples/ep25_run\\slot_0015\\audio\\omnivoice-subprocess\\q06_rep1.wav",
+   "ts": "05:15:02",
+   "asr_ok": true,
+   "asr_model": "small",
+   "asr_lang": "zh",
+   "asr_hyps": [
+    "银行行长说今年行业行请不错值得重新评估",
+    "银行行长说今年行业行请不错值得重新评估",
+    "银行行长说今年行业行请不错值得重新评估"
+   ],
+   "asr_votes": 3,
+   "asr_text": "银行行长说今年行业行请不错值得重新评估",
+   "cer_pct": 5.26,
+   "cer_all": [
+    5.26,
+    5.26,
+    5.26
+   ],
+   "asr_time_s": [
+    2.776,
+    2.825,
+    2.722
+   ],
+   "ref_text": "银行行长说，今年行业行情不错，值得重新评估",
+   "cer_v2_pct": 5.26,
+   "cer_v2_all": [
+    5.26,
+    5.26,
+    5.26
+   ],
+   "cer_v3_pct": 5.26,
+   "cer_v3_norm_ref": "银行行长说今年行业行情不错值得重新评估",
+   "cer_v3_norm_hyp": "银行行长说今年行业行请不错值得重新评估"
+  },
+  {
+   "kind": "cell",
+   "engine": "omnivoice-subprocess",
+   "qid": "q07",
+   "rep": 1,
+   "group": "2 多音字",
+   "text_chars": 21,
+   "text": "他喜欢音乐，更乐于助人，大家都说他活得快乐",
+   "wall_s": 289.357,
+   "audio_s": 6.46,
+   "sr": 24000,
+   "rtf": 44.792,
+   "cold_load_s": null,
+   "ok": true,
+   "note": "OK sr=24000 dur=6.46s rms=0.0936",
+   "path": "D:/study/ai-jms/voice_samples/ep25_run\\slot_0015\\audio\\omnivoice-subprocess\\q07_rep1.wav",
+   "ts": "05:19:51",
+   "asr_ok": true,
+   "asr_model": "small",
+   "asr_lang": "zh",
+   "asr_hyps": [
+    "他喜歡音樂,更樂於助人,大家都說他活得快樂。",
+    "他喜歡音樂,更樂於助人,大家都說他活得快樂。",
+    "他喜歡音樂,更樂於助人,大家都說他活得快樂。"
+   ],
+   "asr_votes": 3,
+   "asr_text": "他喜歡音樂,更樂於助人,大家都說他活得快樂。",
+   "cer_pct": 31.58,
+   "cer_all": [
+    31.58,
+    31.58,
+    31.58
+   ],
+   "asr_time_s": [
+    2.559,
+    2.533,
+    2.543
+   ],
+   "ref_text": "他喜欢音乐，更乐于助人，大家都说他活得快乐",
+   "cer_v2_pct": 31.58,
+   "cer_v2_all": [
+    31.58,
+    31.58,
+    31.58
+   ],
+   "cer_v3_pct": 0.0,
+   "cer_v3_norm_ref": "他喜欢音乐更乐于助人大家都说他活得快乐",
+   "cer_v3_norm_hyp": "他喜欢音乐更乐于助人大家都说他活得快乐"
+  },
+  {
+   "kind": "cell",
+   "engine": "omnivoice-subprocess",
+   "qid": "q08",
+   "rep": 1,
+   "group": "2 多音字",
+   "text_chars": 19,
+   "text": "这条裙子长度太长了，需要重新量一次尺寸",
+   "wall_s": 279.891,
+   "audio_s": 5.6,
+   "sr": 24000,
+   "rtf": 49.98,
+   "cold_load_s": null,
+   "ok": true,
+   "note": "OK sr=24000 dur=5.60s rms=0.1008",
+   "path": "D:/study/ai-jms/voice_samples/ep25_run\\slot_0015\\audio\\omnivoice-subprocess\\q08_rep1.wav",
+   "ts": "05:24:31",
+   "asr_ok": true,
+   "asr_model": "small",
+   "asr_lang": "zh",
+   "asr_hyps": [
+    "這條裙子長度太長了需要重新量一次尺寸",
+    "這條裙子長度太長了需要重新量一次尺寸",
+    "這條裙子長度太長了需要重新量一次尺寸"
+   ],
+   "asr_votes": 3,
+   "asr_text": "這條裙子長度太長了需要重新量一次尺寸",
+   "cer_pct": 22.22,
+   "cer_all": [
+    22.22,
+    22.22,
+    22.22
+   ],
+   "asr_time_s": [
+    2.591,
+    2.584,
+    2.57
+   ],
+   "ref_text": "这条裙子长度太长了，需要重新量一次尺寸",
+   "cer_v2_pct": 22.22,
+   "cer_v2_all": [
+    22.22,
+    22.22,
+    22.22
+   ],
+   "cer_v3_pct": 0.0,
+   "cer_v3_norm_ref": "这条裙子长度太长了需要重新量1次尺寸",
+   "cer_v3_norm_hyp": "这条裙子长度太长了需要重新量1次尺寸"
+  },
+  {
+   "kind": "cell",
+   "engine": "omnivoice-subprocess",
+   "qid": "q09",
+   "rep": 1,
+   "group": "2 多音字",
+   "text_chars": 19,
+   "text": "天气真差，差点迟到，估计差不多个把小时",
+   "wall_s": 275.359,
+   "audio_s": 6.24,
+   "sr": 24000,
+   "rtf": 44.128,
+   "cold_load_s": null,
+   "ok": true,
+   "note": "OK sr=24000 dur=6.24s rms=0.0928",
+   "path": "D:/study/ai-jms/voice_samples/ep25_run\\slot_0015\\audio\\omnivoice-subprocess\\q09_rep1.wav",
+   "ts": "05:29:07",
+   "asr_ok": true,
+   "asr_model": "small",
+   "asr_lang": "zh",
+   "asr_hyps": [
+    "天气真差差点迟到估计差不多个8小时",
+    "天气真差差点迟到估计差不多个8小时",
+    "天气真差差点迟到估计差不多个8小时"
+   ],
+   "asr_votes": 3,
+   "asr_text": "天气真差差点迟到估计差不多个8小时",
+   "cer_pct": 5.88,
+   "cer_all": [
+    5.88,
+    5.88,
+    5.88
+   ],
+   "asr_time_s": [
+    2.655,
+    2.674,
+    2.645
+   ],
+   "ref_text": "天气真差，差点迟到，估计差不多个把小时",
+   "cer_v2_pct": 5.56,
+   "cer_v2_all": [
+    5.56,
+    5.56,
+    5.56
+   ],
+   "cer_v3_pct": 5.56,
+   "cer_v3_norm_ref": "天气真差差0.迟到估计差不多个把小时",
+   "cer_v3_norm_hyp": "天气真差差0.迟到估计差不多个8小时"
+  },
+  {
+   "kind": "cell",
+   "engine": "omnivoice-subprocess",
+   "qid": "q17",
+   "rep": 1,
+   "group": "4 数字与英文夹杂",
+   "text_chars": 36,
+   "text": "打开 Terminal，输入 pip install，回车，等它装完就行",
+   "wall_s": 300.771,
+   "audio_s": 6.74,
+   "sr": 24000,
+   "rtf": 44.625,
+   "cold_load_s": null,
+   "ok": true,
+   "note": "OK sr=24000 dur=6.74s rms=0.0988",
+   "path": "D:/study/ai-jms/voice_samples/ep25_run\\slot_0015\\audio\\omnivoice-subprocess\\q17_rep1.wav",
+   "ts": "06:10:50",
+   "asr_ok": true,
+   "asr_model": "small",
+   "asr_lang": "zh",
+   "asr_hyps": [
+    "打开terminal输入peep install回车等它装完就行",
+    "打开terminal输入peep install回车等它装完就行",
+    "打开terminal输入peep install回车等它装完就行"
+   ],
+   "asr_votes": 3,
+   "asr_text": "打开terminal输入peep install回车等它装完就行",
+   "cer_pct": 6.67,
+   "cer_all": [
+    6.67,
+    6.67,
+    6.67
+   ],
+   "asr_time_s": [
+    2.702,
+    2.653,
+    2.696
+   ],
+   "ref_text": "打开 Terminal，输入 pip install，回车，等它装完就行",
+   "cer_v2_pct": 6.67,
+   "cer_v2_all": [
+    6.67,
+    6.67,
+    6.67
+   ],
+   "cer_v3_pct": 6.67,
+   "cer_v3_norm_ref": "打开terminal输入pipinstall回车等它装完就行",
+   "cer_v3_norm_hyp": "打开terminal输入peepinstall回车等它装完就行"
+  },
+  {
+   "kind": "cell",
+   "engine": "omnivoice-subprocess",
+   "qid": "q21",
+   "rep": 1,
+   "group": "5 语气与情感",
+   "text_chars": 19,
+   "text": "唉，又失败了，第三遍了，还是那个报错。",
+   "wall_s": 280.954,
+   "audio_s": 5.91,
+   "sr": 24000,
+   "rtf": 47.539,
+   "cold_load_s": null,
+   "ok": true,
+   "note": "OK sr=24000 dur=5.91s rms=0.0911",
+   "path": "D:/study/ai-jms/voice_samples/ep25_run\\slot_0015\\audio\\omnivoice-subprocess\\q21_rep1.wav",
+   "ts": "06:31:07",
+   "asr_ok": true,
+   "asr_model": "small",
+   "asr_lang": "zh",
+   "asr_hyps": [
+    "诶,又失败了第三遍了,还是那个抱错",
+    "诶,又失败了第三遍了,还是那个抱错",
+    "诶,又失败了第三遍了,还是那个抱错"
+   ],
+   "asr_votes": 3,
+   "asr_text": "诶,又失败了第三遍了,还是那个抱错",
+   "cer_pct": 13.33,
+   "cer_all": [
+    13.33,
+    13.33,
+    13.33
+   ],
+   "asr_time_s": [
+    2.532,
+    2.523,
+    2.544
+   ],
+   "ref_text": "唉，又失败了，第三遍了，还是那个报错。",
+   "cer_v2_pct": 13.33,
+   "cer_v2_all": [
+    13.33,
+    13.33,
+    13.33
+   ],
+   "cer_v3_pct": 13.33,
+   "cer_v3_norm_ref": "唉又失败了第3遍了还是那个报错",
+   "cer_v3_norm_hyp": "诶又失败了第3遍了还是那个抱错"
+  },
+  {
+   "kind": "cell",
+   "engine": "omnivoice-subprocess",
+   "qid": "q22",
+   "rep": 1,
+   "group": "5 语气与情感",
+   "text_chars": 20,
+   "text": "你听一下这段，是不是有点像我自己的声音？",
+   "wall_s": 281.079,
+   "audio_s": 5.61,
+   "sr": 24000,
+   "rtf": 50.103,
+   "cold_load_s": null,
+   "ok": true,
+   "note": "OK sr=24000 dur=5.61s rms=0.0818",
+   "path": "D:/study/ai-jms/voice_samples/ep25_run\\slot_0015\\audio\\omnivoice-subprocess\\q22_rep1.wav",
+   "ts": "06:35:48",
+   "asr_ok": true,
+   "asr_model": "small",
+   "asr_lang": "zh",
+   "asr_hyps": [
+    "你听一下这段是不是有点像我自己的声音",
+    "你听一下这段是不是有点像我自己的声音",
+    "你听一下这段是不是有点像我自己的声音"
+   ],
+   "asr_votes": 3,
+   "asr_text": "你听一下这段是不是有点像我自己的声音",
+   "cer_pct": 0.0,
+   "cer_all": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "asr_time_s": [
+    2.438,
+    2.467,
+    2.498
+   ],
+   "ref_text": "你听一下这段，是不是有点像我自己的声音？",
+   "cer_v2_pct": 0.0,
+   "cer_v2_all": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "cer_v3_pct": 0.0,
+   "cer_v3_norm_ref": "你听1下这段是不是有0.像我自己的声音",
+   "cer_v3_norm_hyp": "你听1下这段是不是有0.像我自己的声音"
+  },
+  {
+   "kind": "cell",
+   "engine": "omnivoice-subprocess",
+   "qid": "q23",
+   "rep": 1,
+   "group": "5 语气与情感",
+   "text_chars": 19,
+   "text": "别急，慢慢来，这个参数改完应该就好了。",
+   "wall_s": 269.514,
+   "audio_s": 6.3,
+   "sr": 24000,
+   "rtf": 42.78,
+   "cold_load_s": null,
+   "ok": true,
+   "note": "OK sr=24000 dur=6.30s rms=0.0952",
+   "path": "D:/study/ai-jms/voice_samples/ep25_run\\slot_0015\\audio\\omnivoice-subprocess\\q23_rep1.wav",
+   "ts": "06:40:17",
+   "asr_ok": true,
+   "asr_model": "small",
+   "asr_lang": "zh",
+   "asr_hyps": [
+    "别急,慢慢来这个参数改完应该就好了",
+    "别急,慢慢来这个参数改完应该就好了",
+    "别急,慢慢来这个参数改完应该就好了"
+   ],
+   "asr_votes": 3,
+   "asr_text": "别急,慢慢来这个参数改完应该就好了",
+   "cer_pct": 0.0,
+   "cer_all": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "asr_time_s": [
+    2.528,
+    2.699,
+    2.552
+   ],
+   "ref_text": "别急，慢慢来，这个参数改完应该就好了。",
+   "cer_v2_pct": 0.0,
+   "cer_v2_all": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "cer_v3_pct": 0.0,
+   "cer_v3_norm_ref": "别急慢慢来这个参数改完应该就好了",
+   "cer_v3_norm_hyp": "别急慢慢来这个参数改完应该就好了"
+  },
+  {
+   "kind": "cell",
+   "engine": "omnivoice-subprocess",
+   "qid": "q24",
+   "rep": 1,
+   "group": "5 语气与情感",
+   "text_chars": 18,
+   "text": "行，就这么定了，明天开始跑正式测试。",
+   "wall_s": 261.373,
+   "audio_s": 6.16,
+   "sr": 24000,
+   "rtf": 42.431,
+   "cold_load_s": null,
+   "ok": true,
+   "note": "OK sr=24000 dur=6.16s rms=0.0894",
+   "path": "D:/study/ai-jms/voice_samples/ep25_run\\slot_0015\\audio\\omnivoice-subprocess\\q24_rep1.wav",
+   "ts": "06:44:39",
+   "asr_ok": true,
+   "asr_model": "small",
+   "asr_lang": "zh",
+   "asr_hyps": [
+    "行!就这么定了!明天开始跑!正式测试!",
+    "行!就这么定了!明天开始跑!正式测试!",
+    "行!就这么定了!明天开始跑!正式测试!"
+   ],
+   "asr_votes": 3,
+   "asr_text": "行!就这么定了!明天开始跑!正式测试!",
+   "cer_pct": 0.0,
+   "cer_all": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "asr_time_s": [
+    2.633,
+    2.639,
+    2.625
+   ],
+   "ref_text": "行，就这么定了，明天开始跑正式测试。",
+   "cer_v2_pct": 0.0,
+   "cer_v2_all": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "cer_v3_pct": 0.0,
+   "cer_v3_norm_ref": "行就这么定了明天开始跑正式测试",
+   "cer_v3_norm_hyp": "行就这么定了明天开始跑正式测试"
+  }
+ ],
+ "norm_version": "v3-繁简归一+小数点保护",
+ "norm_selfcheck_pass": true
+}

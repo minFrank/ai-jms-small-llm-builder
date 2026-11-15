@@ -1,0 +1,30 @@
+[
+ [
+  "omnivoice",
+  "VoiceStudio (k2-fsa/OmniVoice, 600+ languages)",
+  true,
+  "in-process",
+  null
+ ],
+ [
+  "cosyvoice",
+  "CosyVoice 3 (9 langs, zero-shot, instruct, Apache-2.0)",
+  true,
+  "subprocess",
+  null
+ ],
+ [
+  "voxcpm2",
+  "VoxCPM2 (30 langs, studio 48 kHz, voice design)",
+  true,
+  "in-process",
+  null
+ ],
+ [
+  "omnivoice-subprocess",
+  "OmniVoice (subprocess-isolated, killable on timeout)",
+  true,
+  "subprocess",
+  null
+ ]
+]

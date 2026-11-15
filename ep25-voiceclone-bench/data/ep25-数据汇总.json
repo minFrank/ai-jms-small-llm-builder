@@ -1,0 +1,284 @@
+{
+ "generated": "2026-10-30 23:47",
+ "main_slot": "slot_0015",
+ "total_cells": 151,
+ "total_ok": 138,
+ "engines": [
+  {
+   "engine": "cosyvoice",
+   "n_total": 25,
+   "n_ok": 25,
+   "n_fail": 0,
+   "wall_min": 41.1,
+   "wall_med": 58.7,
+   "wall_max": 119.4,
+   "rtf_med": 7.86,
+   "cer_med": 1.54,
+   "cer_mean": 3.24,
+   "cer_max": 13.64,
+   "cer_perfect": 12,
+   "cer_n": 25,
+   "dur_med": 7.24
+  },
+  {
+   "engine": "voxcpm2",
+   "n_total": 25,
+   "n_ok": 25,
+   "n_fail": 0,
+   "wall_min": 122.1,
+   "wall_med": 191.2,
+   "wall_max": 540.2,
+   "rtf_med": 35.25,
+   "cer_med": 2.33,
+   "cer_mean": 3.93,
+   "cer_max": 20.0,
+   "cer_perfect": 11,
+   "cer_n": 25,
+   "dur_med": 5.44
+  },
+  {
+   "engine": "omnivoice-subprocess",
+   "n_total": 25,
+   "n_ok": 14,
+   "n_fail": 11,
+   "wall_min": 261.4,
+   "wall_med": 280.9,
+   "wall_max": 317.7,
+   "rtf_med": 45.42,
+   "cer_med": 0.0,
+   "cer_mean": 2.85,
+   "cer_max": 13.33,
+   "cer_perfect": 9,
+   "cer_n": 14,
+   "dur_med": 6.2
+  },
+  {
+   "engine": "omnivoice",
+   "n_total": 25,
+   "n_ok": 24,
+   "n_fail": 1,
+   "wall_min": 262.5,
+   "wall_med": 293.0,
+   "wall_max": 533.6,
+   "rtf_med": 39.01,
+   "cer_med": 0.0,
+   "cer_mean": 3.21,
+   "cer_max": 13.64,
+   "cer_perfect": 13,
+   "cer_n": 24,
+   "dur_med": 7.2
+  }
+ ],
+ "groups": [
+  {
+   "group": "1 基准短句",
+   "n": 19,
+   "wall_med": 267.5,
+   "dur_med": 6.28,
+   "cer_med": 0.0,
+   "cer_n": 19
+  },
+  {
+   "group": "2 多音字",
+   "n": 20,
+   "wall_med": 228.3,
+   "dur_med": 6.35,
+   "cer_med": 0.0,
+   "cer_n": 20
+  },
+  {
+   "group": "3 长句与停顿",
+   "n": 14,
+   "wall_med": 353.3,
+   "dur_med": 15.06,
+   "cer_med": 2.17,
+   "cer_n": 14
+  },
+  {
+   "group": "4 数字与英文夹杂",
+   "n": 16,
+   "wall_med": 236.8,
+   "dur_med": 7.96,
+   "cer_med": 4.79,
+   "cer_n": 16
+  },
+  {
+   "group": "5 语气与情感",
+   "n": 19,
+   "wall_med": 211.0,
+   "dur_med": 5.61,
+   "cer_med": 0.0,
+   "cer_n": 19
+  }
+ ],
+ "fail_cells": [
+  {
+   "src": "slot_2100",
+   "engine": "omnivoice-subprocess",
+   "qid": "12",
+   "group": "1 基准短句",
+   "kind": "HTTP 500 子进程模式中止",
+   "wall_s": 300.5
+  },
+  {
+   "src": "slot_0015",
+   "engine": "omnivoice",
+   "qid": "q10",
+   "group": "3 长句与停顿",
+   "kind": "HTTP 503 超 600 秒被服务放弃",
+   "wall_s": 600.6
+  },
+  {
+   "src": "slot_0015",
+   "engine": "omnivoice-subprocess",
+   "qid": "q01",
+   "group": "1 基准短句",
+   "kind": "HTTP 500 子进程模式中止",
+   "wall_s": 300.6
+  },
+  {
+   "src": "slot_0015",
+   "engine": "omnivoice-subprocess",
+   "qid": "q10",
+   "group": "3 长句与停顿",
+   "kind": "HTTP 500 子进程模式中止",
+   "wall_s": 300.5
+  },
+  {
+   "src": "slot_0015",
+   "engine": "omnivoice-subprocess",
+   "qid": "q11",
+   "group": "3 长句与停顿",
+   "kind": "HTTP 500 子进程模式中止",
+   "wall_s": 318.1
+  },
+  {
+   "src": "slot_0015",
+   "engine": "omnivoice-subprocess",
+   "qid": "q12",
+   "group": "3 长句与停顿",
+   "kind": "HTTP 500 子进程模式中止",
+   "wall_s": 316.6
+  },
+  {
+   "src": "slot_0015",
+   "engine": "omnivoice-subprocess",
+   "qid": "q13",
+   "group": "3 长句与停顿",
+   "kind": "HTTP 500 子进程模式中止",
+   "wall_s": 316.8
+  },
+  {
+   "src": "slot_0015",
+   "engine": "omnivoice-subprocess",
+   "qid": "q14",
+   "group": "3 长句与停顿",
+   "kind": "HTTP 500 子进程模式中止",
+   "wall_s": 317.0
+  },
+  {
+   "src": "slot_0015",
+   "engine": "omnivoice-subprocess",
+   "qid": "q15",
+   "group": "4 数字与英文夹杂",
+   "kind": "HTTP 500 子进程模式中止",
+   "wall_s": 317.0
+  },
+  {
+   "src": "slot_0015",
+   "engine": "omnivoice-subprocess",
+   "qid": "q16",
+   "group": "4 数字与英文夹杂",
+   "kind": "HTTP 500 子进程模式中止",
+   "wall_s": 316.3
+  },
+  {
+   "src": "slot_0015",
+   "engine": "omnivoice-subprocess",
+   "qid": "q18",
+   "group": "4 数字与英文夹杂",
+   "kind": "HTTP 500 子进程模式中止",
+   "wall_s": 300.5
+  },
+  {
+   "src": "slot_0015",
+   "engine": "omnivoice-subprocess",
+   "qid": "q19",
+   "group": "4 数字与英文夹杂",
+   "kind": "HTTP 500 子进程模式中止",
+   "wall_s": 318.4
+  },
+  {
+   "src": "slot_0015",
+   "engine": "omnivoice-subprocess",
+   "qid": "q20",
+   "group": "5 语气与情感",
+   "kind": "HTTP 500 子进程模式中止",
+   "wall_s": 317.1
+  }
+ ],
+ "preflight_fails": [
+  {
+   "engine": "VoxCPM2",
+   "kind": "预飞专项",
+   "reason": "冷启 66.04s 成功，合成跑到 23%（142 步扩散）被 info.bytes AttributeError 中断，无最终 wav",
+   "note": "正式跑测 slot_0015 里 voxcpm2 25/25 全过 —— 该失败来自预飞脚本自身，非模型不可用"
+  },
+  {
+   "engine": "Qwen3-TTS-0.6B",
+   "kind": "预飞专项",
+   "reason": "ValueError: model type 'qwen3_tts' 不被 transformers 5.21 识别",
+   "note": "权重完整 2.34 GB；独立 venv 已建、dry-run 无降级；需升 transformers 才能验证"
+  },
+  {
+   "engine": "GPT-SoVITS",
+   "kind": "预飞专项",
+   "reason": "9880 端口监听成功，但 /tts 请求 UnicodeEncodeError（URL 含中文），从未完成一次合成",
+   "note": "端口起来不等于能跑；本引擎在本次数据中无任何成功样本"
+  },
+  {
+   "engine": "MOSS-TTS-Nano",
+   "kind": "安装事故",
+   "reason": "pip 降级 torch 2.8.0→2.7.0、transformers 5.15.1→4.57.1，弄坏 VoiceStudio 主 venv",
+   "note": "已回滚并复验 17 个关键包全部恢复；该引擎已移出阵容"
+  },
+  {
+   "engine": "MegaTTS3",
+   "kind": "未测",
+   "reason": "权重在下载，未验证完整性与 CPU 可行性，零数据点",
+   "note": "不能写入任何『它如何』的结论"
+  }
+ ],
+ "snaps": {
+  "slot_1400": {
+   "ts": "2026-10-29 14:15:00",
+   "platform": "Windows-10-10.0.26200-SP0",
+   "cpu_avg_pct": 19.4,
+   "cpu_peak_pct": 30.6,
+   "mem_total_gb": 27.9,
+   "mem_available_gb": 5.8,
+   "busy_procs": [],
+   "power_plan": ""
+  },
+  "slot_2100": {
+   "ts": "2026-10-29 21:00:53",
+   "platform": "Windows-10-10.0.26200-SP0",
+   "cpu_avg_pct": 12.9,
+   "cpu_peak_pct": 35.8,
+   "mem_total_gb": 27.9,
+   "mem_available_gb": 8.1,
+   "busy_procs": [],
+   "power_plan": ""
+  },
+  "slot_0015": {
+   "ts": "2026-10-30 00:16:18",
+   "platform": "Windows-10-10.0.26200-SP0",
+   "cpu_avg_pct": 15.3,
+   "cpu_peak_pct": 28.9,
+   "mem_total_gb": 27.9,
+   "mem_available_gb": 5.8,
+   "busy_procs": [],
+   "power_plan": ""
+  }
+ }
+}
